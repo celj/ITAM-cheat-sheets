@@ -1,0 +1,111 @@
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage[landscape, margin=1cm, bmargin=0.5cm, includefoot, footskip=0.5cm]{geometry}
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{enumitem}
+\usepackage{mdframed}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{multicol,multirow}
+\usepackage{subfiles}
+\usepackage{tabularx}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{accents}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{nicefrac}
+
+\newcommand{\cs}{Cheat sheet}
+\newcommand{\csof}{Cheat sheet of }
+\newcommand{\csAuthorName}{Carlos Lezama}
+\newcommand{\csClass}{ }
+\newcommand{\csClassCode}{ }
+\newcommand{\csKeywords}{ }
+\newcommand{\csTerm}{ }
+\newcommand{\csSchool}{ITAM}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{} 
+\lhead{} 
+\chead{} 
+\cfoot{\csClass\ $\cdot$ \cs}
+\lfoot{\csAuthorName}
+\rfoot{Page \thepage}
+
+\graphicspath{{./figures/}}
+
+\usetikzlibrary{decorations.markings}
+\pgfplotsset{compat=1.11}
+
+\newmdtheoremenv [
+	topline    = false,
+	bottomline = false,
+	leftline   = true,
+	rightline  = false,
+	linewidth  = 2.5pt,
+	linecolor  = red!50
+]{boxdef}{Definition}[section]
+
+\mdtheorem [
+	topline    = false,
+	bottomline = false,
+	leftline   = true,
+	rightline  = false,
+	linewidth  = 2.5pt,
+	linecolor  = blue!40
+]{boxtheo}{Theorem}[section]
+
+\mdtheorem [
+	topline    = false,
+	bottomline = false,
+	leftline   = true,
+	rightline  = false,
+	linewidth  = 2.5pt,
+	linecolor  = black!20
+]{boxprop}{Claim}[section]
+
+\mdtheorem [
+	topline    = false,
+	bottomline = false,
+	leftline   = true,
+	rightline  = false,
+	linewidth  = 2.5pt,
+	linecolor  = blue!40
+]{boxlemma}{Lemma}[section]
+
+\mdtheorem [
+	topline    = false,
+	bottomline = false,
+	leftline   = true,
+	rightline  = false,
+	linewidth  = 2.5pt,
+	linecolor  = blue!40
+]{boxcor}{Corollary}[section]
+
+\newlist{numberlist}{enumerate}{1}
+\setlist[numberlist, 1]{label={\arabic*.}, itemsep=0em, leftmargin=*,labelindent=0.5em}
+
+\newlist{eqlist}{enumerate}{1}
+\setlist[eqlist, 1]{label={(\roman*)},itemsep=-0.2em, leftmargin=*,labelindent=-0.5em}
+
+\newlist{bulletlist}{itemize}{1}
+\setlist[bulletlist, 1]{itemsep=0em, leftmargin=0.5em, label={·}}
+
+\setlength{\parindent}{0em}
+
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\newcommand\tab[1][0.5em]{\hspace*{#1}}
+
+\newcommand{\sectionbreak}{\vfill\ \columnbreak}
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}

@@ -1,0 +1,1241 @@
+\documentclass[8pt,a4paper]{extarticle}
+\input{../template_es.tex}
+\input{../macros.tex}
+
+% Class info
+\renewcommand{\csClass}{Economía 3}
+\renewcommand{\csClassCode}{ECO - 21103}
+\renewcommand{\csTerm}{Otoño 2020}
+\renewcommand{\csKeywords}{ }
+
+% PDF Metadata
+\hypersetup{
+    pdftitle={\csof \csClass},      
+    pdfsubject={\csClass},      
+    pdfauthor={\csAuthorName},  
+    pdfkeywords={}              
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+	\vspace*{1cm}
+	\Huge
+        \textbf{\csClass}
+	\vspace{0.5cm} \\
+	\Large
+        \cs\ $\cdot$ \csTerm
+        \vfill
+        \csAuthorName
+	\vspace{0.8cm}
+        \csClassCode\\
+        \csSchool     
+    \end{center}
+\end{titlepage}
+
+\begin{multicols}{3}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\section*{Método Kuhn–Tucker}
+
+Consideramos un problema de \textbf{maximización} o \textbf{minimización} de una función $f : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}$ que depende de $n$ variables de decisión y $q$ parámetros, y está sujeta a:
+
+\begin{bulletlist}
+\item $k$ restricciones de igualdad $h_i : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}$, y
+\item $m$ restricciones de desigualdad $g_j : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}$
+\end{bulletlist}
+
+\subsubsection*{Maximización}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{x_1, \ldots, x_n\}}\ & f(x_1, \ldots, x_n; p_1, \ldots, p_q) \\
+	\text{sujeto a} \quad 		 & h_i(x_1, \ldots, x_n; p_1, \ldots, p_q) = 0,\\ & \qquad \qquad \qquad \quad \, \forall i = 1, \ldots, k; \\
+								 & g_j(x_1, \ldots, x_n; p_1, \ldots, p_q) \ge 0,\\ & \qquad \qquad \qquad \quad \, \forall j = 1, \ldots, m.
+\end{aligned}
+\end{equation*}
+
+\emph{Lagrangeano del problema}:
+
+\begin{equation*}
+\begin{aligned}
+	& \mathcal{L}(x_1, \ldots, x_n; p_1, \ldots, p_q; \lambda_1, \ldots, \lambda_k; \mu_1, \ldots, \mu_m) = \\
+	& f(x_1,\ldots, p_q) + \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) + \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
+\end{aligned}
+\end{equation*}
+
+\subsubsection*{Minimización}
+
+\begin{equation*}
+\begin{aligned}
+	\min_{\{x_1, \ldots, x_n\}}\ & f(x_1, \ldots, x_n; p_1, \ldots, p_q) \\
+	\text{sujeto a} \quad		& h_i(x_1, \ldots, x_n; p_1, \ldots, p_q) = 0,\\ & \qquad \qquad \qquad \quad \, \forall i = 1, \ldots, k, \\
+								& g_j(x_1, \ldots, x_n; p_1, \ldots, p_q) \ge 0,\\ & \qquad \qquad \qquad \quad \, \forall j = 1, \ldots, m.
+\end{aligned}
+\end{equation*}
+
+\emph{Lagrangeano del problema}:
+
+\begin{equation*}
+\begin{aligned}
+	& \mathcal{L}(x_1, \ldots, x_n; p_1, \ldots, p_q; \lambda_1, \ldots, \lambda_k; \mu_1, \ldots, \mu_m) = \\
+	& f(x_1,\ldots, p_q) - \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) - \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
+\end{aligned}
+\end{equation*}
+
+\sectionbreak
+
+\subsection*{Condiciones de primer orden}
+
+\begin{bulletlist}
+\item $\displaystyle \frac{\partial \mathcal{L}}{\partial x_l} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\item $\displaystyle \frac{\partial \mathcal{L}}{\partial \lambda_i} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\end{bulletlist}
+
+\subsection*{Condiciones de Holgura}
+
+\begin{bulletlist}
+\item Maximización:
+\item[] $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) \ge 0$;
+\item[] $\displaystyle \mu_j^{\star} \ge 0$;
+\item[] $\displaystyle \mu_j^{\star} h_j (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\item Minimización:
+\item[] $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) \le 0$;
+\item[] $\displaystyle \mu_j^{\star} \ge 0$;
+\item[] $\displaystyle \mu_j^{\star} h_j (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\end{bulletlist}
+
+\begin{boxtheo}[Teorema de la Envolvente]
+	Sean $V$ y $\mathcal{L}$ continuamente diferenciables y $(x^{\star}, \lambda^{\star}, \mu^{\star})$ la solución de algún problema de optimización con parámetros $(p_1, \ldots, p_q)$, entonces:
+	\[
+		\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \mathcal{L}^{\star}}{\partial p_i}
+	.\] 
+\end{boxtheo}
+
+\newpage
+
+\section{Función de utilidad}
+
+\begin{boxdef}[Completitud]
+	Sean cualesquiera $a, b \in A$, decimos que el consumidor tiene preferencias \textbf{completas} si es capaz de decir si prefiere $a$ sobre $b$, $b$ sobre $a$, o es indiferente.
+\end{boxdef}
+
+\begin{boxdef}[Transitividad]
+	Sea $\mathcal{R}$ una relación homogénea sobre el conjunto $X$, decimos que el consumidor tiene preferencias \textbf{transitivas} si para cualesquiera $a, b, c \in X$ tales que $a \mathcal{R} b$ y $b \mathcal{R} c$, entonces $a \mathcal{R} c$.
+\end{boxdef}
+
+\begin{boxdef}[Racionalidad]
+	Decimos que las preferencias del consumidor son \textbf{racionales} si son \emph{completas} y \emph{transitivas}.
+\end{boxdef}
+
+\begin{boxdef}[Canasta]
+Una \textbf{canasta} es un vector $(a_1, \ldots, a_n) \in \mathbb{R}^n_+$ que representa el consumo de los bienes $x_1, \ldots, x_n$.
+\end{boxdef}
+
+\begin{boxdef}[Función de utilidad]
+	Sea una función $u : \mathbb{R}^n_+ \to \mathbb{R}$, esta representa la utilidad de un consumidor si para para cualquier par de alternativas $(x_1, \ldots, x_n), (x'_1, \ldots, x'_n) \in \mathbb{R}^n_+$, se tiene $u(x_1, \ldots, x_n) > u(x'_1, \ldots, x'_n)$ si y solo si el consumidor prefiere la canasta $(x'_1, \ldots, x'_n)$ sobre la canasta $(x_1, \ldots, x_n)$.
+\end{boxdef}
+
+\begin{boxdef}[Curvas de indiferencia]
+	Dada una función de utilidad $u : H \to \mathbb{R}$ y $k \in \mathbb{R}$, el conjunto de nivel $k$ se define como:
+	\[
+		C_k = \{x \in H  \mid u(x) = k\}
+	.\] 
+Si $H = \mathbb{R}^2$, a dicho conjunto de nivel se le conoce, en economía, como \textbf{curvas de indiferencia}.
+\end{boxdef}
+
+\begin{boxdef}[Utilidad marginal]
+	La \textbf{utilidad marginal} de un bien mide el cambio en la utilidad del consumidor ante un cambio marginal en dicho bien.
+\end{boxdef}
+
+\begin{boxtheo}[Diferencial total]
+	Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$, el diferencial de $u$ evaluado en el punto $(x_0, y_0)$ es:
+	\[
+		\Delta u(x_0, y_0) = \Delta x \frac{\partial u}{\partial x} (x_0, y_0) + \Delta y \frac{\partial u}{\partial y} (x_0 , y_0)
+	,\] donde $\Delta x = x_1 - x_0$ y $\Delta y = y_1 - y_0$.
+\end{boxtheo}
+
+\begin{boxdef}[Tasa marginal de sustitución]
+La \textbf{tasa marginal de sustitución} $\text{ \normalfont TMS}(x, y)$ mide el número de unidades del bien $Y$ que el consumidor está dispuesto a sacrificar con tal de obtener una unidad adicional del bien $X$ y mantener su utilidad constante y se definie como:
+\[
+	\text{ \normalfont TMS}(x,y)=\frac{\text{ \normalfont umg}_x (x,y)}{\text{ \normalfont umg}_y (x,y)}
+.\] 
+\end{boxdef}
+
+\begin{boxdef}[Transformación monótona]
+Una función $w$ es una \textbf{transformación mónotona} de $u$ si y solo si existe una función $g(\cdot)$ \emph{estrictamente creciente} tal que:
+	\[
+		w(X) = g(u(X))
+	.\] 
+\end{boxdef}
+
+\sectionbreak
+
+\subsection{Propiedades de la función de utilidad}
+
+\subsubsection*{Monotonía}
+
+\begin{boxdef}[Monotonía débil]
+	Una función de utilidad $u : \mathbb{R}^n_+ \to \mathbb{R}$ es \textbf{débilmente monótona} si para cualesquiera $X \neq Y \in \mathbb{R}^n_+$, tales que $x_i < y_i,\ \forall i \in \{1, 2, \ldots, n\}$, se tiene $u(X) < u(Y)$.
+\end{boxdef}
+
+\begin{boxdef}[Monotonía estricta]
+	Una función de utilidad $u : \mathbb{R}^n_+ \to \mathbb{R}$ es \textbf{estrictamente monótona} si para cualesquiera $X \neq Y \in \mathbb{R}^n_+$, tales que $x_i \le y_i,\ \forall i \in \{ 1, 2, \ldots, n \}$, se tiene $u(X) < u(Y)$.
+\end{boxdef}
+
+\subsubsection*{Cuasiconcavidad}
+
+\begin{boxdef}[Cuasiconcavidad débil]
+	Una función de utilidad $u : \mathbb{R}^n_+ \to \mathbb{R}$ es \textbf{débilmente cuasicóncava} si para cualesquiera $X \neq Y \in \mathbb{R}^n_+$, tales que $u(X) = u(Y)$, se tiene:
+	\[
+		u(\alpha X + (1 - \alpha)Y) \ge u(X)
+	,\] 
+	para toda $\alpha \in (0, 1)$.
+\end{boxdef}
+
+\begin{boxdef}[Cuasiconcavidad estricta]
+	Una función de utilidad $u : \mathbb{R}^n_+ \to \mathbb{R}$ es \textbf{estrictamente cuasicóncava} si para cualesquiera $X \neq Y \in \mathbb{R}^n_+$, tales que $u(X) = u(Y)$, se tiene:
+	\[
+		u(\alpha X + (1 - \alpha)Y) > u(X)
+	,\] 
+	para toda $\alpha \in (0, 1)$.
+\end{boxdef}
+
+\subsubsection*{Homoteticidad}
+
+\begin{boxdef}[Homoteticidad]
+	Una función de utilidad $u : \mathbb{R}^n_+ \to \mathbb{R}$ es \textbf{homotética} si para cualesquiera $X, Y \in \mathbb{R}^n_+$, tales que $u(X) < u(Y)$, se tiene:
+	\[
+		u(\lambda X ) < u(\lambda Y)
+	,\] 
+	para toda $\lambda > 0$.
+\end{boxdef}
+
+\begin{boxtheo}
+	Dada una función de utilidad diferenciable con preferencias monótonas y homotéticas, se cumple:
+	\[
+		\text{TMS} (\lambda x_i, \lambda x_j) = \text{TMS} (x_i, x_j)
+	,\] para toda $x \in \mathbb{R}^n_+,\ i \neq j$ y $\lambda > 0$.
+\end{boxtheo}
+
+\newpage
+
+\section{Demanda marshaliana}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{x_1, \ldots, x_n\}}\	  & u(x_1, \ldots, x_n) \\
+	\text{sujeto a} \quad & \sum_{i=1}^{n} p_i x_i \le I, \\
+						  & 0 \le x_1, \\
+						  & \quad \vdots \\
+						  & 0 \le x_n.
+\end{aligned}
+\end{equation*}
+
+\subsubsection*{Soluciones del modelo}
+
+Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $p_x x^\star + p_y y^\star = I$, entonces:
+
+\begin{bulletlist}
+\item Si $x^\star, y^\star > 0$, en el óptimo: $\displaystyle \text{TMS} (x^\star, y^\star) = \frac{p_x}{p_y}$.
+\item Si $x^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, \frac{I}{p_y}\right) \le \frac{p_x}{p_y}$.
+\item Si $y^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(\frac{I}{p_x}, 0\right) \ge \frac{p_x}{p_y}$.
+\end{bulletlist}
+
+\begin{boxdef}[Demandas marshalianas]
+A la solución óptima del problema marshaliano $(X^\star)$ se les conoce como \textbf{demandas marshalianas} y usualmente se denotan:
+\[
+	x_i^\star = X_i^M (P, I)
+.\] 
+\end{boxdef}
+
+\begin{boxdef}[Función de utilidad indirecta]
+	La \textbf{función de utilidad indirecta}, denotada $V(P, I)$, es la función valor del problema marshaliano:
+	\[
+		V(P, I) = u(X_1^M(P, I), \ldots, X_n^M(P, I))
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Ley de Walrás]
+	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función de utilidad monótona, entonces, en la solución óptima $(X^\star)$, se cumple:
+	\[
+	\sum_{i=1}^{p} p_i x_i^\star = I
+	.\] 
+\end{boxtheo}
+
+\begin{boxtheo}[Condiciones de Inada]
+	Sea $u : \mathbb{R}^2_+ \to \mathbb{R}$ una función de utilidad monótona y diferenciable.
+	\begin{eqlist}
+	\item $\displaystyle \lim_{x \to 0} \text{TMS} (x, y) = \infty \implies x^\star > 0$,
+	\item $\displaystyle \lim_{y \to 0} \text{TMS} (x, y) = 0 \implies y^\star > 0$.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxtheo}[Teorema de unicidad]
+	Sea $u : \mathbb{R}^2_+ \to \mathbb{R}$ una función estrictamente cuasicóncava, entonces la solución al problema marshaliano es única.
+\end{boxtheo}
+
+\begin{boxlemma}[Identidades de Roy]
+	Sea $V(P, I)$ diferenciable, entonces:
+	\[
+	X^M_i = - \frac{\displaystyle \frac{\partial V}{\partial p_{i}}}{ \displaystyle \frac{\partial V}{\partial I}}, \quad \forall i = 1, \ldots, n
+	.\] 
+\end{boxlemma}
+
+\subsection{Propiedades de la función de utilidad indirecta}
+
+\begin{eqlist}
+\item Homogénea de grado cero en precios e ingreso, i.e. $V(\lambda P, \lambda I) = V(P, I)$.
+\item No-creciente ante aumentos en precios, \\ i.e. $\displaystyle \frac{\partial V}{\partial p_i} (P, I) \leq 0$.
+\item No-decreciente ante aumentos en ingreso, \\ i.e. $\displaystyle \frac{\partial V}{\partial I} (P, I) \geq 0$.
+\end{eqlist}
+
+\subsection{Propiedades de las demandas marshalianas}
+
+\begin{eqlist}
+\item Homogéneas de grado cero en precios e ingreso, i.e. $X^M (\lambda P, \lambda I) = X^M(P, I)$.
+\item Se cumplen las \textbf{identidades de Roy}.
+\end{eqlist}
+
+\subsection{Estática comparativa}
+
+\begin{boxdef}[Elasticidad]
+	Dado un parámetro $P \in \{ p_1,\ldots, p_n, I \}$, la \textbf{elasticidad} del bien $X$ respecto al parámetro $P$ se define como:
+	\[
+		\E_{X, P} (p_1,\ldots, p_n, I) = \frac{\partial X^M}{\partial P} \cdot \frac{P}{X^M}
+	.\] 
+\end{boxdef}
+
+\subsubsection*{Elasticidad precio propio}
+
+Se dice que el bien $X$ es:
+
+\begin{eqlist}
+\item \textbf{ordinario} si $ \E_{X_i, p_i} < 0$.
+\item \textbf{inelástico} si $\E_{X_i, p_i} = 0$.
+\item \textbf{de Giffen} si $\E_{X_i, p_i} > 0$.
+\end{eqlist}
+
+\subsubsection*{Elasticidad precio cruzado}
+
+Se dice que el bien $X_i$ es:
+
+\begin{eqlist}
+\item \textbf{complemento} de $X_j$ si $\E_{X_i, p_j} < 0$.
+\item \textbf{independiente} de $X_j$ si $\E_{X_i, p_j} = 0$.
+\item \textbf{sustituto} de $X_j$ si $\E_{X_i, p_j} > 0$.
+\end{eqlist}
+
+\subsubsection*{Elasticidad ingreso}
+
+Se dice que el bien $X$ es:
+
+\begin{eqlist}
+\item \textbf{inferior} si $\E_{X, I} < 0$.
+\item \textbf{neutro} si $\E_{X, I} = 0$.
+\item \textbf{normal} si $\E_{X, I} > 0$.
+\end{eqlist}
+
+\subsection{Agregaciones del problema marshaliano}
+
+\begin{boxdef}[Gasto del consumidor]
+	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función monótona, el \textbf{gasto} de un consumidor en el bien $X$ se define como:
+	\[
+	S_i = \frac{p_i X_i^M}{I}
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Agregación de Engel]
+	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función de utilidad monótona, entonces:
+	\[
+		\sum_{i = 1}^{n} S_{{i}} \E_{x_i, I} = 1
+	.\] 
+\end{boxtheo}
+
+\begin{boxtheo}[Agregación de Cournot]
+	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función de utilidad monótona, entonces:
+	\[
+		\sum_{i = 1}^{n} S_{i} \E_{x_i, p_{1}} = - S_{1}
+	.\] 
+\end{boxtheo}
+
+\begin{boxtheo}[Agregación de Euler]
+	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función de utilidad, se cumple:
+	\[
+		\E_{x_1, I} + \sum_{i=1}^{n} \E_{x_1, p_{i}} = 0
+	.\] 
+\end{boxtheo}
+
+\newpage
+
+\section{Demanda compensada}
+
+\begin{equation*}
+\begin{aligned}
+	\min_{\{x_1, \ldots, x_n\}}\	  & \sum_{i=1}^{n} p_i x_i \\
+	\text{sujeto a} \quad & \bar{u} \le u(x_1, \ldots, x_n), \\
+						  & 0 \le x_1, \\
+						  & \quad \vdots \\
+						  & 0 \le x_n.
+\end{aligned}
+\end{equation*}
+
+\begin{boxdef}[Curvas de isogasto]
+Una \textbf{curva de isogasto} nivel $k$ se define como aquellas canastas que, con precios dados, representan el mismo gasto. \\
+$$\text{\normalfont IG}_k = \{(x_1, \ldots, x_n)  \mid p_1 x_1 +\ \cdots\ + p_n x_n = k\}.$$
+\end{boxdef}
+
+\subsubsection*{Soluciones del modelo}
+
+Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $u(x, y) = \bar{u}$, entonces:
+
+\begin{bulletlist}
+\item Si $x^\star, y^\star > 0$, en el óptimo: $\displaystyle \text{TMS} (x^\star, y^\star) = \frac{p_x}{p_y}$.
+\item Si $x^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, y^\star \right) \le \frac{p_x}{p_y}$.
+\item Si $y^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(x^\star, 0\right) \ge \frac{p_x}{p_y}$.
+\end{bulletlist}
+
+\begin{boxdef}[Demandas compensadas]
+	A la solución óptima del problema compensado $(X^\star)$ se les conoce como \textbf{demandas compensadas} o \textbf{demandas hicksianas} y usualmente se denotan:
+\[
+	x_i^\star = X_i^C (P, \bar{u})
+.\] 
+\end{boxdef}
+
+\begin{boxdef}[Función de gasto mínimo]
+	La \textbf{función de gasto mínimo}, denotada $E(P, \bar{u})$, es la función valor del problema compensado:
+	\[
+		E(P, \bar{u}) = \sum_{i=1}^{n} p_i X_i^C
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Ley de la demanda compensada]
+	Cualquier demanda compensada es no-creciente en su propio precio y no-decreciente en el precio cruzado. \\
+	$$\text{i.e.} \quad \frac{\partial X_i^C}{\partial p_i} \le 0; \; \frac{\partial X_i^C}{\partial p_j} \ge 0, \quad \forall i \neq j.$$
+\end{boxtheo}
+
+\begin{boxlemma}[Lema de Shephard]
+	\[
+	X^C_i = \frac{\partial E}{\partial p_i}, \quad \forall i = 1, \ldots, n
+	.\] 
+\end{boxlemma}
+
+\subsection{Propiedades de la función de gasto mínimo}
+
+\begin{eqlist}
+\item Homogénea de grado uno en precios, \\ i.e. $E(\lambda P, \bar{u}) = \lambda E (P, \bar{u})$.
+\item No-decreciente ante aumentos en utilidad, \\ i.e. $\displaystyle \frac{\partial E}{\partial \bar{u}} (P, \bar{u}) \geq  0$.
+\item No-decreciente ante aumentos en precios, \\ i.e. $\displaystyle \frac{\partial E}{\partial p_i} (P, \bar{u}) \geq 0$.
+\item Cóncava en precios, i.e. $\displaystyle \frac{\partial^2 E}{\partial p_i^2} (P, \bar{u}) \le 0$.
+\end{eqlist}
+
+\subsection{Propiedades de las demandas compensadas}
+
+\begin{eqlist}
+\item Homogéneas de grado cero en precios, \\ i.e. $X^C (\lambda P, \bar{u}) = X^C (P, \bar{u})$.
+\item Se cumple, por obvias razones, la \textbf{Ley de la demanda compensada}.
+\item Se cumple el \textbf{Lema de Shephard}.
+\item Existe simetría en efectos cruzados, \\ i.e. $\displaystyle \frac{\partial X_i^C}{\partial p_j} = \frac{\partial X_j^C}{\partial p_i}$.
+\end{eqlist}
+
+\subsection{Dualidad}
+
+A las relaciones entre los modelos marshaliano y compensado se les conoce como \textbf{relaciones de dualidad}.
+
+\begin{eqlist}
+\item $E (P,\ V(P, I))=I$.
+\item $X_i^C (P,\ V(P, I)) = X_i^M (P, I)$.
+\item $V(P,\ E(P, \bar{u})) = \bar{u}$.
+\item $X_i^M (P,\ E(P, \bar{u})) = X_i^C (P, \bar{u})$.
+\item $\mu_R^M = \displaystyle \left(\mu_R^C\right)^{-1}$.
+\end{eqlist}
+
+\begin{boxprop}
+	Sea $u(X)$ una función de utilidad homotética y monótona, entonces $x_1, \ldots, x_n \in X$ son bienes normales.
+\end{boxprop}
+
+\begin{boxtheo}[Ecuación de Slutsky]
+	Sea $u$ una función de utilidad monótona, entonces:
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial X^M_i}{\partial p_i} (P, I)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial X^C_i}{\partial p_i} (P, \bar{u})}^{\text{Efecto sustitución}} \\
+		& \underbrace{ - \quad\ \frac{\partial X_i^M}{\partial I} (P, I)\ X^M_i (P,I)}_{\text{Efecto ingreso}},
+	\end{aligned}
+	\end{equation*}
+	
+	y
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial X^M_i}{\partial p_j} (P, I)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial X^C_i}{\partial p_j} (P, \bar{u})}^{\text{Efecto sustitución}} \\
+		& \underbrace{ - \quad\ \frac{\partial X_i^M}{\partial I} (P, I)\ X^M_j (P,I)}_{\text{Efecto ingreso}}
+	\end{aligned}
+	\end{equation*} 
+
+	para toda $i \neq j$. En términos de elasticidades:
+
+	\begin{eqlist}
+	\item $\E_{X_i^M, p_i} = \E_{X_i^C, p_i} - S_i ( \E_{X_i^M, I})$ (efecto directo);
+	\item $\E_{X_i^M, p_j} = \E_{X_i^C, p_j} - S_j ( \E_{X_i^M, I})$ (efecto cruzado).
+	\end{eqlist}
+
+\end{boxtheo}
+
+\begin{boxdef}[Efecto sustitución]
+	Dado algún cambio en los precios (\emph{i.e.} $P \neq \hat{P}$), el \textbf{efecto sustitución} se puede calcular, de forma algebraica, como sigue:
+	\[
+	\text{\normalfont ES} = X^C (\hat{P},\ V(P, I)) - X^M(P, I)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Efecto ingreso]
+	Dado algún cambio en los precios (\emph{i.e.} $P \neq \hat{P}$), el \textbf{efecto ingreso} se puede calcular, de forma algebraica, como sigue:
+	\[
+		\text{\normalfont EI} = X^M(\hat{P}, I) - X^C(\hat{P},\ V(P, I))
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}
+	Entre las demandas marshaliana y compensada se mantiene la siguiente relación:
+	\[
+		\frac{\partial X^C}{\partial \bar{u}} (P, \bar{u}) = \frac{\partial X^M}{\partial I} (P, I) \mu_R
+	.\] 
+\end{boxtheo}
+
+\newpage
+
+\section{Medidas de bienestar}
+
+\begin{boxdef}[Variación compensatoria]
+	La \textbf{variación compensatoria} mide el cambio en el ingreso que un consumidor debería recibir ante un cambio en precios para que, con los precios finales, sea capaz de alcanzar el mismo nivel de utilidad inicial.
+	\[
+		\text{\normalfont i.e.}\quad \text{ \normalfont VC} (P, \hat{P}, I) = E(\hat{P}, \, V(P, I)) - I
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Variación equivalente]
+	La \textbf{variación equivalente} mide el cambio en el ingreso que un consumidor debería recibir ante un cambio en precios para que, con los precios iniciales, sea capaz de alcanzar el nivel de utilidad final.
+	\[
+		\text{\normalfont i.e.}\quad \text{ \normalfont VE} (P, \hat{P}, I) = E(P, \, V(\hat{P}, I)) - I
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Teorema de Hicks]
+	\begin{equation*}
+	\begin{aligned}
+		\text{VC} & = \int_{p_i^{(0)}}^{p_i^{(1)}} X_i^C (P, u_0) dp_i\\
+		\text{VE} & = \int_{p_i^{(1)}}^{p_i^{(0)}} X_i^C (P, u_1) dp_i
+	\end{aligned}
+	\end{equation*}
+	donde $u_i = V(p_i, I)$.
+\end{boxtheo}
+
+\begin{boxdef}[Excendente del consumidor]
+	El \textbf{excedente del consumidor} es la diferencia entre el precio que pagan los consumidores y el precio que están dispuestos a pagar.
+	\[
+		\text{\normalfont i.e. \quad EC}(P, I) = \int_{p_i}^{\infty} X_i^M (P, I) dp_i
+	.\]
+	Asimismo, podemos definir el cambio en excendente del consumidor como sigue:
+	\[
+		\Delta \text{\normalfont EC} = \int_{p_i^{(0)}}^{p_i^{(1)}} X_i^M (P, I) dp_i
+	.\] 
+\end{boxdef}
+
+\newpage
+
+\section{Demanda walrasiana}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{x_1, \ldots, x_n\}}\	  & u(x_1, \ldots, x_n) \\
+	\text{sujeto a} \quad & \sum_{i=1}^{n} p_i x_i \le \sum_{i=1}^{n} p_i \bar{x}_i, \\
+						  & 0 \le x_1, \\
+						  & \quad \vdots \\
+						  & 0 \le x_n.
+\end{aligned}
+\end{equation*}
+
+\begin{boxdef}[Ingreso walrasiano]
+	Definimos el \textbf{ingreso walrasiano} como sigue:
+	\[
+		I^W = \langle P, \bar{X} \rangle = \sum_{i=1}^n p_i \bar{x}_i
+	.\] 
+\end{boxdef}
+
+\subsubsection*{Soluciones del modelo}
+
+Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $p_x x^\star + p_y y^\star = p_x \bar{x} + p_y \bar{y}$, entonces:
+
+\begin{bulletlist}
+\item Si $x^\star, y^\star > 0$, en el óptimo: $\displaystyle \text{TMS} (x^\star, y^\star) = \frac{p_x}{p_y}$.
+\item Si $x^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, \frac{I^W}{p_y}\right) \le \frac{p_x}{p_y}$.
+\item Si $y^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(\frac{I^W}{p_x}, 0\right) \ge \frac{p_x}{p_y}$.
+\end{bulletlist}
+
+\begin{boxdef}[Demandas walrasianas]
+A la solución óptima del problema walrasiano $(X^\star)$ se les conoce como \textbf{demandas walrasianas} y usualmente se denotan:
+\[
+	x_i^\star = X_i^W (P, \bar{X})
+.\] 
+\end{boxdef}
+
+\begin{boxdef}[Función de utilidad indirecta walrasiana]
+	La \textbf{función de utilidad indirecta walrasiana}, denotada $V(P, \bar{X})$, es la función valor del problema walrasiano:
+	\[
+		V(P, \bar{X}) = u(X_1^W(P, \bar{X}), \ldots, X_n^W(P, \bar{X}))
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Demandas netas]
+	Las \textbf{demandas netas} se definen como:
+	\[
+		X_i^N (P, \bar{X}) = X_i^W (P, \bar{X}) - \bar{x}_i
+	.\] 
+\end{boxdef}
+
+\subsection{Propiedades de la función de utilidad indirecta walrasiana}
+
+\begin{eqlist}
+\item Homogénea de grado cero en precios, \\ i.e. $V^W (\lambda P, \bar{X}) = V^W (P, \bar{X})$.
+\item No-decreciente ante aumentos en la dotación, \\ i.e. $\displaystyle \frac{\partial V^W}{\partial \bar{x}_i} \geq 0$.
+\item El signo de impacto en precios de la utilidad indirecta depende del signo de la demanda neta, \\ i.e. $\displaystyle \frac{\partial V}{\partial p_i} = - \mu_R^W X_i^N (P, \bar{X})$.
+\end{eqlist}
+
+\subsection{Propiedades de las demandas walrasianas}
+
+\begin{eqlist}
+\item Homogéneas de grado cero en precios, \\ i.e. $X^W (\lambda P, \bar{X}) = X^W (P, \bar{X})$.
+\item Se cumplen las \textbf{identidades de Roy}, \\ i.e. $\displaystyle X^N_i = \frac{\displaystyle \frac{\partial V^W}{\partial p_{i}}}{ \displaystyle \frac{\partial V^W}{\partial \bar{x}_i}} P_i, \quad \forall i = 1, \ldots, n$.
+\end{eqlist}
+
+\subsection{Dualidad}
+
+A las relaciones entre los modelos marshaliano y walrasiano se les conoce como \textbf{relaciones de dualidad}.
+
+\begin{eqlist}
+\item $ \displaystyle I^W = I$.
+\item $X^W_i (P, \bar{X}) = X^M_i (P, I)$.
+\item $V^W(P, \bar{X}) = V(P, I)$.
+\end{eqlist}
+
+\begin{boxtheo}[Ecuación de Slutsky]
+	Sea $u$ una función de utilidad monótona, entonces:
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial X^W_i}{\partial p_i} (P, \bar{X})}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial X^C_i}{\partial p_i} (P, \bar{u})}^{\text{Efecto sustitución}} \\
+																						   & \underbrace{ - \quad\ \frac{\partial X_i^M}{\partial I} (P, I)\ X^N_i (P,\bar{X})}_{\text{Efecto ingreso neto}},
+	\end{aligned}
+	\end{equation*}
+	
+	y
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial X^W_i}{\partial p_j} (P, \bar{X})}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial X^C_i}{\partial p_j} (P, \bar{u})}^{\text{Efecto sustitución}} \\
+																						   & \underbrace{ - \quad\ \frac{\partial X_i^M}{\partial I} (P, I)\ X^N_j (P,\bar{X})}_{\text{Efecto ingreso neto}}
+	\end{aligned}
+	\end{equation*} 
+
+	para toda $i \neq j$.
+\end{boxtheo}
+
+\subsection{Parámetros de decisión}
+
+\subsubsection*{Demandas netas}
+
+\begin{eqlist}
+\item Si $X_i^N < 0$, entonces el consumidor vende $x_i$.
+\item Si $X_i^N = 0$, entonces el consumidor consume su dotación de $x_i$.
+\item Si $X_i^N > 0$, entonces el consumidor compra $x_i$.
+\end{eqlist}
+
+\subsubsection*{Dotaciones}
+
+\begin{eqlist}
+\item Si $\text{TMS} (\bar{x}_i, \bar{x}_j) < \nicefrac{p_i}{p_j}$, entonces el consumidor vende $x_i$ y compra $x_j$.
+\item Si $\text{TMS} (\bar{x}_i, \bar{x}_j) > \nicefrac{p_i}{p_j}$, entonces el consumidor compra $x_i$ y vende $x_j$.
+\end{eqlist}
+
+\subsubsection*{Cambios en utilidad}
+
+\begin{eqlist}
+\item Si $\displaystyle \frac{\partial V}{\partial p_i} < 0$, entonces el consumidor vende $x_i$.
+\item Si $\displaystyle \frac{\partial V}{\partial p_i} > 0$, entonces el consumidor compra $x_i$.
+\end{eqlist}
+
+\newpage
+
+\section{Modelo ocio-consumo}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{h, c\}}\	  & u(h, c) \\
+	\text{sujeto a} \quad & c \le I^{\text{NL}} + w(T - h), \\
+						  & h \le T, \\
+						  & 0 \le h, c.
+\end{aligned}
+\end{equation*}
+
+\begin{center}
+\begin{tabular}{ c l }
+	\hline
+	$h$ & Tiempo dedicado al ocio \\
+	$c$ & Consumo \\
+	$T$ & Tiempo total \\
+	$w$ & Salario \\
+	$I^{\text{NL}}$ & Ingreso no-laboral \\
+	\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Solución al modelo}
+
+Dada la función de utilidad $u (h, c)$ y al suponer que, en el óptimo, $c = I^{\text{NL}} - hw$, entonces:
+
+\begin{bulletlist}
+\item Si $h^\star, c\star > 0$, en el óptimo: $\text{TMS} (h^\star, c^\star) = w$.
+\end{bulletlist}
+
+\begin{boxdef}[Demanda de consumo]
+	La \textbf{demanda de consumo} es una de las soluciones al modelo ocio-consumo y se denota:
+	\[
+		c^W(w, I^{\text{\normalfont NL}})
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Demanda de ocio]
+	La \textbf{demanda de ocio} es una de las soluciones al modelo ocio-consumo y se denota:
+	\[
+		h^W(w, I^{\normalfont NL})
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Oferta laboral]
+	La \textbf{oferta laboral} del consumidor está determinada por:
+	\[
+		l(w, I^{\normalfont NL}) = T - h^W(w, I^{\normalfont NL})
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Salario de reserva]
+	El \textbf{salario de reserva} del consumidor está dado por:
+	\[
+		w^R = \text{\normalfont TMS} (T, I^{\text{\normalfont NL}})
+	.\] 
+\end{boxdef}
+
+\sectionbreak
+
+\subsection{Dualidad}
+
+En el modelo ocio-consumo se cumplen las siguientes \textbf{relación de dualidad}:
+
+\begin{eqlist}
+\item $h^W(w, I^{\text{NL}}) = h^M (w, I^{\text{NL}} + wT)$,
+\item $c^W(w, I^{\text{NL}}) = c^M (w, I^{\text{NL}} + wT)$.
+\end{eqlist}
+
+\begin{boxtheo}[Ecuación de Slutsky]
+	Sea $u(h, c)$ una función de utilidad monótona, entonces:
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial h^W}{\partial w} (w, I^{\text{NL}})}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial h^C}{\partial w} (w, \bar{u})}^{\text{Efecto sustitución}} \\
+																						   & \underbrace{ + \quad\ \frac{\partial h^M}{\partial l} (w, I^{\text{NL}} + wT)\ l (w, I^{\text{NL}})}_{\text{Efecto ingreso neto}},
+	\end{aligned}
+	\end{equation*}
+	
+	y
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial c^W}{\partial w} (w, I^{\text{NL}})}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial c^C}{\partial w} (w, \bar{u})}^{\text{Efecto sustitución}} \\
+																						   & \underbrace{ + \quad\ \frac{\partial c^M}{\partial l} (w, I^{\text{NL}} + wT)\ l (w, I^{\text{NL}})}_{\text{Efecto ingreso neto}}.
+	\end{aligned}
+	\end{equation*}
+\end{boxtheo}
+
+\sectionbreak
+
+\subsection{Parámetros de decisión}
+
+\subsubsection*{Salario de reserva}
+
+\begin{eqlist}
+\item Si $ w^R < w $, entonces el consumidor decidirá trabajar.
+\item Si $ w^R > w $, entonces el consumidor demandará $T$ horas al ocio.
+\end{eqlist}
+
+\subsubsection*{Cambios en utilidad}
+
+\begin{eqlist}
+\item Si $\displaystyle \frac{\partial V}{\partial w} = \mu_R l < 0$, entonces el consumidor tendrá mayor afinidad al trabajo.
+\item Si $\displaystyle \frac{\partial V}{\partial w} = \mu_R l > 0$, entonces el consumidor tendrá mayor afinidad al ocio.
+\end{eqlist}
+
+\newpage
+
+\section{Modelo de consumo intertemporal}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{c_0, \ldots, c_n\}}\	  & u(c_0, \ldots, c_n) \\
+	\text{sujeto a} \quad & c_n \le \left(\sum_{t=0}^{n-1} (1 + r_t)(I_t - c_t) \right) + I_n, \\
+						  & 0 \le c_0, \\
+						  & \quad \vdots \\
+						  & 0 \le c_n.
+\end{aligned}
+\end{equation*}
+
+\begin{center}
+\begin{tabular}{ c l }
+	\hline
+	$c_t$ & Consumo en el período $t$ \\
+	$I_t$ & Ingreso en el período $t$ \\
+	$r_t$ & Tasa de interés en el período $t$ \\
+	\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Solución al modelo}
+
+Dada la función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $c_1 = I_1 + (1 + r_0) (I_0 - c_0)$, entonces:
+
+\begin{bulletlist}
+\item Si $c_0^\star, c_1\star > 0$, en el óptimo: $\text{TMS} (c_0^\star, c_1^\star) = 1 + r_0$.
+\end{bulletlist}
+
+\begin{boxdef}[Demanda de consumo en período $t$]
+	Las \textbf{demandas de consumo} son las soluciones al modelo de consumo intertemporal y se denotan:
+	\[
+		c_t(r_0, \ldots, r_{n-1}; I_0, \ldots, I_n)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Ahorro]
+	El \textbf{ahorro} del consumidor en período $t$ está determinado por:
+	\[
+		s_t = I_t - c_t
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}
+	Definimos $\tilde{r}_t$ como la \textbf{tasa de interés} tal que el consumidor no quiere ahorrar ni pedir prestado en el período $t$:
+	\[
+		\tilde{r}_t = \text{\normalfont TMS} (I_t, I_{t+1})
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Ecuación de Slutsky]
+	Sea $u$ una función de utilidad monótona, entonces:
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial c_t}{\partial r_t} (R, I)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial c_t^C}{\partial r_t} (R, \bar{u})}^{\text{Efecto sustitución}} \\
+																						   & \underbrace{ + \quad\ \frac{\partial c_t^M}{\partial r_t} (R, I)\ s_t (R, I)}_{\text{Efecto ingreso neto}},
+	\end{aligned}
+	\end{equation*}	
+
+	y
+
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial c_{t+1}}{\partial r_t} (R, I)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial c_{t+1}^C}{\partial r_t} (R, \bar{u})}^{\text{Efecto sustitución}} \\
+																					   & \underbrace{ + \quad\ \frac{\partial c_{t+1}^M}{\partial r_t} (R, I)\ s_t (R, I)}_{\text{Efecto ingreso neto}}.
+	\end{aligned}
+	\end{equation*}	
+	
+\end{boxtheo}
+
+\sectionbreak
+
+\subsection{Parámetros de decisión}
+
+\subsubsection*{Ahorro}
+
+\begin{eqlist}
+\item Si $s_t < 0$, entonces el consumidor es deudor en período $t$.
+\item Si $s_t = 0$, entonces el consumidor no ahorra ni pide prestado.
+\item Si $s_t > 0$, entonces el consumidor es ahorrador en período $t$.
+\end{eqlist}
+
+\subsubsection*{Tasa de interés}
+
+\begin{eqlist}
+\item Si $ \tilde{r} < r $, entonces el consumidor decidirá endeudarse en período $t$.
+\item Si $ \tilde{r} > r $, entonces el consumidor decidirá ahorrar en período $t$.
+\end{eqlist}
+
+\subsubsection*{Cambios en utilidad}
+
+\begin{eqlist}
+\item Si $\displaystyle \frac{\partial V}{\partial r_t} = \mu_R s_t < 0$, entonces el consumidor tendrá mayor afinidad a endeudarse.
+\item Si $\displaystyle \frac{\partial V}{\partial r_t} = \mu_R s_t > 0$, entonces el consumidor tendrá mayor afinidad a ahorrar.
+\end{eqlist}
+
+\newpage
+
+\section{Decisiones de la empresa}
+
+\begin{boxdef}[Función de producción]
+	La \textbf{función de producción} describe la relación entre la producción de bienes y la cantidad de insumos (capital y trabajo) requeridos para la misma, en este caso:
+	\[
+		f: \mathbb{R}^2 \to \mathbb{R} \quad \text{dada por alguna} \quad f(l, k)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Isocuanta]
+Una \textbf{curva isocuanta} nivel $k$ se define como aquellas canastas que, con precios dados, producen la misma cantidad $\bar{q}$. \\
+$$\text{\normalfont IC}_k = \{(l, k) \in \mathbb{R}^2_{++} \mid f(l, k) = \bar{q} \}.$$
+\end{boxdef}
+
+\begin{boxdef}[Producto marginal]
+	La \textbf{productividad marginal} de un insumo mide el cambio en la producción de la empresa ante un cambio marginal en dicho insumo.
+	\[
+		\text{\normalfont i.e. PMg}_L = \frac{\partial f}{\partial l} (l, k)\ \text{\normalfont y PMg}_K = \frac{\partial f}{\partial k} (l, k)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Tasa marginal de sustitución técnica]
+	La \textbf{tasa marginal de sustitución técnica} $\text{\normalfont TMST} (l, k) $ mide el número de unidades de capital que se está dispuesto a sacrificar por una unidad adicional de trabajo manteniendo la producción constante.
+	\[
+		\text{\normalfont i.e. TMST}(l,k) = \frac{\text{\normalfont PMg}_L (l, k)}{\text{\normalfont PMg}_K (l, k)}
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Producto medio]
+	La \textbf{productividad media} de un insumo mide la cantidad promedio que produce cada unidad de dicho insumo.
+	\[
+		\text{\normalfont i.e. PMe}_L = \frac{f (l, k)}{l}\ \text{\normalfont y PMe}_K = \frac{f (l, k)}{k}
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Rendimientos decrecientes]
+	Decimos que $f(l, k)$ tiene rendimientos decrecientes a escala si $f(\lambda l, \lambda k) < \lambda f(l, k)$,\; $\forall l, k \ge 0$ y $\forall \lambda > 1$.
+\end{boxtheo}
+
+\begin{boxtheo}[Rendimientos constantes]
+	Decimos que $f(l, k)$ tiene rendimientos constantes a escala si $f(\lambda l, \lambda k) = \lambda f(l, k)$,\; $\forall l, k \ge 0$ y $\forall \lambda > 1$.
+\end{boxtheo}
+
+\begin{boxtheo}[Rendimientos crecientes]
+	Decimos que $f(l, k)$ tiene rendimientos crecientes a escala si $f(\lambda l, \lambda k) > \lambda f(l, k)$,\; $\forall l, k \ge 0$ y $\forall \lambda > 1$.
+\end{boxtheo}
+
+\begin{boxprop}
+	Decimos que $f(l, k)$ tiene rendimientos decrecientes a escala si y solo si la productividad media de los insumos es decreciente.
+\end{boxprop}
+
+\begin{boxprop}                                                                                                                                  
+    Decimos que $f(l, k)$ tiene rendimientos constantes a escala si y solo si la productividad media de los insumos es constante.        
+\end{boxprop}
+
+\begin{boxprop}                                                                                                                                  
+    Decimos que $f(l, k)$ tiene rendimientos crecientes a escala si y solo si la productividad media de los insumos es creciente.        
+\end{boxprop}
+
+\newpage
+
+\subsection{Minimización de costos}
+
+\begin{equation*}
+\begin{aligned}
+    \min_{\{l, k\}}\      & wl + rk \\
+    \text{sujeto a} \quad & 0 \le l, \\
+                        ¦ & 0 \le k, \\
+						¦ & \bar{q} \le f(l, k).
+\end{aligned}
+\end{equation*}
+
+\begin{center}
+\begin{tabular}{ c l }
+    \hline
+	$f(l, k)$ & Función de producción \\
+    $k$ & Capital \\
+    $l$ & Trabajo \\
+	$\bar{q}$ & Oferta mínima \\
+	$r$ & Tasa de interés (precio del capital) \\
+	$w$ & Salario (precio del trabajo) \\
+    \hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Soluciones del modelo}
+
+Dada una función de producción $f(l, k)$ y al suponer que, en el óptimo, $f(l^\star, k^\star) = \bar{q}$, entonces:
+
+\begin{bulletlist}
+\item Si $l^\star, k^\star > 0$, en el óptimo: $\displaystyle \text{TMST} (l^\star, k^\star) = \frac{w}{r}$.
+\item Si $l^\star = 0$, en el óptimo: $\displaystyle \text{TMST} \left(0, k^\star \right) < \frac{w}{r}$.
+\item Si $k^\star = 0$, en el óptimo: $\displaystyle \text{TMST} \left(l^\star , 0\right) > \frac{w}{r}$.
+\end{bulletlist}
+
+\begin{boxdef}[Demandas contingentes]
+A la solución óptima del problema de minimización de costos $(l^\star, k^\star)$ se les conoce como \textbf{demandas contingentes de insumos} y usualmente se denotan:
+\[
+	l^\star = l^c (w, r, \bar{q}) \qquad k^\star = k^c (w, r, \bar{q})
+\] 
+\end{boxdef}
+
+\begin{boxdef}[Función de costo mínimo]
+La \textbf{función de costo mínimo}, denotada $C(w, r, \bar{q})$, es la función valor del problema minimización de costos:
+	\[
+		C(w, r, \bar{q}) = w l^c (w, r, \bar{q}) + r k^c (w, r, \bar{q})
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[Ley de la demanda contingente]
+	Sean $l^c (w, r, \bar{q})$ y $k^c (w, r, \bar{q})$, entonces cada insumo es no-creciente ante cambios en su propio precio y no-decreciente ante cambios en el precio cruzado.
+	\[
+		\text{i.e.}\quad \frac{\partial l^c}{\partial w} \le 0,\ \frac{\partial k^c}{\partial r} \le 0;\; \frac{\partial l^c}{\partial r} \ge 0,\ \frac{\partial k^c}{\partial w} \ge 0
+	.\] 
+\end{boxtheo}
+
+\begin{boxlemma}[Lema de Shephard]
+	\[
+		l^c (w, r, \bar{q}) = \frac{\partial C(w, r, \bar{q})}{\partial w} \qquad k^c (w, r, \bar{q}) = \frac{\partial C(w, r, \bar{q})}{\partial r}
+	\] 
+\end{boxlemma}
+
+\subsubsection{Propiedades de la función de costo mínimo}
+
+\begin{eqlist}
+\item Homogénea de grado uno en precios, \\ i.e. $C(\lambda w, \lambda r, \bar{q}) = \lambda C(w, r, \bar{q}) $.
+\item Creciente ante aumentos en cantidad, i.e. $\displaystyle \frac{\partial C}{\partial \bar{q}} > 0 $.
+\item No-decreciente ante aumentos en precios, \\ i.e. $\displaystyle \frac{\partial C}{\partial w} \ge 0$ y $\displaystyle \frac{\partial C}{\partial r} \ge 0$.
+\item Cóncava en precios, \\ i.e. $\displaystyle \frac{\partial^2 C}{\partial w^2} \le 0$ y $\displaystyle \frac{\partial^2 C}{\partial r^2} \le 0$.
+\end{eqlist}
+
+\subsubsection{Propiedades de las demandas contingentes de insumos}
+
+\begin{eqlist}
+\item Homogéneas de grado cero en precios, \\ i.e. $l^c (\lambda w, \lambda r, \bar{q}) = l^c (w, r, \bar{q})$ y $k^c (\lambda w, \lambda r, \bar{q}) = k^c (w, r, \bar{q})$.
+\item Se cumple la \textbf{ley de la demanda contingente}.
+\item Se cumple el \textbf{lema de Shephard}.
+\item Existe simetría en efectos cruzados, i.e. $\displaystyle \frac{\partial l^c}{\partial r} = \frac{\partial k^c}{\partial w}$.
+\end{eqlist}
+
+\begin{boxdef}[Costo marginal]
+	El \textbf{costo marginal} mide el cambio en los costos ante un cambio marginal en la producción.
+	\[
+		\text{\normalfont i.e. CMg} (w, r, \bar{q}) = \frac{\partial C (w, r, \bar{q})}{\partial \bar{q}}
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Costo medio]
+	El \textbf{costo medio} mide los costos promedio de producir cada unidad.
+	\[
+		\text{\normalfont i.e. CMe} (w, r, \bar{q}) = \frac{C(w, r, \bar{q})}{\bar{q}}
+	.\] 
+\end{boxdef}
+
+\sectionbreak
+
+\begin{boxprop}
+	Decimos que $f(l, k)$ tiene rendimientos decrecientes a escala si y solo si el costo medio es creciente.
+\end{boxprop}
+
+\begin{boxprop}                                                                                                                                  
+    Decimos que $f(l, k)$ tiene rendimientos constantes a escala si y solo si el costo medio es constante.        
+\end{boxprop}
+
+\begin{boxprop}                                                                                                                                  
+    Decimos que $f(l, k)$ tiene rendimientos crecientes a escala si y solo si el costo medio es decreciente.        
+\end{boxprop}
+
+\subsubsection*{Relación entre el costo marginal y el costo medio}
+
+\begin{eqlist}
+\item Si CMg $<$ CMe, entonces $\displaystyle \frac{\partial \text{CMe}}{\partial \bar{q}} (w, r, \bar{q}) < 0$.
+\item Si CMg $=$ CMe, entonces $\displaystyle \frac{\partial \text{CMe}}{\partial \bar{q}} (w, r, \bar{q}) = 0$.
+\item Si CMg $>$ CMe, entonces $\displaystyle \frac{\partial \text{CMe}}{\partial \bar{q}} (w, r, \bar{q}) > 0$.
+\end{eqlist}
+
+\begin{boxcor}
+	Sea $f$ una función de producción y $\bar{q} = f(l, k)$, entonces:
+	\[
+		\text{CMe} (w, r, \bar{q}) = \frac{w}{\text{PMe}_L (l^c, k^c)} + \frac{r}{\text{PMe}_K (l^c, k^c)}
+	.\] 
+\end{boxcor}
+
+\newpage
+
+\subsection{Maximización de beneficios}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{q\}}\         & pq - C(w, r, \bar{q}) \\
+    \text{sujeto a} \quad & 0 \le q.
+\end{aligned}
+\end{equation*}
+
+\begin{center}
+\begin{tabular}{ c l }
+    \hline
+	$C(w, r, \bar{q})$ & Función de costo mínimo \\
+    $p$ & Precio de mercado \\
+    $q$ & Oferta \\
+    \hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Solución del modelo}
+
+Dada una función de costo mínimo $C (w, r, \bar{q})$, entonces:
+
+\begin{bulletlist}
+\item Si $q^\star = 0$, en el óptimo: $p \le \text{CMg} (w, r, 0)$.
+\item Si $q^\star > 0$, en el óptimo: $p = \text{CMg} (w, r, q^\star)$.
+\end{bulletlist}
+
+\begin{boxdef}[Oferta]
+	A la solución óptima del problema de maximización de beneficios $(q^\star)$ se le conoce como \textbf{oferta} y se denota:
+	\[
+		q^\star = q(w, r, p)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Función de beneficios máximos]
+	La \textbf{función de beneficios máximos}, denotada $\pi(w, r, p)$, es la función valor del problema de maximización de beneficios:
+	\[
+		\pi (w, r, p) = pq(w, r, p) - C (w, r, q(w, r, p))
+	.\] 
+\end{boxdef}
+
+\subsubsection*{Parámetros de decisión}
+
+Para que $q^\star$ produzca un máximo, se debe cumplir que $\displaystyle \frac{\partial \text{CMg} (w, r, q)}{\partial q} \ge 0$. Es decir, que el óptimo $(q^\star)$ se encuentre donde el costo marginal es creciente. Adicionalmente:
+
+\begin{eqlist}
+\item Si $p < \text{CMeV} (w, r, q^\star)$, entonces los beneficios de NO producir son mayores que los de producir.
+\item Si $p = \text{CMeV} (w, r, q^\star)$, entonces a la empresa le da lo mismo producir o no.
+\item Si $p > \text{CMeV} (w, r, q^\star)$, entonces los beneficios de producir son mayores que los de no producir.
+\end{eqlist}
+
+\textit{Nota:} $\displaystyle \text{CMeV} = \frac{C(w, r, q^\star) - C(w, r, 0)}{q^\star}$.
+
+\begin{boxprop}
+	Sea $q^s$ la escala de producción eficiente tal que $0 < q^\star < q^s$, donde $q^\star$ es una solución del problema de maximización. Entonces, $q^\star$ no es óptimo.
+\end{boxprop}
+
+\begin{boxprop}
+	Si la función de producción tiene rendimientos crecientes a escala, entonces $q^\star = 0$ ó $q^\star \to \infty$.
+\end{boxprop}
+
+\begin{boxtheo}[Ley de la oferta]
+	Sea $q(w, r, p)$ derivable, entonces la oferta es no-decreciente en el precio de venta.
+	\[
+		\text{i.e.}\quad \frac{\partial q}{\partial p} (w, r, p) \ge 0
+	.\] 
+\end{boxtheo}
+
+\subsubsection{Propiedades de la función de beneficios máximos}
+
+\begin{eqlist}
+\item Homogénea de grado uno en precios, \\ i.e. $\pi (\lambda w, \lambda r, \lambda p) = \lambda \pi(w, r, p)$.
+\item No-decreciente en el precio de venta, i.e. $\displaystyle \frac{\partial \pi}{\partial p} \ge 0$.
+\item No-creciente en los precios de insumos, i.e. $\displaystyle \frac{\partial \pi}{\partial w} \le 0$ y $\displaystyle \frac{\partial \pi}{\partial r} \le 0$.
+\end{eqlist}
+
+\subsubsection{Propiedades de la oferta}
+
+\begin{eqlist}
+\item Homogénea de grado cero en precios, \\ i.e. $q(\lambda w, \lambda r, \lambda p) = q(w, r, p)$.
+\item Se cumple, por obvias razones, la \textbf{Ley de la oferta}.
+\item El signo de impacto en precios de insumos depende de las demandas contingentesde la siguiente forma:
+	\[
+		\frac{\partial q}{\partial w} = - \frac{\partial l^c}{\partial q} \frac{\partial q}{\partial p} \qquad \text{y} \qquad \frac{\partial q}{\partial r} = - \frac{\partial k^c}{\partial q} \frac{\partial q}{\partial p}
+	.\] 
+\end{eqlist}
+
+\begin{boxdef}[Demandas inducidas]
+	Las \textbf{demandas inducidas de insumos} determinan la cantidad de capital y trabajo que demanda la empresa para cada nivel de $w$, $r$ y $p$. Se denotan:
+	\begin{gather*}
+		l(w,r,p) = l^c (w, r, q(w, r, p)); \\
+		k(w, r, p) = k^c(w, r, q(w, r, p))
+	.\end{gather*}
+\end{boxdef}
+
+\sectionbreak
+
+\subsubsection{Propiedades de las demandas inducidas de insumos}
+
+\begin{eqlist}
+\item Homogéneas de grado cero en precios,\\ i.e. $l(\lambda w, \lambda r, \lambda p) = l(w, r, p)$, y $k(\lambda w, \lambda r, \lambda p) = k(w, r, p)$.
+\item No-crecientes ante cambios en los precios de insumos, \\ i.e. $\displaystyle \frac{\partial l}{\partial w} \le 0$ y $\displaystyle \frac{\partial k}{\partial r} \le 0$.
+\item El signo de impacto en el precio de venta depende de las demandas contingentesde la siguiente forma:
+	\[
+		\frac{\partial l}{\partial p} = \frac{\partial l^c}{\partial q} \frac{\partial q}{\partial p} \qquad \text{y} \qquad \frac{\partial k}{\partial p} = \frac{\partial k^c}{\partial q} \frac{\partial q}{\partial p}
+	.\] 
+\end{eqlist}
+
+\begin{boxlemma}[Lema de Hotelling]
+	\[
+	\frac{\partial \pi}{\partial p} = q^\star \ge 0
+	.\] 
+\end{boxlemma}
+
+\begin{boxcor}
+	\[
+		\frac{\partial \pi}{\partial w} = - l (w, r, p) \qquad \frac{\partial \pi}{\partial r} = - k (w, r, p)
+\]
+\end{boxcor}
+
+\begin{boxdef}[Excedente del productor]
+	El \textbf{excedente del productor} representa la diferencia entre el precio al que el productor vende y su disposición para vender una determinada cantidad y la definimos como sigue:
+\begin{equation*}
+	\begin{aligned}
+		\text{\normalfont EP} &= \pi(w_1, r_1, p_1) - \pi(w_1, r_1, p_0) &= \phantom{-} \int_{p_0}^{p_1} q(w,r,p)dp \\
+							  &= \pi(w_1, r_1, p_1) - \pi(w_0, r_1, p_1) &= - \int_{w_0}^{w_1} l(w,r,p)dw \\
+							  &= \pi(w_1, r_1, p_1) - \pi(w_1, r_0, p_1) &= - \int_{r_0}^{r_1} k(w,r,p)dr
+	\end{aligned}
+\end{equation*}
+\end{boxdef}
+
+\newpage
+
+\sectionbreak
+
+\begin{boxtheo}[Ecuación de Slutsky]
+	Sea $u$ una función de utilidad monótona, entonces:
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial l}{\partial w} (w, r, p)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial l^c}{\partial w} (w, r, q)}^{\text{Efecto sustitución}} \\
+																						& \underbrace{ - \quad\ \left( \frac{\partial l^c}{\partial q} (w,r,q) \right)^2 \frac{\partial q}{\partial p} (w, r, p)}_{\text{Efecto producto}},
+	\end{aligned}
+	\end{equation*}	
+
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial k}{\partial r} (w, r, p)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial k^c}{\partial r} (w, r, q)}^{\text{Efecto sustitución}} \\
+																						& \underbrace{ - \quad\ \left( \frac{\partial k^c}{\partial q} (w,r,q) \right)^2 \frac{\partial q}{\partial p} (w, r, p)}_{\text{Efecto producto}},
+	\end{aligned}
+	\end{equation*}	
+	
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial l}{\partial r} (w, r, p)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial l^c}{\partial r} (w, r, q)}^{\text{Efecto sustitución}} \\
+																						& \underbrace{ - \quad\ \frac{\partial l^c}{\partial q} (w ,r, q) \frac{\partial k^c}{\partial q} (w, r, q) \frac{\partial q}{\partial p} (w, r, p)}_{\text{Efecto producto}}
+	\end{aligned}
+	\end{equation*}
+	
+	y
+
+	\begin{equation*}
+	\begin{aligned}
+		\overbrace{\frac{\partial k}{\partial w} (w, r, p)}^{\text{Efecto total}} \quad &= \overbrace{\frac{\partial k^c}{\partial w} (w, r, q)}^{\text{Efecto sustitución}} \\
+																						& \underbrace{ - \quad\ \frac{\partial k^c}{\partial q} (w ,r, q) \frac{\partial l^c}{\partial q} (w, r, q) \frac{\partial q}{\partial p} (w, r, p)}_{\text{Efecto producto}}
+	\end{aligned}
+	\end{equation*}
+	
+\end{boxtheo}
+
+\vfill\eject
+\columnbreak
+\end{multicols}
+\end{document}
