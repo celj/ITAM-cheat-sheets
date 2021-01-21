@@ -90,27 +90,27 @@ Consideramos un problema de \textbf{maximización} o \textbf{minimización} de u
 \subsection*{Condiciones de primer orden}
 
 \begin{bulletlist}
-\item $\displaystyle \frac{\partial \mathcal{L}}{\partial x_l} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
-\item $\displaystyle \frac{\partial \mathcal{L}}{\partial \lambda_i} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\item $\displaystyle \frac{\partial \mathcal{L}}{\partial x_l} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$.
+\item $\displaystyle \frac{\partial \mathcal{L}}{\partial \lambda_i} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$.
 \end{bulletlist}
 
 \subsection*{Condiciones de Holgura}
 
 \begin{bulletlist}
 \item Maximización:
-\item[] $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) \ge 0$;
-\item[] $\displaystyle \mu_j^{\star} \ge 0$;
-\item[] $\displaystyle \mu_j^{\star} h_j (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\item[] $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \ge 0$;
+\item[] $\displaystyle \mu_j^{*} \ge 0$;
+\item[] $\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$.
 \item Minimización:
-\item[] $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) \le 0$;
-\item[] $\displaystyle \mu_j^{\star} \ge 0$;
-\item[] $\displaystyle \mu_j^{\star} h_j (x_{1}^{\star}, \ldots, x_{n}^{\star}; p_1, \ldots, p_q; \lambda_{1}^{\star}, \ldots, \mu_{m}^{\star}) = 0$.
+\item[] $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \le 0$;
+\item[] $\displaystyle \mu_j^{*} \ge 0$;
+\item[] $\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$.
 \end{bulletlist}
 
 \begin{boxtheo}[Teorema de la Envolvente]
-	Sean $V$ y $\mathcal{L}$ continuamente diferenciables y $(x^{\star}, \lambda^{\star}, \mu^{\star})$ la solución de algún problema de optimización con parámetros $(p_1, \ldots, p_q)$, entonces:
+	Sean $V$ y $\mathcal{L}$ continuamente diferenciables y $(x^{*}, \lambda^{*}, \mu^{*})$ la solución de algún problema de optimización con parámetros $(p_1, \ldots, p_q)$, entonces:
 	\[
-		\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \mathcal{L}^{\star}}{\partial p_i}
+		\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \mathcal{L}^{*}}{\partial p_i}
 	.\] 
 \end{boxtheo}
 
@@ -135,7 +135,7 @@ Una \textbf{canasta} es un vector $(a_1, \ldots, a_n) \in \mathbb{R}^n_+$ que re
 \end{boxdef}
 
 \begin{boxdef}[Función de utilidad]
-	Sea una función $u : \mathbb{R}^n_+ \to \mathbb{R}$, esta representa la utilidad de un consumidor si para para cualquier par de alternativas $(x_1, \ldots, x_n), (x'_1, \ldots, x'_n) \in \mathbb{R}^n_+$, se tiene $u(x_1, \ldots, x_n) > u(x'_1, \ldots, x'_n)$ si y solo si el consumidor prefiere la canasta $(x'_1, \ldots, x'_n)$ sobre la canasta $(x_1, \ldots, x_n)$.
+	Sea una función $u : \mathbb{R}^n_+ \to \mathbb{R}$, esta representa la utilidad de un consumidor si, para para cualquier par de alternativas $(x_1, \ldots, x_n), (x'_1, \ldots, x'_n) \in \mathbb{R}^n_+$, se tiene $u(x_1, \ldots, x_n) < u(x'_1, \ldots, x'_n)$ si y solo si el consumidor prefiere la canasta $(x'_1, \ldots, x'_n)$ sobre la canasta $(x_1, \ldots, x_n)$.
 \end{boxdef}
 
 \begin{boxdef}[Curvas de indiferencia]
@@ -236,18 +236,18 @@ Una función $w$ es una \textbf{transformación mónotona} de $u$ si y solo si e
 
 \subsubsection*{Soluciones del modelo}
 
-Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $p_x x^\star + p_y y^\star = I$, entonces:
+Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $p_x x^* + p_y y^* = I$, entonces:
 
 \begin{bulletlist}
-\item Si $x^\star, y^\star > 0$, en el óptimo: $\displaystyle \text{TMS} (x^\star, y^\star) = \frac{p_x}{p_y}$.
-\item Si $x^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, \frac{I}{p_y}\right) \le \frac{p_x}{p_y}$.
-\item Si $y^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(\frac{I}{p_x}, 0\right) \ge \frac{p_x}{p_y}$.
+\item Si $x^*, y^* > 0$, en el óptimo: $\displaystyle \text{TMS} (x^*, y^*) = \frac{p_x}{p_y}$.
+\item Si $x^* = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, \frac{I}{p_y}\right) \le \frac{p_x}{p_y}$.
+\item Si $y^* = 0$, en el óptimo: $\displaystyle \text{TMS} \left(\frac{I}{p_x}, 0\right) \ge \frac{p_x}{p_y}$.
 \end{bulletlist}
 
 \begin{boxdef}[Demandas marshalianas]
-A la solución óptima del problema marshaliano $(X^\star)$ se les conoce como \textbf{demandas marshalianas} y usualmente se denotan:
+A la solución óptima del problema marshaliano $(X^*)$ se les conoce como \textbf{demandas marshalianas} y usualmente se denotan:
 \[
-	x_i^\star = X_i^M (P, I)
+	x_i^* = X_i^M (P, I)
 .\] 
 \end{boxdef}
 
@@ -259,17 +259,17 @@ A la solución óptima del problema marshaliano $(X^\star)$ se les conoce como \
 \end{boxdef}
 
 \begin{boxtheo}[Ley de Walrás]
-	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función de utilidad monótona, entonces, en la solución óptima $(X^\star)$, se cumple:
+	Sea $u : \mathbb{R}^n_+ \to \mathbb{R}$ una función de utilidad monótona, entonces, en la solución óptima $(X^*)$, se cumple:
 	\[
-	\sum_{i=1}^{p} p_i x_i^\star = I
+	\sum_{i=1}^{p} p_i x_i^* = I
 	.\] 
 \end{boxtheo}
 
 \begin{boxtheo}[Condiciones de Inada]
 	Sea $u : \mathbb{R}^2_+ \to \mathbb{R}$ una función de utilidad monótona y diferenciable.
 	\begin{eqlist}
-	\item $\displaystyle \lim_{x \to 0} \text{TMS} (x, y) = \infty \implies x^\star > 0$,
-	\item $\displaystyle \lim_{y \to 0} \text{TMS} (x, y) = 0 \implies y^\star > 0$.
+	\item $\displaystyle \lim_{x \to 0} \text{TMS} (x, y) = \infty \implies x^* > 0$,
+	\item $\displaystyle \lim_{y \to 0} \text{TMS} (x, y) = 0 \implies y^* > 0$.
 	\end{eqlist}
 \end{boxtheo}
 
@@ -392,15 +392,15 @@ $$\text{\normalfont IG}_k = \{(x_1, \ldots, x_n)  \mid p_1 x_1 +\ \cdots\ + p_n 
 Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $u(x, y) = \bar{u}$, entonces:
 
 \begin{bulletlist}
-\item Si $x^\star, y^\star > 0$, en el óptimo: $\displaystyle \text{TMS} (x^\star, y^\star) = \frac{p_x}{p_y}$.
-\item Si $x^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, y^\star \right) \le \frac{p_x}{p_y}$.
-\item Si $y^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(x^\star, 0\right) \ge \frac{p_x}{p_y}$.
+\item Si $x^*, y^* > 0$, en el óptimo: $\displaystyle \text{TMS} (x^*, y^*) = \frac{p_x}{p_y}$.
+\item Si $x^* = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, y^* \right) \le \frac{p_x}{p_y}$.
+\item Si $y^* = 0$, en el óptimo: $\displaystyle \text{TMS} \left(x^*, 0\right) \ge \frac{p_x}{p_y}$.
 \end{bulletlist}
 
 \begin{boxdef}[Demandas compensadas]
-	A la solución óptima del problema compensado $(X^\star)$ se les conoce como \textbf{demandas compensadas} o \textbf{demandas hicksianas} y usualmente se denotan:
+	A la solución óptima del problema compensado $(X^*)$ se les conoce como \textbf{demandas compensadas} o \textbf{demandas hicksianas} y usualmente se denotan:
 \[
-	x_i^\star = X_i^C (P, \bar{u})
+	x_i^* = X_i^C (P, \bar{u})
 .\] 
 \end{boxdef}
 
@@ -567,18 +567,18 @@ A las relaciones entre los modelos marshaliano y compensado se les conoce como \
 
 \subsubsection*{Soluciones del modelo}
 
-Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $p_x x^\star + p_y y^\star = p_x \bar{x} + p_y \bar{y}$, entonces:
+Dada una función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $p_x x^* + p_y y^* = p_x \bar{x} + p_y \bar{y}$, entonces:
 
 \begin{bulletlist}
-\item Si $x^\star, y^\star > 0$, en el óptimo: $\displaystyle \text{TMS} (x^\star, y^\star) = \frac{p_x}{p_y}$.
-\item Si $x^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, \frac{I^W}{p_y}\right) \le \frac{p_x}{p_y}$.
-\item Si $y^\star = 0$, en el óptimo: $\displaystyle \text{TMS} \left(\frac{I^W}{p_x}, 0\right) \ge \frac{p_x}{p_y}$.
+\item Si $x^*, y^* > 0$, en el óptimo: $\displaystyle \text{TMS} (x^*, y^*) = \frac{p_x}{p_y}$.
+\item Si $x^* = 0$, en el óptimo: $\displaystyle \text{TMS} \left(0, \frac{I^W}{p_y}\right) \le \frac{p_x}{p_y}$.
+\item Si $y^* = 0$, en el óptimo: $\displaystyle \text{TMS} \left(\frac{I^W}{p_x}, 0\right) \ge \frac{p_x}{p_y}$.
 \end{bulletlist}
 
 \begin{boxdef}[Demandas walrasianas]
-A la solución óptima del problema walrasiano $(X^\star)$ se les conoce como \textbf{demandas walrasianas} y usualmente se denotan:
+A la solución óptima del problema walrasiano $(X^*)$ se les conoce como \textbf{demandas walrasianas} y usualmente se denotan:
 \[
-	x_i^\star = X_i^W (P, \bar{X})
+	x_i^* = X_i^W (P, \bar{X})
 .\] 
 \end{boxdef}
 
@@ -697,7 +697,7 @@ A las relaciones entre los modelos marshaliano y walrasiano se les conoce como \
 Dada la función de utilidad $u (h, c)$ y al suponer que, en el óptimo, $c = I^{\text{NL}} - hw$, entonces:
 
 \begin{bulletlist}
-\item Si $h^\star, c\star > 0$, en el óptimo: $\text{TMS} (h^\star, c^\star) = w$.
+\item Si $h^*, c* > 0$, en el óptimo: $\text{TMS} (h^*, c^*) = w$.
 \end{bulletlist}
 
 \begin{boxdef}[Demanda de consumo]
@@ -806,7 +806,7 @@ En el modelo ocio-consumo se cumplen las siguientes \textbf{relación de dualida
 Dada la función de utilidad $u : \mathbb{R}^2 \to \mathbb{R}$ y al suponer que, en el óptimo, $c_1 = I_1 + (1 + r_0) (I_0 - c_0)$, entonces:
 
 \begin{bulletlist}
-\item Si $c_0^\star, c_1\star > 0$, en el óptimo: $\text{TMS} (c_0^\star, c_1^\star) = 1 + r_0$.
+\item Si $c_0^*, c_1* > 0$, en el óptimo: $\text{TMS} (c_0^*, c_1^*) = 1 + r_0$.
 \end{bulletlist}
 
 \begin{boxdef}[Demanda de consumo en período $t$]
@@ -966,18 +966,18 @@ $$\text{\normalfont IC}_k = \{(l, k) \in \mathbb{R}^2_{++} \mid f(l, k) = \bar{q
 
 \subsubsection*{Soluciones del modelo}
 
-Dada una función de producción $f(l, k)$ y al suponer que, en el óptimo, $f(l^\star, k^\star) = \bar{q}$, entonces:
+Dada una función de producción $f(l, k)$ y al suponer que, en el óptimo, $f(l^*, k^*) = \bar{q}$, entonces:
 
 \begin{bulletlist}
-\item Si $l^\star, k^\star > 0$, en el óptimo: $\displaystyle \text{TMST} (l^\star, k^\star) = \frac{w}{r}$.
-\item Si $l^\star = 0$, en el óptimo: $\displaystyle \text{TMST} \left(0, k^\star \right) < \frac{w}{r}$.
-\item Si $k^\star = 0$, en el óptimo: $\displaystyle \text{TMST} \left(l^\star , 0\right) > \frac{w}{r}$.
+\item Si $l^*, k^* > 0$, en el óptimo: $\displaystyle \text{TMST} (l^*, k^*) = \frac{w}{r}$.
+\item Si $l^* = 0$, en el óptimo: $\displaystyle \text{TMST} \left(0, k^* \right) < \frac{w}{r}$.
+\item Si $k^* = 0$, en el óptimo: $\displaystyle \text{TMST} \left(l^* , 0\right) > \frac{w}{r}$.
 \end{bulletlist}
 
 \begin{boxdef}[Demandas contingentes]
-A la solución óptima del problema de minimización de costos $(l^\star, k^\star)$ se les conoce como \textbf{demandas contingentes de insumos} y usualmente se denotan:
+A la solución óptima del problema de minimización de costos $(l^*, k^*)$ se les conoce como \textbf{demandas contingentes de insumos} y usualmente se denotan:
 \[
-	l^\star = l^c (w, r, \bar{q}) \qquad k^\star = k^c (w, r, \bar{q})
+	l^* = l^c (w, r, \bar{q}) \qquad k^* = k^c (w, r, \bar{q})
 \] 
 \end{boxdef}
 
@@ -1088,14 +1088,14 @@ La \textbf{función de costo mínimo}, denotada $C(w, r, \bar{q})$, es la funci�
 Dada una función de costo mínimo $C (w, r, \bar{q})$, entonces:
 
 \begin{bulletlist}
-\item Si $q^\star = 0$, en el óptimo: $p \le \text{CMg} (w, r, 0)$.
-\item Si $q^\star > 0$, en el óptimo: $p = \text{CMg} (w, r, q^\star)$.
+\item Si $q^* = 0$, en el óptimo: $p \le \text{CMg} (w, r, 0)$.
+\item Si $q^* > 0$, en el óptimo: $p = \text{CMg} (w, r, q^*)$.
 \end{bulletlist}
 
 \begin{boxdef}[Oferta]
-	A la solución óptima del problema de maximización de beneficios $(q^\star)$ se le conoce como \textbf{oferta} y se denota:
+	A la solución óptima del problema de maximización de beneficios $(q^*)$ se le conoce como \textbf{oferta} y se denota:
 	\[
-		q^\star = q(w, r, p)
+		q^* = q(w, r, p)
 	.\] 
 \end{boxdef}
 
@@ -1108,22 +1108,22 @@ Dada una función de costo mínimo $C (w, r, \bar{q})$, entonces:
 
 \subsubsection*{Parámetros de decisión}
 
-Para que $q^\star$ produzca un máximo, se debe cumplir que $\displaystyle \frac{\partial \text{CMg} (w, r, q)}{\partial q} \ge 0$. Es decir, que el óptimo $(q^\star)$ se encuentre donde el costo marginal es creciente. Adicionalmente:
+Para que $q^*$ produzca un máximo, se debe cumplir que $\displaystyle \frac{\partial \text{CMg} (w, r, q)}{\partial q} \ge 0$. Es decir, que el óptimo $(q^*)$ se encuentre donde el costo marginal es creciente. Adicionalmente:
 
 \begin{eqlist}
-\item Si $p < \text{CMeV} (w, r, q^\star)$, entonces los beneficios de NO producir son mayores que los de producir.
-\item Si $p = \text{CMeV} (w, r, q^\star)$, entonces a la empresa le da lo mismo producir o no.
-\item Si $p > \text{CMeV} (w, r, q^\star)$, entonces los beneficios de producir son mayores que los de no producir.
+\item Si $p < \text{CMeV} (w, r, q^*)$, entonces los beneficios de NO producir son mayores que los de producir.
+\item Si $p = \text{CMeV} (w, r, q^*)$, entonces a la empresa le da lo mismo producir o no.
+\item Si $p > \text{CMeV} (w, r, q^*)$, entonces los beneficios de producir son mayores que los de no producir.
 \end{eqlist}
 
-\textit{Nota:} $\displaystyle \text{CMeV} = \frac{C(w, r, q^\star) - C(w, r, 0)}{q^\star}$.
+\textit{Nota:} $\displaystyle \text{CMeV} = \frac{C(w, r, q^*) - C(w, r, 0)}{q^*}$.
 
 \begin{boxprop}
-	Sea $q^s$ la escala de producción eficiente tal que $0 < q^\star < q^s$, donde $q^\star$ es una solución del problema de maximización. Entonces, $q^\star$ no es óptimo.
+	Sea $q^s$ la escala de producción eficiente tal que $0 < q^* < q^s$, donde $q^*$ es una solución del problema de maximización. Entonces, $q^*$ no es óptimo.
 \end{boxprop}
 
 \begin{boxprop}
-	Si la función de producción tiene rendimientos crecientes a escala, entonces $q^\star = 0$ ó $q^\star \to \infty$.
+	Si la función de producción tiene rendimientos crecientes a escala, entonces $q^* = 0$ ó $q^* \to \infty$.
 \end{boxprop}
 
 \begin{boxtheo}[Ley de la oferta]
@@ -1175,7 +1175,7 @@ Para que $q^\star$ produzca un máximo, se debe cumplir que $\displaystyle \frac
 
 \begin{boxlemma}[Lema de Hotelling]
 	\[
-	\frac{\partial \pi}{\partial p} = q^\star \ge 0
+	\frac{\partial \pi}{\partial p} = q^* \ge 0
 	.\] 
 \end{boxlemma}
 

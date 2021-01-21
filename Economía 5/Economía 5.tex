@@ -42,10 +42,8 @@
 
 \section{El modelo estático de producción y consumo}
 
-\subsection{El problema de las empresas}
-
 \begin{boxdef}[Función de producción]
-	La \textbf{función de producción} $f_j$ describe la relación entre la producción de bienes y la cantidad de trabajo requerido en la $j$-ésima empresa competitiva, y se denota:
+	La \textbf{función de producción} $f_j$ describe la relación entre la producción de bienes y la cantidad de trabajo requerido en la j-ésima empresa competitiva, y se denota:
 	\[
 		y_j = f_j(l) \text{ tal que } j \in J
 	.\]
@@ -58,7 +56,7 @@
 \item Cóncava ($f''_j \le 0$), i.e. está sujeta a la ley de rendimientos marginales decrecientes.
 \end{eqlist}
 
-\subsubsection*{El problema de la firma}
+\subsection{El problema de la firma}
 
 \begin{equation*}
 	\max_{\{l\}}\ pf_j (l) - wl
@@ -103,6 +101,68 @@
 \begin{boxprop}
 	La función de \textbf{ganancias óptimas} es homogénea de grado 1.
 \end{boxprop}
+
+\begin{boxdef}[Función de utilidad]
+	Sea una función $u_i(h, c)$, esta representa la utilidad del i-ésimo  consumidor por ocio y consumo si, para cualquier par de alternativas $(h_0, c_0), (h_1, c_1) \in \R^2$, se tiene $u_i(h_0, c_0) < h_i(h_1, c_1)$ si y solo si  el consumidor en cuestión prefiere la canasta $(h_1, c_1)$ sobre la canasta $(h_0, c_0)$.
+\end{boxdef}
+
+\subsubsection*{Propiedades de la función de utilidad}
+
+\begin{eqlist}
+\item Continuamente diferenciable, i.e. existe $u'_i$ continua.
+\item Creciente $(u'_i > 0)$.
+\item Monótona.
+\item Cuasicóncava.
+\end{eqlist}
+
+\subsection{El problema de los consumidores}
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{h, c\}}\	  & u_i(h, c) \\
+	\text{sujeto a} \quad & h + n = H_i, \\
+						  & pc = wn + \sum_J \theta_{ij} \pi_j (w, p).
+\end{aligned}
+\end{equation*}
+
+O bien,
+
+\begin{equation*}
+\begin{aligned}
+	\max_{\{h, c\}}\	  & u_i(h, c) \\
+	\text{sujeto a} \quad & wh + pc = wH_i + \sum_J \theta_{ij} \pi_j (w, p).
+\end{aligned}
+\end{equation*}
+
+\begin{center}
+\begin{tabular}{ c l }
+	\hline
+	$\theta_{ij}$								& Acciones de la firma $j$ \\
+	$c$											& Consumo del bien final \\
+	$\pi_j$										& Ganancias de la firma $j$ \\
+	$wn$										& Ingreso laboral \\
+	$\displaystyle \sum_J \theta_{ij} \pi_j (w,p)$			& Ingreso no laboral o de capital \\
+	$p$											& Precio del bien final \\
+	$w$											& Precio del trabajo (salario) \\
+	$h + n = H_i$								& Restricción de tiempo \\
+	$\displaystyle pc = wn + \sum_J \theta_{ij} \pi_j (w, p)$ & Restricción presupuestal \\
+	$h$											& Tiempo dedicado al ocio \\
+	$n$											& Tiempo dedicado al trabajo \\
+	$H_i$										& Unidades de tiempo disponibles \\
+	$wh + pc$									& Valor de mercado de la canasta de consumo \\
+	\hline
+\end{tabular}
+\end{center}
+
+\sectionbreak
+
+\subsubsection*{Condiciones de optimalidad}
+
+\begin{equation*}
+\begin{aligned}
+	h : \qquad & \frac{\partial u_i}{\partial h} (h^*, c^*)
+\end{aligned}
+\end{equation*}
 
 \newpage
 
