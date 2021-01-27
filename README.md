@@ -19,9 +19,9 @@ En este repositorio[^1] encontrarán formularios de las siguientes materias:
 
 ### Matemáticas
 
-* [Análisis matemático 1](Análisis matemático 1/Análisis matemático 1.pdf) — inspirado en las notas de mi ex-compañero de clase Itzama Delgadillo García y las clases del profesor [Guillermo Grabinsky Steider](https://facultad.itam.mx/facultad/10218-guillermo-grabinsky-steider) durante el semestre otoño 2020.
+* [Análisis matemático 1](Análisis matemático 1/Análisis matemático 1.pdf) — inspirado en las notas de mi compañero de clase Itzama Delgadillo García y las clases del profesor [Guillermo Grabinsky Steider](https://facultad.itam.mx/facultad/10218-guillermo-grabinsky-steider) durante el semestre otoño 2020.
 * [Cálculo numérico 1](Cálculo numérico 1/Cálculo numérico 1.pdf) — inspirado en las clases del profesor [Zeferino Parada García](https://facultad.itam.mx/facultad/10933-zeferino-parada-garcia) durante el semestre primavera 2021.
-* [Optimización](Optimización/Optimización.pdf) — inspirado en las clases y notas del profesor [José Campero Pardo](https://facultad.itam.mx/es/facultad/3744-jose-campero-pardo) durante el semestre primavera 2021.
+* [Optimización](Optimización/Optimización.pdf) — inspirado en las clases del profesor [José Campero Pardo](https://facultad.itam.mx/es/facultad/3744-jose-campero-pardo) durante el semestre primavera 2021.
 * [Sistemas dinámicos](Sistemas dinámicos/Sistemas dinámicos.pdf) — inspirado en las notas y clases del profesor [Jorge Rivera Noriega](https://facultad.itam.mx/facultad/175296-jorge-rivera-noriega) durante el semestre otoño 2020.
 
 ------
