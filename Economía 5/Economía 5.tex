@@ -76,13 +76,13 @@
 \subsubsection*{Condición de optimalidad}
 
 \[
-	l : \qquad pf'_j(l_j(w,p)) = w
+	l : \qquad pf'_j(l_j(w, p)) = w
 .\] 
 
 \begin{boxdef}[Ganancias óptimas]
 	Definimos las \textbf{ganancias óptimas} de la firma $j$ como sigue:
 	\[
-		\pi_j(w,p) = pf_j(l_j(w,p)) - wl_j(w,p)
+		\pi_j(w, p) = pf_j(l_j(w, p)) - wl_j(w, p)
 	.\] 
 \end{boxdef}
 
@@ -91,7 +91,7 @@
 \end{boxdef}
 
 \begin{boxdef}[Oferta de bienes]
-	A la función $y_j(w,p)$ se le conoce como \textbf{oferta de bienes} de la empresa $j$.
+	A la función $y_j(w, p)$ se le conoce como \textbf{oferta de bienes} de la empresa $j$.
 \end{boxdef}
 
 \begin{boxprop}
@@ -121,7 +121,7 @@
 \begin{aligned}
 	\max_{\{h, c\}}\	  & u_i(h, c) \\
 	\text{sujeto a} \quad & h + n = H_i, \\
-						  & pc = wn + \sum_J \theta_{ij} \pi_j (w, p).
+						  & pc = wn + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
 \end{aligned}
 \end{equation*}
 
@@ -130,26 +130,27 @@ O bien,
 \begin{equation*}
 \begin{aligned}
 	\max_{\{h, c\}}\	  & u_i(h, c) \\
-	\text{sujeto a} \quad & wh + pc = wH_i + \sum_J \theta_{ij} \pi_j (w, p).
+	\text{sujeto a} \quad & wh + pc = wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
 \end{aligned}
 \end{equation*}
 
 \begin{center}
 \begin{tabular}{ c l }
 	\hline
-	$\theta_{ij}$								& Acciones de la firma $j$ \\
-	$c$											& Consumo del bien final \\
-	$\pi_j$										& Ganancias de la firma $j$ \\
-	$wn$										& Ingreso laboral \\
-	$\displaystyle \sum_J \theta_{ij} \pi_j (w,p)$			& Ingreso no laboral o de capital \\
-	$p$											& Precio del bien final \\
-	$w$											& Precio del trabajo (salario) \\
-	$h + n = H_i$								& Restricción de tiempo \\
-	$\displaystyle pc = wn + \sum_J \theta_{ij} \pi_j (w, p)$ & Restricción presupuestal \\
-	$h$											& Tiempo dedicado al ocio \\
-	$n$											& Tiempo dedicado al trabajo \\
-	$H_i$										& Unidades de tiempo disponibles \\
-	$wh + pc$									& Valor de mercado de la canasta de consumo \\
+	$\theta_{ij}$								                      & Acciones de la firma $j$ \\
+	$c$											                      & Consumo del bien final \\
+	$\pi_j$										                      & Ganancias de la firma $j$ \\
+	$wn$										                      & Ingreso laboral \\
+	$\displaystyle \sum_{j \in J} \theta_{ij} \pi_j (w, p)$			  & Ingreso no laboral o de capital \\
+	$p$											                      & Precio del bien final \\
+	$w$											                      & Precio del trabajo (salario) \\
+	$h + n = H_i$								                      & Restricción de tiempo \\
+	$\displaystyle pc = wn + \sum_{j \in J} \theta_{ij} \pi_j (w, p)$ & Restricción presupuestal \\
+	$\displaystyle wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p)$    & Riqueza \\
+	$h$											                      & Tiempo dedicado al ocio \\
+	$n$											                      & Tiempo dedicado al trabajo \\
+	$H_i$										                      & Unidades de tiempo disponibles \\
+	$wh + pc$									                      & Valor de mercado de la canasta de consumo \\
 	\hline
 \end{tabular}
 \end{center}
@@ -162,11 +163,45 @@ O bien,
 \begin{aligned}
 	h : \qquad & \frac{\partial u_i}{\partial h} (h^*, c^*) &=\ \lambda^* w,\\
 	c : \qquad & \frac{\partial u_i}{\partial c} (h^*, c^*) &=\ \lambda^* p,\\
-	\lambda : \qquad & wh^* + pc^* &=\ wH_i & + \sum_J \theta_{ij} \pi_j (w, p).
+	\lambda : \qquad & wh^* + pc^* &=\ wH_i & + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
 \end{aligned}
 \end{equation*}
 
-Si $h^*, c^* > 0$, en el óptimo: $\text{TMS} (h^*, c^*) = \displaystyle  \frac{w}{p}$ tal que 
+Si $h^*, c^* > 0$, en el óptimo:
+
+\[ \text{TMS} (h^*, c^*) = \frac{w}{p} \text{ tal que } wh^* + pc^* = wH_i + \sum_{j \in J} \theta_{ij} \pi_j(w, p) .\]
+
+\begin{boxdef}[Demanda de ocio]
+	La \textbf{demanda de ocio} es una de las soluciones al problema de los consumidores y se denota:
+	\[
+		h^* = h_i(w, p)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Demanda de consumo]
+	La \textbf{demanda de consumo} es una de las soluciones al problema de los consumidores y se denota:
+	\[
+		c^* = c_i(w, p)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Oferta laboral]
+	Dadas nuestras unidades de tiempo disponibles, $H_i$, y nuestra demanda de consumo $h_i(w, p)$, definimos la \textbf{oferta laboral} como sigue:
+	\[
+		n_i(w, p) = H_i - h_i(w, p)
+	.\] 
+\end{boxdef}
+
+\newpage
+
+\subsection{Equilibrio competitivo}
+
+\begin{boxdef}[Equilibrio competitivo]
+	Definimos el \textbf{equilibrio competitivo} como un vector de precios $(w^*, p^*)$ y una asignación $\left( \left\{ l^*_j, y^*_j \right\}_{j \in J}, \left\{ h^*_i, c^*_i \right\}_{i \in I} \right)$ tales que:
+	\begin{eqlist}
+	\item Todas las cantidades son óptimas a los precios $(w^*, p^*)$.
+	\end{eqlist}
+\end{boxdef}
 
 \newpage
 
