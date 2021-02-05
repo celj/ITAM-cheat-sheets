@@ -66,7 +66,7 @@
 \begin{tabular}{ c l }
 	\hline
 	$f_j$ & Función de producción \\
-	$l$	  & Nivel de empleo \\
+	$l$   & Nivel de empleo \\
 	$p$   & Precio del bien final \\
 	$w$   & Precio del trabajo (salario) \\
 	\hline
@@ -119,9 +119,9 @@
 
 \begin{equation*}
 \begin{aligned}
-	\max_{\{h, c\}}\	  & u_i(h, c) \\
+	\max_{\{h, c\}}\      & u_i(h, c) \\
 	\text{sujeto a} \quad & h + n = H_i, \\
-						  & pc = wn + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
+			              & pc = wn + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
 \end{aligned}
 \end{equation*}
 
@@ -137,20 +137,14 @@ O bien,
 \begin{center}
 \begin{tabular}{ c l }
 	\hline
-	$\theta_{ij}$								                      & Acciones de la firma $j$ \\
-	$c$											                      & Consumo del bien final \\
-	$\pi_j$										                      & Ganancias de la firma $j$ \\
-	$wn$										                      & Ingreso laboral \\
-	$\displaystyle \sum_{j \in J} \theta_{ij} \pi_j (w, p)$			  & Ingreso no laboral o de capital \\
-	$p$											                      & Precio del bien final \\
-	$w$											                      & Precio del trabajo (salario) \\
-	$h + n = H_i$								                      & Restricción de tiempo \\
-	$\displaystyle pc = wn + \sum_{j \in J} \theta_{ij} \pi_j (w, p)$ & Restricción presupuestal \\
-	$\displaystyle wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p)$    & Riqueza \\
-	$h$											                      & Tiempo dedicado al ocio \\
-	$n$											                      & Tiempo dedicado al trabajo \\
-	$H_i$										                      & Unidades de tiempo disponibles \\
-	$wh + pc$									                      & Valor de mercado de la canasta de consumo \\
+	$\theta_{ij}$ & Acciones de la firma $j$ \\
+	$c$           & Consumo del bien final \\
+	$\pi_j$       & Ganancias de la firma $j$ \\
+	$p$           & Precio del bien final \\
+	$w$	          & Precio del trabajo (salario) \\
+	$h$           & Tiempo dedicado al ocio \\
+	$n$           & Tiempo dedicado al trabajo \\
+	$H_i$         & Unidades de tiempo disponibles \\
 	\hline
 \end{tabular}
 \end{center}
@@ -161,9 +155,9 @@ O bien,
 
 \begin{equation*}
 \begin{aligned}
-	h : \qquad & \frac{\partial u_i}{\partial h} (h^*, c^*) &=\ \lambda^* w,\\
-	c : \qquad & \frac{\partial u_i}{\partial c} (h^*, c^*) &=\ \lambda^* p,\\
-	\lambda : \qquad & wh^* + pc^* &=\ wH_i & + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
+	h : \qquad       & \frac{\partial u_i}{\partial h} (h^*, c^*) &=\ \lambda^* w,\\
+	c : \qquad       & \frac{\partial u_i}{\partial c} (h^*, c^*) &=\ \lambda^* p,\\
+	\lambda : \qquad & wh^* + pc^* &=\ wH_i                       & + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
 \end{aligned}
 \end{equation*}
 
@@ -199,9 +193,87 @@ Si $h^*, c^* > 0$, en el óptimo:
 \begin{boxdef}[Equilibrio competitivo]
 	Definimos el \textbf{equilibrio competitivo} como un vector de precios $(w^*, p^*)$ y una asignación $\left( \left\{ l^*_j, y^*_j \right\}_{j \in J}, \left\{ h^*_i, c^*_i \right\}_{i \in I} \right)$ tales que:
 	\begin{eqlist}
-	\item Todas las cantidades son óptimas a los precios $(w^*, p^*)$; \ie.
+	\item Todas las cantidades son óptimas a los precios $(w^*, p^*)$.
+		\begin{equation*}
+			\begin{aligned}
+				\ie \qquad & l^*_j = l_j(w^*, p^*), \\
+				           & y^*_j = y_j(w^*, p^*), \\
+						   & h^*_i = h_i(w^*, p^*), \\
+					       & c^*_i = c_i(w^*, p^*).
+			\end{aligned}
+		\end{equation*}
+	\item Las cantidades individuales vacían el mercado de bienes y el mercado laboral.
+		\begin{equation*}
+			\begin{aligned}
+				\ie \qquad & \sum_{j \in J} y_i(w^*, p^*) = \sum_{i \in I} c_i(w^*, p^*),\ \text{y} \\
+						   & \sum_{j \in J} l_j(w^*, p^*) = \sum_{i \in I} \left[ H_i - h_i(w^*, p^*) \right].
+			\end{aligned}
+		\end{equation*}
 	\end{eqlist}
 \end{boxdef}
+
+\subsection{Maximización del bienestar social o problema del \emph{planificador central}}
+
+\begin{equation*}
+	\begin{aligned}
+		\max_{\{h, c, l\}}\   & u(h, c) \\
+		\text{sujeto a} \quad & h + l = H, \\
+							  & c = f(l).
+	\end{aligned}
+\end{equation*}
+
+O bien,
+
+\[
+	\max_{\{l\}} u(H - l, f(l))
+.\] 
+
+\subsubsection*{Condición de optimalidad}
+
+\[
+	l: \qquad \frac{\displaystyle \frac{\partial u}{\partial h} (H - l^*, f(l^*)) }{\displaystyle \frac{\partial u}{\partial c} (H - l^*, f(l^*))} = f'(l^*)
+.\] 
+
+\sectionbreak
+
+\section{Aplicaciones del modelo estático de producción y consumo}
+
+\begin{boxdef}[Demanda de consumo agregada]
+	Definimos la \textbf{demanda de consumo agregada} como sigue:
+	\[
+		C(w) = \sum_{i \in I} c_i(w)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Demanda laboral agregada]
+	Definimos la \textbf{demanda laboral agregada} como sigue:
+	\[
+		L(w) = \sum_{j \in J} l_j(w)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Ganancias agregadas]
+	Definimos las \textbf{ganancias agregadas} como sigue:
+	\[
+		\Pi(w) = \sum_{j \in J} \pi(w)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Oferta laboral agregada]
+	Definimos la \textbf{oferta laboral agregada} como sigue:
+	\[
+		N(w) = \sum_{i \in I} n_i(w)
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Producción agregada]
+	Definimos la \textbf{producción agregada} como sigue:
+	\[
+		Y(w) = \sum_{j \in J} y_j(w)
+	.\] 
+\end{boxdef}
+
+En caso de encontrarnos con agentes heterogéneos, recordemos que cada subgrupo de consumidores, o empresas, con ciertas características obtendrá demandas, u ofertas, agregadas representativas tales que la demanda, u oferta, agregada de todos los agentes será la suma de los agregados representativos.
 
 \newpage
 
