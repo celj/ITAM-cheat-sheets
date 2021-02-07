@@ -11,7 +11,7 @@
 % PDF Metadata
 \hypersetup{
     pdftitle={\csof \csClass},      
-    pdfsubject={\csClass},      
+    pdfsubject={\csClass},      R
     pdfauthor={\csAuthorName},  
     pdfkeywords={}              
 }
@@ -47,9 +47,9 @@
 \begin{bulletlist}
 \item There are $m$ consumers such that $\I = \{1, \ldots, m\}$.
 \item There are $n$ goods such that $\LL = \{1, \ldots, n\}$.
-\item The preferences of each consumer are given by a utility function $u_i : \R^\LL \to \R$.
-\item Each consumer can consume goods in $x_i \in \R_+^\LL$.
-\item Each consumer has an initial endowment of $\omega_i \in \R_+^\LL$.
+\item The preferences of each consumer are given by a utility function $u_i : \mathbb{R}^\LL \to \mathbb{R}$.
+\item Each consumer can consume goods in $x_i \in \mathbb{R}_+^\LL$.
+\item Each consumer has an initial endowment of $\omega_i \in \mathbb{R}_+^\LL$.
 \item The ordered pair $(u_i, \omega_i)$ describes each consumer.
 \item The utility functions represent neoclassical preferences.
 \end{bulletlist}
@@ -69,13 +69,13 @@
 \end{boxdef}
 
 \begin{boxdef}[Resource Allocation]
-	The \textbf{resource allocation} is denoted by $X = (x_1, x_2, \ldots, x_m)$, where $\displaystyle x_i \in \R_{+}^{\LL}$.
+	The \textbf{resource allocation} is denoted by $X = (x_1, x_2, \ldots, x_m)$, where $\displaystyle x_i \in \mathbb{R}_{+}^{\LL}$.
 \end{boxdef}
 
 \begin{boxdef}[Feasible Allocation]
 	The \textbf{feasible allocation} $\F$ of an economy $\EE$ is defined by:
 	\[
-		\F = \left\{ X = (x_1, x_2, \ldots, x_m)\ :\ x_i \in \R_{+}^{\LL},\ \sum_{i \in \I} x_i = \sum_{i \in \I} w_i \right\}
+		\F = \left\{ X = (x_1, x_2, \ldots, x_m)\ :\ x_i \in \mathbb{R}_{+}^{\LL},\ \sum_{i \in \I} x_i = \sum_{i \in \I} w_i \right\}
 	.\] 
 \end{boxdef}
 
@@ -259,7 +259,7 @@
 \end{boxprop}
 
 \begin{boxprop}
-	Let $(x^*, p)$ be a competitive equilibrium. Then, $(x^*, cp)$ is also a competitive equilibrium, $\forall c \in \R_+$.
+	Let $(x^*, p)$ be a competitive equilibrium. Then, $(x^*, cp)$ is also a competitive equilibrium, $\forall c \in \mathbb{R}_+$.
 \end{boxprop}
 
 \begin{boxtheo}[Walras' Law]
@@ -274,7 +274,7 @@
 \end{boxcor}
 
 \begin{boxtheo}[Fixed Point]
-	For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p^*_1, p^*_2, \ldots, p^*_n)$ such that $f(p^*) = p^*$, where $\displaystyle \triangle^{n - 1} = \left\{(p_1, p_2, \ldots, p_n) \in \R_+^\LL : \sum_{\ell \in \LL} p_\ell = 1 \right\}$.
+	For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p^*_1, p^*_2, \ldots, p^*_n)$ such that $f(p^*) = p^*$, where $\displaystyle \triangle^{n - 1} = \left\{(p_1, p_2, \ldots, p_n) \in \mathbb{R}_+^\LL : \sum_{\ell \in \LL} p_\ell = 1 \right\}$.
 \end{boxtheo}
 
 \begin{boxdef}[Shortage]

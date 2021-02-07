@@ -43,7 +43,7 @@
 \subsection{Análisis convexo}
 
 \begin{boxdef}[Conjunto convexo]
-	Sea $X \subseteq \R^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $x, y \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
+	Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $x, y \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
 	\[
 		\lambda x + (1 - \lambda)y \in X
 	.\] 
@@ -73,16 +73,16 @@
 \end{center}
 
 \begin{boxprop}
-	Sean $A$ y $B$ dos subconjuntos convexos de $\R^n$, entonces:
+	Sean $A$ y $B$ dos subconjuntos convexos de $\mathbb{R}^n$, entonces:
 	\begin{eqlist}
 	\item $A \cap B$ es convexo.
 	\item $A + B = \{a + b : a \in A,\ b \in B\}$ es convexo.
-	\item Para todo $k \in \R$, $kA = \{ka : a\in A\}$ es convexo.
+	\item Para todo $k \in \mathbb{R}$, $kA = \{ka : a\in A\}$ es convexo.
 	\end{eqlist}
 \end{boxprop}
 
 \begin{boxdef}[Función convexa]
-	Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \R$ es una \textbf{función convexa} si, para toda $x_1 \neq x_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
+	Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $x_1 \neq x_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
 	\[
 		f(\lambda x_1 + (1 - \lambda)x_2) \le \lambda f(x_1) + (1 - \lambda) f(x_2)
 	.\] 
@@ -90,7 +90,7 @@
 \end{boxdef}
 
 \begin{boxdef}[Función cóncava]                                                                                         
-    Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \R$ es una \textbf{función cóncava} si, para toda $x_1 \neq x_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
+    Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $x_1 \neq x_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
     \[                                                                                                                  
         f(\lambda x_1 + (1 - \lambda)x_2) \ge \lambda f(x_1) + (1 - \lambda) f(x_2)                                     
     .\]                                                                                                                 
@@ -98,24 +98,24 @@
 \end{boxdef}
 
 \begin{boxdef}
-	Sea $X \subseteq \R^n$ y $f : X \to \R$ una función, definimos:
+	Sea $X \subseteq \mathbb{R}^n$ y $f : X \to \mathbb{R}$ una función, definimos:
 	\begin{bulletlist}
-	\item la \textbf{gráfica} de $f$ como $G_f = \{ (x, r) \in X \times \R : f(x) = r \} $.
-	\item el \textbf{epígrafo} de $f$ como $E_f = \{ (x, r) \in X \times \R : f(x) \le r \}$.
-	\item el \textbf{hipógrafo} de $f$ como $H_f = \{ (x, r) \in X \times \R : f(x) \ge r \}$.
+	\item la \textbf{gráfica} de $f$ como $G_f = \{ (x, r) \in X \times \mathbb{R} : f(x) = r \} $.
+	\item el \textbf{epígrafo} de $f$ como $E_f = \{ (x, r) \in X \times \mathbb{R} : f(x) \le r \}$.
+	\item el \textbf{hipógrafo} de $f$ como $H_f = \{ (x, r) \in X \times \mathbb{R} : f(x) \ge r \}$.
 	\end{bulletlist}
 \end{boxdef}
 
 \begin{boxtheo}
-	Sea $X \subseteq \R^n$ un conjunto convexo,
+	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo,
 	\begin{eqlist}
-	\item una función $f : X \to \R$ es convexa si y solo si $E_f$ es un conjunto convexo de $\R^{n+1}$.
-	\item una función $f : X \to \R$ es cóncava si y solo si $H_f$ es un conjunto convexo de $\R^{n+1}$.
+	\item una función $f : X \to \mathbb{R}$ es convexa si y solo si $E_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
+	\item una función $f : X \to \mathbb{R}$ es cóncava si y solo si $H_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
 	\end{eqlist}
 \end{boxtheo}
 
 \begin{boxprop}
-	Sean $X \subseteq \R^n$ un conjunto convexo, $f : X \to \R$ y $g : X \to \R$ dos funciones cóncavas, y $\alpha \in \R$, entonces:
+	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $f : X \to \mathbb{R}$ y $g : X \to \mathbb{R}$ dos funciones cóncavas, y $\alpha \in \mathbb{R}$, entonces:
 	\begin{eqlist}
 	\item $f$ es cóncava si $\alpha > 0$.
 	\item $f$ es convexa si $\alpha < 0$.
@@ -124,7 +124,7 @@
 \end{boxprop}
 
 \begin{boxprop}
-	Sean $X \subseteq \R^n$ un conjunto convexo, $g : X \to \R$ una función cóncava, y $h : Y \to \R$ una función cóncava y creciente tal que $g(X) \subseteq Y \subseteq \R$; entonces, $h \circ g$ es cóncava.
+	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $g : X \to \mathbb{R}$ una función cóncava, y $h : Y \to \mathbb{R}$ una función cóncava y creciente tal que $g(X) \subseteq Y \subseteq \mathbb{R}$; entonces, $h \circ g$ es cóncava.
 \end{boxprop}
 
 \newpage

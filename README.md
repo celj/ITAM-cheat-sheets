@@ -28,4 +28,4 @@ En este repositorio[^1] encontrarán formularios de las siguientes materias:
 
 Las plantillas de $\LaTeX$  son una adaptación de [ethzcheatsheets](https://github.com/flavioschneider/ethzcheatsheets) de Flavio Schneider.
 
-[^1]: Última actualización: 15 de enero de 2021.
+[^1]: Última actualización: 5 de febrero de 2021.
