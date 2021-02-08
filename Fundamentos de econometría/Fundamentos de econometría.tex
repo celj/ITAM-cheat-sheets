@@ -1,3 +1,5 @@
+% !TEX program = lualatex
+
 \documentclass[8pt,a4paper]{extarticle}
 \input{../template_es.tex}
 \input{../macros.tex}
@@ -39,6 +41,75 @@
 \setcounter{page}{1}
 
 \section{Fundamentos estadísticos de econometría}
+
+\begin{boxdef}[Error cuadrático medio]
+	Definimos el \textbf{error cuadrático medio} como sigue:
+	\[
+		\text{\normalfont ECM} (\hat{\theta}) = \mathbb{E}_{\theta} \left[ \left( \hat{\theta} - \theta \right)^2  \right]  = \text{\normalfont Var} (\hat{\theta}) + \text{\normalfont Bias}^{2} (\hat{\theta}, \theta)
+	.\] 
+	Este mide la diferencia en media cuadrada entre nuestros valores estimados y el real. Asimismo, podemos definir el \textbf{error cuadrático medio} de una variable $X$ respecto a alguna constante $c$ como sigue:
+	\[
+		\mathbb{E} \left[ (X - c)^2 \right] = \sigma^2_{\mathbf{x}} + (c - \mu_\mathbf{x})^2
+	.\] 
+\end{boxdef} 
+
+\begin{boxtheo}[Error cuadrático mínimo]
+	El valor que minimiza $\mathbb{E}\left[(X-c)^2\right]$ es $\mu_{\mathbf{x}}$.
+\end{boxtheo}
+
+\begin{boxcor}[Desigualdad de Markov I]
+	Sean $\varphi$ una función monótona creciente y no negativa para los reales no negativos, $X$ una variable aleatoria, $a \ge 0$ y $\varphi(a) > 0$, entonces:
+	\[
+		\mathbb{P}\left( \left| X \right| \ge a \right) \le \frac{\mathbb{E}\left[ \varphi \left( \left| X \right|  \right)  \right] }{\varphi(a)}
+	.\] 
+\end{boxcor}
+
+\begin{boxcor}[Desigualdad de Markov II]
+	Sea $X$ una variable aleatoria y $a > 0$, entonces:
+	\[
+		\mathbb{P}\left( \left| X \right| \ge a  \right) \le \frac{\mathbb{E}\left[ \left| X \right|^r  \right] }{a^r}
+	.\] 
+\end{boxcor}
+
+\begin{boxtheo}[Desigualdad de Chebyshev]
+	Sean $X$ una variable aleatoria con $\mathbb{E}(X) = \mu$ y $\text{\normalfont Var}(X) = \sigma^2$, y $k > 0$, entonces:
+	\[
+		\mathbb{P}\left( \|X - \mu\|_{\alpha} \ge k\sigma \right) \le \frac{1}{k^2}
+	,\] 
+	o bien,
+	\[
+		\mathbb{P}\left( \|X - \mu\|_{\alpha} \ge k \right) \le \frac{\sigma^2}{k^2}
+	,\] 
+	donde $\| \cdot \|_{\alpha}$ es la norma $\alpha$.
+\end{boxtheo}
+
+\begin{boxrmk}[]
+	Sean $X_1, X_2, \ldots, X_n$ una colección de $n\in\mathbb{N}$ variables aleatorias, podemos expresar las funciones de densidad conjunta en términos de densidades condicionales de la siguiente manera:
+	\begin{align*}
+		f(x_1, x_2, \ldots, x_n) &= f(x_1  \mid x_2, x_3, \ldots, x_n)\cdot  f(x_2, x_3, \ldots, x_n) \\
+								 &=  f(x_1  \mid x_2, \ldots, x_n) \cdot f(x_2  \mid x_3, \ldots, x_n) \cdot \cdots \cdot f(x_{n-1}  \mid x_n) \cdot f(x_{n})
+	.\end{align*}
+\end{boxrmk}
+
+\begin{boxtheo}[Ley de esperanzas iteradas]
+	Sean $X$ y $Y$ dos variables aleatorias tales que $\mathbb{E}\left[ X \right] $ está definida y ambas están en el mismo espacio de probabilidad, entonces:
+	\[
+		\mathbb{E}\left[ X \right] = \mathbb{E}\left[ \mathbb{E}\left[ X  \mid Y \right]  \right] 
+	.\] 
+\end{boxtheo}
+
+\begin{boxprop}[]
+	Por la \textbf{ley de esperanzas iteradas}, tenemos:
+	\[
+		\text{\normalfont Var}(X) = \mathbb{E}\left[ \text{\normalfont Var}(X  \mid Y) \right] + \text{\normalfont Var} \left[ \mathbb{E}(Y  \mid X) \right] 
+	.\] 
+\end{boxprop}
+
+\begin{boxprop}[]
+	\[
+		\mathbb{E}(XY) = \mathbb{E}\left[ X \mathbb{E}(Y | X) \right] 
+	.\] 
+\end{boxprop}
 
 
 

@@ -1,3 +1,5 @@
+% !TEX program = lualatex
+
 \documentclass[8pt,a4paper]{extarticle}
 \input{../template_es.tex}
 \input{../macros.tex}
@@ -37,6 +39,16 @@
 
 \begin{multicols}{3}
 \setcounter{page}{1}
+
+\begin{lstlisting}[language=R]
+fib <- function(n) {
+  if (n < 2)
+    n
+  else
+    fib(n - 1) + fib(n - 2)
+}
+fib(10) # => 55
+\end{lstlisting}
 
 \vfill\eject
 \columnbreak

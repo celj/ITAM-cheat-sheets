@@ -18,6 +18,8 @@
 \usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
 \usepackage{nicefrac}
+\usepackage{fontspec}
+\usepackage{listings}
 
 \newcommand{\cs}{Cheat sheet}
 \newcommand{\csof}{Cheat sheet of }
@@ -38,6 +40,16 @@
 \rfoot{Page \thepage}
 
 \graphicspath{{./figures/}}
+
+\setmonofont{JetBrainsMono Nerd Font Mono}[
+    Contextuals = Alternate,
+    Ligatures = TeX,
+]
+
+\lstset{
+    basicstyle = \ttfamily,
+    columns = flexible,
+}
 
 \usetikzlibrary{decorations.markings}
 \pgfplotsset{compat=1.11}
