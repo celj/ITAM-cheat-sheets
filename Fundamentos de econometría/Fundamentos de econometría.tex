@@ -79,7 +79,7 @@
 	o bien,
 	\[
 		\mathbb{P}\left( \|X - \mu\|_{\alpha} \ge k \right) \le \frac{\sigma^2}{k^2}
-	,\] 
+	;\] 
 	donde $\| \cdot \|_{\alpha}$ es la norma $\alpha$.
 \end{boxtheo}
 
@@ -101,17 +101,93 @@
 \begin{boxprop}[]
 	Por la \textbf{ley de esperanzas iteradas}, tenemos:
 	\[
-		\text{\normalfont Var}(X) = \mathbb{E}\left[ \text{\normalfont Var}(X  \mid Y) \right] + \text{\normalfont Var} \left[ \mathbb{E}(Y  \mid X) \right] 
+		\text{\normalfont Var}(X) = \mathbb{E}\left[ \text{\normalfont Var}(X  \mid Y) \right] + \text{\normalfont Var} \left( \mathbb{E}[Y  \mid X] \right)
 	.\] 
 \end{boxprop}
 
 \begin{boxprop}[]
 	\[
-		\mathbb{E}(XY) = \mathbb{E}\left[ X \mathbb{E}(Y | X) \right] 
+		\mathbb{E}[XY] = \mathbb{E}\left[ X \mathbb{E}[Y  \mid  X] \right] 
 	.\] 
 \end{boxprop}
 
+\begin{boxprop}[]
+	Sea $\varepsilon = Y - \mathbb{E}[Y \mid X]$, entonces:
+	\begin{eqlist}
+	\item $\mathbb{E}[\varepsilon  \mid X] = 0$.
+	\item $\text{\normalfont Var}(\varepsilon  \mid X) = \sigma^2_{\mathbf{y \mid x}}$.
+	\item $\mathbb{E}[\varepsilon] = 0$.
+	\item $\text{\normalfont Var}(\varepsilon) = 0$.
+	\item $\text{\normalfont Cov}(h(X), \varepsilon) = 0$.
+	\end{eqlist}
+\end{boxprop}
 
+\begin{boxprop}[]
+	\[
+		\arg\min_{h(X)} \mathbb{E}\left[ \left( Y - h(X) \right)^2  \right] = \mathbb{E}\left[ Y  \mid X \right] 
+	.\] 
+\end{boxprop}
+
+\begin{boxdef}[Mejor predictor lineal]
+	Dado que $\mathbb{E}[Y  \mid X]$ puede ser una función no lineal bastante complicada---excepto en el caso normal bivariado---, consideramos $\mathbb{E}^* [Y  \mid X]$ el \textbf{mejor predictor lineal} (BLP, por sus siglas en inglés) y lo definimos como sigue:
+	\[
+		\mathbb{E}^*\left[ Y  \mid X \right] = \alpha + \beta X
+	,\] 
+	tal que
+	\[
+		\alpha = \mu_{\mathbf{y}} - \beta \mu_{\mathbf{x}} \qquad \beta = \frac{\sigma_{\mathbf{xy}}}{\sigma^2_{x}}
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[]
+	Si la esperanza condicional es lineal, esta coincide con el mejor predictor lineal.
+\end{boxtheo}
+
+\sectionbreak
+
+\begin{boxdef}[Independencia en distribución]
+	Decimos que, en un conjunto finito de $n$ variables aleatorias $\left\{ X_1, \ldots, X_n \right\}$, $X_1, \ldots, X_n$ son \textbf{mutuamente independientes} si:
+	\[
+		F_{\mathbf{x_1,\ldots,x_n}} (x_1, \ldots, x_n) = \prod_{k=1}^{n} F_{\mathbf{x_k}} (x_k), \quad \forall x_1, \ldots, x_n
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Independencia en media]
+	Decimos que una variable aleatoria $Y$ es \textbf{independiente en media} respecto a otra $X$ si:
+	\[
+		\mathbb{E}[Y  \mid X] = \mathbb{E}[Y]
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Independencia en covarianza]
+	Decimos que dos variables aleatorias $X$ y $Y$ son \textbf{independientes en covarianza} si
+	\[
+		\text{\normalfont Cov}(X,Y) = 0
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[]
+	Independencia en distribución implica independencia en medias, y esta, a su vez, implica independencia en covarianzas; pero no en el orden inverso.
+\end{boxtheo}
+
+\begin{boxprop}[]
+	Si $Y$ es independiente en media respecto a $X$, entonces:
+	\[
+		\mathbb{E}[X^r Y] = \mathbb{E}[X^r] \mathbb{E}[Y], \quad \forall r\in \mathbb{R}
+	.\] 
+\end{boxprop}
+
+\begin{boxprop}[]
+	Si $Y$ es independiente en distribución respecto a $X$, entonces:
+	\[
+		\mathbb{E}[h(X) Y^s] = \mathbb{E}[h(X)] \mathbb{E}[Y^s]
+	\] 
+	y, por lo tanto, también se cumple
+	\[
+		\mathbb{E}[X^r Y^s] = \mathbb{E}[X^r] \mathbb{E}[Y^s]
+	\] 
+	para cualquier función $h(X)$ y todo $r$ y $s$.
+\end{boxprop}
 
 \newpage
 \section{Econometría, modelos y datos}

@@ -40,15 +40,100 @@
 \begin{multicols}{3}
 \setcounter{page}{1}
 
-\begin{lstlisting}[language=R]
-fib <- function(n) {
-  if (n < 2)
-    n
-  else
-    fib(n - 1) + fib(n - 2)
-}
-fib(10) # => 55
-\end{lstlisting}
+\section*{Fundamentos}
+
+\subsection{Aritmética de punto flotante}
+
+Un número de punto flotante consiste en tres partes:
+
+\begin{numberlist}
+\item el \textbf{signo} ($+$ o $-$);
+\item la \textbf{mantisa}, que contiene la cadena de bits significativos;
+\item el \textbf{exponente}.
+\end{numberlist}
+
+\begin{center}	
+\begin{tabular}{| c || c | c | c | c | c || c |}
+	\hhline{-||-----||-}
+	$\pm$ & $d_1$ & $d_2$ & $\cdots$ & $d_{m-1}$ & $d_m$ & $s$ \\
+	\hhline{-||-----||-}
+\end{tabular}
+\end{center}
+
+\[
+\ie \quad \pm 0.d_1 d_2 \ldots d_{m-1} d_m \times 10^s, \quad m \in \mathbb{N},\ s \in \mathbb{Z}
+.\] 
+
+\subsubsection*{Formatos y precisión}
+
+\begin{center}
+	\begin{tabular}{| c || c | c | c || c |}
+		\hhline{-||---||-}
+		Precisión          & Signo & Mantisa ($m$) & Exponente ($s$) & Bits totales \\
+		\hhline{=::===::=}
+		\emph{half}        & 1 & 10  & 5  & 16  \\
+		\emph{single}      & 1 & 23	 & 8  & 32	\\
+		\emph{double}      & 1 & 52	 & 11 & 64  \\
+		\emph{long double} & 1 & 64	 & 15 & 80  \\
+		\emph{quad}        & 1 & 112 & 15 & 128 \\
+		\hhline{-||---||-}
+	\end{tabular}
+\end{center}
+
+\begin{boxprop}[]
+	El número positivo más grande está dado por:
+	\[
+		X_{\max} = \left( 1 - 10^{-m} \right) 10^{E_{\max}}
+	,\]
+	donde $E_{\max}$ es el exponente entero positivo más grande.
+\end{boxprop}
+
+\begin{boxprop}[]
+	El número positivo más pequeño está dado por:
+	\[
+		X_{\min} = 10^{E_{\min} - 1}
+	,\] 
+	donde $E_{\min}$ es el exponente entero negativo más pequeño.
+\end{boxprop}
+
+\begin{boxdef}[Método de corte]
+	Sea algún número real $x = (0.d_1 d_2 \ldots d_m d_{m + 1} \ldots) \times 10^s$, entonces:
+	\[
+		fl(x)= (0.d_1 d_2 \ldots d_m) \times 10^s
+	.\]
+\end{boxdef}
+
+\begin{boxdef}[Método de redondeo]
+	Sea algún número real $ x = (0.d_1 d_2 \ldots d_m d_{m + 1} \ldots) \times 10^s$, entonces:
+	\[
+		fl(x) = \begin{cases}
+			(0.d_1 d_2 \ldots d_m) \times 10^s, & \text{\normalfont si } d_{m+1} < 5 \\
+			(0.d_1 d_2 \ldots d_m) \times 10^s + (0.0 \ldots 01)\times 10^s, & \text{\normalfont si } d_{m+1} \ge 5
+		\end{cases}
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[]
+	Al usar el método de corte, para toda $x \in \left[ X_{\min}, X_{\max} \right]$ se cumple:
+	\[
+		\frac{\left| x - fl(x) \right| }{ \left| x \right|  } \le 10^{1 - m}
+	.\] 
+\end{boxtheo}
+
+\vspace{7cm}
+
+\begin{boxdef}[Operación suma]
+	Definimos la \textbf{suma} como sigue: \\
+	\begin{algorithm}[H]
+		\KwIn{$x, y$}
+		\KwOut{$z$}
+
+	\end{algorithm}
+\end{boxdef}
+
+\newpage
+
+\section{Localización de raíces y extremos locales}
 
 \vfill\eject
 \columnbreak
