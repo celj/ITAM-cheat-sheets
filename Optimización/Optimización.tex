@@ -45,9 +45,9 @@
 \subsection{Análisis convexo}
 
 \begin{boxdef}[Conjunto convexo]
-	Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $x, y \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
+	Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $\mathbf{x}, \mathbf{y} \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
 	\[
-		\lambda x + (1 - \lambda)y \in X
+		\lambda \mathbf{x} + (1 - \lambda)\mathbf{y} \in X
 	.\] 
 	Equivalentemente, decimos que $X$ es \textbf{convexo} si, para todas $a \in \partial X$ y $b \in X$, existe $\ell$ tal que $\langle b - a, \ell \rangle \le 0$; donde $\partial X$ es la \emph{frontera} de $X$ y $\langle \cdot\, , \cdot \rangle$ denota el producto punto.
 \end{boxdef}
@@ -84,17 +84,17 @@
 \end{boxprop}
 
 \begin{boxdef}[Función convexa]
-	Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $x_1 \neq x_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
+	Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
 	\[
-		f(\lambda x_1 + (1 - \lambda)x_2) \le \lambda f(x_1) + (1 - \lambda) f(x_2)
+		f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \le \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)
 	.\] 
 	Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente convexa}.
 \end{boxdef}
 
 \begin{boxdef}[Función cóncava]                                                                                         
-    Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $x_1 \neq x_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
+    Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
     \[                                                                                                                  
-        f(\lambda x_1 + (1 - \lambda)x_2) \ge \lambda f(x_1) + (1 - \lambda) f(x_2)                                     
+        f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \ge \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)                                     
     .\]                                                                                                                 
     Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente cóncava}.                            
 \end{boxdef}
@@ -102,9 +102,9 @@
 \begin{boxdef}
 	Sea $X \subseteq \mathbb{R}^n$ y $f : X \to \mathbb{R}$ una función, definimos:
 	\begin{bulletlist}
-	\item la \textbf{gráfica} de $f$ como $G_f = \{ (x, r) \in X \times \mathbb{R} : f(x) = r \} $.
-	\item el \textbf{epígrafo} de $f$ como $E_f = \{ (x, r) \in X \times \mathbb{R} : f(x) \le r \}$.
-	\item el \textbf{hipógrafo} de $f$ como $H_f = \{ (x, r) \in X \times \mathbb{R} : f(x) \ge r \}$.
+	\item la \textbf{gráfica} de $f$ como $G_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) = r \} $.
+	\item el \textbf{epígrafo} de $f$ como $E_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \le r \}$.
+	\item el \textbf{hipógrafo} de $f$ como $H_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \ge r \}$.
 	\end{bulletlist}
 \end{boxdef}
 
@@ -128,6 +128,75 @@
 \begin{boxprop}
 	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $g : X \to \mathbb{R}$ una función cóncava, y $h : Y \to \mathbb{R}$ una función cóncava y creciente tal que $g(X) \subseteq Y \subseteq \mathbb{R}$; entonces, $h \circ g$ es cóncava.
 \end{boxprop}
+
+\begin{boxdef}[Vector gradiente]
+	Sea $f \in \mathcal{C}^1 (X)$, el \textbf{vector gradiente} de $f$ está dado por:
+	\[
+		\nabla f(\mathbf{x}) =
+		\begin{pmatrix} \displaystyle \frac{\partial f}{\partial x_1} \\ \vdots \\ \displaystyle \frac{\partial f}{\partial x_n} \end{pmatrix} 
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Matriz hessiana]
+	Sea $f \in \mathcal{C}^2 (X)$, se define la \textbf{matriz hessiana} de $f$ como $H_f(\mathbf{x})$, donde:
+	\[
+		H_f (\mathbf{x})_{i,j} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i \partial x_j} 
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Serie de Taylor]
+	\[
+		T(\mathbf{x}) = \sum_{|\alpha| \ge 0} \frac{(\mathbf{x} - \mathbf{a})^\alpha}{\alpha\,!} \left(\partial^\alpha f \right)(\mathbf{a})
+	.\] 
+\end{boxdef}
+
+\begin{boxtheo}[de Taylor]
+	Sea $f : \mathbb{R}^n \to \mathbb{R}$ tal que $f \in \mathcal{C}^k(\mathbf{a})$. Entonces, existe $h_{\alpha} : \mathbb{R}^n \to \mathbb{R}$ tal que:
+	\[
+		f(\mathbf{x}) = \sum_{|\alpha| \le k} \frac{\partial^\alpha f(\mathbf{a})}{\alpha\,!} (\mathbf{x} - \mathbf{a})^\alpha + \sum_{|\alpha| = k} h_{\alpha}(\mathbf{x})(\mathbf{x} - \mathbf{a})^\alpha
+	,\] 
+	y
+	\[
+		\lim_{\mathbf{x} \to \mathbf{a}} h_{\alpha} (\mathbf{x}) = 0
+	.\] 
+\end{boxtheo}
+
+\begin{boxdef}[Matriz simétrica]
+	Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{simétrica} si y solo si:
+	\[
+	A = A^T
+	.\] 
+\end{boxdef}
+
+\begin{boxdef}[Matriz diagonalizable]
+	Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{diagonalizable} si y solo si existe una matriz $P  \in \mathcal{M}_{n \times n}$ invertible tal que $P^{-1}AP$ es diagonal.
+\end{boxdef}
+
+\begin{boxdef}[Matriz ortogonalmente diagonalizable]
+	Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{ortogonalmente diagonalizable} si y solo si existe una matriz $T  \in \mathcal{M}_{n \times n}$ invertible tal que $T^{-1}AT$ es diagonal y $T^{-1} = T^T$.
+\end{boxdef}
+
+\begin{boxtheo}[]
+	Si $A \in \mathcal{M}_{n \times n}$ es simétrica, sus valores propios son reales.
+\end{boxtheo}
+
+\begin{boxtheo}[]
+	Una matriz simétrica $A$ de tamaño $n \times n$ puede determinar la forma cuadrática $q_A$ de $n$ variables como sigue:
+	\[
+		q_A (\mathbf{x}) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij}x_ix_j = \mathbf{x}^T A \mathbf{x}
+	.\] 
+\end{boxtheo}
+
+\begin{boxcor}[Clasificación de formas cuadráticas]
+	La matriz asociada a la forma cuadrática $q_A$ es:
+	\begin{eqlist}
+	\item definida positiva si $q_A(\mathbf{x}) > 0,\ \forall \mathbf{x} \neq 0$.
+	\item definida negativa si $q_A(\mathbf{x}) < 0,\ \forall \mathbf{x} \neq 0$.
+	\item semidefinida positiva si $q_A(\mathbf{x}) \ge 0,\ \forall \mathbf{x} \neq 0$.
+	\item semidefinida negativa si $q_A(\mathbf{x}) \le 0,\ \forall \mathbf{x} \neq 0$.
+	\item indefinida si $q_A(\mathbf{x})$ toma tanto valores positivos como negativos.
+	\end{eqlist}
+\end{boxcor}
 
 \newpage
 
