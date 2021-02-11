@@ -75,12 +75,6 @@
 \end{tabular}
 \end{center}
 
-\subsubsection*{Condición de optimalidad}
-
-\[
-	l : \qquad pf'_j(l_j(w, p)) = w
-.\] 
-
 \begin{boxdef}[Ganancias óptimas]
 	Definimos las \textbf{ganancias óptimas} de la firma $j$ como sigue:
 	\[
@@ -122,8 +116,8 @@
 \begin{equation*}
 \begin{aligned}
 	\max_{\{h, c\}} \quad & u_i(h, c) \\
-	\text{sujeto a} \quad & h + n = H_i, \\
-			              & pc = wn + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
+	\text{sujeto a} \quad & \underbracket[0.5pt][0.5pt]{h + n = H_i}_{\text{\normalfont Restricción de tiempo}}, \\
+						  & \underbracket[0.5pt]{pc = \overbracket[0.5pt]{w \; \cdot \;  n}^{\text{\normalfont Ingreso laboral}} + \overbracket[0.5pt]{\sum_{j \in J} \theta_{ij} \pi_j (w, p)}^{\text{\normalfont Ingreso no laboral}}.}_{\text{\normalfont Restricción presupuestal}}
 \end{aligned}
 \end{equation*}
 
@@ -132,7 +126,7 @@ O bien,
 \begin{equation*}
 \begin{aligned}
 	\max_{\{h, c\}} \quad & u_i(h, c) \\
-	\text{sujeto a} \quad & wh + pc = wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
+	\text{sujeto a} \quad & \underbracket[0.5pt]{wh + pc}_{\substack{\text{\normalfont Valor de} \\ \text{\normalfont mercado de} \\ \text{\normalfont la canasta} \\\text{\normalfont de consumo} }} = \underbracket[0.5pt]{wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p)}_{\text{\normalfont Riqueza}}.
 \end{aligned}
 \end{equation*}
 
@@ -142,8 +136,6 @@ O bien,
 	$\theta_{ij}$ & Acciones de la firma $j$ \\
 	$c$           & Consumo del bien final \\
 	$\pi_j$       & Ganancias de la firma $j$ \\
-	$p$           & Precio del bien final \\
-	$w$	          & Precio del trabajo (salario) \\
 	$h$           & Tiempo dedicado al ocio \\
 	$n$           & Tiempo dedicado al trabajo \\
 	$H_i$         & Unidades de tiempo disponibles \\
@@ -152,20 +144,6 @@ O bien,
 \end{center}
 
 \sectionbreak
-
-\subsubsection*{Condiciones de optimalidad}
-
-\begin{equation*}
-\begin{aligned}
-	h : \qquad       & \frac{\partial u_i}{\partial h} (h^*, c^*) &=\ \lambda^* w,\\
-	c : \qquad       & \frac{\partial u_i}{\partial c} (h^*, c^*) &=\ \lambda^* p,\\
-	\lambda : \qquad & wh^* + pc^* &=\ wH_i                       & + \sum_{j \in J} \theta_{ij} \pi_j (w, p).
-\end{aligned}
-\end{equation*}
-
-Si $h^*, c^* > 0$, en el óptimo:
-
-\[ \text{TMS} (h^*, c^*) = \frac{w}{p} \text{ tal que } wh^* + pc^* = wH_i + \sum_{j \in J} \theta_{ij} \pi_j(w, p) .\]
 
 \begin{boxdef}[Demanda de ocio]
 	La \textbf{demanda de ocio} es una de las soluciones al problema de los consumidores y se denota:
@@ -187,8 +165,6 @@ Si $h^*, c^* > 0$, en el óptimo:
 		n_i(w, p) = H_i - h_i(w, p)
 	.\] 
 \end{boxdef}
-
-\newpage
 
 \subsection{Equilibrio competitivo}
 
@@ -214,6 +190,8 @@ Si $h^*, c^* > 0$, en el óptimo:
 	\end{eqlist}
 \end{boxdef}
 
+\newpage
+
 \subsection{Maximización del bienestar social o problema del \emph{planificador central}}
 
 \begin{equation*}
@@ -229,14 +207,6 @@ O bien,
 \[
 	\max_{\{l\}} \quad u(H - l, f(l))
 .\] 
-
-\subsubsection*{Condición de optimalidad}
-
-\[
-	l: \qquad \frac{\displaystyle \frac{\partial u}{\partial h} (H - l^*, f(l^*)) }{\displaystyle \frac{\partial u}{\partial c} (H - l^*, f(l^*))} = f'(l^*)
-.\] 
-
-\sectionbreak
 
 \begin{boxdef}[Demanda de consumo agregada]
 	Definimos la \textbf{demanda de consumo agregada} como sigue:
