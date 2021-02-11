@@ -54,8 +54,8 @@
 \subsubsection*{Propiedades de la función de producción}
 
 \begin{eqlist}
-\item Creciente ($f'_j > 0$), i.e. el trabajo es siempre productivo.
-\item Cóncava ($f''_j \le 0$), i.e. está sujeta a la ley de rendimientos marginales decrecientes.
+\item Creciente, i.e. el trabajo es siempre productivo.
+\item Cóncava, i.e. está sujeta a la ley de rendimientos marginales decrecientes.
 \end{eqlist}
 
 \subsection{El problema de la firma}
@@ -105,8 +105,8 @@
 \subsubsection*{Propiedades de la función de utilidad}
 
 \begin{eqlist}
-\item Continuamente diferenciable, i.e. existe $u'_i$ continua.
-\item Creciente $(u'_i > 0)$.
+\item Continuamente diferenciable.
+\item Creciente.
 \item Monótona.
 \item Cuasicóncava.
 \end{eqlist}
@@ -117,7 +117,7 @@
 \begin{aligned}
 	\max_{\{h, c\}} \quad & u_i(h, c) \\
 	\text{sujeto a} \quad & \underbracket[0.5pt][0.5pt]{h + n = H_i}_{\text{\normalfont Restricción de tiempo}}, \\
-						  & \underbracket[0.5pt]{pc = \overbracket[0.5pt]{w \; \cdot \;  n}^{\text{\normalfont Ingreso laboral}} + \overbracket[0.5pt]{\sum_{j \in J} \theta_{ij} \pi_j (w, p)}^{\text{\normalfont Ingreso no laboral}}.}_{\text{\normalfont Restricción presupuestal}}
+						  & \underbracket[0.5pt]{pc = \overbracket[0.5pt]{w \; \cdot \;  n}^{\text{\normalfont Ingreso laboral}} + \overbracket[0.5pt]{\sum_{j \in J} \theta_{ij} \pi_j (w, p)}^{\text{\normalfont Ingreso no laboral}}.}_{\text{\normalfont Restricción presupuestaria}}
 \end{aligned}
 \end{equation*}
 
@@ -243,13 +243,93 @@ O bien,
 	.\] 
 \end{boxdef}
 
-En caso de encontrarnos con agentes heterogéneos, recordemos que cada subgrupo de consumidores, o empresas, con ciertas características obtendrá demandas, u ofertas, agregadas representativas tales que la demanda, u oferta, agregada de todos los agentes será la suma de los agregados representativos.
+\emph{Nota:} en caso de encontrarnos con agentes heterogéneos, recordemos que cada subgrupo de consumidores, o empresas, con ciertas características obtendrá demandas, u ofertas, agregadas representativas tales que la demanda, u oferta, agregada de todos los agentes será la suma de los agregados representativos.
 
 \sectionbreak
 
 \section{Política fiscal en el modelo estático}
 
+\begin{boxrmk}[]
+	El gobierno financia el gasto público y las transferencias gubernamentales con la recaudación de impuestos.
+	\[
+		\ie \quad \underbracket[0.5pt]{ T = G + \Omega}_{\substack{\text{\normalfont Restricción} \\ \text{\normalfont presupuestaria} \\ \text{\normalfont del gobierno}}}
+	.\] 
+\end{boxrmk}
 
+\subsection{Impuestos distorsivos}
+
+\begin{boxprop}[]
+	Sean $t_i$ y $\omega_i$ los impuestos y transferencias que el individuo $i$ paga y recibe, respectivamente. Para satisfacer la restricción presupuestaria del gobierno:
+	\[
+	\sum_{i \in I} \omega_i = \Omega = T = \sum_{i \in I} t_i
+	.\] 
+\end{boxprop}
+
+\begin{boxprop}[]
+	Cada individuo recibe una proporción fija $\varepsilon_i \ge 0$ de la recaudación.
+	\[
+	\ie \quad \omega_i = \varepsilon_i\Omega = \varepsilon_i T
+	.\] 
+\end{boxprop}
+
+\subsubsection{Impuesto al ingreso}
+
+El monto de los impuestos que el individuo $i$ paga es:
+
+\[
+	t_i = \tau_y \left( wn_i + \sum_{j \in J} \theta_{ij} \pi_j (w) \right) 
+.\] 
+
+\begin{boxdef}[Impuesto proporcional]
+	Un \textbf{impuesto proporcional} o tasa impositiva única sobre la renta es un sistema de impuestos en el que el tipo de gravamen siempre será el mismo, independientemente del nivel de renta.
+\end{boxdef}
+
+\begin{boxdef}[Impuesto progresivo]
+	Un \textbf{impuesto progresivo} es un sistema de impuestos en el cual se establece que a mayor nivel de renta, mayor será el porcentaje de impuestos a pagar sobre la base imponible. 
+\end{boxdef}
+
+\begin{boxprop}[]
+	Cuando la tasa impositiva es única, la recaudación total de la economía es:
+	\[
+	T = \tau_y Y
+	.\] 
+\end{boxprop}
+
+\begin{boxrmk}[]
+	Dado que la incidencia legal de los impuestos recae en los hogares, el problema de las empresas no se modifica y los consumidores se enfrentan a una nueva restricción:
+	\[
+		c = (1 - \tau_y) \left( wn_i + \sum_{j \in J} \theta_{ij} \pi_j(w) \right) + \varepsilon_i\Omega
+	.\] 
+\end{boxrmk}
+
+\subsubsection{Impuesto al consumo}
+
+El monto de los impuestos que el individuo $i$ paga es:
+\[
+t_i = \tau_c c_i
+.\] 
+
+\begin{boxprop}[]
+	La recaudación total de la economía es:
+	\[
+	T = \tau_c \sum_{i \in I} c_i
+	.\] 
+\end{boxprop}
+
+\begin{boxrmk}[]
+	Dado que la incidencia legal de los impuestos recae en los hogares, el problema de las empresas no se modifica y los consumidores se enfrentan a una nueva restricción:
+	\[
+		(1 + \tau_c)c_i = wn_i + \sum_{j \in J} \theta_{ij}\pi_j(w) + \varepsilon_i\Omega
+	.\] 
+\end{boxrmk}
+
+\begin{boxprop}[]
+	Si $\displaystyle 1 + \tau_c = \frac{1}{1 - \tau_y}$, $\tau_y < \tau_c$ y, por lo tanto, $T < T_c$.
+\end{boxprop}
+
+\begin{boxrmk}[]
+	En esta simplificación, dado que la recaudación se reintegra a los consumidores vía transferencias \emph{lump sum}, esta no genera efecto riqueza alguno. El único efecto de los impuestos se da a través de la distorsión en el precio relativo de los bienes.
+\end{boxrmk}
 
 \newpage
 

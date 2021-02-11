@@ -203,7 +203,7 @@
 
 \begin{equation*}
 \begin{aligned}
-	\max_{\{ (x_{1, 1}, \ldots, x_{1, n}), \ldots, (x_{m, 1}, \ldots, x_{m, n})  \}}\ & u_1 (x_{1, 1}, \ldots, x_{1, n}) \\
+	\max_{\{ (x_{1, 1}, \ldots, x_{1, n}), \ldots, (x_{m, 1}, \ldots, x_{m, n})  \}}\ & u_1 (x_{1, 1}, \ldots, x_{1, n}) \quad \\
 	\text{subject to} \quad &  u_2 (x_{2, 1}, \ldots, x_{2, n}) \ge \bar{u}_2 \\
 						    & \quad \vdots \\
 							&  u_m (x_{m, 1}, \ldots, x_{m, n}) \ge \bar{u}_m \\
@@ -242,7 +242,7 @@
 	\item $\forall i \in \I,\ x^*_i = (x^*_{i, 1}, \ldots, x^*_{i, n})$ solves the following maximization problem: 
 		\begin{equation*}
 		\begin{aligned}
-			\max_{\{x_i\}}\	  & u_i(x_i) \\
+			\max_{\{x_i\}}\quad	  & u_i(x_i) \\
 			\text{\normalfont subject to} \quad & wh + p \cdot x_i \le p \cdot \omega_i = \sum_{\ell \in \LL} p_\ell \omega_{i, \ell}.
 		\end{aligned}
 		\end{equation*}
@@ -250,11 +250,11 @@
 	\end{eqlist}
 \end{boxdef}
 
+\newpage
+
 \begin{boxprop}
 	Given, at least, one consumer with strictly monotone preferences. Then, if $(x^*, p)$ is a competitive equilibrium, $p_1, p_2, \ldots, p_n > 0$.
 \end{boxprop}
-
-\newpage
 
 \begin{boxprop}
 	Given, at least, one consumer with weakly monotone preferences. Then, if $(x^*, p)$ is a competitive equilibrium, for at least one $\ell$, $p_\ell > 0$.
@@ -276,7 +276,7 @@
 \end{boxcor}
 
 \begin{boxtheo}[Fixed Point]
-	For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p^*_1, p^*_2, \ldots, p^*_n)$ such that $f(p^*) = p^*$, where $\displaystyle \triangle^{n - 1} = \left\{(p_1, p_2, \ldots, p_n) \in \mathbb{R}_+^\LL : \sum_{\ell \in \LL} p_\ell = 1 \right\}$.
+	For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p^*_1, p^*_2, \ldots, p^*_n)$ such that $f(p^*) = p^*$, where: $$\displaystyle \triangle^{n - 1} = \left\{(p_1, p_2, \ldots, p_n) \in \mathbb{R}_+^\LL : \sum_{\ell \in \LL} p_\ell = 1 \right\}.$$
 \end{boxtheo}
 
 \begin{boxdef}[Shortage]
@@ -289,6 +289,8 @@
 \begin{boxprop}
 	$p$ is a competitive equilibrium if and only if $Z(p) = 0$.
 \end{boxprop}
+
+\sectionbreak
 
 \subsubsection*{Excess Demand Properties}
 
