@@ -99,23 +99,6 @@
     Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente cóncava}.                            
 \end{boxdef}
 
-\begin{boxdef}
-	Sea $X \subseteq \mathbb{R}^n$ y $f : X \to \mathbb{R}$ una función, definimos:
-	\begin{bulletlist}
-	\item la \textbf{gráfica} de $f$ como $G_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) = r \} $.
-	\item el \textbf{epígrafo} de $f$ como $E_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \le r \}$.
-	\item el \textbf{hipógrafo} de $f$ como $H_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \ge r \}$.
-	\end{bulletlist}
-\end{boxdef}
-
-\begin{boxtheo}
-	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo,
-	\begin{eqlist}
-	\item una función $f : X \to \mathbb{R}$ es convexa si y solo si $E_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
-	\item una función $f : X \to \mathbb{R}$ es cóncava si y solo si $H_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
-	\end{eqlist}
-\end{boxtheo}
-
 \begin{boxprop}
 	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $f : X \to \mathbb{R}$ y $g : X \to \mathbb{R}$ dos funciones cóncavas, y $\alpha \in \mathbb{R}$, entonces:
 	\begin{eqlist}
@@ -197,6 +180,119 @@
 	\item indefinida si $q_A(\mathbf{x})$ toma tanto valores positivos como negativos.
 	\end{eqlist}
 \end{boxcor}
+
+\begin{boxdef}[Menores principales]
+	Sea $A$ una matriz simétrica, los \textbf{menores principales} de esta matriz son los determinantes de todas las submatrices superiores izquierdas, es decir:
+\begin{align*}
+	\left| A_1 \right|  &= \left| (a_{11}) \right|, \\
+	\left| A_2 \right| &= \left| \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}  \right|, \\
+	\left| A_3 \right| &= \left| \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}  \right|,\ \cdots
+\end{align*} 
+\end{boxdef}
+
+\newpage
+
+\begin{boxtheo}[Criterio de menores principales]
+	Sea $A$ una matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
+	\begin{eqlist}
+	\item\label{1}$q_A$ es definida positiva si y solo si los menores principales de $A$ son todos positivos.
+	\item\label{2} $q_A$ es definida negativa si y solo si los menores principales de $A$ alternan signos de la forma:
+		\[
+		 \left| A_1 \right| < 0, \left| A_2 \right| > 0, \left| A_3 \right| < 0, \ldots
+		.\] 
+	\item $q_A$ es indefinida si $\left| A \right| \neq 0$, pero no se cumplen \ref{1} ni \ref{2}.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxtheo}[Criterio de valores propios]
+	Sea $A$ uns matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
+	\begin{eqlist}
+	\item $q_A$ es definida positiva si y solo si todos los valores propios de $A$ son positivos.
+	\item $q_A$ es definida negativa si y solo si todos los valores propios de $A$ son negativos.
+	\item $q_A$ es semidefinida positiva si y solo si todos los valores propios de $A$ son no negativos.
+	\item $q_A$ es semidefinida negativa si y solo si todos los valores propios de $A$ son no positivos.
+	\item $q_A$ es indefinida si y solo si la matriz $A$ tiene valores propios positivos y negativos.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxtheo}[Criterio del primer orden]
+	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^1(X)$, entonces:
+	\begin{eqlist}
+	\item $f$ es convexa si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+		\[
+			f(\mathbf{y}) \ge f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
+		.\]
+	\item $f$ es cóncava si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+		\[
+			f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
+		.\] 
+	\end{eqlist}
+\end{boxtheo}
+
+\sectionbreak
+
+\begin{boxtheo}[Criterio de segundo orden]
+	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^2(X)$, entonces:
+	\begin{eqlist}
+	\item $f$ es convexa en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es semidefinida positiva.
+	\item $f$ es estrictamente convexa en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es definida positiva.
+	\item $f$ es cóncava en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es semidefinida negativa.
+	\item $f$ es estrictamente cóncava en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es definida negativa.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxdef}
+	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
+	\begin{bulletlist}
+	\item la \textbf{gráfica} de $f$ como $$G_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) = r \} .$$
+	\item el \textbf{epígrafo} de $f$ como $$E_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \le r \} .$$
+	\item el \textbf{hipógrafo} de $f$ como $$H_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \ge r \} .$$
+	\end{bulletlist}
+\end{boxdef}
+
+\begin{boxtheo}
+	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo,
+	\begin{eqlist}
+	\item una función $f : X \to \mathbb{R}$ es convexa si y solo si $E_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
+	\item una función $f : X \to \mathbb{R}$ es cóncava si y solo si $H_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxdef}
+	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
+	\begin{bulletlist}
+	\item el \textbf{contorno} de $f$ en $k$ como $$C_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) = k\}.$$
+	\item el \textbf{contorno superior} de $f$ en $k$ como $$CS_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \ge k\}.$$
+	\item el \textbf{contorno inferior} de $f$ en $k$ como $$CI_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \le k\}.$$
+	\end{bulletlist}
+\end{boxdef}
+
+\begin{boxtheo}[]
+	\begin{eqlist}
+	\item Si $f : X \to \mathbb{R}$ es cóncava en $A$, $CS_f(k)$ es convexo para toda $k$ en la imagen de $f$.
+	\item Si $f : X \to \mathbb{R}$ es convexa en $A$, $CI_f(k)$ es convexo para toda $k$ en la imagen de $f$.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxtheo}[]
+	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, entonces:
+	\begin{eqlist}
+	\item $f$ es cuasicóncava en $A$ si $CI_f (k)$ es convexo para toda $k$ en la imagen de $f$.
+	\item $f$ es cuasiconvexa en $A$ si $CS_f (k)$ es convexo para toda $k$ en la imagen de $f$.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxtheo}[]
+	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, entonces:
+	\begin{eqlist}
+	\item $f$ es cuasicóncava si $f$ es cóncava.
+	\item $f$ es cuasiconvexa si $f$ es convexa.
+	\end{eqlist}
+\end{boxtheo}
+
+\begin{boxtheo}[]
+	Cualquier transformación monótona creciente de una función cuasiconvexa es cuasiconvexa. Asimismo, cualesquier transformación monótona creciente de una función cuasicóncava es cuasicóncava.
+\end{boxtheo}
 
 \newpage
 
