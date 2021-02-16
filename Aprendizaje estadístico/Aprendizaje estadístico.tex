@@ -40,6 +40,74 @@
 \begin{multicols}{3}
 \setcounter{page}{1}
 
+\section*{Introducción}
+
+\subsection*{?`Cuándo necesitamos aprendizaje de máquina?}
+
+Dos aspectos de un problema dado pueden requerir el uso de programas que aprendan y mejoren sobre la base de su ``experiencia'': la \textbf{complejidad} del problema y la necesidad de \textbf{adaptabilidad}.
+
+\subsubsection*{Complejidad}
+
+\begin{bulletlist}
+\item Tareas realizadas por animales o humanos.
+\item Tareas más allá de las capacidades humanas.
+\end{bulletlist}
+
+\subsubsection*{Adaptabilidad}
+
+Una característica limitante de las herramientas programadas es su rigidez: una vez que el programa se ha escrito e instalado, permanece sin cambios. Sin embargo, muchas tareas cambian con el tiempo, o de un usuario a otro. Las herramientas de aprendizaje de máquina (programas cuyo comportamiento se adapta a sus datos de entrada) ofrecen una solución a estos problemas; estos son, por naturaleza, adaptables a los cambios en el entorno con el que interactúan.
+
+\subsection*{Tipos de aprendizaje}
+
+\begin{bulletlist}
+\item Supervisado o no supervisado.
+\item Por refuerzo.
+\item Agentes pasivos o activos.
+\item Maestro.
+\item Protocolo por bloques o continuo.
+\end{bulletlist}
+
+\newpage
+
+\section{Modelo formal de aprendizaje}
+
+\subsection{Marco formal de aprendizaje estadístico}
+
+\subsubsection*{Entradas ($\left\{ \mathcal{X}, \mathcal{Y}, S \right\} $)}
+
+\begin{bulletlist}
+\item \textbf{Conjunto de dominio} ($\mathcal{X}$): $\mathcal{X} \subseteq \mathbb{R}^d$ tal que $d < \infty$.
+\item \textbf{Conjunto de etiquetas} ($\mathcal{Y}$): en el caso de etiquetado binario, podemos definir $\mathcal{Y} = \left\{ 0,1 \right\} $ ó $\mathcal{Y} = \left\{ -1,+1 \right\} $.
+\item \textbf{Conjunto de entrenamiento} ($S$): Una sucesión $\displaystyle S = \left\{ \left( x_i, y_i \right)  \right\}_{i = 1}^m $ tal que $m < \infty$ y $\left( x_i, y_i \right) \in \mathcal{X} \times \mathcal{Y}$.
+\end{bulletlist}
+
+\subsubsection*{Reglas de predicción ($h$)}
+
+$h : \mathcal{X} \to \mathcal{Y}$ ; también llamado \emph{predictor}, \emph{hipótesis} o \emph{clasificador}.
+
+\subsubsection*{Algoritmo de aprendizaje ($A$)}
+
+Denotamos $A(S)$ a la hipótesis que el algoritmo de aprendizaje $A$ genera al observar el conjunto de entrenamiento $S$. Asimismo, asumimos que $\mathcal{X}$ tiene una medida de probabilidad desconocida $\mathcal{D}$ y que existe una función desconocida $f$ que etiqueta los datos de manera correcta, es decir:
+\[
+	\exists f:\mathcal{X}\to \mathcal{Y}\quad \text{\normalfont tal que} \quad f(x_i) = y_i,\; \forall i
+.\] 
+
+\subsubsection*{Métricas de éxito}
+
+\begin{boxdef}[Error de un clasificador]
+	Dado un subconjunto de dominio $A \subseteq \mathcal{X}$ y su probabilidad de observarlo $\mathcal{D}(A)$. En muchos casos, nos referimos a $A$ como un evento y lo expresamos usando una función $\pi : \mathcal{X} \to \{0,1\}$ tal que $A = \{x \in \mathcal{X} : \pi(x) = 1\} $. Así pues, definimos el \textbf{error del clasificador} $h : \mathcal{X} \to \mathcal{Y}$ como sigue:
+	\[
+		L_{\mathcal{D}, f} (h) \deq \underset{x \sim \mathcal{D}}{\mathbb{P}} \left[ h(x) \neq f(x) \right] \deq \mathcal{D}\left( \{x : h(x) \neq f(x)\}  \right) 
+	.\]
+	También se le conoce como \textbf{error de generalización}, \textbf{riesgo} o \textbf{error verdadero} de $h$.
+\end{boxdef}
+
+\sectionbreak
+
+\subsection{Minimización de riesgo empírico}
+
+
+
 \vfill\eject
 \columnbreak
 \end{multicols}
