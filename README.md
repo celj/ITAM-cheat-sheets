@@ -47,4 +47,4 @@ _Para cualquier corrección, revisión o sugerencia, [escríbeme](mailto:carlose
 
 <sub>Las plantillas *.tex son una adaptación de [ethzcheatsheets](https://github.com/flavioschneider/ethzcheatsheets) de Flavio Schneider.</sub>
 
-<sub><b id="f1">1</b> Última actualización: 22 de febrero de 2021. [↵](#a1)</sub>
+<sub><b id="f1">1:</b> Última actualización: 22 de febrero de 2021. [↵](#a1)</sub>
