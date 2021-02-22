@@ -22,291 +22,291 @@
 \begin{document}
 
 \begin{titlepage}
-    \begin{center}
-	\vspace*{1cm}
-	\Huge
-        \textbf{\csClass}
-	\vspace{0.5cm} \\
-	\Large
-        \cs\ $\cdot$ \csTerm
-        \vfill
-        \csAuthorName
-	\vspace{0.8cm}
-        \csClassCode\\
-        \csSchool     
-    \end{center}
+	\begin{center}
+		\vspace*{1cm}
+		\Huge
+		\textbf{\csClass}
+		\vspace{0.5cm} \\
+		\Large
+		\cs\ $\cdot$ \csTerm
+		\vfill
+		\csAuthorName
+		\vspace{0.8cm}
+		\csClassCode\\
+		\csSchool
+	\end{center}
 \end{titlepage}
 
 \begin{multicols}{3}
-\setcounter{page}{1}
+	\setcounter{page}{1}
 
-\section{Optimización estática}
+	\section{Optimización estática}
 
-\subsection{Análisis convexo}
+	\subsection{Análisis convexo}
 
-\begin{boxdef}[Conjunto convexo]
-	Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $\mathbf{x}, \mathbf{y} \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
-	\[
-		\lambda \mathbf{x} + (1 - \lambda)\mathbf{y} \in X
-	.\] 
-	Equivalentemente, decimos que $X$ es \textbf{convexo} si, para todas $a \in \partial X$ y $b \in X$, existe $\ell$ tal que $\langle b - a, \ell \rangle \le 0$; donde $\partial X$ es la \emph{frontera} de $X$ y $\langle \cdot\, , \cdot \rangle$ denota el producto punto.
-\end{boxdef}
-
-\begin{center}
-\begin{tikzpicture}
-	\begin{scope}
-		\draw[rotate=-45,fill=red!30] (0,0) ellipse (45pt and 30pt);
-	\node [label={[yshift=-2.2cm]Conjunto convexo}] {};
-	\end{scope}
-	\begin{scope}[xshift=3.5cm]
-		\useasboundingbox (-1,-1.35) rectangle (1.5,1.35);
-		\draw[fill=red!30] (0,0) to [out=140,in=90] (-1,-1)
-		to [out=-90,in=240] (0.8,-0.6)
-		to [out=60,in=-60] (1.2,1.2)
-		to [out=120,in=90] (0.3,0.7)
-		to [out=-90,in=20] (0.3,0)
-		to [out=200,in=-40] (0,0);
-		\draw (-0.5,-0.5) -- (0.7,0.7);
-		\fill (-0.5,-0.5) circle[radius=1.5pt];
-		\fill (0.7,0.7) circle[radius=1.5pt];
-		\node [label={[yshift=-2.2cm]Conjunto no convexo}] {};
-	\end{scope}
-\end{tikzpicture}
-\end{center}
-
-\begin{boxprop}
-	Sean $A$ y $B$ dos subconjuntos convexos de $\mathbb{R}^n$, entonces:
-	\begin{eqlist}
-	\item $A \cap B$ es convexo.
-	\item $A + B = \{a + b : a \in A,\ b \in B\}$ es convexo.
-	\item Para todo $k \in \mathbb{R}$, $kA = \{ka : a\in A\}$ es convexo.
-	\end{eqlist}
-\end{boxprop}
-
-\begin{boxdef}[Función convexa]
-	Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
-	\[
-		f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \le \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)
-	.\] 
-	Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente convexa}.
-\end{boxdef}
-
-\begin{boxdef}[Función cóncava]                                                                                         
-    Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
-    \[                                                                                                                  
-        f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \ge \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)                                     
-    .\]                                                                                                                 
-    Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente cóncava}.                            
-\end{boxdef}
-
-\begin{boxprop}
-	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $f : X \to \mathbb{R}$ y $g : X \to \mathbb{R}$ dos funciones cóncavas, y $\alpha \in \mathbb{R}$, entonces:
-	\begin{eqlist}
-	\item $f$ es cóncava si $\alpha > 0$.
-	\item $f$ es convexa si $\alpha < 0$.
-	\item $f+g$ es cóncava.
-	\end{eqlist}
-\end{boxprop}
-
-\begin{boxprop}
-	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $g : X \to \mathbb{R}$ una función cóncava, y $h : Y \to \mathbb{R}$ una función cóncava y creciente tal que $g(X) \subseteq Y \subseteq \mathbb{R}$; entonces, $h \circ g$ es cóncava.
-\end{boxprop}
-
-\begin{boxdef}[Vector gradiente]
-	Sea $f \in \mathcal{C}^1 (X)$, el \textbf{vector gradiente} de $f$ está dado por:
-	\[
-		\nabla f(\mathbf{x}) =
-		\begin{pmatrix} \displaystyle \frac{\partial f}{\partial x_1} \\ \vdots \\ \displaystyle \frac{\partial f}{\partial x_n} \end{pmatrix} 
-	.\] 
-\end{boxdef}
-
-\begin{boxdef}[Matriz hessiana]
-	Sea $f \in \mathcal{C}^2 (X)$, se define la \textbf{matriz hessiana} de $f$ como $H_f(\mathbf{x})$, donde:
-	\[
-		H_f (\mathbf{x})_{i,j} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i \partial x_j} 
-	.\] 
-\end{boxdef}
-
-\begin{boxdef}[Serie de Taylor]
-	\[
-		T(\mathbf{x}) = \sum_{|\alpha| \ge 0} \frac{(\mathbf{x} - \mathbf{a})^\alpha}{\alpha\,!} \left(\partial^\alpha f \right)(\mathbf{a})
-	.\] 
-\end{boxdef}
-
-\begin{boxtheo}[de Taylor]
-	Sea $f : \mathbb{R}^n \to \mathbb{R}$ tal que $f \in \mathcal{C}^k(\mathbf{a})$. Entonces, existe $h_{\alpha} : \mathbb{R}^n \to \mathbb{R}$ tal que:
-	\[
-		f(\mathbf{x}) = \sum_{|\alpha| \le k} \frac{\partial^\alpha f(\mathbf{a})}{\alpha\,!} (\mathbf{x} - \mathbf{a})^\alpha + \sum_{|\alpha| = k} h_{\alpha}(\mathbf{x})(\mathbf{x} - \mathbf{a})^\alpha
-	,\] 
-	y
-	\[
-		\lim_{\mathbf{x} \to \mathbf{a}} h_{\alpha} (\mathbf{x}) = 0
-	.\] 
-\end{boxtheo}
-
-\begin{boxdef}[Matriz simétrica]
-	Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{simétrica} si y solo si:
-	\[
-	A = A^T
-	.\] 
-\end{boxdef}
-
-\begin{boxdef}[Matriz diagonalizable]
-	Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{diagonalizable} si y solo si existe una matriz $P  \in \mathcal{M}_{n \times n}$ invertible tal que $P^{-1}AP$ es diagonal.
-\end{boxdef}
-
-\begin{boxdef}[Matriz ortogonalmente diagonalizable]
-	Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{ortogonalmente diagonalizable} si y solo si existe una matriz $T  \in \mathcal{M}_{n \times n}$ invertible tal que $T^{-1}AT$ es diagonal y $T^{-1} = T^T$.
-\end{boxdef}
-
-\begin{boxtheo}[]
-	Si $A \in \mathcal{M}_{n \times n}$ es simétrica, sus valores propios son reales.
-\end{boxtheo}
-
-\begin{boxtheo}[]
-	Una matriz simétrica $A$ de tamaño $n \times n$ puede determinar la forma cuadrática $q_A$ de $n$ variables como sigue:
-	\[
-		q_A (\mathbf{x}) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij}x_ix_j = \mathbf{x}^T A \mathbf{x}
-	.\] 
-\end{boxtheo}
-
-\begin{boxcor}[Clasificación de formas cuadráticas]
-	La matriz asociada a la forma cuadrática $q_A$ es:
-	\begin{eqlist}
-	\item definida positiva si $q_A(\mathbf{x}) > 0,\ \forall \mathbf{x} \neq 0$.
-	\item definida negativa si $q_A(\mathbf{x}) < 0,\ \forall \mathbf{x} \neq 0$.
-	\item semidefinida positiva si $q_A(\mathbf{x}) \ge 0,\ \forall \mathbf{x} \neq 0$.
-	\item semidefinida negativa si $q_A(\mathbf{x}) \le 0,\ \forall \mathbf{x} \neq 0$.
-	\item indefinida si $q_A(\mathbf{x})$ toma tanto valores positivos como negativos.
-	\end{eqlist}
-\end{boxcor}
-
-\begin{boxdef}[Menores principales]
-	Sea $A$ una matriz simétrica, los \textbf{menores principales} de esta matriz son los determinantes de todas las submatrices superiores izquierdas, es decir:
-\begin{align*}
-	\left| A_1 \right|  &= \left| (a_{11}) \right|, \\
-	\left| A_2 \right| &= \left| \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}  \right|, \\
-	\left| A_3 \right| &= \left| \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}  \right|,\ \cdots
-\end{align*} 
-\end{boxdef}
-
-\newpage
-
-\begin{boxtheo}[Criterio de menores principales]
-	Sea $A$ una matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
-	\begin{eqlist}
-	\item\label{1}$q_A$ es definida positiva si y solo si los menores principales de $A$ son todos positivos.
-	\item\label{2} $q_A$ es definida negativa si y solo si los menores principales de $A$ alternan signos de la forma:
+	\begin{boxdef}[Conjunto convexo]
+		Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $\mathbf{x}, \mathbf{y} \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
 		\[
-		 \left| A_1 \right| < 0, \left| A_2 \right| > 0, \left| A_3 \right| < 0, \ldots
-		.\] 
-	\item $q_A$ es indefinida si $\left| A \right| \neq 0$, pero no se cumplen \ref{1} ni \ref{2}.
-	\end{eqlist}
-\end{boxtheo}
+			\lambda \mathbf{x} + (1 - \lambda)\mathbf{y} \in X
+			.\]
+		Equivalentemente, decimos que $X$ es \textbf{convexo} si, para todas $a \in \partial X$ y $b \in X$, existe $\ell$ tal que $\langle b - a, \ell \rangle \le 0$; donde $\partial X$ es la \emph{frontera} de $X$ y $\langle \cdot\, , \cdot \rangle$ denota el producto punto.
+	\end{boxdef}
 
-\begin{boxtheo}[Criterio de valores propios]
-	Sea $A$ uns matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
-	\begin{eqlist}
-	\item $q_A$ es definida positiva si y solo si todos los valores propios de $A$ son positivos.
-	\item $q_A$ es definida negativa si y solo si todos los valores propios de $A$ son negativos.
-	\item $q_A$ es semidefinida positiva si y solo si todos los valores propios de $A$ son no negativos.
-	\item $q_A$ es semidefinida negativa si y solo si todos los valores propios de $A$ son no positivos.
-	\item $q_A$ es indefinida si y solo si la matriz $A$ tiene valores propios positivos y negativos.
-	\end{eqlist}
-\end{boxtheo}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{scope}
+				\draw[rotate=-45,fill=red!30] (0,0) ellipse (45pt and 30pt);
+				\node [label={[yshift=-2.2cm]Conjunto convexo}] {};
+			\end{scope}
+			\begin{scope}[xshift=3.5cm]
+				\useasboundingbox (-1,-1.35) rectangle (1.5,1.35);
+				\draw[fill=red!30] (0,0) to [out=140,in=90] (-1,-1)
+				to [out=-90,in=240] (0.8,-0.6)
+				to [out=60,in=-60] (1.2,1.2)
+				to [out=120,in=90] (0.3,0.7)
+				to [out=-90,in=20] (0.3,0)
+				to [out=200,in=-40] (0,0);
+				\draw (-0.5,-0.5) -- (0.7,0.7);
+				\fill (-0.5,-0.5) circle[radius=1.5pt];
+				\fill (0.7,0.7) circle[radius=1.5pt];
+				\node [label={[yshift=-2.2cm]Conjunto no convexo}] {};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
 
-\begin{boxtheo}[Criterio del primer orden]
-	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^1(X)$, entonces:
-	\begin{eqlist}
-	\item $f$ es convexa si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+	\begin{boxprop}
+		Sean $A$ y $B$ dos subconjuntos convexos de $\mathbb{R}^n$, entonces:
+		\begin{eqlist}
+			\item $A \cap B$ es convexo.
+			\item $A + B = \{a + b : a \in A,\ b \in B\}$ es convexo.
+			\item Para todo $k \in \mathbb{R}$, $kA = \{ka : a\in A\}$ es convexo.
+		\end{eqlist}
+	\end{boxprop}
+
+	\begin{boxdef}[Función convexa]
+		Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
 		\[
-			f(\mathbf{y}) \ge f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
-		.\]
-	\item $f$ es cóncava si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+			f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \le \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)
+			.\]
+		Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente convexa}.
+	\end{boxdef}
+
+	\begin{boxdef}[Función cóncava]
+		Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
 		\[
-			f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
-		.\] 
-	\end{eqlist}
-\end{boxtheo}
+			f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \ge \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)
+			.\]
+		Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente cóncava}.
+	\end{boxdef}
 
-\sectionbreak
+	\begin{boxprop}
+		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $f : X \to \mathbb{R}$ y $g : X \to \mathbb{R}$ dos funciones cóncavas, y $\alpha \in \mathbb{R}$, entonces:
+		\begin{eqlist}
+			\item $f$ es cóncava si $\alpha > 0$.
+			\item $f$ es convexa si $\alpha < 0$.
+			\item $f+g$ es cóncava.
+		\end{eqlist}
+	\end{boxprop}
 
-\begin{boxtheo}[Criterio de segundo orden]
-	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^2(X)$, entonces:
-	\begin{eqlist}
-	\item $f$ es convexa en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es semidefinida positiva.
-	\item $f$ es estrictamente convexa en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es definida positiva.
-	\item $f$ es cóncava en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es semidefinida negativa.
-	\item $f$ es estrictamente cóncava en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es definida negativa.
-	\end{eqlist}
-\end{boxtheo}
+	\begin{boxprop}
+		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo, $g : X \to \mathbb{R}$ una función cóncava, y $h : Y \to \mathbb{R}$ una función cóncava y creciente tal que $g(X) \subseteq Y \subseteq \mathbb{R}$; entonces, $h \circ g$ es cóncava.
+	\end{boxprop}
 
-\begin{boxdef}
-	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
-	\begin{bulletlist}
-	\item la \textbf{gráfica} de $f$ como $$G_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) = r \} .$$
-	\item el \textbf{epígrafo} de $f$ como $$E_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \le r \} .$$
-	\item el \textbf{hipógrafo} de $f$ como $$H_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \ge r \} .$$
-	\end{bulletlist}
-\end{boxdef}
+	\begin{boxdef}[Vector gradiente]
+		Sea $f \in \mathcal{C}^1 (X)$, el \textbf{vector gradiente} de $f$ está dado por:
+		\[
+			\nabla f(\mathbf{x}) =
+			\begin{pmatrix} \displaystyle \frac{\partial f}{\partial x_1} \\ \vdots \\ \displaystyle \frac{\partial f}{\partial x_n} \end{pmatrix}
+			.\]
+	\end{boxdef}
 
-\begin{boxtheo}
-	Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo,
-	\begin{eqlist}
-	\item una función $f : X \to \mathbb{R}$ es convexa si y solo si $E_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
-	\item una función $f : X \to \mathbb{R}$ es cóncava si y solo si $H_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
-	\end{eqlist}
-\end{boxtheo}
+	\begin{boxdef}[Matriz hessiana]
+		Sea $f \in \mathcal{C}^2 (X)$, se define la \textbf{matriz hessiana} de $f$ como $H_f(\mathbf{x})$, donde:
+		\[
+			H_f (\mathbf{x})_{i,j} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i \partial x_j}
+			.\]
+	\end{boxdef}
 
-\begin{boxdef}
-	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
-	\begin{bulletlist}
-	\item el \textbf{contorno} de $f$ en $k$ como $$C_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) = k\}.$$
-	\item el \textbf{contorno superior} de $f$ en $k$ como $$CS_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \ge k\}.$$
-	\item el \textbf{contorno inferior} de $f$ en $k$ como $$CI_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \le k\}.$$
-	\end{bulletlist}
-\end{boxdef}
+	\begin{boxdef}[Serie de Taylor]
+		\[
+			T(\mathbf{x}) = \sum_{|\alpha| \ge 0} \frac{(\mathbf{x} - \mathbf{a})^\alpha}{\alpha\,!} \left(\partial^\alpha f \right)(\mathbf{a})
+			.\]
+	\end{boxdef}
 
-\begin{boxtheo}[]
-	\begin{eqlist}
-	\item Si $f : X \to \mathbb{R}$ es cóncava en $A$, $CS_f(k)$ es convexo para toda $k$ en la imagen de $f$.
-	\item Si $f : X \to \mathbb{R}$ es convexa en $A$, $CI_f(k)$ es convexo para toda $k$ en la imagen de $f$.
-	\end{eqlist}
-\end{boxtheo}
+	\begin{boxtheo}[de Taylor]
+		Sea $f : \mathbb{R}^n \to \mathbb{R}$ tal que $f \in \mathcal{C}^k(\mathbf{a})$. Entonces, existe $h_{\alpha} : \mathbb{R}^n \to \mathbb{R}$ tal que:
+		\[
+			f(\mathbf{x}) = \sum_{|\alpha| \le k} \frac{\partial^\alpha f(\mathbf{a})}{\alpha\,!} (\mathbf{x} - \mathbf{a})^\alpha + \sum_{|\alpha| = k} h_{\alpha}(\mathbf{x})(\mathbf{x} - \mathbf{a})^\alpha
+			,\]
+		y
+		\[
+			\lim_{\mathbf{x} \to \mathbf{a}} h_{\alpha} (\mathbf{x}) = 0
+			.\]
+	\end{boxtheo}
 
-\begin{boxtheo}[]
-	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, entonces:
-	\begin{eqlist}
-	\item $f$ es cuasicóncava en $A$ si $CS_f (k)$ es convexo para toda $k$ en la imagen de $f$.
-	\item $f$ es cuasiconvexa en $A$ si $CI_f (k)$ es convexo para toda $k$ en la imagen de $f$.
-	\end{eqlist}
-\end{boxtheo}
+	\begin{boxdef}[Matriz simétrica]
+		Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{simétrica} si y solo si:
+		\[
+			A = A^T
+			.\]
+	\end{boxdef}
 
-\begin{boxtheo}[]
-	Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, entonces:
-	\begin{eqlist}
-	\item $f$ es cuasicóncava si $f$ es cóncava.
-	\item $f$ es cuasiconvexa si $f$ es convexa.
-	\end{eqlist}
-\end{boxtheo}
+	\begin{boxdef}[Matriz diagonalizable]
+		Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{diagonalizable} si y solo si existe una matriz $P  \in \mathcal{M}_{n \times n}$ invertible tal que $P^{-1}AP$ es diagonal.
+	\end{boxdef}
 
-\begin{boxtheo}[]
-	Cualquier transformación monótona creciente de una función cuasiconvexa es cuasiconvexa. Asimismo, cualesquier transformación monótona creciente de una función cuasicóncava es cuasicóncava.
-\end{boxtheo}
+	\begin{boxdef}[Matriz ortogonalmente diagonalizable]
+		Decimos que una matriz $A \in \mathcal{M}_{n \times n}$ es \textbf{ortogonalmente diagonalizable} si y solo si existe una matriz $T  \in \mathcal{M}_{n \times n}$ invertible tal que $T^{-1}AT$ es diagonal y $T^{-1} = T^T$.
+	\end{boxdef}
 
-\newpage
+	\begin{boxtheo}[]
+		Si $A \in \mathcal{M}_{n \times n}$ es simétrica, sus valores propios son reales.
+	\end{boxtheo}
 
-\section{Cálculo de variaciones}
+	\begin{boxtheo}[]
+		Una matriz simétrica $A$ de tamaño $n \times n$ puede determinar la forma cuadrática $q_A$ de $n$ variables como sigue:
+		\[
+			q_A (\mathbf{x}) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij}x_ix_j = \mathbf{x}^T A \mathbf{x}
+			.\]
+	\end{boxtheo}
 
-\newpage
+	\begin{boxcor}[Clasificación de formas cuadráticas]
+		La matriz asociada a la forma cuadrática $q_A$ es:
+		\begin{eqlist}
+			\item definida positiva si $q_A(\mathbf{x}) > 0,\ \forall \mathbf{x} \neq 0$.
+			\item definida negativa si $q_A(\mathbf{x}) < 0,\ \forall \mathbf{x} \neq 0$.
+			\item semidefinida positiva si $q_A(\mathbf{x}) \ge 0,\ \forall \mathbf{x} \neq 0$.
+			\item semidefinida negativa si $q_A(\mathbf{x}) \le 0,\ \forall \mathbf{x} \neq 0$.
+			\item indefinida si $q_A(\mathbf{x})$ toma tanto valores positivos como negativos.
+		\end{eqlist}
+	\end{boxcor}
 
-\section{Teoría de control óptimo}
+	\begin{boxdef}[Menores principales]
+		Sea $A$ una matriz simétrica, los \textbf{menores principales} de esta matriz son los determinantes de todas las submatrices superiores izquierdas, es decir:
+		\begin{align*}
+			\left| A_1 \right| & = \left| (a_{11}) \right|,                            \\
+			\left| A_2 \right| & = \left| \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}  \right|,         \\
+			\left| A_3 \right| & = \left| \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}  \right|,\ \cdots
+		\end{align*}
+	\end{boxdef}
 
-\newpage
+	\newpage
 
-\section{Elementos de programación dinámica}
+	\begin{boxtheo}[Criterio de menores principales]
+		Sea $A$ una matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
+		\begin{eqlist}
+			\item\label{1}$q_A$ es definida positiva si y solo si los menores principales de $A$ son todos positivos.
+			\item\label{2} $q_A$ es definida negativa si y solo si los menores principales de $A$ alternan signos de la forma:
+			\[
+				\left| A_1 \right| < 0, \left| A_2 \right| > 0, \left| A_3 \right| < 0, \ldots
+				.\]
+			\item $q_A$ es indefinida si $\left| A \right| \neq 0$, pero no se cumplen \ref{1} ni \ref{2}.
+		\end{eqlist}
+	\end{boxtheo}
 
-\vfill\eject
-\columnbreak
+	\begin{boxtheo}[Criterio de valores propios]
+		Sea $A$ uns matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
+		\begin{eqlist}
+			\item $q_A$ es definida positiva si y solo si todos los valores propios de $A$ son positivos.
+			\item $q_A$ es definida negativa si y solo si todos los valores propios de $A$ son negativos.
+			\item $q_A$ es semidefinida positiva si y solo si todos los valores propios de $A$ son no negativos.
+			\item $q_A$ es semidefinida negativa si y solo si todos los valores propios de $A$ son no positivos.
+			\item $q_A$ es indefinida si y solo si la matriz $A$ tiene valores propios positivos y negativos.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\begin{boxtheo}[Criterio del primer orden]
+		Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^1(X)$, entonces:
+		\begin{eqlist}
+			\item $f$ es convexa si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+			\[
+				f(\mathbf{y}) \ge f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
+				.\]
+			\item $f$ es cóncava si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+			\[
+				f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
+				.\]
+		\end{eqlist}
+	\end{boxtheo}
+
+	\sectionbreak
+
+	\begin{boxtheo}[Criterio de segundo orden]
+		Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^2(X)$, entonces:
+		\begin{eqlist}
+			\item $f$ es convexa en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es semidefinida positiva.
+			\item $f$ es estrictamente convexa en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es definida positiva.
+			\item $f$ es cóncava en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es semidefinida negativa.
+			\item $f$ es estrictamente cóncava en $X$ si y solo si la forma cuadrática asociada a la matriz hessiana es definida negativa.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\begin{boxdef}
+		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
+		\begin{bulletlist}
+			\item la \textbf{gráfica} de $f$ como $$G_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) = r \} .$$
+			\item el \textbf{epígrafo} de $f$ como $$E_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \le r \} .$$
+			\item el \textbf{hipógrafo} de $f$ como $$H_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \ge r \} .$$
+		\end{bulletlist}
+	\end{boxdef}
+
+	\begin{boxtheo}
+		Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo,
+		\begin{eqlist}
+			\item una función $f : X \to \mathbb{R}$ es convexa si y solo si $E_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
+			\item una función $f : X \to \mathbb{R}$ es cóncava si y solo si $H_f$ es un conjunto convexo de $\mathbb{R}^{n+1}$.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\begin{boxdef}
+		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
+		\begin{bulletlist}
+			\item el \textbf{contorno} de $f$ en $k$ como $$C_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) = k\}.$$
+			\item el \textbf{contorno superior} de $f$ en $k$ como $$CS_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \ge k\}.$$
+			\item el \textbf{contorno inferior} de $f$ en $k$ como $$CI_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \le k\}.$$
+		\end{bulletlist}
+	\end{boxdef}
+
+	\begin{boxtheo}[]
+		\begin{eqlist}
+			\item Si $f : X \to \mathbb{R}$ es cóncava en $A$, $CS_f(k)$ es convexo para toda $k$ en la imagen de $f$.
+			\item Si $f : X \to \mathbb{R}$ es convexa en $A$, $CI_f(k)$ es convexo para toda $k$ en la imagen de $f$.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\begin{boxtheo}[]
+		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, entonces:
+		\begin{eqlist}
+			\item $f$ es cuasicóncava en $A$ si $CS_f (k)$ es convexo para toda $k$ en la imagen de $f$.
+			\item $f$ es cuasiconvexa en $A$ si $CI_f (k)$ es convexo para toda $k$ en la imagen de $f$.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\begin{boxtheo}[]
+		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, entonces:
+		\begin{eqlist}
+			\item $f$ es cuasicóncava si $f$ es cóncava.
+			\item $f$ es cuasiconvexa si $f$ es convexa.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\begin{boxtheo}[]
+		Cualquier transformación monótona creciente de una función cuasiconvexa es cuasiconvexa. Asimismo, cualesquier transformación monótona creciente de una función cuasicóncava es cuasicóncava.
+	\end{boxtheo}
+
+	\newpage
+
+	\section{Cálculo de variaciones}
+
+	\newpage
+
+	\section{Teoría de control óptimo}
+
+	\newpage
+
+	\section{Elementos de programación dinámica}
+
+	\vfill\eject
+	\columnbreak
 \end{multicols}
 \end{document}

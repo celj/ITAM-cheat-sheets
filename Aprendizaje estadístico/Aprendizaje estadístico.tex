@@ -1,4 +1,4 @@
-% !TEX program = lualatex
+% !TEX program = xelatex
 
 \documentclass[8pt,a4paper]{extarticle}
 \input{../template_es.tex}
@@ -22,419 +22,419 @@
 \begin{document}
 
 \begin{titlepage}
-    \begin{center}
-	\vspace*{1cm}
-	\Huge
-        \textbf{\csClass}
-	\vspace{0.5cm} \\
-	\Large
-        \cs\ $\cdot$ \csTerm
-        \vfill
-        \csAuthorName
-	\vspace{0.8cm}
-        \csClassCode\\
-        \csSchool     
-    \end{center}
+	\begin{center}
+		\vspace*{1cm}
+		\Huge
+		\textbf{\csClass}
+		\vspace{0.5cm} \\
+		\Large
+		\cs\ $\cdot$ \csTerm
+		\vfill
+		\csAuthorName
+		\vspace{0.8cm}
+		\csClassCode\\
+		\csSchool
+	\end{center}
 \end{titlepage}
 
 \begin{multicols}{3}
-\setcounter{page}{1}
+	\setcounter{page}{1}
 
-\section*{Introducción}
+	\section*{Introducción}
 
-\subsection*{?`Cuándo necesitamos aprendizaje de máquina?}
+	\subsection*{?`Cuándo necesitamos aprendizaje de máquina?}
 
-Dos aspectos de un problema dado pueden requerir el uso de programas que aprendan y mejoren sobre la base de su ``experiencia'': la \textbf{complejidad} del problema y la necesidad de \textbf{adaptabilidad}.
+	Dos aspectos de un problema dado pueden requerir el uso de programas que aprendan y mejoren sobre la base de su ``experiencia'': la \textbf{complejidad} del problema y la necesidad de \textbf{adaptabilidad}.
 
-\subsubsection*{Complejidad}
+	\subsubsection*{Complejidad}
 
-\begin{bulletlist}
-\item Tareas realizadas por animales o humanos.
-\item Tareas más allá de las capacidades humanas.
-\end{bulletlist}
+	\begin{bulletlist}
+		\item Tareas realizadas por animales o humanos.
+		\item Tareas más allá de las capacidades humanas.
+	\end{bulletlist}
 
-\subsubsection*{Adaptabilidad}
+	\subsubsection*{Adaptabilidad}
 
-Una característica limitante de las herramientas programadas es su rigidez: una vez que el programa se ha escrito e instalado, permanece sin cambios. Sin embargo, muchas tareas cambian con el tiempo, o de un usuario a otro. Las herramientas de aprendizaje de máquina (programas cuyo comportamiento se adapta a sus datos de entrada) ofrecen una solución a estos problemas; estos son, por naturaleza, adaptables a los cambios en el entorno con el que interactúan.
+	Una característica limitante de las herramientas programadas es su rigidez: una vez que el programa se ha escrito e instalado, permanece sin cambios. Sin embargo, muchas tareas cambian con el tiempo, o de un usuario a otro. Las herramientas de aprendizaje de máquina (programas cuyo comportamiento se adapta a sus datos de entrada) ofrecen una solución a estos problemas; estos son, por naturaleza, adaptables a los cambios en el entorno con el que interactúan.
 
-\subsection*{Tipos de aprendizaje}
+	\subsection*{Tipos de aprendizaje}
 
-\begin{bulletlist}
-\item Supervisado o no supervisado.
-\item Por refuerzo.
-\item Agentes pasivos o activos.
-\item Maestro.
-\item Protocolo por bloques o continuo.
-\end{bulletlist}
+	\begin{bulletlist}
+		\item Supervisado o no supervisado.
+		\item Por refuerzo.
+		\item Agentes pasivos o activos.
+		\item Maestro.
+		\item Protocolo por bloques o continuo.
+	\end{bulletlist}
 
-\newpage
+	\newpage
 
-\section{Marco formal de aprendizaje}
+	\section{Marco formal de aprendizaje}
 
-\subsubsection*{Conjunto de dominio ($\mathcal{X}$)}
+	\subsubsection*{Conjunto de dominio ($\mathcal{X}$)}
 
-$$\mathcal{X} \subseteq \mathbb{R}^d\quad \text{\normalfont tal que} \quad d < \infty.$$
+	$$\mathcal{X} \subseteq \mathbb{R}^d\quad \text{\normalfont tal que} \quad d < \infty.$$
 
-\subsubsection*{Conjunto de etiquetas ($\mathcal{Y}$)}
+	\subsubsection*{Conjunto de etiquetas ($\mathcal{Y}$)}
 
-En el caso de etiquetado binario, \par $$\mathcal{Y} = \left\{ 0,1 \right\}\quad \text{\normalfont ó}\quad \mathcal{Y} = \left\{ -1,+1 \right\} .$$
+	En el caso de etiquetado binario, \par $$\mathcal{Y} = \left\{ 0,1 \right\}\quad \text{\normalfont ó}\quad \mathcal{Y} = \left\{ -1,+1 \right\} .$$
 
-\subsubsection*{Conjunto de entrenamiento ($S$)}
+	\subsubsection*{Conjunto de entrenamiento ($S$)}
 
-Una sucesión $\displaystyle S = \left\{ \left( x_i, y_i \right)  \right\}_{i = 1}^m $ tal que $m < \infty$ y $\left( x_i, y_i \right) \in \mathcal{X} \times \mathcal{Y}$.
+	Una sucesión $\displaystyle S = \left\{ \left( x_i, y_i \right)  \right\}_{i = 1}^m $ tal que $m < \infty$ y $\left( x_i, y_i \right) \in \mathcal{X} \times \mathcal{Y}$.
 
-\subsubsection*{Reglas de predicción ($h$)}
+	\subsubsection*{Reglas de predicción ($h$)}
 
-$$h : \mathcal{X} \to \mathcal{Y},$$ también llamado \emph{predictor}, \emph{hipótesis} o \emph{clasificador}.
+	$$h : \mathcal{X} \to \mathcal{Y},$$ también llamado \emph{predictor}, \emph{hipótesis} o \emph{clasificador}.
 
-\subsubsection*{Algoritmo de aprendizaje ($A$)}
+	\subsubsection*{Algoritmo de aprendizaje ($A$)}
 
-Denotamos $A(S)$ a la hipótesis que el algoritmo de aprendizaje $A$ genera al observar el conjunto de entrenamiento $S$. Asimismo, asumimos que $\mathcal{X}$ tiene una medida de probabilidad desconocida $\mathcal{D}$ y que existe una función desconocida $f$ que etiqueta los datos de manera correcta, es decir:
-\[
-	\exists f:\mathcal{X}\to \mathcal{Y}\quad \text{\normalfont tal que} \quad f(x_i) = y_i,\; \forall i
-.\] 
-
-\subsubsection*{Métricas de éxito}
-
-\begin{boxdef}[Error de un clasificador]
-	Dado un subconjunto de dominio $A \subseteq \mathcal{X}$ y su probabilidad de observarlo $\mathcal{D}(A)$. En muchos casos, nos referimos a $A$ como un evento y lo expresamos usando una función $\pi : \mathcal{X} \to \{0,1\}$ tal que $A = \{x \in \mathcal{X} : \pi(x) = 1\} $. Así pues, definimos el \textbf{error del clasificador} $h : \mathcal{X} \to \mathcal{Y}$ como sigue:
+	Denotamos $A(S)$ a la hipótesis que el algoritmo de aprendizaje $A$ genera al observar el conjunto de entrenamiento $S$. Asimismo, asumimos que $\mathcal{X}$ tiene una medida de probabilidad desconocida $\mathcal{D}$ y que existe una función desconocida $f$ que etiqueta los datos de manera correcta, es decir:
 	\[
-		L_{\mathcal{D}, f} (h) \deq \underset{x \sim \mathcal{D}}{\mathbb{P}} \left[ h(x) \neq f(x) \right] \deq \mathcal{D}\left( \{x : h(x) \neq f(x)\}  \right) 
-	.\]
-	También se le conoce como \textbf{error de generalización} o \textbf{riesgo} de $h$.
-\end{boxdef}
+		\exists f:\mathcal{X}\to \mathcal{Y}\quad \text{\normalfont tal que} \quad f(x_i) = y_i,\; \forall i
+		.\]
 
-\subsection{Minimización de riesgo empírico}
+	\subsubsection*{Métricas de éxito}
 
-El objetivo de nuestro algoritmo es encontrar $h_S : \mathcal{X} \to \mathcal{Y}$ que minimice el error con respecto a las desconocidas $\mathcal{D}$ y $f$.
+	\begin{boxdef}[Error de un clasificador]
+		Dado un subconjunto de dominio $A \subseteq \mathcal{X}$ y su probabilidad de observarlo $\mathcal{D}(A)$. En muchos casos, nos referimos a $A$ como un evento y lo expresamos usando una función $\pi : \mathcal{X} \to \{0,1\}$ tal que $A = \{x \in \mathcal{X} : \pi(x) = 1\} $. Así pues, definimos el \textbf{error del clasificador} $h : \mathcal{X} \to \mathcal{Y}$ como sigue:
+		\[
+			L_{\mathcal{D}, f} (h) \deq \underset{x \sim \mathcal{D}}{\mathbb{P}} \left[ h(x) \neq f(x) \right] \deq \mathcal{D}\left( \{x : h(x) \neq f(x)\}  \right)
+			.\]
+		También se le conoce como \textbf{error de generalización} o \textbf{riesgo} de $h$.
+	\end{boxdef}
 
-\begin{boxdef}[Error de entrenamiento]
-	El error en el que incurre el clasificador sobre el conjunto de entrenamiento está dado por:
+	\subsection{Minimización de riesgo empírico}
+
+	El objetivo de nuestro algoritmo es encontrar $h_S : \mathcal{X} \to \mathcal{Y}$ que minimice el error con respecto a las desconocidas $\mathcal{D}$ y $f$.
+
+	\begin{boxdef}[Error de entrenamiento]
+		El error en el que incurre el clasificador sobre el conjunto de entrenamiento está dado por:
+		\[
+			L_S (h) \deq \frac{\left| i \in [m] : h(x_i) \neq y_i \right| }{m}
+			,\]
+		donde
+		\[
+			[m] = \{1,\ldots, m\}
+			.\]
+		A este \textbf{error de entrenamiento} también se le conoce como \textbf{error empírico} o \textbf{riesgo empírico}.
+	\end{boxdef}
+
+	\begin{boxdef}[Minimización de riesgo empírico]
+		Al predictor $h$ que minimiza $L_S (h)$ se le conoce como \textbf{minimizador de riesgo empírico} o \textbf{ERM}, por sus siglas en inglés.
+	\end{boxdef}
+
+	\begin{boxdef}[Sobreajuste]
+		Cuando un sistema se sobreentrena, o se entrena con datos extraños, el algoritmo de aprendizaje puede quedar ajustado a unas características muy específicas de los datos de entrenamiento que no tienen relación causal con la función objetivo. A este fenómeno le decimos \textbf{sobreajuste}.
+	\end{boxdef}
+
+	\subsection{Minimización de riesgo empírico con sesgo inductivo}
+
+	\begin{boxdef}[Familia de hipótesis]
+		Sea $\Omega$ el espacio de todos los clasificadores, definimos una \textbf{familia} (o clase) \textbf{de hipótesis} como el conjunto $\mathcal{H} \subset \Omega$ que el agente elige de antemano como un espacio de búsqueda restringido.
+	\end{boxdef}
+
+	Dada una clase $\mathcal{H}$ y un conjunto de entrenamiento $S$, el agente  $\text{\normalfont ERM}_{\mathcal{H}}$ usa la regla de \emph{minimización de riesgo empírico} para escoger un predictor $h \in \mathcal{H}$ con el menor error posible sobre $S$.
+
 	\[
-		L_S (h) \deq \frac{\left| i \in [m] : h(x_i) \neq y_i \right| }{m}
-	,\] 
-	donde
-	\[
-		[m] = \{1,\ldots, m\} 
-	.\] 
-	A este \textbf{error de entrenamiento} también se le conoce como \textbf{error empírico} o \textbf{riesgo empírico}.
-\end{boxdef}
+		\ie\quad\text{\normalfont ERM}_{\mathcal{H}} (S) \in \argmin_{h\in\mathcal{H}} L_S (h)
+		.\]
 
-\begin{boxdef}[Minimización de riesgo empírico]
-	Al predictor $h$ que minimiza $L_S (h)$ se le conoce como \textbf{minimizador de riesgo empírico} o \textbf{ERM}, por sus siglas en inglés.
-\end{boxdef}
+	Así pues, a tales restricciones se les conoce como \textbf{sesgo inductivo}.
 
-\begin{boxdef}[Sobreajuste]
-	Cuando un sistema se sobreentrena, o se entrena con datos extraños, el algoritmo de aprendizaje puede quedar ajustado a unas características muy específicas de los datos de entrenamiento que no tienen relación causal con la función objetivo. A este fenómeno le decimos \textbf{sobreajuste}.
-\end{boxdef}
+	\subsection{Familia de hipótesis finita}
 
-\subsection{Minimización de riesgo empírico con sesgo inductivo}
+	\begin{boxrmk}[]
+		Denotamos por $h_S$ al resultado generado de aplicar  $\text{\normalfont ERM}_{\mathcal{H}}$ al conjunto de entrenamiento $S$.
+		\[
+			\ie\quad h_S \in \argmin_{h \in \mathcal{H}} L_S (h)
+			.\]
+	\end{boxrmk}
 
-\begin{boxdef}[Familia de hipótesis]
-Sea $\Omega$ el espacio de todos los clasificadores, definimos una \textbf{familia} (o clase) \textbf{de hipótesis} como el conjunto $\mathcal{H} \subset \Omega$ que el agente elige de antemano como un espacio de búsqueda restringido.
-\end{boxdef}
+	\begin{boxdef}[Hipótesis de realizabilidad]
+		Existe $h^* \in \mathcal{H}$ tal que $L_{\mathcal{D}, f} (h^*) = 0$. Asimismo, podemos decir que $L_S (h^*) = 0$ con probabilidad 1 sobre  $S$ cuando las muestras de $S$ se distribuyen  $\mathcal{D}$ y se etiquetan $f$.
+	\end{boxdef}
 
-Dada una clase $\mathcal{H}$ y un conjunto de entrenamiento $S$, el agente  $\text{\normalfont ERM}_{\mathcal{H}}$ usa la regla de \emph{minimización de riesgo empírico} para escoger un predictor $h \in \mathcal{H}$ con el menor error posible sobre $S$.
+	\begin{boxdef}[Hipótesis de independencia y distribución idéntica]
+		Asumimos que cada $x_i \in S$ se distribuye  $\mathcal{D}$, es decir:
+		\[
+			S \sim \mathcal{D}^m
+			,\]
+		donde $m = \left| S \right| $.
+	\end{boxdef}
 
-\[
-	\ie\quad\text{\normalfont ERM}_{\mathcal{H}} (S) \in \argmin_{h\in\mathcal{H}} L_S (h)
-.\] 
+	\begin{boxrmk}[Parámetro de confianza]
+		Denotamos por $\delta$ la probabilidad de obtener una muestra poco representativa de  $\mathcal{D}$. Así pues, podemos ver a $(1 - \delta)$ como nuestro \textbf{parámetro de confianza}.
+	\end{boxrmk}
 
-Así pues, a tales restricciones se les conoce como \textbf{sesgo inductivo}.
+	\begin{boxrmk}[Parámetro de precisión]
+		Denotamos por $\varepsilon$ a la probabilidad de encontrar errores de etiquetado. Es decir, interpretamos  $L_{\mathcal{D}, f} (h_S) > \varepsilon$ como un fracaso para el agente y $L_{\mathcal{D}, f} (h_S) \le \varepsilon$ como un clasificador aproximadamente correcto.
+	\end{boxrmk}
 
-\subsection{Familia de hipótesis finita}
+	\begin{boxlemma}[]
+		Para dos conjuntos cualesquiera $A$ y $B$, y una distribución $\mathcal{D}$, tenemos:
+		\[
+			\mathcal{D}\left( A \cup B \right) \le \mathcal{D}(A) + \mathcal{D}(B)
+			.\]
+	\end{boxlemma}
 
-\begin{boxrmk}[]
-	Denotamos por $h_S$ al resultado generado de aplicar  $\text{\normalfont ERM}_{\mathcal{H}}$ al conjunto de entrenamiento $S$.
-	\[
-		\ie\quad h_S \in \argmin_{h \in \mathcal{H}} L_S (h)
-	.\]
-\end{boxrmk}
+	\begin{boxcor}[]
+		Sean $\mathcal{H}$ una familia de hipótesis finita, $\delta \in (0,1)$,  $\varepsilon > 0$ y $m$ un entero, se cumple:
+		\[
+			m \ge \frac{\log \left( \nicefrac{\left| \mathcal{H} \right| }{\delta} \right)  }{\varepsilon}
+			.\]
+		Entonces, para toda función de etiquetado $f$ y toda distribución  $\mathcal{D}$, para las cuales se cumple la \emph{hipótesis de realizabilidad}, tenemos --- con probabilidad de al menos $(1 - \delta)$ sobre nuestra muestra independiente e idénticamente distribuida $S$ de tamaño $m$ --- que toda solución del minimizador de riesgo empírico $h_S$ satisface:
+		\[
+			L_{\mathcal{D}, f} (h_S) \le \varepsilon
+			.\]
+	\end{boxcor}
 
-\begin{boxdef}[Hipótesis de realizabilidad]
-	Existe $h^* \in \mathcal{H}$ tal que $L_{\mathcal{D}, f} (h^*) = 0$. Asimismo, podemos decir que $L_S (h^*) = 0$ con probabilidad 1 sobre  $S$ cuando las muestras de $S$ se distribuyen  $\mathcal{D}$ y se etiquetan $f$.
-\end{boxdef}
+	\newpage
 
-\begin{boxdef}[Hipótesis de independencia y distribución idéntica]
-	Asumimos que cada $x_i \in S$ se distribuye  $\mathcal{D}$, es decir:
-	\[
-	S \sim \mathcal{D}^m
-	,\] 
-	donde $m = \left| S \right| $.
-\end{boxdef}
+	\section{Un modelo formal de aprendizaje}
 
-\begin{boxrmk}[Parámetro de confianza]
-	Denotamos por $\delta$ la probabilidad de obtener una muestra poco representativa de  $\mathcal{D}$. Así pues, podemos ver a $(1 - \delta)$ como nuestro \textbf{parámetro de confianza}.
-\end{boxrmk}
+	\subsection{Aprendizaje PAC}
 
-\begin{boxrmk}[Parámetro de precisión]
-	Denotamos por $\varepsilon$ a la probabilidad de encontrar errores de etiquetado. Es decir, interpretamos  $L_{\mathcal{D}, f} (h_S) > \varepsilon$ como un fracaso para el agente y $L_{\mathcal{D}, f} (h_S) \le \varepsilon$ como un clasificador aproximadamente correcto.
-\end{boxrmk}
+	\begin{boxdef}[Aprendizaje PAC]
+		Una familia de hipótesis $\mathcal{H}$ es \textbf{PAC\footnote{Probablemente aproximadamente correcto, del inglés: \emph{Probably Approximately Correct}.} aprendible} si existe una función $m_{\mathcal{H}} : (0,1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: \textcolor{dred}{para toda $\varepsilon, \delta \in (0,1)$, toda distribución $\mathcal{D}$ sobre $ \mathcal{X}$ y toda función de etiquetado $f : \mathcal{X} \to \left\{ 0,1 \right\} $, si se satisface la hipótesis de realizabilidad con respecto a $\mathcal{H}$, $\mathcal{D}$ y $f$, al ejecutar el algoritmo de aprendizaje con  $m \ge m_{\mathcal{H}} (\varepsilon, \delta)$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$ y etiquetados por $f$, el algoritmo genera una hipótesis  $h$ tal que, con probabilidad de al menos  $(1 - \delta)$ sobre la elección de elementos,  $L_{\mathcal{D}, f} (h) \le \varepsilon$.}
+	\end{boxdef}
 
-\begin{boxlemma}[]
-	Para dos conjuntos cualesquiera $A$ y $B$, y una distribución $\mathcal{D}$, tenemos:
-	\[
-		\mathcal{D}\left( A \cup B \right) \le \mathcal{D}(A) + \mathcal{D}(B)
-	.\] 
-\end{boxlemma}
+	\begin{boxdef}[Complejidad muestral]
+		La \textbf{complejidad muestral} de un algoritmo de aprendizaje representa la cantidad de muestras de entrenamiento que necesita para aprender con \emph{éxito} una función objetivo.
+	\end{boxdef}
 
-\begin{boxcor}[]
-	Sean $\mathcal{H}$ una familia de hipótesis finita, $\delta \in (0,1)$,  $\varepsilon > 0$ y $m$ un entero, se cumple:
-	 \[
-		 m \ge \frac{\log \left( \nicefrac{\left| \mathcal{H} \right| }{\delta} \right)  }{\varepsilon}
-	.\] 
-	Entonces, para toda función de etiquetado $f$ y toda distribución  $\mathcal{D}$, para las cuales se cumple la \emph{hipótesis de realizabilidad}, tenemos --- con probabilidad de al menos $(1 - \delta)$ sobre nuestra muestra independiente e idénticamente distribuida $S$ de tamaño $m$ --- que toda solución del minimizador de riesgo empírico $h_S$ satisface:
-	 \[
-		 L_{\mathcal{D}, f} (h_S) \le \varepsilon
-	.\] 
-\end{boxcor}
+	\begin{boxcor}[]
+		Toda familia finita de hipótesis es PAC aprendible con complejidad muestral:
+		\[
+			m_{\mathcal{H}}(\varepsilon, \delta) \le \left\lceil \frac{\log \left( \nicefrac{\left| \mathcal{H} \right| }{\delta} \right) }{\varepsilon} \right\rceil
+			.\]
+	\end{boxcor}
 
-\newpage
+	\subsection{Aprendizaje PAC agnóstico}
 
-\section{Un modelo formal de aprendizaje}
+	\begin{boxdef}[Error verdadero de un clasificador]
+		Para alguna distribución de probabilidad $\mathcal{D}$ sobre $\mathcal{X} \times \mathcal{Y}$ se puede medir la probabilidad de que $h$ cometa un error cuando los puntos etiquetados se extraen aleatoriamente con respecto a $\mathcal{D}$. Así pues, definimos el \textbf{error} (o riesgo) \textbf{verdadero del clasificador} $h$, como sigue:
+		\[
+			L_{\mathcal{D}}(h) \deq \underset{(x,y)\sim \mathcal{D}}{\mathbb{P}} [h(x) \neq y] \deq \mathcal{D}\left( \{(x, y) : h(x) \neq y\}  \right)
+			.\]
+	\end{boxdef}
 
-\subsection{Aprendizaje PAC}
+	\emph{Nota:} la definición de \textbf{error de entrenamiento} no se modifica.
 
-\begin{boxdef}[Aprendizaje PAC]
-	Una familia de hipótesis $\mathcal{H}$ es \textbf{PAC\footnote{Probablemente aproximadamente correcto, del inglés: \emph{Probably Approximately Correct}.} aprendible} si existe una función $m_{\mathcal{H}} : (0,1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: \textcolor{dred}{para toda $\varepsilon, \delta \in (0,1)$, toda distribución $\mathcal{D}$ sobre $ \mathcal{X}$ y toda función de etiquetado $f : \mathcal{X} \to \left\{ 0,1 \right\} $, si se satisface la hipótesis de realizabilidad con respecto a $\mathcal{H}$, $\mathcal{D}$ y $f$, al ejecutar el algoritmo de aprendizaje con  $m \ge m_{\mathcal{H}} (\varepsilon, \delta)$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$ y etiquetados por $f$, el algoritmo genera una hipótesis  $h$ tal que, con probabilidad de al menos  $(1 - \delta)$ sobre la elección de elementos,  $L_{\mathcal{D}, f} (h) \le \varepsilon$.}
-\end{boxdef}
+	\begin{boxdef}[Clasificador bayesiano óptimo]
+		Dada una distribución de probabilidad $\mathcal{D}$ sobre $\mathcal{X} \times \{0, 1\} $, el mejor clasificador es:
+		\[
+			f_{\mathcal{D}}(x) = \begin{cases}
+				1, & \text{\normalfont si } \mathbb{P}[y = 1  \mid x] \ge \nicefrac{1}{2} \\
+				0, & \text{\normalfont en otros casos}
+			\end{cases}
+			.\]
+	\end{boxdef}
 
-\begin{boxdef}[Complejidad muestral]
-	La \textbf{complejidad muestral} de un algoritmo de aprendizaje representa la cantidad de muestras de entrenamiento que necesita para aprender con \emph{éxito} una función objetivo.
-\end{boxdef}
+	\begin{boxrmk}[]
+		El \emph{clasificador bayesiano} es óptimo porque cualquier otro clasificador $g : \mathcal{X} \to \{0,1\} $ tiene un error mayor.
+		\[
+			\ie \quad L_{\mathcal{D}}(f_{\mathcal{D}}) \le L_{\mathcal{D}}(g), \; \forall g
+			.\]
+	\end{boxrmk}
 
-\begin{boxcor}[]
-	Toda familia finita de hipótesis es PAC aprendible con complejidad muestral:
-	\[
-		m_{\mathcal{H}}(\varepsilon, \delta) \le \left\lceil \frac{\log \left( \nicefrac{\left| \mathcal{H} \right| }{\delta} \right) }{\varepsilon} \right\rceil 
-	.\] 
-\end{boxcor}
+	\begin{boxdef}[Aprendizaje PAC agnóstico]
+		Una familia de hipótesis $\mathcal{H}$ es \textbf{PAC aprendible} en un sentido \textbf{agnóstico} si existe una función $m_{\mathcal{H}} : (0,1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: \textcolor{dred}{para toda $\varepsilon, \delta \in (0,1)$ y toda distribución $\mathcal{D}$ sobre $\mathcal{X} \times \mathcal{Y}$, al ejecutar el algoritmo de aprendizaje con $m \ge m_{\mathcal{H}} (\varepsilon, \delta)$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$, el algoritmo genera una hipótesis $h$ tal que, con probabilidad de al menos  $(1 - \delta)$ sobre la elección de $m$ elementos de entrenamiento, $\displaystyle L_{\mathcal{D}} (h) \le \min_{h' \in \mathcal{H}} L_{\mathcal{D}} (h') + \varepsilon$.}
+	\end{boxdef}
 
-\subsection{Aprendizaje PAC agnóstico}
+	\subsection{El alcance de los problemas de aprendizaje modelados}
 
-\begin{boxdef}[Error verdadero de un clasificador]
-	Para alguna distribución de probabilidad $\mathcal{D}$ sobre $\mathcal{X} \times \mathcal{Y}$ se puede medir la probabilidad de que $h$ cometa un error cuando los puntos etiquetados se extraen aleatoriamente con respecto a $\mathcal{D}$. Así pues, definimos el \textbf{error} (o riesgo) \textbf{verdadero del clasificador} $h$, como sigue:
-	 \[
-		 L_{\mathcal{D}}(h) \deq \underset{(x,y)\sim \mathcal{D}}{\mathbb{P}} [h(x) \neq y] \deq \mathcal{D}\left( \{(x, y) : h(x) \neq y\}  \right) 
-	.\] 
-\end{boxdef}
+	\begin{boxrmk}[Error cuadrático medio]
+		Podemos evaluar la calidad de un clasificador $h : \mathcal{X} \to \mathcal{Y}$ por el \textbf{error cuadrático medio} entre el etiquetado correcto y los valores predichos.
+		\[
+			\ie \quad L_{\mathcal{D}}(h) \deq \underset{(x,y)\sim \mathcal{D}}{\mathbb{E}} \left( h(x) - y \right)^2
+			.\]
+	\end{boxrmk}
 
-\emph{Nota:} la definición de \textbf{error de entrenamiento} no se modifica.
+	\begin{boxdef}[Función de pérdida generalizada]
+		Dado cualquier conjunto $\mathcal{H}$ y algún dominio $Z$. $ \ell$ es cualquier función de $\mathcal{H} \times Z$ a los reales no negativos; $\ie\; \ell: \mathcal{H} \times Z \to \mathbb{R}_{+}$. A dichas funciones las llamamos \textbf{funciones de pérdida}. \par
+		Nótese que, para los problemas de predicción, $\mathcal{H}$ es nuestra familia de hipótesis y $Z = \mathcal{X} \times \mathcal{Y}$.
+	\end{boxdef}
 
-\begin{boxdef}[Clasificador bayesiano óptimo]
-	Dada una distribución de probabilidad $\mathcal{D}$ sobre $\mathcal{X} \times \{0, 1\} $, el mejor clasificador es:
-	\[
-		f_{\mathcal{D}}(x) = \begin{cases}
-			1, & \text{\normalfont si } \mathbb{P}[y = 1  \mid x] \ge \nicefrac{1}{2} \\
-			0, & \text{\normalfont en otros casos}
-		\end{cases}
-	.\] 
-\end{boxdef}
+	\begin{boxdef}[Función de riesgo]
+		Definimos la \textbf{función de riesgo} como la pérdida esperada de un clasificador $h \in \mathcal{H}$ con respecto a una distribución de probabilidad $\mathcal{D}$ sobre $Z$. Es decir:
+		\[
+			L_{\mathcal{D}} (h) \deq \underset{z\sim \mathcal{D}}{\mathbb{E}} \left[ \ell (h,z) \right]
+			.\]
+	\end{boxdef}
 
-\begin{boxrmk}[]
-	El \emph{clasificador bayesiano} es óptimo porque cualquier otro clasificador $g : \mathcal{X} \to \{0,1\} $ tiene un error mayor.
-	\[
-		\ie \quad L_{\mathcal{D}}(f_{\mathcal{D}}) \le L_{\mathcal{D}}(g), \; \forall g
-	.\] 
-\end{boxrmk}
+	\begin{boxdef}[Riesgo empírico]
+		Definimos el \textbf{riesgo empírico} como la pérdida esperada sobre una muestra $S = \left( z_1, \ldots, z_m \right) \in Z^m$. Es decir:
+		\[
+			L_S (h) \deq \frac{1}{m} \sum_{i = 1}^{m} \ell (h, z_i)
+			.\]
+	\end{boxdef}
 
-\begin{boxdef}[Aprendizaje PAC agnóstico]
-	Una familia de hipótesis $\mathcal{H}$ es \textbf{PAC aprendible} en un sentido \textbf{agnóstico} si existe una función $m_{\mathcal{H}} : (0,1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: \textcolor{dred}{para toda $\varepsilon, \delta \in (0,1)$ y toda distribución $\mathcal{D}$ sobre $\mathcal{X} \times \mathcal{Y}$, al ejecutar el algoritmo de aprendizaje con $m \ge m_{\mathcal{H}} (\varepsilon, \delta)$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$, el algoritmo genera una hipótesis $h$ tal que, con probabilidad de al menos  $(1 - \delta)$ sobre la elección de $m$ elementos de entrenamiento, $\displaystyle L_{\mathcal{D}} (h) \le \min_{h' \in \mathcal{H}} L_{\mathcal{D}} (h') + \varepsilon$.}
-\end{boxdef}
+	\begin{boxprop}[]
+		El \emph{riesgo empírico} $L_S (h)$ es un estimador insesgado.
+	\end{boxprop}
 
-\subsection{El alcance de los problemas de aprendizaje modelados}
+	\begin{boxdef}[Pérdida 0-1]
+		\[
+			\ell_{0-1} (h, (x,y)) \deq \begin{cases}
+				0, & \text{\normalfont si } h(x) = y    \\
+				1, & \text{\normalfont si } h(x) \neq y
+			\end{cases}
+			.\]
+	\end{boxdef}
 
-\begin{boxrmk}[Error cuadrático medio]
-	Podemos evaluar la calidad de un clasificador $h : \mathcal{X} \to \mathcal{Y}$ por el \textbf{error cuadrático medio} entre el etiquetado correcto y los valores predichos.
-	\[
-		\ie \quad L_{\mathcal{D}}(h) \deq \underset{(x,y)\sim \mathcal{D}}{\mathbb{E}} \left( h(x) - y \right)^2
-	.\] 
-\end{boxrmk}
+	\begin{boxdef}[Pérdida cuadrática]
+		\[
+			\ell_{\text{\normalfont sq}} (h, (x,y)) \deq \left( h(x) - y \right)^2
+			.\]
+	\end{boxdef}
 
-\begin{boxdef}[Función de pérdida generalizada]
-	Dado cualquier conjunto $\mathcal{H}$ y algún dominio $Z$. $ \ell$ es cualquier función de $\mathcal{H} \times Z$ a los reales no negativos; $\ie\; \ell: \mathcal{H} \times Z \to \mathbb{R}_{+}$. A dichas funciones las llamamos \textbf{funciones de pérdida}. \par
-	Nótese que, para los problemas de predicción, $\mathcal{H}$ es nuestra familia de hipótesis y $Z = \mathcal{X} \times \mathcal{Y}$.
-\end{boxdef}
+	\begin{boxdef}[Aprendizaje PAC agnóstico para funciones de pérdida generalizada]
+		Una familia de hipótesis $\mathcal{H}$ es \textbf{PAC aprendible} en un sentido \textbf{agnóstico} con respecto a $Z$ y $\ell: \mathcal{H}\times Z \to \mathbb{R}_{+}$ (una función de pérdida) si existe una función $m_{\mathcal{H}} : (0,1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: \textcolor{dred}{para toda $\varepsilon, \delta \in (0,1)$ y toda distribución $\mathcal{D}$ sobre $Z$, al ejecutar el algoritmo de aprendizaje con $m \ge m_{\mathcal{H}} (\varepsilon, \delta)$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$, el algoritmo genera una hipótesis $h \in \mathcal{H}$ tal que, con probabilidad de al menos  $(1 - \delta)$ sobre la elección de $m$ elementos de entrenamiento, $L_{\mathcal{D}} (h) \le \min_{h' \in \mathcal{H}} L_{\mathcal{D}} (h') + \varepsilon$, donde $L_{\mathcal{D}} (h) = \underset{z\sim \mathcal{D}}{\mathbb{E}} [\ell (h,z)]$}
+	\end{boxdef}
 
-\begin{boxdef}[Función de riesgo]
-	Definimos la \textbf{función de riesgo} como la pérdida esperada de un clasificador $h \in \mathcal{H}$ con respecto a una distribución de probabilidad $\mathcal{D}$ sobre $Z$. Es decir:
-\[
-	L_{\mathcal{D}} (h) \deq \underset{z\sim \mathcal{D}}{\mathbb{E}} \left[ \ell (h,z) \right]
-.\]
-\end{boxdef}
+	\begin{boxrmk}[]
+		En aprendizaje PAC agnóstico para funciones de pérdida generalizada, necesitamos que la función $ \ell (h,\cdot)$ sea \emph{medible}. Es decir, al asumir un $\sigma$-álgebra de subconjuntos de  $Z$ sobre el cuál la probabilidad  $\mathcal{D}$ está definida, y que la preimagen de cada segmento inicial en $\mathbb{R}_{+}$ está en este $\sigma$-álgebra. \textcolor{dgray}{En el caso específico de clasificación binaria con pérdida 0-1, la  $\sigma$-álgebra está sobre  $ \mathcal{X} \times \{0,1\} $ y nuestra suposición en $ \ell$ es equivalente a asumir que sobre toda $h$, el conjunto  $ \{(x, h(x)) : x \in \mathcal{X}\} $ está en el $\sigma$-álgebra.}
+	\end{boxrmk}
 
-\begin{boxdef}[Riesgo empírico]
-	Definimos el \textbf{riesgo empírico} como la pérdida esperada sobre una muestra $S = \left( z_1, \ldots, z_m \right) \in Z^m$. Es decir:
-	\[
-		L_S (h) \deq \frac{1}{m} \sum_{i = 1}^{m} \ell (h, z_i)
-	.\] 
-\end{boxdef}
+	\begin{boxrmk}[Aprendizaje adecuado o independiente de la representación]
+		En algunos casos, $\mathcal{H}$ es un subconjunto de algún conjunto $\mathcal{H}'$ y la función de pérdida puede extenderse a ser una función de $\mathcal{H}' \times Z$ a los reales. En este caso, podemos permitir que el algoritmo genere una hipótesis $h' \in \mathcal{H}'$ siempre y cuando cumpla con $L_{\mathcal{D}} (h') \le \min_{h \in \mathcal{H}} L_{\mathcal{D}} (h) + \varepsilon$. Al permitir que el algoritmo genere una hipótesis de $\mathcal{H}'$, se dice que dicho aprendizaje es de \emph{representación independiente} o \emph{inadecuado}; mientras que, en aprendizaje \emph{adecuado}, el algoritmo debe producir una hipótesis de $\mathcal{H}$.
+	\end{boxrmk}
 
-\begin{boxprop}[]
-	El \emph{riesgo empírico} $L_S (h)$ es un estimador insesgado.
-\end{boxprop}
+	\newpage
 
-\begin{boxdef}[Pérdida 0-1]
-	\[
-		\ell_{0-1} (h, (x,y)) \deq \begin{cases}
-			0, & \text{\normalfont si } h(x) = y \\
-			1, & \text{\normalfont si } h(x) \neq y
-		\end{cases}
-	.\] 
-\end{boxdef}
+	\section{Convergencia uniforme}
 
-\begin{boxdef}[Pérdida cuadrática]
-	\[
-		\ell_{\text{\normalfont sq}} (h, (x,y)) \deq \left( h(x) - y \right)^2
-	.\] 
-\end{boxdef}
+	\begin{boxdef}[Muestra $\varepsilon$-representativa]
+		Un conjunto de entrenamiento $S$ es \textbf{$\bm{\varepsilon}$-representativo} respecto al dominio $Z$, la familia de hipótesis $\mathcal{H}$, la función de pérdida $ \ell$ y la distribución $\mathcal{D}$ si:
+		\[
+			\forall h \in \mathcal{H}, \quad \left| L_S (h) - L_{\mathcal{D}} (h) \right| \le \varepsilon
+			.\]
+	\end{boxdef}
 
-\begin{boxdef}[Aprendizaje PAC agnóstico para funciones de pérdida generalizada]
-	Una familia de hipótesis $\mathcal{H}$ es \textbf{PAC aprendible} en un sentido \textbf{agnóstico} con respecto a $Z$ y $\ell: \mathcal{H}\times Z \to \mathbb{R}_{+}$ (una función de pérdida) si existe una función $m_{\mathcal{H}} : (0,1)^2 \to \mathbb{N}$ y un algoritmo de aprendizaje con la siguiente propiedad: \textcolor{dred}{para toda $\varepsilon, \delta \in (0,1)$ y toda distribución $\mathcal{D}$ sobre $Z$, al ejecutar el algoritmo de aprendizaje con $m \ge m_{\mathcal{H}} (\varepsilon, \delta)$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$, el algoritmo genera una hipótesis $h \in \mathcal{H}$ tal que, con probabilidad de al menos  $(1 - \delta)$ sobre la elección de $m$ elementos de entrenamiento, $L_{\mathcal{D}} (h) \le \min_{h' \in \mathcal{H}} L_{\mathcal{D}} (h') + \varepsilon$, donde $L_{\mathcal{D}} (h) = \underset{z\sim \mathcal{D}}{\mathbb{E}} [\ell (h,z)]$}
-\end{boxdef}
+	\begin{boxlemma}[]
+		Al asumir $S$ un conjunto de entrenamiento $\nicefrac{\varepsilon}{2}$-representativo, cualquier $\displaystyle h_{S} \in \argmin_{h \in \mathcal{H}} L_{S} (h)$ satisface:
+		\[
+			L_{\mathcal{D}}(h_{S}) \le \min_{h \in \mathcal{H}} L_{\mathcal{D}} (h) + \varepsilon
+			.\]
+	\end{boxlemma}
 
-\begin{boxrmk}[]
-	En aprendizaje PAC agnóstico para funciones de pérdida generalizada, necesitamos que la función $ \ell (h,\cdot)$ sea \emph{medible}. Es decir, al asumir un $\sigma$-álgebra de subconjuntos de  $Z$ sobre el cuál la probabilidad  $\mathcal{D}$ está definida, y que la preimagen de cada segmento inicial en $\mathbb{R}_{+}$ está en este $\sigma$-álgebra. \textcolor{dgray}{En el caso específico de clasificación binaria con pérdida 0-1, la  $\sigma$-álgebra está sobre  $ \mathcal{X} \times \{0,1\} $ y nuestra suposición en $ \ell$ es equivalente a asumir que sobre toda $h$, el conjunto  $ \{(x, h(x)) : x \in \mathcal{X}\} $ está en el $\sigma$-álgebra.}
-\end{boxrmk}
+	\begin{boxdef}[Convergencia uniforme]
+		Decimos que una familia de hipótesis $\mathcal{H}$ tiene la propiedad de \textbf{convergencia uniforme} con respecto al dominio $Z$ y la función de pérdida  $ \ell$ si existe una función $m_{\mathcal{H}}^{\text{\normalfont UC}} : (0,1)^2 \to \mathbb{N}$ tal que, para toda $\varepsilon, \delta \in (0,1)$ y toda distribución de probabilidad  $\mathcal{D}$ sobre $Z$, si $S$ es una muestra de  $m \ge m_{\mathcal{H}}^{\text{\normalfont UC}}$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$, entonces, con probabilidad de al menos $(1 - \delta)$,  $S$ es $\varepsilon$-representativa.
+	\end{boxdef}
 
-\begin{boxrmk}[Aprendizaje adecuado o independiente de la representación]
-	En algunos casos, $\mathcal{H}$ es un subconjunto de algún conjunto $\mathcal{H}'$ y la función de pérdida puede extenderse a ser una función de $\mathcal{H}' \times Z$ a los reales. En este caso, podemos permitir que el algoritmo genere una hipótesis $h' \in \mathcal{H}'$ siempre y cuando cumpla con $L_{\mathcal{D}} (h') \le \min_{h \in \mathcal{H}} L_{\mathcal{D}} (h) + \varepsilon$. Al permitir que el algoritmo genere una hipótesis de $\mathcal{H}'$, se dice que dicho aprendizaje es de \emph{representación independiente} o \emph{inadecuado}; mientras que, en aprendizaje \emph{adecuado}, el algoritmo debe producir una hipótesis de $\mathcal{H}$.
-\end{boxrmk}
+	\begin{boxcor}[]
+		Si una familia de hipótesis $\mathcal{H}$ tiene convergencia uniforme con una función $m_{\mathcal{H}}^{\text{\normalfont UC}}$, entonces la familia es PAC aprendible en sentido agnóstico con una complejidad muestral $m_{\mathcal{H}} (\varepsilon, \delta) \le m_{\mathcal{H}}^{\text{\normalfont UC}} (\nicefrac{\varepsilon}{2}, \delta)$.
+	\end{boxcor}
 
-\newpage
+	\begin{boxlemma}[Desigualdad de Hoeffding]
+		Sea $\theta_1, \ldots, \theta_m$ una sucesión de variables aleatorias independientes e idénticamente distribuidas. Al asumir que, para toda $i$, $\mathbb{E}[\theta_i] = \mu$ y $\mathbb{P}[a \le \theta_i \le b] = 1$; para toda $\varepsilon > 0$:
+		\[
+			\mathbb{P} \left[ \left| \frac{1}{m} \sum_{i = 1}^{m} \theta_i - \mu \right| > \varepsilon \right] \le 2 \exp \left( \frac{-2m \varepsilon^2}{(b - a)^2} \right)
+			.\]
+	\end{boxlemma}
 
-\section{Convergencia uniforme}
+	\begin{boxcor}[]
+		Sean $\mathcal{H}$ un clase de hipótesis finita, $Z$ el dominio y  $ \ell : \mathcal{H} \times Z \to [0,1]$ una función de pérdida. Entonces, $\mathcal{H}$ posee la propiedad de convergencia uniforme con complejidad muestral:
+		\[
+			m_{\mathcal{H}}^{\text{\normalfont UC}} (\varepsilon, \delta) \le \left\lceil \frac{\log(\nicefrac{2\left| \mathcal{H} \right| }{\delta})}{2\varepsilon^2} \right\rceil
+			.\]
+		Asimismo, la clase es PAC aprendible en un sentido agnóstico al utilizar el algoritmo ERM con complejidad muestral:
+		\[
+			m_{\mathcal{H}} (\varepsilon, \delta) \le m_{\mathcal{H}}^{\text{\normalfont UC}} (\nicefrac{\varepsilon}{2}, \delta) \le \left\lceil \frac{2\log(\nicefrac{2\left| \mathcal{H} \right| }{\delta})}{\varepsilon^2} \right\rceil
+			.\]
+	\end{boxcor}
 
-\begin{boxdef}[Muestra $\varepsilon$-representativa]
-	Un conjunto de entrenamiento $S$ es \textbf{$\bm{\varepsilon}$-representativo} respecto al dominio $Z$, la familia de hipótesis $\mathcal{H}$, la función de pérdida $ \ell$ y la distribución $\mathcal{D}$ si:
-	\[
-		\forall h \in \mathcal{H}, \quad \left| L_S (h) - L_{\mathcal{D}} (h) \right| \le \varepsilon
-	.\] 
-\end{boxdef}
+	\newpage
 
-\begin{boxlemma}[]
-	Al asumir $S$ un conjunto de entrenamiento $\nicefrac{\varepsilon}{2}$-representativo, cualquier $\displaystyle h_{S} \in \argmin_{h \in \mathcal{H}} L_{S} (h)$ satisface:
-	\[
-		L_{\mathcal{D}}(h_{S}) \le \min_{h \in \mathcal{H}} L_{\mathcal{D}} (h) + \varepsilon
-	.\] 
-\end{boxlemma}
+	\section{Predictores lineales}
 
-\begin{boxdef}[Convergencia uniforme]
-	Decimos que una familia de hipótesis $\mathcal{H}$ tiene la propiedad de \textbf{convergencia uniforme} con respecto al dominio $Z$ y la función de pérdida  $ \ell$ si existe una función $m_{\mathcal{H}}^{\text{\normalfont UC}} : (0,1)^2 \to \mathbb{N}$ tal que, para toda $\varepsilon, \delta \in (0,1)$ y toda distribución de probabilidad  $\mathcal{D}$ sobre $Z$, si $S$ es una muestra de  $m \ge m_{\mathcal{H}}^{\text{\normalfont UC}}$ elementos independientes e idénticamente distribuidos por $\mathcal{D}$, entonces, con probabilidad de al menos $(1 - \delta)$,  $S$ es $\varepsilon$-representativa.
-\end{boxdef}
+	\begin{boxdef}[Clase de transformaciones afines]
+		Definimos la \textbf{clase de transformaciones afines} como:
+		\[
+			L_{d} = \{ h_{\mathbf{w}, b} : \mathbf{w} \in \mathbb{R}^d, b \in \mathbb{R} \}
+			,\]
+		donde
+		\[
+			h_{\mathbf{w}, b} (\mathbf{x}) = \left< \mathbf{w}, \mathbf{x} \right> + b = \left( \sum_{i = 1}^{d} w_i x_i \right) + b
+			.\]
+		Asimismo, es conveniente usar la siguiente notación:
+		\[
+			L_{d} = \{ \mathbf{x} \mapsto \left< \mathbf{w}, \mathbf{x} \right> + b : \mathbf{w} \in \mathbb{R}^d, b \in \mathbb{R} \}
+			.\]
+	\end{boxdef}
 
-\begin{boxcor}[]
-	Si una familia de hipótesis $\mathcal{H}$ tiene convergencia uniforme con una función $m_{\mathcal{H}}^{\text{\normalfont UC}}$, entonces la familia es PAC aprendible en sentido agnóstico con una complejidad muestral $m_{\mathcal{H}} (\varepsilon, \delta) \le m_{\mathcal{H}}^{\text{\normalfont UC}} (\nicefrac{\varepsilon}{2}, \delta)$.
-\end{boxcor}
+	\begin{boxrmk}[]
+		En algunos casos, resulta conveniente incorporar el \emph{sesgo} $b$ en  $ \mathbf{w}$ como una coordenada y agregar una coordenada extra con valor de 1 a todas las $ \mathbf{x}  \in \mathcal{X}$. Es decir, sean $ \mathbf{w}' = (b, w_1, w_2, \ldots, w_d) \in \mathbb{R}^{d + 1}$ y $ \mathbf{x}' = (1, x_1, x_2, \ldots, x_d) \in \mathbb{R}^{d + 1}$. Por lo tanto:
+		\[
+			h_{\mathbf{w}, b} (\mathbf{x}) = \left< \mathbf{w}, \mathbf{x} \right> + b = \left< \mathbf{w}', \mathbf{x}' \right>
+			.\]
+	\end{boxrmk}
 
-\begin{boxlemma}[Desigualdad de Hoeffding]
-	Sea $\theta_1, \ldots, \theta_m$ una sucesión de variables aleatorias independientes e idénticamente distribuidas. Al asumir que, para toda $i$, $\mathbb{E}[\theta_i] = \mu$ y $\mathbb{P}[a \le \theta_i \le b] = 1$; para toda $\varepsilon > 0$:
-	 \[
-		 \mathbb{P} \left[ \left| \frac{1}{m} \sum_{i = 1}^{m} \theta_i - \mu \right| > \varepsilon \right] \le 2 \exp \left( \frac{-2m \varepsilon^2}{(b - a)^2} \right) 
-	.\] 
-\end{boxlemma}
+	\subsection{Semiespacios}
 
-\begin{boxcor}[]
-	Sean $\mathcal{H}$ un clase de hipótesis finita, $Z$ el dominio y  $ \ell : \mathcal{H} \times Z \to [0,1]$ una función de pérdida. Entonces, $\mathcal{H}$ posee la propiedad de convergencia uniforme con complejidad muestral:
-	\[
-		m_{\mathcal{H}}^{\text{\normalfont UC}} (\varepsilon, \delta) \le \left\lceil \frac{\log(\nicefrac{2\left| \mathcal{H} \right| }{\delta})}{2\varepsilon^2} \right\rceil 
-	.\]
-	Asimismo, la clase es PAC aprendible en un sentido agnóstico al utilizar el algoritmo ERM con complejidad muestral:
-	\[
-		m_{\mathcal{H}} (\varepsilon, \delta) \le m_{\mathcal{H}}^{\text{\normalfont UC}} (\nicefrac{\varepsilon}{2}, \delta) \le \left\lceil \frac{2\log(\nicefrac{2\left| \mathcal{H} \right| }{\delta})}{\varepsilon^2} \right\rceil 
-	.\] 
-\end{boxcor}
+	\begin{boxdef}[Clase de semiespacios]
+		La \textbf{clase de semiespacios}, diseñada para problemas de clasificación binaria con $\mathcal{X} = \mathbb{R}^d$ y $\mathcal{Y} = \{-1, +1\} $, la definimos como:
+		\[
+			HS_d = \sgn \circ L_{d} = \{\mathbf{x} \mapsto \sgn(h_{\mathbf{w}, b} (\mathbf{x})) : h_{\mathbf{w}, b} \in L_d\}
+			.\]
+	\end{boxdef}
 
-\newpage
+	Podemos considerar las siguientes tres situaciones:
 
-\section{Predictores lineales}
+	\begin{numberlist}
+		\item Casos separables, al asumir que se cumple la \emph{hipótesis de realizabilidad}.
+		\item Casos no separables en un sentido agnóstico.
+		\item[\textcolor{dred}{3.}] Cuando una función lineal no es suficiente y necesitamos una transformación no lineal.
+	\end{numberlist}
 
-\begin{boxdef}[Clase de transformaciones afines]
-	Definimos la \textbf{clase de transformaciones afines} como:
-	\[
-		L_{d} = \{h_{\mathbf{w}, b} : \mathbf{w} \in \mathbb{R}^d, b \in \mathbb{R}\} 
-	,\] 
-	donde
-	\[
-		h_{\mathbf{w}, b} (\mathbf{x}) = \left< \mathbf{w}, \mathbf{x} \right> + b = \left( \sum_{i = 1}^{d} w_i x_i \right) + b
-	.\] 
-	Asimismo, es conveniente usar la siguiente notación:
-	\[
-	L_{d} = \{ \mathbf{x} \mapsto \left< \mathbf{w}, \mathbf{x} \right> + b : \mathbf{w} \in \mathbb{R}^d, b \in \mathbb{R} \} 
-	.\] 
-\end{boxdef}
+	\subsubsection{Programación lineal}
 
-\begin{boxrmk}[]
-	En algunos casos, resulta conveniente incorporar el \emph{sesgo} $b$ en  $ \mathbf{w}$ como una coordenada y agregar una coordenada extra con valor de 1 a todas las $ \mathbf{x}  \in \mathcal{X}$. Es decir, sean $ \mathbf{w}' = (b, w_1, w_2, \ldots, w_d) \in \mathbb{R}^{d + 1}$ y $ \mathbf{x}' = (1, x_1, x_2, \ldots, x_d) \in \mathbb{R}^{d + 1}$. Por lo tanto:
-	\[
-		h_{\mathbf{w}, b} (\mathbf{x}) = \left< \mathbf{w}, \mathbf{x} \right> + b = \left< \mathbf{w}', \mathbf{x}' \right>
-	.\] 
-\end{boxrmk}
+	\begin{boxdef}[Programas lineales]
+		Los \textbf{programas lineales} son problemas que pueden expresarse como la maximización de una función lineal sujeta a restricciones lineales. Es decir:
+		\begin{align*}
+			\max_{\mathbf{w} \in \mathbb{R}^d} \quad & \left<\mathbf{u}, \mathbf{w} \right> \\
+			\text{\normalfont sujeto a} \quad        & A\mathbf{w} \ge \mathbf{v}
+			,\end{align*}
+		donde $ \mathbf{w}$ es el vector de variables que deseamos determinar, $A$ es una matriz  $m \times d$ y $ \mathbf{v} \in \mathbb{R}^m$, $ \mathbf{u} \in \mathbb{R}^d$ son vectores.
+	\end{boxdef}
 
-\subsection{Semiespacios}
+	\begin{boxprop}[]
+		Sea $\displaystyle S = \left\{ \left( \mathbf{x}_i, y_i \right)  \right\}_{i = 1}^m $ un conjunto de entrenamiento de tamaño $m$. Al asumir casos separables, existe  $ \mathbf{w} \in \mathbb{R}^d$ tal que:
+		\[
+			y_i \left< \mathbf{w}, \mathbf{x}_i \right> \ge 1, \quad \forall i = 1, \ldots, m
+			,\]
+		o bien,
+		\[
+			A\mathbf{w} \ge \mathbf{v}
+			,\]
+		donde $A \in \mathbb{R}^{m \times d}$, $A_{i,j} = y_i\, x_{i,j}$ y $ \mathbf{v} = (1, \ldots, 1) \in \mathbb{R}^m$; y $ \mathbf{w}$ es un predictor ERM.
+	\end{boxprop}
 
-\begin{boxdef}[Clase de semiespacios]
-	La \textbf{clase de semiespacios}, diseñada para problemas de clasificación binaria con $\mathcal{X} = \mathbb{R}^d$ y $\mathcal{Y} = \{-1, +1\} $, la definimos como:
-	\[
-		HS_d = \sgn \circ L_{d} = \{\mathbf{x} \mapsto \sgn(h_{\mathbf{w}, b} (\mathbf{x})) : h_{\mathbf{w}, b} \in L_d\} 
-	.\] 
-\end{boxdef}
+	\subsubsection{Algoritmo de perceptrones}
 
-Podemos considerar las siguientes tres situaciones:
+	\begin{algorithm}[H]
+		\caption{Perceptrón por bloques}
+		\KwIn{Un conjunto de entrenamiento $S = \{(\mathbf{x}_i, y_i)\}_{i=1}^m $}
+		$ \mathbf{w}^{(1)} = (0, \ldots, 0)$\\
+		\For{$t = 1, 2, \ldots$}{
+			\eIf{$\exists i$ tal que $y_i\left<\mathbf{w}^{(t)}, \mathbf{x}_i \right> \le 0$}{
+				$ \mathbf{w}^{(t + 1)} = \mathbf{w}^{(t)} + y_i \mathbf{x}_i$
+			}{
+				\KwOut{$ \mathbf{w}^{(t)}$}
+			}
+		}
+	\end{algorithm}
 
-\begin{numberlist}
-\item Casos separables, al asumir que se cumple la \emph{hipótesis de realizabilidad}.
-\item Casos no separables en un sentido agnóstico.
-\item[\textcolor{dred}{3.}] Cuando una función lineal no es suficiente y necesitamos una transformación no lineal.
-\end{numberlist}
+	\begin{boxtheo}[]
+		Al asumir $\left\{\left(\mathbf{x}_i, y_i \right)\right\}_{i=1}^m$ separables, y sean:
+		$$B = \min \left\{ \| \mathbf{w} \| : y_i \langle \mathbf{w}, \mathbf{x}_i \rangle \ge 1 \right\},$$
+		y
+		$$\displaystyle R = \max_{i} \left\{ \| \mathbf{x}_i \| \right\}.$$
+		Entonces, el algortimo de perceptrones se detiene a lo más $\left( RB \right)^2 $ iteraciones después y devuelve $\mathbf{w}^{(t)}$ tal que $y_i \langle \mathbf{w}^{(t)}, \mathbf{x}_i \rangle > 0$.
+	\end{boxtheo}
 
-\subsubsection{Programación lineal}
-
-\begin{boxdef}[Programas lineales]
-	Los \textbf{programas lineales} son problemas que pueden expresarse como la maximización de una función lineal sujeta a restricciones lineales. Es decir:
-	\begin{align*}
-		\max_{\mathbf{w} \in \mathbb{R}^d} \quad & \left<\mathbf{u}, \mathbf{w} \right> \\
-		\text{\normalfont sujeto a} \quad & A\mathbf{w} \ge \mathbf{v}
-	,\end{align*}
-	donde $ \mathbf{w}$ es el vector de variables que deseamos determinar, $A$ es una matriz  $m \times d$ y $ \mathbf{v} \in \mathbb{R}^m$, $ \mathbf{u} \in \mathbb{R}^d$ son vectores.
-\end{boxdef}
-
-\begin{boxprop}[]
-	Sea $\displaystyle S = \left\{ \left( \mathbf{x}_i, y_i \right)  \right\}_{i = 1}^m $ un conjunto de entrenamiento de tamaño $m$. Al asumir casos separables, existe  $ \mathbf{w} \in \mathbb{R}^d$ tal que:
-	\[
-	y_i \left< \mathbf{w}, \mathbf{x}_i \right> \ge 1, \quad \forall i = 1, \ldots, m
-	,\]
-	o bien,
-	\[
-	A\mathbf{w} \ge \mathbf{v}
-	,\] 
-	donde $A \in \mathbb{R}^{m \times d}$, $A_{i,j} = y_i\, x_{i,j}$ y $ \mathbf{v} = (1, \ldots, 1) \in \mathbb{R}^m$; y $ \mathbf{w}$ es un predictor ERM.
-\end{boxprop}
-
-\subsubsection{Algoritmo de perceptrones}
-
-\begin{algorithm}[H]
-	\caption{Perceptrón por bloques}
-	\KwIn{Un conjunto de entrenamiento $S = \{(\mathbf{x}_i, y_i)\}_{i=1}^m $}
-	$ \mathbf{w}^{(1)} = (0, \ldots, 0)$\\
-	\For{$t = 1, 2, \ldots$}{
-		\eIf{$\exists i$ tal que $y_i\left<\mathbf{w}^{(t)}, \mathbf{x}_i \right> \le 0$}{
-			$ \mathbf{w}^{(t + 1)} = \mathbf{w}^{(t)} + y_i \mathbf{x}_i$
-		}{
-		\KwOut{$ \mathbf{w}^{(t)}$}
-	}
-	}
-\end{algorithm}
-
-\begin{boxtheo}[]
-	Al asumir $\left\{\left(\mathbf{x}_i, y_i \right)\right\}_{i=1}^m$ separables, y sean:
-	$$B = \min \left\{ \| \mathbf{w} \| : y_i \langle \mathbf{w}, \mathbf{x}_i \rangle \ge 1 \right\},$$
-	y
-	$$\displaystyle R = \max_{i} \left\{ \| \mathbf{x}_i \| \right\}.$$
-	Entonces, el algortimo de perceptrones se detiene a lo más $\left( RB \right)^2 $ iteraciones después y devuelve $\mathbf{w}^{(t)}$ tal que $y_i \langle \mathbf{w}^{(t)}, \mathbf{x}_i \rangle > 0$.
-\end{boxtheo}
-
-\vfill\eject
-\columnbreak
+	\vfill\eject
+	\columnbreak
 \end{multicols}
 \end{document}

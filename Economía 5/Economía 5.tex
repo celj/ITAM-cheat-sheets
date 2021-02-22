@@ -22,340 +22,340 @@
 \begin{document}
 
 \begin{titlepage}
-    \begin{center}
-	\vspace*{1cm}
-	\Huge
-        \textbf{\csClass}
-	\vspace{0.5cm} \\
-	\Large
-        \cs\ $\cdot$ \csTerm
-        \vfill
-        \csAuthorName
-	\vspace{0.8cm}
-        \csClassCode\\
-        \csSchool     
-    \end{center}
+	\begin{center}
+		\vspace*{1cm}
+		\Huge
+		\textbf{\csClass}
+		\vspace{0.5cm} \\
+		\Large
+		\cs\ $\cdot$ \csTerm
+		\vfill
+		\csAuthorName
+		\vspace{0.8cm}
+		\csClassCode\\
+		\csSchool
+	\end{center}
 \end{titlepage}
 
 \begin{multicols}{3}
-\setcounter{page}{1}
+	\setcounter{page}{1}
 
-\part{Producción y consumo}
+	\part{Producción y consumo}
 
-\section{El modelo estático de producción y consumo}
+	\section{El modelo estático de producción y consumo}
 
-\begin{boxdef}[Función de producción]
-	La \textbf{función de producción} $f_j$ describe la relación entre la producción de bienes y la cantidad de trabajo requerido en la j-ésima empresa competitiva, y se denota:
-	\[
-		y_j = f_j(l) \text{ tal que } j \in J
-	.\]
-\end{boxdef}
+	\begin{boxdef}[Función de producción]
+		La \textbf{función de producción} $f_j$ describe la relación entre la producción de bienes y la cantidad de trabajo requerido en la j-ésima empresa competitiva, y se denota:
+		\[
+			y_j = f_j(l) \text{ tal que } j \in J
+			.\]
+	\end{boxdef}
 
-\subsubsection*{Propiedades de la función de producción}
+	\subsubsection*{Propiedades de la función de producción}
 
-\begin{eqlist}
-\item Creciente, i.e. el trabajo es siempre productivo.
-\item Cóncava, i.e. está sujeta a la ley de rendimientos marginales decrecientes.
-\end{eqlist}
-
-\subsection{El problema de la firma}
-
-\begin{equation*}
-	\max_{\{l\}} \quad pf_j (l) - wl
-\end{equation*}
-
-\begin{center}
-\begin{tabular}{ c l }
-	\hline
-	$f_j$ & Función de producción \\
-	$l$   & Nivel de empleo \\
-	$p$   & Precio del bien final \\
-	$w$   & Precio del trabajo (salario) \\
-	\hline
-\end{tabular}
-\end{center}
-
-\begin{boxdef}[Ganancias óptimas]
-	Definimos las \textbf{ganancias óptimas} de la firma $j$ como sigue:
-	\[
-		\pi_j(w, p) = pf_j(l_j(w, p)) - wl_j(w, p)
-	.\] 
-\end{boxdef}
-
-\begin{boxdef}[Demanda laboral]
-	La solución $l_j$ de la condición de optimalidad del problema de la firma se conoce como \textbf{demanda laboral} de la firma $j$.
-\end{boxdef}
-
-\begin{boxdef}[Oferta de bienes]
-	A la función $y_j(w, p)$ se le conoce como \textbf{oferta de bienes} de la empresa $j$.
-\end{boxdef}
-
-\begin{boxprop}
-	Las funciones de \textbf{demanda laboral} y \textbf{oferta de bienes}  son homogéneas de grado 0.
-\end{boxprop}
-
-\begin{boxprop}
-	La función de \textbf{ganancias óptimas} es homogénea de grado 1.
-\end{boxprop}
-
-\begin{boxdef}[Función de utilidad]
-	Sea una función $u_i(h, c)$, esta representa la utilidad del i-ésimo  consumidor por ocio y consumo si, para cualquier par de alternativas $(h_0, c_0), (h_1, c_1) \in \mathbb{R}^2$, se tiene $u_i(h_0, c_0) < h_i(h_1, c_1)$ si y solo si  el consumidor en cuestión prefiere la canasta $(h_1, c_1)$ sobre la canasta $(h_0, c_0)$.
-\end{boxdef}
-
-\subsubsection*{Propiedades de la función de utilidad}
-
-\begin{eqlist}
-\item Continuamente diferenciable.
-\item Creciente.
-\item Monótona.
-\item Cuasicóncava.
-\end{eqlist}
-
-\subsection{El problema de los consumidores}
-
-\begin{equation*}
-\begin{aligned}
-	\max_{\{h, c\}} \quad & u_i(h, c) \\
-	\text{sujeto a} \quad & \underbracket[0.5pt][0.5pt]{h + n = H_i}_{\text{\normalfont Restricción de tiempo}}, \\
-						  & \underbracket[0.5pt]{pc = \overbracket[0.5pt]{w \; \cdot \;  n}^{\text{\normalfont Ingreso laboral}} + \overbracket[0.5pt]{\sum_{j \in J} \theta_{ij} \pi_j (w, p)}^{\text{\normalfont Ingreso no laboral}}.}_{\text{\normalfont Restricción presupuestaria}}
-\end{aligned}
-\end{equation*}
-
-O bien,
-
-\begin{equation*}
-\begin{aligned}
-	\max_{\{h, c\}} \quad & u_i(h, c) \\
-	\text{sujeto a} \quad & \underbracket[0.5pt]{wh + pc}_{\substack{\text{\normalfont Valor de} \\ \text{\normalfont mercado de} \\ \text{\normalfont la canasta} \\\text{\normalfont de consumo} }} = \underbracket[0.5pt]{wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p)}_{\text{\normalfont Riqueza}}.
-\end{aligned}
-\end{equation*}
-
-\begin{center}
-\begin{tabular}{ c l }
-	\hline
-	$\theta_{ij}$ & Acciones de la firma $j$ \\
-	$c$           & Consumo del bien final \\
-	$\pi_j$       & Ganancias de la firma $j$ \\
-	$h$           & Tiempo dedicado al ocio \\
-	$n$           & Tiempo dedicado al trabajo \\
-	$H_i$         & Unidades de tiempo disponibles \\
-	\hline
-\end{tabular}
-\end{center}
-
-\sectionbreak
-
-\begin{boxdef}[Demanda de ocio]
-	La \textbf{demanda de ocio} es una de las soluciones al problema de los consumidores y se denota:
-	\[
-		h^* = h_i(w, p)
-	.\] 
-\end{boxdef}
-
-\begin{boxdef}[Demanda de consumo]
-	La \textbf{demanda de consumo} es una de las soluciones al problema de los consumidores y se denota:
-	\[
-		c^* = c_i(w, p)
-	.\] 
-\end{boxdef}
-
-\begin{boxdef}[Oferta laboral]
-	Dadas nuestras unidades de tiempo disponibles, $H_i$, y nuestra demanda de consumo $h_i(w, p)$, definimos la \textbf{oferta laboral} como sigue:
-	\[
-		n_i(w, p) = H_i - h_i(w, p)
-	.\] 
-\end{boxdef}
-
-\subsection{Equilibrio competitivo}
-
-\begin{boxdef}[Equilibrio competitivo]
-	Definimos el \textbf{equilibrio competitivo} como un vector de precios $(w^*, p^*)$ y una asignación $\left( \left\{ l^*_j, y^*_j \right\}_{j \in J}, \left\{ h^*_i, c^*_i \right\}_{i \in I} \right)$ tales que:
 	\begin{eqlist}
-	\item Todas las cantidades son óptimas a los precios $(w^*, p^*)$.
-		\begin{equation*}
-			\begin{aligned}
-				\ie \qquad & l^*_j = l_j(w^*, p^*), \\
-				           & y^*_j = y_j(w^*, p^*), \\
-						   & h^*_i = h_i(w^*, p^*), \\
-					       & c^*_i = c_i(w^*, p^*).
-			\end{aligned}
-		\end{equation*}
-	\item Las cantidades individuales vacían el mercado de bienes y el mercado laboral.
-		\begin{equation*}
-			\begin{aligned}
-				\ie \qquad & \sum_{j \in J} y_i(w^*, p^*) = \sum_{i \in I} c_i(w^*, p^*),\ \text{y} \\
-						   & \sum_{j \in J} l_j(w^*, p^*) = \sum_{i \in I} \left[ H_i - h_i(w^*, p^*) \right].
-			\end{aligned}
-		\end{equation*}
+		\item Creciente, i.e. el trabajo es siempre productivo.
+		\item Cóncava, i.e. está sujeta a la ley de rendimientos marginales decrecientes.
 	\end{eqlist}
-\end{boxdef}
 
-\newpage
+	\subsection{El problema de la firma}
 
-\subsection{Maximización del bienestar social o problema del \emph{planificador central}}
+	\begin{equation*}
+		\max_{\{l\}} \quad pf_j (l) - wl
+	\end{equation*}
 
-\begin{equation*}
-	\begin{aligned}
-		\max_{\{h, c, l\}} \quad   & u(h, c) \\
-		\text{sujeto a} \quad      & h + l = H, \\
-							       & c = f(l).
-	\end{aligned}
-\end{equation*}
+	\begin{center}
+		\begin{tabular}{ c l }
+			\hline
+			$f_j$ & Función de producción        \\
+			$l$   & Nivel de empleo              \\
+			$p$   & Precio del bien final        \\
+			$w$   & Precio del trabajo (salario) \\
+			\hline
+		\end{tabular}
+	\end{center}
 
-O bien,
+	\begin{boxdef}[Ganancias óptimas]
+		Definimos las \textbf{ganancias óptimas} de la firma $j$ como sigue:
+		\[
+			\pi_j(w, p) = pf_j(l_j(w, p)) - wl_j(w, p)
+			.\]
+	\end{boxdef}
 
-\[
-	\max_{\{l\}} \quad u(H - l, f(l))
-.\] 
+	\begin{boxdef}[Demanda laboral]
+		La solución $l_j$ de la condición de optimalidad del problema de la firma se conoce como \textbf{demanda laboral} de la firma $j$.
+	\end{boxdef}
 
-\begin{boxdef}[Demanda de consumo agregada]
-	Definimos la \textbf{demanda de consumo agregada} como sigue:
+	\begin{boxdef}[Oferta de bienes]
+		A la función $y_j(w, p)$ se le conoce como \textbf{oferta de bienes} de la empresa $j$.
+	\end{boxdef}
+
+	\begin{boxprop}
+		Las funciones de \textbf{demanda laboral} y \textbf{oferta de bienes}  son homogéneas de grado 0.
+	\end{boxprop}
+
+	\begin{boxprop}
+		La función de \textbf{ganancias óptimas} es homogénea de grado 1.
+	\end{boxprop}
+
+	\begin{boxdef}[Función de utilidad]
+		Sea una función $u_i(h, c)$, esta representa la utilidad del i-ésimo  consumidor por ocio y consumo si, para cualquier par de alternativas $(h_0, c_0), (h_1, c_1) \in \mathbb{R}^2$, se tiene $u_i(h_0, c_0) < h_i(h_1, c_1)$ si y solo si  el consumidor en cuestión prefiere la canasta $(h_1, c_1)$ sobre la canasta $(h_0, c_0)$.
+	\end{boxdef}
+
+	\subsubsection*{Propiedades de la función de utilidad}
+
+	\begin{eqlist}
+		\item Continuamente diferenciable.
+		\item Creciente.
+		\item Monótona.
+		\item Cuasicóncava.
+	\end{eqlist}
+
+	\subsection{El problema de los consumidores}
+
+	\begin{equation*}
+		\begin{aligned}
+			\max_{\{h, c\}} \quad & u_i(h, c)                                                                                                                                                                                                                                                     \\
+			\text{sujeto a} \quad & \underbracket[0.5pt][0.5pt]{h + n = H_i}_{\text{\normalfont Restricción de tiempo}},                                                                                                                                                                          \\
+			                      & \underbracket[0.5pt]{pc = \overbracket[0.5pt]{w \; \cdot \;  n}^{\text{\normalfont Ingreso laboral}} + \overbracket[0.5pt]{\sum_{j \in J} \theta_{ij} \pi_j (w, p)}^{\text{\normalfont Ingreso no laboral}}.}_{\text{\normalfont Restricción presupuestaria}}
+		\end{aligned}
+	\end{equation*}
+
+	O bien,
+
+	\begin{equation*}
+		\begin{aligned}
+			\max_{\{h, c\}} \quad & u_i(h, c)                                                            \\
+			\text{sujeto a} \quad & \underbracket[0.5pt]{wh + pc}_{\substack{\text{\normalfont Valor de} \\ \text{\normalfont mercado de} \\ \text{\normalfont la canasta} \\\text{\normalfont de consumo} }} = \underbracket[0.5pt]{wH_i + \sum_{j \in J} \theta_{ij} \pi_j (w, p)}_{\text{\normalfont Riqueza}}.
+		\end{aligned}
+	\end{equation*}
+
+	\begin{center}
+		\begin{tabular}{ c l }
+			\hline
+			$\theta_{ij}$ & Acciones de la firma $j$       \\
+			$c$           & Consumo del bien final         \\
+			$\pi_j$       & Ganancias de la firma $j$      \\
+			$h$           & Tiempo dedicado al ocio        \\
+			$n$           & Tiempo dedicado al trabajo     \\
+			$H_i$         & Unidades de tiempo disponibles \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\sectionbreak
+
+	\begin{boxdef}[Demanda de ocio]
+		La \textbf{demanda de ocio} es una de las soluciones al problema de los consumidores y se denota:
+		\[
+			h^* = h_i(w, p)
+			.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Demanda de consumo]
+		La \textbf{demanda de consumo} es una de las soluciones al problema de los consumidores y se denota:
+		\[
+			c^* = c_i(w, p)
+			.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Oferta laboral]
+		Dadas nuestras unidades de tiempo disponibles, $H_i$, y nuestra demanda de consumo $h_i(w, p)$, definimos la \textbf{oferta laboral} como sigue:
+		\[
+			n_i(w, p) = H_i - h_i(w, p)
+			.\]
+	\end{boxdef}
+
+	\subsection{Equilibrio competitivo}
+
+	\begin{boxdef}[Equilibrio competitivo]
+		Definimos el \textbf{equilibrio competitivo} como un vector de precios $(w^*, p^*)$ y una asignación $\left( \left\{ l^*_j, y^*_j \right\}_{j \in J}, \left\{ h^*_i, c^*_i \right\}_{i \in I} \right)$ tales que:
+		\begin{eqlist}
+			\item Todas las cantidades son óptimas a los precios $(w^*, p^*)$.
+			\begin{equation*}
+				\begin{aligned}
+					\ie \qquad & l^*_j = l_j(w^*, p^*), \\
+					           & y^*_j = y_j(w^*, p^*), \\
+					           & h^*_i = h_i(w^*, p^*), \\
+					           & c^*_i = c_i(w^*, p^*).
+				\end{aligned}
+			\end{equation*}
+			\item Las cantidades individuales vacían el mercado de bienes y el mercado laboral.
+			\begin{equation*}
+				\begin{aligned}
+					\ie \qquad & \sum_{j \in J} y_i(w^*, p^*) = \sum_{i \in I} c_i(w^*, p^*),\ \text{y}            \\
+					           & \sum_{j \in J} l_j(w^*, p^*) = \sum_{i \in I} \left[ H_i - h_i(w^*, p^*) \right].
+				\end{aligned}
+			\end{equation*}
+		\end{eqlist}
+	\end{boxdef}
+
+	\newpage
+
+	\subsection{Maximización del bienestar social o problema del \emph{planificador central}}
+
+	\begin{equation*}
+		\begin{aligned}
+			\max_{\{h, c, l\}} \quad & u(h, c)    \\
+			\text{sujeto a} \quad    & h + l = H, \\
+			                         & c = f(l).
+		\end{aligned}
+	\end{equation*}
+
+	O bien,
+
 	\[
-		C(w) = \sum_{i \in I} c_i(w)
-	.\] 
-\end{boxdef}
+		\max_{\{l\}} \quad u(H - l, f(l))
+		.\]
 
-\begin{boxdef}[Demanda laboral agregada]
-	Definimos la \textbf{demanda laboral agregada} como sigue:
+	\begin{boxdef}[Demanda de consumo agregada]
+		Definimos la \textbf{demanda de consumo agregada} como sigue:
+		\[
+			C(w) = \sum_{i \in I} c_i(w)
+			.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Demanda laboral agregada]
+		Definimos la \textbf{demanda laboral agregada} como sigue:
+		\[
+			L(w) = \sum_{j \in J} l_j(w)
+			.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Ganancias agregadas]
+		Definimos las \textbf{ganancias agregadas} como sigue:
+		\[
+			\Pi(w) = \sum_{j \in J} \pi(w)
+			.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Oferta laboral agregada]
+		Definimos la \textbf{oferta laboral agregada} como sigue:
+		\[
+			N(w) = \sum_{i \in I} n_i(w)
+			.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Producción agregada]
+		Definimos la \textbf{producción agregada} como sigue:
+		\[
+			Y(w) = \sum_{j \in J} y_j(w)
+			.\]
+	\end{boxdef}
+
+	\emph{Nota:} en caso de encontrarnos con agentes heterogéneos, recordemos que cada subgrupo de consumidores, o empresas, con ciertas características obtendrá demandas, u ofertas, agregadas representativas tales que la demanda, u oferta, agregada de todos los agentes será la suma de los agregados representativos.
+
+	\sectionbreak
+
+	\section{Política fiscal en el modelo estático}
+
+	\begin{boxrmk}[]
+		El gobierno financia el gasto público y las transferencias gubernamentales con la recaudación de impuestos.
+		\[
+			\ie \quad \underbracket[0.5pt]{ T = G + \Omega}_{\substack{\text{\normalfont Restricción} \\ \text{\normalfont presupuestaria} \\ \text{\normalfont del gobierno}}}
+			.\]
+	\end{boxrmk}
+
+	\subsection{Impuestos distorsivos}
+
+	\begin{boxprop}[]
+		Sean $t_i$ y $\omega_i$ los impuestos y transferencias que el individuo $i$ paga y recibe, respectivamente. Para satisfacer la restricción presupuestaria del gobierno:
+		\[
+			\sum_{i \in I} \omega_i = \Omega = T = \sum_{i \in I} t_i
+			.\]
+	\end{boxprop}
+
+	\begin{boxprop}[]
+		Cada individuo recibe una proporción fija $\varepsilon_i \ge 0$ de la recaudación.
+		\[
+			\ie \quad \omega_i = \varepsilon_i\Omega = \varepsilon_i T
+			.\]
+	\end{boxprop}
+
+	\subsubsection{Impuesto al ingreso}
+
+	El monto de los impuestos que el individuo $i$ paga es:
+
 	\[
-		L(w) = \sum_{j \in J} l_j(w)
-	.\] 
-\end{boxdef}
+		t_i = \tau_y \left( wn_i + \sum_{j \in J} \theta_{ij} \pi_j (w) \right)
+		.\]
 
-\begin{boxdef}[Ganancias agregadas]
-	Definimos las \textbf{ganancias agregadas} como sigue:
+	\begin{boxdef}[Impuesto proporcional]
+		Un \textbf{impuesto proporcional} o tasa impositiva única sobre la renta es un sistema de impuestos en el que el tipo de gravamen siempre será el mismo, independientemente del nivel de renta.
+	\end{boxdef}
+
+	\begin{boxdef}[Impuesto progresivo]
+		Un \textbf{impuesto progresivo} es un sistema de impuestos en el cual se establece que a mayor nivel de renta, mayor será el porcentaje de impuestos a pagar sobre la base imponible.
+	\end{boxdef}
+
+	\begin{boxprop}[]
+		Cuando la tasa impositiva es única, la recaudación total de la economía es:
+		\[
+			T = \tau_y Y
+			.\]
+	\end{boxprop}
+
+	\begin{boxrmk}[]
+		Dado que la incidencia legal de los impuestos recae en los hogares, el problema de las empresas no se modifica y los consumidores se enfrentan a una nueva restricción:
+		\[
+			c = (1 - \tau_y) \left( wn_i + \sum_{j \in J} \theta_{ij} \pi_j(w) \right) + \varepsilon_i\Omega
+			.\]
+		Y, el planificador central, a una nueva restricción:
+		\[
+			c = (1 - \tau_y) f(l) + \Omega
+			.\]
+	\end{boxrmk}
+
+	\subsubsection{Impuesto al consumo}
+
+	El monto de los impuestos que el individuo $i$ paga es:
 	\[
-		\Pi(w) = \sum_{j \in J} \pi(w)
-	.\] 
-\end{boxdef}
+		t_i = \tau_c c_i
+		.\]
 
-\begin{boxdef}[Oferta laboral agregada]
-	Definimos la \textbf{oferta laboral agregada} como sigue:
-	\[
-		N(w) = \sum_{i \in I} n_i(w)
-	.\] 
-\end{boxdef}
+	\begin{boxprop}[]
+		La recaudación total de la economía es:
+		\[
+			T = \tau_c \sum_{i \in I} c_i
+			.\]
+	\end{boxprop}
 
-\begin{boxdef}[Producción agregada]
-	Definimos la \textbf{producción agregada} como sigue:
-	\[
-		Y(w) = \sum_{j \in J} y_j(w)
-	.\] 
-\end{boxdef}
+	\begin{boxrmk}[]
+		Dado que la incidencia legal de los impuestos recae en los hogares, el problema de las empresas no se modifica y los consumidores se enfrentan a una nueva restricción:
+		\[
+			(1 + \tau_c)c_i = wn_i + \sum_{j \in J} \theta_{ij}\pi_j(w) + \varepsilon_i\Omega
+			.\]
+		Y, el planificador central, a una nueva restricción:
+		\[
+			(1 + \tau_c) c = f(l) + \Omega
+			.\]
+	\end{boxrmk}
 
-\emph{Nota:} en caso de encontrarnos con agentes heterogéneos, recordemos que cada subgrupo de consumidores, o empresas, con ciertas características obtendrá demandas, u ofertas, agregadas representativas tales que la demanda, u oferta, agregada de todos los agentes será la suma de los agregados representativos.
+	\begin{boxprop}[]
+		Si $\displaystyle 1 + \tau_c = \frac{1}{1 - \tau_y}$, $\tau_y < \tau_c$ y, por lo tanto, $T < T_c$.
+	\end{boxprop}
 
-\sectionbreak
+	\begin{boxrmk}[]
+		En esta simplificación, dado que la recaudación se reintegra a los consumidores vía transferencias \emph{lump sum}, esta no genera efecto riqueza alguno. El único efecto de los impuestos se da a través de la distorsión en el precio relativo de los bienes.
+	\end{boxrmk}
 
-\section{Política fiscal en el modelo estático}
+	\newpage
 
-\begin{boxrmk}[]
-	El gobierno financia el gasto público y las transferencias gubernamentales con la recaudación de impuestos.
-	\[
-		\ie \quad \underbracket[0.5pt]{ T = G + \Omega}_{\substack{\text{\normalfont Restricción} \\ \text{\normalfont presupuestaria} \\ \text{\normalfont del gobierno}}}
-	.\] 
-\end{boxrmk}
+	\part{Consumo en el tiempo}
 
-\subsection{Impuestos distorsivos}
+	\newpage
 
-\begin{boxprop}[]
-	Sean $t_i$ y $\omega_i$ los impuestos y transferencias que el individuo $i$ paga y recibe, respectivamente. Para satisfacer la restricción presupuestaria del gobierno:
-	\[
-	\sum_{i \in I} \omega_i = \Omega = T = \sum_{i \in I} t_i
-	.\] 
-\end{boxprop}
+	\part{Producción en el tiempo}
 
-\begin{boxprop}[]
-	Cada individuo recibe una proporción fija $\varepsilon_i \ge 0$ de la recaudación.
-	\[
-	\ie \quad \omega_i = \varepsilon_i\Omega = \varepsilon_i T
-	.\] 
-\end{boxprop}
+	\newpage
 
-\subsubsection{Impuesto al ingreso}
+	\part{Economía abierta}
 
-El monto de los impuestos que el individuo $i$ paga es:
+	\newpage
 
-\[
-	t_i = \tau_y \left( wn_i + \sum_{j \in J} \theta_{ij} \pi_j (w) \right) 
-.\] 
+	\part{Inversión y capital}
 
-\begin{boxdef}[Impuesto proporcional]
-	Un \textbf{impuesto proporcional} o tasa impositiva única sobre la renta es un sistema de impuestos en el que el tipo de gravamen siempre será el mismo, independientemente del nivel de renta.
-\end{boxdef}
-
-\begin{boxdef}[Impuesto progresivo]
-	Un \textbf{impuesto progresivo} es un sistema de impuestos en el cual se establece que a mayor nivel de renta, mayor será el porcentaje de impuestos a pagar sobre la base imponible. 
-\end{boxdef}
-
-\begin{boxprop}[]
-	Cuando la tasa impositiva es única, la recaudación total de la economía es:
-	\[
-	T = \tau_y Y
-	.\] 
-\end{boxprop}
-
-\begin{boxrmk}[]
-	Dado que la incidencia legal de los impuestos recae en los hogares, el problema de las empresas no se modifica y los consumidores se enfrentan a una nueva restricción:
-	\[
-		c = (1 - \tau_y) \left( wn_i + \sum_{j \in J} \theta_{ij} \pi_j(w) \right) + \varepsilon_i\Omega
-	.\]
-	Y, el planificador central, a una nueva restricción:
-	\[
-		c = (1 - \tau_y) f(l) + \Omega
-	.\] 
-\end{boxrmk}
-
-\subsubsection{Impuesto al consumo}
-
-El monto de los impuestos que el individuo $i$ paga es:
-\[
-t_i = \tau_c c_i
-.\] 
-
-\begin{boxprop}[]
-	La recaudación total de la economía es:
-	\[
-	T = \tau_c \sum_{i \in I} c_i
-	.\] 
-\end{boxprop}
-
-\begin{boxrmk}[]
-	Dado que la incidencia legal de los impuestos recae en los hogares, el problema de las empresas no se modifica y los consumidores se enfrentan a una nueva restricción:
-	\[
-		(1 + \tau_c)c_i = wn_i + \sum_{j \in J} \theta_{ij}\pi_j(w) + \varepsilon_i\Omega
-	.\] 
-	Y, el planificador central, a una nueva restricción:
-	\[
-		(1 + \tau_c) c = f(l) + \Omega
-	.\] 
-\end{boxrmk}
-
-\begin{boxprop}[]
-	Si $\displaystyle 1 + \tau_c = \frac{1}{1 - \tau_y}$, $\tau_y < \tau_c$ y, por lo tanto, $T < T_c$.
-\end{boxprop}
-
-\begin{boxrmk}[]
-	En esta simplificación, dado que la recaudación se reintegra a los consumidores vía transferencias \emph{lump sum}, esta no genera efecto riqueza alguno. El único efecto de los impuestos se da a través de la distorsión en el precio relativo de los bienes.
-\end{boxrmk}
-
-\newpage
-
-\part{Consumo en el tiempo}
-
-\newpage
-
-\part{Producción en el tiempo}
-
-\newpage
-
-\part{Economía abierta}
-
-\newpage
-
-\part{Inversión y capital}
-
-\vfill\eject
-\columnbreak
+	\vfill\eject
+	\columnbreak
 \end{multicols}
 \end{document}
