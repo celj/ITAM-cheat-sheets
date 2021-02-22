@@ -48,6 +48,7 @@
 \setmonofont{JetBrainsMono Nerd Font Mono}[
     Contextuals = Alternate,
     Ligatures = TeX,
+	Scale = MatchLowercase,
 ]
 
 \lstset{
@@ -58,13 +59,20 @@
 \usetikzlibrary{decorations.markings}
 \pgfplotsset{compat=1.11}
 
+\definecolor{blue}{HTML}{9999ff}
+\definecolor{gray}{HTML}{cccccc}
+\definecolor{red}{HTML}{ff8080}
+\colorlet{dblue}{black!30!blue}
+\colorlet{dgray}{black!30!gray}
+\colorlet{dred}{black!30!red}
+
 \newmdtheoremenv [
 	topline    = false,
 	bottomline = false,
 	leftline   = true,
 	rightline  = false,
 	linewidth  = 2.5pt,
-	linecolor  = red!50
+	linecolor  = red
 ]{boxdef}{Definición}[section]
 
 \mdtheorem [
@@ -73,7 +81,7 @@
 	leftline   = true,
 	rightline  = false,
 	linewidth  = 2.5pt,
-	linecolor  = blue!40
+	linecolor  = blue
 ]{boxtheo}{Teorema}[section]
 
 \mdtheorem [
@@ -82,7 +90,7 @@
 	leftline   = true,
 	rightline  = false,
 	linewidth  = 2.5pt,
-	linecolor  = black!20
+	linecolor  = gray
 ]{boxprop}{Proposición}[section]
 
 \mdtheorem [
@@ -91,7 +99,7 @@
 	leftline   = true,
 	rightline  = false,
 	linewidth  = 2.5pt,
-	linecolor  = blue!40
+	linecolor  = blue
 ]{boxlemma}{Lema}[section]
 
 \mdtheorem [
@@ -100,7 +108,7 @@
 	leftline   = true,
 	rightline  = false,
 	linewidth  = 2.5pt,
-	linecolor  = blue!40
+	linecolor  = blue
 ]{boxcor}{Corolario}[section]
 
 \mdtheorem [
@@ -109,7 +117,7 @@
 	leftline   = true,
 	rightline  = false,
 	linewidth  = 2.5pt,
-	linecolor  = black!20
+	linecolor  = gray
 ]{boxrmk}{Observación}[section]
 
 \newlist{numberlist}{enumerate}{1}
@@ -136,4 +144,6 @@
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 \decimalpoint
+
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}
 
