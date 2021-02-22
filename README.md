@@ -43,8 +43,8 @@ Disponibles a partir de otoño de 2021:
 
 ---
 
-Para cualquier corrección, revisión o sugerencia, [escríbeme](mailto:carloselezamaj@gmail.com?subject=[GitHub]%20Formularios%20ITAM).
+_Para cualquier corrección, revisión o sugerencia, [escríbeme](mailto:carloselezamaj@gmail.com?subject=[GitHub]%20Formularios%20ITAM)._
 
-Las plantillas *.tex son una adaptación de [ethzcheatsheets](https://github.com/flavioschneider/ethzcheatsheets) de Flavio Schneider.
+<sub>Las plantillas *.tex son una adaptación de [ethzcheatsheets](https://github.com/flavioschneider/ethzcheatsheets) de Flavio Schneider.</sub>
 
-<b id="f1">1</b> Última actualización: 22 de febrero de 2021. [↵](#a1)
+<sub><b id="f1">1</b> Última actualización: 22 de febrero de 2021. [↵](#a1)</sub>
