@@ -294,8 +294,6 @@
 		Cualquier transformación monótona creciente de una función cuasiconvexa es cuasiconvexa. Asimismo, cualquier transformación monótona creciente de una función cuasicóncava es cuasicóncava.
 	\end{boxtheo}
 
-	\subsection{Optimización estática}
-
 	\begin{boxtheo}[Minkowski]
 		Sean $A$ y $B$ dos conjuntos de $\mathbb{R}^n$ tales que $A \cap B = \varnothing$; entonces, existe un hiperplano que los separa.
 	\end{boxtheo}
@@ -308,6 +306,63 @@
 			\ie \quad \exists \mathbf{x} \in A \text{ tal que } f(\mathbf{x}) = \mathbf{x}.
 		\]
 	\end{boxtheo}
+	
+	\emph{Nota:} este resultado permite mostrar la existencia de equilibrios competitivos en una economía de intercambio.
+
+	\begin{boxtheo}
+		Sean $A \subseteq \mathbb{R}^n$ un conjunto convexo, $f : A \to \mathbb{R}$ una función cóncava y $\mathbf{x}_0$ un punto interior de $A$ entonces, existe un vector $\bar{p} \in \mathbb{R}^n$ tal que:
+		\[f(\mathbf{x}) - f(\mathbf{x}_0) \leq \bar{p}\ (\mathbf{x} - \mathbf{x}_0), \quad \forall \mathbf{x} \in A.\]
+		Por definición, llamaremos a dicho vector $\bar{p}$ \textbf{súpergradiente}. \par
+		Asimismo, sea $f$ una función convexa, existe un vector $\bar{q} \in \mathbb{R}^n$ tal que:
+		\[f(\mathbf{x}) - f(\mathbf{x}_0) \geq \bar{q}\ (\mathbf{x} - \mathbf{x}_0), \quad \forall \mathbf{x} \in A.\]
+		Por definición, llamaremos a dicho vector $\bar{q}$ \textbf{subgradiente}.
+	\end{boxtheo}
+
+	\newpage
+	
+	\subsection{Optimización estática}
+
+	\begin{boxdef}[Máximo global]
+		Sea $X \subseteq \mathbb{R}^{n}$ un conjunto, decimos que $x_0 \in X$ es un \textbf{máximo global} de la función $f : X \to \mathbb{R}$ si, para toda $x \in X$, $f(x_0) \geq f(x)$. Si dicha desigualdad es estricta, se le conoce como \textbf{máximo global estricto}.
+	\end{boxdef}
+
+	\begin{boxdef}[Mínimo global]
+		Sea $X \subseteq \mathbb{R}^{n}$ un conjunto, decimos que $x_0 \in X$ es un \textbf{mínimo global} de la función $f : X \to \mathbb{R}$ si, para toda $x \in X$, $f(x_0) \leq f(x)$. Si dicha desigualdad es estricta, se le conoce como \textbf{mínimo global estricto}.
+	\end{boxdef}
+
+	\begin{boxdef}[Máximo local]
+		Sean $(X, d_X)$ un espacio métrico y $f : X \to \mathbb{R}$ una función. Decimos que $x_0 \in X$ es un \textbf{máximo local} de la función $f$ si existe $\varepsilon > 0$ tal que, para toda $x \in X$, $d_X (x, x_0) < \varepsilon$ y $f(x_0) \geq f(x)$. Si dicha desigualdad es estricta, se le conoce como \textbf{máximo local estricto}.
+	\end{boxdef}
+
+	\begin{boxdef}[Mínimo local]
+		Sean $(X, d_X)$ un espacio métrico y $f : X \to \mathbb{R}$ una función. Decimos que $x_0 \in X$ es un \textbf{mínimo local} de la función $f$ si existe $\varepsilon > 0$ tal que, para toda $x \in X$, $d_X (x, x_0) < \varepsilon$ y $f(x_0) \leq f(x)$. Si dicha desigualdad es estricta, se le conoce como \textbf{mínimo local estricto}.
+	\end{boxdef}
+
+	\begin{boxtheo}[Condiciones necesarias de primer orden]
+		Si $f(\mathbf{x})$ es derivable en $\mathbf{x}_0$ y $f$ alcanza un extremo local en $\mathbf{x}_0$, entonces, todas sus derivadas parciales se anulan en $\mathbf{x}_0$.
+	\end{boxtheo}
+
+	\begin{boxdef}[Punto crítico]
+		Dados un conjunto $A \subseteq \mathbb{R}^n$ y una función $f : A \to \mathbb{R}$, decimos que $\mathbf{x}_0$ es un \textbf{punto crítico} de $f$ si sus derivadas parciales se anulan en $\mathbf{x}_0$, o bien, alguna de ellas no existe en $\mathbf{x}_0$.
+		\[\exists\ \mathbf{x}_0 \quad \text{\normalfont tal que} \quad\ \nabla f(\mathbf{x}_0) = 0.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Punto de silla]
+		Un punto crítico $\mathbf{x}_0$ es un \textbf{punto de silla} si existen direcciones por las que la función crece y otras por las que la función decrece a partir del punto $\mathbf{x}_0$.
+	\end{boxdef}
+
+	\begin{boxtheo}[Condiciones suficientes de segundo orden]
+		Sea $\mathbf{x}_0$ un punto crítico de una función diferenciable $f$, entonces:
+		\begin{eqlist}
+			\item $f$ alcanza un máximo local si, en $\mathbf{x}_0$, la forma cuadrática asociada a la matriz hessiana $H_f$ es definida negativa.
+			\item $f$ alcanza un mínimo local si, en $\mathbf{x}_0$, la forma cuadrática asociada a la matriz hessiana $H_f$ es definida positiva.
+			\item $\mathbf{x}_0$ es un punto de silla si la forma cuadrática asociada a la matriz hessiana $H_f$ es indefinida.
+		\end{eqlist}
+	\end{boxtheo}
+
+	\sectionbreak
+
+	\subsection{Optimización restringida}
 
 	\newpage
 
