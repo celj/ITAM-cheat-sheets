@@ -1,4 +1,4 @@
-% !TEX program = xelatex
+% !TEX program = lualatex
 
 \documentclass[8pt,a4paper]{extarticle}
 \input{../template_es.tex}
@@ -352,22 +352,22 @@
 	\begin{boxdef}[Clase de transformaciones afines]
 		Definimos la \textbf{clase de transformaciones afines} como:
 		\[
-			L_{d} = \{ h_{\mathbf{w}, b} : \mathbf{w} \in \mathbb{R}^d, b \in \mathbb{R} \}
+			L_{d} = \{ h_{\mathrm{w}, b} : \mathrm{w} \in \mathbb{R}^d, b \in \mathbb{R} \}
 			,\]
 		donde
 		\[
-			h_{\mathbf{w}, b} (\mathbf{x}) = \left< \mathbf{w}, \mathbf{x} \right> + b = \left( \sum_{i = 1}^{d} w_i x_i \right) + b
+			h_{\mathrm{w}, b} (\mathrm{x}) = \left< \mathrm{w}, \mathrm{x} \right> + b = \left( \sum_{i = 1}^{d} w_i x_i \right) + b
 			.\]
 		Asimismo, es conveniente usar la siguiente notación:
 		\[
-			L_{d} = \{ \mathbf{x} \mapsto \left< \mathbf{w}, \mathbf{x} \right> + b : \mathbf{w} \in \mathbb{R}^d, b \in \mathbb{R} \}
+			L_{d} = \{ \mathrm{x} \mapsto \left< \mathrm{w}, \mathrm{x} \right> + b : \mathrm{w} \in \mathbb{R}^d, b \in \mathbb{R} \}
 			.\]
 	\end{boxdef}
 
 	\begin{boxrmk}[]
-		En algunos casos, resulta conveniente incorporar el \emph{sesgo} $b$ en  $ \mathbf{w}$ como una coordenada y agregar una coordenada extra con valor de 1 a todas las $ \mathbf{x}  \in \mathcal{X}$. Es decir, sean $ \mathbf{w}' = (b, w_1, w_2, \ldots, w_d) \in \mathbb{R}^{d + 1}$ y $ \mathbf{x}' = (1, x_1, x_2, \ldots, x_d) \in \mathbb{R}^{d + 1}$. Por lo tanto:
+		En algunos casos, resulta conveniente incorporar el \emph{sesgo} $b$ en  $ \mathrm{w}$ como una coordenada y agregar una coordenada extra con valor de 1 a todas las $ \mathrm{x}  \in \mathcal{X}$. Es decir, sean $ \mathrm{w}' = (b, w_1, w_2, \ldots, w_d) \in \mathbb{R}^{d + 1}$ y $ \mathrm{x}' = (1, x_1, x_2, \ldots, x_d) \in \mathbb{R}^{d + 1}$. Por lo tanto:
 		\[
-			h_{\mathbf{w}, b} (\mathbf{x}) = \left< \mathbf{w}, \mathbf{x} \right> + b = \left< \mathbf{w}', \mathbf{x}' \right>
+			h_{\mathrm{w}, b} (\mathrm{x}) = \left< \mathrm{w}, \mathrm{x} \right> + b = \left< \mathrm{w}', \mathrm{x}' \right>
 			.\]
 	\end{boxrmk}
 
@@ -376,7 +376,7 @@
 	\begin{boxdef}[Clase de semiespacios]
 		La \textbf{clase de semiespacios}, diseñada para problemas de clasificación binaria con $\mathcal{X} = \mathbb{R}^d$ y $\mathcal{Y} = \{-1, +1\} $, la definimos como:
 		\[
-			HS_d = \sgn \circ L_{d} = \{\mathbf{x} \mapsto \sgn(h_{\mathbf{w}, b} (\mathbf{x})) : h_{\mathbf{w}, b} \in L_d\}
+			HS_d = \sgn \circ L_{d} = \{\mathrm{x} \mapsto \sgn(h_{\mathrm{w}, b} (\mathrm{x})) : h_{\mathrm{w}, b} \in L_d\}
 			.\]
 	\end{boxdef}
 
@@ -393,45 +393,45 @@
 	\begin{boxdef}[Programas lineales]
 		Los \textbf{programas lineales} son problemas que pueden expresarse como la maximización de una función lineal sujeta a restricciones lineales. Es decir:
 		\begin{align*}
-			\max_{\mathbf{w} \in \mathbb{R}^d} \quad & \left<\mathbf{u}, \mathbf{w} \right> \\
-			\text{\normalfont sujeto a} \quad        & A\mathbf{w} \ge \mathbf{v}
+			\max_{\mathrm{w} \in \mathbb{R}^d} \quad & \left<\mathrm{u}, \mathrm{w} \right> \\
+			\text{\normalfont sujeto a} \quad        & A\mathrm{w} \ge \mathrm{v}
 			,\end{align*}
-		donde $ \mathbf{w}$ es el vector de variables que deseamos determinar, $A$ es una matriz  $m \times d$ y $ \mathbf{v} \in \mathbb{R}^m$, $ \mathbf{u} \in \mathbb{R}^d$ son vectores.
+		donde $ \mathrm{w}$ es el vector de variables que deseamos determinar, $A$ es una matriz  $m \times d$ y $ \mathrm{v} \in \mathbb{R}^m$, $ \mathrm{u} \in \mathbb{R}^d$ son vectores.
 	\end{boxdef}
 
 	\begin{boxprop}[]
-		Sea $\displaystyle S = \left\{ \left( \mathbf{x}_i, y_i \right)  \right\}_{i = 1}^m $ un conjunto de entrenamiento de tamaño $m$. Al asumir casos separables, existe  $ \mathbf{w} \in \mathbb{R}^d$ tal que:
+		Sea $\displaystyle S = \left\{ \left( \mathrm{x}_i, y_i \right)  \right\}_{i = 1}^m $ un conjunto de entrenamiento de tamaño $m$. Al asumir casos separables, existe  $ \mathrm{w} \in \mathbb{R}^d$ tal que:
 		\[
-			y_i \left< \mathbf{w}, \mathbf{x}_i \right> \ge 1, \quad \forall i = 1, \ldots, m
+			y_i \left< \mathrm{w}, \mathrm{x}_i \right> \ge 1, \quad \forall i = 1, \ldots, m
 			,\]
 		o bien,
 		\[
-			A\mathbf{w} \ge \mathbf{v}
+			A\mathrm{w} \ge \mathrm{v}
 			,\]
-		donde $A \in \mathbb{R}^{m \times d}$, $A_{i,j} = y_i\, x_{i,j}$ y $ \mathbf{v} = (1, \ldots, 1) \in \mathbb{R}^m$; y $ \mathbf{w}$ es un predictor ERM.
+		donde $A \in \mathbb{R}^{m \times d}$, $A_{i,j} = y_i\, x_{i,j}$ y $ \mathrm{v} = (1, \ldots, 1) \in \mathbb{R}^m$; y $ \mathrm{w}$ es un predictor ERM.
 	\end{boxprop}
 
 	\subsubsection{Algoritmo de perceptrones}
 
 	\begin{algorithm}[H]
 		\caption{Perceptrón por bloques}
-		\KwIn{Un conjunto de entrenamiento $S = \{(\mathbf{x}_i, y_i)\}_{i=1}^m $}
-		$ \mathbf{w}^{(1)} = (0, \ldots, 0)$\\
+		\KwIn{Un conjunto de entrenamiento $S = \{(\mathrm{x}_i, y_i)\}_{i=1}^m $}
+		$ \mathrm{w}^{(1)} = (0, \ldots, 0)$\\
 		\For{$t = 1, 2, \ldots$}{
-			\eIf{$\exists i$ tal que $y_i\left<\mathbf{w}^{(t)}, \mathbf{x}_i \right> \le 0$}{
-				$ \mathbf{w}^{(t + 1)} = \mathbf{w}^{(t)} + y_i \mathbf{x}_i$
+			\eIf{$\exists i$ tal que $y_i\left<\mathrm{w}^{(t)}, \mathrm{x}_i \right> \le 0$}{
+				$ \mathrm{w}^{(t + 1)} = \mathrm{w}^{(t)} + y_i \mathrm{x}_i$
 			}{
-				\KwOut{$ \mathbf{w}^{(t)}$}
+				\KwOut{$ \mathrm{w}^{(t)}$}
 			}
 		}
 	\end{algorithm}
 
 	\begin{boxtheo}[]
-		Al asumir $\left\{\left(\mathbf{x}_i, y_i \right)\right\}_{i=1}^m$ separables, y sean:
-		$$B = \min \left\{ \| \mathbf{w} \| : y_i \langle \mathbf{w}, \mathbf{x}_i \rangle \ge 1 \right\},$$
+		Al asumir $\left\{\left(\mathrm{x}_i, y_i \right)\right\}_{i=1}^m$ separables, y sean:
+		$$B = \min \left\{ \| \mathrm{w} \| : y_i \langle \mathrm{w}, \mathrm{x}_i \rangle \ge 1 \right\},$$
 		y
-		$$\displaystyle R = \max_{i} \left\{ \| \mathbf{x}_i \| \right\}.$$
-		Entonces, el algortimo de perceptrones se detiene a lo más $\left( RB \right)^2 $ iteraciones después y devuelve $\mathbf{w}^{(t)}$ tal que $y_i \langle \mathbf{w}^{(t)}, \mathbf{x}_i \rangle > 0$.
+		$$\displaystyle R = \max_{i} \left\{ \| \mathrm{x}_i \| \right\}.$$
+		Entonces, el algortimo de perceptrones se detiene a lo más $\left( RB \right)^2 $ iteraciones después y devuelve $\mathrm{w}^{(t)}$ tal que $y_i \langle \mathrm{w}^{(t)}, \mathrm{x}_i \rangle > 0$.
 	\end{boxtheo}
 
 	\vfill\eject

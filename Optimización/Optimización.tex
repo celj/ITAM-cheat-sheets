@@ -45,9 +45,9 @@
 	\subsection{Análisis convexo}
 
 	\begin{boxdef}[Conjunto convexo]
-		Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $\mathbf{x}, \mathbf{y} \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
+		Sea $X \subseteq \mathbb{R}^n$, decimos que $X$ es \textbf{convexo} si, para cualesquiera $\mathrm{x}, \mathrm{y} \in X$ y para toda $\lambda \in (0, 1)$, se cumple:
 		\[
-			\lambda \mathbf{x} + (1 - \lambda)\mathbf{y} \in X
+			\lambda \mathrm{x} + (1 - \lambda)\mathrm{y} \in X
 			.\]
 		Equivalentemente, decimos que $X$ es \textbf{convexo} si, para todas $a \in \partial X$ y $b \in X$, existe $\ell$ tal que $\langle b - a, \ell \rangle \le 0$; donde $\partial X$ es la \emph{frontera} de $X$ y $\langle \cdot\, , \cdot \rangle$ denota el producto punto.
 	\end{boxdef}
@@ -84,17 +84,17 @@
 	\end{boxprop}
 
 	\begin{boxdef}[Función convexa]
-		Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
+		Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función convexa} si, para toda $\mathrm{x}_1 \neq \mathrm{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
 		\[
-			f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \le \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)
+			f(\lambda \mathrm{x}_1 + (1 - \lambda)\mathrm{x}_2) \le \lambda f(\mathrm{x}_1) + (1 - \lambda) f(\mathrm{x}_2)
 			.\]
 		Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente convexa}.
 	\end{boxdef}
 
 	\begin{boxdef}[Función cóncava]
-		Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $\mathbf{x}_1 \neq \mathbf{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
+		Sea $X \subseteq R^n$ un conjunto convexo, $f : X \to \mathbb{R}$ es una \textbf{función cóncava} si, para toda $\mathrm{x}_1 \neq \mathrm{x}_2 \in X$ y toda $\lambda \in (0, 1)$, se tiene:
 		\[
-			f(\lambda \mathbf{x}_1 + (1 - \lambda)\mathbf{x}_2) \ge \lambda f(\mathbf{x}_1) + (1 - \lambda) f(\mathbf{x}_2)
+			f(\lambda \mathrm{x}_1 + (1 - \lambda)\mathrm{x}_2) \ge \lambda f(\mathrm{x}_1) + (1 - \lambda) f(\mathrm{x}_2)
 			.\]
 		Si la desigualdad es estricta, se dice que la función es \textbf{estrictamente cóncava}.
 	\end{boxdef}
@@ -115,32 +115,32 @@
 	\begin{boxdef}[Vector gradiente]
 		Sea $f \in \mathcal{C}^1 (X)$, el \textbf{vector gradiente} de $f$ está dado por:
 		\[
-			\nabla f(\mathbf{x}) =
+			\nabla f(\mathrm{x}) =
 			\begin{pmatrix} \displaystyle \frac{\partial f}{\partial x_1} \\ \vdots \\ \displaystyle \frac{\partial f}{\partial x_n} \end{pmatrix}
 			.\]
 	\end{boxdef}
 
 	\begin{boxdef}[Matriz hessiana]
-		Sea $f \in \mathcal{C}^2 (X)$, se define la \textbf{matriz hessiana} de $f$ como $H_f(\mathbf{x})$, donde:
+		Sea $f \in \mathcal{C}^2 (X)$, se define la \textbf{matriz hessiana} de $f$ como $H_f(\mathrm{x})$, donde:
 		\[
-			H_f (\mathbf{x})_{i,j} = \frac{\partial^2 f(\mathbf{x})}{\partial x_i \partial x_j}
+			H_f (\mathrm{x})_{i,j} = \frac{\partial^2 f(\mathrm{x})}{\partial x_i \partial x_j}
 			.\]
 	\end{boxdef}
 
 	\begin{boxdef}[Serie de Taylor]
 		\[
-			T(\mathbf{x}) = \sum_{|\alpha| \ge 0} \frac{(\mathbf{x} - \mathbf{a})^\alpha}{\alpha\,!} \left(\partial^\alpha f \right)(\mathbf{a})
+			T(\mathrm{x}) = \sum_{|\alpha| \ge 0} \frac{(\mathrm{x} - \mathrm{a})^\alpha}{\alpha\,!} \left(\partial^\alpha f \right)(\mathrm{a})
 			.\]
 	\end{boxdef}
 
 	\begin{boxtheo}[de Taylor]
-		Sea $f : \mathbb{R}^n \to \mathbb{R}$ tal que $f \in \mathcal{C}^k(\mathbf{a})$. Entonces, existe $h_{\alpha} : \mathbb{R}^n \to \mathbb{R}$ tal que:
+		Sea $f : \mathbb{R}^n \to \mathbb{R}$ tal que $f \in \mathcal{C}^k(\mathrm{a})$. Entonces, existe $h_{\alpha} : \mathbb{R}^n \to \mathbb{R}$ tal que:
 		\[
-			f(\mathbf{x}) = \sum_{|\alpha| \le k} \frac{\partial^\alpha f(\mathbf{a})}{\alpha\,!} (\mathbf{x} - \mathbf{a})^\alpha + \sum_{|\alpha| = k} h_{\alpha}(\mathbf{x})(\mathbf{x} - \mathbf{a})^\alpha
+			f(\mathrm{x}) = \sum_{|\alpha| \le k} \frac{\partial^\alpha f(\mathrm{a})}{\alpha\,!} (\mathrm{x} - \mathrm{a})^\alpha + \sum_{|\alpha| = k} h_{\alpha}(\mathrm{x})(\mathrm{x} - \mathrm{a})^\alpha
 			,\]
 		y
 		\[
-			\lim_{\mathbf{x} \to \mathbf{a}} h_{\alpha} (\mathbf{x}) = 0
+			\lim_{\mathrm{x} \to \mathrm{a}} h_{\alpha} (\mathrm{x}) = 0
 			.\]
 	\end{boxtheo}
 
@@ -166,18 +166,18 @@
 	\begin{boxtheo}[]
 		Una matriz simétrica $A$ de tamaño $n \times n$ puede determinar la forma cuadrática $q_A$ de $n$ variables como sigue:
 		\[
-			q_A (\mathbf{x}) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij}x_ix_j = \mathbf{x}^T A \mathbf{x}
+			q_A (\mathrm{x}) = \sum_{i = 1}^n \sum_{j = 1}^n a_{ij}x_ix_j = \mathrm{x}^T A \mathrm{x}
 			.\]
 	\end{boxtheo}
 
 	\begin{boxcor}[Clasificación de formas cuadráticas]
 		La matriz asociada a la forma cuadrática $q_A$ es:
 		\begin{eqlist}
-			\item definida positiva si $q_A(\mathbf{x}) > 0,\ \forall \mathbf{x} \neq 0$.
-			\item definida negativa si $q_A(\mathbf{x}) < 0,\ \forall \mathbf{x} \neq 0$.
-			\item semidefinida positiva si $q_A(\mathbf{x}) \ge 0,\ \forall \mathbf{x} \neq 0$.
-			\item semidefinida negativa si $q_A(\mathbf{x}) \le 0,\ \forall \mathbf{x} \neq 0$.
-			\item indefinida si $q_A(\mathbf{x})$ toma tanto valores positivos como negativos.
+			\item definida positiva si $q_A(\mathrm{x}) > 0,\ \forall \mathrm{x} \neq 0$.
+			\item definida negativa si $q_A(\mathrm{x}) < 0,\ \forall \mathrm{x} \neq 0$.
+			\item semidefinida positiva si $q_A(\mathrm{x}) \ge 0,\ \forall \mathrm{x} \neq 0$.
+			\item semidefinida negativa si $q_A(\mathrm{x}) \le 0,\ \forall \mathrm{x} \neq 0$.
+			\item indefinida si $q_A(\mathrm{x})$ toma tanto valores positivos como negativos.
 		\end{eqlist}
 	\end{boxcor}
 
@@ -193,7 +193,7 @@
 	\newpage
 
 	\begin{boxtheo}[Criterio de menores principales]
-		Sea $A$ una matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
+		Sea $A$ una matriz simétrica asociada a la forma cuadrática $q_A(\mathrm{x})$, entonces:
 		\begin{eqlist}
 			\item\label{1}$q_A$ es definida positiva si y solo si los menores principales de $A$ son todos positivos.
 			\item\label{2} $q_A$ es definida negativa si y solo si los menores principales de $A$ alternan signos de la forma:
@@ -205,7 +205,7 @@
 	\end{boxtheo}
 
 	\begin{boxtheo}[Criterio de valores propios]
-		Sea $A$ uns matriz simétrica asociada a la forma cuadrática $q_A(\mathbf{x})$, entonces:
+		Sea $A$ uns matriz simétrica asociada a la forma cuadrática $q_A(\mathrm{x})$, entonces:
 		\begin{eqlist}
 			\item $q_A$ es definida positiva si y solo si todos los valores propios de $A$ son positivos.
 			\item $q_A$ es definida negativa si y solo si todos los valores propios de $A$ son negativos.
@@ -218,13 +218,13 @@
 	\begin{boxtheo}[Criterio del primer orden]
 		Sea $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$ tal que $f \in \mathcal{C}^1(X)$, entonces:
 		\begin{eqlist}
-			\item $f$ es convexa si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+			\item $f$ es convexa si y solo si, $\forall \mathrm{x}, \mathrm{y} \in X$, se tiene:
 			\[
-				f(\mathbf{y}) \ge f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
+				f(\mathrm{y}) \ge f(\mathrm{x}) + \nabla f(\mathrm{x})(\mathrm{y} - \mathrm{x})
 				.\]
-			\item $f$ es cóncava si y solo si, $\forall \mathbf{x}, \mathbf{y} \in X$, se tiene:
+			\item $f$ es cóncava si y solo si, $\forall \mathrm{x}, \mathrm{y} \in X$, se tiene:
 			\[
-				f(\mathbf{y}) \le f(\mathbf{x}) + \nabla f(\mathbf{x})(\mathbf{y} - \mathbf{x})
+				f(\mathrm{y}) \le f(\mathrm{x}) + \nabla f(\mathrm{x})(\mathrm{y} - \mathrm{x})
 				.\]
 		\end{eqlist}
 	\end{boxtheo}
@@ -244,9 +244,9 @@
 	\begin{boxdef}
 		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
 		\begin{bulletlist}
-			\item la \textbf{gráfica} de $f$ como $$G_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) = r \} .$$
-			\item el \textbf{epígrafo} de $f$ como $$E_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \le r \} .$$
-			\item el \textbf{hipógrafo} de $f$ como $$H_f = \{ (\mathbf{x}, r) \in X \times \mathbb{R} : f(\mathbf{x}) \ge r \} .$$
+			\item la \textbf{gráfica} de $f$ como $$G_f = \{ (\mathrm{x}, r) \in X \times \mathbb{R} : f(\mathrm{x}) = r \} .$$
+			\item el \textbf{epígrafo} de $f$ como $$E_f = \{ (\mathrm{x}, r) \in X \times \mathbb{R} : f(\mathrm{x}) \le r \} .$$
+			\item el \textbf{hipógrafo} de $f$ como $$H_f = \{ (\mathrm{x}, r) \in X \times \mathbb{R} : f(\mathrm{x}) \ge r \} .$$
 		\end{bulletlist}
 	\end{boxdef}
 
@@ -261,9 +261,9 @@
 	\begin{boxdef}
 		Sean $X \subseteq \mathbb{R}^n$ un conjunto convexo y $f : X \to \mathbb{R}$, definimos:
 		\begin{bulletlist}
-			\item el \textbf{contorno} de $f$ en $k$ como $$C_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) = k\}.$$
-			\item el \textbf{contorno superior} de $f$ en $k$ como $$CS_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \ge k\}.$$
-			\item el \textbf{contorno inferior} de $f$ en $k$ como $$CI_f(k) = \{\mathbf{x} \in X : f(\mathbf{x}) \le k\}.$$
+			\item el \textbf{contorno} de $f$ en $k$ como $$C_f(k) = \{\mathrm{x} \in X : f(\mathrm{x}) = k\}.$$
+			\item el \textbf{contorno superior} de $f$ en $k$ como $$CS_f(k) = \{\mathrm{x} \in X : f(\mathrm{x}) \ge k\}.$$
+			\item el \textbf{contorno inferior} de $f$ en $k$ como $$CI_f(k) = \{\mathrm{x} \in X : f(\mathrm{x}) \le k\}.$$
 		\end{bulletlist}
 	\end{boxdef}
 
@@ -303,7 +303,7 @@
 	\begin{boxtheo}[Punto fijo de Brouwer]
 		Sean $A \subset \mathbb{R}^n$ un conjunto compacto y convexo, y $f : A \to A$ una función continua; entonces, $f$ tiene un punto fijo.
 		\[
-			\ie \quad \exists \mathbf{x} \in A \text{ tal que } f(\mathbf{x}) = \mathbf{x}.
+			\ie \quad \exists \mathrm{x} \in A \text{ tal que } f(\mathrm{x}) = \mathrm{x}.
 		\]
 	\end{boxtheo}
 	
@@ -312,11 +312,11 @@
 	\newpage
 
 	\begin{boxtheo}
-		Sean $A \subseteq \mathbb{R}^n$ un conjunto convexo, $f : A \to \mathbb{R}$ una función cóncava y $\mathbf{x}_0$ un punto interior de $A$ entonces, existe un vector $\bar{p} \in \mathbb{R}^n$ tal que:
-		\[f(\mathbf{x}) - f(\mathbf{x}_0) \leq \bar{p}\ (\mathbf{x} - \mathbf{x}_0), \quad \forall \mathbf{x} \in A.\]
+		Sean $A \subseteq \mathbb{R}^n$ un conjunto convexo, $f : A \to \mathbb{R}$ una función cóncava y $\mathrm{x}_0$ un punto interior de $A$ entonces, existe un vector $\bar{p} \in \mathbb{R}^n$ tal que:
+		\[f(\mathrm{x}) - f(\mathrm{x}_0) \leq \bar{p}\ (\mathrm{x} - \mathrm{x}_0), \quad \forall \mathrm{x} \in A.\]
 		Por definición, llamaremos a dicho vector $\bar{p}$ \textbf{súpergradiente}. \par
 		Asimismo, sea $f$ una función convexa, existe un vector $\bar{q} \in \mathbb{R}^n$ tal que:
-		\[f(\mathbf{x}) - f(\mathbf{x}_0) \geq \bar{q}\ (\mathbf{x} - \mathbf{x}_0), \quad \forall \mathbf{x} \in A.\]
+		\[f(\mathrm{x}) - f(\mathrm{x}_0) \geq \bar{q}\ (\mathrm{x} - \mathrm{x}_0), \quad \forall \mathrm{x} \in A.\]
 		Por definición, llamaremos a dicho vector $\bar{q}$ \textbf{subgradiente}.
 	\end{boxtheo}
 	
@@ -341,24 +341,24 @@
 	\end{boxdef}
 
 	\begin{boxtheo}[Condiciones necesarias de primer orden]
-		Si $f(\mathbf{x})$ es derivable en $\mathbf{x}_0$ y $f$ alcanza un extremo local en $\mathbf{x}_0$, entonces, todas sus derivadas parciales se anulan en $\mathbf{x}_0$.
+		Si $f(\mathrm{x})$ es derivable en $\mathrm{x}_0$ y $f$ alcanza un extremo local en $\mathrm{x}_0$, entonces, todas sus derivadas parciales se anulan en $\mathrm{x}_0$.
 	\end{boxtheo}
 
 	\begin{boxdef}[Punto crítico]
-		Dados un conjunto $A \subseteq \mathbb{R}^n$ y una función $f : A \to \mathbb{R}$, decimos que $\mathbf{x}_0$ es un \textbf{punto crítico} de $f$ si sus derivadas parciales se anulan en $\mathbf{x}_0$, o bien, alguna de ellas no existe en $\mathbf{x}_0$.
-		\[\exists\ \mathbf{x}_0 \quad \text{\normalfont tal que} \quad\ \nabla f(\mathbf{x}_0) = 0.\]
+		Dados un conjunto $A \subseteq \mathbb{R}^n$ y una función $f : A \to \mathbb{R}$, decimos que $\mathrm{x}_0$ es un \textbf{punto crítico} de $f$ si sus derivadas parciales se anulan en $\mathrm{x}_0$, o bien, alguna de ellas no existe en $\mathrm{x}_0$.
+		\[\exists\ \mathrm{x}_0 \quad \text{\normalfont tal que} \quad\ \nabla f(\mathrm{x}_0) = 0.\]
 	\end{boxdef}
 
 	\begin{boxdef}[Punto de silla]
-		Un punto crítico $\mathbf{x}_0$ es un \textbf{punto de silla} si existen direcciones por las que la función crece y otras por las que la función decrece a partir del punto $\mathbf{x}_0$.
+		Un punto crítico $\mathrm{x}_0$ es un \textbf{punto de silla} si existen direcciones por las que la función crece y otras por las que la función decrece a partir del punto $\mathrm{x}_0$.
 	\end{boxdef}
 
 	\begin{boxtheo}[Condiciones suficientes de segundo orden]
-		Sea $\mathbf{x}_0$ un punto crítico de una función diferenciable $f$, entonces:
+		Sea $\mathrm{x}_0$ un punto crítico de una función diferenciable $f$, entonces:
 		\begin{eqlist}
-			\item $f$ alcanza un máximo local si, en $\mathbf{x}_0$, la forma cuadrática asociada a la matriz hessiana $H_f$ es definida negativa.
-			\item $f$ alcanza un mínimo local si, en $\mathbf{x}_0$, la forma cuadrática asociada a la matriz hessiana $H_f$ es definida positiva.
-			\item $\mathbf{x}_0$ es un punto de silla si la forma cuadrática asociada a la matriz hessiana $H_f$ es indefinida.
+			\item $f$ alcanza un máximo local si, en $\mathrm{x}_0$, la forma cuadrática asociada a la matriz hessiana $H_f$ es definida negativa.
+			\item $f$ alcanza un mínimo local si, en $\mathrm{x}_0$, la forma cuadrática asociada a la matriz hessiana $H_f$ es definida positiva.
+			\item $\mathrm{x}_0$ es un punto de silla si la forma cuadrática asociada a la matriz hessiana $H_f$ es indefinida.
 		\end{eqlist}
 	\end{boxtheo}
 

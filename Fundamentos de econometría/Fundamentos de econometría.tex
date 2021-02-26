@@ -4,6 +4,8 @@
 \input{../template_es.tex}
 \input{../macros.tex}
 
+\hfuzz=77pt
+
 % Class info
 \renewcommand{\csClass}{Fundamentos de econometría}
 \renewcommand{\csClassCode}{EST - 21104}
@@ -49,12 +51,12 @@
 			.\]
 		Este mide la diferencia en media cuadrada entre nuestros valores estimados y el real. Asimismo, podemos definir el \textbf{error cuadrático medio} de una variable $X$ respecto a alguna constante $c$ como sigue:
 		\[
-			\mathbb{E} \left[ (X - c)^2 \right] = \sigma^2_{\mathbf{x}} + (c - \mu_\mathbf{x})^2
+			\mathbb{E} \left[ (X - c)^2 \right] = \sigma^2_{\mathrm{x}} + (c - \mu_\mathrm{x})^2
 			.\]
 	\end{boxdef}
 
 	\begin{boxtheo}[Error cuadrático mínimo]
-		El valor que minimiza $\mathbb{E}\left[(X-c)^2\right]$ es $\mu_{\mathbf{x}}$.
+		El valor que minimiza $\mathbb{E}\left[(X-c)^2\right]$ es $\mu_{\mathrm{x}}$.
 	\end{boxtheo}
 
 	\begin{boxcor}[Desigualdad de Markov I]
@@ -115,7 +117,7 @@
 		Sea $\varepsilon = Y - \mathbb{E}[Y \mid X]$, entonces:
 		\begin{eqlist}
 			\item $\mathbb{E}[\varepsilon  \mid X] = 0$.
-			\item $\text{\normalfont Var}(\varepsilon  \mid X) = \sigma^2_{\mathbf{y \mid x}}$.
+			\item $\text{\normalfont Var}(\varepsilon  \mid X) = \sigma^2_{\mathrm{y \mid x}}$.
 			\item $\mathbb{E}[\varepsilon] = 0$.
 			\item $\text{\normalfont Var}(\varepsilon) = 0$.
 			\item $\text{\normalfont Cov}(h(X), \varepsilon) = 0$.
@@ -135,7 +137,7 @@
 			,\]
 		tal que
 		\[
-			\alpha = \mu_{\mathbf{y}} - \beta \mu_{\mathbf{x}} \qquad \beta = \frac{\sigma_{\mathbf{xy}}}{\sigma^2_{x}}
+			\alpha = \mu_{\mathrm{y}} - \beta \mu_{\mathrm{x}} \qquad \beta = \frac{\sigma_{\mathrm{xy}}}{\sigma^2_{x}}
 			.\]
 	\end{boxdef}
 
@@ -148,7 +150,7 @@
 	\begin{boxdef}[Independencia en distribución]
 		Decimos que, en un conjunto finito de $n$ variables aleatorias $\left\{ X_1, \ldots, X_n \right\}$, $X_1, \ldots, X_n$ son \textbf{mutuamente independientes} si:
 		\[
-			F_{\mathbf{x_1,\ldots,x_n}} (x_1, \ldots, x_n) = \prod_{k=1}^{n} F_{\mathbf{x_k}} (x_k), \quad \forall x_1, \ldots, x_n
+			F_{\mathrm{x_1,\ldots,x_n}} (x_1, \ldots, x_n) = \prod_{k=1}^{n} F_{\mathrm{x_k}} (x_k), \quad \forall x_1, \ldots, x_n
 			.\]
 	\end{boxdef}
 

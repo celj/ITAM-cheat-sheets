@@ -1,0 +1,16 @@
+{
+    "grammarly.overrides": [
+        {
+            "files": [
+                "**/Economía 4/Economía 4.tex"
+            ],
+            "config": {
+                "audience": "expert",
+                "dialect": "british",
+                "domain": "academic",
+                "emotions": [],
+                "goals": []
+            }
+        }
+    ]
+}
