@@ -14,10 +14,10 @@
 
 % PDF Metadata
 \hypersetup{
-    pdftitle={\csof \csClass},      
-    pdfsubject={\csClass},      
-    pdfauthor={\csAuthorName},  
-    pdfkeywords={}              
+    pdftitle={\csof \csClass},
+    pdfsubject={\csClass},
+    pdfauthor={\csAuthorName},
+    pdfkeywords={}
 }
 
 % Begin document
@@ -126,7 +126,7 @@
 
 	\begin{boxprop}[]
 		\[
-			\arg\min_{h(X)} \mathbb{E}\left[ \left( Y - h(X) \right)^2  \right] = \mathbb{E}\left[ Y  \mid X \right]
+			\argmin_{h(X)} \mathbb{E}\left[ \left( Y - h(X) \right)^2  \right] = \mathbb{E}\left[ Y  \mid X \right]
 			.\]
 	\end{boxprop}
 
@@ -150,7 +150,7 @@
 	\begin{boxdef}[Independencia en distribución]
 		Decimos que, en un conjunto finito de $n$ variables aleatorias $\left\{ X_1, \ldots, X_n \right\}$, $X_1, \ldots, X_n$ son \textbf{mutuamente independientes} si:
 		\[
-			F_{\mathrm{x_1,\ldots,x_n}} (x_1, \ldots, x_n) = \prod_{k=1}^{n} F_{\mathrm{x_k}} (x_k), \quad \forall x_1, \ldots, x_n
+			F_{\mathrm{x_1,\ldots,x_n}} (x_1, \ldots, x_n) = \prod_{k=1}^{n} F_{\mathrm{x}_k} (x_k), \quad \forall x_1, \ldots, x_n
 			.\]
 	\end{boxdef}
 
@@ -191,20 +191,93 @@
 		para cualquier función $h(X)$ y todo $r$ y $s$.
 	\end{boxprop}
 
-	\newpage
-	\section{Econometría, modelos y datos}
+	\begin{boxprop}
+		Sean $\varepsilon = Y - \mathbb{E} [Y \mid X]$ y $U = Y - \mathbb{E}^* [Y \mid X]$, entonces $\varepsilon$ es independiente en media respecto a $X$ y $U$ no está correlacionado con $X$.
+	\end{boxprop}
 
 	\newpage
-	\section{Modelo de regresión lineal simple}
+
+	\begin{boxtheo}[Desigualdad Cauchy-Schwartz]
+		Sea $\displaystyle \rho = \frac{\Cov(X,Y)}{\sqrt{\Var(X)} \sqrt{\Var(Y)}}$, entonces $0 \leq \rho^{2} \leq 1$.
+	\end{boxtheo}
+
+	\begin{boxprop}
+		Sea $X \sim \mathcal{N} (\mu,\sigma^{2})$, entonces, para toda $p$ entera no negativa, los momentos centrados son los siguientes:
+		\[\EE [(X - \mu)^{p}] =
+		\begin{cases}
+			0, & \text{si $p$ es impar}; \\
+			\sigma^{p}(p-1)!!, & \text{si $p$ es par.}
+		\end{cases} \]
+	\end{boxprop}
+
+	\begin{boxprop}
+		En el caso normal, la ausencia de correlación equivale a independencia estocástica.
+	\end{boxprop}
+
+	\begin{boxprop}
+		Sea $g(Y \mid X) \sim \mathcal{N}(\EE[Y \mid X], \Var(Y \mid X))$, entonces:
+		\[\EE [Y \mid X] = \mu_{\mathrm{y}} + \rho \frac{\sigma_{\mathrm{y}}}{\sigma_{\mathrm{x}}} (X - \mu_{\mathrm{x}}),\]
+		y
+		\[\Var(Y \mid X) = \sigma_{\mathrm{y}}^{2} (1 - \rho)^2.\]
+		Nótese que la esperanza condicional es lineal y la varianza es constante.
+	\end{boxprop}
+
+	\begin{boxrmk}
+		En el caso normal, la función de regresión coincide con el mejor predictor lineal tal que, si $Y = \EE[ Y \mid X ] + \varepsilon$ y $\EE[ \varepsilon \mid X ] = 0$, $Y = \alpha + \beta X + \varepsilon$ con $\alpha = \mu_{\mathrm{y}} - \beta \mu_{\mathrm{x}}$ y $\displaystyle \beta = \frac{\sigma_{\mathrm{xy}}}{\sigma^2_{\mathrm{x}}}$.
+	\end{boxrmk}
+
+	\begin{boxprop}
+		La distribución condicional de $Y$ dado $X$ es normal.
+		\[Y \mid X \sim \mathcal{N} (\alpha + \beta X, \sigma^2).\]
+	\end{boxprop}
 
 	\newpage
-	\section{Análisis de los supuestos del modelo}
+	\section{Estimación}
+
+	\begin{boxtheo}
+		Sea $X$ una muestra aleatoria finita con $n$ observaciones, entonces, $x_1, x_2, \dots, x_n$ son independientes e idénticamente distribuídas y, por lo tanto, la densidad conjunta de dicha muestra aleatoria es:
+		\[F_{\mathrm{x_1,\ldots,x_n}}(x_1,\ldots,x_n) = \prod_{k = 1}^{n} F_{\mathrm{x}_k} (x_k).\]
+	\end{boxtheo}
+
+	\begin{boxdef}[Estadístico muestral]
+		Sea $T_n = h(X)$ una función escalar de una muestra aleatoria, entonces, este es un \textbf{estadístico muestral}.
+	\end{boxdef}
+
+	\begin{boxrmk}
+		Todo estadístico muestral $T_n$ es una variable aleatoria porque su valor es determinado por el resultado de un experimento. Asimismo, a la distribución de probabilidad de $T_n$ se le conoce como \emph{distribución muestral}, y está completamente determinada por $h(\cdot)$, $f(\mathrm{x})$ y $n$.
+	\end{boxrmk}
+
+	\begin{boxprop}
+		La media muestral satisface las siguientes propiedades:
+		\begin{bulletlist}
+			\item Si $X \sim \Ber(p)$, entonces, $n\bar{X} \sim \Bin(n,p)$.
+			\item Si $X \sim \Norm(\mu, \sigma^2)$, entonces, $\displaystyle \bar{X} \sim \Norm\left(\mu,\frac{\sigma^2}{n}\right)$.
+			\item Si $X \sim \Exp(\lambda)$, entonces, $k\lambda\bar{X} \sim \csq (k)$ con $k = 2n$.
+		\end{bulletlist}
+	\end{boxprop}
+
+	\begin{boxtheo}[de la media muestral]
+		Dada un muestra aleatoria de tamaño $n$ y cualquier población con $\EE [X] = \mu$ y $\Var(X) = \sigma^2$, la media muestral $\bar{X}$ tiene esperanza $\EE [\bar{X}] = \mu$ y varianza $\displaystyle \Var(\bar{X}) = \frac{\sigma^2}{n}$.
+	\end{boxtheo}
+
+	\begin{boxdef}[Momento muestral centrado]
+		\[M_r = \frac{1}{n}\sum_{i = 1}^n \left( x_i - \bar{X} \right)^r.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Momento muestral no centrado]
+		\[M'_r = \frac{1}{n}\sum_{i = 1}^n x_i^r.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Momento muestral centrado en la media poblacional]
+		\[M^*_r = \frac{1}{n}\sum_{i = 1}^n \left( x_i - \mu \right)^r.\]
+		Nótese que este \textbf{no} es un estimador muestral, pues, se requiere un parámetro poblacional. Sin embargo, les será útil para algunas demostraciones.
+	\end{boxdef}
 
 	\newpage
-	\section{Modelo de regresión lineal múltiple}
+	\section{Teoría asintótica}
 
 	\newpage
-	\section{Otros temas sobre el modelo de regresión lineal}
+	\section{Inferencia en el modelo lineal}
 
 	\vfill\eject
 	\columnbreak
