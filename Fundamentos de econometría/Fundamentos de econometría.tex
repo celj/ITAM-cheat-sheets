@@ -204,10 +204,10 @@
 	\begin{boxprop}
 		Sea $X \sim \mathcal{N} (\mu,\sigma^{2})$, entonces, para toda $p$ entera no negativa, los momentos centrados son los siguientes:
 		\[\EE [(X - \mu)^{p}] =
-		\begin{cases}
-			0, & \text{si $p$ es impar}; \\
-			\sigma^{p}(p-1)!!, & \text{si $p$ es par.}
-		\end{cases} \]
+			\begin{cases}
+				0,                 & \text{si $p$ es impar}; \\
+				\sigma^{p}(p-1)!!, & \text{si $p$ es par.}
+			\end{cases} \]
 		\emph{Nota:} $\displaystyle n!! = \prod_{k = 0}^{\left\lceil \frac{n}{2} \right\rceil - 1} (n - 2k)$. \[\ie \quad (n -1)!! = (n -1)(n - 3)(n - 5) \cdots 3 \cdot 1,\] para toda $n$ par.
 	\end{boxprop}
 
@@ -343,7 +343,7 @@
 	\begin{boxdef}[Convergencia en probabilidad]
 		Decimos que $T_n$ \textbf{converge en probabilidad}\footnote{$\displaystyle T_n \overset{\displaystyle p}{\longrightarrow} c$.} a una constante $c$ si y solo si:
 		\begin{align*}
-			\lim_{n \to \infty} G_n(t) = 0, \quad & \forall t < c, \\
+			\lim_{n \to \infty} G_n(t) = 0, \quad & \forall t < c,    \\
 			\lim_{n \to \infty} G_n(t) = 1, \quad & \forall t \geq c.
 		\end{align*}
 		O bien,
@@ -389,17 +389,6 @@
 		\[\ie \quad \bar{X} \overset{A}{\sim} \Norm(\mu,\nicefrac{\displaystyle\sigma^2}{\displaystyle n}).\]
 	\end{boxprop}
 
-	\begin{boxtheo}[de Slutsky]
-		Sean $T_n$, $V_n$ y $W_n$ sucesiones variables aleatorias, $h(\cdot)$ una función y $c$ una constante --- tal que estas últimas dos no dependen de $n$; lo siguiente se cumple:
-		\begin{eqlist}
-			\item Si $T_n \plim c$ y $h(T_n)$ es continua en $c$, entonces, $h(T_n) \plim h(c)$.
-			\item Si $V_n \plim c_1$, $W_n \plim c_2$ y $h(V_n,W_n)$ es continua en $(c_1,c_2)$, entonces, $h(V_n,W_n) \plim h(c_1,c_2)$.
-			\item Si $V_n \plim c$ y $W_n$ tiene una distribución límite, entonces, la distribución límite de $V_n + W_n$ es la misma que la correspondiente a $c + W_n$.
-			\item Si $V_n \plim c$ y $W_n$ tiene una distribución límite, entonces, la distribución límite de $V_n W_n$ es la misma que la correspondiente a $c W_n$.
-			\item Si $\sqrt{n}\left[ T_n - \theta \right] \dlim \Norm(0, \sigma^2)$ y $h(T_n)$ es continuamente diferenciable en $\theta$, entonces: \[\sqrt{n} \left[ h(T_n) - h(\theta) \right] \dlim \Norm\left(0, \sigma^2 \cdot \left[ h'(\theta) \right]^2 \right).\] \textbf{Caso multivariado:} si $\sqrt{n} \left[ {\bm T_n} - {\bm\theta} \right] \dlim \Norm(0, {\bm \Sigma})$ y $h({\bm T_n})$ es continuamente diferenciable en ${\bm\theta}$, entonces: \[\sqrt{n} \left[ h({\bm T_n}) - h({\bm\theta}) \right] \dlim \Norm\left(0, \nabla h({\bm\theta})^T \cdot {\bm \Sigma} \cdot \nabla h({\bm\theta}) \right)\]
-		\end{eqlist}
-	\end{boxtheo}
-
 	\begin{boxprop}
 		El análogo muestral al \textbf{mejor predictor lineal} es:
 		\[
@@ -408,14 +397,26 @@
 		donde
 		\[
 			A = \bar{Y} - B \bar{X} \qquad B = \frac{ S_{\mathrm{xy}} }{ S_{\mathrm{x}^2} }
-		\]
-		tal que $B \dlim \Norm(\beta, \nicefrac{\displaystyle \sigma^2}{\displaystyle n})$.
+			.\]
 	\end{boxprop}
 
 	\begin{boxdef}[Consistencia]
 		Decimos que $T_n$ es un estimador consistente de $\theta$ si y solo si:
 		\[T_n \plim \theta.\]
 	\end{boxdef}
+
+	\sectionbreak
+
+	\begin{boxtheo}[de Slutsky]
+		Sean $T_n$, $V_n$ y $W_n$ sucesiones variables aleatorias, $h(\cdot)$ una función y $c$ una constante --- tal que estas últimas dos no dependen de $n$; lo siguiente se cumple:
+		\begin{eqlist}
+			\item Si $T_n \plim c$ y $h(T_n)$ es continua en $c$, entonces, $h(T_n) \plim h(c)$.
+			\item Si $V_n \plim c_1$, $W_n \plim c_2$ y $h(V_n,W_n)$ es continua en $(c_1,c_2)$, entonces, $h(V_n,W_n) \plim h(c_1,c_2)$.
+			\item Si $V_n \plim c$ y $W_n$ tiene una distribución límite, entonces, la distribución límite de $V_n + W_n$ es la misma que la correspondiente a $c + W_n$.
+			\item Si $V_n \plim c$ y $W_n$ tiene una distribución límite, entonces, la distribución límite de $V_n W_n$ es la misma que la correspondiente a $c W_n$.
+			\item Si $\sqrt{n}\left[ T_n - \theta \right] \dlim \Norm(0, \phi^2)$ y $h(T_n)$ es continuamente diferenciable en $\theta$, entonces: \[\sqrt{n} \left[ h(T_n) - h(\theta) \right] \dlim \Norm\left(0, \phi^2 \cdot \left[ h'(\theta) \right]^2 \right),\] tal que \[T_n \overset{A}{\sim} \Norm \left( h(\theta), \left[ h'(\theta) \right]^2 \nicefrac{\displaystyle \phi^2}{\displaystyle n} \right).\] \textbf{Caso multivariado:} si $\sqrt{n} \left[ {\bm T_n} - {\bm\theta} \right] \dlim \Norm(0, {\bm \Sigma})$ y $h({\bm T_n})$ es continuamente diferenciable en ${\bm\theta}$, entonces: \[\sqrt{n} \left[ h({\bm T_n}) - h({\bm\theta}) \right] \dlim \Norm\left(0, \nabla h({\bm\theta})^T \cdot \text{\Large $\bm \Sigma$} \cdot \nabla h({\bm\theta}) \right),\] tal que \[{\bm T_n} \overset{A}{\sim} \Norm \left( h({\bm \theta}, ), \nabla h({\bm\theta})^T \cdot \frac{1}{n} \text{\Large $\bm \Sigma$} \cdot \nabla h({\bm\theta}) \right) .\]
+		\end{eqlist}
+	\end{boxtheo}
 
 	\begin{boxdef}[Mejor estimador asintóticamente normal]
 		Decimos que $T_n$ es el \textbf{mejor estimador asintóticamente normal} si y solo si:
@@ -429,6 +430,18 @@
 	\begin{boxdef}[Intervalo de confianza]
 		Dado un conjunto de observaciones $x_1, \dots, x_n$ de las variables aleatorias $X_1, \dots, X_n$, y sean $\theta$ nuestro parámetro de interés y $\gamma\in(0,1)$. Si existen estadísticos muestrales $L_n = g(X_1, \dots, X_n)$ y $U_n = h(X_1, \dots, X_n)$ tales que: $$\P(L_n < \theta < U_n) = \gamma, \quad \forall \theta;$$ entonces, decimos que $(l_n,u_n)$ es un \textbf{intervalo de confianza} $\gamma \times 100 \%$ del parámetro $\theta$, donde $l_n = g(x_1, \dots, x_n)$ y $u_n = h(x_1, \dots, x_n)$.
 	\end{boxdef}
+
+	\newpage
+
+	\subsubsection*{Algunas distribuciones asintóticas}
+
+	\begin{eqlist}
+		\item $\displaystyle S^2 \overset{A}{\sim} \Norm\left(\sigma^2, \frac{\mu_4 - \mu_2^2}{n}\right)$.
+		\item $\displaystyle S_{\mathrm{xy}} \overset{A}{\sim} \Norm \left( \sigma_{\mathrm{xy}}, \frac{\mu_{22} - \mu_{11}^2}{n} \right)$.
+		\item $\left( \bar{X}, \bar{Y} \right) \overset{A}{\sim} \Norm \left( \mu_{\mathrm{x}}, \mu_{\mathrm{y}}; \nicefrac{ \displaystyle \sigma^2_{\mathrm{x}}}{ \displaystyle n}, \nicefrac{ \displaystyle \sigma^2_{\mathrm{y}}}{ \displaystyle n}, \nicefrac{ \displaystyle \sigma_{\mathrm{xy}}}{ \displaystyle n} \right)$.
+		\item $\displaystyle \frac{\bar{X}}{\bar{Y}} \overset{A}{\sim} \Norm \left( \theta, \frac{\phi^2}{n} \right) $ tal que $\displaystyle \theta = \frac{\mu_{\mathrm{x}}}{\mu_{\mathrm{y}}}$ y \par $\displaystyle \phi^2 = \left( \frac{1}{\mu_{\mathrm{y}}} \right)^2 \left( \sigma^2_\mathrm{x} + \theta^2 \sigma^2_\mathrm{y} - 2\theta\sigma_\mathrm{xy} \right) $.
+		\item $\displaystyle \frac{S_{\mathrm{xy}}}{S^2_\mathrm{x}} \overset{A}{\sim} \Norm \left( \beta, \frac{\phi^2}{n} \right)$ donde $\displaystyle \beta = \frac{\sigma_\mathrm{xy}}{\sigma_\mathrm{x}^2}$ y \par $\displaystyle \phi^2 = \left( \frac{1}{\mu^2_{20}} \right) \left( \mu_{22} + \beta^2 \mu_{40} - 2\beta\mu_{31} \right)$.
+	\end{eqlist}
 
 	\newpage
 	\section{Inferencia en el modelo lineal}
