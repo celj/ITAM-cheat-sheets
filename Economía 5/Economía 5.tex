@@ -6,16 +6,16 @@
 
 % Class info
 \renewcommand{\csClass}{Economía 5}
-\renewcommand{\csClassCode}{ECO - 22105}
+\renewcommand{\csClassCode}{ECO $\cdot$ 22105}
 \renewcommand{\csTerm}{Primavera 2021}
 \renewcommand{\csKeywords}{ }
 
 % PDF Metadata
 \hypersetup{
-    pdftitle={\csof \csClass},      
-    pdfsubject={\csClass},      
-    pdfauthor={\csAuthorName},  
-    pdfkeywords={}              
+    pdftitle={\csof \csClass},
+    pdfsubject={\csClass},
+    pdfauthor={\csAuthorName},
+    pdfkeywords={}
 }
 
 % Begin document
@@ -30,7 +30,7 @@
 		\Large
 		\cs\ $\cdot$ \csTerm
 		\vfill
-		\csAuthorName
+		\csAuthorName\\
 		\vspace{0.8cm}
 		\csClassCode\\
 		\csSchool
@@ -43,20 +43,6 @@
 	\part{Producción y consumo}
 
 	\section{El modelo estático de producción y consumo}
-
-	\begin{boxdef}[Función de producción]
-		La \textbf{función de producción} $f_j$ describe la relación entre la producción de bienes y la cantidad de trabajo requerido en la j-ésima empresa competitiva, y se denota:
-		\[
-			y_j = f_j(l) \text{ tal que } j \in J
-			.\]
-	\end{boxdef}
-
-	\subsubsection*{Propiedades de la función de producción}
-
-	\begin{eqlist}
-		\item Creciente, i.e. el trabajo es siempre productivo.
-		\item Cóncava, i.e. está sujeta a la ley de rendimientos marginales decrecientes.
-	\end{eqlist}
 
 	\subsection{El problema de la firma}
 
@@ -74,6 +60,20 @@
 			\hline
 		\end{tabular}
 	\end{center}
+
+	\begin{boxdef}[Función de producción]
+		La \textbf{función de producción} $f_j$ describe la relación entre la producción de bienes y la cantidad de trabajo requerido en la j-ésima empresa competitiva, y se denota:
+		\[
+			y_j = f_j(l) \text{ tal que } j \in J
+			.\]
+	\end{boxdef}
+
+	\subsubsection*{Propiedades de la función de producción}
+
+	\begin{eqlist}
+		\item Creciente, i.e. el trabajo es siempre productivo.
+		\item Cóncava, i.e. está sujeta a la ley de rendimientos marginales decrecientes.
+	\end{eqlist}
 
 	\begin{boxdef}[Ganancias óptimas]
 		Definimos las \textbf{ganancias óptimas} de la firma $j$ como sigue:
@@ -98,18 +98,9 @@
 		La función de \textbf{ganancias óptimas} es homogénea de grado 1.
 	\end{boxprop}
 
-	\begin{boxdef}[Función de utilidad]
-		Sea una función $u_i(h, c)$, esta representa la utilidad del i-ésimo  consumidor por ocio y consumo si, para cualquier par de alternativas $(h_0, c_0), (h_1, c_1) \in \mathbb{R}^2$, se tiene $u_i(h_0, c_0) < h_i(h_1, c_1)$ si y solo si  el consumidor en cuestión prefiere la canasta $(h_1, c_1)$ sobre la canasta $(h_0, c_0)$.
+	\begin{boxdef}[Productividad total de los factores]
+		Definimos la \textbf{productividad total de los factores} ($A$) como la parte del crecimiento de la producción que no se explica por el crecimiento de los insumos medidos tradicionalmente.
 	\end{boxdef}
-
-	\subsubsection*{Propiedades de la función de utilidad}
-
-	\begin{eqlist}
-		\item Continuamente diferenciable.
-		\item Creciente.
-		\item Monótona.
-		\item Cuasicóncava.
-	\end{eqlist}
 
 	\subsection{El problema de los consumidores}
 
@@ -143,7 +134,18 @@
 		\end{tabular}
 	\end{center}
 
-	\sectionbreak
+	\begin{boxdef}[Función de utilidad]
+		Sea una función $u_i(h, c)$, esta representa la utilidad del i-ésimo  consumidor por ocio y consumo si, para cualquier par de alternativas $(h_0, c_0), (h_1, c_1) \in \mathbb{R}^2$, se tiene $u_i(h_0, c_0) < h_i(h_1, c_1)$ si y solo si  el consumidor en cuestión prefiere la canasta $(h_1, c_1)$ sobre la canasta $(h_0, c_0)$.
+	\end{boxdef}
+
+	\subsubsection*{Propiedades de la función de utilidad}
+
+	\begin{eqlist}
+		\item Continuamente diferenciable.
+		\item Creciente.
+		\item Monótona.
+		\item Cuasicóncava.
+	\end{eqlist}
 
 	\begin{boxdef}[Demanda de ocio]
 		La \textbf{demanda de ocio} es una de las soluciones al problema de los consumidores y se denota:
@@ -165,6 +167,10 @@
 			n_i(w, p) = H_i - h_i(w, p)
 			.\]
 	\end{boxdef}
+
+	\begin{boxprop}
+		Las \textbf{demandas de ocio} y \textbf{consumo} y la \textbf{oferta laboral} son funciones homogéneas de grado cero.
+	\end{boxprop}
 
 	\subsection{Equilibrio competitivo}
 
@@ -190,8 +196,6 @@
 		\end{eqlist}
 	\end{boxdef}
 
-	\newpage
-
 	\subsection{Maximización del bienestar social o problema del \emph{planificador central}}
 
 	\begin{equation*}
@@ -207,6 +211,20 @@
 	\[
 		\max_{\{l\}} \quad u(H - l, f(l))
 		.\]
+
+	\newpage
+
+	\begin{boxdef}[Función $\varphi$]
+		Definimos la \textbf{función} $\bm \varphi$ como aquella que representa todas las combinaciones de ocio y consumo que satisfacen la condición de eficiencia.
+		\[\ie \quad c \deq \varphi(l).\]
+	\end{boxdef}
+
+	\subsubsection*{Propiedades de la función $\bm \varphi$}
+
+	\begin{eqlist}
+		\item Decreciente.
+		\item Convexa.
+	\end{eqlist}
 
 	\begin{boxdef}[Demanda de consumo agregada]
 		Definimos la \textbf{demanda de consumo agregada} como sigue:
@@ -332,7 +350,7 @@
 	\end{boxrmk}
 
 	\begin{boxprop}[]
-		Si $\displaystyle 1 + \tau_c = \frac{1}{1 - \tau_y}$, $\tau_y < \tau_c$ y, por lo tanto, $T < T_c$.
+		Si $\displaystyle 1 + \tau_c = \frac{1}{1 - \tau_y}$, $\tau_y < \tau_c$ y, por lo tanto, $T_y < T_c$.
 	\end{boxprop}
 
 	\begin{boxrmk}[]
