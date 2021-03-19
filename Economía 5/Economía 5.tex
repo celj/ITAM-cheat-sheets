@@ -53,10 +53,10 @@
 	\begin{center}
 		\begin{tabular}{ c l }
 			\hline
-			$f_j$ & Función de producción        \\
-			$l$   & Nivel de empleo              \\
-			$p$   & Precio del bien final        \\
-			$w$   & Precio del trabajo (salario) \\
+			$f_j(\cdot)$ & Función de producción        \\
+			$l$          & Nivel de empleo              \\
+			$p$          & Precio del bien final        \\
+			$w$          & Precio del trabajo (salario) \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -124,12 +124,13 @@
 	\begin{center}
 		\begin{tabular}{ c l }
 			\hline
-			$\theta_{ij}$ & Acciones de la firma $j$       \\
-			$c$           & Consumo del bien final         \\
-			$\pi_j$       & Ganancias de la firma $j$      \\
-			$h$           & Tiempo dedicado al ocio        \\
-			$n$           & Tiempo dedicado al trabajo     \\
-			$H_i$         & Unidades de tiempo disponibles \\
+			$\theta_{ij}$  & Acciones de la firma $j$       \\
+			$c$            & Consumo del bien final         \\
+			$u(\cdot)$     & Función de utilidad            \\
+			$\pi_j(\cdot)$ & Ganancias de la firma $j$      \\
+			$h$            & Tiempo dedicado al ocio        \\
+			$n$            & Tiempo dedicado al trabajo     \\
+			$H_i$          & Unidades de tiempo disponibles \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -359,7 +360,310 @@
 
 	\newpage
 
+	\subsection{Gasto público}
+
+	\begin{boxrmk}
+		En este subtítulo supondremos que la restricción presupuestaria del gobierno está dada por:
+		\[G = T.\]
+		Es decir, $\Omega = 0$.
+	\end{boxrmk}
+
+	\subsubsection{Contratación de empleo público}
+
+	\begin{boxprop}[Empleo público]
+		Asumiendo que el gobierno no adquiere ningún tipo de bien o servicio mas que la contratación de $L^G$ horas de empleo público, el gasto público está dado por:
+		\[G = T = wL^G = Y^G.\]
+	\end{boxprop}
+
+	\begin{boxrmk}
+		El problema de las empresas no se modifica y los consumidores se enfrentar a una nueva restricción presupuestaria:
+		\[c = wn + \pi(w) - T.\]
+	\end{boxrmk}
+
+	\begin{boxprop}
+		El salario de equilibrio $w^*$ debe satisfacer la ecuación:
+		\[n(w^*) = l(w^*) + L^G.\]
+	\end{boxprop}
+
+	\begin{boxrmk}
+		En el equilibrio, se debe cumplir:
+		\[c^* = y^*_e,\]
+		donde $y_e$ denota la producción privada. \par
+		Esto es así porque, aunque el gobierno paga el salario de mercado por las horas trabajadas, se extraen los recursos necesarios de los propios hogares vía impuestos.
+	\end{boxrmk}
+
+	\begin{boxrmk}
+		En este modelo:
+		\[Y = y^*_e + Y^G.\]
+	\end{boxrmk}
+
+	\begin{boxrmk}
+		El valor social de lo que produce el gobierno no es $w^* L^G$, como lo reflejan las cuentas nacionales, sino cero, ya que la sociedad no valora estos servicios improductivos.
+	\end{boxrmk}
+
+	\sectionbreak
+
+	\subsubsection{Compras del gobierno}
+
+	\begin{boxrmk}
+		En este modelo se cumple lo siguiente:
+		\[Y = y_e^*; \qquad c^* + G = y^*_e.\]
+	\end{boxrmk}
+
+	\begin{boxprop}
+		Dado un \emph{gasto público exógeno} $G$, las condiciones de eficiencia y factibilidad conducen a un equilibrio explícitamente dado por:
+		\[c^* = \varphi(l^*) = f(l^*) - G.\]
+	\end{boxprop}
+
+	\begin{boxprop}
+		Dado un \emph{gravamen al ingreso} a tasa $\tau$ tal que $T = \tau Y$, las condiciones de eficiencia y factibilidad conducen a un equilibrio explícitamente dado por:
+		\[c^* = (1 - \tau) \varphi(l^*) = f(l^*) - G.\]
+	\end{boxprop}
+
+	\begin{boxprop}
+		Dado un \emph{gasto público proporcional al PIB} tal que $G = gY$, las condiciones de eficiencia y factibilidad conducen a un equilibrio explícitamente dado por:
+		\[c^* = \varphi(l^*) = (1 - g)f(l^*).\]
+	\end{boxprop}
+
+	\begin{boxprop}
+		Dados un \emph{gravamen al ingreso} a tasa $\tau$ y un \emph{gasto público proporcional al PIB} tales que $T = \tau Y$ y $G = gY$, respectivamente; las condiciones de eficiencia y factibilidad conducen a un equilibrio explícitamente dado por:
+		\[c^* = (1 - \tau) \varphi(l^*) = (1 - g)f(l^*).\]
+		Nótese que, por definición, $\tau = g$.
+	\end{boxprop}
+
+	\sectionbreak
+
+	\subsubsection{Gasto público en infraestructura}
+
+	\begin{boxrmk}
+		La identidad de cuentas nacionales es la misma que la condición de equilibrio en mercado del bien privado.
+		\[\ie \quad c + G = y.\]
+	\end{boxrmk}
+
+	\begin{boxdef}[Productividad total de los factores]
+		Para modelar el impacto de la infraestructura pública sobre la economía, definimos la \textbf{productividad total de los factores} como una función creciente del gasto público tal que:
+		\[y = A(g)f(l),\]
+		donde $g = \displaystyle \nicefrac{\displaystyle G}{\displaystyle Y}$.
+	\end{boxdef}
+
+	\newpage
+
 	\part{Consumo en el tiempo}
+
+	\section{Modelo de intercambio intertemporal}
+
+	\subsection{El problema de los consumidores}
+
+	Dados $n$ períodos de consumo tales que $T = \left\{ 1, \dots, n \right\} \subset \mathbb{N}$ y $\mathrm{b}, \mathrm{c} \in \mathbb{R}^n$.
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c};\, \mathrm{b} \right\}} \quad & \sum_{t \in T} \beta^{t-1} u(c_t)                           \\
+		\textnormal{sujeto a} \quad                            & c_t + b_t = y_t + (1 + r_{t-1}) b_{t-1},\; \forall t \in T, \\
+		                                                       & b_n \geq 0.
+	\end{align*}
+
+	O bien, al eliminar el ahorro del último periódo como variable de decisión:
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c};\, \mathrm{b} \right\}} \quad & \sum_{t \in T} \beta^{t-1} u(c_t)                           \\
+		\textnormal{sujeto a} \quad                            & c_t + b_t = y_t + (1 + r_{t-1}) b_{t-1},\; \forall t \in T,
+	\end{align*}
+
+	donde $b_0 = b_n = 0$.
+
+	O bien, al utilizar bonos de descuento a precio $q_t$:
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c};\, \mathrm{b} \right\}} \quad & \sum_{t \in T} \beta^{t-1} u(c_t)                                 \\
+		\textnormal{sujeto a} \quad                            & c_t + q_t \tilde{b}_t = y_t + \tilde{b}_{t-1},\; \forall t \in T,
+	\end{align*}
+
+	donde $\displaystyle q_t = \frac{1}{1 + r_t}$ y $\tilde{b}_t = (1 + r_t) b_t$.
+
+	O bien, a partir de la definición de precios en valor presente:
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c};\, \mathrm{b} \right\}} \quad & \sum_{t \in T} \beta^{t-1} u(c_t)                \\
+		\textnormal{sujeto a} \quad                            & \sum_{t \in T} p_t c_t = \sum_{t \in T} p_t y_t,
+	\end{align*}
+
+	donde $p_1 = 1$ y $\displaystyle p_t = \frac{1}{(1 + r_1) \cdots (1 + r_{t - 1})}$, $\forall t = 2, 3, \dots, n$.
+
+	\begin{center}
+		\begin{tabular}{ c l }
+			\hline
+			$b_t$         & Bonos en el período $t$                        \\
+			$c_t$         & Consumo en el período $t$                      \\
+			$\beta$       & Factor de descuento                            \\
+			$u(\cdot)$    & Función de utilidad                            \\
+			$y_t$         & Ingreso en el período $t$                      \\
+			$q_t$         & Precio del bono en el período $t$              \\
+			$p_t$         & Precio de consumo en el período $t$            \\
+			$r_t$         & Tasa de interés en el período $t$              \\
+			$\tilde{b}_t$ & Unidades adquiridas del bono en el período $t$ \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\begin{boxdef}[Ecuación de Euler]
+		Dado el problema de los consumidores en el modelo de intercambio intertemporal, la \textbf{ecuación de Euler} representa las condiciones de eficiencia y la definimos como sigue:
+		\[u'(c^*_t) = \beta (1 + r_t) u'(c^*_{t + 1}).\]
+	\end{boxdef}
+
+	\begin{boxdef}[Factor de descuento]
+		Considerando que los consumidores valoran más el consumo presente tal que se presenta cierto grado de impaciencia, definimos el \textbf{factor de descuento} $\beta$ como sigue:
+		\[\beta \deq \frac{1}{1 + \rho},\]
+		donde $\rho$ representa la \emph{tasa de descuento}.
+	\end{boxdef}
+
+	\begin{boxdef}[Tasa de interés promedio]
+		La \textbf{tasa de interés promedio} entre el período $1$ y período $t - 1$ se define como:
+		\[1 + \bar{r}_{1, t - 1} \deq \left( \prod_{i = 1}^{t - 1} (1 + r_i) \right)^{\displaystyle \nicefrac{1}{(t - 1)}}.\]
+	\end{boxdef}
+
+	\begin{boxdef}[Equilibrio competitivo]
+		Definimos el \textbf{equilibrio competitivo} como un vector de tasas de interés $(r^*_1, r^*_2, \dots, r^*_{n - 1})$ y una asignación de consumo $c^*_{i,t}$ con $i \in I$ y $t \in T$ tales que:
+		\begin{eqlist}
+			\item Cada $c^*_t$ es óptimo para todas las tasas de interés. \[\ie \quad c^*_t =c_t(r^*_1, r^*_2, \dots, r^*_{n - 1}).\]
+			\item Todos los mercados de bienes se vacían. \[\ie \quad \sum_{i \in I} c_{i,t} = \sum_{i \in I} y_{i,t}, \; \forall t \in T.\]
+		\end{eqlist}
+	\end{boxdef}
+
+	\begin{boxdef}[Tasa de crecimiento porcentual]
+		La \textbf{tasa de crecimiento porcentual} de una variable en el tiempo se define como: \[\hat{x}_{t + 1} \deq \frac{x_{t+1} - x_t}{x_t}.\]
+	\end{boxdef}
+
+	\begin{boxprop}
+		En el equilibrio del caso de una función de utilidad Cobb-Douglas, el valor presente a lo largo de toda la vida está dado exclusivamente por el valor de la dotación inicial multiplicado por la suma de los factores de descuento.
+		\[\ie \quad \sum_{t \in T} p^*_t y_t = \sum_{t \in T} \frac{y_1}{(1 + \rho)^{t - 1}}.\]
+	\end{boxprop}
+
+	\begin{boxprop}
+		En el caso de múltiples maduraciones, un bono $b_{t,m}$ adquirido en el período $t$ con $m$ períodos restantes para su vencimiento tiene un rendimiento promedio no mayor al promedio de los rendimientos de los bonos de un período.
+		\[\ie \quad 1 + \bar{r}_{t,m} = \left( \prod_{i = 0}^{m - 1} (1 + r_{t + i}) \right)^{\displaystyle \nicefrac{1}{m}}.\]
+	\end{boxprop}
+
+	\begin{boxrmk}[Suma geométrica]
+		\[\sum_{k=0}^n ar^k = a \left( \frac{1 - r^{n + 1}}{1 - r} \right), \quad r \neq 1.\]
+		\[\sum_{k = 0}^{\infty} ar^k = \frac{a}{1 - r}, \quad \lvert r \rvert < 1.\]
+	\end{boxrmk}
+
+	\newpage
+
+	\section{Horizonte de planeación infinito}
+
+	\begin{boxrmk}[Esquema de Ponzi]
+		El plan de consumo y financiamiento del \emph{esquema de Ponzi} está dado por los siguientes vectores:
+		\begin{align*}
+			\begin{bmatrix}
+				c_1 \\
+				c_2 \\
+				c_3 \\
+				c_4 \\
+				\vdots
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				y_1 + 1 \\
+				y_2     \\
+				y_3     \\
+				y_4     \\
+				\vdots
+			\end{bmatrix}, \quad &
+			\begin{bmatrix}
+				b_1 \\
+				b_2 \\
+				b_3 \\
+				b_4 \\
+				\vdots
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				-1                           \\
+				-(1 + r_1)                   \\
+				-(1 + r_1)(1 + r_2)          \\
+				-(1 + r_1)(1 + r_2)(1 + r_3) \\
+				\vdots
+			\end{bmatrix}
+		\end{align*}
+		Es decir, en el período inicial, el individuo contrata deuda que nunca paga.
+	\end{boxrmk}
+
+	\begin{boxtheo}[Restricción de no Ponzi]
+		Con el fin de evitar que el flujo de consumo, en valor presente, exceda el valor presente de las dotaciones a lo largo de toda la vida; es decir:
+		\[\sum_{t = 1}^{\infty} \frac{c_t}{(1 + r_1)\cdots(1 + r_{t -1})} \leq \sum_{t = 1}^{\infty} \frac{y_t}{(1 + r_1)\cdots(1 + r_{t -1})},\]
+		\emph{imponemos} la \textbf{restricción de no Ponzi}, descrita por:
+		\[\lim_{T \to \infty} \frac{b_T}{(1 + r_1)\cdots(1 + r_{T -1})} \geq 0, \quad \textnormal{para alguna } T \in \mathbb{N} \textnormal{ arbitraria}.\]
+	\end{boxtheo}
+
+	\sectionbreak
+
+	\subsection{El problema de los consumidores}
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c};\, \mathrm{b} \right\}} \quad & \sum_{t = 1}^{\infty} \beta^{t-1} u(c_t)                              \\
+		\textnormal{sujeto a} \quad                            & c_t + b_t = y_t + (1 + r_{t-1}) b_{t-1},\; \forall t \in \mathbb{N},  \\
+		                                                       & \lim_{T \to \infty} \frac{b_T}{(1 + r_1)\cdots(1 + r_{T -1})} \geq 0,
+	\end{align*}
+
+	donde $b_0 = 0$.
+
+	Alternativamente,
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c};\, \mathrm{b} \right\}} \quad & \sum_{t = 1}^{\infty} \beta^{t-1} u(c_t)                          \\
+		\textnormal{sujeto a} \quad                            & \sum_{t = 1}^{\infty} p_t c_t \leq \sum_{t = 1}^{\infty} p_t y_t,
+	\end{align*}
+
+	donde $p_1 = 1$ y $\displaystyle p_t = \frac{1}{(1 + r_1) \cdots (1 + r_{t - 1})}$, $\forall t \in \mathbb{N} \setminus \left\{ 1 \right\}$.
+
+	\begin{center}
+		\begin{tabular}{ c l }
+			\hline
+			$b_t$      & Bonos en el período $t$             \\
+			$c_t$      & Consumo en el período $t$           \\
+			$\beta$    & Factor de descuento                 \\
+			$u(\cdot)$ & Función de utilidad                 \\
+			$y_t$      & Ingreso en el período $t$           \\
+			$p_t$      & Precio de consumo en el período $t$ \\
+			$r_t$      & Tasa de interés en el período $t$   \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\begin{boxprop}
+		Dada una función de utilidad con preferencias monótonas, en el óptimo se satisface:
+		\[\sum_{t = 1}^{\infty} p_t c^*_t = \sum_{t = 1}^{\infty} p_t y_t.\]
+	\end{boxprop}
+
+	\begin{boxdef}[Equilibrio competitivo]
+		Definimos el \textbf{equilibrio competitivo} como una senda infinita de tasas de interés $(r^*_1, r^*_2, \dots)$ tales que para toda $t \in \mathbb{N}$:
+		\[\sum_{i \in I} c^*_{i,t} = \sum_{i \in I} y_{i,t} \deq Y_t,\]
+		donde $c^*_{i,t}$ es función de todo el perfil de tasas de interés.
+	\end{boxdef}
+
+	\begin{boxrmk}
+		El individuo, al elegir sendas de consumo y de tenencias de activos óptimas, toma todas sus decisiones en $t=1$. Es decir, a medida que el tiempo transcurre, el individuo sólo implementa el plan que diseñó con anterioridad.
+	\end{boxrmk}
+
+	\sectionbreak
+
+	\subsection{Consistencia intertemporal}
+
+	\begin{align*}
+		\max_{\left\{ \mathrm{c} \right\}} \quad & \sum_{t = n}^{\infty} \beta^{t-n} u(c_t)                                                             \\
+		\textnormal{sujeto a} \quad              & \sum_{t = n}^{\infty} \tilde{p}_t c_t = \sum_{t = n}^{\infty} \tilde{p}_t y_t + (1 + r_{n-1}) b^*_n,
+	\end{align*}
+
+	donde $\displaystyle p_t \deq \frac{\tilde{p}_t}{1 + r_{n-1}}$ para toda $t \geq n$.
+
+	Asimismo, disponemos de la igualdad de la restricción con el fin de garantizar la condición de transversalidad.
+
+	\begin{boxrmk}
+		Se habla de consistencia intertemporal porque la solución $c_n '$ coincide con el consumo óptimo $c_n^*$ del problema original.
+	\end{boxrmk}
+
+	\emph{Nota:} esta propiedad indica que el individuo no tiene incentivos a alterar su decisión óptima de consumo a lo largo de su vida. Dada la característica determinista del modelo, resulta muy intuitivo que, si la situación económica no cambia, el individuo se adhiera a su plan inicial ya que su utilidad cumple con independencia intertemporal, lo cual implica que las decisiones futuras no están condicionadas por las decisiones pasadas y, además, posee un completo conocimiento sobre la situación de la economía en el futuro (Alejandro Hernández, 2020).
 
 	\newpage
 
