@@ -7,4 +7,6 @@ def:unlabeled-div-6
 exm:unlabeled-div-7
 exr:unlabeled-div-8
 hyp:unlabeled-div-9
-notation-in-economics
+thm:unlabeled-div-13
+def:unlabeled-div-14
+notation-in-statistics

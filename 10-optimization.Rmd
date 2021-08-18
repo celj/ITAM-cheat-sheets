@@ -12,4 +12,4 @@ documentclass: book
 #bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 ---
 
-# Optimisation {.unnumbered}
+# Optimization {.unnumbered}

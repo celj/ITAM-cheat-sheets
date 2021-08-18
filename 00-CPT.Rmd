@@ -14,84 +14,84 @@ documentclass: book
 
 # Consumer and Producer Theory {.unnumbered}
 
-::: {.theorem name="Pythagorean theorem"}
+::: {.theorem name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.lemma name="Pythagorean theorem"}
+::: {.lemma name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.corollary name="Pythagorean theorem"}
+::: {.corollary name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.proposition name="Pythagorean theorem"}
+::: {.proposition name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.conjecture name="Pythagorean theorem"}
+::: {.conjecture name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.definition name="Pythagorean theorem"}
+::: {.definition name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.example name="Pythagorean theorem"}
+::: {.example name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.exercise name="Pythagorean theorem"}
+::: {.exercise name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.hypothesis name="Pythagorean theorem"}
+::: {.hypothesis name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.proof name="Pythagorean theorem"}
+::: {.proof name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.remark name="Pythagorean theorem"}
+::: {.remark name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 
 $$a^2 + b^2 = c^2$$
 :::
 
-::: {.solution name="Pythagorean theorem"}
+::: {.solution name="Test"}
 For a right triangle, if $c$ denotes the length of the hypotenuse
 and $a$ and $b$ denote the lengths of the other two sides, we have
 

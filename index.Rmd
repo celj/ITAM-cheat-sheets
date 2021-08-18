@@ -184,3 +184,44 @@ If you need to create your own additional chunk options, edit the file scripts/c
 <!-- This chunk includes the front page content in HTML output -->
 ```{r ebook-welcome, child = 'front-and-back-matter/_welcome-ebook.Rmd', eval=knitr::is_html_output()}
 ```
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\L}{\mathcal{L}}
+\newcommand{\MRS}{\text{MRS}}
+\newcommand{\MRT}{\text{MRT}}
+\newcommand{\MRTS}{\text{MRTS}}
+\DeclareMathOperator*{\E}{\mathbb{E}}
+\newcommand{\Corr}{\text{Corr}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Ber}{\text{Ber}}
+\newcommand{\Bin}{\text{Bin}}
+\newcommand{\Geo}{\text{Geo}}
+\newcommand{\Poi}{\text{Poisson}}
+\newcommand{\Hyp}{\text{Hyp}}
+\newcommand{\NB}{\text{NB}}
+\newcommand{\Exp}{\text{Exp}}
+\newcommand{\Cau}{\text{Cauchy}}
+\newcommand{\Par}{\text{Pareto}}
+\newcommand{\Wei}{\text{Weibull}}
+\newcommand{\Beta}{\text{Beta}}
+\newcommand{\Dir}{\text{Dirichlet}}
+\newcommand{\Norm}{\mathcal{N}}
+\newcommand{\Unif}{\mathcal{U}}
+\newcommand{\logN}{\text{Log-}\mathcal{N}}
+\newcommand{\csq}{\chi^2}
+\newcommand{\dlim}{\overset{d}{\longrightarrow}}
+\newcommand{\plim}{\overset{p}{\longrightarrow}}
+\newcommand{\rlim}{\overset{L^r}{\longrightarrow}}
+\newcommand{\mlim}{\overset{L^2}{\longrightarrow}}
+\DeclareMathOperator*{\argmin}{\arg \min}
+\DeclareMathOperator*{\argmax}{\arg \max}
+\newcommand{\deq}{\stackrel{\text{def}}{=}}
+\newcommand{\ie}{\text{i.e.}}
+\newcommand{\sgn}{\text{sgn}}

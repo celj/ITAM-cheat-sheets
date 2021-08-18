@@ -39,18 +39,18 @@
 <li><a class="" href="economics-4.html">Economics 4</a></li>
 <li><a class="" href="economics-5.html">Economics 5</a></li>
 <li><a class="" href="fundamentals-of-econometrics.html">Fundamentals of Econometrics</a></li>
-<li><a class="" href="industrial-organisation.html">Industrial organisation</a></li>
+<li><a class="" href="industrial-organization.html">Industrial organization</a></li>
 <li><a class="" href="international-trade-i.html">International Trade I</a></li>
 <li><a class="" href="monetary-theory-and-policy.html">Monetary Theory and Policy</a></li>
 <li><a class="" href="numerical-analysis.html">Numerical Analysis</a></li>
-<li><a class="" href="optimisation.html">Optimisation</a></li>
+<li><a class="" href="optimization.html">Optimization</a></li>
 <li><a class="" href="probability.html">Probability</a></li>
 <li><a class="" href="real-analysis.html">Real Analysis</a></li>
 <li><a class="" href="simulation.html">Simulation</a></li>
 <li><a class="" href="statistical-inference.html">Statistical Inference</a></li>
 <li><a class="" href="statistical-learning-theory.html">Statistical Learning Theory</a></li>
 <li class="book-part">Appendix</li>
-<li><a class="" href="notation-in-economics.html"><span class="header-section-number">A</span> Notation in Economics</a></li>
+<li><a class="" href="notation-in-statistics.html"><span class="header-section-number">A</span> Notation in Statistics</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -62,14 +62,119 @@
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="economics-3" class="section level1 unnumbered">
 <h1>Economics 3<a class="anchor" aria-label="anchor" href="#economics-3"><i class="fas fa-link"></i></a>
 </h1>
+<div id="kuhn-tucker-conditions" class="section level2 unnumbered">
+<h2>Kuhn-Tucker conditions<a class="anchor" aria-label="anchor" href="#kuhn-tucker-conditions"><i class="fas fa-link"></i></a>
+</h2>
+<p>Consider a nonlinear <strong>minimization</strong> or <strong>maximization</strong> problem of a function <span class="math inline">\(f : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\)</span> that depends on <span class="math inline">\(n\)</span> decision variables and <span class="math inline">\(q\)</span> parameters, subject to:</p>
+<ul>
+<li>
+<span class="math inline">\(k\)</span> equality constraints <span class="math inline">\(h_i : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\)</span>, and</li>
+<li>
+<span class="math inline">\(m\)</span> inequality constraints <span class="math inline">\(g_j : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\)</span>.</li>
+</ul>
+<div id="maximization" class="section level3 unnumbered">
+<h3>Maximization<a class="anchor" aria-label="anchor" href="#maximization"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\begin{equation*}
+        \begin{aligned}
+            \max_{\{x_1, \ldots, x_n\}}\  &amp; f(x_1, \ldots, x_n;\ p_1, \ldots, p_q)          \\
+            \text{subject to} \quad       &amp; h_i(x_1, \ldots, x_n;\ p_1, \ldots, p_q) = 0, \quad \forall i = 1, \ldots, k; \\
+                                          &amp; g_j(x_1, \ldots, x_n;\ p_1, \ldots, p_q) \ge 0, \quad \forall j = 1, \ldots, m.
+        \end{aligned}
+\end{equation*}\]</span></p>
+<p><em>Lagrangian function:</em></p>
+<p><span class="math display">\[\begin{equation*}
+        \begin{aligned}
+             &amp; \mathcal{L}(x_1, \ldots, x_n;\ p_1, \ldots, p_q;\ \lambda_1, \ldots, \lambda_k;\ \mu_1, \ldots, \mu_m) = \\
+             &amp; f(x_1,\ldots, p_q) + \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) + \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
+        \end{aligned}
+\end{equation*}\]</span></p>
+</div>
+<div id="minimization" class="section level3 unnumbered">
+<h3>Minimization<a class="anchor" aria-label="anchor" href="#minimization"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[\begin{equation*}
+        \begin{aligned}
+            \min_{\{x_1, \ldots, x_n\}}\  &amp; f(x_1, \ldots, x_n;\ p_1, \ldots, p_q)          \\
+            \text{subject to} \quad       &amp; h_i(x_1, \ldots, x_n;\ p_1, \ldots, p_q) = 0, \quad \forall i = 1, \ldots, k; \\
+                                          &amp; g_j(x_1, \ldots, x_n;\ p_1, \ldots, p_q) \ge 0, \quad \forall j = 1, \ldots, m.
+        \end{aligned}
+\end{equation*}\]</span></p>
+<p><em>Lagrangian function:</em></p>
+<p><span class="math display">\[\begin{equation*}
+        \begin{aligned}
+             &amp; \mathcal{L}(x_1, \ldots, x_n;\ p_1, \ldots, p_q;\ \lambda_1, \ldots, \lambda_k;\ \mu_1, \ldots, \mu_m) = \\
+             &amp; f(x_1,\ldots, p_q) - \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) - \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
+        \end{aligned}
+\end{equation*}\]</span></p>
+</div>
+<div id="first-order-conditions" class="section level3 unnumbered">
+<h3>First-order conditions<a class="anchor" aria-label="anchor" href="#first-order-conditions"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial x_l} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>.</li>
+<li>
+<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial \lambda_i} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>.</li>
+</ul>
+</div>
+<div id="second-order-conditions" class="section level3 unnumbered">
+<h3>Second-order conditions<a class="anchor" aria-label="anchor" href="#second-order-conditions"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Maximization:
+<ul>
+<li>
+<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \ge 0\)</span>;</li>
+<li>
+<span class="math inline">\(\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>;</li>
+<li>
+<span class="math inline">\(\displaystyle \mu_j^{*} \ge 0\)</span>.</li>
+</ul>
+</li>
+<li>Minimization:
+<ul>
+<li>
+<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \le 0\)</span>;</li>
+<li>
+<span class="math inline">\(\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>;</li>
+<li>
+<span class="math inline">\(\displaystyle \mu_j^{*} \ge 0\)</span>.</li>
+</ul>
+</li>
+</ul>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-13" class="theorem"><strong>Theorem 0.2  (Envelope theorem) </strong></span>Assume that <span class="math inline">\(V\)</span> and <span class="math inline">\(\mathcal{L}\)</span> are continuously differentiable and <span class="math inline">\((x^*, \lambda^*, \mu^*)\)</span> the solution of some optimization problem with parameters <span class="math inline">\((p_1, \dots, p_q)\)</span>, then:</p>
+<p><span class="math display">\[\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \mathcal{L}^{*}}{\partial p_i}.\]</span></p>
+</div>
+</div>
+</div>
+<div id="utility-function" class="section level2 unnumbered">
+<h2>Utility function<a class="anchor" aria-label="anchor" href="#utility-function"><i class="fas fa-link"></i></a>
+</h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-14" class="definition"><strong>Definition 0.2  (Completeness) </strong></span>A</p>
+</div>
 
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="dynamical-systems.html">Dynamical Systems</a></div>
 <div class="next"><a href="economics-4.html">Economics 4</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#economics-3">Economics 3</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#economics-3">Economics 3</a></li>
+<li>
+<a class="nav-link" href="#kuhn-tucker-conditions">Kuhn-Tucker conditions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#maximization">Maximization</a></li>
+<li><a class="nav-link" href="#minimization">Minimization</a></li>
+<li><a class="nav-link" href="#first-order-conditions">First-order conditions</a></li>
+<li><a class="nav-link" href="#second-order-conditions">Second-order conditions</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#utility-function">Utility function</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

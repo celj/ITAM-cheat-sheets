@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Fundamentals of Econometrics | My cheat sheets</title>
+<title>A Notation in Statistics | My cheat sheets</title>
 <meta name="author" content="Carlos Lezama">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.9/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@
 <li><a class="" href="economics-3.html">Economics 3</a></li>
 <li><a class="" href="economics-4.html">Economics 4</a></li>
 <li><a class="" href="economics-5.html">Economics 5</a></li>
-<li><a class="active" href="fundamentals-of-econometrics.html">Fundamentals of Econometrics</a></li>
+<li><a class="" href="fundamentals-of-econometrics.html">Fundamentals of Econometrics</a></li>
 <li><a class="" href="industrial-organization.html">Industrial organization</a></li>
 <li><a class="" href="international-trade-i.html">International Trade I</a></li>
 <li><a class="" href="monetary-theory-and-policy.html">Monetary Theory and Policy</a></li>
@@ -50,7 +50,7 @@
 <li><a class="" href="statistical-inference.html">Statistical Inference</a></li>
 <li><a class="" href="statistical-learning-theory.html">Statistical Learning Theory</a></li>
 <li class="book-part">Appendix</li>
-<li><a class="" href="notation-in-statistics.html"><span class="header-section-number">A</span> Notation in Statistics</a></li>
+<li><a class="active" href="notation-in-statistics.html"><span class="header-section-number">A</span> Notation in Statistics</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
 
@@ -59,22 +59,72 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="fundamentals-of-econometrics" class="section level1 unnumbered">
-<h1>Fundamentals of Econometrics<a class="anchor" aria-label="anchor" href="#fundamentals-of-econometrics"><i class="fas fa-link"></i></a>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="notation-in-statistics" class="section level1" number="1">
+<h1>
+<span class="header-section-number">A</span> Notation in Statistics<a class="anchor" aria-label="anchor" href="#notation-in-statistics"><i class="fas fa-link"></i></a>
 </h1>
-
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="47%">
+<col width="52%">
+</colgroup>
+<thead><tr class="header">
+<th>Expression</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(a \perp b\)</span></td>
+<td>The random variables <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are independent.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a \perp b \mid c\)</span></td>
+<td>They are conditionally independent given <span class="math inline">\(c\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P(a)\)</span></td>
+<td>A probability distribution over a discrete variable.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(p(a)\)</span></td>
+<td>A probability distribution over a continuous variable, or over a variable whose type has not been specified.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a \sim P\)</span></td>
+<td>Random variable <span class="math inline">\(a\)</span> has distribution <span class="math inline">\(P\)</span>.</td>
+</tr>
+<tr class="even">
+<td>
+<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}_{\mathrm{x}\sim P} [f(x)]\)</span> or <span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}f(x)\)</span>
+</td>
+<td>Expectation of <span class="math inline">\(f(x)\)</span> with respect to <span class="math inline">\(P(\mathrm{x})\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\text{Var}(f(x))\)</span></td>
+<td>Variance of <span class="math inline">\(f(x)\)</span> under <span class="math inline">\(P(\mathrm{x})\)</span>.</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\text{Cov}(f(x), g(x))\)</span></td>
+<td>Covariance of <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span> under <span class="math inline">\(P(\mathrm{x})\)</span>.</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathcal{N}(\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})\)</span></td>
+<td>Gaussian distribution over</td>
+</tr>
+</tbody>
+</table></div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="economics-5.html">Economics 5</a></div>
-<div class="next"><a href="industrial-organization.html">Industrial organization</a></div>
+<div class="prev"><a href="statistical-learning-theory.html">Statistical Learning Theory</a></div>
+<div class="next"><a href="references.html">References</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#fundamentals-of-econometrics">Fundamentals of Econometrics</a></li></ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#notation-in-statistics"><span class="header-section-number">A</span> Notation in Statistics</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/celj/itam-cheat-sheets/blob/master/05-econometrics.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/celj/itam-cheat-sheets/edit/master/05-econometrics.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/celj/itam-cheat-sheets/blob/master/front-and-back-matter/98-appendices.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/celj/itam-cheat-sheets/edit/master/front-and-back-matter/98-appendices.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>
