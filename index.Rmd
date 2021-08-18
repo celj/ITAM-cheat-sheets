@@ -16,18 +16,15 @@ knit: (function(input, ...) {
 #####################
 ## thesis metadata ##
 #####################
-title: |
-  `oxforddown`: \
-  An Oxford University Thesis \
-  Template for R Markdown
-author: Author Name
-college: Your College
-university: University of Oxford
-university-logo: templates/beltcrest.pdf
-university-logo-width: 5cm
-submitted-text: A thesis submitted for the degree of
-degree: Doctor of Philosophy
-degreedate: Michaelmas 2018
+title: 'My cheat sheets'
+author: Carlos Lezama
+# college: Your College
+university: Instituto Tecnológico Autónomo de México
+# university-logo: templates/beltcrest.pdf
+# university-logo-width: 5cm
+# submitted-text: A thesis submitted for the degree of
+# degree: Doctor of Philosophy
+# degreedate: Michaelmas 2018
 abstract: |
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
@@ -151,7 +148,7 @@ output:
       - templates/corrections.css # remove to stop highlighting corrections
     theme:
       primary: "#6D1919"
-    repo: https://github.com/ulyngs/oxforddown
+    repo: https://github.com/celj/itam-cheat-sheets
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
   bookdown::gitbook:
     css: templates/style.css
