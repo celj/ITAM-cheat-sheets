@@ -7,7 +7,7 @@
 # The format options are: 'pdf', 'bs4', 'gitbook', 'word'
 # E.g. you can build both pdf and html with 'thesis_formats <- c("pdf", "bs4")'
 knit: (function(input, ...) {
-    thesis_formats <- "pdf";
+    thesis_formats <- "bs4";
     
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
