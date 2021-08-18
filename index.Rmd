@@ -29,7 +29,7 @@ abstract: |
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
-dedication: For Yihui Xie
+dedication: For the student community
 abbreviations: |
   `r paste(readLines("front-and-back-matter/_abbreviations.Rmd"), collapse = '\n  ')`
 

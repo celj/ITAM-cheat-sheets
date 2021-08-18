@@ -20,4 +20,4 @@ rmd_subdir: ["front-and-back-matter"]
 
 # If you want people to be able to suggest and submit changes to the source .Rmd
 # files on your github repo, do it like so (https://bookdown.org/yihui/bookdown/html.html)
-edit: https://github.com/ulyngs/oxforddown/tree/master/%s
+edit: https://github.com/celj/itam-cheat-sheets/tree/master/%s
