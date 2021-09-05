@@ -1,12 +1,3 @@
 thm:unlabeled-div-1
-lem:unlabeled-div-2
-cor:unlabeled-div-3
-prp:unlabeled-div-4
-cnj:unlabeled-div-5
-def:unlabeled-div-6
-exm:unlabeled-div-7
-exr:unlabeled-div-8
-hyp:unlabeled-div-9
-thm:unlabeled-div-13
-def:unlabeled-div-14
+def:unlabeled-div-2
 notation-in-statistics

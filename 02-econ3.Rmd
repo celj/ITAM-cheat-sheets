@@ -1,7 +1,4 @@
 ---
-#########################################
-# options for knitting a single chapter #
-#########################################
 output:
   bookdown::pdf_document2:
     template: templates/brief_template.tex
@@ -9,7 +6,6 @@ output:
   bookdown::html_document2: default
   bookdown::word_document2: default
 documentclass: book
-#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 ---
 
 # Economics 3 {.unnumbered}
@@ -86,3 +82,21 @@ $$\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \L^{*}}{\p
 ::: {.definition name="Completeness"}
 A
 :::
+
+## Marshallian demand function {-}
+
+## Hicksian demand function {-}
+
+## Measures of economics welfare {-}
+
+## Walrasian demand function {-}
+
+## Labor-Leisure choice {-}
+
+## Intertemporal choice {-}
+
+## Firm decisions {-}
+
+### Cost minimization {-}
+
+### Profit maximization {-}

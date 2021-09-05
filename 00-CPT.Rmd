@@ -1,7 +1,4 @@
 ---
-#########################################
-# options for knitting a single chapter #
-#########################################
 output:
   bookdown::pdf_document2:
     template: templates/brief_template.tex
@@ -9,91 +6,14 @@ output:
   bookdown::html_document2: default
   bookdown::word_document2: default
 documentclass: book
-#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 ---
 
 # Consumer and Producer Theory {.unnumbered}
 
-::: {.theorem name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
+## Linear algebra {-}
 
-$$a^2 + b^2 = c^2$$
-:::
+## Real analysis {-}
 
-::: {.lemma name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
+## Differentiable functions {-}
 
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.corollary name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.proposition name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.conjecture name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.definition name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.example name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.exercise name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.hypothesis name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.proof name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.remark name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
-
-::: {.solution name="Test"}
-For a right triangle, if $c$ denotes the length of the hypotenuse
-and $a$ and $b$ denote the lengths of the other two sides, we have
-
-$$a^2 + b^2 = c^2$$
-:::
+## Correspondences {-}
