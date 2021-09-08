@@ -17,3 +17,5 @@ LineEndingConversion: Posix
 BuildType: Makefile
 
 MarkdownWrap: Sentence
+
+SpellingDictionary: en_GB
