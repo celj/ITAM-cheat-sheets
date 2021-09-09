@@ -1,102 +1,10 @@
----
-output:
-  bookdown::pdf_document2:
-    template: templates/brief_template.tex
-    citation_package: biblatex
-  bookdown::html_document2: default
-  bookdown::word_document2: default
-documentclass: book
----
+# Economics 3 {-}
 
-# Economics 3 {.unnumbered}
+You can find this cheat sheet as a `.pdf` file in Spanish.
+Just click [here](files/02-econ3.pdf) or on the image below.
 
-## Kuhn-Tucker conditions {-}
-
-Consider a nonlinear **minimization** or **maximization** problem of a function $f : \R^n \times \R^q \to \R$ that depends on $n$ decision variables and $q$ parameters, subject to:
-
-* $k$ equality constraints $h_i : \R^n \times \R^q \to \R$, and
-* $m$ inequality constraints $g_j : \R^n \times \R^q \to \R$.
-
-### Maximization {-}
-
-\begin{equation*}
-		\begin{aligned}
-			\max_{\{x_1, \ldots, x_n\}}\  & f(x_1, \ldots, x_n;\ p_1, \ldots, p_q)          \\
-			\text{subject to} \quad       & h_i(x_1, \ldots, x_n;\ p_1, \ldots, p_q) = 0, \quad \forall i = 1, \ldots, k; \\
-			                              & g_j(x_1, \ldots, x_n;\ p_1, \ldots, p_q) \ge 0, \quad \forall j = 1, \ldots, m.
-		\end{aligned}
-\end{equation*}
-
-_Lagrangian function:_
-
-\begin{equation*}
-		\begin{aligned}
-			 & \L(x_1, \ldots, x_n;\ p_1, \ldots, p_q;\ \lambda_1, \ldots, \lambda_k;\ \mu_1, \ldots, \mu_m) = \\
-			 & f(x_1,\ldots, p_q) + \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) + \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
-		\end{aligned}
-\end{equation*}
-
-### Minimization {-}
-
-\begin{equation*}
-		\begin{aligned}
-			\min_{\{x_1, \ldots, x_n\}}\  & f(x_1, \ldots, x_n;\ p_1, \ldots, p_q)          \\
-			\text{subject to} \quad       & h_i(x_1, \ldots, x_n;\ p_1, \ldots, p_q) = 0, \quad \forall i = 1, \ldots, k; \\
-			                              & g_j(x_1, \ldots, x_n;\ p_1, \ldots, p_q) \ge 0, \quad \forall j = 1, \ldots, m.
-		\end{aligned}
-\end{equation*}
-
-_Lagrangian function:_
-
-\begin{equation*}
-		\begin{aligned}
-			 & \L(x_1, \ldots, x_n;\ p_1, \ldots, p_q;\ \lambda_1, \ldots, \lambda_k;\ \mu_1, \ldots, \mu_m) = \\
-			 & f(x_1,\ldots, p_q) - \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) - \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
-		\end{aligned}
-\end{equation*}
-
-### First-order conditions {-}
-
-* $\displaystyle \frac{\partial \mathcal{L}}{\partial x_l} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$.
-* $\displaystyle \frac{\partial \mathcal{L}}{\partial \lambda_i} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$.
-
-### Second-order conditions {-}
-
-* Maximization:
-  * $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \ge 0$;
-  * $\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$;
-  * $\displaystyle \mu_j^{*} \ge 0$.
-* Minimization:
-  * $\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \le 0$;
-  * $\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0$;
-  * $\displaystyle \mu_j^{*} \ge 0$.
-
-::: {.theorem name="Envelope theorem"}
-Assume that $V$ and $\L$ are continuously differentiable and $(x^*, \lambda^*, \mu^*)$ the solution of some optimization problem with parameters $(p_1, \dots, p_q)$, then:
-
-$$\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \L^{*}}{\partial p_i}.$$
+::: {.row}
+:::::: {.col-sm-6 .thesis-cover}
+<a href="files/02-econ3.pdf"><img src="figures/02-econ3.png"/></a> 
+::::::
 :::
-
-## Utility function {-}
-
-::: {.definition name="Completeness"}
-A
-:::
-
-## Marshallian demand function {-}
-
-## Hicksian demand function {-}
-
-## Measures of economics welfare {-}
-
-## Walrasian demand function {-}
-
-## Labor-Leisure choice {-}
-
-## Intertemporal choice {-}
-
-## Firm decisions {-}
-
-### Cost minimization {-}
-
-### Profit maximization {-}

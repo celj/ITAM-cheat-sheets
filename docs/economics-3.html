@@ -16,9 +16,9 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="Kuhn-Tucker conditions Consider a nonlinear minimization or maximization problem of a function \(f : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\) that depends on \(n\) decision variables and...">
-<meta property="og:description" content="Kuhn-Tucker conditions Consider a nonlinear minimization or maximization problem of a function \(f : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\) that depends on \(n\) decision variables and...">
-<meta name="twitter:description" content="Kuhn-Tucker conditions Consider a nonlinear minimization or maximization problem of a function \(f : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\) that depends on \(n\) decision variables and...">
+<meta name="description" content="You can find this cheat sheet as a .pdf file in Spanish. Just click here or on the image below.">
+<meta property="og:description" content="You can find this cheat sheet as a .pdf file in Spanish. Just click here or on the image below.">
+<meta name="twitter:description" content="You can find this cheat sheet as a .pdf file in Spanish. Just click here or on the image below.">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -45,7 +45,7 @@
 <li><a class="" href="dynamical-systems.html">Dynamical Systems</a></li>
 <li><a class="active" href="economics-3.html">Economics 3</a></li>
 <li><a class="" href="economics-4.html">Economics 4</a></li>
-<li><a class="" href="fundamentals-of-econometrics.html">Fundamentals of Econometrics</a></li>
+<li><a class="" href="fundamentals-of-econometrics.html">Fundamentals of econometrics</a></li>
 <li><a class="" href="optimization.html">Optimization</a></li>
 <li><a class="" href="probability.html">Probability</a></li>
 <li><a class="" href="real-analysis-1.html">Real Analysis</a></li>
@@ -65,167 +65,21 @@
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="economics-3" class="section level1 unnumbered">
 <h1>Economics 3<a class="anchor" aria-label="anchor" href="#economics-3"><i class="fas fa-link"></i></a>
 </h1>
-<div id="kuhn-tucker-conditions" class="section level2 unnumbered">
-<h2>Kuhn-Tucker conditions<a class="anchor" aria-label="anchor" href="#kuhn-tucker-conditions"><i class="fas fa-link"></i></a>
-</h2>
-<p>Consider a nonlinear <strong>minimization</strong> or <strong>maximization</strong> problem of a function <span class="math inline">\(f : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\)</span> that depends on <span class="math inline">\(n\)</span> decision variables and <span class="math inline">\(q\)</span> parameters, subject to:</p>
-<ul>
-<li>
-<span class="math inline">\(k\)</span> equality constraints <span class="math inline">\(h_i : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\)</span>, and</li>
-<li>
-<span class="math inline">\(m\)</span> inequality constraints <span class="math inline">\(g_j : \mathbb{R}^n \times \mathbb{R}^q \to \mathbb{R}\)</span>.</li>
-</ul>
-<div id="maximization" class="section level3 unnumbered">
-<h3>Maximization<a class="anchor" aria-label="anchor" href="#maximization"><i class="fas fa-link"></i></a>
-</h3>
-<p><span class="math display">\[\begin{equation*}
-        \begin{aligned}
-            \max_{\{x_1, \ldots, x_n\}}\  &amp; f(x_1, \ldots, x_n;\ p_1, \ldots, p_q)          \\
-            \text{subject to} \quad       &amp; h_i(x_1, \ldots, x_n;\ p_1, \ldots, p_q) = 0, \quad \forall i = 1, \ldots, k; \\
-                                          &amp; g_j(x_1, \ldots, x_n;\ p_1, \ldots, p_q) \ge 0, \quad \forall j = 1, \ldots, m.
-        \end{aligned}
-\end{equation*}\]</span></p>
-<p><em>Lagrangian function:</em></p>
-<p><span class="math display">\[\begin{equation*}
-        \begin{aligned}
-             &amp; \mathcal{L}(x_1, \ldots, x_n;\ p_1, \ldots, p_q;\ \lambda_1, \ldots, \lambda_k;\ \mu_1, \ldots, \mu_m) = \\
-             &amp; f(x_1,\ldots, p_q) + \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) + \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
-        \end{aligned}
-\end{equation*}\]</span></p>
-</div>
-<div id="minimization" class="section level3 unnumbered">
-<h3>Minimization<a class="anchor" aria-label="anchor" href="#minimization"><i class="fas fa-link"></i></a>
-</h3>
-<p><span class="math display">\[\begin{equation*}
-        \begin{aligned}
-            \min_{\{x_1, \ldots, x_n\}}\  &amp; f(x_1, \ldots, x_n;\ p_1, \ldots, p_q)          \\
-            \text{subject to} \quad       &amp; h_i(x_1, \ldots, x_n;\ p_1, \ldots, p_q) = 0, \quad \forall i = 1, \ldots, k; \\
-                                          &amp; g_j(x_1, \ldots, x_n;\ p_1, \ldots, p_q) \ge 0, \quad \forall j = 1, \ldots, m.
-        \end{aligned}
-\end{equation*}\]</span></p>
-<p><em>Lagrangian function:</em></p>
-<p><span class="math display">\[\begin{equation*}
-        \begin{aligned}
-             &amp; \mathcal{L}(x_1, \ldots, x_n;\ p_1, \ldots, p_q;\ \lambda_1, \ldots, \lambda_k;\ \mu_1, \ldots, \mu_m) = \\
-             &amp; f(x_1,\ldots, p_q) - \sum_{i=1}^{k}\lambda_i h_i (x_1, \ldots, p_q) - \sum_{j=1}^{m}\mu_j g_j (x_1, \ldots, p_q)
-        \end{aligned}
-\end{equation*}\]</span></p>
-</div>
-<div id="first-order-conditions" class="section level3 unnumbered">
-<h3>First-order conditions<a class="anchor" aria-label="anchor" href="#first-order-conditions"><i class="fas fa-link"></i></a>
-</h3>
-<ul>
-<li>
-<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial x_l} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>.</li>
-<li>
-<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial \lambda_i} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>.</li>
-</ul>
-</div>
-<div id="second-order-conditions" class="section level3 unnumbered">
-<h3>Second-order conditions<a class="anchor" aria-label="anchor" href="#second-order-conditions"><i class="fas fa-link"></i></a>
-</h3>
-<ul>
-<li>Maximization:
-<ul>
-<li>
-<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \ge 0\)</span>;</li>
-<li>
-<span class="math inline">\(\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>;</li>
-<li>
-<span class="math inline">\(\displaystyle \mu_j^{*} \ge 0\)</span>.</li>
-</ul>
-</li>
-<li>Minimization:
-<ul>
-<li>
-<span class="math inline">\(\displaystyle \frac{\partial \mathcal{L}}{\partial \mu_j} (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) \le 0\)</span>;</li>
-<li>
-<span class="math inline">\(\displaystyle \mu_j^{*} h_j (x_{1}^{*}, \ldots, x_{n}^{*}; p_1, \ldots, p_q; \lambda_{1}^{*}, \ldots, \mu_{m}^{*}) = 0\)</span>;</li>
-<li>
-<span class="math inline">\(\displaystyle \mu_j^{*} \ge 0\)</span>.</li>
-</ul>
-</li>
-</ul>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-1" class="theorem"><strong>Theorem 0.1  (Envelope theorem) </strong></span>Assume that <span class="math inline">\(V\)</span> and <span class="math inline">\(\mathcal{L}\)</span> are continuously differentiable and <span class="math inline">\((x^*, \lambda^*, \mu^*)\)</span> the solution of some optimization problem with parameters <span class="math inline">\((p_1, \dots, p_q)\)</span>, then:</p>
-<p><span class="math display">\[\frac{\partial V}{\partial p_i} (p_1, \ldots, p_q) = \frac{\partial \mathcal{L}^{*}}{\partial p_i}.\]</span></p>
+<p>You can find this cheat sheet as a <code>.pdf</code> file in Spanish.
+Just click <a href="files/02-econ3.pdf">here</a> or on the image below.</p>
+<div class="row">
+<div class="col-sm-6 thesis-cover">
+<p><a href="files/02-econ3.pdf"><img src="figures/02-econ3.png"></a></p>
 </div>
 </div>
-</div>
-<div id="utility-function" class="section level2 unnumbered">
-<h2>Utility function<a class="anchor" aria-label="anchor" href="#utility-function"><i class="fas fa-link"></i></a>
-</h2>
-<div class="definition">
-<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 0.1  (Completeness) </strong></span>A</p>
-</div>
-</div>
-<div id="marshallian-demand-function" class="section level2 unnumbered">
-<h2>Marshallian demand function<a class="anchor" aria-label="anchor" href="#marshallian-demand-function"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="hicksian-demand-function" class="section level2 unnumbered">
-<h2>Hicksian demand function<a class="anchor" aria-label="anchor" href="#hicksian-demand-function"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="measures-of-economics-welfare" class="section level2 unnumbered">
-<h2>Measures of economics welfare<a class="anchor" aria-label="anchor" href="#measures-of-economics-welfare"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="walrasian-demand-function" class="section level2 unnumbered">
-<h2>Walrasian demand function<a class="anchor" aria-label="anchor" href="#walrasian-demand-function"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="labor-leisure-choice" class="section level2 unnumbered">
-<h2>Labor-Leisure choice<a class="anchor" aria-label="anchor" href="#labor-leisure-choice"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="intertemporal-choice" class="section level2 unnumbered">
-<h2>Intertemporal choice<a class="anchor" aria-label="anchor" href="#intertemporal-choice"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="firm-decisions" class="section level2 unnumbered">
-<h2>Firm decisions<a class="anchor" aria-label="anchor" href="#firm-decisions"><i class="fas fa-link"></i></a>
-</h2>
-<div id="cost-minimization" class="section level3 unnumbered">
-<h3>Cost minimization<a class="anchor" aria-label="anchor" href="#cost-minimization"><i class="fas fa-link"></i></a>
-</h3>
-</div>
-<div id="profit-maximization" class="section level3 unnumbered">
-<h3>Profit maximization<a class="anchor" aria-label="anchor" href="#profit-maximization"><i class="fas fa-link"></i></a>
-</h3>
 
-</div>
-</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="dynamical-systems.html">Dynamical Systems</a></div>
 <div class="next"><a href="economics-4.html">Economics 4</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#economics-3">Economics 3</a></li>
-<li>
-<a class="nav-link" href="#kuhn-tucker-conditions">Kuhn-Tucker conditions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#maximization">Maximization</a></li>
-<li><a class="nav-link" href="#minimization">Minimization</a></li>
-<li><a class="nav-link" href="#first-order-conditions">First-order conditions</a></li>
-<li><a class="nav-link" href="#second-order-conditions">Second-order conditions</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#utility-function">Utility function</a></li>
-<li><a class="nav-link" href="#marshallian-demand-function">Marshallian demand function</a></li>
-<li><a class="nav-link" href="#hicksian-demand-function">Hicksian demand function</a></li>
-<li><a class="nav-link" href="#measures-of-economics-welfare">Measures of economics welfare</a></li>
-<li><a class="nav-link" href="#walrasian-demand-function">Walrasian demand function</a></li>
-<li><a class="nav-link" href="#labor-leisure-choice">Labor-Leisure choice</a></li>
-<li><a class="nav-link" href="#intertemporal-choice">Intertemporal choice</a></li>
-<li>
-<a class="nav-link" href="#firm-decisions">Firm decisions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cost-minimization">Cost minimization</a></li>
-<li><a class="nav-link" href="#profit-maximization">Profit maximization</a></li>
-</ul>
-</li>
-</ul>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#economics-3">Economics 3</a></li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

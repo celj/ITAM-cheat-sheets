@@ -39,13 +39,11 @@ h1 a[title] {
   top: 1.8em;
 }
 
-/* references */
 .csl-entry {
   margin-bottom: 1em;
 }
 
 
-/* footer */
 .bg-primary {
   background-color: var(--theme-color2) !important;
 }
