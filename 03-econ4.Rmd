@@ -2,6 +2,52 @@
 
 ## General equilibrium {-}
 
+### Pure exchange economies {-}
+
+#### Initial assumptions {-}
+
+* There are $m$ consumers such that $\mathcal{I} = \{1, \dots, m\}$.
+* There are $n$ goods such that $\L = \{1, \dots, n\}$.
+* A utility function $u_i : \R^\L \to \R$ represents the preferences of the $i$th consumer.
+* Each consumer can consume goods in $\mathrm{x}_i \in \R^\L_+$.
+* Each consumer has an initial endowment of $\mathrm{w}_i \in \R^\L_+$.
+* The ordered pair $(u_i, \mathrm{w}_i)$ describes each consumer.
+* The utility functions represent neoclassical preferences.
+
+::: {.proposition}
+If $\mathrm{x} \succ_i \mathrm{y}$, then $u_i(\mathrm{x}) > u_i(\mathrm{y})$.
+:::
+
+::: {.definition name="Exchange economy"}
+A *pure exchange economy* is:
+$$
+\mathcal{E} = \left\langle \mathcal{I}, (u_i, \mathrm{w}_i)_{i\in\mathcal{I}} \right\rangle,
+$$
+where $\mathcal{I}$ is the set of agents; $u_i$ and $\mathrm{w}_i$ are the utility function and initial endowment of the $i$th consumer, respectively.
+:::
+
+::: {.definition name="Total endowment"}
+$$
+\Omega = \sum_{i \in \mathcal{I}} \mathrm{w}_i.
+$$
+:::
+
+::: {.definition name="Resource allocation"}
+The *resource allocation* is denoted by $X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)$, where $\mathrm{x}_i \in \R^\L_+$.
+:::
+
+::: {.definition name="Feasible allocation"}
+The *feasible allocation* $\F$ of an economy $\mathcal{E}$ is defined by:
+$$
+\F = \left\{ X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)\ :\ \mathrm{x}_i \in \R^\L_i,\ \sum_{i \in \mathcal{I}} \mathrm{x}_i = \sum_{i \in \mathcal{I}} \mathrm{w}_i \right\}.
+$$
+:::
+
+```{r echo=FALSE, fig.cap="Edgeworth box", out.width="100%", message=FALSE, fig.pos='H'}
+library(tidyverse)
+knitr::include_graphics("figures/edgeworth-box.svg")
+```
+
 ## Monopoly and monopsony {-}
 
 ## Game theory {-}

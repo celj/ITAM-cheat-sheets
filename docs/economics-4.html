@@ -16,9 +16,9 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="General equilibrium  Monopoly and monopsony  Game theory">
-<meta property="og:description" content="General equilibrium  Monopoly and monopsony  Game theory">
-<meta name="twitter:description" content="General equilibrium  Monopoly and monopsony  Game theory">
+<meta name="description" content="General equilibrium  Pure exchange economies  Initial assumptions There are \(m\) consumers such that \(\mathcal{I} = \{1, \dots, m\}\). There are \(n\) goods such that \(\mathcal{L}= \{1, \dots,...">
+<meta property="og:description" content="General equilibrium  Pure exchange economies  Initial assumptions There are \(m\) consumers such that \(\mathcal{I} = \{1, \dots, m\}\). There are \(n\) goods such that \(\mathcal{L}= \{1, \dots,...">
+<meta name="twitter:description" content="General equilibrium  Pure exchange economies  Initial assumptions There are \(m\) consumers such that \(\mathcal{I} = \{1, \dots, m\}\). There are \(n\) goods such that \(\mathcal{L}= \{1, \dots,...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -68,6 +68,53 @@
 <div id="general-equilibrium" class="section level2 unnumbered">
 <h2>General equilibrium<a class="anchor" aria-label="anchor" href="#general-equilibrium"><i class="fas fa-link"></i></a>
 </h2>
+<div id="pure-exchange-economies" class="section level3 unnumbered">
+<h3>Pure exchange economies<a class="anchor" aria-label="anchor" href="#pure-exchange-economies"><i class="fas fa-link"></i></a>
+</h3>
+<div id="initial-assumptions" class="section level4 unnumbered">
+<h4>Initial assumptions<a class="anchor" aria-label="anchor" href="#initial-assumptions"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>There are <span class="math inline">\(m\)</span> consumers such that <span class="math inline">\(\mathcal{I} = \{1, \dots, m\}\)</span>.</li>
+<li>There are <span class="math inline">\(n\)</span> goods such that <span class="math inline">\(\mathcal{L}= \{1, \dots, n\}\)</span>.</li>
+<li>A utility function <span class="math inline">\(u_i : \mathbb{R}^\mathcal{L}\to \mathbb{R}\)</span> represents the preferences of the <span class="math inline">\(i\)</span>th consumer.</li>
+<li>Each consumer can consume goods in <span class="math inline">\(\mathrm{x}_i \in \mathbb{R}^\mathcal{L}_+\)</span>.</li>
+<li>Each consumer has an initial endowment of <span class="math inline">\(\mathrm{w}_i \in \mathbb{R}^\mathcal{L}_+\)</span>.</li>
+<li>The ordered pair <span class="math inline">\((u_i, \mathrm{w}_i)\)</span> describes each consumer.</li>
+<li>The utility functions represent neoclassical preferences.</li>
+</ul>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-1" class="proposition"><strong>Proposition 0.1  </strong></span>If <span class="math inline">\(\mathrm{x} \succ_i \mathrm{y}\)</span>, then <span class="math inline">\(u_i(\mathrm{x}) &gt; u_i(\mathrm{y})\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-2" class="definition"><strong>Definition 0.1  (Exchange economy) </strong></span>A <em>pure exchange economy</em> is:
+<span class="math display">\[
+\mathcal{E} = \left\langle \mathcal{I}, (u_i, \mathrm{w}_i)_{i\in\mathcal{I}} \right\rangle,
+\]</span>
+where <span class="math inline">\(\mathcal{I}\)</span> is the set of agents; <span class="math inline">\(u_i\)</span> and <span class="math inline">\(\mathrm{w}_i\)</span> are the utility function and initial endowment of the <span class="math inline">\(i\)</span>th consumer, respectively.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 0.2  (Total endowment) </strong></span><span class="math display">\[
+\Omega = \sum_{i \in \mathcal{I}} \mathrm{w}_i.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-4" class="definition"><strong>Definition 0.3  (Resource allocation) </strong></span>The <em>resource allocation</em> is denoted by <span class="math inline">\(X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)\)</span>, where <span class="math inline">\(\mathrm{x}_i \in \mathbb{R}^\mathcal{L}_+\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 0.4  (Feasible allocation) </strong></span>The <em>feasible allocation</em> <span class="math inline">\(\mathcal{F}\)</span> of an economy <span class="math inline">\(\mathcal{E}\)</span> is defined by:
+<span class="math display">\[
+\mathcal{F}= \left\{ X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)\ :\ \mathrm{x}_i \in \mathbb{R}^\mathcal{L}_i,\ \sum_{i \in \mathcal{I}} \mathrm{x}_i = \sum_{i \in \mathcal{I}} \mathrm{w}_i \right\}.
+\]</span></p>
+</div>
+<div class="figure">
+<span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="figures/edgeworth-box.svg" alt="Edgeworth box" width="100%"><p class="caption">
+Figure 0.1: Edgeworth box
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="monopoly-and-monopsony" class="section level2 unnumbered">
 <h2>Monopoly and monopsony<a class="anchor" aria-label="anchor" href="#monopoly-and-monopsony"><i class="fas fa-link"></i></a>
@@ -86,7 +133,9 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#economics-4">Economics 4</a></li>
-<li><a class="nav-link" href="#general-equilibrium">General equilibrium</a></li>
+<li>
+<a class="nav-link" href="#general-equilibrium">General equilibrium</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#pure-exchange-economies">Pure exchange economies</a></li></ul>
+</li>
 <li><a class="nav-link" href="#monopoly-and-monopsony">Monopoly and monopsony</a></li>
 <li><a class="nav-link" href="#game-theory">Game theory</a></li>
 </ul>
