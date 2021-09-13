@@ -1,9 +1,9 @@
-# Real Analysis {-}
+# Real Analysis
 
-## Real numbers {-}
+## Real numbers
 
-## Topology in metric spaces {-}
+## Topology in metric spaces
 
-## Convergence and compactness {-}
+## Convergence and compactness
 
-## Continuity {-}
+## Continuity

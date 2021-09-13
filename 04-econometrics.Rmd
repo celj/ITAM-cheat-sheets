@@ -1,9 +1,9 @@
-# Fundamentals of econometrics {-}
+# Fundamentals of econometrics
 
-## Statistical foundations of econometric modelling {-}
+## Statistical foundations of econometric modelling
 
-## Estimation theory {-}
+## Estimation theory
 
-## Asymptotic theory {-}
+## Asymptotic theory
 
-## Inference for linear regression {-}
+## Inference for linear regression

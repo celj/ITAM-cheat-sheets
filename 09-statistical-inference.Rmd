@@ -1,13 +1,13 @@
-# Statistical Inference {-}
+# Statistical Inference
 
-## Descriptive statistics {-}
+## Descriptive statistics
 
-## Finite sample distributions {-}
+## Finite sample distributions
 
-## Point estimation {-}
+## Point estimation
 
-## Interval estimation {-}
+## Interval estimation
 
-## Parametric hypothesis testing {-}
+## Parametric hypothesis testing
 
-## Normality tests {-}
+## Normality tests

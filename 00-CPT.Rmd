@@ -1,9 +1,13 @@
-# Consumer and Producer Theory {-}
+# Consumer and Producer Theory
 
-## Linear algebra {-}
+## Linear algebra
 
-## Real analysis {-}
+::: {.definition name="Test"}
+This is a *test*.
+:::
 
-## Differentiable functions {-}
+## Real analysis
 
-## Correspondences {-}
+## Differentiable functions
+
+## Correspondences

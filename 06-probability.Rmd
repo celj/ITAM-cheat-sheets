@@ -1,13 +1,13 @@
-# Probability {-}
+# Probability
 
-## Basics and combinatorics {-}
+## Basics and combinatorics
 
-## Random variables {-}
+## Random variables
 
-## Discrete distributions {-}
+## Discrete distributions
 
-## Continuous distributions {-}
+## Continuous distributions
 
-## Multivariate distributions {-}
+## Multivariate distributions
 
-### Multivariate normal distribution {-}
+### Multivariate normal distribution

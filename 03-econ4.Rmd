@@ -1,6 +1,6 @@
-# Economics 4 {-}
+# Economics 4
 
-## General equilibrium {-}
+## General equilibrium
 
 ### Pure exchange economies {-}
 
@@ -19,7 +19,7 @@ If $\mathrm{x} \succ_i \mathrm{y}$, then $u_i(\mathrm{x}) > u_i(\mathrm{y})$.
 :::
 
 ::: {.definition name="Exchange economy"}
-A *pure exchange economy* is:
+A *pure exchange economy* is
 $$
 \mathcal{E} = \left\langle \mathcal{I}, (u_i, \mathrm{w}_i)_{i\in\mathcal{I}} \right\rangle,
 $$
@@ -37,10 +37,29 @@ The *resource allocation* is denoted by $X = (\mathrm{x}_1, \mathrm{x}_2, \dots,
 :::
 
 ::: {.definition name="Feasible allocation"}
-The *feasible allocation* $\F$ of an economy $\mathcal{E}$ is defined by:
+The *feasible allocation* $\F$ of an economy $\mathcal{E}$ is defined by
 $$
 \F = \left\{ X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)\ :\ \mathrm{x}_i \in \R^\L_i,\ \sum_{i \in \mathcal{I}} \mathrm{x}_i = \sum_{i \in \mathcal{I}} \mathrm{w}_i \right\}.
 $$
+:::
+
+::: {.definition name="Pareto efficiency"}
+Let $\mathcal{E}$ be an exchange economy. A feasible allocation of resources $X$ is said to be *Pareto efficient* if and only if there is no other feasible allocation $\hat{X}$ such that, for every agent in $\mathcal{I}$, $u_i(\hat{\mathrm{x}}_i) \geq u_i(\mathrm{x}_i)$ and, for at least one agent $j$, $u_j(\hat{\mathrm{x}}_j) > u_j(\mathrm{x}_j)$.
+:::
+
+::: {.definition name="Pareto dominance"}
+Let $X$ and $\hat{X}$ be two feasible allocations. We say that $\hat{X}$ *Pareto dominates* $X$ if and only if
+$$
+u_i(\hat{x}_{i,1}, \dots, \hat{x}_{i,n}) \geq u_i(x_{i,1}, \dots, x_{i,n}), \quad \forall i \in \mathcal{I},
+$$
+and there is at least one consumer $j$ such that
+$$
+u_j(\hat{x}_{j,1}, \dots, \hat{x}_{j,n}) > u_i(x_{j,1}, \dots, x_{j,n}).
+$$
+:::
+
+::: {.definition name="Contract curve"}
+The set of all Pareto allocations is known as the *contract curve*.
 :::
 
 ```{r echo=FALSE, fig.cap="Edgeworth box", out.width="100%", message=FALSE, fig.pos='H'}
@@ -48,6 +67,74 @@ library(tidyverse)
 knitr::include_graphics("figures/edgeworth-box.svg")
 ```
 
-## Monopoly and monopsony {-}
+#### General case {-}
 
-## Game theory {-}
+\begin{align*}
+\max_{\{ \mathrm{x}_1,\ \dots\ ,\ \mathrm{x}_m \}} \quad & u_1(x_{1,1}, \dots, x_{1,n}) \\
+\text{subject to} \quad & u_2(x_{2,1}, \dots, x_{2,n}) \geq \bar{u}_2, \\
+& \quad \vdots \\
+& u_m(x_{m,1}, \dots, x_{m,n}) \geq \bar{u}_m; \\
+& \sum_{i \in \mathcal{I}} x_{i,1} \leq w_1, \\
+& \quad \vdots \\
+& \sum_{i \in \mathcal{I}} x_{i,n} \leq w_n.
+\end{align*}
+
+::: {.theorem}
+Let all utility functions be strictly increasing and quasiconcave, and $\hat{X}$ be a feasible interior allocation. Then $\hat{X}$ is *Pareto efficient* if and only if $\hat{X}$ exhausts all resources and, for all pairs of goods $(\ell, \ell')$,
+$$
+\MRS(\ell, \ell')(\hat{x}_{1,1}, \dots, \hat{x}_{1,n}) = \cdots = \MRS(\ell, \ell')(\hat{x}_{m,1}, \dots, \hat{x}_{m,n}).
+$$
+:::
+
+### Competitive equilibrium {-}
+
+#### Initial assumptions {-}
+
+* There is a market for each good.
+* Every agent can access the market without any cost.
+* There is a single price for each good.
+* All consumers know the price.
+* Each consumer can sell their initial endowment in the market and use the income to buy goods and services.
+* Consumers seek to maximize their utility given their budget restriction, independently of what everyone else is doing.
+* There is no centralized mechanism.
+* People may not know others’ preferences or endowments.
+* There is perfect competition (namely, everyone is a price-taker).
+* Prices are the only source of information for agents.
+
+::: {.definition name="Competitive equilibrium"}
+An ordered pair of an allocation and a price vector, $\left( X^*, \mathrm{p} = (p_1, \dots, p_n) \right)$, is called a *competitive equilibrium* if the following conditions hold:
+
+1. $\forall i \in \mathcal{I}$, $\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
+\begin{align*}
+\max_{\{ \mathrm{x}_i \}} \quad & u_i(\mathrm{x}_i) \\
+\text{subject to} \quad & wh + \langle \mathrm{p}, \mathrm{x}_i \rangle \leq \langle \mathrm{p}, \mathrm{w}_i \rangle = \sum_{\ell \in \L} p_{\ell} w_{i,\ell}.
+\end{align*}
+2. Markets clear, i.e. $\displaystyle \sum_{i \in \mathcal{I}} x_{i,\ell}^* = \sum_{i \in \mathcal{I}} w_{i,\ell}$, $\forall \ell \in \L$.
+:::
+
+::: {.proposition}
+Given at least one consumer with strictly monotonic preferences. Then, if $(X^*, \mathrm{p})$ is a competitive equilibrium, $p_1, p_2, \dots, p_n >0$.
+:::
+
+::: {.proposition}
+Given at least one consumer with weakly monotonic preferences. Then, if $(X^*, \mathrm{p})$ is a competitive equilibrium, for at least one $\ell$, $p_\ell > 0$.
+:::
+
+::: {.proposition}
+Let $(X^*, \mathrm{p})$ be a competitive equilibrium. Then, $(X^*, c\mathrm{p})$ is also a competitive equilibrium, $\forall c \in \R_+$.
+:::
+
+::: {.theorem name="Walras's Law"}
+If the consumer $i$ has weakly monotonic preferences and $\hat{\mathrm{x}}_i \in \mathrm{x}_i^*(\mathrm{p})$, then
+$$
+\langle \mathrm{p}, \hat{\mathrm{x}}_i \rangle = \sum_{\ell \in \L} p_{\ell} \hat{x}_{i,\ell} = \sum_{\ell \in \L} p_{\ell} w_{i,\ell} = \langle \mathrm{p}, \mathrm{w}_i \rangle.
+$$
+:::
+
+::: {.corollary name="Walras's Law"}
+Given weakly monotonic utility functions and $\mathrm{p} = (p_1, \dots, p_n)$ such that $p_\ell > 0$. If any $(X^*, \mathrm{p})$ in which maximization condition holds, $\forall i \in \mathcal{I}$, and markets clear $\forall \ell = 1, 2, \dots, n - 1$; then, the market clearing condition holds for commodity $n$ as well.
+:::
+
+## Monopoly and monopsony
+
+## Game theory

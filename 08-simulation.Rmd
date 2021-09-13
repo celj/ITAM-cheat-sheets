@@ -1,15 +1,15 @@
-# Simulation {-}
+# Simulation
 
-## Generation of uniformly distributed random variables {-}
+## Generation of uniformly distributed random variables
 
-## General methods {-}
+## General methods
 
-## Particular methods {-}
+## Particular methods
 
-## Methods for random vectors {-}
+## Methods for random vectors
 
-## Methods for stochastic processes {-}
+## Methods for stochastic processes
 
-## Statistical testing of RNGs {-}
+## Statistical testing of RNGs
 
-## Variance reduction techniques {-}
+## Variance reduction techniques

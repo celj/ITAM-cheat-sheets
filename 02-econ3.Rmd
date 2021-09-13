@@ -1,6 +1,6 @@
-# Economics 3 {-}
+# Economics 3
 
-You can find this cheat sheet as a `.pdf` file in Spanish.
+You can find this cheat sheet as a `pdf` file in Spanish.
 Just click [here](files/02-econ3.pdf) or on the image below.
 
 ::: {.row}

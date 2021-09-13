@@ -1,9 +1,9 @@
-# Optimization {-}
+# Optimization
 
-## Static optimization {-}
+## Static optimization
 
-## Calculus of variations {-}
+## Calculus of variations
 
-## Optimal control theory {-}
+## Optimal control theory
 
-## Elements of dynamic programming {-}
+## Elements of dynamic programming
