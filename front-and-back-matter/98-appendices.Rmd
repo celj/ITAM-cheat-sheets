@@ -15,3 +15,5 @@
 |$\Var(f(x))$|Variance of $f(x)$ under $P(\mathrm{x})$.|
 |$\Cov(f(x), g(x))$|Covariance of $f(x)$ and $g(x)$ under $P(\mathrm{x})$.|
 |$\Norm (\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})$|Gaussian distribution over $\mathbf{x}$ with mean $\mathbf{\mu}$ and covariance $\mathbf{\Sigma}$.|
+
+# Probability distributions

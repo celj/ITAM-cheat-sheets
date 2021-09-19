@@ -1,5 +1,0 @@
-# Dynamical Systems
-
-## Differential equations
-
-## Recurrence relations
