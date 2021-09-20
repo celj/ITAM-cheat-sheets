@@ -132,15 +132,17 @@ Figure 4.1: Edgeworth box
 <div id="general-case" class="section level4 unnumbered">
 <h4>General case<a class="anchor" aria-label="anchor" href="#general-case"><i class="fas fa-link"></i></a>
 </h4>
-<p><span class="math display">\[\begin{align*}
-\max_{\{ \mathrm{x}_1,\ \dots\ ,\ \mathrm{x}_m \}} \quad &amp; u_1(x_{1,1}, \dots, x_{1,n}) \\
+<p><span class="math display">\[
+\begin{align*}
+\max_{ \mathrm{x}_1,\ \dots\ ,\ \mathrm{x}_m } \quad &amp; u_1(x_{1,1}, \dots, x_{1,n}) \\
 \text{subject to} \quad &amp; u_2(x_{2,1}, \dots, x_{2,n}) \geq \bar{u}_2, \\
 &amp; \quad \vdots \\
 &amp; u_m(x_{m,1}, \dots, x_{m,n}) \geq \bar{u}_m; \\
-&amp; \sum_{i \in \mathcal{I}} x_{i,1} \leq w_1, \\
+&amp; \sum_{i \in \mathcal{I}} x_{i,1} \leq \sum_{i \in \mathcal{I}} w_{i,1}, \\
 &amp; \quad \vdots \\
-&amp; \sum_{i \in \mathcal{I}} x_{i,n} \leq w_n.
-\end{align*}\]</span></p>
+&amp; \sum_{i \in \mathcal{I}} x_{i,n} \leq \sum_{i \in \mathcal{I}} w_{i,n}.
+\end{align*}
+\]</span></p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-10" class="theorem"><strong>Theorem 4.1  </strong></span>Let all utility functions be strictly increasing and quasiconcave, and <span class="math inline">\(\hat{X}\)</span> be a feasible interior allocation. Then <span class="math inline">\(\hat{X}\)</span> is <em>Pareto efficient</em> if and only if <span class="math inline">\(\hat{X}\)</span> exhausts all resources and, for all pairs of goods <span class="math inline">\((\ell, \ell')\)</span>,
 <span class="math display">\[
@@ -172,10 +174,12 @@ Figure 4.1: Edgeworth box
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(\forall i \in \mathcal{I}\)</span>, <span class="math inline">\(\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)\)</span> solves the following maximization problem:
-<span class="math display">\[\begin{align*}
-\max_{\{ \mathrm{x}_i \}} \quad &amp; u_i(\mathrm{x}_i) \\
+<span class="math display">\[
+\begin{align*}
+\max_{ \mathrm{x}_i } \quad &amp; u_i(\mathrm{x}_i) \\
 \text{subject to} \quad &amp; wh + \langle \mathrm{p}, \mathrm{x}_i \rangle \leq \langle \mathrm{p}, \mathrm{w}_i \rangle = \sum_{\ell \in \mathcal{L}} p_{\ell} w_{i,\ell}.
-\end{align*}\]</span>
+\end{align*}
+\]</span>
 </li>
 <li>Markets clear, i.e. <span class="math inline">\(\displaystyle \sum_{i \in \mathcal{I}} x_{i,\ell}^* = \sum_{i \in \mathcal{I}} w_{i,\ell}\)</span>, <span class="math inline">\(\forall \ell \in \mathcal{L}\)</span>.</li>
 </ol>
@@ -187,7 +191,7 @@ Figure 4.1: Edgeworth box
 <p><span id="prp:unlabeled-div-13" class="proposition"><strong>Proposition 4.3  </strong></span>Given at least one consumer with weakly monotonic preferences. Then, if <span class="math inline">\((X^*, \mathrm{p})\)</span> is a competitive equilibrium, for at least one <span class="math inline">\(\ell\)</span>, <span class="math inline">\(p_\ell &gt; 0\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-14" class="proposition"><strong>Proposition 4.4  </strong></span>Let <span class="math inline">\((X^*, \mathrm{p})\)</span> be a competitive equilibrium. Then, <span class="math inline">\((X^*, c\mathrm{p})\)</span> is also a competitive equilibrium, <span class="math inline">\(\forall c \in \mathbb{R}_+\)</span>.</p>
+<p><span id="prp:unlabeled-div-14" class="proposition"><strong>Proposition 4.4  </strong></span>Let <span class="math inline">\((X^*, \mathrm{p})\)</span> be a competitive equilibrium. Then <span class="math inline">\((X^*, c\mathrm{p})\)</span> is also a competitive equilibrium, <span class="math inline">\(\forall c \in \mathbb{R}_+\)</span>.</p>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-15" class="theorem"><strong>Theorem 4.2  (Walras's Law) </strong></span>If the consumer <span class="math inline">\(i\)</span> has weakly monotonic preferences and <span class="math inline">\(\hat{\mathrm{x}}_i \in \mathrm{x}_i^*(\mathrm{p})\)</span>, then
@@ -196,7 +200,157 @@ Figure 4.1: Edgeworth box
 \]</span></p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-16" class="corollary"><strong>Corollary 4.1  (Walras's Law) </strong></span>Given weakly monotonic utility functions and <span class="math inline">\(\mathrm{p} = (p_1, \dots, p_n)\)</span> such that <span class="math inline">\(p_\ell &gt; 0\)</span>. If any <span class="math inline">\((X^*, \mathrm{p})\)</span> in which maximization condition holds, <span class="math inline">\(\forall i \in \mathcal{I}\)</span>, and markets clear <span class="math inline">\(\forall \ell = 1, 2, \dots, n - 1\)</span>; then, the market clearing condition holds for commodity <span class="math inline">\(n\)</span> as well.</p>
+<p><span id="cor:unlabeled-div-16" class="corollary"><strong>Corollary 4.1  (Walras's Law) </strong></span>Given weakly monotonic utility functions and <span class="math inline">\(\mathrm{p} = (p_1, \dots, p_n)\)</span> such that <span class="math inline">\(p_\ell &gt; 0\)</span>. If any <span class="math inline">\((X^*, \mathrm{p})\)</span> in which maximization condition holds, <span class="math inline">\(\forall i \in \mathcal{I}\)</span>, and markets clear <span class="math inline">\(\forall \ell = 1, 2, \dots, n - 1\)</span>, then the market clearing condition holds for commodity <span class="math inline">\(n\)</span> as well.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-17" class="theorem"><strong>Theorem 4.3  (Fixed point) </strong></span>For any continuous function <span class="math inline">\(f : \triangle^{n - 1} \to \triangle^{n - 1}\)</span>, there exists a point <span class="math inline">\(\mathrm{p}^* = (p_1^*, p_2^*, \dots, p_n^*)\)</span> such that <span class="math inline">\(f(\mathrm{p}^*) = \mathrm{p}^*\)</span>, where:
+<span class="math display">\[
+\triangle^{n - 1} = \left\{ (p_1, p_2, \dots, p_n) \in \mathbb{R}^\mathcal{L}_+ : \sum_{\ell \in \mathcal{L}} p_\ell = 1 \right\}.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-18" class="definition"><strong>Definition 4.9  (Shortage) </strong></span>We define <em>shortage</em> or <em>excess demand</em> as follows:
+<span class="math display">\[
+Z(\mathrm{p}) = (z_1(\mathrm{p}), z_2(\mathrm{p}), \dots, z_n(\mathrm{p})) = \sum_{i \in \mathcal{I}} \mathrm{x}^*_i (\mathrm{p}) - \sum_{i \in \mathcal{I}} \mathrm{w}_i.
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-19" class="proposition"><strong>Proposition 4.5  </strong></span><span class="math inline">\(\mathrm{p}\)</span> is a competitive equilibrium if and only if <span class="math inline">\(Z(\mathrm{p}) = 0\)</span>.</p>
+</div>
+</div>
+<div id="excess-demand-properties" class="section level4 unnumbered">
+<h4>Excess demand properties<a class="anchor" aria-label="anchor" href="#excess-demand-properties"><i class="fas fa-link"></i></a>
+</h4>
+<ol style="list-style-type: decimal">
+<li>Continuous in <span class="math inline">\(\mathrm{p}\)</span>.</li>
+<li>Zero degree homogeneity.</li>
+<li>
+<span class="math inline">\(\langle \mathrm{p}, Z(\mathrm{p}) \rangle = 0\)</span>.</li>
+</ol>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-20" class="proposition"><strong>Proposition 4.6  </strong></span>The equilibrium is not unique.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-21" class="theorem"><strong>Theorem 4.4  (Welfare I) </strong></span>Given any pure exchange economy such that all consumers have weakly monotonic utility functions. If <span class="math inline">\((X^*, \mathrm{p})\)</span> is a competitive equilibrium, then <span class="math inline">\(X^*\)</span> is a Pareto efficient allocation.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-22" class="theorem"><strong>Theorem 4.5  (Welfare II) </strong></span>Given an economy <span class="math inline">\(\displaystyle \mathcal{E} = \langle \mathcal{I}, (u_i, w_i)_{i \in \mathcal{I}} \rangle\)</span> where all consumers have weakly monotonic quasiconcave utility functions. If <span class="math inline">\((x_1, x_2, \dots, x_m)\)</span> is a Pareto optimal allocation, then there exists a redistribution of resources <span class="math inline">\((\hat{w}_1, \hat{w}_2, \dots, \hat{w}_m)\)</span> and some prices <span class="math inline">\(\mathrm{p} = (p_1, p_2, \dots, p_n)\)</span> such that:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\displaystyle \sum_{i \in \mathcal{I}} \hat{w}_i = \sum_{i \in \mathcal{I}} w_i\)</span>.</li>
+<li>
+<span class="math inline">\((\mathrm{p}, (x_1, x_2, \dots, x_m))\)</span> is a competitive equilibrium of the economy <span class="math inline">\(\mathcal{E}\)</span>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="production" class="section level3 unnumbered">
+<h3>Production<a class="anchor" aria-label="anchor" href="#production"><i class="fas fa-link"></i></a>
+</h3>
+<div id="initial-assumptions-2" class="section level4 unnumbered">
+<h4>Initial assumptions<a class="anchor" aria-label="anchor" href="#initial-assumptions-2"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>There are <span class="math inline">\(k\)</span> firms such that <span class="math inline">\(\mathcal{J} = \{1, \dots, k\}\)</span>.</li>
+<li>The production of the firm <span class="math inline">\(j\)</span> for good <span class="math inline">\(l\)</span> is described by the function <span class="math inline">\(f_{j,l}\)</span> such that <span class="math inline">\(f_j(z_{\ell,l}) = f_j(z_{1,l}, \dots, z_{n,l})\)</span>. Namely, the firm <span class="math inline">\(j\)</span> uses <span class="math inline">\(z_\ell\)</span> units of commodities <span class="math inline">\(\ell \in \mathcal{L}\)</span> to produce commodity <span class="math inline">\(l\)</span>.</li>
+<li>The firms are owned by consumers in society.</li>
+<li>The firms’ ownership is exogenous.</li>
+<li>
+<span class="math inline">\(\theta_{i,j}\)</span> represents the fraction of the <span class="math inline">\(j\)</span>th firm owned by the <span class="math inline">\(i\)</span>th consumer.</li>
+<li>The firms do not have endowments.</li>
+</ul>
+<div class="remark">
+<p><span id="unlabeled-div-23" class="remark"><em>Remark</em>. </span><span class="math display">\[
+\sum_{i \in \mathcal{I}} \theta_{i,j} = \theta_{1,j} + \theta_{2,j} + \cdots + \theta_{m,j} = 1 .
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-24" class="definition"><strong>Definition 4.10  (Competitive equilibrium) </strong></span><span class="math inline">\(((X^*, Z^*), \mathrm{p})\)</span> is called a <em>competitive equilibrium</em> if the following conditions hold:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\forall j \in \mathcal{J}\)</span>, <span class="math inline">\(\mathrm{z}^*_j = ((z_{j,1,1'}, \dots, z_{j,1,n'}), \dots, (z_{j,n,1'}, \dots, z_{j,n,n'}))\)</span> solves the following maximization problem:
+<span class="math display">\[
+\pi^*_j \stackrel{\text{def}}{=}\max_{ \mathrm{z}_j }\ p_l f_{j,l} (\mathrm{z}_\ell) - \sum_{\ell \in \mathcal{L}} p_\ell \mathrm{z}_{j, \ell}.
+\]</span>
+</li>
+<li>
+<span class="math inline">\(\forall i \in \mathcal{I}\)</span>, <span class="math inline">\(\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)\)</span> solves the following maximization problem:
+<span class="math display">\[
+\begin{align*}
+\max_{ \mathrm{x}_i } \quad &amp; u_i(\mathrm{x}_i) \\
+\text{subject to} \quad &amp; \langle \mathrm{p}, \mathrm{x}_i \rangle \leq \langle \mathrm{p}, \mathrm{w}_i \rangle + \sum_{j \in \mathcal{J}} \theta_{i,j} \pi^*_j.
+\end{align*}
+\]</span>
+</li>
+<li>Markets clear, i.e. <span class="math inline">\(\displaystyle \sum_{i \in \mathcal{I}} x_{i,\ell}^* + \sum_{j \in \mathcal{J}} \sum_{\ell \in \mathcal{L}} \mathrm{z}^*_{j,l} = \sum_{i \in \mathcal{I}} w_{i,\ell} + \sum_{j \in \mathcal{J}} f_{j,l} (\mathrm{z}^*_\ell)\)</span>, <span class="math inline">\(\forall \ell \in \mathcal{L}\)</span>.</li>
+</ol>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-25" class="proposition"><strong>Proposition 4.7  </strong></span>Walras’s law and welfare theorems hold.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-26" class="proposition"><strong>Proposition 4.8  </strong></span>Let <span class="math inline">\(((X^*, Z^*), \mathrm{p})\)</span> be a competitive equilibrium. Then <span class="math inline">\(((X^*, Z^*), c\mathrm{p})\)</span> is also a competitive equilibrium, <span class="math inline">\(\forall c \in \mathbb{R}_+\)</span>.</p>
+</div>
+<blockquote>
+<p>With production, Edgeworth box diagrams are no longer helpful.</p>
+</blockquote>
+</div>
+<div id="general-case-1" class="section level4 unnumbered">
+<h4>General case<a class="anchor" aria-label="anchor" href="#general-case-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><span class="math display">\[
+\begin{align*}
+\max_{ \mathrm{x}_i, \mathrm{z}_j } \quad &amp; u_1(\mathrm{x}_1) \\
+\text{subject to} \quad &amp; u_2(\mathrm{x}_2) \geq \bar{u}_2, \\
+&amp; \quad \vdots \\
+&amp; u_m(\mathrm{x}_m) \geq \bar{u}_m; \\
+&amp; \sum_{i \in \mathcal{I}} x_{i,1} + \sum_{j \in \mathcal{J}} z_{j,1} \leq \sum_{j \in \mathcal{J}} f_{j,1} (\mathrm{z}_\ell) + \sum_{i \in \mathcal{I}} w_{i,1}, \\
+&amp; \quad \vdots \\
+&amp; \sum_{i \in \mathcal{I}} x_{i,n} + \sum_{j \in \mathcal{J}} z_{j,n} \leq \sum_{j \in \mathcal{J}} f_{j,n} (\mathrm{z}_\ell) + \sum_{i \in \mathcal{I}} w_{i,n}.
+\end{align*}
+\]</span></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-27" class="theorem"><strong>Theorem 4.6  </strong></span>Let all utility functions be quasiconcave and strictly increasing, and <span class="math inline">\((X,Z)\)</span> be a feasible interior allocation. Then <span class="math inline">\((X, Z)\)</span> is Pareto efficient if and only if all of the following equalities hold for all pairs of goods <span class="math inline">\((\ell, \ell')\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Marginal rates of substitution are equal across consumers,
+<span class="math display">\[
+\text{i.e.}\quad \text{MRS}(\ell,\ell')(\mathrm{x}_1) = \cdots = \text{MRS}(\ell,\ell')(\mathrm{x}_m).
+\]</span>
+</li>
+<li>Marginal rates of technical substitution are equal across firms for any pair of commodities,
+<span class="math display">\[
+\text{i.e.}\quad \text{MRTS}(\ell,\ell')(\mathrm{z}_1) = \cdots = \text{MRTS}(\ell,\ell')(\mathrm{z}_k).
+\]</span>
+</li>
+<li>Marginal rates of transformation are equal to the marginal rates of substitution,
+<span class="math display">\[
+\text{i.e.}\quad \text{MRT}(j,j')(\mathrm{z}_{\ell''}) = \text{MRS}(\ell,\ell')(\mathrm{x}_i), \quad \forall i \in \mathcal{I}.
+\]</span>
+</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 4.11  </strong></span>We define the <em>production possibility set</em> as the set of all non-negative outputs of goods that the firms can produce using the economy’s available factor inputs. The output combinations on the frontier of this set correspond to the Pareto efficient allocation of factor inputs, i.e. the allocation in which it is not possible, given the total factor endowment, to increase the production of one good without decreasing the production of some other good.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-29" class="remark"><em>Remark</em> (Friendly reminder on marginal rates). </span><br><strong>Marginal rate of substitution</strong> (<span class="math inline">\(\text{MRS}\)</span>)</p>
+<ul>
+<li>It is the rate at which a consumer is willing to trade one good for another to maintain a constant level of utility.</li>
+<li>It is the slope of an <em>indifference curve</em>.</li>
+<li>It focuses on demand side of consumer theory.</li>
+</ul>
+<p><strong>Marginal rate of transformation</strong> (<span class="math inline">\(\text{MRT}\)</span>)</p>
+<ul>
+<li>It is the amount of one good that must be given up to produce an additional unit of another good.</li>
+<li>It is the slope of <em>production possibility frontier</em>.</li>
+<li>It focuses on supply side of a commodity.</li>
+</ul>
+<p><strong>Marginal rate of technical substitution</strong> (<span class="math inline">\(\text{MRTS}\)</span>)</p>
+<ul>
+<li>It is the amount by which the quantity of one input has to be reduced in order to use another input.</li>
+<li>It is the slope of an <em>isoquant curve</em>.</li>
+<li>It focuses on production side of economic theory.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -224,6 +378,7 @@ Figure 4.1: Edgeworth box
 <a class="nav-link" href="#general-equilibrium"><span class="header-section-number">4.1</span> General equilibrium</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#pure-exchange-economies">Pure exchange economies</a></li>
 <li><a class="nav-link" href="#competitive-equilibrium">Competitive equilibrium</a></li>
+<li><a class="nav-link" href="#production">Production</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#monopoly-and-monopsony"><span class="header-section-number">4.2</span> Monopoly and monopsony</a></li>

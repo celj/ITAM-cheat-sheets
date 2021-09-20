@@ -15,6 +15,17 @@ prp:unlabeled-div-13
 prp:unlabeled-div-14
 thm:unlabeled-div-15
 cor:unlabeled-div-16
+thm:unlabeled-div-17
+def:unlabeled-div-18
+prp:unlabeled-div-19
+prp:unlabeled-div-20
+thm:unlabeled-div-21
+thm:unlabeled-div-22
+def:unlabeled-div-24
+prp:unlabeled-div-25
+prp:unlabeled-div-26
+thm:unlabeled-div-27
+def:unlabeled-div-28
 consumer-and-producer-theory
 linear-algebra
 real-analysis
