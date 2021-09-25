@@ -19,10 +19,6 @@ abbreviations: |
 
 bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 
-masters-submission: false
-candidate-number: 123456
-word-count: "10,052"
-
 abbreviations-width: 3.2cm
 abbreviations-heading: List of Abbreviations
 
@@ -39,9 +35,9 @@ corrections: true
 
 colored-not-bordered-links: true
 
-urlcolor-rgb: "0,0,139"     # web addresses
-citecolor-rgb: "0,33,71"    # citations
-linkcolor-rgb: "0,0,139"    # links to sections in your thesis
+urlcolor-rgb: "0,0,139"
+citecolor-rgb: "0,33,71"
+linkcolor-rgb: "0,0,139"
 
 toc-link-page-numbers: true
 
@@ -81,28 +77,21 @@ abstractseparate: false
 includeline-num: false
 
 output:
-  bookdown::pdf_book:
-    citation_package: biblatex
-    template: templates/template.tex
-    keep_tex: true
-    pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
   bookdown::bs4_book: 
     css: 
       - templates/bs4_style.css
       - templates/corrections.css
     theme:
-      primary: "#6D1919"
+      bg: "#f8f9fb"
+      fg: "#4c566a"
+      primary: "#a3be8c"
+      secondary: "#2e3440"
+      success: "#2e3440"
+      info: "#2e3440"
+      warning: "#2e3440"
+      danger: "#2e3440"
     repo: https://github.com/celj/itam-cheat-sheets
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
-  bookdown::gitbook:
-    css: templates/style.css
-    config:
-      sharing:
-        facebook: false
-        twitter: yes
-        all: false
-  bookdown::word_document2:
-    toc: true   
 link-citations: true
 documentclass: book
 always_allow_html: true

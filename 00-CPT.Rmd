@@ -2,8 +2,13 @@
 
 ## Linear algebra
 
-::: {.definition name="Test"}
-This is a *test*.
+> Vectors are always columns, but it is customary to write them as rows to save space.
+
+::: {.definition name="Homogeneous system"}
+If $\mathrm{b} = 0_{m\times 1}$, the system is said to be *homogeneous* and there is at least one solution, given by $\mathrm{x} = 0_{n\times 1}$.
+$$
+\ie \quad A\mathrm{x} = 0.
+$$
 :::
 
 ## Real analysis
@@ -11,3 +16,9 @@ This is a *test*.
 ## Differentiable functions
 
 ## Correspondences
+
+## Convexity
+
+## Support functions
+
+## Nonlinear programming

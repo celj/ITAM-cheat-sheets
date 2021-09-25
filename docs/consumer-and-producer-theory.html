@@ -16,9 +16,9 @@
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="1.1 Linear algebra  Definition 1.1 (Test) This is a test.   1.2 Real analysis   1.3 Differentiable functions   1.4 Correspondences">
-<meta property="og:description" content="1.1 Linear algebra  Definition 1.1 (Test) This is a test.   1.2 Real analysis   1.3 Differentiable functions   1.4 Correspondences">
-<meta name="twitter:description" content="1.1 Linear algebra  Definition 1.1 (Test) This is a test.   1.2 Real analysis   1.3 Differentiable functions   1.4 Correspondences">
+<meta name="description" content="1.1 Linear algebra  Vectors are always columns, but it is customary to write them as rows to save space.  Definition 1.1 (Homogeneous system) If \(\mathrm{b} = 0_{m\times 1}\), the system is said...">
+<meta property="og:description" content="1.1 Linear algebra  Vectors are always columns, but it is customary to write them as rows to save space.  Definition 1.1 (Homogeneous system) If \(\mathrm{b} = 0_{m\times 1}\), the system is said...">
+<meta name="twitter:description" content="1.1 Linear algebra  Vectors are always columns, but it is customary to write them as rows to save space.  Definition 1.1 (Homogeneous system) If \(\mathrm{b} = 0_{m\times 1}\), the system is said...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -45,9 +45,9 @@
 <li><a class="" href="economics-2.html"><span class="header-section-number">2</span> Economics 2</a></li>
 <li><a class="" href="economics-3.html"><span class="header-section-number">3</span> Economics 3</a></li>
 <li><a class="" href="economics-4.html"><span class="header-section-number">4</span> Economics 4</a></li>
-<li><a class="" href="fundamentals-of-econometrics.html"><span class="header-section-number">5</span> Fundamentals of econometrics</a></li>
-<li><a class="" href="probability.html"><span class="header-section-number">6</span> Probability</a></li>
-<li><a class="" href="statistical-inference.html"><span class="header-section-number">7</span> Statistical Inference</a></li>
+<li><a class="" href="probability.html"><span class="header-section-number">5</span> Probability</a></li>
+<li><a class="" href="statistical-inference.html"><span class="header-section-number">6</span> Statistical Inference</a></li>
+<li><a class="" href="fundamentals-of-econometrics.html"><span class="header-section-number">7</span> Fundamentals of econometrics</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="notation-in-statistics.html"><span class="header-section-number">A</span> Notation in Statistics</a></li>
 <li><a class="" href="probability-distributions.html"><span class="header-section-number">B</span> Probability distributions</a></li>
@@ -67,8 +67,14 @@
 <h2>
 <span class="header-section-number">1.1</span> Linear algebra<a class="anchor" aria-label="anchor" href="#linear-algebra"><i class="fas fa-link"></i></a>
 </h2>
+<blockquote>
+<p>Vectors are always columns, but it is customary to write them as rows to save space.</p>
+</blockquote>
 <div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  (Test) </strong></span>This is a <em>test</em>.</p>
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  (Homogeneous system) </strong></span>If <span class="math inline">\(\mathrm{b} = 0_{m\times 1}\)</span>, the system is said to be <em>homogeneous</em> and there is at least one solution, given by <span class="math inline">\(\mathrm{x} = 0_{n\times 1}\)</span>.
+<span class="math display">\[
+\text{i.e.}\quad A\mathrm{x} = 0.
+\]</span></p>
 </div>
 </div>
 <div id="real-analysis" class="section level2" number="1.2">
@@ -85,6 +91,21 @@
 <h2>
 <span class="header-section-number">1.4</span> Correspondences<a class="anchor" aria-label="anchor" href="#correspondences"><i class="fas fa-link"></i></a>
 </h2>
+</div>
+<div id="convexity" class="section level2" number="1.5">
+<h2>
+<span class="header-section-number">1.5</span> Convexity<a class="anchor" aria-label="anchor" href="#convexity"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="support-functions" class="section level2" number="1.6">
+<h2>
+<span class="header-section-number">1.6</span> Support functions<a class="anchor" aria-label="anchor" href="#support-functions"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="nonlinear-programming" class="section level2" number="1.7">
+<h2>
+<span class="header-section-number">1.7</span> Nonlinear programming<a class="anchor" aria-label="anchor" href="#nonlinear-programming"><i class="fas fa-link"></i></a>
+</h2>
 
 </div>
 </div>
@@ -99,6 +120,9 @@
 <li><a class="nav-link" href="#real-analysis"><span class="header-section-number">1.2</span> Real analysis</a></li>
 <li><a class="nav-link" href="#differentiable-functions"><span class="header-section-number">1.3</span> Differentiable functions</a></li>
 <li><a class="nav-link" href="#correspondences"><span class="header-section-number">1.4</span> Correspondences</a></li>
+<li><a class="nav-link" href="#convexity"><span class="header-section-number">1.5</span> Convexity</a></li>
+<li><a class="nav-link" href="#support-functions"><span class="header-section-number">1.6</span> Support functions</a></li>
+<li><a class="nav-link" href="#nonlinear-programming"><span class="header-section-number">1.7</span> Nonlinear programming</a></li>
 </ul>
 
       <div class="book-extra">

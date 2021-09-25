@@ -1,8 +1,11 @@
 \documentclass{standalone}
 
+\usepackage{pagecolor}
 \usepackage{tikz, verbatim}
 \usepackage{pgfplots}
 \usepackage[active,tightpage]{preview}
+
+\definecolor{white}{HTML}{f8f9fb}
 
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
@@ -10,6 +13,8 @@
 \pgfplotsset{compat=1.17}
 
 \begin{document}
+
+\pagecolor{white}
 
 \begin{tikzpicture}[scale=1,thick]
     \def\alpha{0.7}
