@@ -11,7 +11,7 @@
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1 Consumer and Producer Theory | My cheat sheets">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
@@ -49,7 +49,7 @@
 <li><a class="" href="statistical-inference.html"><span class="header-section-number">6</span> Statistical Inference</a></li>
 <li><a class="" href="fundamentals-of-econometrics.html"><span class="header-section-number">7</span> Fundamentals of econometrics</a></li>
 <li class="book-part">Appendix</li>
-<li><a class="" href="notation-in-statistics.html"><span class="header-section-number">A</span> Notation in Statistics</a></li>
+<li><a class="" href="notation.html"><span class="header-section-number">A</span> Notation</a></li>
 <li><a class="" href="probability-distributions.html"><span class="header-section-number">B</span> Probability distributions</a></li>
 <li><a class="" href="references.html">References</a></li>
 </ul>
@@ -76,16 +76,500 @@
 \text{i.e.}\quad A\mathrm{x} = 0.
 \]</span></p>
 </div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-2" class="proposition"><strong>Proposition 1.1  </strong></span>If <span class="math inline">\(\mathrm{b} \neq 0\)</span>, there need not exist <span class="math inline">\(\mathrm{x}\)</span> such that <span class="math inline">\(A\mathrm{x} = \mathrm{b}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  (Linear combination) </strong></span><span class="math inline">\(\mathrm{y} \in \mathbb{R}^m\)</span> is a <em>linear combination</em> of <span class="math inline">\(\mathrm{x}_1, \dots, \mathrm{x}_n \in \mathbb{R}^m\)</span> if there exists <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathbb{R}\)</span> such that <span class="math inline">\(\displaystyle \mathrm{y} = \sum_{i = 1}^n \alpha_i \mathrm{x}_i\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.1  </strong></span>Consider three matrices <span class="math inline">\(A_{m\times n}\)</span>, <span class="math inline">\(B_{k\times m}\)</span> and <span class="math inline">\(C_{k\times n}\)</span> such that <span class="math inline">\(BA = C\)</span>.</p>
+<p>Observe that:</p>
+<ol style="list-style-type: decimal">
+<li>rows of <span class="math inline">\(C\)</span> are linear combinations of rows of <span class="math inline">\(A\)</span>, and</li>
+<li>columns of <span class="math inline">\(C\)</span> are linear combinations of columns of <span class="math inline">\(B\)</span>.</li>
+</ol>
+<blockquote>
+<p>These statements are in fact equivalent since <span class="math inline">\(BA = C \iff A^T B^T = C^T\)</span>.</p>
+</blockquote>
+</div>
+<div id="elementary-row-operations-and-rref" class="section level3 unnumbered">
+<h3>Elementary row operations and RREF<a class="anchor" aria-label="anchor" href="#elementary-row-operations-and-rref"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 1.3  (Elementary row operations) </strong></span><em>Elementary row operations</em> are simple operations that allow to transform a system of linear equations into an equivalent system.</p>
+<p>There are three elementary row operations:</p>
+<ol style="list-style-type: decimal">
+<li>switching rows,</li>
+<li>multiplying a row with a non-zero constant, and</li>
+<li>replacing a row with the sum of that row and another row.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-6" class="theorem"><strong>Theorem 1.1  </strong></span>Let <span class="math inline">\(E_{n\times n}\)</span> be an elementary matrix. Then:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(E\)</span> is invertible.</li>
+<li>There exist a number <span class="math inline">\(k\)</span> of elementary matrices <span class="math inline">\(E_1, \dots, E_k\)</span> such that <span class="math inline">\(E^{-1} = E_1 \cdots E_k\)</span>.</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-7" class="definition"><strong>Definition 1.4  (Row reduced echelon form) </strong></span>Applying the three elementary row operations sequentially to any given matrix, we can find its <em>row reduced echelon form</em> (RREF).</p>
+<p>The RREF of a matrix has the following properties:</p>
+<ol style="list-style-type: decimal">
+<li>all the zero rows are at the bottom,</li>
+<li>the first non-zero entry of each non-zero row is 1,</li>
+<li>if the first non-zero entry of a row occurs on column <span class="math inline">\(j\)</span> and if the first non-zero entry of the next row occurs on column <span class="math inline">\(j'\)</span>, then <span class="math inline">\(j &lt; j'\)</span>, and</li>
+<li>if the first non-zero entry of a row occurs on column <span class="math inline">\(j\)</span>, then all the earlier rows have zeros on column <span class="math inline">\(j\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-8" class="theorem"><strong>Theorem 1.2  </strong></span>Every matrix has a unique RREF.</p>
+</div>
+</div>
+<div id="rank" class="section level3 unnumbered">
+<h3>Rank<a class="anchor" aria-label="anchor" href="#rank"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 1.5  (Rank) </strong></span>The <em>rank</em> of <span class="math inline">\(A_{m\times n}\)</span> is the number of non-zero rows in its RREF <span class="math inline">\(A'\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-10" class="definition"><strong>Definition 1.6  (Pivotal column) </strong></span>A <em>pivotal column</em> is one which contains the first non-zero entry of some row.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-11" class="corollary"><strong>Corollary 1.1  </strong></span>If <span class="math inline">\(A\)</span> is <span class="math inline">\(m\times n\)</span>, then <span class="math inline">\(\text{rk}A = \text{rk}A' \leq \min\{m, n\}\)</span>.</p>
+<p>Also, for a given <span class="math inline">\(A_{m\times n}\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\text{rk}A = m\)</span> if and only if <span class="math inline">\(A'\)</span> has no zero rows.</li>
+<li>
+<span class="math inline">\(\text{rk}A = n\)</span> if and only if all columns of <span class="math inline">\(A'\)</span> are pivotal.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 1.3  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m \times n\)</span>. Then <span class="math inline">\(\text{rk}A = m\)</span> if and only if, <span class="math inline">\(\forall \mathrm{b} \in \mathbb{R}^m\)</span>, <span class="math inline">\(\exists \mathrm{x} \in \mathbb{R}^n\)</span> such that <span class="math inline">\(A\mathrm{x} = \mathrm{b}\)</span>. Namely, there is <strong>at least one solution</strong> to the system.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-13" class="theorem"><strong>Theorem 1.4  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m \times n\)</span>. Then <span class="math inline">\(\text{rk}A = n\)</span> if and only if, <span class="math inline">\(\forall \mathrm{b} \in \mathbb{R}^m\)</span>, if <span class="math inline">\(A\mathrm{x} = A\mathrm{y} = \mathrm{b}\)</span>, then <span class="math inline">\(\mathrm{x} = \mathrm{y}\)</span>. Namely, there is <strong>at most one solution</strong> to the system.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-14" class="corollary"><strong>Corollary 1.2  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. For each <span class="math inline">\(\mathrm{b} \in \mathbb{R}^m\)</span>, <span class="math inline">\(A\mathrm{x} = \mathrm{b}\)</span> has a unique solution in <span class="math inline">\(\mathbb{R}^n\)</span> if and only if <span class="math inline">\(\text{rk}A = m = n\)</span>.</p>
+</div>
+</div>
+<div id="subspaces" class="section level3 unnumbered">
+<h3>Subspaces<a class="anchor" aria-label="anchor" href="#subspaces"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-15" class="definition"><strong>Definition 1.7  (Subspace) </strong></span>A non-empty set <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is a <em>subspace</em> of <span class="math inline">\(R^m\)</span> if <span class="math inline">\(\alpha\mathrm{x} + \beta\mathrm{y} \in S\)</span> whenever <span class="math inline">\(\mathrm{x}, \mathrm{y} \in S\)</span> and <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-16" class="proposition"><strong>Proposition 1.2  </strong></span>The intersection of members of an arbitrary family of subspaces is a subspace. The union of subspaces need not be a subspace.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 1.8  (Range) </strong></span>The <em>range</em> of <span class="math inline">\(A_{m\times n}\)</span> is the set
+<span class="math display">\[
+R(A) = \left\{ \mathrm{b} \in \mathbb{R}^m : \exists \mathrm{x} \in \mathbb{R}^n\ \text{such that}\ A\mathrm{x} = \mathrm{b} \right\}.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-18" class="definition"><strong>Definition 1.9  (Null space) </strong></span>The <em>null space</em> of <span class="math inline">\(A_{m\times n}\)</span> is the set
+<span class="math display">\[
+N(A) = \left\{ \mathrm{x} \in \mathbb{R}^n : A\mathrm{x} = 0 \right\}.
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-19" class="proposition"><strong>Proposition 1.3  </strong></span>For any <span class="math inline">\(A_{m\times n}\)</span>, the following propositions hold:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(N(A) = N(A')\)</span>,</li>
+<li>
+<span class="math inline">\(R(A) \neq R(A')\)</span>,</li>
+<li>
+<span class="math inline">\(N(A) \subseteq N(BA)\)</span>,</li>
+<li>
+<span class="math inline">\(R(BA) \subseteq R(B)\)</span>,</li>
+<li>
+<span class="math inline">\(R(A) = \mathbb{R}^m \iff \text{rk}A = m\)</span>, and</li>
+<li>
+<span class="math inline">\(N(A) = \{0\} \iff \text{rk}A = n\)</span>.</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 1.10  (Linear span) </strong></span>Vectors <span class="math inline">\(\mathrm{a}_1, \dots, \mathrm{a}_n \in S\)</span> <em>span</em> <span class="math inline">\(S\)</span> if, for every <span class="math inline">\(\mathrm{x} \in S\)</span>, there exists <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathbb{R}\)</span> such that <span class="math inline">\(\displaystyle \mathrm{x} = \sum_{i = 1}^n \alpha_i \mathrm{a}_i\)</span>.</p>
+<p>Namely, each <span class="math inline">\(\mathrm{x}\)</span> is a linear combination of <span class="math inline">\(\mathrm{a}_1, \dots, \mathrm{a}_n\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 1.11  (Linear independence) </strong></span>Vectors <span class="math inline">\(\mathrm{a}_1, \dots, \mathrm{a}_n\)</span> in <span class="math inline">\(\mathbb{R}^m\)</span> are <em>linearly independent</em> if, for all <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathbb{R}\)</span>,
+<span class="math display">\[
+\sum_{i=1}^n \alpha_i \mathrm{a}_i = 0 \implies \alpha_1 = \cdots = \alpha_n = 0.
+\]</span></p>
+</div>
+<blockquote>
+<p>A linearly independent set cannot contain <span class="math inline">\(0\)</span>.</p>
+</blockquote>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-22" class="proposition"><strong>Proposition 1.4  </strong></span>For any given matrix, the following propositions hold:</p>
+<ol style="list-style-type: decimal">
+<li>the non-zero rows of any matrix in RREF are linearly independent,</li>
+<li>all subsets of a linearly independent set are also linearly independent, and</li>
+<li>a set <span class="math inline">\(\{\mathrm{a}_1, \dots, \mathrm{a}_n\}\)</span> in <span class="math inline">\(\mathbb{R}^m\)</span> is linearly independent if and only if <span class="math inline">\(N(A_{m\times n}) = \{0_{n\times 1}\}\)</span>, where <span class="math inline">\(\displaystyle A = \left[ \mathrm{a}_1 \mid \cdots \mid \mathrm{a}_n \right]_{m\times n}\)</span> is formed by merging members of <span class="math inline">\(\{\mathrm{a}_1, \dots, \mathrm{a}_n\}\)</span> as columns.</li>
+</ol>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-23" class="lemma"><strong>Lemma 1.1  </strong></span><span class="math inline">\(\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subset \mathbb{R}^m\)</span> is linearly dependent if and only if, for some <span class="math inline">\(k \in \{2, \dots, n\}\)</span>, <span class="math inline">\(a_k\)</span> is a linear combination of <span class="math inline">\(\mathrm{a}_1, \dots, \mathrm{a}_{k-1}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-24" class="definition"><strong>Definition 1.12  (Basis) </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^m\)</span>. A set <span class="math inline">\(\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subseteq S\)</span> is a <em>basis</em> for <span class="math inline">\(S\)</span> if it spans <span class="math inline">\(S\)</span> and is linearly independent.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-25" class="theorem"><strong>Theorem 1.5  </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^m\)</span> with basis <span class="math inline">\(\{\mathrm{a}_1, \dots, \mathrm{a}_n\}\)</span>. If <span class="math inline">\(\{\mathrm{b}_1, \dots, \mathrm{b}_r\} \subset S\)</span> is linearly independent, then <span class="math inline">\(r \leq n\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-26" class="corollary"><strong>Corollary 1.3  </strong></span>Any <span class="math inline">\(m + 1\)</span> vectors in <span class="math inline">\(\mathbb{R}^m\)</span> are linearly dependent.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-27" class="corollary"><strong>Corollary 1.4  </strong></span>If <span class="math inline">\(\{\mathrm{a}_1, \dots, \mathrm{a}_n\}\)</span> and <span class="math inline">\(\{\mathrm{b}_1, \dots, \mathrm{b}_r\}\)</span> are two bases for <span class="math inline">\(S\)</span>, then <span class="math inline">\(n = r\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 1.13  (Dimension) </strong></span>The <em>dimension</em> of a subspace <span class="math inline">\(S\)</span> is the number of elements in any basis for <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-29" class="theorem"><strong>Theorem 1.6  (Fundamental Theorem of Linear Algebra I) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then,</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\dim R(A^T) = \text{rk}A\)</span>,</li>
+<li>
+<span class="math inline">\(\text{rk}A = \text{rk}A^T\)</span>, and</li>
+<li>
+<span class="math inline">\(\dim N(A) = n - \text{rk}A\)</span>.</li>
+</ol>
+</div>
+</div>
+<div id="orthogonality" class="section level3 unnumbered">
+<h3>Orthogonality<a class="anchor" aria-label="anchor" href="#orthogonality"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 1.14  (Orthogonal complement) </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^m\)</span>. The <em>orthogonal complement</em> of <span class="math inline">\(S\)</span> is the set
+<span class="math display">\[
+S^\perp = \left\{ \mathrm{y} \in \mathbb{R}^m : \mathrm{y} \cdot \mathrm{x} = 0,\ \forall \mathrm{x} \in S \right\}.
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-31" class="lemma"><strong>Lemma 1.2  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, <span class="math inline">\(S \cap S^\perp = \{0\}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-32" class="theorem"><strong>Theorem 1.7  (Fundamental Theorem of Linear Algebra II) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then,</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(R(A) = N(A^T)^\perp\)</span>, and</li>
+<li>
+<span class="math inline">\(R(A)^\perp = N(A^T)\)</span>.</li>
+</ol>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-33" class="corollary"><strong>Corollary 1.5  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, <span class="math inline">\((S^\perp)^\perp = S\)</span>.</p>
+</div>
+</div>
+<div id="inverses" class="section level3 unnumbered">
+<h3>Inverses<a class="anchor" aria-label="anchor" href="#inverses"><i class="fas fa-link"></i></a>
+</h3>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-34" class="theorem"><strong>Theorem 1.8  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> be both <span class="math inline">\(n\times n\)</span>. If <span class="math inline">\(AC = I\)</span>, then <span class="math inline">\(\text{rk}A = \text{rk}C = n\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-35" class="theorem"><strong>Theorem 1.9  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> be both <span class="math inline">\(n\times n\)</span>. If <span class="math inline">\(AC = I\)</span>, then <span class="math inline">\(CA = I\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-36" class="definition"><strong>Definition 1.15  (Invertible matrix) </strong></span><span class="math inline">\(A_{n\times n}\)</span> is <em>invertible</em> if there exists <span class="math inline">\(C_{n\times n}\)</span> such that <span class="math inline">\(AC =CA = I\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-37" class="theorem"><strong>Theorem 1.10  </strong></span>If <span class="math inline">\(AC = CA = I\)</span> and if <span class="math inline">\(AB = BA =I\)</span>, then <span class="math inline">\(C = B\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-38" class="remark"><em>Remark</em>. </span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are invertible, then <span class="math inline">\(AB\)</span> is invertible as well.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-39" class="remark"><em>Remark</em>. </span>If <span class="math inline">\(A\)</span> is invertible, then so is <span class="math inline">\(A^T\)</span> and <span class="math inline">\((A^T)^{-1} = (A^{-1})^T\)</span>.</p>
+</div>
+</div>
 </div>
 <div id="real-analysis" class="section level2" number="1.2">
 <h2>
 <span class="header-section-number">1.2</span> Real analysis<a class="anchor" aria-label="anchor" href="#real-analysis"><i class="fas fa-link"></i></a>
 </h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-40" class="definition"><strong>Definition 1.16  (metric) </strong></span>Let <span class="math inline">\(X\)</span> be a set. A function <span class="math inline">\(d : X \times X \to \mathbb{R}\)</span> is a <em>metric</em> on <span class="math inline">\(X\)</span> if, for all <span class="math inline">\(x, y, z \in X\)</span>, the following conditions hold:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(d(x,y) \geq 0\)</span>,</li>
+<li>
+<span class="math inline">\(d(x,y) = 0 \iff x = y\)</span>,</li>
+<li>
+<span class="math inline">\(d(x, y) = d((y, x)\)</span>, and</li>
+<li>
+<span class="math inline">\(d(x, y) \leq d(x, z) + d(z, y)\)</span>.</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 1.17  (Metric space) </strong></span>A <em>metric space</em> is a pair <span class="math inline">\((X, d)\)</span> where <span class="math inline">\(X\)</span> is a set and <span class="math inline">\(d\)</span> is a metric on <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-42" class="definition"><strong>Definition 1.18  (Open ball) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. For any <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(\varepsilon &gt; 0\)</span>, <span class="math inline">\(B(x, \varepsilon) = \{ y \in X : d(x, y) &lt; \varepsilon \}\)</span> is the <em>open ball</em> centered at <span class="math inline">\(x\)</span> with radius <span class="math inline">\(\varepsilon\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-43" class="definition"><strong>Definition 1.19  (Interior) </strong></span>Let <span class="math inline">\(S \subseteq X\)</span>. <span class="math inline">\(x\)</span> is an <em>interior point</em> of <span class="math inline">\(S\)</span> if <span class="math inline">\(B(x, \varepsilon) \subset S\)</span> for some <span class="math inline">\(\varepsilon &gt; 0\)</span>. The set of all interior points of <span class="math inline">\(S\)</span> is the <em>interior</em> of <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-44" class="remark"><em>Remark</em>. </span><span class="math display">\[
+\text{int}(S) \subseteq S
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-45" class="definition"><strong>Definition 1.20  (Open set) </strong></span><span class="math inline">\(S\)</span> is <em>open</em> if <span class="math inline">\(S = \text{int}(S)\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-46" class="remark"><em>Remark</em>. </span><span class="math inline">\(\varnothing\)</span>, <span class="math inline">\(\text{int}(S)\)</span> and <span class="math inline">\(B(x, \varepsilon)\)</span> are open.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-47" class="definition"><strong>Definition 1.21  (Closure) </strong></span>Let <span class="math inline">\(S \subseteq X\)</span>. <span class="math inline">\(x\)</span> is an <em>closure point</em> of <span class="math inline">\(S\)</span> if <span class="math inline">\(B(x, \varepsilon) \cap S \neq \varnothing\)</span> for every <span class="math inline">\(\varepsilon &gt; 0\)</span>. The set of all closure points of <span class="math inline">\(S\)</span> is the <em>closure</em> of <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-48" class="remark"><em>Remark</em>. </span><span class="math display">\[
+S \subseteq \text{cl}(S)
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-49" class="definition"><strong>Definition 1.22  (Closed set) </strong></span><span class="math inline">\(S\)</span> is <em>closed</em> if <span class="math inline">\(S = \text{cl}(S)\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-50" class="remark"><em>Remark</em>. </span><span class="math inline">\(\varnothing\)</span> and <span class="math inline">\(\text{cl}(S)\)</span> are closed.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-51" class="theorem"><strong>Theorem 1.11  </strong></span><span class="math inline">\(S\)</span> is closed if and only if <span class="math inline">\(X \setminus S\)</span> is open.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-52" class="definition"><strong>Definition 1.23  (Boundary) </strong></span>Let <span class="math inline">\(S \subseteq X\)</span>. <span class="math inline">\(x\)</span> is an <em>boundary point</em> of <span class="math inline">\(S\)</span> if <span class="math inline">\(B(x, \varepsilon) \cap S \neq \varnothing\)</span> and <span class="math inline">\(B(x, \varepsilon) \cap (X \setminus S) \neq \varnothing\)</span> for every <span class="math inline">\(\varepsilon &gt; 0\)</span>. The set of all boundary points of <span class="math inline">\(S\)</span> is the <em>boundary</em> of <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-53" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>
+<span class="math inline">\(\partial S = \partial(X \setminus S)\)</span>.</li>
+<li>
+<span class="math inline">\(\partial S \subseteq \text{cl}(S)\)</span>.</li>
+<li>
+<span class="math inline">\(S\)</span> is closed if and only if <span class="math inline">\(\partial S \subseteq S\)</span>.</li>
+<li>
+<span class="math inline">\(\partial S\)</span> is a closed set.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-54" class="definition"><strong>Definition 1.24  (Metric subspace) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space and <span class="math inline">\(S \subseteq X\)</span>. <span class="math inline">\(d\)</span> is a metric on <span class="math inline">\(S\)</span> and therefore <span class="math inline">\((S, d)\)</span> is a metric space as well, usually referred to as a <em>metric subspace</em> of <span class="math inline">\((X, d)\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-55" class="theorem"><strong>Theorem 1.12  </strong></span>Let <span class="math inline">\((S, d)\)</span> be a metric subspace of <span class="math inline">\((X, d)\)</span>.</p>
+<ul>
+<li>
+<span class="math inline">\(A \subseteq S\)</span> is open in <span class="math inline">\((S, d)\)</span> if and only if there exists an open set <span class="math inline">\(U\)</span> in <span class="math inline">\((X, d)\)</span> such that <span class="math inline">\(A = S \cap U\)</span>.</li>
+<li>
+<span class="math inline">\(A \subseteq S\)</span> is closed in <span class="math inline">\((S, d)\)</span> if and only if there exists a closed set <span class="math inline">\(U\)</span> in <span class="math inline">\((X, d)\)</span> such that <span class="math inline">\(A = S \cap U\)</span>.</li>
+</ul>
+</div>
+<div id="sequences" class="section level3 unnumbered">
+<h3>Sequences<a class="anchor" aria-label="anchor" href="#sequences"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-56" class="definition"><strong>Definition 1.25  (Sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A <em>sequence</em> in <span class="math inline">\((X, d)\)</span> is a map <span class="math inline">\(f : \mathbb{N}\to X\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-57" class="definition"><strong>Definition 1.26  (Convergent sequence) </strong></span>A sequence <span class="math inline">\(\{x_k\}\)</span> is said to be <em>convergent</em> if the following property holds: there exists some <span class="math inline">\(x \in X\)</span> such that, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists some <span class="math inline">\(l \in \mathbb{N}\)</span> such that, for every <span class="math inline">\(k &gt; l\)</span>, <span class="math inline">\(x_k \in B(x, \varepsilon)\)</span>. Such <span class="math inline">\(x\)</span> is called the limit of <span class="math inline">\(\{x_k\}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 1.13  </strong></span>If <span class="math inline">\(\lim x_k\)</span> exists, it is unique.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-59" class="definition"><strong>Definition 1.27  (Subsequence) </strong></span>Let <span class="math inline">\(\{x_k\}\)</span> be a sequence. A <em>subsequence</em> of <span class="math inline">\(\{x_k\}\)</span> is a sequence obtained by deleting some (possibly none, possibly infinitely many) members of <span class="math inline">\(\{x_k\}\)</span>. Namely, let <span class="math inline">\(\{k_n\}\)</span> be a non-decreasing sequence of integers. Then <span class="math inline">\(\{x_{k_{n}}\}\)</span> is a subsequence of <span class="math inline">\(\{x_k\}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-60" class="theorem"><strong>Theorem 1.14  </strong></span><span class="math inline">\(\{x_k\}\)</span> is convergent with a limit <span class="math inline">\(x\)</span> if and only if every subsequence of <span class="math inline">\(\{x_k\}\)</span> is convergent with limit <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-61" class="theorem"><strong>Theorem 1.15  </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space and <span class="math inline">\(S \subseteq X\)</span>. <span class="math inline">\(x \in \text{cl}(S)\)</span> if and only if there exists a sequence <span class="math inline">\(\{x_k\}\)</span> such that <span class="math inline">\(x_k \in S\)</span> for all <span class="math inline">\(k\)</span>, and <span class="math inline">\(\lim x_k = x\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-62" class="theorem"><strong>Theorem 1.16  </strong></span><span class="math inline">\(S\)</span> is closed if and only if every convergent sequence in <span class="math inline">\(S\)</span> converges to an element of <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-63" class="definition"><strong>Definition 1.28  (Bounded sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A sequence <span class="math inline">\(\{x_k\}\)</span> in <span class="math inline">\(X\)</span> is <em>bounded</em> if it is contained in a ball with finite radius, i.e., if for some <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(y \in X\)</span>, <span class="math inline">\(x_k \in B(y, \varepsilon)\)</span> for every <span class="math inline">\(k\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 1.17  (Bolzano–Weierstrass) </strong></span>Every bounded sequence in <span class="math inline">\(\mathbb{R}^m\)</span> has a convergent subsequence.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-65" class="definition"><strong>Definition 1.29  (Cauchy sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A sequence <span class="math inline">\(\{x_k\}\)</span> in <span class="math inline">\(X\)</span> is a <em>Cauchy sequence</em> if, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists a positive integer <span class="math inline">\(k_\varepsilon\)</span> such that, whenever <span class="math inline">\(k, l &gt; k_\varepsilon\)</span>, <span class="math inline">\(d(x_k, x_l) &lt; \varepsilon\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-66" class="theorem"><strong>Theorem 1.18  </strong></span>If <span class="math inline">\(\{x_k\}\)</span> is convergent, then <span class="math inline">\(\{x_k\}\)</span> is Cauchy. If <span class="math inline">\(\{x_k\}\)</span> is Cauchy, then <span class="math inline">\(\{x_k\}\)</span> is bounded.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-67" class="definition"><strong>Definition 1.30  (Completeness) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. <span class="math inline">\((X, d)\)</span> is complete if every Cauchy sequence in <span class="math inline">\(X\)</span> converges to an element of <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-68" class="theorem"><strong>Theorem 1.19  </strong></span>Let <span class="math inline">\((X, d)\)</span> be complete and <span class="math inline">\(S \subseteq X\)</span>. <span class="math inline">\((S, d)\)</span> is complete if and only if <span class="math inline">\(S\)</span> is a closed subset of <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-69" class="definition"><strong>Definition 1.31  (Open cover) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space and <span class="math inline">\(S \subseteq X\)</span>. A collection of open sets <span class="math inline">\(O_i\)</span>, <span class="math inline">\(i \in I\)</span>, is an <em>open cover</em> for <span class="math inline">\(S\)</span> if <span class="math inline">\(\displaystyle S \subset \bigcup_{i \in I} O_i\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-70" class="definition"><strong>Definition 1.32  (Finite subcover) </strong></span>Let <span class="math inline">\(O_i\)</span>, <span class="math inline">\(i \in I\)</span>, be an open cover for <span class="math inline">\(S\)</span>. If <span class="math inline">\(I_0\)</span> is a finite subset of <span class="math inline">\(I\)</span> and <span class="math inline">\(\displaystyle S \subset \bigcup_{i \in I_0} O_i\)</span>, then the collection <span class="math inline">\(O_i\)</span>, <span class="math inline">\(i \in I_0\)</span>, is a <em>finite subcover</em> of <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-71" class="definition"><strong>Definition 1.33  (Compactness) </strong></span><span class="math inline">\(S\)</span> is <em>compact</em> if every open cover of <span class="math inline">\(S\)</span> has a finite subcover.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-72" class="theorem"><strong>Theorem 1.20  (Compactness) </strong></span>A compact set is bounded and closed.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-73" class="theorem"><strong>Theorem 1.21  (Sequential compactness) </strong></span><span class="math inline">\(S\)</span> is compact if and only if every sequence in <span class="math inline">\(S\)</span> has a subsequence that converges to a point in <span class="math inline">\(S\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-74" class="theorem"><strong>Theorem 1.22  (Heine-Borel) </strong></span>A subset of <span class="math inline">\(\mathbb{R}^m\)</span> is compact if and only if it is closed and bounded.</p>
+</div>
+</div>
+<div id="continuity" class="section level3 unnumbered">
+<h3>Continuity<a class="anchor" aria-label="anchor" href="#continuity"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-75" class="definition"><strong>Definition 1.34  (Continuity) </strong></span>Let <span class="math inline">\((X, d)\)</span> and <span class="math inline">\((Y, \sigma)\)</span> be metric spaces. A function <span class="math inline">\(f : X \to Y\)</span> is <em>continuous at <span class="math inline">\(x \in X\)</span></em> if, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists <span class="math inline">\(\delta &gt; 0\)</span> such that, whenever <span class="math inline">\(x' \in B(x, \delta)\)</span>, <span class="math inline">\(f(x') \in B(f(x), \varepsilon)\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 1.35  (Global continuity) </strong></span><span class="math inline">\(f\)</span> is <em>continuous</em> if it is continuous at <span class="math inline">\(x\)</span> for every <span class="math inline">\(x \in X\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Theorem 1.23  </strong></span><span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x\)</span> if and only if for every sequence <span class="math inline">\(\{x_k\}\)</span> in <span class="math inline">\(X\)</span>, whenever <span class="math inline">\(\lim x_k = x\)</span>, <span class="math inline">\(\lim f(x_k) = f(x)\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-78" class="definition"><strong>Definition 1.36  (Image) </strong></span>Let <span class="math inline">\((X, d)\)</span> and <span class="math inline">\((Y, \sigma)\)</span> be metric spaces and <span class="math inline">\(f : X \to Y\)</span>. If <span class="math inline">\(S \subseteq X\)</span>, then <span class="math inline">\(f(S) = \{ f(x) \in Y : x \in S \}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-79" class="definition"><strong>Definition 1.37  (Inverse image) </strong></span>Let <span class="math inline">\((X, d)\)</span> and <span class="math inline">\((Y, \sigma)\)</span> be metric spaces and <span class="math inline">\(f : X \to Y\)</span>. If <span class="math inline">\(S \subseteq Y\)</span>, then <span class="math inline">\(f^{-1}(S) = \{ x \in X : f(x) \in S \}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-80" class="theorem"><strong>Theorem 1.24  </strong></span>The following are equivalent:</p>
+<ul>
+<li>
+<span class="math inline">\(f\)</span> is continuous.</li>
+<li>
+<span class="math inline">\(f^{-1}(S)\)</span> is open if <span class="math inline">\(S\)</span> is open.</li>
+<li>
+<span class="math inline">\(f^{-1}(S)\)</span> is closed if <span class="math inline">\(S\)</span> is closed.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 1.38  (Upper semicontinuous) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A function <span class="math inline">\(f : X \to \mathbb{R}\)</span> is <em>upper semicontinuous</em> if <span class="math inline">\(\{x \in X : f(x) \geq \alpha \}\)</span> is closed for every <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-82" class="definition"><strong>Definition 1.39  (Lower semicontinuous) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A function <span class="math inline">\(f : X \to \mathbb{R}\)</span> is <em>lower semicontinuous</em> if <span class="math inline">\(\{x \in X : f(x) \leq \alpha \}\)</span> is closed for every <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 1.25  </strong></span><span class="math inline">\(f : X \to \mathbb{R}\)</span> is continuous if and only if <span class="math inline">\(f\)</span> is upper semicontinuous and lower semicontinuous.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-84" class="definition"><strong>Definition 1.40  (Maximizer / Minimizer) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space and <span class="math inline">\(S \subseteq X\)</span>. A function <span class="math inline">\(f : S \to \mathbb{R}\)</span> has a <em>maximizer</em> if for some <span class="math inline">\(x^* \in S\)</span>, <span class="math inline">\(f(x) \leq f(x^*)\)</span> for every <span class="math inline">\(x \in S\)</span>. Similarly, <span class="math inline">\(f\)</span> has a <em>minimizer</em> if for some <span class="math inline">\(x_* \in S\)</span>, <span class="math inline">\(f(x) \geq f(x_*)\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 1.26  (Weierstrass) </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathbb{R}\)</span> be continuous. Then <span class="math inline">\(f\)</span> has a maximizer and a minimizer.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-86" class="theorem"><strong>Theorem 1.27  </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathbb{R}\)</span> be upper semicontinuous. Then <span class="math inline">\(f\)</span> has a maximizer.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 1.28  </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathbb{R}\)</span> be lower semicontinuous. Then <span class="math inline">\(f\)</span> has a minimizer.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-88" class="theorem"><strong>Theorem 1.29  (Separation) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. If <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> are disjoint and closed subsets of <span class="math inline">\(X\)</span>, then there exists disjoint and open sets <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> such that <span class="math inline">\(U \supset S\)</span> and <span class="math inline">\(V \supset T\)</span>.</p>
+</div>
+</div>
 </div>
 <div id="differentiable-functions" class="section level2" number="1.3">
 <h2>
 <span class="header-section-number">1.3</span> Differentiable functions<a class="anchor" aria-label="anchor" href="#differentiable-functions"><i class="fas fa-link"></i></a>
 </h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-89" class="definition"><strong>Definition 1.41  (Differentiability) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. Then <span class="math inline">\(f\)</span> is <em>differentiable at <span class="math inline">\(x\)</span></em> if
+<span class="math display">\[
+\lim_{u \to 0} \frac{f(x + u) - f(x)}{u}
+\]</span>
+exists.</p>
+<p>Namely, <span class="math inline">\(f\)</span> is <em>differentiable at <span class="math inline">\(x\)</span></em> if there is some <span class="math inline">\(y \in \mathbb{R}\)</span> such that, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists some <span class="math inline">\(\delta &gt; 0\)</span> such that
+<span class="math display">\[
+\left\{ x + u \in B_\delta(x) \cap S : u \neq 0 \right\} \implies \left\lvert \frac{f(x + u) - f(x)}{u} - y \right\rvert &lt; \varepsilon
+\]</span>
+where <span class="math inline">\(y = f'(x)\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-90" class="definition"><strong>Definition 1.42  (Partial derivative) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. The <em><span class="math inline">\(j\)</span>th partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is
+<span class="math display">\[
+D_j f(x) \stackrel{\text{def}}{=}\lim_{u \to 0} \frac{f(x + ue_j) - f(x)}{u}
+\]</span>
+if this limit exists.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-91" class="definition"><strong>Definition 1.43  (Gradient) </strong></span>If <span class="math inline">\(D_j f(x)\)</span> exists for all <span class="math inline">\(j = 1, \dots, n\)</span>, then the <em>gradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is the vector
+<span class="math display">\[
+\nabla f(x) \stackrel{\text{def}}{=}
+\begin{bmatrix}
+D_1 f(x) \\
+\vdots \\
+D_n f(x)
+\end{bmatrix}
+\in \mathbb{R}^n.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-92" class="definition"><strong>Definition 1.44  (Jacobian) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}^m\)</span>. Suppose that <span class="math inline">\(D_j f_i(x)\)</span> exists for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, then the <em>Jacobian of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is the <span class="math inline">\(m\times n\)</span> matrix
+<span class="math display">\[
+J_f(x) \stackrel{\text{def}}{=}
+\begin{bmatrix}
+D_1 f_1(x) &amp; \cdots &amp; D_n f_1(x) \\
+\vdots &amp; \ddots &amp; \vdots \\
+D_1 f_m(x) &amp; \cdots &amp; D_n f_m(x)
+\end{bmatrix}_{m\times n}
+=
+\begin{bmatrix}
+\nabla f_1(x)^T \\
+\vdots \\
+\nabla f_m(x)^T
+\end{bmatrix}.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 1.45  (Differentiability) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>. Then <span class="math inline">\(f : S \to \mathbb{R}^m\)</span> is <em>differentiable at <span class="math inline">\(x \in S\)</span></em> if the following two conditions hold:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(D_j f_i (x)\)</span> exists for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>,</li>
+<li>we have
+<span class="math display">\[
+\lim_{u \to 0} \frac{\lVert f(x + u) - f(x) - J_f(x)u \rVert}{\lVert u \rVert} = 0.
+\]</span>
+</li>
+</ol>
+<blockquote>
+<p>The second condition holds if and only if, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there is some <span class="math inline">\(\delta &gt; 0\)</span> such that, whenever <span class="math inline">\(x + u \in B_\delta(x) \cap S\)</span> and <span class="math inline">\(u \neq 0_{n\times 1}\)</span>, we have
+<span class="math display">\[
+\frac{\lVert f(x + u) - f(x) - J_f(x)u \rVert}{\lVert u \rVert} &lt; \varepsilon.
+\]</span></p>
+</blockquote>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-94" class="theorem"><strong>Theorem 1.30  </strong></span>Suppose <span class="math inline">\(S\subseteq\mathbb{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}^m\)</span>. Suppose that, for each <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, <span class="math inline">\(D_j f_i(x)\)</span> exists and that <span class="math inline">\(x \mapsto D_j f_i(x)\)</span> is continuous on <span class="math inline">\(S\)</span>. Then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-95" class="theorem"><strong>Theorem 1.31  (Implicit Function Theorem) </strong></span>Let <span class="math inline">\(F : \mathbb{R}^2 \to \mathbb{R}\)</span>. Suppose that <span class="math inline">\(D_1F(x,y)\)</span> and <span class="math inline">\(D_2F(x,y)\)</span> exist and are continuous in an open <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathbb{R}^2\)</span>. Suppose that <span class="math inline">\(F(a, b) = 0\)</span> and that <span class="math inline">\(D_2F(a, b) \neq 0\)</span>. Then there exists <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(g : B_\varepsilon \to \mathbb{R}\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(F(x, g(x)) = 0\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span> and
+<span class="math display">\[
+g'(a) = -\frac{D_1F(a,b)}{D_2F(a,b)}.
+\]</span></p>
+</div>
 </div>
 <div id="correspondences" class="section level2" number="1.4">
 <h2>
@@ -116,8 +600,21 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#consumer-and-producer-theory"><span class="header-section-number">1</span> Consumer and Producer Theory</a></li>
-<li><a class="nav-link" href="#linear-algebra"><span class="header-section-number">1.1</span> Linear algebra</a></li>
-<li><a class="nav-link" href="#real-analysis"><span class="header-section-number">1.2</span> Real analysis</a></li>
+<li>
+<a class="nav-link" href="#linear-algebra"><span class="header-section-number">1.1</span> Linear algebra</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#elementary-row-operations-and-rref">Elementary row operations and RREF</a></li>
+<li><a class="nav-link" href="#rank">Rank</a></li>
+<li><a class="nav-link" href="#subspaces">Subspaces</a></li>
+<li><a class="nav-link" href="#orthogonality">Orthogonality</a></li>
+<li><a class="nav-link" href="#inverses">Inverses</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#real-analysis"><span class="header-section-number">1.2</span> Real analysis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sequences">Sequences</a></li>
+<li><a class="nav-link" href="#continuity">Continuity</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#differentiable-functions"><span class="header-section-number">1.3</span> Differentiable functions</a></li>
 <li><a class="nav-link" href="#correspondences"><span class="header-section-number">1.4</span> Correspondences</a></li>
 <li><a class="nav-link" href="#convexity"><span class="header-section-number">1.5</span> Convexity</a></li>

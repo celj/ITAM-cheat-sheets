@@ -11,9 +11,534 @@ $$
 $$
 :::
 
+::: {.proposition}
+If $\mathrm{b} \neq 0$, there need not exist $\mathrm{x}$ such that $A\mathrm{x} = \mathrm{b}$.
+:::
+
+::: {.definition name="Linear combination"}
+$\mathrm{y} \in \R^m$ is a _linear combination_ of $\mathrm{x}_1, \dots, \mathrm{x}_n \in \R^m$ if there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle \mathrm{y} = \sum_{i = 1}^n \alpha_i \mathrm{x}_i$.
+:::
+
+::: {.example}
+Consider three matrices $A_{m\times n}$, $B_{k\times m}$ and $C_{k\times n}$ such that $BA = C$.
+
+Observe that:
+
+1. rows of $C$ are linear combinations of rows of $A$, and
+2. columns of $C$ are linear combinations of columns of $B$.
+
+> These statements are in fact equivalent since $BA = C \iff A^T B^T = C^T$.
+
+:::
+
+### Elementary row operations and RREF {-}
+
+::: {.definition name="Elementary row operations"}
+_Elementary row operations_ are simple operations that allow to transform a system of linear equations into an equivalent system.
+
+There are three elementary row operations:
+
+1. switching rows,
+2. multiplying a row with a non-zero constant, and
+3. replacing a row with the sum of that row and another row.
+:::
+
+::: {.theorem}
+Let $E_{n\times n}$ be an elementary matrix. Then:
+
+1. $E$ is invertible.
+2. There exist a number $k$ of elementary matrices $E_1, \dots, E_k$ such that $E^{-1} = E_1 \cdots E_k$.
+:::
+
+::: {.definition name="Row reduced echelon form"}
+Applying the three elementary row operations sequentially to any given matrix, we can find its _row reduced echelon form_ (RREF).
+
+The RREF of a matrix has the following properties:
+
+1. all the zero rows are at the bottom,
+2. the first non-zero entry of each non-zero row is 1,
+3. if the first non-zero entry of a row occurs on column $j$ and if the first non-zero entry of the next row occurs on column $j'$, then $j < j'$, and
+4. if the first non-zero entry of a row occurs on column $j$, then all the earlier rows have zeros on column $j$.
+:::
+
+::: {.theorem}
+Every matrix has a unique RREF.
+:::
+
+### Rank {-}
+
+::: {.definition name="Rank"}
+The _rank_ of $A_{m\times n}$ is the number of non-zero rows in its RREF $A'$.
+:::
+
+::: {.definition name="Pivotal column"}
+A _pivotal column_ is one which contains the first non-zero entry of some row.
+:::
+
+::: {.corollary}
+If $A$ is $m\times n$, then $\rk A = \rk A' \leq \min\{m, n\}$.
+
+Also, for a given $A_{m\times n}$:
+
+1. $\rk A = m$ if and only if $A'$ has no zero rows.
+2. $\rk A = n$ if and only if all columns of $A'$ are pivotal.
+:::
+
+::: {.theorem}
+Let $A$ be $m \times n$. Then $\rk A = m$ if and only if, $\forall \mathrm{b} \in \R^m$, $\exists \mathrm{x} \in \R^n$ such that $A\mathrm{x} = \mathrm{b}$. Namely, there is **at least one solution** to the system.
+:::
+
+::: {.theorem}
+Let $A$ be $m \times n$. Then $\rk A = n$ if and only if, $\forall \mathrm{b} \in \R^m$, if $A\mathrm{x} = A\mathrm{y} = \mathrm{b}$, then $\mathrm{x} = \mathrm{y}$. Namely, there is **at most one solution** to the system.
+:::
+
+::: {.corollary}
+Let $A$ be $m\times n$. For each $\mathrm{b} \in \R^m$, $A\mathrm{x} = \mathrm{b}$ has a unique solution in $\R^n$ if and only if $\rk A = m = n$.
+:::
+
+### Subspaces {-}
+
+::: {.definition name="Subspace"}
+A non-empty set $S \subseteq \R^m$ is a _subspace_ of $R^m$ if $\alpha\mathrm{x} + \beta\mathrm{y} \in S$ whenever $\mathrm{x}, \mathrm{y} \in S$ and $\alpha, \beta \in \R$.
+:::
+
+::: {.proposition}
+The intersection of members of an arbitrary family of subspaces is a subspace. The union of subspaces need not be a subspace.
+:::
+
+::: {.definition name="Range"}
+The _range_ of $A_{m\times n}$ is the set
+$$
+R(A) = \left\{ \mathrm{b} \in \R^m : \exists \mathrm{x} \in \R^n\ \text{such that}\ A\mathrm{x} = \mathrm{b} \right\}.
+$$
+:::
+
+::: {.definition name="Null space"}
+The _null space_ of $A_{m\times n}$ is the set
+$$
+N(A) = \left\{ \mathrm{x} \in \R^n : A\mathrm{x} = 0 \right\}.
+$$
+:::
+
+::: {.proposition}
+For any $A_{m\times n}$, the following propositions hold:
+
+1. $N(A) = N(A')$,
+2. $R(A) \neq R(A')$,
+3. $N(A) \subseteq N(BA)$,
+4. $R(BA) \subseteq R(B)$,
+5. $R(A) = \R^m \iff \rk A = m$, and
+6. $N(A) = \{0\} \iff \rk A = n$.
+:::
+
+::: {.definition name="Linear span"}
+Vectors $\mathrm{a}_1, \dots, \mathrm{a}_n \in S$ _span_ $S$ if, for every $\mathrm{x} \in S$, there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle \mathrm{x} = \sum_{i = 1}^n \alpha_i \mathrm{a}_i$.
+
+Namely, each $\mathrm{x}$ is a linear combination of $\mathrm{a}_1, \dots, \mathrm{a}_n$.
+:::
+
+::: {.definition name="Linear independence"}
+Vectors $\mathrm{a}_1, \dots, \mathrm{a}_n$ in $\R^m$ are _linearly independent_ if, for all $\alpha_1, \dots, \alpha_n \in \R$,
+$$
+\sum_{i=1}^n \alpha_i \mathrm{a}_i = 0 \implies \alpha_1 = \cdots = \alpha_n = 0.
+$$
+:::
+
+> A linearly independent set cannot contain $0$.
+
+::: {.proposition}
+For any given matrix, the following propositions hold:
+
+1. the non-zero rows of any matrix in RREF are linearly independent,
+2. all subsets of a linearly independent set are also linearly independent, and
+3. a set $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$ in $\R^m$ is linearly independent if and only if $N(A_{m\times n}) = \{0_{n\times 1}\}$, where $\displaystyle A = \left[ \mathrm{a}_1 \mid \cdots \mid \mathrm{a}_n \right]_{m\times n}$ is formed by merging members of $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$ as columns.
+:::
+
+::: {.lemma}
+$\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subset \R^m$ is linearly dependent if and only if, for some $k \in \{2, \dots, n\}$, $a_k$ is a linear combination of $\mathrm{a}_1, \dots, \mathrm{a}_{k-1}$.
+:::
+
+::: {.definition name="Basis"}
+Let $S$ be a subspace of $\R^m$. A set $\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subseteq S$ is a _basis_ for $S$ if it spans $S$ and is linearly independent.
+:::
+
+::: {.theorem}
+Let $S$ be a subspace of $\R^m$ with basis $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$. If $\{\mathrm{b}_1, \dots, \mathrm{b}_r\} \subset S$ is linearly independent, then $r \leq n$.
+:::
+
+::: {.corollary}
+Any $m + 1$ vectors in $\R^m$ are linearly dependent.
+:::
+
+::: {.corollary}
+If $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$ and $\{\mathrm{b}_1, \dots, \mathrm{b}_r\}$ are two bases for $S$, then $n = r$.
+:::
+
+::: {.definition name="Dimension"}
+The _dimension_ of a subspace $S$ is the number of elements in any basis for $S$.
+:::
+
+::: {.theorem name="Fundamental Theorem of Linear Algebra I"}
+Let $A$ be $m\times n$. Then,
+
+1. $\dim R(A^T) = \rk A$,
+2. $\rk A = \rk A^T$, and
+3. $\dim N(A) = n - \rk A$.
+:::
+
+### Orthogonality {-}
+
+::: {.definition name="Orthogonal complement"}
+Let $S$ be a subspace of $\R^m$. The _orthogonal complement_ of $S$ is the set
+$$
+S^\perp = \left\{ \mathrm{y} \in \R^m : \mathrm{y} \cdot \mathrm{x} = 0,\ \forall \mathrm{x} \in S \right\}.
+$$
+:::
+
+::: {.lemma}
+For any subspace $S$ of $\R^m$, $S \cap S^\perp = \{0\}$.
+:::
+
+::: {.theorem name="Fundamental Theorem of Linear Algebra II"}
+Let $A$ be $m\times n$. Then,
+
+1. $R(A) = N(A^T)^\perp$, and
+2. $R(A)^\perp = N(A^T)$.
+:::
+
+::: {.corollary}
+For any subspace $S$ of $\R^m$, $(S^\perp)^\perp = S$.
+:::
+
+### Inverses {-}
+
+::: {.theorem}
+Let $A$ and $C$ be both $n\times n$. If $AC = I$, then $\rk A = \rk C = n$.
+:::
+
+::: {.theorem}
+Let $A$ and $C$ be both $n\times n$. If $AC = I$, then $CA = I$.
+:::
+
+::: {.definition name="Invertible matrix"}
+$A_{n\times n}$ is _invertible_ if there exists $C_{n\times n}$ such that $AC =CA = I$.
+:::
+
+::: {.theorem}
+If $AC = CA = I$ and if $AB = BA =I$, then $C = B$.
+:::
+
+::: {.remark}
+If $A$ and $B$ are invertible, then $AB$ is invertible as well.
+:::
+
+::: {.remark}
+If $A$ is invertible, then so is $A^T$ and $(A^T)^{-1} = (A^{-1})^T$.
+:::
+
 ## Real analysis
 
+::: {.definition name="metric"}
+Let $X$ be a set. A function $d : X \times X \to \R$ is a _metric_ on $X$ if, for all $x, y, z \in X$, the following conditions hold:
+
+1. $d(x,y) \geq 0$,
+2. $d(x,y) = 0 \iff x = y$,
+3. $d(x, y) = d((y, x)$, and
+4. $d(x, y) \leq d(x, z) + d(z, y)$.
+:::
+
+::: {.definition name="Metric space"}
+A _metric space_ is a pair $(X, d)$ where $X$ is a set and $d$ is a metric on $X$.
+:::
+
+::: {.definition name="Open ball"}
+Let $(X, d)$ be a metric space. For any $x \in X$ and $\varepsilon > 0$, $B(x, \varepsilon) = \{ y \in X : d(x, y) < \varepsilon \}$ is the _open ball_ centered at $x$ with radius $\varepsilon$.
+:::
+
+::: {.definition name="Interior"}
+Let $S \subseteq X$. $x$ is an _interior point_ of $S$ if $B(x, \varepsilon) \subset S$ for some $\varepsilon > 0$. The set of all interior points of $S$ is the _interior_ of $S$.
+:::
+
+::: {.remark}
+$$
+\interior (S) \subseteq S
+$$
+:::
+
+::: {.definition name="Open set"}
+$S$ is _open_ if $S = \interior (S)$.
+:::
+
+::: {.remark}
+$\O$, $\interior(S)$ and $B(x, \varepsilon)$ are open.
+:::
+
+::: {.definition name="Closure"}
+Let $S \subseteq X$. $x$ is an _closure point_ of $S$ if $B(x, \varepsilon) \cap S \neq \O$ for every $\varepsilon > 0$. The set of all closure points of $S$ is the _closure_ of $S$.
+:::
+
+::: {.remark}
+$$
+S \subseteq \closure(S)
+$$
+:::
+
+::: {.definition name="Closed set"}
+$S$ is _closed_ if $S = \closure (S)$.
+:::
+
+::: {.remark}
+$\O$ and $\closure(S)$ are closed.
+:::
+
+::: {.theorem}
+$S$ is closed if and only if $X \setminus S$ is open.
+:::
+
+::: {.definition name="Boundary"}
+Let $S \subseteq X$. $x$ is an _boundary point_ of $S$ if $B(x, \varepsilon) \cap S \neq \O$ and $B(x, \varepsilon) \cap (X \setminus S) \neq \O$ for every $\varepsilon > 0$. The set of all boundary points of $S$ is the _boundary_ of $S$.
+:::
+
+::: {.remark}
+<br/>
+
+* $\partial S = \partial(X \setminus S)$.
+* $\partial S \subseteq \closure(S)$.
+* $S$ is closed if and only if $\partial S \subseteq S$.
+* $\partial S$ is a closed set.
+:::
+
+::: {.definition name="Metric subspace"}
+Let $(X, d)$ be a metric space and $S \subseteq X$. $d$ is a metric on $S$ and therefore $(S, d)$ is a metric space as well, usually referred to as a _metric subspace_ of $(X, d)$.
+:::
+
+::: {.theorem}
+Let $(S, d)$ be a metric subspace of $(X, d)$.
+
+* $A \subseteq S$ is open in $(S, d)$ if and only if there exists an open set $U$ in $(X, d)$ such that $A = S \cap U$.
+* $A \subseteq S$ is closed in $(S, d)$ if and only if there exists a closed set $U$ in $(X, d)$ such that $A = S \cap U$.
+:::
+
+### Sequences {-}
+
+::: {.definition name="Sequence"}
+Let $(X, d)$ be a metric space. A _sequence_ in $(X, d)$ is a map $f : \N \to X$.
+:::
+
+::: {.definition name="Convergent sequence"}
+A sequence $\{x_k\}$ is said to be _convergent_ if the following property holds: there exists some $x \in X$ such that, for every $\varepsilon > 0$, there exists some $l \in \N$ such that, for every $k > l$, $x_k \in B(x, \varepsilon)$. Such $x$ is called the limit of $\{x_k\}$.
+:::
+
+::: {.theorem}
+If $\lim x_k$ exists, it is unique.
+:::
+
+::: {.definition name="Subsequence"}
+Let $\{x_k\}$ be a sequence. A _subsequence_ of $\{x_k\}$ is a sequence obtained by deleting some (possibly none, possibly infinitely many) members of $\{x_k\}$. Namely, let $\{k_n\}$ be a non-decreasing sequence of integers. Then $\{x_{k_{n}}\}$ is a subsequence of $\{x_k\}$.
+:::
+
+::: {.theorem}
+$\{x_k\}$ is convergent with a limit $x$ if and only if every subsequence of $\{x_k\}$ is convergent with limit $x$.
+:::
+
+::: {.theorem}
+Let $(X, d)$ be a metric space and $S \subseteq X$. $x \in \closure(S)$ if and only if there exists a sequence $\{x_k\}$ such that $x_k \in S$ for all $k$, and $\lim x_k = x$.
+:::
+
+::: {.theorem}
+$S$ is closed if and only if every convergent sequence in $S$ converges to an element of $S$.
+:::
+
+::: {.definition name="Bounded sequence"}
+Let $(X, d)$ be a metric space. A sequence $\{x_k\}$ in $X$ is _bounded_ if it is contained in a ball with finite radius, i.e., if for some $\varepsilon > 0$ and $y \in X$, $x_k \in B(y, \varepsilon)$ for every $k$.
+:::
+
+::: {.theorem name="Bolzano–Weierstrass"}
+Every bounded sequence in $\R^m$ has a convergent subsequence.
+:::
+
+::: {.definition name="Cauchy sequence"}
+Let $(X, d)$ be a metric space. A sequence $\{x_k\}$ in $X$ is a _Cauchy sequence_ if, for every $\varepsilon > 0$, there exists a positive integer $k_\varepsilon$ such that, whenever $k, l > k_\varepsilon$, $d(x_k, x_l) < \varepsilon$.
+:::
+
+::: {.theorem}
+If $\{x_k\}$ is convergent, then $\{x_k\}$ is Cauchy. If $\{x_k\}$ is Cauchy, then $\{x_k\}$ is bounded.
+:::
+
+::: {.definition name="Completeness"}
+Let $(X, d)$ be a metric space. $(X, d)$ is complete if every Cauchy sequence in $X$ converges to an element of $X$.
+:::
+
+::: {.theorem}
+Let $(X, d)$ be complete and $S \subseteq X$. $(S, d)$ is complete if and only if $S$ is a closed subset of $X$.
+:::
+
+::: {.definition name="Open cover"}
+Let $(X, d)$ be a metric space and $S \subseteq X$. A collection of open sets $O_i$, $i \in I$, is an _open cover_ for $S$ if $\displaystyle S \subset \bigcup_{i \in I} O_i$.
+:::
+
+::: {.definition name="Finite subcover"}
+Let $O_i$, $i \in I$, be an open cover for $S$. If $I_0$ is a finite subset of $I$ and $\displaystyle S \subset \bigcup_{i \in I_0} O_i$, then the collection $O_i$, $i \in I_0$, is a _finite subcover_ of $S$.
+:::
+
+::: {.definition name="Compactness"}
+$S$ is _compact_ if every open cover of $S$ has a finite subcover.
+:::
+
+::: {.theorem name="Compactness"}
+A compact set is bounded and closed.
+:::
+
+::: {.theorem name="Sequential compactness"}
+$S$ is compact if and only if every sequence in $S$ has a subsequence that converges to a point in $S$.
+:::
+
+::: {.theorem name="Heine-Borel"}
+A subset of $\R^m$ is compact if and only if it is closed and bounded.
+:::
+
+### Continuity {-}
+
+::: {.definition name="Continuity"}
+Let $(X, d)$ and $(Y, \sigma)$ be metric spaces.  A function $f : X \to Y$ is _continuous at $x \in X$_ if, for every $\varepsilon > 0$, there exists $\delta > 0$ such that, whenever $x' \in B(x, \delta)$, $f(x') \in B(f(x), \varepsilon)$.
+:::
+
+::: {.definition name="Global continuity"}
+$f$ is _continuous_ if it is continuous at $x$ for every $x \in X$.
+:::
+
+::: {.theorem}
+$f$ is continuous at $x$ if and only if for every sequence $\{x_k\}$ in $X$, whenever $\lim x_k = x$, $\lim f(x_k) = f(x)$.
+:::
+
+::: {.definition name="Image"}
+Let $(X, d)$ and $(Y, \sigma)$ be metric spaces and $f : X \to Y$. If $S \subseteq X$, then $f(S) = \{ f(x) \in Y : x \in S \}$.
+:::
+
+::: {.definition name="Inverse image"}
+Let $(X, d)$ and $(Y, \sigma)$ be metric spaces and $f : X \to Y$. If $S \subseteq Y$, then $f^{-1}(S) = \{ x \in X : f(x) \in S \}$.
+:::
+
+::: {.theorem}
+The following are equivalent:
+
+* $f$ is continuous.
+* $f^{-1}(S)$ is open if $S$ is open.
+* $f^{-1}(S)$ is closed if $S$ is closed.
+:::
+
+::: {.definition name="Upper semicontinuous"}
+Let $(X, d)$ be a metric space. A function $f : X \to \R$ is _upper semicontinuous_ if $\{x \in X : f(x) \geq \alpha \}$ is closed for every $\alpha \in \R$.
+:::
+
+::: {.definition name="Lower semicontinuous"}
+Let $(X, d)$ be a metric space. A function $f : X \to \R$ is _lower semicontinuous_ if $\{x \in X : f(x) \leq \alpha \}$ is closed for every $\alpha \in \R$.
+:::
+
+::: {.theorem}
+$f : X \to \R$ is continuous if and only if $f$ is upper semicontinuous and lower semicontinuous.
+:::
+
+::: {.definition name="Maximizer / Minimizer"}
+Let $(X, d)$ be a metric space and $S \subseteq X$. A function $f : S \to \R$ has a _maximizer_ if for some $x^* \in S$, $f(x) \leq f(x^*)$ for every $x \in S$. Similarly, $f$ has a _minimizer_ if for some $x_* \in S$, $f(x) \geq f(x_*)$ for every $x \in S$.
+:::
+
+::: {.theorem name="Weierstrass"}
+Let $S$ be compact and $f : S \to \R$ be continuous. Then $f$ has a maximizer and a minimizer.
+:::
+
+::: {.theorem}
+Let  $S$ be compact and $f : S \to \R$ be upper semicontinuous. Then $f$ has a maximizer.
+:::
+
+::: {.theorem}
+Let  $S$ be compact and $f : S \to \R$ be lower semicontinuous. Then $f$ has a minimizer.
+:::
+
+::: {.theorem name="Separation"}
+Let $(X, d)$ be a metric space. If $S$ and $T$ are disjoint and closed subsets of $X$, then there exists disjoint and open sets $U$ and $V$ such that $U \supset S$ and $V \supset T$.
+:::
+
 ## Differentiable functions
+
+::: {.definition name="Differentiability"}
+Let $S \subseteq \R$, $x \in S$ and $f : S \to \R$. Then $f$ is _differentiable at $x$_ if
+$$
+\lim_{u \to 0} \frac{f(x + u) - f(x)}{u}
+$$
+exists.
+
+Namely, $f$ is _differentiable at $x$_ if there is some $y \in \R$ such that, for every $\varepsilon > 0$, there exists some $\delta > 0$ such that
+$$
+\left\{ x + u \in B_\delta(x) \cap S : u \neq 0 \right\} \implies \left\lvert \frac{f(x + u) - f(x)}{u} - y \right\rvert < \varepsilon
+$$
+where  $y = f'(x)$.
+:::
+
+::: {.definition name="Partial derivative"}
+Let $S \subseteq \R^n$, $x \in S$ and $f : S \to \R$. The _$j$th partial derivative of $f$ at $x$_ is
+$$
+D_j f(x) \deq \lim_{u \to 0} \frac{f(x + ue_j) - f(x)}{u}
+$$
+if this limit exists.
+:::
+
+::: {.definition name="Gradient"}
+If $D_j f(x)$ exists for all $j = 1, \dots, n$, then the _gradient of $f$ at $x$_ is the vector
+$$
+\nabla f(x) \deq
+\begin{bmatrix}
+D_1 f(x) \\
+\vdots \\
+D_n f(x)
+\end{bmatrix}
+\in \R^n.
+$$
+:::
+
+::: {.definition name="Jacobian"}
+Let $S \subseteq \R^n$, $x \in S$ and $f : S \to \R^m$. Suppose that $D_j f_i(x)$ exists for all $i$ and $j$, then the _Jacobian of $f$ at $x$_ is the $m\times n$ matrix
+$$
+J_f(x) \deq
+\begin{bmatrix}
+D_1 f_1(x) & \cdots & D_n f_1(x) \\
+\vdots & \ddots & \vdots \\
+D_1 f_m(x) & \cdots & D_n f_m(x)
+\end{bmatrix}_{m\times n}
+=
+\begin{bmatrix}
+\nabla f_1(x)^T \\
+\vdots \\
+\nabla f_m(x)^T
+\end{bmatrix}.
+$$
+:::
+
+::: {.definition name="Differentiability"}
+Let $S \subseteq \R^n$. Then $f : S \to \R^m$ is _differentiable at $x \in S$_ if the following two conditions hold:
+
+1. $D_j f_i (x)$ exists for all $i$ and $j$,
+2. we have
+$$
+\lim_{u \to 0} \frac{\lVert f(x + u) - f(x) - J_f(x)u \rVert}{\lVert u \rVert} = 0.
+$$
+
+> The second condition holds if and only if, for every $\varepsilon > 0$, there is some $\delta > 0$ such that, whenever $x + u \in B_\delta(x) \cap S$ and $u \neq 0_{n\times 1}$, we have
+$$
+\frac{\lVert f(x + u) - f(x) - J_f(x)u \rVert}{\lVert u \rVert} < \varepsilon.
+$$
+:::
+
+::: {.theorem}
+Suppose $S\subseteq\R^n$, $x \in S$ and $f : S \to \R^m$. Suppose that, for each $i$ and $j$, $D_j f_i(x)$ exists and that $x \mapsto D_j f_i(x)$ is continuous on $S$. Then $f$ is differentiable at $x$.
+:::
+
+::: {.theorem name="Implicit Function Theorem"}
+Let $F : \R^2 \to \R$. Suppose that $D_1F(x,y)$ and $D_2F(x,y)$ exist and are continuous in an open $U$ containing $(a, b) \in \R^2$. Suppose that $F(a, b) = 0$ and that $D_2F(a, b) \neq 0$. Then there exists $\varepsilon > 0$ and $g : B_\varepsilon \to \R$ such that $g(a) = b$, $F(x, g(x)) = 0$ for all $x \in B_\varepsilon (a)$ and
+$$
+g'(a) = -\frac{D_1F(a,b)}{D_2F(a,b)}.
+$$
+:::
 
 ## Correspondences
 
@@ -22,3 +547,33 @@ $$
 ## Support functions
 
 ## Nonlinear programming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

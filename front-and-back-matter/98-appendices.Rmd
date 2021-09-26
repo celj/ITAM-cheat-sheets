@@ -2,7 +2,27 @@
 
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
 
-# Notation in Statistics
+# Notation
+
+## Linear Algebra
+
+|Expression|Description|
+|----------|-----------|
+|$\dim S$|Dimension of $S$.|
+|$N(A)$|Null space of $A$.|
+|$R(A)$|Range of $A$.|
+|$\rk A$|Rank of $A$.|
+|$I_n$|$n$-by-$n$ identity matrix.|
+
+## Real analysis
+
+|Expression|Description|
+|----------|-----------|
+|$\interior(S)$|Interior of $S$.|
+|$\closure(S)$|Closure of $S$.|
+|$\partial S$|Boundary of $S$.|
+
+## Statistics
 
 |Expression|Description|
 |----------|-----------|
