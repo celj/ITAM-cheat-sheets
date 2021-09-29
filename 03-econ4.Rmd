@@ -1,10 +1,20 @@
+---
+knit: (function(input, ...) {
+    input <- "index.Rmd";
+    thesis_formats <- "bs4";
+    
+    source("scripts_and_filters/knit-functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
+---
+
 # Economics 4
 
-## General equilibrium
+## General Equilibrium
 
-### Pure exchange economies {-}
+### Pure Exchange Economies {-}
 
-#### Initial assumptions {-}
+#### Initial Assumptions {-}
 
 * There are $m$ consumers such that $\mathcal{I} = \{1, \dots, m\}$.
 * There are $n$ goods such that $\L = \{1, \dots, n\}$.
@@ -18,7 +28,7 @@
 If $\mathrm{x} \succ_i \mathrm{y}$, then $u_i(\mathrm{x}) > u_i(\mathrm{y})$.
 :::
 
-::: {.definition name="Exchange economy"}
+::: {.definition name="Exchange Economy"}
 A *pure exchange economy* is
 $$
 \mathcal{E} = \left\langle \mathcal{I}, (u_i, \mathrm{w}_i)_{i\in\mathcal{I}} \right\rangle,
@@ -26,28 +36,28 @@ $$
 where $\mathcal{I}$ is the set of agents; $u_i$ and $\mathrm{w}_i$ are the utility function and initial endowment of the $i$th consumer, respectively.
 :::
 
-::: {.definition name="Total endowment"}
+::: {.definition name="Total Endowment"}
 $$
 \Omega = \sum_{i \in \mathcal{I}} \mathrm{w}_i.
 $$
 :::
 
-::: {.definition name="Resource allocation"}
+::: {.definition name="Resource Allocation"}
 The *resource allocation* is denoted by $X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)$, where $\mathrm{x}_i \in \R^\L_+$.
 :::
 
-::: {.definition name="Feasible allocation"}
+::: {.definition name="Feasible Allocation"}
 The *feasible allocation* $\F$ of an economy $\mathcal{E}$ is defined by
 $$
 \F = \left\{ X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)\ :\ \mathrm{x}_i \in \R^\L_i,\ \sum_{i \in \mathcal{I}} \mathrm{x}_i = \sum_{i \in \mathcal{I}} \mathrm{w}_i \right\}.
 $$
 :::
 
-::: {.definition name="Pareto efficiency"}
+::: {.definition name="Pareto Efficiency"}
 Let $\mathcal{E}$ be an exchange economy. A feasible allocation of resources $X$ is said to be *Pareto efficient* if and only if there is no other feasible allocation $\hat{X}$ such that, for every agent in $\mathcal{I}$, $u_i(\hat{\mathrm{x}}_i) \geq u_i(\mathrm{x}_i)$ and, for at least one agent $j$, $u_j(\hat{\mathrm{x}}_j) > u_j(\mathrm{x}_j)$.
 :::
 
-::: {.definition name="Pareto dominance"}
+::: {.definition name="Pareto Dominance"}
 Let $X$ and $\hat{X}$ be two feasible allocations. We say that $\hat{X}$ *Pareto dominates* $X$ if and only if
 $$
 u_i(\hat{x}_{i,1}, \dots, \hat{x}_{i,n}) \geq u_i(x_{i,1}, \dots, x_{i,n}), \quad \forall i \in \mathcal{I},
@@ -58,16 +68,16 @@ u_j(\hat{x}_{j,1}, \dots, \hat{x}_{j,n}) > u_i(x_{j,1}, \dots, x_{j,n}).
 $$
 :::
 
-::: {.definition name="Contract curve"}
+::: {.definition name="Contract Curve"}
 The set of all Pareto allocations is known as the *contract curve*.
 :::
 
-```{r echo=FALSE, fig.cap="Edgeworth box", out.width="100%", message=FALSE, fig.pos='H'}
+```{r echo=FALSE, fig.cap="Edgeworth Box", out.width="100%", message=FALSE, fig.pos='H'}
 library(tidyverse)
 knitr::include_graphics("figures/edgeworth-box.svg")
 ```
 
-#### General case {-}
+#### General Case {-}
 
 $$
 \begin{align*}
@@ -88,9 +98,9 @@ $$
 $$
 :::
 
-### Competitive equilibrium {-}
+### Competitive Equilibrium {-}
 
-#### Initial assumptions {-}
+#### Initial Assumptions {-}
 
 * There is a market for each good.
 * Every agent can access the market without any cost.
@@ -103,7 +113,7 @@ $$
 * There is perfect competition (namely, everyone is a price-taker).
 * Prices are the only source of information for agents.
 
-::: {.definition name="Competitive equilibrium"}
+::: {.definition name="Competitive Equilibrium"}
 An ordered pair of an allocation and a price vector, $\left( X^*, \mathrm{p} = (p_1, \dots, p_n) \right)$, is called a *competitive equilibrium* if the following conditions hold:
 
 1. $\forall i \in \mathcal{I}$, $\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
@@ -139,7 +149,7 @@ $$
 Given weakly monotonic utility functions and $\mathrm{p} = (p_1, \dots, p_n)$ such that $p_\ell > 0$. If any $(X^*, \mathrm{p})$ in which maximization condition holds, $\forall i \in \mathcal{I}$, and markets clear $\forall \ell = 1, 2, \dots, n - 1$, then the market clearing condition holds for commodity $n$ as well.
 :::
 
-::: {.theorem name="Fixed point"}
+::: {.theorem name="Fixed Point"}
 For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $\mathrm{p}^* = (p_1^*, p_2^*, \dots, p_n^*)$ such that $f(\mathrm{p}^*) = \mathrm{p}^*$, where:
 $$
 \triangle^{n - 1} = \left\{ (p_1, p_2, \dots, p_n) \in \R^\L_+ : \sum_{\ell \in \L} p_\ell = 1 \right\}.
@@ -157,7 +167,7 @@ $$
 $\mathrm{p}$ is a competitive equilibrium if and only if $Z(\mathrm{p}) = 0$.
 :::
 
-#### Excess demand properties {-}
+#### Excess Demand Properties {-}
 
 * Continuous in $\mathrm{p}$.
 * Zero degree homogeneity.
@@ -180,7 +190,7 @@ Given an economy $\displaystyle \mathcal{E} = \langle \mathcal{I}, (u_i, w_i)_{i
 
 ### Production {-}
 
-#### Initial assumptions {-}
+#### Initial Assumptions {-}
 
 * There are $k$ firms such that $\mathcal{J} = \{1, \dots, k\}$.
 * The production of the firm $j$ for good $l$ is described by the function $f_{j,l}$ such that $f_j(z_{\ell,l}) = f_j(z_{1,l}, \dots, z_{n,l})$. Namely, the firm $j$ uses $z_\ell$ units of commodities $\ell \in \L$ to produce commodity $l$.
@@ -195,7 +205,7 @@ $$
 $$
 :::
 
-::: {.definition name="Competitive equilibrium"}
+::: {.definition name="Competitive Equilibrium"}
 $((X^*, Z^*), \mathrm{p})$ is called a *competitive equilibrium* if the following conditions hold:
 
 1. $\forall j \in \mathcal{J}$, $\mathrm{z}^*_j = ((z_{j,1,1'}, \dots, z_{j,1,n'}), \dots, (z_{j,n,1'}, \dots, z_{j,n,n'}))$ solves the following maximization problem:
@@ -222,7 +232,7 @@ Let $((X^*, Z^*), \mathrm{p})$ be a competitive equilibrium. Then $((X^*, Z^*), 
 
 > With production, Edgeworth box diagrams are no longer helpful.
 
-#### General case {-}
+#### General Case {-}
 
 $$
 \begin{align*}
@@ -259,25 +269,25 @@ We define the *production possibility set* as the set of all non-negative output
 
 ::: {.remark name="Friendly reminder on marginal rates"}
 <br/>
-**Marginal rate of substitution** ($\MRS$)
+**Marginal Rate of Substitution** ($\MRS$)
 
 * It is the rate at which a consumer is willing to trade one good for another to maintain a constant level of utility.
 * It is the slope of an *indifference curve*.
 * It focuses on demand side of consumer theory.
 
-**Marginal rate of transformation** ($\MRT$)
+**Marginal Rate of Transformation** ($\MRT$)
 
 * It is the amount of one good that must be given up to produce an additional unit of another good.
 * It is the slope of *production possibility frontier*.
 * It focuses on supply side of a commodity.
 
-**Marginal rate of technical substitution** ($\MRTS$)
+**Marginal Rate of Technical Substitution** ($\MRTS$)
 
 * It is the amount by which the quantity of one input has to be reduced in order to use another input.
 * It is the slope of an *isoquant curve*.
 * It focuses on production side of economic theory.
 :::
 
-## Monopoly and monopsony
+## Monopoly and Monopsony
 
-## Game theory
+## Game Theory

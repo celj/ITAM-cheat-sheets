@@ -1,13 +1,23 @@
+---
+knit: (function(input, ...) {
+    input <- "index.Rmd";
+    thesis_formats <- "bs4";
+    
+    source("scripts_and_filters/knit-functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
+---
+
 # Probability
 
-## Basics and combinatorics
+## Basics and Combinatorics
 
-## Random variables
+## Random Variables
 
-## Discrete distributions
+## Discrete Distributions
 
-## Continuous distributions
+## Continuous Distributions
 
-## Multivariate distributions
+## Multivariate Distributions
 
-### Multivariate normal distribution
+### Multivariate Normal Distribution

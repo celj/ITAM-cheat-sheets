@@ -1,9 +1,19 @@
-# Fundamentals of econometrics
+---
+knit: (function(input, ...) {
+    input <- "index.Rmd";
+    thesis_formats <- "bs4";
+    
+    source("scripts_and_filters/knit-functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
+---
 
-## Statistical foundations of econometric modelling
+# Fundamentals of Econometrics
 
-## Estimation theory
+## Statistical Foundations of Econometric Modelling
 
-## Asymptotic theory
+## Estimation Theory
 
-## Inference for linear regression
+## Asymptotic Theory
+
+## Inference for Linear Regression

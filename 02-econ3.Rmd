@@ -1,3 +1,13 @@
+---
+knit: (function(input, ...) {
+    input <- "index.Rmd";
+    thesis_formats <- "bs4";
+    
+    source("scripts_and_filters/knit-functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
+---
+
 # Economics 3
 
 You can find this cheat sheet as a `pdf` file in Spanish.

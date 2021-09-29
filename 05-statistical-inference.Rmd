@@ -1,13 +1,23 @@
+---
+knit: (function(input, ...) {
+    input <- "index.Rmd";
+    thesis_formats <- "bs4";
+    
+    source("scripts_and_filters/knit-functions.R");
+    knit_thesis(input, thesis_formats, ...)
+  })
+---
+
 # Statistical Inference
 
-## Descriptive statistics
+## Descriptive Statistics
 
-## Finite sample distributions
+## Finite Sample Distributions
 
-## Point estimation
+## Point Estimation
 
-## Interval estimation
+## Interval Estimation
 
-## Parametric hypothesis testing
+## Parametric Hypothesis Testing
 
-## Normality tests
+## Normality Tests

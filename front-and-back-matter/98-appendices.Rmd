@@ -14,7 +14,7 @@
 |$\rk A$|Rank of $A$.|
 |$I_n$|$n$-by-$n$ identity matrix.|
 
-## Real analysis
+## Real Analysis
 
 |Expression|Description|
 |----------|-----------|
