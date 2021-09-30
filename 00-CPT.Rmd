@@ -10,34 +10,43 @@ knit: (function(input, ...) {
 
 # Consumer and Producer Theory
 
+The definitions and theorems below can also be used for courses on:
+
+1. calculus,
+2. linear algebra,
+3. optimization, and
+4. real analysis.
+
 ## Linear Algebra
+
+### Basic Notions of Linear Algebra {-}
 
 > Vectors are always columns, but it is customary to write them as rows to save space.
 
 ::: {.definition name="Homogeneous System"}
-If $\mathrm{b} = 0_{m\times 1}$, the system is said to be *homogeneous* and there is at least one solution, given by $\mathrm{x} = 0_{n\times 1}$.
+If $\mathrm{b} = 0_{m\times 1}$, the system is said to be *homogeneous* and there is at least one solution, given by $\mathrm{x} = 0_{n\times 1}.$
 $$
 \ie \quad A\mathrm{x} = 0.
 $$
 :::
 
 ::: {.proposition}
-If $\mathrm{b} \neq 0$, there need not exist $\mathrm{x}$ such that $A\mathrm{x} = \mathrm{b}$.
+If $\mathrm{b} \neq 0$, there need not exist $\mathrm{x}$ such that $A\mathrm{x} = \mathrm{b}.$
 :::
 
 ::: {.definition name="Linear Combination"}
-$\mathrm{y} \in \R^m$ is a _linear combination_ of $\mathrm{x}_1, \dots, \mathrm{x}_n \in \R^m$ if there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle \mathrm{y} = \sum_{i = 1}^n \alpha_i \mathrm{x}_i$.
+$\mathrm{y} \in \R^m$ is a _linear combination_ of $\mathrm{x}_1, \dots, \mathrm{x}_n \in \R^m$ if there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle \mathrm{y} = \sum_{i = 1}^n \alpha_i \mathrm{x}_i.$
 :::
 
 ::: {.example}
-Consider three matrices $A_{m\times n}$, $B_{k\times m}$ and $C_{k\times n}$ such that $BA = C$.
+Consider three matrices $A_{m\times n}$, $B_{k\times m}$ and $C_{k\times n}$ such that $BA = C.$
 
 Observe that:
 
 1. rows of $C$ are linear combinations of rows of $A$, and
-2. columns of $C$ are linear combinations of columns of $B$.
+2. columns of $C$ are linear combinations of columns of $B.$
 
-> These statements are in fact equivalent since $BA = C \iff A^T B^T = C^T$.
+> These statements are in fact equivalent since $BA = C \iff A^T B^T = C^T.$
 
 :::
 
@@ -57,7 +66,7 @@ There are three elementary row operations:
 Let $E_{n\times n}$ be an elementary matrix. Then:
 
 1. $E$ is invertible.
-2. There exist a number $k$ of elementary matrices $E_1, \dots, E_k$ such that $E^{-1} = E_1 \cdots E_k$.
+2. There exist a number $k$ of elementary matrices $E_1, \dots, E_k$ such that $E^{-1} = E_1 \cdots E_k.$
 :::
 
 ::: {.definition name="Row Reduced Echelon Form"}
@@ -68,7 +77,7 @@ The RREF of a matrix has the following properties:
 1. all the zero rows are at the bottom,
 2. the first non-zero entry of each non-zero row is 1,
 3. if the first non-zero entry of a row occurs on column $j$ and if the first non-zero entry of the next row occurs on column $j'$, then $j < j'$, and
-4. if the first non-zero entry of a row occurs on column $j$, then all the earlier rows have zeros on column $j$.
+4. if the first non-zero entry of a row occurs on column $j$, then all the earlier rows have zeros on column $j.$
 :::
 
 ::: {.theorem}
@@ -78,7 +87,7 @@ Every matrix has a unique RREF.
 ### Rank {-}
 
 ::: {.definition name="Rank"}
-The _rank_ of $A_{m\times n}$ is the number of non-zero rows in its RREF $A'$.
+The _rank_ of $A_{m\times n}$ is the number of non-zero rows in its RREF $A'.$
 :::
 
 ::: {.definition name="Pivotal Column"}
@@ -86,7 +95,7 @@ A _pivotal column_ is one which contains the first non-zero entry of some row.
 :::
 
 ::: {.corollary}
-If $A$ is $m\times n$, then $\rk A = \rk A' \leq \min\{m, n\}$.
+If $A$ is $m\times n$, then $\rk A = \rk A' \leq \min\{m, n\}.$
 
 Also, for a given $A_{m\times n}$:
 
@@ -95,21 +104,21 @@ Also, for a given $A_{m\times n}$:
 :::
 
 ::: {.theorem}
-Let $A$ be $m \times n$. Then $\rk A = m$ if and only if, $\forall \mathrm{b} \in \R^m$, $\exists \mathrm{x} \in \R^n$ such that $A\mathrm{x} = \mathrm{b}$. Namely, there is **at least one solution** to the system.
+Let $A$ be $m \times n.$ Then $\rk A = m$ if and only if, $\forall \mathrm{b} \in \R^m$, $\exists \mathrm{x} \in \R^n$ such that $A\mathrm{x} = \mathrm{b}.$ Namely, there is **at least one solution** to the system.
 :::
 
 ::: {.theorem}
-Let $A$ be $m \times n$. Then $\rk A = n$ if and only if, $\forall \mathrm{b} \in \R^m$, if $A\mathrm{x} = A\mathrm{y} = \mathrm{b}$, then $\mathrm{x} = \mathrm{y}$. Namely, there is **at most one solution** to the system.
+Let $A$ be $m \times n.$ Then $\rk A = n$ if and only if, $\forall \mathrm{b} \in \R^m$, if $A\mathrm{x} = A\mathrm{y} = \mathrm{b}$, then $\mathrm{x} = \mathrm{y}.$ Namely, there is **at most one solution** to the system.
 :::
 
 ::: {.corollary}
-Let $A$ be $m\times n$. For each $\mathrm{b} \in \R^m$, $A\mathrm{x} = \mathrm{b}$ has a unique solution in $\R^n$ if and only if $\rk A = m = n$.
+Let $A$ be $m\times n.$ For each $\mathrm{b} \in \R^m$, $A\mathrm{x} = \mathrm{b}$ has a unique solution in $\R^n$ if and only if $\rk A = m = n.$
 :::
 
 ### Subspaces {-}
 
 ::: {.definition name="Subspace"}
-A non-empty set $S \subseteq \R^m$ is a _subspace_ of $R^m$ if $\alpha\mathrm{x} + \beta\mathrm{y} \in S$ whenever $\mathrm{x}, \mathrm{y} \in S$ and $\alpha, \beta \in \R$.
+A non-empty set $S \subseteq \R^m$ is a _subspace_ of $R^m$ if $\alpha\mathrm{x} + \beta\mathrm{y} \in S$ whenever $\mathrm{x}, \mathrm{y} \in S$ and $\alpha, \beta \in \R.$
 :::
 
 ::: {.proposition}
@@ -138,13 +147,13 @@ For any $A_{m\times n}$, the following propositions hold:
 3. $N(A) \subseteq N(BA)$,
 4. $R(BA) \subseteq R(B)$,
 5. $R(A) = \R^m \iff \rk A = m$, and
-6. $N(A) = \{0\} \iff \rk A = n$.
+6. $N(A) = \{0\} \iff \rk A = n.$
 :::
 
 ::: {.definition name="Linear Span"}
-Vectors $\mathrm{a}_1, \dots, \mathrm{a}_n \in S$ _span_ $S$ if, for every $\mathrm{x} \in S$, there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle \mathrm{x} = \sum_{i = 1}^n \alpha_i \mathrm{a}_i$.
+Vectors $\mathrm{a}_1, \dots, \mathrm{a}_n \in S$ _span_ $S$ if, for every $\mathrm{x} \in S$, there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle \mathrm{x} = \sum_{i = 1}^n \alpha_i \mathrm{a}_i.$
 
-Namely, each $\mathrm{x}$ is a linear combination of $\mathrm{a}_1, \dots, \mathrm{a}_n$.
+Namely, each $\mathrm{x}$ is a linear combination of $\mathrm{a}_1, \dots, \mathrm{a}_n.$
 :::
 
 ::: {.definition name="Linear Independence"}
@@ -154,7 +163,7 @@ $$
 $$
 :::
 
-> A linearly independent set cannot contain $0$.
+> A linearly independent set cannot contain $0.$
 
 ::: {.proposition}
 For any given matrix, the following propositions hold:
@@ -165,15 +174,15 @@ For any given matrix, the following propositions hold:
 :::
 
 ::: {.lemma}
-$\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subset \R^m$ is linearly dependent if and only if, for some $k \in \{2, \dots, n\}$, $a_k$ is a linear combination of $\mathrm{a}_1, \dots, \mathrm{a}_{k-1}$.
+$\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subset \R^m$ is linearly dependent if and only if, for some $k \in \{2, \dots, n\}$, $a_k$ is a linear combination of $\mathrm{a}_1, \dots, \mathrm{a}_{k-1}.$
 :::
 
 ::: {.definition name="Basis"}
-Let $S$ be a subspace of $\R^m$. A set $\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subseteq S$ is a _basis_ for $S$ if it spans $S$ and is linearly independent.
+Let $S$ be a subspace of $\R^m.$ A set $\{\mathrm{a}_1, \dots, \mathrm{a}_n\} \subseteq S$ is a _basis_ for $S$ if it spans $S$ and is linearly independent.
 :::
 
 ::: {.theorem}
-Let $S$ be a subspace of $\R^m$ with basis $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$. If $\{\mathrm{b}_1, \dots, \mathrm{b}_r\} \subset S$ is linearly independent, then $r \leq n$.
+Let $S$ be a subspace of $\R^m$ with basis $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}.$ If $\{\mathrm{b}_1, \dots, \mathrm{b}_r\} \subset S$ is linearly independent, then $r \leq n.$
 :::
 
 ::: {.corollary}
@@ -181,61 +190,61 @@ Any $m + 1$ vectors in $\R^m$ are linearly dependent.
 :::
 
 ::: {.corollary}
-If $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$ and $\{\mathrm{b}_1, \dots, \mathrm{b}_r\}$ are two bases for $S$, then $n = r$.
+If $\{\mathrm{a}_1, \dots, \mathrm{a}_n\}$ and $\{\mathrm{b}_1, \dots, \mathrm{b}_r\}$ are two bases for $S$, then $n = r.$
 :::
 
 ::: {.definition name="Dimension"}
-The _dimension_ of a subspace $S$ is the number of elements in any basis for $S$.
+The _dimension_ of a subspace $S$ is the number of elements in any basis for $S.$
 :::
 
 ::: {.theorem name="Fundamental Theorem of Linear Algebra I"}
-Let $A$ be $m\times n$. Then,
+Let $A$ be $m\times n.$ Then,
 
 1. $\dim R(A^T) = \rk A$,
 2. $\rk A = \rk A^T$, and
-3. $\dim N(A) = n - \rk A$.
+3. $\dim N(A) = n - \rk A.$
 :::
 
 ### Orthogonality {-}
 
 ::: {.definition name="Orthogonal Complement"}
-Let $S$ be a subspace of $\R^m$. The _orthogonal complement_ of $S$ is the set
+Let $S$ be a subspace of $\R^m.$ The _orthogonal complement_ of $S$ is the set
 $$
 S^\perp = \left\{ \mathrm{y} \in \R^m : \mathrm{y} \cdot \mathrm{x} = 0,\ \forall \mathrm{x} \in S \right\}.
 $$
 :::
 
 ::: {.lemma}
-For any subspace $S$ of $\R^m$, $S \cap S^\perp = \{0\}$.
+For any subspace $S$ of $\R^m$, $S \cap S^\perp = \{0\}.$
 :::
 
 ::: {.theorem name="Fundamental Theorem of Linear Algebra II"}
-Let $A$ be $m\times n$. Then,
+Let $A$ be $m\times n.$ Then,
 
 1. $R(A) = N(A^T)^\perp$, and
-2. $R(A)^\perp = N(A^T)$.
+2. $R(A)^\perp = N(A^T).$
 :::
 
 ::: {.corollary}
-For any subspace $S$ of $\R^m$, $(S^\perp)^\perp = S$.
+For any subspace $S$ of $\R^m$, $(S^\perp)^\perp = S.$
 :::
 
 ### Inverses {-}
 
 ::: {.theorem}
-Let $A$ and $C$ be both $n\times n$. If $AC = I$, then $\rk A = \rk C = n$.
+Let $A$ and $C$ be both $n\times n.$ If $AC = I$, then $\rk A = \rk C = n.$
 :::
 
 ::: {.theorem}
-Let $A$ and $C$ be both $n\times n$. If $AC = I$, then $CA = I$.
+Let $A$ and $C$ be both $n\times n.$ If $AC = I$, then $CA = I.$
 :::
 
 ::: {.definition name="Invertible Matrix"}
-$A_{n\times n}$ is _invertible_ if there exists $C_{n\times n}$ such that $AC =CA = I$.
+$A_{n\times n}$ is _invertible_ if there exists $C_{n\times n}$ such that $AC =CA = I.$
 :::
 
 ::: {.theorem}
-If $AC = CA = I$ and if $AB = BA =I$, then $C = B$.
+If $AC = CA = I$ and if $AB = BA =I$, then $C = B.$
 :::
 
 ::: {.remark}
@@ -243,10 +252,12 @@ If $A$ and $B$ are invertible, then $AB$ is invertible as well.
 :::
 
 ::: {.remark}
-If $A$ is invertible, then so is $A^T$ and $(A^T)^{-1} = (A^{-1})^T$.
+If $A$ is invertible, then so is $A^T$ and $(A^T)^{-1} = (A^{-1})^T.$
 :::
 
 ## Real Analysis
+
+### Basic Notions of Topology {-}
 
 ::: {.definition name="Metric"}
 Let $X$ be a set. A function $d : X \times X \to \R$ is a _metric_ on $X$ if, for all $x, y, z \in X$, the following conditions hold:
@@ -254,19 +265,19 @@ Let $X$ be a set. A function $d : X \times X \to \R$ is a _metric_ on $X$ if, fo
 1. $d(x,y) \geq 0$,
 2. $d(x,y) = 0 \iff x = y$,
 3. $d(x, y) = d((y, x)$, and
-4. $d(x, y) \leq d(x, z) + d(z, y)$.
+4. $d(x, y) \leq d(x, z) + d(z, y).$
 :::
 
 ::: {.definition name="Metric Space"}
-A _metric space_ is a pair $(X, d)$ where $X$ is a set and $d$ is a metric on $X$.
+A _metric space_ is a pair $(X, d)$ where $X$ is a set and $d$ is a metric on $X.$
 :::
 
 ::: {.definition name="Open Ball"}
-Let $(X, d)$ be a metric space. For any $x \in X$ and $\varepsilon > 0$, $B(x, \varepsilon) = \{ y \in X : d(x, y) < \varepsilon \}$ is the _open ball_ centered at $x$ with radius $\varepsilon$.
+Let $(X, d)$ be a metric space. For any $x \in X$ and $\varepsilon > 0$, $B(x, \varepsilon) = \{ y \in X : d(x, y) < \varepsilon \}$ is the _open ball_ centered at $x$ with radius $\varepsilon.$
 :::
 
 ::: {.definition name="Interior"}
-Let $S \subseteq X$. $x$ is an _interior point_ of $S$ if $B(x, \varepsilon) \subset S$ for some $\varepsilon > 0$. The set of all interior points of $S$ is the _interior_ of $S$.
+Let $S \subseteq X.$ $x$ is an _interior point_ of $S$ if $B(x, \varepsilon) \subset S$ for some $\varepsilon > 0.$ The set of all interior points of $S$ is the _interior_ of $S.$
 :::
 
 ::: {.remark}
@@ -276,7 +287,7 @@ $$
 :::
 
 ::: {.definition name="Open Set"}
-$S$ is _open_ if $S = \interior (S)$.
+$S$ is _open_ if $S = \interior (S).$
 :::
 
 ::: {.remark}
@@ -284,7 +295,7 @@ $\O$, $\interior(S)$ and $B(x, \varepsilon)$ are open.
 :::
 
 ::: {.definition name="Closure"}
-Let $S \subseteq X$. $x$ is an _closure point_ of $S$ if $B(x, \varepsilon) \cap S \neq \O$ for every $\varepsilon > 0$. The set of all closure points of $S$ is the _closure_ of $S$.
+Let $S \subseteq X.$ $x$ is an _closure point_ of $S$ if $B(x, \varepsilon) \cap S \neq \O$ for every $\varepsilon > 0.$ The set of all closure points of $S$ is the _closure_ of $S.$
 :::
 
 ::: {.remark}
@@ -294,7 +305,7 @@ $$
 :::
 
 ::: {.definition name="Closed Set"}
-$S$ is _closed_ if $S = \closure (S)$.
+$S$ is _closed_ if $S = \closure (S).$
 :::
 
 ::: {.remark}
@@ -306,37 +317,37 @@ $S$ is closed if and only if $X \setminus S$ is open.
 :::
 
 ::: {.definition name="Boundary"}
-Let $S \subseteq X$. $x$ is an _boundary point_ of $S$ if $B(x, \varepsilon) \cap S \neq \O$ and $B(x, \varepsilon) \cap (X \setminus S) \neq \O$ for every $\varepsilon > 0$. The set of all boundary points of $S$ is the _boundary_ of $S$.
+Let $S \subseteq X.$ $x$ is an _boundary point_ of $S$ if $B(x, \varepsilon) \cap S \neq \O$ and $B(x, \varepsilon) \cap (X \setminus S) \neq \O$ for every $\varepsilon > 0.$ The set of all boundary points of $S$ is the _boundary_ of $S.$
 :::
 
 ::: {.remark}
 <br/>
 
-* $\partial S = \partial(X \setminus S)$.
-* $\partial S \subseteq \closure(S)$.
-* $S$ is closed if and only if $\partial S \subseteq S$.
+* $\partial S = \partial(X \setminus S).$
+* $\partial S \subseteq \closure(S).$
+* $S$ is closed if and only if $\partial S \subseteq S.$
 * $\partial S$ is a closed set.
 :::
 
 ::: {.definition name="Metric Subspace"}
-Let $(X, d)$ be a metric space and $S \subseteq X$. $d$ is a metric on $S$ and therefore $(S, d)$ is a metric space as well, usually referred to as a _metric subspace_ of $(X, d)$.
+Let $(X, d)$ be a metric space and $S \subseteq X.$ $d$ is a metric on $S$ and therefore $(S, d)$ is a metric space as well, usually referred to as a _metric subspace_ of $(X, d).$
 :::
 
 ::: {.theorem}
-Let $(S, d)$ be a metric subspace of $(X, d)$.
+Let $(S, d)$ be a metric subspace of $(X, d).$
 
-* $A \subseteq S$ is open in $(S, d)$ if and only if there exists an open set $U$ in $(X, d)$ such that $A = S \cap U$.
-* $A \subseteq S$ is closed in $(S, d)$ if and only if there exists a closed set $U$ in $(X, d)$ such that $A = S \cap U$.
+* $A \subseteq S$ is open in $(S, d)$ if and only if there exists an open set $U$ in $(X, d)$ such that $A = S \cap U.$
+* $A \subseteq S$ is closed in $(S, d)$ if and only if there exists a closed set $U$ in $(X, d)$ such that $A = S \cap U.$
 :::
 
 ### Sequences {-}
 
 ::: {.definition name="Sequence"}
-Let $(X, d)$ be a metric space. A _sequence_ in $(X, d)$ is a map $f : \N \to X$.
+Let $(X, d)$ be a metric space. A _sequence_ in $(X, d)$ is a map $f : \N \to X.$
 :::
 
 ::: {.definition name="Convergent Sequence"}
-A sequence $\{x_k\}$ is said to be _convergent_ if the following property holds: there exists some $x \in X$ such that, for every $\varepsilon > 0$, there exists some $l \in \N$ such that, for every $k > l$, $x_k \in B(x, \varepsilon)$. Such $x$ is called the limit of $\{x_k\}$.
+A sequence $\{x_k\}$ is said to be _convergent_ if the following property holds: there exists some $x \in X$ such that, for every $\varepsilon > 0$, there exists some $l \in \N$ such that, for every $k > l$, $x_k \in B(x, \varepsilon).$ Such $x$ is called the limit of $\{x_k\}.$
 :::
 
 ::: {.theorem}
@@ -344,23 +355,23 @@ If $\lim x_k$ exists, it is unique.
 :::
 
 ::: {.definition name="Subsequence"}
-Let $\{x_k\}$ be a sequence. A _subsequence_ of $\{x_k\}$ is a sequence obtained by deleting some (possibly none, possibly infinitely many) members of $\{x_k\}$. Namely, let $\{k_n\}$ be a non-decreasing sequence of integers. Then $\{x_{k_{n}}\}$ is a subsequence of $\{x_k\}$.
+Let $\{x_k\}$ be a sequence. A _subsequence_ of $\{x_k\}$ is a sequence obtained by deleting some (possibly none, possibly infinitely many) members of $\{x_k\}.$ Namely, let $\{k_n\}$ be a non-decreasing sequence of integers. Then $\{x_{k_{n}}\}$ is a subsequence of $\{x_k\}.$
 :::
 
 ::: {.theorem}
-$\{x_k\}$ is convergent with a limit $x$ if and only if every subsequence of $\{x_k\}$ is convergent with limit $x$.
+$\{x_k\}$ is convergent with a limit $x$ if and only if every subsequence of $\{x_k\}$ is convergent with limit $x.$
 :::
 
 ::: {.theorem}
-Let $(X, d)$ be a metric space and $S \subseteq X$. $x \in \closure(S)$ if and only if there exists a sequence $\{x_k\}$ such that $x_k \in S$ for all $k$, and $\lim x_k = x$.
+Let $(X, d)$ be a metric space and $S \subseteq X.$ $x \in \closure(S)$ if and only if there exists a sequence $\{x_k\}$ such that $x_k \in S$ for all $k$, and $\lim x_k = x.$
 :::
 
 ::: {.theorem}
-$S$ is closed if and only if every convergent sequence in $S$ converges to an element of $S$.
+$S$ is closed if and only if every convergent sequence in $S$ converges to an element of $S.$
 :::
 
 ::: {.definition name="Bounded Sequence"}
-Let $(X, d)$ be a metric space. A sequence $\{x_k\}$ in $X$ is _bounded_ if it is contained in a ball with finite radius, i.e., if for some $\varepsilon > 0$ and $y \in X$, $x_k \in B(y, \varepsilon)$ for every $k$.
+Let $(X, d)$ be a metric space. A sequence $\{x_k\}$ in $X$ is _bounded_ if it is contained in a ball with finite radius, i.e., if for some $\varepsilon > 0$ and $y \in X$, $x_k \in B(y, \varepsilon)$ for every $k.$
 :::
 
 ::: {.theorem name="Bolzano–Weierstrass"}
@@ -368,7 +379,7 @@ Every bounded sequence in $\R^m$ has a convergent subsequence.
 :::
 
 ::: {.definition name="Cauchy Sequence"}
-Let $(X, d)$ be a metric space. A sequence $\{x_k\}$ in $X$ is a _Cauchy sequence_ if, for every $\varepsilon > 0$, there exists a positive integer $k_\varepsilon$ such that, whenever $k, l > k_\varepsilon$, $d(x_k, x_l) < \varepsilon$.
+Let $(X, d)$ be a metric space. A sequence $\{x_k\}$ in $X$ is a _Cauchy sequence_ if, for every $\varepsilon > 0$, there exists a positive integer $k_\varepsilon$ such that, whenever $k, l > k_\varepsilon$, $d(x_k, x_l) < \varepsilon.$
 :::
 
 ::: {.theorem}
@@ -376,19 +387,19 @@ If $\{x_k\}$ is convergent, then $\{x_k\}$ is Cauchy. If $\{x_k\}$ is Cauchy, th
 :::
 
 ::: {.definition name="Completeness"}
-Let $(X, d)$ be a metric space. $(X, d)$ is complete if every Cauchy sequence in $X$ converges to an element of $X$.
+Let $(X, d)$ be a metric space. $(X, d)$ is complete if every Cauchy sequence in $X$ converges to an element of $X.$
 :::
 
 ::: {.theorem}
-Let $(X, d)$ be complete and $S \subseteq X$. $(S, d)$ is complete if and only if $S$ is a closed subset of $X$.
+Let $(X, d)$ be complete and $S \subseteq X.$ $(S, d)$ is complete if and only if $S$ is a closed subset of $X.$
 :::
 
 ::: {.definition name="Open Cover"}
-Let $(X, d)$ be a metric space and $S \subseteq X$. A collection of open sets $O_i$, $i \in I$, is an _open cover_ for $S$ if $\displaystyle S \subset \bigcup_{i \in I} O_i$.
+Let $(X, d)$ be a metric space and $S \subseteq X.$ A collection of open sets $O_i$, $i \in I$, is an _open cover_ for $S$ if $\displaystyle S \subset \bigcup_{i \in I} O_i.$
 :::
 
 ::: {.definition name="Finite Subcover"}
-Let $O_i$, $i \in I$, be an open cover for $S$. If $I_0$ is a finite subset of $I$ and $\displaystyle S \subset \bigcup_{i \in I_0} O_i$, then the collection $O_i$, $i \in I_0$, is a _finite subcover_ of $S$.
+Let $O_i$, $i \in I$, be an open cover for $S.$ If $I_0$ is a finite subset of $I$ and $\displaystyle S \subset \bigcup_{i \in I_0} O_i$, then the collection $O_i$, $i \in I_0$, is a _finite subcover_ of $S.$
 :::
 
 ::: {.definition name="Compactness"}
@@ -400,7 +411,7 @@ A compact set is bounded and closed.
 :::
 
 ::: {.theorem name="Sequential Compactness"}
-$S$ is compact if and only if every sequence in $S$ has a subsequence that converges to a point in $S$.
+$S$ is compact if and only if every sequence in $S$ has a subsequence that converges to a point in $S.$
 :::
 
 ::: {.theorem name="Heine-Borel"}
@@ -410,23 +421,23 @@ A subset of $\R^m$ is compact if and only if it is closed and bounded.
 ### Continuity {-}
 
 ::: {.definition name="Continuity"}
-Let $(X, d)$ and $(Y, \sigma)$ be metric spaces.  A function $f : X \to Y$ is _continuous at $x \in X$_ if, for every $\varepsilon > 0$, there exists $\delta > 0$ such that, whenever $x' \in B(x, \delta)$, $f(x') \in B(f(x), \varepsilon)$.
+Let $(X, d)$ and $(Y, \sigma)$ be metric spaces.  A function $f : X \to Y$ is _continuous at $x \in X$_ if, for every $\varepsilon > 0$, there exists $\delta > 0$ such that, whenever $x' \in B(x, \delta)$, $f(x') \in B(f(x), \varepsilon).$
 :::
 
 ::: {.definition name="Global Continuity"}
-$f$ is _continuous_ if it is continuous at $x$ for every $x \in X$.
+$f$ is _continuous_ if it is continuous at $x$ for every $x \in X.$
 :::
 
 ::: {.theorem}
-$f$ is continuous at $x$ if and only if for every sequence $\{x_k\}$ in $X$, whenever $\lim x_k = x$, $\lim f(x_k) = f(x)$.
+$f$ is continuous at $x$ if and only if for every sequence $\{x_k\}$ in $X$, whenever $\lim x_k = x$, $\lim f(x_k) = f(x).$
 :::
 
 ::: {.definition name="Image"}
-Let $(X, d)$ and $(Y, \sigma)$ be metric spaces and $f : X \to Y$. If $S \subseteq X$, then $f(S) = \{ f(x) \in Y : x \in S \}$.
+Let $(X, d)$ and $(Y, \sigma)$ be metric spaces and $f : X \to Y.$ If $S \subseteq X$, then $f(S) = \{ f(x) \in Y : x \in S \}.$
 :::
 
 ::: {.definition name="Inverse Image"}
-Let $(X, d)$ and $(Y, \sigma)$ be metric spaces and $f : X \to Y$. If $S \subseteq Y$, then $f^{-1}(S) = \{ x \in X : f(x) \in S \}$.
+Let $(X, d)$ and $(Y, \sigma)$ be metric spaces and $f : X \to Y.$ If $S \subseteq Y$, then $f^{-1}(S) = \{ x \in X : f(x) \in S \}.$
 :::
 
 ::: {.theorem}
@@ -438,11 +449,11 @@ The following are equivalent:
 :::
 
 ::: {.definition name="Upper Semicontinuous"}
-Let $(X, d)$ be a metric space. A function $f : X \to \R$ is _upper semicontinuous_ if $\{x \in X : f(x) \geq \alpha \}$ is closed for every $\alpha \in \R$.
+Let $(X, d)$ be a metric space. A function $f : X \to \R$ is _upper semicontinuous_ if $\{x \in X : f(x) \geq \alpha \}$ is closed for every $\alpha \in \R.$
 :::
 
 ::: {.definition name="Lower Semicontinuous"}
-Let $(X, d)$ be a metric space. A function $f : X \to \R$ is _lower semicontinuous_ if $\{x \in X : f(x) \leq \alpha \}$ is closed for every $\alpha \in \R$.
+Let $(X, d)$ be a metric space. A function $f : X \to \R$ is _lower semicontinuous_ if $\{x \in X : f(x) \leq \alpha \}$ is closed for every $\alpha \in \R.$
 :::
 
 ::: {.theorem}
@@ -450,7 +461,7 @@ $f : X \to \R$ is continuous if and only if $f$ is upper semicontinuous and lowe
 :::
 
 ::: {.definition name="Maximizer / Minimizer"}
-Let $(X, d)$ be a metric space and $S \subseteq X$. A function $f : S \to \R$ has a _maximizer_ if for some $x^* \in S$, $f(x) \leq f(x^*)$ for every $x \in S$. Similarly, $f$ has a _minimizer_ if for some $x_* \in S$, $f(x) \geq f(x_*)$ for every $x \in S$.
+Let $(X, d)$ be a metric space and $S \subseteq X.$ A function $f : S \to \R$ has a _maximizer_ if for some $x^* \in S$, $f(x) \leq f(x^*)$ for every $x \in S.$ Similarly, $f$ has a _minimizer_ if for some $x_* \in S$, $f(x) \geq f(x_*)$ for every $x \in S.$
 :::
 
 ::: {.theorem name="Weierstrass"}
@@ -466,13 +477,13 @@ Let  $S$ be compact and $f : S \to \R$ be lower semicontinuous. Then $f$ has a m
 :::
 
 ::: {.theorem name="Separation"}
-Let $(X, d)$ be a metric space. If $S$ and $T$ are disjoint and closed subsets of $X$, then there exists disjoint and open sets $U$ and $V$ such that $U \supset S$ and $V \supset T$.
+Let $(X, d)$ be a metric space. If $S$ and $T$ are disjoint and closed subsets of $X$, then there exists disjoint and open sets $U$ and $V$ such that $U \supset S$ and $V \supset T.$
 :::
 
 ## Differentiable Functions
 
 ::: {.definition name="Differentiability"}
-Let $S \subseteq \R$, $x \in S$ and $f : S \to \R$. Then $f$ is _differentiable at $x$_ if
+Let $S \subseteq \R$, $x \in S$ and $f : S \to \R.$ Then $f$ is _differentiable at $x$_ if
 $$
 \lim_{u \to 0} \frac{f(x + u) - f(x)}{u}
 $$
@@ -482,13 +493,13 @@ Namely, $f$ is _differentiable at $x$_ if there is some $y \in \R$ such that, fo
 $$
 \left\{ x + u \in B_\delta(x) \cap S : u \neq 0 \right\} \implies \left\lvert \frac{f(x + u) - f(x)}{u} - y \right\rvert < \varepsilon
 $$
-where  $y = f'(x)$.
+where  $y = f'(x).$
 :::
 
 ::: {.definition name="Partial Derivative"}
-Let $S \subseteq \R^n$, $x \in S$ and $f : S \to \R$. The _$j$th partial derivative of $f$ at $x$_ is
+Let $S \subseteq \R^n$, $x \in S$ and $f : S \to \R.$ The _$j$th partial derivative of $f$ at $x$_ is
 $$
-D_j f(x) \deq \lim_{u \to 0} \frac{f(x + ue_j) - f(x)}{u}
+D_j f(x) := \lim_{u \to 0} \frac{f(x + ue_j) - f(x)}{u}
 $$
 if this limit exists.
 :::
@@ -496,7 +507,7 @@ if this limit exists.
 ::: {.definition name="Gradient"}
 If $D_j f(x)$ exists for all $j = 1, \dots, n$, then the _gradient of $f$ at $x$_ is the vector
 $$
-\nabla f(x) \deq
+\nabla f(x) :=
 \begin{bmatrix}
 D_1 f(x) \\
 \vdots \\
@@ -507,9 +518,9 @@ $$
 :::
 
 ::: {.definition name="Jacobian"}
-Let $S \subseteq \R^n$, $x \in S$ and $f : S \to \R^m$. Suppose that $D_j f_i(x)$ exists for all $i$ and $j$, then the _Jacobian of $f$ at $x$_ is the $m\times n$ matrix
+Let $S \subseteq \R^n$, $x \in S$ and $f : S \to \R^m.$ Suppose that $D_j f_i(x)$ exists for all $i$ and $j$, then the _Jacobian of $f$ at $x$_ is the $m\times n$ matrix
 $$
-J_f(x) \deq
+J_f(x) :=
 \begin{bmatrix}
 D_1 f_1(x) & \cdots & D_n f_1(x) \\
 \vdots & \ddots & \vdots \\
@@ -525,7 +536,7 @@ $$
 :::
 
 ::: {.definition name="Differentiability"}
-Let $S \subseteq \R^n$. Then $f : S \to \R^m$ is _differentiable at $x \in S$_ if the following two conditions hold:
+Let $S \subseteq \R^n.$ Then $f : S \to \R^m$ is _differentiable at $x \in S$_ if the following two conditions hold:
 
 1. $D_j f_i (x)$ exists for all $i$ and $j$,
 2. we have
@@ -540,18 +551,18 @@ $$
 :::
 
 ::: {.theorem}
-Suppose $S\subseteq\R^n$, $x \in S$ and $f : S \to \R^m$. Suppose that, for each $i$ and $j$, $D_j f_i(x)$ exists and that $x \mapsto D_j f_i(x)$ is continuous on $S$. Then $f$ is differentiable at $x$.
+Suppose $S\subseteq\R^n$, $x \in S$ and $f : S \to \R^m.$ Suppose that, for each $i$ and $j$, $D_j f_i(x)$ exists and that $x \mapsto D_j f_i(x)$ is continuous on $S.$ Then $f$ is differentiable at $x.$
 :::
 
 ::: {.theorem name="Implicit Function"}
-Let $F : \R^2 \to \R$. Suppose that $D_1F(x,y)$ and $D_2F(x,y)$ exist and are continuous in an open $U$ containing $(a, b) \in \R^2$. Suppose that $F(a, b) = 0$ and that $D_2F(a, b) \neq 0$. Then there exists $\varepsilon > 0$ and $g : B_\varepsilon \to \R$ such that $g(a) = b$, $F(x, g(x)) = 0$ for all $x \in B_\varepsilon (a)$ and
+Let $F : \R^2 \to \R.$ Suppose that $D_1F(x,y)$ and $D_2F(x,y)$ exist and are continuous in an open $U$ containing $(a, b) \in \R^2.$ Suppose that $F(a, b) = 0$ and that $D_2F(a, b) \neq 0.$ Then there exists $\varepsilon > 0$ and $g : B_\varepsilon \to \R$ such that $g(a) = b$, $F(x, g(x)) = 0$ for all $x \in B_\varepsilon (a)$ and
 $$
 g'(a) = -\frac{D_1F(a,b)}{D_2F(a,b)}.
 $$
 :::
 
 ::: {.theorem name="Implicit Function"}
-Suppose $F : \R^{n + m} \to \R^m$ is differentiable in an open set $U$ containing $(a, b) \in \R^{n + m}$ and suppose that the entries of $J_F (x,y)$ are continuous at each $(x,y) \in U$. Let $A_{m\times n}$ and $B_{m\times m}$ be defined by $J_F (a, b)$ as follows:
+Suppose $F : \R^{n + m} \to \R^m$ is differentiable in an open set $U$ containing $(a, b) \in \R^{n + m}$ and suppose that the entries of $J_F (x,y)$ are continuous at each $(x,y) \in U.$ Let $A_{m\times n}$ and $B_{m\times m}$ be defined by $J_F (a, b)$ as follows:
 $$
 A =
 \begin{bmatrix}
@@ -566,49 +577,415 @@ D_{n+1} F_1(a,b) & \cdots & D_{n+m} F_1(a,b) \\
 D_{n+1} F_m(a,b) & \cdots & D_{n+m} F_m(a,b)
 \end{bmatrix}_{m\times m}
 $$
-and suppose that $F(a,b) = 0$ and $B$ is non-singular. Then there exists $\varepsilon > 0$ and $g : B_\varepsilon (a) \to \R^m$ such that $g(a) = b$, $F(x, g(x)) = 0$ for all $x \in B_\varepsilon (a)$ and $J_g (a) = -B^{-1}_{m\times m} A_{m\times n}$.
+and suppose that $F(a,b) = 0$ and $B$ is non-singular. Then there exists $\varepsilon > 0$ and $g : B_\varepsilon (a) \to \R^m$ such that $g(a) = b$, $F(x, g(x)) = 0$ for all $x \in B_\varepsilon (a)$ and $J_g (a) = -B^{-1}_{m\times m} A_{m\times n}.$
 :::
 
 ::: {.theorem name="Inverse Function"}
-Suppose that $f : \R^m \to \R^m$ is differentiable in an open set $U$ containing $b \in \R^m$. Suppose that the partials of $f$ are continuous on $U$. Suppose that $f(b) = a$ and $J_f(b)$ is non-singular. Then there exists some $\varepsilon > 0$ and some $g : B_\varepsilon (a) \to \R^m$ such that $g(a) = b$, $f(g(x)) = x$ for all $x \in B_\varepsilon (a)$, and $g$ is differentiable at $a$ with $J_g (a) = J_f (b)^{-1}$.
+Suppose that $f : \R^m \to \R^m$ is differentiable in an open set $U$ containing $b \in \R^m.$ Suppose that the partials of $f$ are continuous on $U.$ Suppose that $f(b) = a$ and $J_f(b)$ is non-singular. Then there exists some $\varepsilon > 0$ and some $g : B_\varepsilon (a) \to \R^m$ such that $g(a) = b$, $f(g(x)) = x$ for all $x \in B_\varepsilon (a)$, and $g$ is differentiable at $a$ with $J_g (a) = J_f (b)^{-1}.$
 :::
 
 ::: {.theorem name="Weierstrass"}
-Let $S \subseteq \R^n$ be compact and let $f : S \to \R$ be continuous. Then there exists $x'$ and $x''$ in $S$ such that, for all $x \in S$, $f(x') \leq f(x) \leq f(x'')$.
+Let $S \subseteq \R^n$ be compact and let $f : S \to \R$ be continuous. Then there exists $x'$ and $x''$ in $S$ such that, for all $x \in S$, $f(x') \leq f(x) \leq f(x'').$
 :::
 
 ::: {.theorem}
-Suppose $f : \R^n \to \R$ attains its maximum or minimum on an open set $U$ at some $x \in U$. If $D_i f(x)$ exists, then $D_i f(x) = 0$.
+Suppose $f : \R^n \to \R$ attains its maximum or minimum on an open set $U$ at some $x \in U.$ If $D_i f(x)$ exists, then $D_i f(x) = 0.$
 :::
 
 ::: {.lemma name="Rolle's}
-Suppose $f : [a, b] \to \R$ is continuous at each $x \in [a, b]$ and $f$ is differentiable at each $x \in (a, b)$. Furthermore, suppose that $f(a) = 0 = f(b)$. Then there exists some $c \in (a, b)$ such that $f'(c) = 0$.
+Suppose $f : [a, b] \to \R$ is continuous at each $x \in [a, b]$ and $f$ is differentiable at each $x \in (a, b).$ Furthermore, suppose that $f(a) = 0 = f(b).$ Then there exists some $c \in (a, b)$ such that $f'(c) = 0.$
 :::
 
 ::: {.theorem name="Mean Value"}
-Suppose that $f : [a, b] \to \R$ is continuous at each $x \in [a, b]$ and that $f$ is differentiable at each $x \in (a, b)$. Then there exists $c \in (a, b)$ such that
-$$ f'(c) = \frac{f(b) - f(a)}{b - a}.
+Suppose that $f : [a, b] \to \R$ is continuous at each $x \in [a, b]$ and that $f$ is differentiable at each $x \in (a, b).$ Then there exists $c \in (a, b)$ such that
+$$
+f'(c) = \frac{f(b) - f(a)}{b - a}.
 $$
 :::
 
 ::: {.theorem name="Mean Value"}
-Let $U$ be an open set in $\R^n$ containing $a$ and $b$. Suppose that $(1 - t)a + tb \in U$ whenever $t \in [0, 1]$. Suppose that $f : U \to \R$ is differentiable at each $x \in U$. Then there exists $t' \in (0,1)$ such that $\nabla f(c') \cdot (b - a) = f(b) - f(a)$ where $c' = (1 - t')a + t'b$.
+Let $U$ be an open set in $\R^n$ containing $a$ and $b.$ Suppose that $(1 - t)a + tb \in U$ whenever $t \in [0, 1].$ Suppose that $f : U \to \R$ is differentiable at each $x \in U.$ Then there exists $t' \in (0,1)$ such that $\nabla f(c') \cdot (b - a) = f(b) - f(a)$ where $c' = (1 - t')a + t'b.$
+:::
+
+::: {.definition name="Hessian Matrix"}
+Let $U$ be open set in $\R^n$ and let $f : U \to \R.$ The _Hessian of $f$ at $x \in U$_ is the matrix
+$$
+H_f (x) :=
+\begin{bmatrix}
+D_1 D_1 f(x) & \cdots & D_n D_1 f(x) \\
+\vdots & \ddots & \vdots \\
+D_1 D_n f(x) & \cdots & D_n D_n f(x)
+\end{bmatrix}_{n \times n}
+$$
+:::
+
+::: {.theorem}
+Suppose $U$ is open in $\R^n$, $f : U \to \R^n$ and $x \mapsto D_i D_j f(x)$ is continuous at each $x \in U$ for every $i$ and $j.$ Then $H_f (x)$ is symmetric for each $x \in U.$
+:::
+
+::: {.theorem}
+Suppose $U \subseteq \R^n$ is an open set containing $a$ and $b$ such that $f : U \to \R.$ Furthermore, suppose that $U$ contains $(1 - t) a + tb$ for each $t \in [0, 1].$ Suppose that both $f$ and $\nabla f$ are differentiable on $U.$ Then there is some $t' \in (0, 1)$ such that
+$$
+f(b) = f(a) + \nabla f(a) \cdot (b - a) + \frac{1}{2} (b - a)^T H_f (c') (b - a)
+$$
+where $c' = (1 - t')a + t'b.$
+:::
+
+::: {.definition name="Convex Function"}
+Let $S \subseteq \R^n$ be convex. A function $f : S \to \R$ is _convex_ if, for all $t \in [0,1]$ and for all $x, x' \in S$, we have $f((1 - t)x + tx') \leq (1 - t) f(x) + tf(x').$ A function $f : S \to \R$ is _strictly convex_ if, for all $t \in (0,1)$ and for all $x, x' \in S$ such that $x \neq x'$, we have $f((1 - t)x + tx') < (1 - t) f(x) + tf(x').$
+:::
+
+::: {.theorem}
+Suppose that $U \subseteq \R^n$ is open and convex and that $f : U \to \R$ is differentiable. Then
+
+1. $f$ is convex if and only if $f(x') \geq f(x) + \nabla f(x) \cdot (x' - x)$ for each $x, x' \in U.$
+2. $f$ is strictly convex if and only if $f(x') > f(x) + \nabla f(x) \cdot (x' - x)$ for each $x, x' \in U$ such that $x \neq x'.$
 :::
 
 ## Correspondences
 
+::: {.definition name="Correspondence"}
+A _correspondence_ from $X$ to $Y$ (both Euclidean) is a map $\varphi : X \rightrightarrows Y$ which associates with every $x \in X$ a non-empty set $\varphi (x) \subseteq Y.$ Namely, a _correspondence_ from $X$ to $Y$ is a function from $X$ to $\{A \subseteq Y : A \neq \O\}.$
+:::
+
+::: {.definition name="Closed-Valued / Open-Valued / Compact-Valued / ... "}
+A correspondence $\varphi$ is _closed-valued_ is $\varphi(x)$ is a closed subset of $Y$ for every $x \in X.$ We similarly define correspondences which are _open-valued_, _compact-valued_, etcetera.
+:::
+
+::: {.definition name="Graph"}
+The _graph_ of $\varphi$ is the set
+$$
+G_\varphi := \{ (x, y) \in X \times Y : y \in \varphi(x) \} .
+$$
+:::
+
+::: {.proposition}
+$\varphi$ is _closed / open_ if $G_\varphi$ is a closed / open subset of $X \times Y.$
+:::
+
+::: {.definition name="Inverses"}
+Let $U \subseteq Y.$ The _strong and weak inverses_ of $U$ under $\varphi$ are defined respectively as follows:
+$$
+\varphi_s^{-1} (U) := \{x \in X : \varphi(x) \subseteq U\} \\
+\varphi_w^{-1} (U) := \{x \in X : \varphi(x) \cap U \neq \O\}
+$$
+:::
+
+::: {.proposition}
+<br/>
+
+* $\varphi_s^{-1} (U) \subseteq \varphi_w^{-1} (U).$
+* If $\varphi$ is such that $\mid \varphi (x) \mid = 1$ for every $x$, then $\varphi_s^{-1} (U) = \varphi_w^{-1} (U).$
+* In general, $\varphi_w^{-1} (U) = \left(\varphi_s^{-1} \left(U^C\right)\right)^C.$
+:::
+
+::: {.definition name="Upper Hemi-Continuity"}
+A correspondence $\varphi : X \rightrightarrows Y$ is _upper hemi-continuous (UHC) at $x \in X$_ if, whenever $U$ is an open subset of $Y$ and $x \in \varphi_s^{-1} (U)$, $B(x, \delta) \subseteq \varphi_s^{-1} (U)$ for some $\delta > 0.$ $\varphi$ is _UHC_ if it is UHC at every $x \in X.$
+:::
+
+::: {.proposition}
+$\varphi$ is UHC if and only if the strong inverse of any open set in $Y$ under $\varphi$ is open in $X.$
+:::
+
+::: {.definition name="Lower Hemi-Continuity"}
+A correspondence $\varphi : X \rightrightarrows Y$ is _lower hemi-continuous (LHC) at $x \in X$_ if, whenever $U$ is an open subset of $Y$ and $x \in \varphi_w^{-1} (U)$, $B(x, \delta) \subseteq \varphi_w^{-1} (U)$ for some $\delta > 0.$ $\varphi$ is _LHC_ if it is LHC at every $x \in X.$
+:::
+
+::: {.proposition}
+$\varphi$ is LHC if and only if the weak inverse of any open set in $Y$ under $\varphi$ is open in $X.$
+:::
+
+::: {.definition name="Continuity"}
+A correspondence is _continuous_ if it is LHC and UHC.
+:::
+
+::: {.theorem}
+Let $f : X \to Y$ be a function and let $\varphi : X \rightrightarrows Y$ be defined as $\varphi (x) = \{f(x)\}$ for every $x.$ Then the following are equivalent:
+
+1. $\varphi$ is UHC.
+2. $\varphi$ is LHC.
+3. $f$ is continuous.
+:::
+
+::: {.proposition}
+If the function $f : X \to Y$ is upper / lower semicontinuous, the correspondence $\varphi : X \rightrightarrows Y$ defined by $\varphi (x) = \{f(x)\}$ need not be upper / lower hemicontinuous.
+:::
+
+::: {.remark}
+Closedness and UHC are not nested.
+:::
+
+::: {.theorem}
+If $\varphi : X \rightrightarrows Y$ is UHC and closed-valued, then it is also closed.
+:::
+
+::: {.theorem}
+If $\varphi : X \rightrightarrows Y$ is closed and $Y$ is compact, then $\varphi$ is UHC.
+:::
+
+::: {.theorem}
+If $\varphi$ is open, then it is LHC.
+:::
+
+::: {.proposition}
+For every $x \in X$, every sequence $\{x_n\}$ converging to $x$ and every sequence $\{y_n\}$ such that $y_n \in \varphi(x_n)$ for every $n$, there exists a convergent subsequence of $\{y_n\}$ with limit in $\varphi(x).$
+:::
+
+::: {.proposition}
+For every $x \in X$, every sequence $\{x_n\}$ converging to $x$ and every $y \in \varphi(x)$, there exists a sequence $\{y_n\}$ converging to $y$ such that $y_n \in \varphi(x_n)$ for every $n.$
+:::
+
+::: {.theorem}
+<br/>
+
+1. If $\varphi$ satisfies **proposition 1.10**, then $\varphi$ is UHC.
+2. If $\varphi$ is UHC and compact-valued, then $\varphi$ satisfies **proposition 1.10**.
+:::
+
+::: {.theorem}
+$\varphi$ satisfies **proposition 1.11** if and only if $\varphi$ satisfies LHC.
+:::
+
+::: {.corollary}
+If $\varphi : X \rightrightarrows Y$ is UHC and compact-valued and $K \subseteq X$ is compact, then $\displaystyle \varphi(K) := \bigcup_{x \in K} \varphi (x)$ is compact.
+:::
+
+::: {.remark}
+A subset $S$ of a metric space is _compact_ if and only if every sequence $S$ has a subsequence that converges to a point in $S.$
+:::
+
+::: {.theorem name="The Maximum"}
+Let $T$ and $X$ be Euclidean sets. Let $\varphi : T \rightrightarrows X$ and $f : X \times T \to \R.$ For every $t \in T$, consider the problem
+$$
+\max_{x \in \varphi(t)} f(x, t).
+$$
+Define $\displaystyle \mu (t) = \argmax_{x \in \varphi(t)} f(x, t).$ Suppose that $\mu(t) \neq \O$ for every $t.$ 
+
+We can define a function $g : T \to \R$ as follows: $g(t) = f(x, t)$ for some $x \in \mu(t).$
+
+If $\varphi$ is compact-valued, UHC and LHC and if $f$ is continuous, then:
+
+1. $\mu : T \rightrightarrows X$ is compact-valued and UHC, and
+2. $g : T \to \R$ is continuous.
+:::
+
 ## Convexity
+
+::: {.definition name="Convex Set"}
+A non-empty set $S \subseteq \R^m$ is _convex_ if, for every $x, x' \in S$ and every $t \in [0, 1]$, $tx + (1 - t)x' \in S.$
+:::
+
+::: {.definition name="Convex Combination"}
+A _convex combination_ of vectors $x_1, \dots, x_n$ is a vector of the form $\displaystyle \sum_{i = 1}^n \alpha_i x_i$ where $\alpha_1, \dots, \alpha_n$ are non-negative numbers which add up to 1.
+:::
+
+::: {.theorem}
+$S \subseteq \R^m$ is convex if and only if $S = \tilde{S}$ where
+$$
+\tilde{S} := \left\{ \sum_{i = 1}^n \alpha_i x_i : n \in \N, x_i \in S\ \text{for all}\ i, \alpha_i \geq 0\ \text{for all}\ i,\ \text{and}\ \sum_{i = 1}^n \alpha_i = 1 \right\};
+$$
+i.e., if and only if it contains all convex combinations of its elements.
+:::
+
+::: {.proposition}
+<br/>
+
+* Arbitrary intersections of convex sets are convex.
+* $S + T := \{ s + t : s \in S, t \in T\}$ is convex if $S$ and $T$ are convex.
+* For every scalar $\lambda \geq 0$, $\lambda S := \{\lambda s : s \in S\}$ is convex if $S$ is convex.
+* The closure and interior of a convex set are convex using the Euclidean metric.
+:::
+
+::: {.definition name="Convex Hull"}
+The _convex hull_ of a set $S \subseteq \R^m$ is the "smallest" convex superset of $S.$ Namely,
+$$
+\convex S := \bigcap \left\{ G \subseteq \R^m : S \subseteq G\ \text{and}\ G\ \text{is convex} \right\}.
+$$
+:::
+
+::: {.proposition}
+$\convex S$ is convex and $S \subseteq \convex S.$
+:::
+
+::: {.theorem}
+$$
+\convex S = \tilde{S}
+$$
+:::
+
+::: {.proposition}
+$S$ is convex if and only if $\convex S \subseteq S.$
+:::
+
+::: {.theorem name="Carathéodory"}
+Let $S \subseteq \R^m$ be non-empty. If $x \in \convex S$, then $x$ can be written as a convex combination of no more than $m + 1$ members of $S$, i.e., there exists $x_1, x_2, \dots, x_{m+1} \in S$ and $\alpha_1, \alpha_2, \dots, \alpha_{m+1} \geq 0$ with $\displaystyle \sum_{i = 1}^{m + 1} \alpha_i = 1$ such that $\displaystyle x = \sum_{i = 1}^{m + 1} \alpha_i x_i.$
+:::
+
+::: {.proposition}
+<br/>
+
+* $\displaystyle \convex \left( \sum_{i = 1}^n S_i \right) = \sum_{i = 1}^n \convex S_i.$
+* If $A \subset \R^m$ is open, then $\convex A$ is open.
+* The convex hull of a closed set in $\R^m$ need not be closed. But if $K \subset \R^m$ is compact, then $\convex K$ is compact.
+:::
+
+::: {.theorem name="Shapley-Folkman"}
+Let $S_i \subseteq \R^m$ for every $i = 1, \dots, n$, and let $\displaystyle x \in \convex \sum_{i = 1}^n S_i.$ Then there exists $x_1, \dots, x_n$ such that
+
+1. $x_i \in \convex S_i$ for every $i$,
+2. $\displaystyle x = \sum_{i = 1}^n x_i$, and
+3. $\# \{i : x_i \notin S_i\} \leq m.$
+:::
+
+::: {.remark}
+If $x \in \R^m$ can be written as $\displaystyle x = \sum_{i = 1}^k \alpha_i x_i$ where $\alpha_1, \dots, \alpha_k \in \R_+$, $x_1, \dots, x_k \in \R^m$ and, if $k > m$, then there exist $\beta_1, \dots, \beta_k \in \R_+$ with $\# \{i : \beta_i > 0\} \leq m$ such that $\displaystyle x = \sum_{i = 1}^k \beta_i x_i.$
+
+> Scalars $\alpha_i$ and $\beta_i$ do not need to add up to 1.
+:::
+
+::: {.definition name="Hyperplane"}
+Fix $p \in \R^m$ and $\alpha \in \R.$ The _hyperplane_ formed by $p$ and $\alpha$ is
+$$
+H(p; \alpha) := \left\{ x \in \R^m : p \cdot x = \alpha \right\}
+$$
+where $p$ is called the _normal vector_ of $H(p; \alpha).$
+:::
+
+::: {.theorem name="Minkowski"}
+Let $S \subseteq \R^m$ be non-empty, convex and closed, and let $\bar{x} \notin S.$ There exists $p \in \R^m \setminus \{0\}$ and $x_0 \in S$ such that $p \cdot \bar{x} > p \cdot x_0 \geq p \cdot x$ for every $x \in S.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^m$ is non-empty and convex, and that $x_n$ is a sequence in $\R^m\setminus \closure S.$ If $x_n \to \bar{x}$, then there exists $p \in \R^m \setminus \{0\}$ such that, for every $x \in S$, $p \cdot x \leq p \cdot \bar{x}.$
+:::
+
+::: {.theorem name="Supporting Hyperplane"}
+Suppose that $S \subseteq \R^m$ is non-empty and convex. If $\bar{x} \in \partial S$, then there exists $p \in \R^m \setminus \{0\}$ such that $p \cdot \bar{x} \geq p \cdot x$ for every $x \in S.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^m$ is a non-empty and convex set, and let $\bar{x} \notin S.$ Then there exists $p \in \R^m \setminus \{0\}$ such that $p \cdot x \leq p \cdot \bar{x}$ for every $x \in S.$
+:::
+
+::: {.theorem name="Separating Hyperplane"}
+Let $S$ and $T$ be disjoint and convex subsets of $\R^m.$ There exists $p \in \R^m \setminus \{0\}$ such that $p \cdot s \leq p \cdot t$ for every $(s, t) \in S \times T.$
+:::
+
+::: {.definition name="Convex Function"}
+Let $S \subseteq \R^n$ be convex. A function $f : S \to \R$ is _convex_ if $f(tx + (1 - t)y) \leq tf(x) + (1 - t)f(y)$, $\forall x, y \in S$, $t \in [0, 1].$ Similarly, $f$ is said to be _strictly convex_ if $f(tx + (1 - t)y) < tf(x) + (1 - t)f(y)$, $\forall x, y \in S$, $t \in (0, 1).$
+:::
+
+::: {.definition name="Concave Function"}
+Let $S \subseteq \R^n$ be convex. A function $f : S \to \R$ is _concave_ if $f(tx + (1 - t)y) \geq tf(x) + (1 - t)f(y)$, $\forall x, y \in S$, $t \in [0, 1].$ Similarly, $f$ is said to be _strictly concave_ if $f(tx + (1 - t)y) > tf(x) + (1 - t)f(y)$, $\forall x, y \in S$, $t \in (0, 1).$
+:::
+
+::: {.definition name="Subgradient"}
+Suppose $S \subseteq \R^n$ is convex and $f : S \to \R.$ A vector $p \in \R^n$ is a _subgradient_ for $f$ at $x \in S$ if
+$$
+f(y) \geq f(x) + p \cdot (x - y),
+$$
+for all $y \in S.$
+:::
+
+::: {.definition name="Supergradient"}
+Suppose $S \subseteq \R^n$ is convex and $f : S \to \R.$ A vector $p \in \R^n$ is a _supergradient_ for $f$ at $x \in S$ if
+$$
+f(y) \leq f(x) + p \cdot (x - y),
+$$
+for all $y \in S.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^n$ is convex and $f : S \to \R.$ If $f$ has a subgradient at every $x \in S$, then $f$ is convex.
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^n$ is convex, $f : S \to \R$ is convex, and $x \in \interior (S).$ Then $f$ is continuous at $x.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^n$ is convex, $f : S \to \R$ is convex, and $x \in \interior (S).$ Then $f$ has a subgradient at $x.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^n$ is convex, $f : S \to \R$ is convex, $x \in \interior (S)$, and $f$ is differentiable at $x.$ Then $\nabla f(x)$ is the unique subgradient of $f$ at $x.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^n$ is convex and $f : S \to \R.$ If $p_1$ is a subgradient of $f$ at $x_1$ and $p_2$ is a subgradient of $f$ at $x_2$, then $(p_1 - p_2) \cdot (x_1 - x_2) \geq 0.$
+:::
+
+::: {.theorem}
+Suppose that $S \subseteq \R^n$ is open and convex, and $f : S \to \R$ is differentiable and convex. Then $\left(\nabla f(x_1) - \nabla f(x_2)\right) \cdot (x_1 - x_2) \geq 0.$
+:::
 
 ## Support Functions
 
+### Maximization {-}
+
+::: {.definition name="Barrier Cone"}
+For any non-empty $S \subseteq \R^n$, the _barrier cone_ of $S$ is defined as follows:
+$$
+b(S) := \left\{ p \in \R^n : \max_{x \in S}\ \text{is well-defined} \right\}.
+$$
+:::
+
+::: {.definition name="Support Function"}
+For any non-empty $S \subseteq \R^n$, the _support function_ of $S$ is a function $\sigma_S : b(S) \to \R$ such that
+$$
+\sigma_S (p) := \max_{x \in S} p \cdot x.
+$$
+:::
+
+::: {.remark name="Cone"}
+If $p \in b(S)$ and $\lambda \in \R_+$, then $\lambda p \in b(S)$ as well. Hence $b(S)$ is a _cone_ and, in particular, $0 \in b(S).$
+:::
+
+::: {.proposition}
+$b(S)$ need not be convex even if $S$ is.
+:::
+
+::: {.theorem}
+Let $S \subseteq \R^n$ be non-empty.
+
+* If $x_1$ solves $\displaystyle \max_{x \in S} p_1 \cdot x$ and $x_2$ solves $\displaystyle \max_{x \in S} p_2 \cdot x$, then $(x_1 - x_2)\cdot(p_1 - p_2) \geq 0.$ This is known as monotonicity of solutions.
+* $\sigma_S(tp) = t\sigma_S(p)$ for every $p \in b(S)$ and $t \geq 0.$ Namely,  homogeneity of degree 1.
+* If $b(S)$ is convex, then $\sigma_S$ is convex.
+* Suppose $S \subseteq \R^n$ is closed and convex, and $p \in b(S).$ $x_p$ solves $\displaystyle \max_{x \in S} p \cdot x$ if and only if $x_p$ is a subgradient of $\sigma_S$ at $p.$
+* Suppose $S \subseteq \R^n$ is closed and convex, $p \in \interior (b(S))$ and $\sigma_S$ is differentiable at $p.$ Then, $x_p$ solves $\displaystyle \max_{x \in S} p \cdot x$ if and only if $x_p = \nabla \sigma_S (p).$ Also known as **Hotelling's Lemma** in profit maximization.
+:::
+
+### Minimization {-}
+
+::: {.definition name="Barrier Cone"}
+For any non-empty $S \subseteq \R^n$, the _barrier cone_ of $S$ is defined as follows:
+$$
+b^-(S) := \left\{ p \in \R^n : \min_{x \in S}\ \text{is well-defined} \right\}.
+$$
+:::
+
+::: {.definition name="Support Function"}
+For any non-empty $S \subseteq \R^n$, the _support function_ of $S$ is a function $\tau_S : b^-(S) \to \R$ such that
+$$
+\tau_S (p) := \min_{x \in S} p \cdot x.
+$$
+:::
+
+::: {.remark name="Cone"}
+Note that $b^-(S) = -b(S) = \left\{ p \in \R^n : -p \in b(S) \right\}.$ Furthermore, $\tau_S (p) = -\sigma_S (-p).$
+:::
+
+::: {.theorem}
+Let $S \subseteq \R^n$ be non-empty.
+
+* If $x_1$ solves $\displaystyle \min_{x \in S} p_1 \cdot x$ and $x_2$ solves $\displaystyle \min_{x \in S} p_2 \cdot x$, then $(x_1 - x_2)\cdot(p_1 - p_2) \leq 0.$ This is known as monotonicity of solutions.
+* $\tau_S(tp) = t\tau_S(p)$ for every $p \in b^-(S)$ and $t \geq 0.$ Namely,  homogeneity of degree 1.
+* If $b^-(S)$ is convex, then $\tau_S$ is concave.
+* Suppose $S \subseteq \R^n$ is closed and convex, and $p \in b^-(S).$ $x_p$ solves $\displaystyle \min_{x \in S} p \cdot x$ if and only if $x_p$ is a supergradient of $\tau_S$ at $p.$
+* Suppose $S \subseteq \R^n$ is closed and convex, $p \in \interior (b^-(S))$ and $\tau_S$ is differentiable at $p.$ Then, $x_p$ solves $\displaystyle \min_{x \in S} p \cdot x$ if and only if $x_p = \nabla \tau_S (p).$ Also known as **Shephard's Lemma** in cost minimization.
+:::
+
 ## Nonlinear Programming
-
-
-
-
-
-
-
 
 
 

@@ -14,13 +14,15 @@
 |$\rk A$|Rank of $A$.|
 |$I_n$|$n$-by-$n$ identity matrix.|
 
-## Real Analysis
+## Real Analysis and Topology
 
 |Expression|Description|
 |----------|-----------|
 |$\interior(S)$|Interior of $S$.|
 |$\closure(S)$|Closure of $S$.|
 |$\partial S$|Boundary of $S$.|
+|$\varphi : X \rightrightarrows Y$|Correspondence $\varphi$ from $X$ to $Y$.|
+|$\convex S$|Convex hull of $S$.|
 
 ## Statistics
 

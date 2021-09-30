@@ -210,7 +210,7 @@ $((X^*, Z^*), \mathrm{p})$ is called a *competitive equilibrium* if the followin
 
 1. $\forall j \in \mathcal{J}$, $\mathrm{z}^*_j = ((z_{j,1,1'}, \dots, z_{j,1,n'}), \dots, (z_{j,n,1'}, \dots, z_{j,n,n'}))$ solves the following maximization problem:
 $$
-\pi^*_j \deq \max_{ \mathrm{z}_j }\ p_l f_{j,l} (\mathrm{z}_\ell) - \sum_{\ell \in \L} p_\ell \mathrm{z}_{j, \ell}.
+\pi^*_j := \max_{ \mathrm{z}_j }\ p_l f_{j,l} (\mathrm{z}_\ell) - \sum_{\ell \in \L} p_\ell \mathrm{z}_{j, \ell}.
 $$
 2. $\forall i \in \mathcal{I}$, $\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
 $$

@@ -147,7 +147,7 @@ source('scripts_and_filters/wrap_lines.R')
 \DeclareMathOperator*{\argmin}{\arg \min}
 \DeclareMathOperator*{\argmax}{\arg \max}
 \newcommand{\closure}{\text{cl}}
-\newcommand{\deq}{\stackrel{\text{def}}{=}}
+\newcommand{\convex}{\text{co}}
 \newcommand{\ie}{\text{i.e.}}
 \newcommand{\interior}{\text{int}}
 \newcommand{\O}{\varnothing}
