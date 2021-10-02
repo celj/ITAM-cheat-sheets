@@ -39,3 +39,98 @@
 |$\Norm (\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})$|Gaussian distribution over $\mathbf{x}$ with mean $\mathbf{\mu}$ and covariance $\mathbf{\Sigma}$.|
 
 # Probability distributions
+
+This section is still in development. All graphs are still in the testing stage.
+
+## Discrete
+
+### Bernoulli {-}
+
+<div id="bernoulli"></div>
+
+### Binomial {-}
+
+<div id="binomial"></div>
+
+### Geometric {-}
+
+<div id="geometric"></div>
+
+### Hypergeometric {-}
+
+<div id="hypergeometric"></div>
+
+### Negative Binomial {-}
+
+<div id="negbin"></div>
+
+### Poisson {-}
+
+<div id="poisson"></div>
+
+### Uniform {-}
+
+<div id="uniformDiscrete"></div>
+
+## Continuous
+
+### Beta {-}
+
+<div id="beta"></div>
+
+### Cauchy {-}
+
+<div id="cauchy"></div>
+
+### Chi Squared {-}
+
+<div id="chisq"></div>
+
+### Exponential {-}
+
+<div id="exponential"></div>
+
+### F {-}
+
+<div id="centralF"></div>
+
+### Gamma {-}
+
+<div id="gamma"></div>
+
+### Normal {-}
+
+<div id="normal"></div>
+
+### Student T {-}
+
+<div id="studentt"></div>
+
+### Uniform {-}
+
+<div id="uniform"></div>
+
+### Weibull {-}
+
+<div id="weibull"></div>
+
+<!-- Discrete distributions -->
+<script src="../figures/bernoulli.js"></script>
+<script src="../figures/binomial.js"></script>
+<script src="../figures/geometric.js"></script>
+<script src="../figures/hypergeometric.js"></script>
+<script src="../figures/negbin.js"></script>
+<script src="../figures/poisson.js"></script>
+<script src="../figures/uniformDiscrete.js"></script>
+
+<!-- Continuous distributions -->
+<script src="../figures/beta.js"></script>
+<script src="../figures/cauchy.js"></script>
+<script src="../figures/centralF.js"></script>
+<script src="../figures/chisq.js"></script>
+<script src="../figures/exponential.js"></script>
+<script src="../figures/gamma.js"></script>
+<script src="../figures/normal.js"></script>
+<script src="../figures/studentt.js"></script>
+<script src="../figures/uniform.js"></script>
+<script src="../figures/weibull.js"></script>

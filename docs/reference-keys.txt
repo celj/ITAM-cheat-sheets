@@ -219,3 +219,5 @@ linear-algebra-1
 real-analysis-and-topology
 statistics
 probability-distributions
+discrete
+continuous

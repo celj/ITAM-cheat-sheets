@@ -81,6 +81,8 @@ output:
     css: 
       - templates/bs4_style.css
       - templates/corrections.css
+    includes:
+      in_header: "header.html"
     theme:
       bg: "#f8f9fb"
       fg: "#4c566a"
