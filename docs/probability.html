@@ -14,11 +14,21 @@
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- JavaScript Imports --><!-- D3 --><script src="https://d3js.org/d3.v6.min.js"></script><!-- Jquery --><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!-- jStat --><script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- JavaScript Imports --><!-- D3 --><script src="https://d3js.org/d3.v6.min.js"></script><!-- Jquery --><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script><!-- jStat --><script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      "HTML-CSS": {
+        fonts: ["Neo-Euler"],
+        scale: 90
+      },
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    });
+    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="5.1 Basics and Combinatorics   5.2 Random Variables   5.3 Discrete Distributions   5.4 Continuous Distributions   5.5 Multivariate Distributions  5.5.1 Multivariate Normal Distribution">
-<meta property="og:description" content="5.1 Basics and Combinatorics   5.2 Random Variables   5.3 Discrete Distributions   5.4 Continuous Distributions   5.5 Multivariate Distributions  5.5.1 Multivariate Normal Distribution">
-<meta name="twitter:description" content="5.1 Basics and Combinatorics   5.2 Random Variables   5.3 Discrete Distributions   5.4 Continuous Distributions   5.5 Multivariate Distributions  5.5.1 Multivariate Normal Distribution">
+<meta name="description" content="5.1 Basics and Combinatorics  Definition 5.1 (Sample Space) The sample space \(\Omega \neq \varnothing\) is the set of all possible outcomes of an experiment. It can be finite or infinite. ...">
+<meta property="og:description" content="5.1 Basics and Combinatorics  Definition 5.1 (Sample Space) The sample space \(\Omega \neq \varnothing\) is the set of all possible outcomes of an experiment. It can be finite or infinite. ...">
+<meta name="twitter:description" content="5.1 Basics and Combinatorics  Definition 5.1 (Sample Space) The sample space \(\Omega \neq \varnothing\) is the set of all possible outcomes of an experiment. It can be finite or infinite. ...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -67,11 +77,211 @@
 <h2>
 <span class="header-section-number">5.1</span> Basics and Combinatorics<a class="anchor" aria-label="anchor" href="#basics-and-combinatorics"><i class="fas fa-link"></i></a>
 </h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-197" class="definition"><strong>Definition 5.1  (Sample Space) </strong></span>The <em>sample space</em> <span class="math inline">\(\Omega \neq \varnothing\)</span> is the set of all possible outcomes of an experiment. It can be finite or infinite.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-198" class="definition"><strong>Definition 5.2  (Event) </strong></span>An <em>event</em> <span class="math inline">\(A\)</span> is a subset of the sample space <span class="math inline">\(A \subseteq \Omega\)</span>, or an element of the power set of the sample space <span class="math inline">\(\displaystyle A \in 2^\Omega\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-199" class="definition"><strong>Definition 5.3  (Observable Event Set) </strong></span>The set of all <em>observable events</em> is denoted by <span class="math inline">\(\mathscr{F}\)</span>, where <span class="math inline">\(\displaystyle \mathscr{F}\subseteq 2^\Omega\)</span>.</p>
+</div>
+<blockquote>
+<p>Usually, if <span class="math inline">\(\Omega\)</span> is countable, <span class="math inline">\(\mathscr{F}= 2^\Omega\)</span>. However, sometimes many events are excluded from <span class="math inline">\(\mathscr{F}\)</span> since it is not possible for them to happen.</p>
+</blockquote>
+<div class="definition">
+<p><span id="def:unlabeled-div-200" class="definition"><strong>Definition 5.4  (σ-Algebra) </strong></span>The set <span class="math inline">\(\mathscr{F}\)</span> is called a <em><span class="math inline">\(\sigma\)</span>-algebra</em> if:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\Omega \in \mathscr{F}\)</span>;</li>
+<li>
+<span class="math inline">\(\forall A \subseteq \Omega\)</span>, <span class="math inline">\(A \in \mathscr{F}\)</span>, then <span class="math inline">\(A^C \in \mathscr{F}\)</span>; and</li>
+<li>
+<span class="math inline">\(\forall (A_n)_{n \in \mathbb{N}}\)</span>, <span class="math inline">\(A_n \in \mathscr{F}\)</span>, then <span class="math inline">\(\displaystyle \bigcup_{n = 1}^\infty A_n \in \mathscr{F}\)</span>.</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-201" class="definition"><strong>Definition 5.5  (Probability Measure) </strong></span><span class="math inline">\(P : \mathscr{F}\to [0, 1]\)</span> is a <em>probability measure</em> if it satisfies the following three axioms:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\forall A \in \mathscr{F}: P(A) \geq 0\)</span>,</li>
+<li>
+<span class="math inline">\(P(\Omega) = 1\)</span>, and</li>
+<li>
+<span class="math inline">\(\displaystyle P\left( \bigcup_{n=1}^\infty A_n \right) = \sum_{n = 1}^\infty P\left(A_n\right)\)</span>,</li>
+</ol>
+<p>where <span class="math inline">\(A_n\)</span> are disjunct.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-202" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>
+<span class="math inline">\(\displaystyle P\left(A^C\right) = 1 - P(A)\)</span>,</li>
+<li>
+<span class="math inline">\(P(\varnothing) = 0\)</span>,</li>
+<li>if <span class="math inline">\(A \subseteq B\)</span>, then <span class="math inline">\(P(A) \leq P(B)\)</span>, and</li>
+<li>
+<span class="math inline">\(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</span>.</li>
+</ul>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-203" class="theorem"><strong>Theorem 5.1  (Inclusion-Exclusion Principle) </strong></span>Let <span class="math inline">\(A_1, \dots, A_n\)</span> be a set of events, then
+<span class="math display">\[
+P\left( \bigcup_{i=1}^n A_i \right) = \sum_{k = 1}^n (-1)^{k-1} S_k,
+\]</span>
+where
+<span class="math display">\[
+S_k = \sum_{I \subseteq \{1, \dots, n\} \\ \quad \mid I\mid = k} P\left( \bigcap_{i \in I} A_i \right).
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-204" class="definition"><strong>Definition 5.6  (Laplace Space) </strong></span>If <span class="math inline">\(\Omega = \{\omega_1, \dots, \omega_N\}\)</span> with <span class="math inline">\(\mid \Omega \mid = N\)</span> where all <span class="math inline">\(\omega_i\)</span> have the same probability <span class="math inline">\(p_i = \frac{1}{N}\)</span>, <span class="math inline">\(\Omega\)</span> is called <em>Laplace space</em> and <span class="math inline">\(P\)</span> has a discrete uniform distribution. For some event <span class="math inline">\(A\)</span>, we have:
+<span class="math display">\[
+P(A) = \frac{\mid A\mid}{\mid\Omega\mid}.
+\]</span></p>
+</div>
+<blockquote>
+<p>The discrete uniform distribution exists only if <span class="math inline">\(\Omega\)</span> is finite.</p>
+</blockquote>
+<div class="definition">
+<p><span id="def:unlabeled-div-205" class="definition"><strong>Definition 5.7  (Conditional Probability) </strong></span>Given two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(P(A) &gt; 0\)</span>, the probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> is defined as follows:
+<span class="math display">\[
+P(B \mid A) := \frac{P(B \cap A)}{P(A)}.
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-206" class="theorem"><strong>Theorem 5.2  (Total Probability) </strong></span>Let <span class="math inline">\(A_1, \dots, A_n\)</span> be a set of disjunct events <span class="math inline">\(\forall i \neq j : A_i \cap A_j = \varnothing\)</span> where <span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i = \Omega\)</span>, then, for any event <span class="math inline">\(B \subseteq \Omega\)</span>
+<span class="math display">\[
+P(B) = \sum_{i = 1}^n P(B \mid A_i) P(A_i).
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-207" class="definition"><strong>Definition 5.8  (Bayes' Rule) </strong></span>Let <span class="math inline">\(A_1, \dots, A_n\)</span> be the set of disjunct event <span class="math inline">\(\forall i \neq j : A_i \cap A_j = \varnothing\)</span> where <span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i = \Omega\)</span> with <span class="math inline">\(P(A_i) &gt; 0\)</span> for all <span class="math inline">\(i = 1, \dots, n\)</span>, then, for an event <span class="math inline">\(B \subseteq \Omega\)</span> with <span class="math inline">\(P(B) &gt; 0\)</span>, we have
+<span class="math display">\[
+P(A_k \mid B) = \frac{P(B \mid A_k) P(A_k)}{\displaystyle\sum_{i=1}^n P(B \mid A_i) P(A_i)}.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-208" class="definition"><strong>Definition 5.9  (Independence) </strong></span>A set of events <span class="math inline">\(A_1, \dots, A_n\)</span> are <em>independent</em> if, for all <span class="math inline">\(m \in \mathbb{N}\)</span> with <span class="math inline">\(\{k_1, \dots, k_m\} \subseteq 1, \dots, n\)</span>, we have
+<span class="math display">\[
+P\left( \bigcap_{i=1}^m A_{k_i} \right) = \prod_{i=1}^m P\left(A_{k_i}\right).
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-209" class="definition"><strong>Definition 5.10  (Permutation) </strong></span>Let <span class="math inline">\(n\)</span> be the number of total objects and <span class="math inline">\(k\)</span> be the number of objects we want to select, then a <em>permutation</em> is an arrangement of elements where we care about ordering.</p>
+<ol style="list-style-type: decimal">
+<li>Repetition not allowed:
+<span class="math display">\[
+P_n(k) = \frac{n!}{(n - k)!}.
+\]</span>
+</li>
+<li>Repetition allowed:
+<span class="math display">\[
+P_n(k) = n^k.
+\]</span>
+</li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-210" class="definition"><strong>Definition 5.11  (Permutation) </strong></span>Let <span class="math inline">\(n\)</span> be the number of total objects and <span class="math inline">\(k\)</span> be the number of objects we want to select, then a <em>permutation</em> is an arrangement of elements where we do not care about ordering.</p>
+<ol style="list-style-type: decimal">
+<li>Repetition not allowed:
+<span class="math display">\[
+C_n(k) = \binom{n}{k} = \frac{P_n(k)}{k!} = \frac{n!}{k!(n - k)!}.
+\]</span>
+</li>
+<li>Repetition allowed:
+<span class="math display">\[
+C_n(k) = \binom{n + k -1}{k}.
+\]</span>
+</li>
+</ol>
+</div>
+<blockquote>
+<p>Repetition is the same as replacement.</p>
+</blockquote>
+<div class="remark">
+<p><span id="unlabeled-div-211" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>
+<span class="math inline">\(0! = 1\)</span>,</li>
+<li>
+<span class="math inline">\(\displaystyle \binom{n}{0} = \binom{n}{n} = 1\)</span>,</li>
+<li>
+<span class="math inline">\(\displaystyle \binom{n}{1} = \binom{n}{n - 1} = n\)</span>,</li>
+<li>
+<span class="math inline">\(\displaystyle \binom{n}{k} = \binom{n}{n - k}\)</span>,</li>
+<li>
+<span class="math inline">\(\displaystyle \binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}\)</span>, and</li>
+<li>
+<span class="math inline">\(\displaystyle \sum_{k = 0}^n \binom{n}{k} = 2^n\)</span>.</li>
+</ul>
+</div>
 </div>
 <div id="random-variables" class="section level2" number="5.2">
 <h2>
 <span class="header-section-number">5.2</span> Random Variables<a class="anchor" aria-label="anchor" href="#random-variables"><i class="fas fa-link"></i></a>
 </h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-212" class="definition"><strong>Definition 5.12  (Random Variable) </strong></span>Let <span class="math inline">\((\Omega, \mathscr{F}, P)\)</span> be a probability space, then a <em>random variable</em> on <span class="math inline">\(\Omega\)</span> is a function
+<span class="math display">\[
+X : \Omega \to \mathscr{W}(X) \subseteq \mathbb{R}.
+\]</span>
+If the image <span class="math inline">\(\mathscr{W}(X)\)</span> is countable, <span class="math inline">\(X\)</span> is called a <em>discrete random variable</em>, otherwise it is called a <em>continuous random variable</em>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-213" class="definition"><strong>Definition 5.13  (Probability Density Function) </strong></span>The <em>probability density function</em> (PDF) <span class="math inline">\(f_X : \mathbb{R}\to \mathbb{R}\)</span> of a random variable <span class="math inline">\(X\)</span> is a function defined as follows:
+<span class="math display">\[
+f_X(x) := P(X = x) := P\left(\{\omega \mid X(\omega) = x\}\right).
+\]</span>
+With <span class="math inline">\(X\)</span> discrete, we use <span class="math inline">\(p_X(t)\)</span> instead of <span class="math inline">\(f_X(t)\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-214" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>If <span class="math inline">\(X\)</span> is a discrete random variable, then <span class="math inline">\(\displaystyle \sum_{i=1}^n p_X(u_i) = 1\)</span>.</li>
+<li>If <span class="math inline">\(X\)</span> is a continuous random variable, then <span class="math inline">\(\displaystyle \int_{-\infty}^{\infty} f_X(t)dt = 1\)</span>.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-215" class="definition"><strong>Definition 5.14  (Cumulative Distribution) </strong></span>The <em>cumulative distribution function</em> (CDF) <span class="math inline">\(F_X : \mathbb{R}\to [0,1]\)</span> of a random variable <span class="math inline">\(X\)</span> is a function defined as follows:
+<span class="math display">\[
+F_X(x) := P(X \leq x) := P\left(\{\omega \mid X(\omega) \leq x\}\right).
+\]</span>
+If the PDF is given, the CDF can be expressed with:
+<span class="math display">\[
+F_X(x) =
+\begin{cases}
+\displaystyle \sum_{x_i \leq x} p_X(x_i), &amp; X\ \text{discr.} \\
+\displaystyle \int_{-\infty}^x f_X(t)dt,  &amp; X\ \text{cont.}
+\end{cases}
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-216" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>If <span class="math inline">\(t \leq s\)</span>, then <span class="math inline">\(F_X(t) \leq F_X(s)\)</span> (<em>monotonicity</em>).</li>
+<li>If <span class="math inline">\(t &gt; s\)</span>, then <span class="math inline">\(\displaystyle \lim_{t \to s} F_X(t) = F_X(s)\)</span>.</li>
+<li>
+<span class="math inline">\(\displaystyle \lim_{t \to -\infty} F_X(t) = 0\)</span> and <span class="math inline">\(\displaystyle \lim_{t \to \infty} F_X(t) = 1\)</span>.</li>
+<li>
+<span class="math inline">\(\displaystyle P(a \leq X \leq b) = F_X(b) - F_X(a) = \int_{a}^{b} f_X(t)dt\)</span>.</li>
+<li>
+<span class="math inline">\(P(X &gt; t) = 1 - P(X \leq t) = 1 - F_X(t)\)</span>.</li>
+<li>
+<span class="math inline">\(\displaystyle \frac{d}{dx}F_X(x) = f_X(x)\)</span>.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-217" class="definition"><strong>Definition 5.15  (Expected Value) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable, then the <em>expected value</em> is defined as follows:
+<span class="math display">\[
+\mathop{\mathrm{\mathbb{E}}}[X] :=
+\begin{cases}
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot p_X(x_k), &amp; X\ \text{discr.} \\
+\displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  &amp; X\ \text{cont.}
+\end{cases}
+\]</span></p>
+</div>
 </div>
 <div id="discrete-distributions" class="section level2" number="5.3">
 <h2>

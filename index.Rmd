@@ -117,8 +117,8 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\I}{\mathbb{I}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\L}{\mathcal{L}}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\L}{\mathscr{L}}
 \newcommand{\MRS}{\text{MRS}}
 \newcommand{\MRT}{\text{MRT}}
 \newcommand{\MRTS}{\text{MRTS}}
@@ -138,9 +138,9 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\Wei}{\text{Weibull}}
 \newcommand{\Beta}{\text{Beta}}
 \newcommand{\Dir}{\text{Dirichlet}}
-\newcommand{\Norm}{\mathcal{N}}
-\newcommand{\Unif}{\mathcal{U}}
-\newcommand{\logN}{\text{Log-}\mathcal{N}}
+\newcommand{\Norm}{\mathscr{N}}
+\newcommand{\Unif}{\mathscr{U}}
+\newcommand{\logN}{\text{Log-}\mathscr{N}}
 \newcommand{\csq}{\chi^2}
 \newcommand{\dlim}{\overset{d}{\longrightarrow}}
 \newcommand{\plim}{\overset{p}{\longrightarrow}}

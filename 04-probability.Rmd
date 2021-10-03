@@ -12,7 +12,195 @@ knit: (function(input, ...) {
 
 ## Basics and Combinatorics
 
+::: {.definition name="Sample Space"}
+The _sample space_ $\Omega \neq \O$ is the set of all possible outcomes of an experiment. It can be finite or infinite.
+:::
+
+::: {.definition name="Event"}
+An _event_ $A$ is a subset of the sample space $A \subseteq \Omega$, or an element of the power set of the sample space $\displaystyle A \in 2^\Omega$.
+:::
+
+::: {.definition name="Observable Event Set"}
+The set of all _observable events_ is denoted by $\F$, where $\displaystyle \F \subseteq 2^\Omega$.
+:::
+
+> Usually, if $\Omega$ is countable, $\F = 2^\Omega$. However, sometimes many events are excluded from $\F$ since it is not possible for them to happen.
+
+::: {.definition name="σ-Algebra"}
+The set $\F$ is called a _$\sigma$-algebra_ if:
+
+1. $\Omega \in \F$;
+2. $\forall A \subseteq \Omega$, $A \in \F$, then $A^C \in \F$; and
+3. $\forall (A_n)_{n \in \N}$, $A_n \in \F$, then $\displaystyle \bigcup_{n = 1}^\infty A_n \in \F$.
+:::
+
+::: {.definition name="Probability Measure"}
+$P : \F \to [0, 1]$ is a _probability measure_ if it satisfies the following three axioms:
+
+1. $\forall A \in \F : P(A) \geq 0$,
+2. $P(\Omega) = 1$, and
+3. $\displaystyle P\left( \bigcup_{n=1}^\infty A_n \right) = \sum_{n = 1}^\infty P\left(A_n\right)$,
+
+where $A_n$ are disjunct.
+:::
+
+::: {.remark}
+<br/>
+
+* $\displaystyle P\left(A^C\right) = 1 - P(A)$,
+* $P(\O) = 0$,
+* if $A \subseteq B$, then $P(A) \leq P(B)$, and
+* $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+:::
+
+::: {.theorem name="Inclusion-Exclusion Principle"}
+Let $A_1, \dots, A_n$ be a set of events, then
+$$
+P\left( \bigcup_{i=1}^n A_i \right) = \sum_{k = 1}^n (-1)^{k-1} S_k,
+$$
+where
+$$
+S_k = \sum_{I \subseteq \{1, \dots, n\} \\ \quad \mid I\mid = k} P\left( \bigcap_{i \in I} A_i \right).
+$$
+:::
+
+::: {.definition name="Laplace Space"}
+If $\Omega = \{\omega_1, \dots, \omega_N\}$ with $\mid \Omega \mid = N$ where all $\omega_i$ have the same probability $p_i = \frac{1}{N}$, $\Omega$ is called _Laplace space_ and $P$ has a discrete uniform distribution. For some event $A$, we have:
+$$
+P(A) = \frac{\mid A\mid}{\mid\Omega\mid}.
+$$
+:::
+
+> The discrete uniform distribution exists only if $\Omega$ is finite.
+
+::: {.definition name="Conditional Probability"}
+Given two events $A$ and $B$ with $P(A) > 0$, the probability of $B$ given $A$ is defined as follows:
+$$
+P(B \mid A) := \frac{P(B \cap A)}{P(A)}.
+$$
+:::
+
+::: {.theorem name="Total Probability"}
+Let $A_1, \dots, A_n$ be a set of disjunct events $\forall i \neq j : A_i \cap A_j = \O$ where $\displaystyle \bigcup_{i=1}^n A_i = \Omega$, then, for any event $B \subseteq \Omega$
+$$
+P(B) = \sum_{i = 1}^n P(B \mid A_i) P(A_i).
+$$
+:::
+
+::: {.definition name="Bayes' Rule"}
+Let $A_1, \dots, A_n$ be the set of disjunct event $\forall i \neq j : A_i \cap A_j = \O$ where $\displaystyle \bigcup_{i=1}^n A_i = \Omega$ with $P(A_i) > 0$ for all $i = 1, \dots, n$, then, for an event $B \subseteq \Omega$ with $P(B) > 0$, we have
+$$
+P(A_k \mid B) = \frac{P(B \mid A_k) P(A_k)}{\displaystyle\sum_{i=1}^n P(B \mid A_i) P(A_i)}.
+$$
+:::
+
+::: {.definition name="Independence"}
+A set of events $A_1, \dots, A_n$ are _independent_ if, for all $m \in \N$ with $\{k_1, \dots, k_m\} \subseteq 1, \dots, n$, we have
+$$
+P\left( \bigcap_{i=1}^m A_{k_i} \right) = \prod_{i=1}^m P\left(A_{k_i}\right).
+$$
+:::
+
+::: {.definition name="Permutation"}
+Let $n$ be the number of total objects and $k$ be the number of objects we want to select, then a _permutation_ is an arrangement of elements where we care about ordering.
+
+1. Repetition not allowed:
+$$
+P_n(k) = \frac{n!}{(n - k)!}.
+$$
+2. Repetition allowed:
+$$
+P_n(k) = n^k.
+$$
+:::
+
+::: {.definition name="Permutation"}
+Let $n$ be the number of total objects and $k$ be the number of objects we want to select, then a _permutation_ is an arrangement of elements where we do not care about ordering.
+
+1. Repetition not allowed:
+$$
+C_n(k) = \binom{n}{k} = \frac{P_n(k)}{k!} = \frac{n!}{k!(n - k)!}.
+$$
+2. Repetition allowed:
+$$
+C_n(k) = \binom{n + k -1}{k}.
+$$
+:::
+
+> Repetition is the same as replacement.
+
+::: {.remark}
+<br/>
+
+* $0! = 1$,
+* $\displaystyle \binom{n}{0} = \binom{n}{n} = 1$,
+* $\displaystyle \binom{n}{1} = \binom{n}{n - 1} = n$,
+* $\displaystyle \binom{n}{k} = \binom{n}{n - k}$,
+* $\displaystyle \binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}$, and
+* $\displaystyle \sum_{k = 0}^n \binom{n}{k} = 2^n$.
+:::
+
 ## Random Variables
+
+::: {.definition name="Random Variable"}
+Let $(\Omega, \F, P)$ be a probability space, then a _random variable_ on $\Omega$ is a function
+$$
+X : \Omega \to \mathscr{W}(X) \subseteq \R.
+$$
+If the image $\mathscr{W}(X)$ is countable, $X$ is called a _discrete random variable_, otherwise it is called a _continuous random variable_.
+:::
+
+::: {.definition name="Probability Density Function"}
+The _probability density function_ (PDF) $f_X : \R \to \R$ of a random variable $X$ is a function defined as follows:
+$$
+f_X(x) := P(X = x) := P\left(\{\omega \mid X(\omega) = x\}\right).
+$$
+With $X$ discrete, we use $p_X(t)$ instead of $f_X(t)$.
+:::
+
+::: {.remark}
+<br/>
+
+* If $X$ is a discrete random variable, then $\displaystyle \sum_{i=1}^n p_X(u_i) = 1$.
+* If $X$ is a continuous random variable, then $\displaystyle \int_{-\infty}^{\infty} f_X(t)dt = 1$.
+:::
+
+::: {.definition name="Cumulative Distribution"}
+The _cumulative distribution function_ (CDF) $F_X : \R \to [0,1]$ of a random variable $X$ is a function defined as follows:
+$$
+F_X(x) := P(X \leq x) := P\left(\{\omega \mid X(\omega) \leq x\}\right).
+$$
+If the PDF is given, the CDF can be expressed with:
+$$
+F_X(x) =
+\begin{cases}
+\displaystyle \sum_{x_i \leq x} p_X(x_i), & X\ \text{discr.} \\
+\displaystyle \int_{-\infty}^x f_X(t)dt,  & X\ \text{cont.}
+\end{cases}
+$$
+:::
+
+::: {.remark}
+<br/>
+
+* If $t \leq s$, then $F_X(t) \leq F_X(s)$ (*monotonicity*).
+* If $t > s$, then $\displaystyle \lim_{t \to s} F_X(t) = F_X(s)$.
+* $\displaystyle \lim_{t \to -\infty} F_X(t) = 0$ and $\displaystyle \lim_{t \to \infty} F_X(t) = 1$.
+* $\displaystyle P(a \leq X \leq b) = F_X(b) - F_X(a) = \int_{a}^{b} f_X(t)dt$.
+* $P(X > t) = 1 - P(X \leq t) = 1 - F_X(t)$.
+* $\displaystyle \frac{d}{dx}F_X(x) = f_X(x)$.
+:::
+
+::: {.definition name="Expected Value"}
+Let $X$ be a random variable, then the _expected value_ is defined as follows:
+$$
+\E[X] :=
+\begin{cases}
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot p_X(x_k), & X\ \text{discr.} \\
+\displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  & X\ \text{cont.}
+\end{cases}
+$$
+:::
 
 ## Discrete Distributions
 

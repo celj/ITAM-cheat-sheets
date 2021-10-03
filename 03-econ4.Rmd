@@ -16,51 +16,51 @@ knit: (function(input, ...) {
 
 #### Initial Assumptions {-}
 
-* There are $m$ consumers such that $\mathcal{I} = \{1, \dots, m\}$.
+* There are $m$ consumers such that $\mathscr{I} = \{1, \dots, m\}$.
 * There are $n$ goods such that $\L = \{1, \dots, n\}$.
 * A utility function $u_i : \R^\L \to \R$ represents the preferences of the $i$th consumer.
-* Each consumer can consume goods in $\mathrm{x}_i \in \R^\L_+$.
-* Each consumer has an initial endowment of $\mathrm{w}_i \in \R^\L_+$.
-* The ordered pair $(u_i, \mathrm{w}_i)$ describes each consumer.
+* Each consumer can consume goods in $x_i \in \R^\L_+$.
+* Each consumer has an initial endowment of $w_i \in \R^\L_+$.
+* The ordered pair $(u_i, w_i)$ describes each consumer.
 * The utility functions represent neoclassical preferences.
 
 ::: {.proposition}
-If $\mathrm{x} \succ_i \mathrm{y}$, then $u_i(\mathrm{x}) > u_i(\mathrm{y})$.
+If $x \succ_i \mathrm{y}$, then $u_i(x) > u_i(\mathrm{y})$.
 :::
 
 ::: {.definition name="Exchange Economy"}
 A *pure exchange economy* is
 $$
-\mathcal{E} = \left\langle \mathcal{I}, (u_i, \mathrm{w}_i)_{i\in\mathcal{I}} \right\rangle,
+\mathscr{E} = \left\langle \mathscr{I}, (u_i, w_i)_{i\in\mathscr{I}} \right\rangle,
 $$
-where $\mathcal{I}$ is the set of agents; $u_i$ and $\mathrm{w}_i$ are the utility function and initial endowment of the $i$th consumer, respectively.
+where $\mathscr{I}$ is the set of agents; $u_i$ and $w_i$ are the utility function and initial endowment of the $i$th consumer, respectively.
 :::
 
 ::: {.definition name="Total Endowment"}
 $$
-\Omega = \sum_{i \in \mathcal{I}} \mathrm{w}_i.
+\Omega = \sum_{i \in \mathscr{I}} w_i.
 $$
 :::
 
 ::: {.definition name="Resource Allocation"}
-The *resource allocation* is denoted by $X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)$, where $\mathrm{x}_i \in \R^\L_+$.
+The *resource allocation* is denoted by $X = (x_1, x_2, \dots, x_m)$, where $x_i \in \R^\L_+$.
 :::
 
 ::: {.definition name="Feasible Allocation"}
-The *feasible allocation* $\F$ of an economy $\mathcal{E}$ is defined by
+The *feasible allocation* $\F$ of an economy $\mathscr{E}$ is defined by
 $$
-\F = \left\{ X = (\mathrm{x}_1, \mathrm{x}_2, \dots, \mathrm{x}_m)\ :\ \mathrm{x}_i \in \R^\L_i,\ \sum_{i \in \mathcal{I}} \mathrm{x}_i = \sum_{i \in \mathcal{I}} \mathrm{w}_i \right\}.
+\F = \left\{ X = (x_1, x_2, \dots, x_m)\ :\ x_i \in \R^\L_i,\ \sum_{i \in \mathscr{I}} x_i = \sum_{i \in \mathscr{I}} w_i \right\}.
 $$
 :::
 
 ::: {.definition name="Pareto Efficiency"}
-Let $\mathcal{E}$ be an exchange economy. A feasible allocation of resources $X$ is said to be *Pareto efficient* if and only if there is no other feasible allocation $\hat{X}$ such that, for every agent in $\mathcal{I}$, $u_i(\hat{\mathrm{x}}_i) \geq u_i(\mathrm{x}_i)$ and, for at least one agent $j$, $u_j(\hat{\mathrm{x}}_j) > u_j(\mathrm{x}_j)$.
+Let $\mathscr{E}$ be an exchange economy. A feasible allocation of resources $X$ is said to be *Pareto efficient* if and only if there is no other feasible allocation $\hat{X}$ such that, for every agent in $\mathscr{I}$, $u_i(\hat{x}_i) \geq u_i(x_i)$ and, for at least one agent $j$, $u_j(\hat{x}_j) > u_j(x_j)$.
 :::
 
 ::: {.definition name="Pareto Dominance"}
 Let $X$ and $\hat{X}$ be two feasible allocations. We say that $\hat{X}$ *Pareto dominates* $X$ if and only if
 $$
-u_i(\hat{x}_{i,1}, \dots, \hat{x}_{i,n}) \geq u_i(x_{i,1}, \dots, x_{i,n}), \quad \forall i \in \mathcal{I},
+u_i(\hat{x}_{i,1}, \dots, \hat{x}_{i,n}) \geq u_i(x_{i,1}, \dots, x_{i,n}), \quad \forall i \in \mathscr{I},
 $$
 and there is at least one consumer $j$ such that
 $$
@@ -81,13 +81,13 @@ knitr::include_graphics("figures/edgeworth-box.svg")
 
 $$
 \begin{align*}
-\max_{ \mathrm{x}_1,\ \dots\ ,\ \mathrm{x}_m } \quad & u_1(x_{1,1}, \dots, x_{1,n}) \\
+\max_{ x_1,\ \dots\ ,\ x_m } \quad & u_1(x_{1,1}, \dots, x_{1,n}) \\
 \text{subject to} \quad & u_2(x_{2,1}, \dots, x_{2,n}) \geq \bar{u}_2, \\
 & \quad \vdots \\
 & u_m(x_{m,1}, \dots, x_{m,n}) \geq \bar{u}_m; \\
-& \sum_{i \in \mathcal{I}} x_{i,1} \leq \sum_{i \in \mathcal{I}} w_{i,1}, \\
+& \sum_{i \in \mathscr{I}} x_{i,1} \leq \sum_{i \in \mathscr{I}} w_{i,1}, \\
 & \quad \vdots \\
-& \sum_{i \in \mathcal{I}} x_{i,n} \leq \sum_{i \in \mathcal{I}} w_{i,n}.
+& \sum_{i \in \mathscr{I}} x_{i,n} \leq \sum_{i \in \mathscr{I}} w_{i,n}.
 \end{align*}
 $$
 
@@ -114,43 +114,43 @@ $$
 * Prices are the only source of information for agents.
 
 ::: {.definition name="Competitive Equilibrium"}
-An ordered pair of an allocation and a price vector, $\left( X^*, \mathrm{p} = (p_1, \dots, p_n) \right)$, is called a *competitive equilibrium* if the following conditions hold:
+An ordered pair of an allocation and a price vector, $\left( X^*, p = (p_1, \dots, p_n) \right)$, is called a *competitive equilibrium* if the following conditions hold:
 
-1. $\forall i \in \mathcal{I}$, $\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
+1. $\forall i \in \mathscr{I}$, $x_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
 $$
 \begin{align*}
-\max_{ \mathrm{x}_i } \quad & u_i(\mathrm{x}_i) \\
-\text{subject to} \quad & wh + \langle \mathrm{p}, \mathrm{x}_i \rangle \leq \langle \mathrm{p}, \mathrm{w}_i \rangle = \sum_{\ell \in \L} p_{\ell} w_{i,\ell}.
+\max_{ x_i } \quad & u_i(x_i) \\
+\text{subject to} \quad & wh + \langle p, x_i \rangle \leq \langle p, w_i \rangle = \sum_{\ell \in \L} p_{\ell} w_{i,\ell}.
 \end{align*}
 $$
-2. Markets clear, i.e. $\displaystyle \sum_{i \in \mathcal{I}} x_{i,\ell}^* = \sum_{i \in \mathcal{I}} w_{i,\ell}$, $\forall \ell \in \L$.
+2. Markets clear, i.e. $\displaystyle \sum_{i \in \mathscr{I}} x_{i,\ell}^* = \sum_{i \in \mathscr{I}} w_{i,\ell}$, $\forall \ell \in \L$.
 :::
 
 ::: {.proposition}
-Given at least one consumer with strictly monotonic preferences. Then, if $(X^*, \mathrm{p})$ is a competitive equilibrium, $p_1, p_2, \dots, p_n >0$.
+Given at least one consumer with strictly monotonic preferences. Then, if $(X^*, p)$ is a competitive equilibrium, $p_1, p_2, \dots, p_n >0$.
 :::
 
 ::: {.proposition}
-Given at least one consumer with weakly monotonic preferences. Then, if $(X^*, \mathrm{p})$ is a competitive equilibrium, for at least one $\ell$, $p_\ell > 0$.
+Given at least one consumer with weakly monotonic preferences. Then, if $(X^*, p)$ is a competitive equilibrium, for at least one $\ell$, $p_\ell > 0$.
 :::
 
 ::: {.proposition}
-Let $(X^*, \mathrm{p})$ be a competitive equilibrium. Then $(X^*, c\mathrm{p})$ is also a competitive equilibrium, $\forall c \in \R_+$.
+Let $(X^*, p)$ be a competitive equilibrium. Then $(X^*, cp)$ is also a competitive equilibrium, $\forall c \in \R_+$.
 :::
 
 ::: {.theorem name="Walras's Law"}
-If the consumer $i$ has weakly monotonic preferences and $\hat{\mathrm{x}}_i \in \mathrm{x}_i^*(\mathrm{p})$, then
+If the consumer $i$ has weakly monotonic preferences and $\hat{x}_i \in x_i^*(p)$, then
 $$
-\langle \mathrm{p}, \hat{\mathrm{x}}_i \rangle = \sum_{\ell \in \L} p_{\ell} \hat{x}_{i,\ell} = \sum_{\ell \in \L} p_{\ell} w_{i,\ell} = \langle \mathrm{p}, \mathrm{w}_i \rangle.
+\langle p, \hat{x}_i \rangle = \sum_{\ell \in \L} p_{\ell} \hat{x}_{i,\ell} = \sum_{\ell \in \L} p_{\ell} w_{i,\ell} = \langle p, w_i \rangle.
 $$
 :::
 
 ::: {.corollary name="Walras's Law"}
-Given weakly monotonic utility functions and $\mathrm{p} = (p_1, \dots, p_n)$ such that $p_\ell > 0$. If any $(X^*, \mathrm{p})$ in which maximization condition holds, $\forall i \in \mathcal{I}$, and markets clear $\forall \ell = 1, 2, \dots, n - 1$, then the market clearing condition holds for commodity $n$ as well.
+Given weakly monotonic utility functions and $p = (p_1, \dots, p_n)$ such that $p_\ell > 0$. If any $(X^*, p)$ in which maximization condition holds, $\forall i \in \mathscr{I}$, and markets clear $\forall \ell = 1, 2, \dots, n - 1$, then the market clearing condition holds for commodity $n$ as well.
 :::
 
 ::: {.theorem name="Fixed Point"}
-For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $\mathrm{p}^* = (p_1^*, p_2^*, \dots, p_n^*)$ such that $f(\mathrm{p}^*) = \mathrm{p}^*$, where:
+For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p_1^*, p_2^*, \dots, p_n^*)$ such that $f(p^*) = p^*$, where:
 $$
 \triangle^{n - 1} = \left\{ (p_1, p_2, \dots, p_n) \in \R^\L_+ : \sum_{\ell \in \L} p_\ell = 1 \right\}.
 $$
@@ -159,40 +159,40 @@ $$
 ::: {.definition name="Shortage"}
 We define *shortage* or *excess demand* as follows:
 $$
-Z(\mathrm{p}) = (z_1(\mathrm{p}), z_2(\mathrm{p}), \dots, z_n(\mathrm{p})) = \sum_{i \in \mathcal{I}} \mathrm{x}^*_i (\mathrm{p}) - \sum_{i \in \mathcal{I}} \mathrm{w}_i.
+Z(p) = (z_1(p), z_2(p), \dots, z_n(p)) = \sum_{i \in \mathscr{I}} x^*_i (p) - \sum_{i \in \mathscr{I}} w_i.
 $$
 :::
 
 ::: {.proposition}
-$\mathrm{p}$ is a competitive equilibrium if and only if $Z(\mathrm{p}) = 0$.
+$p$ is a competitive equilibrium if and only if $Z(p) = 0$.
 :::
 
 #### Excess Demand Properties {-}
 
-* Continuous in $\mathrm{p}$.
+* Continuous in $p$.
 * Zero degree homogeneity.
-* $\langle \mathrm{p}, Z(\mathrm{p}) \rangle = 0$.
+* $\langle p, Z(p) \rangle = 0$.
 
 ::: {.proposition}
 The equilibrium is not unique.
 :::
 
 ::: {.theorem name="Welfare I"}
-Given any pure exchange economy such that all consumers have weakly monotonic utility functions. If $(X^*, \mathrm{p})$ is a competitive equilibrium, then $X^*$ is a Pareto efficient allocation.
+Given any pure exchange economy such that all consumers have weakly monotonic utility functions. If $(X^*, p)$ is a competitive equilibrium, then $X^*$ is a Pareto efficient allocation.
 :::
 
 ::: {.theorem name="Welfare II"}
-Given an economy $\displaystyle \mathcal{E} = \langle \mathcal{I}, (u_i, w_i)_{i \in \mathcal{I}} \rangle$ where all consumers have weakly monotonic quasiconcave utility functions. If $(x_1, x_2, \dots, x_m)$ is a Pareto optimal allocation, then there exists a redistribution of resources $(\hat{w}_1, \hat{w}_2, \dots, \hat{w}_m)$ and some prices $\mathrm{p} = (p_1, p_2, \dots, p_n)$ such that:
+Given an economy $\displaystyle \mathscr{E} = \langle \mathscr{I}, (u_i, w_i)_{i \in \mathscr{I}} \rangle$ where all consumers have weakly monotonic quasiconcave utility functions. If $(x_1, x_2, \dots, x_m)$ is a Pareto optimal allocation, then there exists a redistribution of resources $(\hat{w}_1, \hat{w}_2, \dots, \hat{w}_m)$ and some prices $p = (p_1, p_2, \dots, p_n)$ such that:
 
-1. $\displaystyle \sum_{i \in \mathcal{I}} \hat{w}_i = \sum_{i \in \mathcal{I}} w_i$.
-2. $(\mathrm{p}, (x_1, x_2, \dots, x_m))$ is a competitive equilibrium of the economy $\mathcal{E}$.
+1. $\displaystyle \sum_{i \in \mathscr{I}} \hat{w}_i = \sum_{i \in \mathscr{I}} w_i$.
+2. $(p, (x_1, x_2, \dots, x_m))$ is a competitive equilibrium of the economy $\mathscr{E}$.
 :::
 
 ### Production {-}
 
 #### Initial Assumptions {-}
 
-* There are $k$ firms such that $\mathcal{J} = \{1, \dots, k\}$.
+* There are $k$ firms such that $\mathscr{J} = \{1, \dots, k\}$.
 * The production of the firm $j$ for good $l$ is described by the function $f_{j,l}$ such that $f_j(z_{\ell,l}) = f_j(z_{1,l}, \dots, z_{n,l})$. Namely, the firm $j$ uses $z_\ell$ units of commodities $\ell \in \L$ to produce commodity $l$.
 * The firms are owned by consumers in society.
 * The firms' ownership is exogenous.
@@ -201,25 +201,25 @@ Given an economy $\displaystyle \mathcal{E} = \langle \mathcal{I}, (u_i, w_i)_{i
 
 ::: {.remark}
 $$
-\sum_{i \in \mathcal{I}} \theta_{i,j} = \theta_{1,j} + \theta_{2,j} + \cdots + \theta_{m,j} = 1 .
+\sum_{i \in \mathscr{I}} \theta_{i,j} = \theta_{1,j} + \theta_{2,j} + \cdots + \theta_{m,j} = 1 .
 $$
 :::
 
 ::: {.definition name="Competitive Equilibrium"}
-$((X^*, Z^*), \mathrm{p})$ is called a *competitive equilibrium* if the following conditions hold:
+$((X^*, Z^*), p)$ is called a *competitive equilibrium* if the following conditions hold:
 
-1. $\forall j \in \mathcal{J}$, $\mathrm{z}^*_j = ((z_{j,1,1'}, \dots, z_{j,1,n'}), \dots, (z_{j,n,1'}, \dots, z_{j,n,n'}))$ solves the following maximization problem:
+1. $\forall j \in \mathscr{J}$, $z^*_j = ((z_{j,1,1'}, \dots, z_{j,1,n'}), \dots, (z_{j,n,1'}, \dots, z_{j,n,n'}))$ solves the following maximization problem:
 $$
-\pi^*_j := \max_{ \mathrm{z}_j }\ p_l f_{j,l} (\mathrm{z}_\ell) - \sum_{\ell \in \L} p_\ell \mathrm{z}_{j, \ell}.
+\pi^*_j := \max_{ z_j }\ p_l f_{j,l} (z_\ell) - \sum_{\ell \in \L} p_\ell z_{j, \ell}.
 $$
-2. $\forall i \in \mathcal{I}$, $\mathrm{x}_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
+2. $\forall i \in \mathscr{I}$, $x_i^* = (x_{i,1}^*, \dots, x_{i,n}^*)$ solves the following maximization problem:
 $$
 \begin{align*}
-\max_{ \mathrm{x}_i } \quad & u_i(\mathrm{x}_i) \\
-\text{subject to} \quad & \langle \mathrm{p}, \mathrm{x}_i \rangle \leq \langle \mathrm{p}, \mathrm{w}_i \rangle + \sum_{j \in \mathcal{J}} \theta_{i,j} \pi^*_j.
+\max_{ x_i } \quad & u_i(x_i) \\
+\text{subject to} \quad & \langle p, x_i \rangle \leq \langle p, w_i \rangle + \sum_{j \in \mathscr{J}} \theta_{i,j} \pi^*_j.
 \end{align*}
 $$
-3. Markets clear, i.e. $\displaystyle \sum_{i \in \mathcal{I}} x_{i,\ell}^* + \sum_{j \in \mathcal{J}} \sum_{\ell \in \L} \mathrm{z}^*_{j,l} = \sum_{i \in \mathcal{I}} w_{i,\ell} + \sum_{j \in \mathcal{J}} f_{j,l} (\mathrm{z}^*_\ell)$, $\forall \ell \in \L$.
+3. Markets clear, i.e. $\displaystyle \sum_{i \in \mathscr{I}} x_{i,\ell}^* + \sum_{j \in \mathscr{J}} \sum_{\ell \in \L} z^*_{j,l} = \sum_{i \in \mathscr{I}} w_{i,\ell} + \sum_{j \in \mathscr{J}} f_{j,l} (z^*_\ell)$, $\forall \ell \in \L$.
 :::
 
 ::: {.proposition}
@@ -227,7 +227,7 @@ Walras's law and welfare theorems hold.
 :::
 
 ::: {.proposition}
-Let $((X^*, Z^*), \mathrm{p})$ be a competitive equilibrium. Then $((X^*, Z^*), c\mathrm{p})$ is also a competitive equilibrium, $\forall c \in \R_+$.
+Let $((X^*, Z^*), p)$ be a competitive equilibrium. Then $((X^*, Z^*), cp)$ is also a competitive equilibrium, $\forall c \in \R_+$.
 :::
 
 > With production, Edgeworth box diagrams are no longer helpful.
@@ -236,13 +236,13 @@ Let $((X^*, Z^*), \mathrm{p})$ be a competitive equilibrium. Then $((X^*, Z^*), 
 
 $$
 \begin{align*}
-\max_{ \mathrm{x}_i, \mathrm{z}_j } \quad & u_1(\mathrm{x}_1) \\
-\text{subject to} \quad & u_2(\mathrm{x}_2) \geq \bar{u}_2, \\
+\max_{ x_i, z_j } \quad & u_1(x_1) \\
+\text{subject to} \quad & u_2(x_2) \geq \bar{u}_2, \\
 & \quad \vdots \\
-& u_m(\mathrm{x}_m) \geq \bar{u}_m; \\
-& \sum_{i \in \mathcal{I}} x_{i,1} + \sum_{j \in \mathcal{J}} z_{j,1} \leq \sum_{j \in \mathcal{J}} f_{j,1} (\mathrm{z}_\ell) + \sum_{i \in \mathcal{I}} w_{i,1}, \\
+& u_m(x_m) \geq \bar{u}_m; \\
+& \sum_{i \in \mathscr{I}} x_{i,1} + \sum_{j \in \mathscr{J}} z_{j,1} \leq \sum_{j \in \mathscr{J}} f_{j,1} (z_\ell) + \sum_{i \in \mathscr{I}} w_{i,1}, \\
 & \quad \vdots \\
-& \sum_{i \in \mathcal{I}} x_{i,n} + \sum_{j \in \mathcal{J}} z_{j,n} \leq \sum_{j \in \mathcal{J}} f_{j,n} (\mathrm{z}_\ell) + \sum_{i \in \mathcal{I}} w_{i,n}.
+& \sum_{i \in \mathscr{I}} x_{i,n} + \sum_{j \in \mathscr{J}} z_{j,n} \leq \sum_{j \in \mathscr{J}} f_{j,n} (z_\ell) + \sum_{i \in \mathscr{I}} w_{i,n}.
 \end{align*}
 $$
 
@@ -251,15 +251,15 @@ Let all utility functions be quasiconcave and strictly increasing, and $(X,Z)$ b
 
 1. Marginal rates of substitution are equal across consumers,
 $$
-\ie \quad \MRS(\ell,\ell')(\mathrm{x}_1) = \cdots = \MRS(\ell,\ell')(\mathrm{x}_m).
+\ie \quad \MRS(\ell,\ell')(x_1) = \cdots = \MRS(\ell,\ell')(x_m).
 $$
 2. Marginal rates of technical substitution are equal across firms for any pair of commodities,
 $$
-\ie \quad \MRTS(\ell,\ell')(\mathrm{z}_1) = \cdots = \MRTS(\ell,\ell')(\mathrm{z}_k).
+\ie \quad \MRTS(\ell,\ell')(z_1) = \cdots = \MRTS(\ell,\ell')(z_k).
 $$
 3. Marginal rates of transformation are equal to the marginal rates of substitution,
 $$
-\ie \quad \MRT(j,j')(\mathrm{z}_{\ell''}) = \MRS(\ell,\ell')(\mathrm{x}_i), \quad \forall i \in \mathcal{I}.
+\ie \quad \MRT(j,j')(z_{\ell''}) = \MRS(\ell,\ell')(x_i), \quad \forall i \in \mathscr{I}.
 $$
 :::
 
