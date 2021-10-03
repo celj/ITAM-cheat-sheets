@@ -125,6 +125,7 @@ source('scripts_and_filters/wrap_lines.R')
 \DeclareMathOperator*{\E}{\mathbb{E}}
 \newcommand{\Corr}{\text{Corr}}
 \newcommand{\Cov}{\text{Cov}}
+\newcommand{\sd}{\text{sd}}
 \newcommand{\Var}{\text{Var}}
 \newcommand{\Ber}{\text{Ber}}
 \newcommand{\Bin}{\text{Bin}}

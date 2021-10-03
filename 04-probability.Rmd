@@ -102,7 +102,7 @@ $$
 :::
 
 ::: {.definition name="Permutation"}
-Let $n$ be the number of total objects and $k$ be the number of objects we want to select, then a _permutation_ is an arrangement of elements where we care about ordering.
+Let $n$ be the number of total objects and $k$ be the number of objects we want to select. A _permutation_ is an arrangement of elements where we care about ordering.
 
 1. Repetition not allowed:
 $$
@@ -114,8 +114,8 @@ P_n(k) = n^k.
 $$
 :::
 
-::: {.definition name="Permutation"}
-Let $n$ be the number of total objects and $k$ be the number of objects we want to select, then a _permutation_ is an arrangement of elements where we do not care about ordering.
+::: {.definition name="Combination"}
+Let $n$ be the number of total objects and $k$ be the number of objects we want to select. A _combination_ is an arrangement of elements where we do not care about ordering.
 
 1. Repetition not allowed:
 $$
@@ -143,7 +143,7 @@ $$
 ## Random Variables
 
 ::: {.definition name="Random Variable"}
-Let $(\Omega, \F, P)$ be a probability space, then a _random variable_ on $\Omega$ is a function
+Let $(\Omega, \F, P)$ be a probability space. A _random variable_ on $\Omega$ is a function
 $$
 X : \Omega \to \mathscr{W}(X) \subseteq \R.
 $$
@@ -161,7 +161,7 @@ With $X$ discrete, we use $p_X(t)$ instead of $f_X(t)$.
 ::: {.remark}
 <br/>
 
-* If $X$ is a discrete random variable, then $\displaystyle \sum_{i=1}^n p_X(u_i) = 1$.
+* If $X$ is a discrete random variable, then $\displaystyle \sum_i p_X(u_i) = 1$.
 * If $X$ is a continuous random variable, then $\displaystyle \int_{-\infty}^{\infty} f_X(t)dt = 1$.
 :::
 
@@ -174,8 +174,8 @@ If the PDF is given, the CDF can be expressed with:
 $$
 F_X(x) =
 \begin{cases}
-\displaystyle \sum_{x_i \leq x} p_X(x_i), & X\ \text{discr.} \\
-\displaystyle \int_{-\infty}^x f_X(t)dt,  & X\ \text{cont.}
+\displaystyle \sum_{x_i \leq x} p_X(x_i), & \text{discrete} \\
+\displaystyle \int_{-\infty}^x f_X(t)dt,  & \text{continuous}
 \end{cases}
 $$
 :::
@@ -192,20 +192,339 @@ $$
 :::
 
 ::: {.definition name="Expected Value"}
-Let $X$ be a random variable, then the _expected value_ is defined as follows:
+Let $X$ be a random variable. The _expected value_ is defined as follows:
 $$
 \E[X] :=
 \begin{cases}
-\displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot p_X(x_k), & X\ \text{discr.} \\
-\displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  & X\ \text{cont.}
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot p_X(x_k), & \text{discrete} \\
+\displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  & \text{continuous}
 \end{cases}
 $$
 :::
 
-## Discrete Distributions
+::: {.remark}
+<br/>
 
-## Continuous Distributions
+* $\E[X] \leq \E[Y]$ if $\forall \omega : X(\omega) \leq Y(\omega)$,
+* $\displaystyle \E\left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i=0}^n a_i \E\left[ X_i \right]$,
+* $\displaystyle \E[X] = \sum_{j=1}^\infty P[X \geq j]$ if $\mathscr{W}(X) \subseteq \N_0$,
+* $\displaystyle \E\left[ \sum_{i=0}^\infty X_i \right] \neq \sum_{i=0}^\infty \E\left[ X_i \right]$,
+* $\E[\E[X]] = \E[X]$,
+* $\E[XY]^2 \leq E[X^2]E[Y^2]$, and
+* $\displaystyle \E\left[ \prod_{i=0}^n X_i \right] = \prod_{i=0}^n \E[X_i]$ for independent $X_1, \dots, X_n$.
+:::
+
+> The expected value is a linear operator.
+
+::: {.definition name="Expected Value of Functions"}
+Let $X$ be a random variable and $Y = g(X)$ with $g : \R \to \R$, then
+$$
+\E[Y] :=
+\begin{cases}
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} g(x_k) \cdot p_X(x_k), & \text{discrete} \\
+\displaystyle \int_{-\infty}^\infty g(x) \cdot f_X(x)dx,  & \text{continuous}
+\end{cases}
+$$
+:::
+
+::: {.definition name="Moment-Generating Function"}
+Let $X$ be a random variable. The _moment-generating function_ of $X$ is defined as follows:
+$$
+M_X(t) := \E \left[ e^{tX} \right].
+$$
+:::
+
+::: {.definition name="Variance"}
+Let $X$ be a random variable with $\E[X^2] < \infty$. The _variance_ of $X$ is defined as follows:
+$$
+\Var[X] := \E\left[ (X - \E[X])^2 \right].
+$$
+:::
+
+::: {.remark}
+<br/>
+
+* $0 \leq \Var[X] \leq \E[X^2]$,
+* $\Var[X] = \E[X^2] - \E^2[X]$,
+* $\Var[aX + b] = a^2\Var[X]$,
+* $\Var[X] = \Cov(X,X)$,
+* $\displaystyle \Var \left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i = 0}^n a_i^2 \Var[X_i] + 2 \sum_{1 \leq i < j \leq n} a_i a_j \Cov(X_i, X_j)$, and
+* $\displaystyle \Var \left[ \sum_{i=0}^n X_i \right] = \sum_{i = 0}^n \Var[X_i]$ if $\Cov(X_i, X_j) = 0$, $\forall i \neq j$.
+:::
+
+::: {.definition name="Standard Deviation"}
+Let $X$ be a random variable with $\E[X^2] < \infty$. The _standard deviation_ of $X$ is defined as follows:
+$$
+\sigma(X) = \sd(X) := \sqrt{\Var[X]}.
+$$
+:::
+
+::: {.definition name="Covariance"}
+Let $X$ and $Y$ be random variables with finite expected value. The _covariance_ of $X$ and $Y$ is defined as follows:
+$$
+\begin{align*}
+\Cov(X, Y) :&=\ \E\left[ (X - \E[X]) (Y - \E[Y]) \right] \\
+            &=\ \E[XY] - \E[X]\E[Y]
+\end{align*}
+$$
+:::
+
+> The covariance is a measure of correlation between two random variables. $\Cov(X,Y)>0$ if $Y$ tends to increase as $X$ increases. $\Cov(X,Y)<0$ if $Y$ tends to decrease as $X$ increases. If $\Cov(X,Y)=0$, then $X$ and $Y$ are uncorrelated.
+
+::: {.remark}
+<br/>
+
+* $\Cov(aX,bY) = ab\Cov(X,Y)$,
+* $\Cov(X + a, Y + b) = \Cov(X,Y)$, and
+* $\Cov(aX_1 + bX_2, cY_1 + dY_2)$
+  $= ac\Cov(X_1,Y_1) + ad\Cov(X_1,Y_2) + bc\Cov(X_2,Y_1) + bd\Cov(X_2,Y_2)$.
+:::
+
+::: {.definition name="Correlation"}
+Let $X$ and $Y$ be random variables with finite expected value. The _correlation_ of $X$ and $Y$ is defined as follows:
+$$
+\Corr(X,Y) := \frac{\Cov(X,Y)}{\sqrt{\Var[X] \cdot \Var[Y]}}.
+$$
+:::
+
+> Correlation is the same as covariance but normalized with values between -1 and 1.
 
 ## Multivariate Distributions
 
-### Multivariate Normal Distribution
+::: {.definition name="Joint Probability Density Function"}
+The _joint probability density function_ $f_X : \R^n \to [0, 1]$ with $X = (X_1, \dots, X_n)$ is a function defined as follows:
+$$
+f_X(x_1, \dots, x_n) := P[X_1 = x_1, \dots, X_n = x_n].
+$$
+:::
+
+::: {.definition name="Joint Cumulative Distribution Function"}
+The _joint cumulative distribution function_ $F_X : \R^n \to [0, 1]$ with $X = (X_1, \dots, X_n)$ is a function defined as follows:
+$$
+f_X(x_1, \dots, x_n) := P[X_1 \leq x_1, \dots, X_n \leq x_n].
+$$
+If the joint PDF is given, it can be expressed with:
+$$
+F_X(x) =
+\begin{cases}
+\displaystyle \sum_{t_1 \leq x_1} \cdots \sum_{t_n \leq x_n} p_X(t), & \text{discrete} \\
+\displaystyle \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n} f_X(t)dt, & \text{continuous}
+\end{cases}
+$$
+where $t = (t_1, \dots, t_n)$ and $x = (x_1, \dots, x_n)$.
+:::
+
+::: {.remark}
+$$
+\frac{\partial F_X(x_1, \dots, x_n)}{\partial x_1, \dots, x_n} = f_X(x_1, \dots, x_n)
+$$
+:::
+
+::: {.definition name="Marginal Probability Density Function"}
+The _marginal probability density function_ $f_{X_i} : \R \to [0,1]$ of $X_i$ given a joint PDF $f_X(x_1, \dots, x_n)$ is defined as follows:
+$$
+f_{X_i}(t_i) =
+\begin{cases}
+\displaystyle \sum_{t_1} \cdots \sum_{t_{i-1}} \sum_{t_{i+1}} \cdots \sum_{t_n} p_X(t), & \text{discrete} \\
+\displaystyle \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f_X(t)d\tilde{t}, & \text{continuous}
+\end{cases}
+$$
+where $\tilde{t} = (t_1, \dots, t_{i-1}, t_{i+1}, \dots, t_n)$, and in the discrete case $t_k \in \mathscr{W}(X_k)$.
+:::
+
+> The idea of the marginal probability is to ignore all other random variables and consider only the one we’re interested in.
+
+::: {.definition name="Marginal Cumulative Distribution Function"}
+The _marginal cumulative distribution function_ $F_{X_i} : \R \to [0,1]$ of $X_i$ given a joint CDF $F_X(x_1, \dots, x_n)$ is defined as follows:
+$$
+F_{X_i}(x_i) := \lim_{x_{j\neq i} \to \infty} F_X(x_1, \dots, x_n).
+$$
+:::
+
+::: {.definition name="Conditional Distribution"}
+The _conditional distribution_ $f_{X \mid Y} : \R \to [0,1]$ is defined as follows:
+$$
+\begin{align*}
+f_{X\mid Y} (x \mid y) :&=\ P[X = x \mid Y = y] \\
+                        &=\ \frac{P[X = x, Y = y]}{P[Y = y]} \\
+                        &=\ \frac{\text{Joint PDF}}{\text{Marginal PDF}}
+\end{align*}
+$$
+:::
+
+::: {.definition name="Independence"}
+The random variables $X_1, \dots, X_n$ are _independent_ if
+$$
+F_{X_1, \dots, X_n} (x_1, \dots, x_n) = \prod_{i=1}^n F_{X_i}(x_i).
+$$
+Similarly, if their PDF is absolutely continuous, they are _independent_ if
+$$
+f_{X_1, \dots, X_n} (x_1, \dots, x_n) = \prod_{i=1}^n f_{X_i}(x_i).
+$$
+:::
+
+::: {.theorem name="Function Independence"}
+If the random variables $X_1, \dots, X_n$ are independent and $f_i : \R \to \R$ is a function with $Y_i := f_i(X_i)$, then also $Y_1, \dots, Y_n$ are independent.
+:::
+
+::: {.theorem}
+The random variables $X_1, \dots, X_n$ are independent if and only if, $\forall B_i \subseteq \mathscr{W}(X_i)$, we have
+$$
+P[X_1 \in B_1, \dots, X_n \in B_n] = \prod_{i=1}^n P[X_i \in B_i].
+$$
+:::
+
+::: {.definition name="Joint Expected Value"}
+The _joint expected value_ of a random variable $Y = g(X_1, \dots, X_n) = g(X)$ is defined as follows:
+$$
+\E[Y] =
+\begin{cases}
+\displaystyle \sum_{t_1} \cdots \sum_{t_n} g(t) p_X(t), & \text{discrete} \\
+\displaystyle \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} g(t)f_X(t)dt, & \text{continuous}
+\end{cases}
+$$
+where $t = (t_1, \dots, t_n)$, and in the discrete case $t_k \in \mathscr{W}(X_k)$.
+:::
+
+::: {.definition name="Conditional Expected Value"}
+The _conditional expected value_ of random variables $X$ and $Y$ is defined as follows:
+$$
+\E[X\mid Y] :=
+\begin{cases}
+\displaystyle \sum_{x \in \R} x \cdot p_{X\mid Y}(x\mid y), & \text{discrete} \\
+\displaystyle \int_{-\infty}^\infty x \cdot f_{X\mid Y}(x\mid y)dx,  & \text{continuous}
+\end{cases}
+$$
+:::
+
+::: {.remark}
+<br/>
+
+* $\E[\E[X\mid Y]] = \E[X]$, and
+* $\E[X\mid Y] = \E[X]$ if $X$ and $Y$ are independent.
+:::
+
+::: {.definition}
+Let $Y = g(X_1, \dots, X_n) = g(X)$.
+$$
+P[Y \in C] = \int_{A_C} f_X(t)dt
+$$
+where $A_C = \{ x = (x_1, \dots, x_n) \in \R^n : g(x) \in C \}$ and $t = (t_1, \dots, t_n)$.
+:::
+
+::: {.theorem name="Transformation"}
+Let $F$ be a continuous and strictly increasing CDF and let $X \sim \Unif(0, 1)$.
+$$
+Y = F^{-1}(X) \implies F_Y = F.
+$$
+:::
+
+::: {.remark name="Monte Carlo Integration"}
+Let $\displaystyle I = \int_a^b g(x)dx$ be the integral of a function that is hard to evaluate, then
+$$
+\begin{align*}
+I &=\ \int_a^b g(x)dx \\
+  &=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
+  &=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\Unif}(x) dx \\
+  &=\ (b - a) \cdot \E[g(\Unif)]
+\end{align*}
+$$
+where $\Unif(a,b)$ is uniformly distributed. Then, by the **Law of Large Numbers**, we know that we can approximate $\E[g(\Unif)]$ by randomly sampling $u_1, u_2, \dots$ from $\Unif(a,b)$.
+$$
+\frac{b - a}{n} \sum_{i=1}^n g(u_i) \underset{n\to\infty}{\longrightarrow} (b - a) \cdot \E[g(\Unif)].
+$$
+:::
+
+::: {.remark name="Transformation"}
+If we have a random variable $X$ with known CDF (strictly increasing) and $Y = g(X)$. To evaluate $F_Y$ and $f_Y$, we proceed as follows:
+
+1. $\displaystyle F_Y(t) = P[g(X) \leq t] = \int_{A_g} f_X(s)ds$
+2. $\displaystyle f_Y(t) = \frac{dF_Y}{dt}(t)$
+
+where $A_g = \{ s \in \R : g(s) \leq t \}$.
+:::
+
+::: {.remark name="Sum"}
+Let $X_1, \dots, X_n$ be independent random variables, then the sum $Z = X_1 + \cdots + X_n$ has a PDF $f_Z(z)$ evaluated with a convolution between all PDFs
+$$
+f_Z(z) = (f_{X_1}(x_1) * \cdots * f_{X_n}(x_n))(z).
+$$
+In the special case where $Z = X + Y$, we have
+$$
+f_Z(z) =
+\begin{cases}
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} p_X(x_k) p_Y(z - x_k), & \text{discrete} \\
+\displaystyle \int_{-\infty}^\infty f_x(t) f_Y(z - t)dt, & \text{continuous}
+\end{cases}
+$$
+:::
+
+> Often it is much easier to use properties of the random variables to find the sum instead of evaluating the convolution.
+
+::: {.remark name="Product"}
+Let $X$ and $Y$ be independent random variables. To evaluate the PDF and the CDF of $Z = XY$, we proceed as follows:
+$$
+\begin{align}
+F_Z(z) &=\ P[XY \leq z] \\
+       &=\ P\left[ X \geq \frac{z}{Y}, Y < 0 \right] \\
+       &+\ P\left[ X \leq \frac{z}{Y}, Y > 0 \right] \\
+       &=\ \int_{-\infty}^0 \left[ \int_{\frac{z}{y}}^\infty f_X(x)dx \right] f_Y(y)dy \\
+       &+\ \int_0^\infty \left[ \int_{-\infty}^{\frac{z}{y}} f_X(x)dx \right] f_Y(y)dy
+\end{align}
+$$
+where the PDF  is
+$$
+f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty f_Y(y)f_X\left(\frac{z}{y}\right) \frac{1}{\mid y \mid} dy.
+$$
+:::
+
+::: {.remark name="Quotient"}
+Let $X$ and $Y$ be independent random variables. To evaluate the PDF and the CDF of $\displaystyle Z = \frac{X}{Y}$, we proceed as follows:
+$$
+\begin{align}
+F_Z(z) &=\ P\left[\frac{X}{Y} \leq z\right] \\
+       &=\ P\left[ X \geq zY, Y < 0 \right] \\
+       &+\ P\left[ X \leq zY, Y > 0 \right] \\
+       &=\ \int_{-\infty}^0 \left[ \int_{yz}^\infty f_X(x)dx \right] f_Y(y)dy \\
+       &+\ \int_0^\infty \left[ \int_{-\infty}^{yz} f_X(x)dx \right] f_Y(y)dy
+\end{align}
+$$
+where the PDF  is
+$$
+f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty \mid y \mid f_X\left(yz\right) f_Y(y) dy.
+$$
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
