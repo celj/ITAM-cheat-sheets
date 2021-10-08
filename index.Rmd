@@ -156,3 +156,4 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\O}{\varnothing}
 \newcommand{\rk}{\text{rk}}
 \newcommand{\sgn}{\text{sgn}}
+\newcommand{\indicator}{\mathbb{1}}

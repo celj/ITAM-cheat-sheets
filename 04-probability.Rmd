@@ -10,6 +10,8 @@ knit: (function(input, ...) {
 
 # Probability
 
+For a basic course in probability (such as [EST-11101](http://estadistica.itam.mx/sites/default/files/u450/probabilidad.pdf)), you may want to skip some notes on Measure Theory.
+
 ## Basics and Combinatorics
 
 ::: {.definition name="Sample Space"}
@@ -53,6 +55,13 @@ where $A_n$ are disjunct.
 * $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
 :::
 
+::: {.proposition name="De Morgan's Laws"}
+Let $A_1, \dots, A_n$ be a set of events.
+$$
+\left( \bigcup_{i=1}^n A_i \right)^C = \bigcap_{i=1}^n A_i^C \qquad \left( \bigcap_{i=1}^n A_i \right)^C = \bigcup_{i=1}^n A_i^C
+$$
+:::
+
 ::: {.theorem name="Inclusion-Exclusion Principle"}
 Let $A_1, \dots, A_n$ be a set of events, then
 $$
@@ -67,7 +76,7 @@ $$
 ::: {.definition name="Laplace Space"}
 If $\Omega = \{\omega_1, \dots, \omega_N\}$ with $\mid \Omega \mid = N$ where all $\omega_i$ have the same probability $p_i = \frac{1}{N}$, $\Omega$ is called _Laplace space_ and $P$ has a discrete uniform distribution. For some event $A$, we have:
 $$
-P(A) = \frac{\mid A\mid}{\mid\Omega\mid}.
+P(A) = \frac{\lvert A\rvert}{\lvert\Omega\rvert}.
 $$
 :::
 
@@ -101,6 +110,30 @@ P\left( \bigcap_{i=1}^m A_{k_i} \right) = \prod_{i=1}^m P\left(A_{k_i}\right).
 $$
 :::
 
+::: {.definition name="Factorial"}
+The _factorial_ function is defined by the product
+$$
+n! = \prod_{i=1}^n i = n \cdot (n - 1)!
+$$
+for integer $n \geq 1$.
+:::
+
+::: {.definition name="Gamma Function"}
+Let $z \in \C$ with $\Re(z) > 0$, the _gamma function_ is defined via the following convergent improper integral:
+$$
+\Gamma(z) = \int_0^\infty t^{z - 1} e^{-t} dt.
+$$
+:::
+
+::: {.remark name="Gamma Function Properties"}
+<br/>
+
+* $\displaystyle \Gamma(1/2) = \sqrt{\pi}$.
+* $\displaystyle \Gamma(1) = \Gamma(2) = 1$.
+* $\displaystyle \Gamma(z) = (z - 1)\Gamma(z - 1)$.
+* $\displaystyle \Gamma(n) = (n - 1)!$, $\forall n \in \N$.
+:::
+
 ::: {.definition name="Permutation"}
 Let $n$ be the number of total objects and $k$ be the number of objects we want to select. A _permutation_ is an arrangement of elements where we care about ordering.
 
@@ -129,7 +162,7 @@ $$
 
 > Repetition is the same as replacement.
 
-::: {.remark}
+::: {.remark name="Binomial Coefficient Properties"}
 <br/>
 
 * $0! = 1$,
@@ -138,6 +171,22 @@ $$
 * $\displaystyle \binom{n}{k} = \binom{n}{n - k}$,
 * $\displaystyle \binom{n}{k} = \binom{n - 1}{k - 1} + \binom{n - 1}{k}$, and
 * $\displaystyle \sum_{k = 0}^n \binom{n}{k} = 2^n$.
+:::
+
+::: {.remark name="Sum Properties"}
+Let $x, y \in \R^n$, $c \in \R$ and $k \neq 1$.
+
+* $\displaystyle \sum_i x_i y_i \neq \sum_i x_i \sum y_i$.
+* $\displaystyle \sum_i x_i^k \neq \left( \sum_i x_i \right)^k$.
+* $\displaystyle \sum_{i=1}^n c = nc$.
+* $\displaystyle \sum_{i=1}^n cx_i = n\sum_{i=1}^n x_i$.
+* $\displaystyle \sum_i (x_i + y_i) = \sum_i x_i + \sum_i y_i$.
+:::
+
+::: {.theorem name="Binomial Expansion"}
+$$
+(x+y)^n = \sum_{k=0}^n {n \choose k}x^{n-k}y^k = \sum_{k=0}^n {n \choose k}  x^k y^{n-k}
+$$
 :::
 
 ## Random Variables
@@ -150,18 +199,18 @@ $$
 If the image $\mathscr{W}(X)$ is countable, $X$ is called a _discrete random variable_, otherwise it is called a _continuous random variable_.
 :::
 
-::: {.definition name="Probability Density Function"}
+::: {.definition name="Probability Density Function / Probability Mass Function"}
 The _probability density function_ (PDF) $f_X : \R \to \R$ of a random variable $X$ is a function defined as follows:
 $$
 f_X(x) := P(X = x) := P\left(\{\omega \mid X(\omega) = x\}\right).
 $$
-With $X$ discrete, we use $p_X(t)$ instead of $f_X(t)$.
+With $X$ discrete, it is called _probability mass function_.
 :::
 
 ::: {.remark}
 <br/>
 
-* If $X$ is a discrete random variable, then $\displaystyle \sum_i p_X(u_i) = 1$.
+* If $X$ is a discrete random variable, then $\displaystyle \sum_i f_X(u_i) = 1$.
 * If $X$ is a continuous random variable, then $\displaystyle \int_{-\infty}^{\infty} f_X(t)dt = 1$.
 :::
 
@@ -174,13 +223,13 @@ If the PDF is given, the CDF can be expressed with:
 $$
 F_X(x) =
 \begin{cases}
-\displaystyle \sum_{x_i \leq x} p_X(x_i), & \text{discrete} \\
+\displaystyle \sum_{x_i \leq x} f_X(x_i), & \text{discrete} \\
 \displaystyle \int_{-\infty}^x f_X(t)dt,  & \text{continuous}
 \end{cases}
 $$
 :::
 
-::: {.remark}
+::: {.remark name="Cumulative Distribution Properties"}
 <br/>
 
 * If $t \leq s$, then $F_X(t) \leq F_X(s)$ (*monotonicity*).
@@ -196,13 +245,13 @@ Let $X$ be a random variable. The _expected value_ is defined as follows:
 $$
 \E[X] :=
 \begin{cases}
-\displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot p_X(x_k), & \text{discrete} \\
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot f_X(x_k), & \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  & \text{continuous}
 \end{cases}
 $$
 :::
 
-::: {.remark}
+::: {.remark name="Expected Value Properties"}
 <br/>
 
 * $\E[X] \leq \E[Y]$ if $\forall \omega : X(\omega) \leq Y(\omega)$,
@@ -216,12 +265,23 @@ $$
 
 > The expected value is a linear operator.
 
+::: {.definition name="Raw Moment / Central Moment"}
+Let $n \in \N$. The _$n$th (raw) moment_ is defined as follows:
+$$
+\mu_n' = \E\left[X^n\right].
+$$
+The _$n$th central moment_ is defined as follows:
+$$
+\mu_n = \E\left[\left( X - \E[X] \right)^n \right].
+$$
+:::
+
 ::: {.definition name="Expected Value of Functions"}
 Let $X$ be a random variable and $Y = g(X)$ with $g : \R \to \R$, then
 $$
 \E[Y] :=
 \begin{cases}
-\displaystyle \sum_{x_k \in \mathscr{W}(X)} g(x_k) \cdot p_X(x_k), & \text{discrete} \\
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} g(x_k) \cdot f_X(x_k), & \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty g(x) \cdot f_X(x)dx,  & \text{continuous}
 \end{cases}
 $$
@@ -234,6 +294,14 @@ M_X(t) := \E \left[ e^{tX} \right].
 $$
 :::
 
+::: {.definition name="Characteristic Function"}
+Let $X$ be a random variable. The _characteristic function_ of $X$ is defined as follows:
+$$
+\varphi_X(t) := \E \left[ e^{itX} \right]
+$$
+where $i = \sqrt{-1} \in \C$.
+:::
+
 ::: {.definition name="Variance"}
 Let $X$ be a random variable with $\E[X^2] < \infty$. The _variance_ of $X$ is defined as follows:
 $$
@@ -241,15 +309,15 @@ $$
 $$
 :::
 
-::: {.remark}
+::: {.remark name="Variance Properties"}
 <br/>
 
 * $0 \leq \Var[X] \leq \E[X^2]$,
 * $\Var[X] = \E[X^2] - \E^2[X]$,
 * $\Var[aX + b] = a^2\Var[X]$,
 * $\Var[X] = \Cov(X,X)$,
-* $\displaystyle \Var \left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i = 0}^n a_i^2 \Var[X_i] + 2 \sum_{1 \leq i < j \leq n} a_i a_j \Cov(X_i, X_j)$, and
-* $\displaystyle \Var \left[ \sum_{i=0}^n X_i \right] = \sum_{i = 0}^n \Var[X_i]$ if $\Cov(X_i, X_j) = 0$, $\forall i \neq j$.
+* $\displaystyle \Var \left[ \sum_{i=1}^n a_i X_i \right] = \sum_{i = 1}^n a_i^2 \Var[X_i] + 2 \sum_{1 \leq i < j \leq n} a_i a_j \Cov(X_i, X_j)$, and
+* $\displaystyle \Var \left[ \sum_{i=1}^n X_i \right] = \sum_{i = 1}^n \Var[X_i]$ if $\Cov(X_i, X_j) = 0$, $\forall i \neq j$.
 :::
 
 ::: {.definition name="Standard Deviation"}
@@ -271,7 +339,7 @@ $$
 
 > The covariance is a measure of correlation between two random variables. $\Cov(X,Y)>0$ if $Y$ tends to increase as $X$ increases. $\Cov(X,Y)<0$ if $Y$ tends to decrease as $X$ increases. If $\Cov(X,Y)=0$, then $X$ and $Y$ are uncorrelated.
 
-::: {.remark}
+::: {.remark name="Covariance Properties"}
 <br/>
 
 * $\Cov(aX,bY) = ab\Cov(X,Y)$,
@@ -288,6 +356,66 @@ $$
 :::
 
 > Correlation is the same as covariance but normalized with values between -1 and 1.
+
+::: {.definition name="Coefficient of Variation"}
+The _coefficient of variation_ is defined as the ratio of the standard deviation to the mean.
+$$
+\ie \quad c_V = \frac{\sigma}{\mu}.
+$$
+:::
+
+::: {.definition name="Indicator Function"}
+The _indicator function_ $\indicator_A : \Omega \to \{0, 1\}$ for a set (event) $A$ is defined as follows:
+$$
+\indicator_A (\omega) :=
+\begin{cases}
+1, & \omega \in A \\
+0, & \omega \in A^C
+\end{cases}
+$$
+:::
+
+::: {.definition name="Survival Function"}
+Let $X$ be a continuous random variable with cumulative distribution function $F(x)$ on the interval $[0, \infty)$. Its _survival function_ or _reliability function_ is defined as follows:
+$$
+S(x) = P[X > x] = \int_x^\infty f(t)dt = 1 - F(x).
+$$
+:::
+
+::: {.definition name="Memorylessness"}
+Suppose $X$ is a non-negative random variable. The probability distribution of $X$ is _memoryless_ if for any $s, t \geq 0$, we have
+$$
+P[X > s + t \mid X > t] = P[X > s].
+$$
+:::
+
+::: {.theorem name="Markov's Inequality"}
+Let $X$ be a random variable and $g : \mathscr{W}(X) \to [0, \infty)$ be an increasing function, then, for all $c$ with $g(c) > 0$, we have
+$$
+P[X \geq c] \leq \frac{\E[g(X)]}{g(x)}.
+$$
+
+> For practical uses usually $g(x) = x$.
+:::
+
+::: {.theorem name="Chebyshev's Inequality"}
+Let $X$ be a random variable with $\Var[X] < \infty$, then, if $b > 0$,
+$$
+P\left[ \lvert X - \E[X] \rvert \geq b \right] \leq \frac{\Var[X]}{b^2}.
+$$
+
+|         |Lower Bound|Upper Bound|
+|---------|-----------|-----------|
+|$b$ units|$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert < b \right] \geq 1 - \frac{\Var[X]}{b^2}$|$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert \geq b \right] \leq \frac{\Var[X]}{b^2}$|
+|$r$ standard deviations|$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert < r\  \sd(X) \right] \geq 1 - \frac{1}{r^2} \quad$|$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert \geq r\ \sd(X) \right] \leq \frac{1}{r^2}$|
+:::
+
+::: {.theorem name="Jensen's Inequality"}
+If $X$ is a random variable and $\varphi$ is a convex function, then
+$$
+\varphi\left(\E[X]\right) \leq \E\left[\varphi(X)\right].
+$$
+:::
 
 ## Multivariate Distributions
 
@@ -307,7 +435,7 @@ If the joint PDF is given, it can be expressed with:
 $$
 F_X(x) =
 \begin{cases}
-\displaystyle \sum_{t_1 \leq x_1} \cdots \sum_{t_n \leq x_n} p_X(t), & \text{discrete} \\
+\displaystyle \sum_{t_1 \leq x_1} \cdots \sum_{t_n \leq x_n} f_X(t), & \text{discrete} \\
 \displaystyle \int_{-\infty}^{x_1} \cdots \int_{-\infty}^{x_n} f_X(t)dt, & \text{continuous}
 \end{cases}
 $$
@@ -325,7 +453,7 @@ The _marginal probability density function_ $f_{X_i} : \R \to [0,1]$ of $X_i$ gi
 $$
 f_{X_i}(t_i) =
 \begin{cases}
-\displaystyle \sum_{t_1} \cdots \sum_{t_{i-1}} \sum_{t_{i+1}} \cdots \sum_{t_n} p_X(t), & \text{discrete} \\
+\displaystyle \sum_{t_1} \cdots \sum_{t_{i-1}} \sum_{t_{i+1}} \cdots \sum_{t_n} f_X(t), & \text{discrete} \\
 \displaystyle \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} f_X(t)d\tilde{t}, & \text{continuous}
 \end{cases}
 $$
@@ -379,7 +507,7 @@ The _joint expected value_ of a random variable $Y = g(X_1, \dots, X_n) = g(X)$ 
 $$
 \E[Y] =
 \begin{cases}
-\displaystyle \sum_{t_1} \cdots \sum_{t_n} g(t) p_X(t), & \text{discrete} \\
+\displaystyle \sum_{t_1} \cdots \sum_{t_n} g(t) f_X(t), & \text{discrete} \\
 \displaystyle \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} g(t)f_X(t)dt, & \text{continuous}
 \end{cases}
 $$
@@ -391,7 +519,7 @@ The _conditional expected value_ of random variables $X$ and $Y$ is defined as f
 $$
 \E[X\mid Y] :=
 \begin{cases}
-\displaystyle \sum_{x \in \R} x \cdot p_{X\mid Y}(x\mid y), & \text{discrete} \\
+\displaystyle \sum_{x \in \R} x \cdot f_{X\mid Y}(x\mid y), & \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty x \cdot f_{X\mid Y}(x\mid y)dx,  & \text{continuous}
 \end{cases}
 $$
@@ -400,8 +528,9 @@ $$
 ::: {.remark}
 <br/>
 
-* $\E[\E[X\mid Y]] = \E[X]$, and
-* $\E[X\mid Y] = \E[X]$ if $X$ and $Y$ are independent.
+* $\E[X] = \E[\E[X\mid Y]]$,
+* $\E[X\mid Y] = \E[X]$ if $X$ and $Y$ are independent, and
+* $\Var[X] = \E\left[\Var[X \mid Y]\right] + \Var\left[\E[X \mid Y]\right]$.
 :::
 
 ::: {.definition}
@@ -453,9 +582,10 @@ In the special case where $Z = X + Y$, we have
 $$
 f_Z(z) =
 \begin{cases}
-\displaystyle \sum_{x_k \in \mathscr{W}(X)} p_X(x_k) p_Y(z - x_k), & \text{discrete} \\
-\displaystyle \int_{-\infty}^\infty f_x(t) f_Y(z - t)dt, & \text{continuous}
+\displaystyle \sum_{x_k \in \mathscr{W}(X)} f_X(x_k) f_Y(z - x_k), & \text{discrete} \\
+\displaystyle \int_{-\infty}^\infty f_X(t) f_Y(z - t)dt, & \text{continuous}
 \end{cases}
+
 $$
 :::
 
@@ -474,7 +604,7 @@ F_Z(z) &=\ P[XY \leq z] \\
 $$
 where the PDF  is
 $$
-f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty f_Y(y)f_X\left(\frac{z}{y}\right) \frac{1}{\mid y \mid} dy.
+f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty f_Y(y)f_X\left(\frac{z}{y}\right) \frac{1}{\lvert y \rvert} dy.
 $$
 :::
 
@@ -491,8 +621,32 @@ F_Z(z) &=\ P\left[\frac{X}{Y} \leq z\right] \\
 $$
 where the PDF  is
 $$
-f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty \mid y \mid f_X\left(yz\right) f_Y(y) dy.
+f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty \lvert y\rvert\ f_X\left(yz\right) f_Y(y) dy.
 $$
+:::
+
+::: {.definition name="Covariance Matrix / Correlation Matrix"}
+Let $X_1, \dots, X_n$ be random variables. Let $\sigma_{ij} = \Cov(X_i, X_j)$ and $\rho_{ij} = \Corr(X_i, X_j)$ for every $i, j = 1, 2, \dots, n$. The _covariance_ and _correlation matrices_ as defined respectively as follows:
+$$
+\Sigma =
+\begin{bmatrix}
+\sigma_{11} & \sigma_{12} & \cdots & \sigma_{1n} \\
+\sigma_{21} & \sigma_{22} & \cdots & \sigma_{2n} \\
+\vdots      & \vdots      & \ddots & \vdots \\
+\sigma_{n1} & \sigma_{n2} & \cdots & \sigma_{nn}
+\end{bmatrix}_{n\times n} \\ \\
+P =
+\begin{bmatrix}
+1         & \rho_{12} & \cdots & \rho_{1n} \\
+\rho_{21} & 1         & \cdots & \rho_{2n} \\
+\vdots    & \vdots    & \ddots & \vdots \\
+\rho_{n1} & \rho_{n2} & \cdots & 1
+\end{bmatrix}_{n\times n}
+$$
+:::
+
+::: {.theorem}
+$\lvert\rho_{X,Y}\rvert = 1$ if and only if there exist $\alpha, \beta \in \R$ such that $Y = \alpha + \beta X$.
 :::
 
 

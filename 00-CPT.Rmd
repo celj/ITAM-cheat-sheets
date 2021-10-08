@@ -151,7 +151,7 @@ For any $A_{m\times n}$, the following propositions hold:
 :::
 
 ::: {.definition name="Linear Span"}
-Vectors $a_1, \dots, a_n \in S$ _span_ $S$ if, for every $x \in S$, there exists $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle x = \sum_{i = 1}^n \alpha_i a_i$.
+Vectors $a_1, \dots, a_n \in S$ _span_ $S$ if, for every $x \in S$, there exist $\alpha_1, \dots, \alpha_n \in \R$ such that $\displaystyle x = \sum_{i = 1}^n \alpha_i a_i$.
 
 Namely, each $x$ is a linear combination of $a_1, \dots, a_n$.
 :::

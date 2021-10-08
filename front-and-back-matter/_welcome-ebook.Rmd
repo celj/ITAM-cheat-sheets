@@ -6,7 +6,7 @@ As an econ student at [ITAM](https://www.itam.mx/), I have given myself the task
 Enjoy!
 
 ::::::::: {.byline}
-Carlos Lezama \
+[Carlos Lezama](https://celj.mx/) \
 Last update: `r format(Sys.time(), "%A, %d %B %Y")`
 :::::::::
 ::::::

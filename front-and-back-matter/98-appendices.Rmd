@@ -37,12 +37,14 @@
 |$\Var(f(x))$|Variance of $f(x)$ under $P(\mathrm{x})$.|
 |$\Cov(f(x), g(x))$|Covariance of $f(x)$ and $g(x)$ under $P(\mathrm{x})$.|
 |$\Norm (\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})$|Gaussian distribution over $\mathbf{x}$ with mean $\mathbf{\mu}$ and covariance $\mathbf{\Sigma}$.|
+|$\mu_n'$|$n$th (raw) moment of a distribution.|
+|$\mu_n$|$n$th central moment of a distribution.|
 
-# Probability distributions
+# Probability Distributions
 
 This section is still in development. All graphs are still in the testing stage.
 
-## Discrete
+## Discrete {-}
 
 ### Bernoulli {-}
 
@@ -72,7 +74,7 @@ This section is still in development. All graphs are still in the testing stage.
 
 <div id="uniformDiscrete"></div>
 
-## Continuous
+## Continuous {-}
 
 ### Beta {-}
 
@@ -134,3 +136,5 @@ This section is still in development. All graphs are still in the testing stage.
 <script src="../figures/studentt.js"></script>
 <script src="../figures/uniform.js"></script>
 <script src="../figures/weibull.js"></script>
+
+# Estimators

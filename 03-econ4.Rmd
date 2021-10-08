@@ -167,11 +167,13 @@ $$
 $p$ is a competitive equilibrium if and only if $Z(p) = 0$.
 :::
 
-#### Excess Demand Properties {-}
+:::{.remark name="Excess Demand Properties"}
+<br/>
 
 * Continuous in $p$.
 * Zero degree homogeneity.
 * $\langle p, Z(p) \rangle = 0$.
+:::
 
 ::: {.proposition}
 The equilibrium is not unique.
