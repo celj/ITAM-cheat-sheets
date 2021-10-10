@@ -2,7 +2,7 @@
 knit: (function(input, ...) {
     input <- "index.Rmd";
     thesis_formats <- "bs4";
-    
+
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
   })

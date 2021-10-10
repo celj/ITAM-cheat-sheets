@@ -2,7 +2,7 @@
 knit: (function(input, ...) {
     input <- "index.Rmd";
     thesis_formats <- "bs4";
-    
+
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
   })
@@ -10,4 +10,4 @@ knit: (function(input, ...) {
 
 # Economics 2
 
-If you want to contribute to this section, feel free to email me at [carloselezamaj@gmail.com](mailto:carloselezamaj@gmail.com?subject=ITAM cheat sheets: Economics 2).
+If you wish to contribute to this section, feel free to email me at [carloselezamaj@gmail.com](mailto:carloselezamaj@gmail.com?subject=ITAM cheat sheets: Economics 2).

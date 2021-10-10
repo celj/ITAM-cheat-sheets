@@ -21,10 +21,11 @@
           scale: 90
         },
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ["\\[","\\]"]],
         }
       });
-    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
+    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
 <meta name="description" content="For a basic course in probability (such as EST-11101), you may want to skip some notes on Measure Theory.  5.1 Basics and Combinatorics  Definition 5.1 (Sample Space) The sample space \(\Omega...">
 <meta property="og:description" content="For a basic course in probability (such as EST-11101), you may want to skip some notes on Measure Theory.  5.1 Basics and Combinatorics  Definition 5.1 (Sample Space) The sample space \(\Omega...">
@@ -143,7 +144,7 @@ S_k = \sum_{I \subseteq \{1, \dots, n\} \\ \quad \mid I\mid = k} P\left( \bigcap
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-206" class="definition"><strong>Definition 5.6  (Laplace Space) </strong></span>If <span class="math inline">\(\Omega = \{\omega_1, \dots, \omega_N\}\)</span> with <span class="math inline">\(\mid \Omega \mid = N\)</span> where all <span class="math inline">\(\omega_i\)</span> have the same probability <span class="math inline">\(p_i = \frac{1}{N}\)</span>, <span class="math inline">\(\Omega\)</span> is called <em>Laplace space</em> and <span class="math inline">\(P\)</span> has a discrete uniform distribution. For some event <span class="math inline">\(A\)</span>, we have:
+<p><span id="def:unlabeled-div-206" class="definition"><strong>Definition 5.6  (Laplace Space) </strong></span>If <span class="math inline">\(\Omega = \{\omega_1, \dots, \omega_N\}\)</span> with <span class="math inline">\(\mid \Omega \mid = N\)</span> where all <span class="math inline">\(\omega_i\)</span> have the same probability <span class="math inline">\(p_i = \frac{1}{N}\)</span>, <span class="math inline">\(\Omega\)</span> is called <em>Laplace space</em> and <span class="math inline">\(P\)</span> has a discrete uniform distribution. For some event <span class="math inline">\(A\)</span>, we have
 <span class="math display">\[
 P(A) = \frac{\lvert A\rvert}{\lvert\Omega\rvert}.
 \]</span></p>
@@ -152,13 +153,13 @@ P(A) = \frac{\lvert A\rvert}{\lvert\Omega\rvert}.
 <p>The discrete uniform distribution exists only if <span class="math inline">\(\Omega\)</span> is finite.</p>
 </blockquote>
 <div class="definition">
-<p><span id="def:unlabeled-div-207" class="definition"><strong>Definition 5.7  (Conditional Probability) </strong></span>Given two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(P(A) &gt; 0\)</span>, the probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-207" class="definition"><strong>Definition 5.7  (Conditional Probability) </strong></span>Given two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(P(A) &gt; 0\)</span>, the probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> is defined as
 <span class="math display">\[
 P(B \mid A) := \frac{P(B \cap A)}{P(A)}.
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-208" class="theorem"><strong>Theorem 5.2  (Total Probability) </strong></span>Let <span class="math inline">\(A_1, \dots, A_n\)</span> be a set of disjunct events <span class="math inline">\(\forall i \neq j : A_i \cap A_j = \varnothing\)</span> where <span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i = \Omega\)</span>, then, for any event <span class="math inline">\(B \subseteq \Omega\)</span>
+<p><span id="thm:unlabeled-div-208" class="theorem"><strong>Theorem 5.2  (Total Probability) </strong></span>Let <span class="math inline">\(A_1, \dots, A_n\)</span> be a set of disjunct events <span class="math inline">\(\forall i \neq j : A_i \cap A_j = \varnothing\)</span> where <span class="math inline">\(\displaystyle \bigcup_{i=1}^n A_i = \Omega\)</span>, then, for any event <span class="math inline">\(B \subseteq \Omega\)</span>,
 <span class="math display">\[
 P(B) = \sum_{i = 1}^n P(B \mid A_i) P(A_i).
 \]</span></p>
@@ -284,7 +285,7 @@ X : \Omega \to \mathscr{W}(X) \subseteq \mathbb{R}.
 If the image <span class="math inline">\(\mathscr{W}(X)\)</span> is countable, <span class="math inline">\(X\)</span> is called a <em>discrete random variable</em>, otherwise it is called a <em>continuous random variable</em>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-220" class="definition"><strong>Definition 5.15  (Probability Density Function / Probability Mass Function) </strong></span>The <em>probability density function</em> (PDF) <span class="math inline">\(f_X : \mathbb{R}\to \mathbb{R}\)</span> of a random variable <span class="math inline">\(X\)</span> is a function defined as follows:
+<p><span id="def:unlabeled-div-220" class="definition"><strong>Definition 5.15  (Probability Density Function / Probability Mass Function) </strong></span>The <em>probability density function</em> (PDF) <span class="math inline">\(f_X : \mathbb{R}\to \mathbb{R}\)</span> of a random variable <span class="math inline">\(X\)</span> is a function defined as
 <span class="math display">\[
 f_X(x) := P(X = x) := P\left(\{\omega \mid X(\omega) = x\}\right).
 \]</span>
@@ -298,11 +299,11 @@ With <span class="math inline">\(X\)</span> discrete, it is called <em>probabili
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-222" class="definition"><strong>Definition 5.16  (Cumulative Distribution) </strong></span>The <em>cumulative distribution function</em> (CDF) <span class="math inline">\(F_X : \mathbb{R}\to [0,1]\)</span> of a random variable <span class="math inline">\(X\)</span> is a function defined as follows:
+<p><span id="def:unlabeled-div-222" class="definition"><strong>Definition 5.16  (Cumulative Distribution) </strong></span>The <em>cumulative distribution function</em> (CDF) <span class="math inline">\(F_X : \mathbb{R}\to [0,1]\)</span> of a random variable <span class="math inline">\(X\)</span> is a function defined as
 <span class="math display">\[
 F_X(x) := P(X \leq x) := P\left(\{\omega \mid X(\omega) \leq x\}\right).
 \]</span>
-If the PDF is given, the CDF can be expressed with:
+If the PDF is given, the CDF can be expressed with
 <span class="math display">\[
 F_X(x) =
 \begin{cases}
@@ -327,9 +328,9 @@ F_X(x) =
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-224" class="definition"><strong>Definition 5.17  (Expected Value) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. The <em>expected value</em> is defined as follows:
+<p><span id="def:unlabeled-div-224" class="definition"><strong>Definition 5.17  (Expected Value) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. The <em>expected value</em> is defined as
 <span class="math display">\[
-\mathop{\mathrm{\mathbb{E}}}[X] :=
+\mathbb{E}[X] :=
 \begin{cases}
 \displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot f_X(x_k), &amp; \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  &amp; \text{continuous}
@@ -340,38 +341,38 @@ F_X(x) =
 <p><span id="unlabeled-div-225" class="remark"><em>Remark</em> (Expected Value Properties). </span><br></p>
 <ul>
 <li>
-<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[X] \leq \mathop{\mathrm{\mathbb{E}}}[Y]\)</span> if <span class="math inline">\(\forall \omega : X(\omega) \leq Y(\omega)\)</span>,</li>
+<span class="math inline">\(\mathbb{E}[X] \leq \mathbb{E}[Y]\)</span> if <span class="math inline">\(\forall \omega : X(\omega) \leq Y(\omega)\)</span>,</li>
 <li>
-<span class="math inline">\(\displaystyle \mathop{\mathrm{\mathbb{E}}}\left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i=0}^n a_i \mathop{\mathrm{\mathbb{E}}}\left[ X_i \right]\)</span>,</li>
+<span class="math inline">\(\displaystyle \mathbb{E}\left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i=0}^n a_i \mathbb{E}\left[ X_i \right]\)</span>,</li>
 <li>
-<span class="math inline">\(\displaystyle \mathop{\mathrm{\mathbb{E}}}[X] = \sum_{j=1}^\infty P[X \geq j]\)</span> if <span class="math inline">\(\mathscr{W}(X) \subseteq \mathbb{N}_0\)</span>,</li>
+<span class="math inline">\(\displaystyle \mathbb{E}[X] = \sum_{j=1}^\infty P[X \geq j]\)</span> if <span class="math inline">\(\mathscr{W}(X) \subseteq \mathbb{N}_0\)</span>,</li>
 <li>
-<span class="math inline">\(\displaystyle \mathop{\mathrm{\mathbb{E}}}\left[ \sum_{i=0}^\infty X_i \right] \neq \sum_{i=0}^\infty \mathop{\mathrm{\mathbb{E}}}\left[ X_i \right]\)</span>,</li>
+<span class="math inline">\(\displaystyle \mathbb{E}\left[ \sum_{i=0}^\infty X_i \right] \neq \sum_{i=0}^\infty \mathbb{E}\left[ X_i \right]\)</span>,</li>
 <li>
-<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[\mathop{\mathrm{\mathbb{E}}}[X]] = \mathop{\mathrm{\mathbb{E}}}[X]\)</span>,</li>
+<span class="math inline">\(\mathbb{E}[\mathbb{E}[X]] = \mathbb{E}[X]\)</span>,</li>
 <li>
-<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[XY]^2 \leq E[X^2]E[Y^2]\)</span>, and</li>
+<span class="math inline">\(\mathbb{E}[XY]^2 \leq E[X^2]E[Y^2]\)</span>, and</li>
 <li>
-<span class="math inline">\(\displaystyle \mathop{\mathrm{\mathbb{E}}}\left[ \prod_{i=0}^n X_i \right] = \prod_{i=0}^n \mathop{\mathrm{\mathbb{E}}}[X_i]\)</span> for independent <span class="math inline">\(X_1, \dots, X_n\)</span>.</li>
+<span class="math inline">\(\displaystyle \mathbb{E}\left[ \prod_{i=0}^n X_i \right] = \prod_{i=0}^n \mathbb{E}[X_i]\)</span> for independent <span class="math inline">\(X_1, \dots, X_n\)</span>.</li>
 </ul>
 </div>
 <blockquote>
 <p>The expected value is a linear operator.</p>
 </blockquote>
 <div class="definition">
-<p><span id="def:unlabeled-div-226" class="definition"><strong>Definition 5.18  (Raw Moment / Central Moment) </strong></span>Let <span class="math inline">\(n \in \mathbb{N}\)</span>. The <em><span class="math inline">\(n\)</span>th (raw) moment</em> is defined as follows:
+<p><span id="def:unlabeled-div-226" class="definition"><strong>Definition 5.18  (Raw Moment / Central Moment) </strong></span>Let <span class="math inline">\(n \in \mathbb{N}\)</span>. The <em><span class="math inline">\(n\)</span>th (raw) moment</em> is defined as
 <span class="math display">\[
-\mu_n' = \mathop{\mathrm{\mathbb{E}}}\left[X^n\right].
+\mu_n' = \mathbb{E}\left[X^n\right].
 \]</span>
-The <em><span class="math inline">\(n\)</span>th central moment</em> is defined as follows:
+The <em><span class="math inline">\(n\)</span>th central moment</em> is defined as
 <span class="math display">\[
-\mu_n = \mathop{\mathrm{\mathbb{E}}}\left[\left( X - \mathop{\mathrm{\mathbb{E}}}[X] \right)^n \right].
+\mu_n = \mathbb{E}\left[\left( X - \mathbb{E}[X] \right)^n \right].
 \]</span></p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-227" class="definition"><strong>Definition 5.19  (Expected Value of Functions) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(Y = g(X)\)</span> with <span class="math inline">\(g : \mathbb{R}\to \mathbb{R}\)</span>, then
 <span class="math display">\[
-\mathop{\mathrm{\mathbb{E}}}[Y] :=
+\mathbb{E}[Y] :=
 \begin{cases}
 \displaystyle \sum_{x_k \in \mathscr{W}(X)} g(x_k) \cdot f_X(x_k), &amp; \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty g(x) \cdot f_X(x)dx,  &amp; \text{continuous}
@@ -379,31 +380,31 @@ The <em><span class="math inline">\(n\)</span>th central moment</em> is defined 
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-228" class="definition"><strong>Definition 5.20  (Moment-Generating Function) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. The <em>moment-generating function</em> of <span class="math inline">\(X\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-228" class="definition"><strong>Definition 5.20  (Moment-Generating Function) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. The <em>moment-generating function</em> of <span class="math inline">\(X\)</span> is defined as
 <span class="math display">\[
-M_X(t) := \mathop{\mathrm{\mathbb{E}}}\left[ e^{tX} \right].
+M_X(t) := \mathbb{E}\left[ e^{tX} \right].
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-229" class="definition"><strong>Definition 5.21  (Characteristic Function) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. The <em>characteristic function</em> of <span class="math inline">\(X\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-229" class="definition"><strong>Definition 5.21  (Characteristic Function) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. The <em>characteristic function</em> of <span class="math inline">\(X\)</span> is defined as
 <span class="math display">\[
-\varphi_X(t) := \mathop{\mathrm{\mathbb{E}}}\left[ e^{itX} \right]
+\varphi_X(t) := \mathbb{E}\left[ e^{itX} \right]
 \]</span>
 where <span class="math inline">\(i = \sqrt{-1} \in \mathbb{C}\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-230" class="definition"><strong>Definition 5.22  (Variance) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[X^2] &lt; \infty\)</span>. The <em>variance</em> of <span class="math inline">\(X\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-230" class="definition"><strong>Definition 5.22  (Variance) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\mathbb{E}[X^2] &lt; \infty\)</span>. The <em>variance</em> of <span class="math inline">\(X\)</span> is defined as
 <span class="math display">\[
-\text{Var}[X] := \mathop{\mathrm{\mathbb{E}}}\left[ (X - \mathop{\mathrm{\mathbb{E}}}[X])^2 \right].
+\text{Var}[X] := \mathbb{E}\left[ (X - \mathbb{E}[X])^2 \right].
 \]</span></p>
 </div>
 <div class="remark">
 <p><span id="unlabeled-div-231" class="remark"><em>Remark</em> (Variance Properties). </span><br></p>
 <ul>
 <li>
-<span class="math inline">\(0 \leq \text{Var}[X] \leq \mathop{\mathrm{\mathbb{E}}}[X^2]\)</span>,</li>
+<span class="math inline">\(0 \leq \text{Var}[X] \leq \mathbb{E}[X^2]\)</span>,</li>
 <li>
-<span class="math inline">\(\text{Var}[X] = \mathop{\mathrm{\mathbb{E}}}[X^2] - \mathop{\mathrm{\mathbb{E}}}^2[X]\)</span>,</li>
+<span class="math inline">\(\text{Var}[X] = \mathbb{E}[X^2] - \mathbb{E}^2[X]\)</span>,</li>
 <li>
 <span class="math inline">\(\text{Var}[aX + b] = a^2\text{Var}[X]\)</span>,</li>
 <li>
@@ -415,17 +416,17 @@ where <span class="math inline">\(i = \sqrt{-1} \in \mathbb{C}\)</span>.</p>
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-232" class="definition"><strong>Definition 5.23  (Standard Deviation) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[X^2] &lt; \infty\)</span>. The <em>standard deviation</em> of <span class="math inline">\(X\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-232" class="definition"><strong>Definition 5.23  (Standard Deviation) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\mathbb{E}[X^2] &lt; \infty\)</span>. The <em>standard deviation</em> of <span class="math inline">\(X\)</span> is defined as
 <span class="math display">\[
 \sigma(X) = \text{sd}(X) := \sqrt{\text{Var}[X]}.
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-233" class="definition"><strong>Definition 5.24  (Covariance) </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables with finite expected value. The <em>covariance</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-233" class="definition"><strong>Definition 5.24  (Covariance) </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables with finite expected value. The <em>covariance</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined as
 <span class="math display">\[
 \begin{align*}
-\text{Cov}(X, Y) :&amp;=\ \mathop{\mathrm{\mathbb{E}}}\left[ (X - \mathop{\mathrm{\mathbb{E}}}[X]) (Y - \mathop{\mathrm{\mathbb{E}}}[Y]) \right] \\
-            &amp;=\ \mathop{\mathrm{\mathbb{E}}}[XY] - \mathop{\mathrm{\mathbb{E}}}[X]\mathop{\mathrm{\mathbb{E}}}[Y]
+\text{Cov}(X, Y) :&amp;=\ \mathbb{E}\left[ (X - \mathbb{E}[X]) (Y - \mathbb{E}[Y]) \right] \\
+            &amp;=\ \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]
 \end{align*}
 \]</span></p>
 </div>
@@ -445,13 +446,13 @@ where <span class="math inline">\(i = \sqrt{-1} \in \mathbb{C}\)</span>.</p>
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-235" class="definition"><strong>Definition 5.25  (Correlation) </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables with finite expected value. The <em>correlation</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-235" class="definition"><strong>Definition 5.25  (Correlation) </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables with finite expected value. The <em>correlation</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined as
 <span class="math display">\[
 \text{Corr}(X,Y) := \frac{\text{Cov}(X,Y)}{\sqrt{\text{Var}[X] \cdot \text{Var}[Y]}}.
 \]</span></p>
 </div>
 <blockquote>
-<p>Correlation is the same as covariance but normalized with values between -1 and 1.</p>
+<p>Correlation is the same as covariance but normalized with values between <span class="math inline">\(-1\)</span> and <span class="math inline">\(1\)</span>.</p>
 </blockquote>
 <div class="definition">
 <p><span id="def:unlabeled-div-236" class="definition"><strong>Definition 5.26  (Coefficient of Variation) </strong></span>The <em>coefficient of variation</em> is defined as the ratio of the standard deviation to the mean.
@@ -460,7 +461,7 @@ where <span class="math inline">\(i = \sqrt{-1} \in \mathbb{C}\)</span>.</p>
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-237" class="definition"><strong>Definition 5.27  (Indicator Function) </strong></span>The <em>indicator function</em> <span class="math inline">\(\mathbb{1}_A : \Omega \to \{0, 1\}\)</span> for a set (event) <span class="math inline">\(A\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-237" class="definition"><strong>Definition 5.27  (Indicator Function) </strong></span>The <em>indicator function</em> <span class="math inline">\(\mathbb{1}_A : \Omega \to \{0, 1\}\)</span> for a set (event) <span class="math inline">\(A\)</span> is defined as
 <span class="math display">\[
 \mathbb{1}_A (\omega) :=
 \begin{cases}
@@ -470,7 +471,7 @@ where <span class="math inline">\(i = \sqrt{-1} \in \mathbb{C}\)</span>.</p>
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-238" class="definition"><strong>Definition 5.28  (Survival Function) </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with cumulative distribution function <span class="math inline">\(F(x)\)</span> on the interval <span class="math inline">\([0, \infty)\)</span>. Its <em>survival function</em> or <em>reliability function</em> is defined as follows:
+<p><span id="def:unlabeled-div-238" class="definition"><strong>Definition 5.28  (Survival Function) </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with cumulative distribution function <span class="math inline">\(F(x)\)</span> on the interval <span class="math inline">\([0, \infty)\)</span>. Its <em>survival function</em> or <em>reliability function</em> is defined as
 <span class="math display">\[
 S(x) = P[X &gt; x] = \int_x^\infty f(t)dt = 1 - F(x).
 \]</span></p>
@@ -484,40 +485,44 @@ P[X &gt; s + t \mid X &gt; t] = P[X &gt; s].
 <div class="theorem">
 <p><span id="thm:unlabeled-div-240" class="theorem"><strong>Theorem 5.4  (Markov's Inequality) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable and <span class="math inline">\(g : \mathscr{W}(X) \to [0, \infty)\)</span> be an increasing function, then, for all <span class="math inline">\(c\)</span> with <span class="math inline">\(g(c) &gt; 0\)</span>, we have
 <span class="math display">\[
-P[X \geq c] \leq \frac{\mathop{\mathrm{\mathbb{E}}}[g(X)]}{g(x)}.
+P[X \geq c] \leq \frac{\mathbb{E}[g(X)]}{g(x)}.
 \]</span></p>
 <blockquote>
 <p>For practical uses usually <span class="math inline">\(g(x) = x\)</span>.</p>
 </blockquote>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-241" class="theorem"><strong>Theorem 5.5  (Chebyshev's Inequality) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\text{Var}[X] &lt; \infty\)</span>, then, if <span class="math inline">\(b &gt; 0\)</span>,
+<p><span id="thm:unlabeled-div-241" class="theorem"><strong>Theorem 5.5  (Chebyshev's Inequality) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with <span class="math inline">\(\text{Var}[X] &lt; \infty\)</span>, then, if <span class="math inline">\(k &gt; 0\)</span>,
 <span class="math display">\[
-P\left[ \lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \rvert \geq b \right] \leq \frac{\text{Var}[X]}{b^2}.
+P\left[ \lvert X - \mathbb{E}[X] \rvert \geq k \right] \leq \frac{\text{Var}[X]}{k^2}.
 \]</span></p>
-<div class="inline-table"><table class="table table-sm">
+<div class="inline-table"><table style="width:100%;" class="table table-sm">
 <colgroup>
-<col width="29%">
-<col width="35%">
-<col width="35%">
+<col width="27%">
+<col width="33%">
+<col width="6%">
+<col width="33%">
 </colgroup>
 <thead><tr class="header">
+<th align="left"></th>
+<th align="center">Lower Bound</th>
 <th></th>
-<th>Lower Bound</th>
-<th>Upper Bound</th>
+<th align="center">Upper Bound</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>
-<span class="math inline">\(b\)</span> units</td>
-<td><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \right\rvert &lt; b \right] \geq 1 - \frac{\text{Var}[X]}{b^2}\)</span></td>
-<td><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \right\rvert \geq b \right] \leq \frac{\text{Var}[X]}{b^2}\)</span></td>
+<td align="left">
+<span class="math inline">\(k\)</span> units</td>
+<td align="center"><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathbb{E}[X] \right\rvert &lt; k \right] \geq 1 - \frac{\text{Var}[X]}{k^2}\)</span></td>
+<td></td>
+<td align="center"><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathbb{E}[X] \right\rvert \geq k \right] \leq \frac{\text{Var}[X]}{k^2}\)</span></td>
 </tr>
 <tr class="even">
-<td>
+<td align="left">
 <span class="math inline">\(r\)</span> standard deviations</td>
-<td><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \right\rvert &lt; r\  \text{sd}(X) \right] \geq 1 - \frac{1}{r^2} \quad\)</span></td>
-<td><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \right\rvert \geq r\ \text{sd}(X) \right] \leq \frac{1}{r^2}\)</span></td>
+<td align="center"><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathbb{E}[X] \right\rvert &lt; r\  \text{sd}(X) \right] \geq 1 - \frac{1}{r^2}\)</span></td>
+<td></td>
+<td align="center"><span class="math inline">\(\displaystyle P\left[ \left\lvert X - \mathbb{E}[X] \right\rvert \geq r\ \text{sd}(X) \right] \leq \frac{1}{r^2}\)</span></td>
 </tr>
 </tbody>
 </table></div>
@@ -525,7 +530,7 @@ P\left[ \lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \rvert \geq b \right] \leq \f
 <div class="theorem">
 <p><span id="thm:unlabeled-div-242" class="theorem"><strong>Theorem 5.6  (Jensen's Inequality) </strong></span>If <span class="math inline">\(X\)</span> is a random variable and <span class="math inline">\(\varphi\)</span> is a convex function, then
 <span class="math display">\[
-\varphi\left(\mathop{\mathrm{\mathbb{E}}}[X]\right) \leq \mathop{\mathrm{\mathbb{E}}}\left[\varphi(X)\right].
+\varphi\left(\mathbb{E}[X]\right) \leq \mathbb{E}\left[\varphi(X)\right].
 \]</span></p>
 </div>
 </div>
@@ -534,17 +539,17 @@ P\left[ \lvert X - \mathop{\mathrm{\mathbb{E}}}[X] \rvert \geq b \right] \leq \f
 <span class="header-section-number">5.3</span> Multivariate Distributions<a class="anchor" aria-label="anchor" href="#multivariate-distributions"><i class="fas fa-link"></i></a>
 </h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-243" class="definition"><strong>Definition 5.30  (Joint Probability Density Function) </strong></span>The <em>joint probability density function</em> <span class="math inline">\(f_X : \mathbb{R}^n \to [0, 1]\)</span> with <span class="math inline">\(X = (X_1, \dots, X_n)\)</span> is a function defined as follows:
+<p><span id="def:unlabeled-div-243" class="definition"><strong>Definition 5.30  (Joint Probability Density Function) </strong></span>The <em>joint probability density function</em> <span class="math inline">\(f_X : \mathbb{R}^n \to [0, 1]\)</span> with <span class="math inline">\(X = (X_1, \dots, X_n)\)</span> is a function defined as
 <span class="math display">\[
 f_X(x_1, \dots, x_n) := P[X_1 = x_1, \dots, X_n = x_n].
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-244" class="definition"><strong>Definition 5.31  (Joint Cumulative Distribution Function) </strong></span>The <em>joint cumulative distribution function</em> <span class="math inline">\(F_X : \mathbb{R}^n \to [0, 1]\)</span> with <span class="math inline">\(X = (X_1, \dots, X_n)\)</span> is a function defined as follows:
+<p><span id="def:unlabeled-div-244" class="definition"><strong>Definition 5.31  (Joint Cumulative Distribution Function) </strong></span>The <em>joint cumulative distribution function</em> <span class="math inline">\(F_X : \mathbb{R}^n \to [0, 1]\)</span> with <span class="math inline">\(X = (X_1, \dots, X_n)\)</span> is a function defined as
 <span class="math display">\[
 f_X(x_1, \dots, x_n) := P[X_1 \leq x_1, \dots, X_n \leq x_n].
 \]</span>
-If the joint PDF is given, it can be expressed with:
+If the joint PDF is given, it can be expressed with
 <span class="math display">\[
 F_X(x) =
 \begin{cases}
@@ -560,7 +565,7 @@ where <span class="math inline">\(t = (t_1, \dots, t_n)\)</span> and <span class
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-246" class="definition"><strong>Definition 5.32  (Marginal Probability Density Function) </strong></span>The <em>marginal probability density function</em> <span class="math inline">\(f_{X_i} : \mathbb{R}\to [0,1]\)</span> of <span class="math inline">\(X_i\)</span> given a joint PDF <span class="math inline">\(f_X(x_1, \dots, x_n)\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-246" class="definition"><strong>Definition 5.32  (Marginal Probability Density Function) </strong></span>The <em>marginal probability density function</em> <span class="math inline">\(f_{X_i} : \mathbb{R}\to [0,1]\)</span> of <span class="math inline">\(X_i\)</span> given a joint PDF <span class="math inline">\(f_X(x_1, \dots, x_n)\)</span> is defined as
 <span class="math display">\[
 f_{X_i}(t_i) =
 \begin{cases}
@@ -574,13 +579,13 @@ where <span class="math inline">\(\tilde{t} = (t_1, \dots, t_{i-1}, t_{i+1}, \do
 <p>The idea of the marginal probability is to ignore all other random variables and consider only the one we’re interested in.</p>
 </blockquote>
 <div class="definition">
-<p><span id="def:unlabeled-div-247" class="definition"><strong>Definition 5.33  (Marginal Cumulative Distribution Function) </strong></span>The <em>marginal cumulative distribution function</em> <span class="math inline">\(F_{X_i} : \mathbb{R}\to [0,1]\)</span> of <span class="math inline">\(X_i\)</span> given a joint CDF <span class="math inline">\(F_X(x_1, \dots, x_n)\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-247" class="definition"><strong>Definition 5.33  (Marginal Cumulative Distribution Function) </strong></span>The <em>marginal cumulative distribution function</em> <span class="math inline">\(F_{X_i} : \mathbb{R}\to [0,1]\)</span> of <span class="math inline">\(X_i\)</span> given a joint CDF <span class="math inline">\(F_X(x_1, \dots, x_n)\)</span> is defined as
 <span class="math display">\[
 F_{X_i}(x_i) := \lim_{x_{j\neq i} \to \infty} F_X(x_1, \dots, x_n).
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-248" class="definition"><strong>Definition 5.34  (Conditional Distribution) </strong></span>The <em>conditional distribution</em> <span class="math inline">\(f_{X \mid Y} : \mathbb{R}\to [0,1]\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-248" class="definition"><strong>Definition 5.34  (Conditional Distribution) </strong></span>The <em>conditional distribution</em> <span class="math inline">\(f_{X \mid Y} : \mathbb{R}\to [0,1]\)</span> is defined as
 <span class="math display">\[
 \begin{align*}
 f_{X\mid Y} (x \mid y) :&amp;=\ P[X = x \mid Y = y] \\
@@ -609,9 +614,9 @@ P[X_1 \in B_1, \dots, X_n \in B_n] = \prod_{i=1}^n P[X_i \in B_i].
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-252" class="definition"><strong>Definition 5.36  (Joint Expected Value) </strong></span>The <em>joint expected value</em> of a random variable <span class="math inline">\(Y = g(X_1, \dots, X_n) = g(X)\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-252" class="definition"><strong>Definition 5.36  (Joint Expected Value) </strong></span>The <em>joint expected value</em> of a random variable <span class="math inline">\(Y = g(X_1, \dots, X_n) = g(X)\)</span> is defined as
 <span class="math display">\[
-\mathop{\mathrm{\mathbb{E}}}[Y] =
+\mathbb{E}[Y] =
 \begin{cases}
 \displaystyle \sum_{t_1} \cdots \sum_{t_n} g(t) f_X(t), &amp; \text{discrete} \\
 \displaystyle \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} g(t)f_X(t)dt, &amp; \text{continuous}
@@ -620,9 +625,9 @@ P[X_1 \in B_1, \dots, X_n \in B_n] = \prod_{i=1}^n P[X_i \in B_i].
 where <span class="math inline">\(t = (t_1, \dots, t_n)\)</span>, and in the discrete case <span class="math inline">\(t_k \in \mathscr{W}(X_k)\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-253" class="definition"><strong>Definition 5.37  (Conditional Expected Value) </strong></span>The <em>conditional expected value</em> of random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-253" class="definition"><strong>Definition 5.37  (Conditional Expected Value) </strong></span>The <em>conditional expected value</em> of random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is defined as
 <span class="math display">\[
-\mathop{\mathrm{\mathbb{E}}}[X\mid Y] :=
+\mathbb{E}[X\mid Y] :=
 \begin{cases}
 \displaystyle \sum_{x \in \mathbb{R}} x \cdot f_{X\mid Y}(x\mid y), &amp; \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty x \cdot f_{X\mid Y}(x\mid y)dx,  &amp; \text{continuous}
@@ -633,11 +638,11 @@ where <span class="math inline">\(t = (t_1, \dots, t_n)\)</span>, and in the dis
 <p><span id="unlabeled-div-254" class="remark"><em>Remark</em>. </span><br></p>
 <ul>
 <li>
-<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[X] = \mathop{\mathrm{\mathbb{E}}}[\mathop{\mathrm{\mathbb{E}}}[X\mid Y]]\)</span>,</li>
+<span class="math inline">\(\mathbb{E}[X] = \mathbb{E}[\mathbb{E}[X\mid Y]]\)</span>,</li>
 <li>
-<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[X\mid Y] = \mathop{\mathrm{\mathbb{E}}}[X]\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, and</li>
+<span class="math inline">\(\mathbb{E}[X\mid Y] = \mathbb{E}[X]\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, and</li>
 <li>
-<span class="math inline">\(\text{Var}[X] = \mathop{\mathrm{\mathbb{E}}}\left[\text{Var}[X \mid Y]\right] + \text{Var}\left[\mathop{\mathrm{\mathbb{E}}}[X \mid Y]\right]\)</span>.</li>
+<span class="math inline">\(\text{Var}[X] = \mathbb{E}\left[\text{Var}[X \mid Y]\right] + \text{Var}\left[\mathbb{E}[X \mid Y]\right]\)</span>.</li>
 </ul>
 </div>
 <div class="definition">
@@ -648,53 +653,68 @@ P[Y \in C] = \int_{A_C} f_X(t)dt
 where <span class="math inline">\(A_C = \{ x = (x_1, \dots, x_n) \in \mathbb{R}^n : g(x) \in C \}\)</span> and <span class="math inline">\(t = (t_1, \dots, t_n)\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-256" class="theorem"><strong>Theorem 5.9  (Transformation) </strong></span>Let <span class="math inline">\(F\)</span> be a continuous and strictly increasing CDF and let <span class="math inline">\(X \sim \mathscr{U}(0, 1)\)</span>.
+<p><span id="thm:unlabeled-div-256" class="theorem"><strong>Theorem 5.9  (Transformation) </strong></span>When <span class="math inline">\(g(\cdot)\)</span> is a strictly increasing function, then
 <span class="math display">\[
-Y = F^{-1}(X) \implies F_Y = F.
+\begin{align}
+F_Y(y) &amp;=\ \int_{-\infty}^{g^{-1}(y)} f_X(x)dx \\
+       &amp;=\ F_X(g^{-1}(y)) \\
+f_Y(y) &amp;=\ f_X\left( g^{-1}(y) \right) \frac{\partial}{\partial y} g^{-1}(y)
+\end{align}
+\]</span>
+When <span class="math inline">\(g(\cdot)\)</span> is a strictly decreasing function, then
+<span class="math display">\[
+\begin{align}
+F_Y(y) &amp;=\ \int_{g^{-1}(y)}^{\infty} f_X(x)dx \\
+       &amp;=\ 1 - F_X(g^{-1}(y)) \\
+f_Y(y) &amp;= - f_X\left( g^{-1}(y) \right) \frac{\partial}{\partial y} g^{-1}(y)
+\end{align}
+\]</span>
+Equivalently, <span class="math inline">\(\displaystyle f_X(x) = f_Y(g(x)) \left\lvert \frac{\partial g(x)}{\partial x} \right\rvert\)</span>.</p>
+<p>In higher dimensions, the derivative generalizes to the determinant of the Jacobian matrix — the matrix with <span class="math inline">\(\displaystyle \mathscr{J}_{ij} = \frac{\partial x_i}{\partial y_j}\)</span>. Thus, for real-valued vector <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>,
+<span class="math display">\[
+f_X(x) = f_Y(g(x)) \left\lvert\det \left( \frac{\partial g(x)}{\partial x} \right) \right\rvert.
 \]</span></p>
 </div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-257" class="theorem"><strong>Theorem 5.10  (Transformation) </strong></span>Let <span class="math inline">\(X\)</span> have a continuous CDF <span class="math inline">\(F_X(\cdot)\)</span> and define <span class="math inline">\(Y = F_X(X)\)</span>. Then <span class="math inline">\(Y \sim \mathscr{U}[0,1]\)</span>, i.e., <span class="math inline">\(F_Y(y) = y\)</span> for <span class="math inline">\(y \in [0,1]\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-258" class="theorem"><strong>Theorem 5.11  </strong></span>For <span class="math inline">\(X \sim F_X\)</span> and <span class="math inline">\(Y \sim F_Y\)</span>, if <span class="math inline">\(M_X\)</span> and <span class="math inline">\(M_Y\)</span> exist, and <span class="math inline">\(M_X(t) = M_Y(t)\)</span> for all <span class="math inline">\(t\)</span> in some neighbourhood of zero, then <span class="math inline">\(F_X(u) = F_Y(u)\)</span> for all <span class="math inline">\(u\)</span>.</p>
+</div>
 <div class="remark">
-<p><span id="unlabeled-div-257" class="remark"><em>Remark</em> (Monte Carlo Integration). </span>Let <span class="math inline">\(\displaystyle I = \int_a^b g(x)dx\)</span> be the integral of a function that is hard to evaluate, then
+<p><span id="unlabeled-div-259" class="remark"><em>Remark</em> (Monte Carlo Integration). </span>Let <span class="math inline">\(\displaystyle I = \int_a^b g(x)dx\)</span> be the integral of a function that is hard to evaluate, then
 <span class="math display">\[
 \begin{align*}
 I &amp;=\ \int_a^b g(x)dx \\
   &amp;=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
   &amp;=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\mathscr{U}}(x) dx \\
-  &amp;=\ (b - a) \cdot \mathop{\mathrm{\mathbb{E}}}[g(\mathscr{U})]
+  &amp;=\ (b - a) \cdot \mathbb{E}[g(\mathscr{U})]
 \end{align*}
 \]</span>
-where <span class="math inline">\(\mathscr{U}(a,b)\)</span> is uniformly distributed. Then, by the <strong>Law of Large Numbers</strong>, we know that we can approximate <span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[g(\mathscr{U})]\)</span> by randomly sampling <span class="math inline">\(u_1, u_2, \dots\)</span> from <span class="math inline">\(\mathscr{U}(a,b)\)</span>.
+where <span class="math inline">\(\mathscr{U}(a,b)\)</span> is uniformly distributed. Then, by the <strong>Law of Large Numbers</strong>, we know that we can approximate <span class="math inline">\(\mathbb{E}[g(\mathscr{U})]\)</span> by randomly sampling <span class="math inline">\(u_1, u_2, \dots\)</span> from <span class="math inline">\(\mathscr{U}(a,b)\)</span>.
 <span class="math display">\[
-\frac{b - a}{n} \sum_{i=1}^n g(u_i) \underset{n\to\infty}{\longrightarrow} (b - a) \cdot \mathop{\mathrm{\mathbb{E}}}[g(\mathscr{U})].
+\frac{b - a}{n} \sum_{i=1}^n g(u_i) \underset{n\to\infty}{\longrightarrow} (b - a) \cdot \mathbb{E}[g(\mathscr{U})].
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-258" class="remark"><em>Remark</em> (Transformation). </span>If we have a random variable <span class="math inline">\(X\)</span> with known CDF (strictly increasing) and <span class="math inline">\(Y = g(X)\)</span>. To evaluate <span class="math inline">\(F_Y\)</span> and <span class="math inline">\(f_Y\)</span>, we proceed as follows:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\displaystyle F_Y(t) = P[g(X) \leq t] = \int_{A_g} f_X(s)ds\)</span></li>
-<li><span class="math inline">\(\displaystyle f_Y(t) = \frac{dF_Y}{dt}(t)\)</span></li>
-</ol>
-<p>where <span class="math inline">\(A_g = \{ s \in \mathbb{R}: g(s) \leq t \}\)</span>.</p>
-</div>
-<div class="remark">
-<span id="unlabeled-div-259" class="remark"><em>Remark</em> (Sum). </span>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be independent random variables, then the sum <span class="math inline">\(Z = X_1 + \cdots + X_n\)</span> has a PDF <span class="math inline">\(f_Z(z)\)</span> evaluated with a convolution between all PDFs
+<p><span id="unlabeled-div-260" class="remark"><em>Remark</em> (Sum). </span>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be independent random variables, then the sum <span class="math inline">\(Z = X_1 + \cdots + X_n\)</span> has a PDF <span class="math inline">\(f_Z(z)\)</span> evaluated with a convolution between all PDFs
 <span class="math display">\[
 f_Z(z) = (f_{X_1}(x_1) * \cdots * f_{X_n}(x_n))(z).
 \]</span>
 In the special case where <span class="math inline">\(Z = X + Y\)</span>, we have
-$$
+<span class="math display">\[
 f_Z(z) =
-<span class="math display">\[\begin{cases}
+\begin{cases}
 \displaystyle \sum_{x_k \in \mathscr{W}(X)} f_X(x_k) f_Y(z - x_k), &amp; \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty f_X(t) f_Y(z - t)dt, &amp; \text{continuous}
-\end{cases}\]</span>
-<p>$$</p>
+\end{cases}
+\]</span></p>
 </div>
 <blockquote>
 <p>Often it is much easier to use properties of the random variables to find the sum instead of evaluating the convolution.</p>
 </blockquote>
 <div class="remark">
-<p><span id="unlabeled-div-260" class="remark"><em>Remark</em> (Product). </span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be independent random variables. To evaluate the PDF and the CDF of <span class="math inline">\(Z = XY\)</span>, we proceed as follows:
+<p><span id="unlabeled-div-261" class="remark"><em>Remark</em> (Product). </span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be independent random variables. To evaluate the PDF and the CDF of <span class="math inline">\(Z = XY\)</span>, we proceed as
 <span class="math display">\[
 \begin{align}
 F_Z(z) &amp;=\ P[XY \leq z] \\
@@ -710,7 +730,7 @@ f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty f_Y(y)f_X\left(\frac{z}{y}\r
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-261" class="remark"><em>Remark</em> (Quotient). </span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be independent random variables. To evaluate the PDF and the CDF of <span class="math inline">\(\displaystyle Z = \frac{X}{Y}\)</span>, we proceed as follows:
+<p><span id="unlabeled-div-262" class="remark"><em>Remark</em> (Quotient). </span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be independent random variables. To evaluate the PDF and the CDF of <span class="math inline">\(\displaystyle Z = \frac{X}{Y}\)</span>, we proceed as
 <span class="math display">\[
 \begin{align}
 F_Z(z) &amp;=\ P\left[\frac{X}{Y} \leq z\right] \\
@@ -726,7 +746,7 @@ f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty \lvert y\rvert\ f_X\left(yz\
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-262" class="definition"><strong>Definition 5.39  (Covariance Matrix / Correlation Matrix) </strong></span>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be random variables. Let <span class="math inline">\(\sigma_{ij} = \text{Cov}(X_i, X_j)\)</span> and <span class="math inline">\(\rho_{ij} = \text{Corr}(X_i, X_j)\)</span> for every <span class="math inline">\(i, j = 1, 2, \dots, n\)</span>. The <em>covariance</em> and <em>correlation matrices</em> as defined respectively as follows:
+<p><span id="def:unlabeled-div-263" class="definition"><strong>Definition 5.39  (Covariance Matrix / Correlation Matrix) </strong></span>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be random variables. Let <span class="math inline">\(\sigma_{ij} = \text{Cov}(X_i, X_j)\)</span> and <span class="math inline">\(\rho_{ij} = \text{Corr}(X_i, X_j)\)</span> for every <span class="math inline">\(i, j = 1, 2, \dots, n\)</span>. The <em>covariance</em> and <em>correlation matrices</em> as defined respectively as
 <span class="math display">\[
 \Sigma =
 \begin{bmatrix}
@@ -745,7 +765,7 @@ P =
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-263" class="theorem"><strong>Theorem 5.10  </strong></span><span class="math inline">\(\lvert\rho_{X,Y}\rvert = 1\)</span> if and only if there exist <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> such that <span class="math inline">\(Y = \alpha + \beta X\)</span>.</p>
+<p><span id="thm:unlabeled-div-264" class="theorem"><strong>Theorem 5.12  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables. <span class="math inline">\(\lvert\rho_{X,Y}\rvert = 1\)</span> if and only if there exist <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span> such that <span class="math inline">\(Y = \alpha + \beta X\)</span>.</p>
 </div>
 
 </div>

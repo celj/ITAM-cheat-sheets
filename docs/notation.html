@@ -21,14 +21,15 @@
           scale: 90
         },
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ["\\[","\\]"]],
         }
       });
-    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
+    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="A.1 Linear Algebra Expression Description \(\dim S\) Dimension of \(S\). \(N(A)\) Null space of \(A\). \(R(A)\) Range of \(A\). \(\text{rk}A\) Rank of \(A\). \(I_n\) \(n\)-by-\(n\) identity...">
-<meta property="og:description" content="A.1 Linear Algebra Expression Description \(\dim S\) Dimension of \(S\). \(N(A)\) Null space of \(A\). \(R(A)\) Range of \(A\). \(\text{rk}A\) Rank of \(A\). \(I_n\) \(n\)-by-\(n\) identity...">
-<meta name="twitter:description" content="A.1 Linear Algebra Expression Description \(\dim S\) Dimension of \(S\). \(N(A)\) Null space of \(A\). \(R(A)\) Range of \(A\). \(\text{rk}A\) Rank of \(A\). \(I_n\) \(n\)-by-\(n\) identity...">
+<meta name="description" content="Linear Algebra Expression Description \(\dim S\) Dimension of \(S\). \(N(A)\) Null space of \(A\). \(R(A)\) Range of \(A\). \(\text{rk}A\) Rank of \(A\). \(I_n\) \(n\)-by-\(n\) identity matrix. ...">
+<meta property="og:description" content="Linear Algebra Expression Description \(\dim S\) Dimension of \(S\). \(N(A)\) Null space of \(A\). \(R(A)\) Range of \(A\). \(\text{rk}A\) Rank of \(A\). \(I_n\) \(n\)-by-\(n\) identity matrix. ...">
+<meta name="twitter:description" content="Linear Algebra Expression Description \(\dim S\) Dimension of \(S\). \(N(A)\) Null space of \(A\). \(R(A)\) Range of \(A\). \(\text{rk}A\) Rank of \(A\). \(I_n\) \(n\)-by-\(n\) identity matrix. ...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -74,76 +75,73 @@
 <h1>
 <span class="header-section-number">A</span> Notation<a class="anchor" aria-label="anchor" href="#notation"><i class="fas fa-link"></i></a>
 </h1>
-<div id="linear-algebra-1" class="section level2" number="8.1">
-<h2>
-<span class="header-section-number">A.1</span> Linear Algebra<a class="anchor" aria-label="anchor" href="#linear-algebra-1"><i class="fas fa-link"></i></a>
+<div id="linear-algebra-1" class="section level2 unnumbered">
+<h2>Linear Algebra<a class="anchor" aria-label="anchor" href="#linear-algebra-1"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
-<th>Expression</th>
+<th align="center">Expression</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\dim S\)</span></td>
+<td align="center"><span class="math inline">\(\dim S\)</span></td>
 <td>Dimension of <span class="math inline">\(S\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(N(A)\)</span></td>
+<td align="center"><span class="math inline">\(N(A)\)</span></td>
 <td>Null space of <span class="math inline">\(A\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(R(A)\)</span></td>
+<td align="center"><span class="math inline">\(R(A)\)</span></td>
 <td>Range of <span class="math inline">\(A\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\text{rk}A\)</span></td>
+<td align="center"><span class="math inline">\(\text{rk}A\)</span></td>
 <td>Rank of <span class="math inline">\(A\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(I_n\)</span></td>
+<td align="center"><span class="math inline">\(I_n\)</span></td>
 <td>
 <span class="math inline">\(n\)</span>-by-<span class="math inline">\(n\)</span> identity matrix.</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="real-analysis-and-topology" class="section level2" number="8.2">
-<h2>
-<span class="header-section-number">A.2</span> Real Analysis and Topology<a class="anchor" aria-label="anchor" href="#real-analysis-and-topology"><i class="fas fa-link"></i></a>
+<div id="real-analysis-and-topology" class="section level2 unnumbered">
+<h2>Real Analysis and Topology<a class="anchor" aria-label="anchor" href="#real-analysis-and-topology"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
-<th>Expression</th>
+<th align="center">Expression</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\text{int}(S)\)</span></td>
+<td align="center"><span class="math inline">\(\text{int}(S)\)</span></td>
 <td>Interior of <span class="math inline">\(S\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\text{cl}(S)\)</span></td>
+<td align="center"><span class="math inline">\(\text{cl}(S)\)</span></td>
 <td>Closure of <span class="math inline">\(S\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\partial S\)</span></td>
+<td align="center"><span class="math inline">\(\partial S\)</span></td>
 <td>Boundary of <span class="math inline">\(S\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\varphi : X \rightrightarrows Y\)</span></td>
+<td align="center"><span class="math inline">\(\varphi : X \rightrightarrows Y\)</span></td>
 <td>Correspondence <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\text{co}S\)</span></td>
+<td align="center"><span class="math inline">\(\text{co}S\)</span></td>
 <td>Convex hull of <span class="math inline">\(S\)</span>.</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="statistics" class="section level2" number="8.3">
-<h2>
-<span class="header-section-number">A.3</span> Statistics<a class="anchor" aria-label="anchor" href="#statistics"><i class="fas fa-link"></i></a>
+<div id="statistics" class="section level2 unnumbered">
+<h2>Statistics<a class="anchor" aria-label="anchor" href="#statistics"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -151,57 +149,77 @@
 <col width="52%">
 </colgroup>
 <thead><tr class="header">
-<th>Expression</th>
+<th align="center">Expression</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(a \perp b\)</span></td>
+<td align="center"><span class="math inline">\(a \perp b\)</span></td>
 <td>The random variables <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are independent.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(a \perp b \mid c\)</span></td>
+<td align="center"><span class="math inline">\(a \perp b \mid c\)</span></td>
 <td>They are conditionally independent given <span class="math inline">\(c\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(P(a)\)</span></td>
+<td align="center"><span class="math inline">\(P(a)\)</span></td>
 <td>A probability distribution over a discrete variable.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(p(a)\)</span></td>
+<td align="center"><span class="math inline">\(p(a)\)</span></td>
 <td>A probability distribution over a continuous variable, or over a variable whose type has not been specified.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(a \sim P\)</span></td>
+<td align="center"><span class="math inline">\(a \sim P\)</span></td>
 <td>Random variable <span class="math inline">\(a\)</span> has distribution <span class="math inline">\(P\)</span>.</td>
 </tr>
 <tr class="even">
-<td>
-<span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}_{\mathrm{x}\sim P} [f(x)]\)</span> or <span class="math inline">\(\mathop{\mathrm{\mathbb{E}}}[f(x)]\)</span>
+<td align="center">
+<span class="math inline">\(\displaystyle\mathbb{E}_{\mathrm{x}\sim P} [f(x)]\)</span> or <span class="math inline">\(\mathbb{E}[f(x)]\)</span>
 </td>
 <td>Expectation of <span class="math inline">\(f(x)\)</span> with respect to <span class="math inline">\(P(\mathrm{x})\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\text{Var}(f(x))\)</span></td>
+<td align="center"><span class="math inline">\(\text{Var}(f(x))\)</span></td>
 <td>Variance of <span class="math inline">\(f(x)\)</span> under <span class="math inline">\(P(\mathrm{x})\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\text{Cov}(f(x), g(x))\)</span></td>
+<td align="center"><span class="math inline">\(\text{Cov}(f(x), g(x))\)</span></td>
 <td>Covariance of <span class="math inline">\(f(x)\)</span> and <span class="math inline">\(g(x)\)</span> under <span class="math inline">\(P(\mathrm{x})\)</span>.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\mathscr{N}(\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})\)</span></td>
+<td align="center"><span class="math inline">\(\mathscr{N}(\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})\)</span></td>
 <td>Gaussian distribution over <span class="math inline">\(\mathbf{x}\)</span> with mean <span class="math inline">\(\mathbf{\mu}\)</span> and covariance <span class="math inline">\(\mathbf{\Sigma}\)</span>.</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\mu_n'\)</span></td>
+<td align="center"><span class="math inline">\(\mu_n'\)</span></td>
 <td>
 <span class="math inline">\(n\)</span>th (raw) moment of a distribution.</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\mu_n\)</span></td>
+<td align="center"><span class="math inline">\(\mu_n\)</span></td>
 <td>
 <span class="math inline">\(n\)</span>th central moment of a distribution.</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(X_n \overset{d}{\longrightarrow}X\)</span></td>
+<td>
+<span class="math inline">\(X_n\)</span> converges in distribution to <span class="math inline">\(X\)</span>.</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(X_n \overset{p}{\longrightarrow}X\)</span></td>
+<td>
+<span class="math inline">\(X_n\)</span> converges in probability to <span class="math inline">\(X\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(X_n \overset{L^r}{\longrightarrow}X\)</span></td>
+<td>
+<span class="math inline">\(X_n\)</span> converges in the <span class="math inline">\(r\)</span>th mean to <span class="math inline">\(X\)</span>.</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(X_n \overset{L^2}{\longrightarrow}X\)</span></td>
+<td>
+<span class="math inline">\(X_n\)</span> converges in quadratic mean to <span class="math inline">\(X\)</span>.</td>
 </tr>
 </tbody>
 </table></div>
@@ -214,9 +232,9 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#notation"><span class="header-section-number">A</span> Notation</a></li>
-<li><a class="nav-link" href="#linear-algebra-1"><span class="header-section-number">A.1</span> Linear Algebra</a></li>
-<li><a class="nav-link" href="#real-analysis-and-topology"><span class="header-section-number">A.2</span> Real Analysis and Topology</a></li>
-<li><a class="nav-link" href="#statistics"><span class="header-section-number">A.3</span> Statistics</a></li>
+<li><a class="nav-link" href="#linear-algebra-1">Linear Algebra</a></li>
+<li><a class="nav-link" href="#real-analysis-and-topology">Real Analysis and Topology</a></li>
+<li><a class="nav-link" href="#statistics">Statistics</a></li>
 </ul>
 
       <div class="book-extra">

@@ -1,7 +1,7 @@
 ---
 knit: (function(input, ...) {
     thesis_formats <- "bs4";
-    
+
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
   })
@@ -77,8 +77,8 @@ abstractseparate: false
 includeline-num: false
 
 output:
-  bookdown::bs4_book: 
-    css: 
+  bookdown::bs4_book:
+    css:
       - templates/bs4_style.css
       - templates/corrections.css
     includes:
@@ -111,49 +111,52 @@ source('scripts_and_filters/wrap_lines.R')
 ```{r ebook-welcome, child = 'front-and-back-matter/_welcome-ebook.Rmd', eval=knitr::is_html_output()}
 ```
 
-\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator*{\argmax}{\arg\!\max}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\newcommand{\Ber}{\text{Ber}}
+\newcommand{\Beta}{\text{Beta}}
+\newcommand{\Bias}{\text{Bias}}
+\newcommand{\Bin}{\text{Bin}}
 \newcommand{\C}{\mathbb{C}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\I}{\mathbb{I}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
+\newcommand{\Cau}{\text{Cauchy}}
+\newcommand{\closure}{\text{cl}}
+\newcommand{\convex}{\text{co}}
+\newcommand{\Corr}{\text{Corr}}
+\newcommand{\Cov}{\text{Cov}}
+\newcommand{\csq}{\chi^2}
+\newcommand{\Dir}{\text{Dirichlet}}
+\newcommand{\dlim}{\overset{d}{\longrightarrow}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Exp}{\text{Exp}}
 \newcommand{\F}{\mathscr{F}}
+\newcommand{\Geo}{\text{Geo}}
+\newcommand{\Hyp}{\text{Hyp}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\ie}{\text{i.e.}}
+\newcommand{\indicator}{\mathbb{1}}
+\newcommand{\interior}{\text{int}}
 \newcommand{\L}{\mathscr{L}}
+\newcommand{\logN}{\text{Log-}\mathscr{N}}
+\newcommand{\mlim}{\overset{L^2}{\longrightarrow}}
 \newcommand{\MRS}{\text{MRS}}
 \newcommand{\MRT}{\text{MRT}}
 \newcommand{\MRTS}{\text{MRTS}}
-\DeclareMathOperator*{\E}{\mathbb{E}}
-\newcommand{\Corr}{\text{Corr}}
-\newcommand{\Cov}{\text{Cov}}
-\newcommand{\sd}{\text{sd}}
-\newcommand{\Var}{\text{Var}}
-\newcommand{\Ber}{\text{Ber}}
-\newcommand{\Bin}{\text{Bin}}
-\newcommand{\Geo}{\text{Geo}}
-\newcommand{\Poi}{\text{Poisson}}
-\newcommand{\Hyp}{\text{Hyp}}
+\newcommand{\MSE}{\text{MSE}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\NB}{\text{NB}}
-\newcommand{\Exp}{\text{Exp}}
-\newcommand{\Cau}{\text{Cauchy}}
-\newcommand{\Par}{\text{Pareto}}
-\newcommand{\Wei}{\text{Weibull}}
-\newcommand{\Beta}{\text{Beta}}
-\newcommand{\Dir}{\text{Dirichlet}}
 \newcommand{\Norm}{\mathscr{N}}
-\newcommand{\Unif}{\mathscr{U}}
-\newcommand{\logN}{\text{Log-}\mathscr{N}}
-\newcommand{\csq}{\chi^2}
-\newcommand{\dlim}{\overset{d}{\longrightarrow}}
-\newcommand{\plim}{\overset{p}{\longrightarrow}}
-\newcommand{\rlim}{\overset{L^r}{\longrightarrow}}
-\newcommand{\mlim}{\overset{L^2}{\longrightarrow}}
-\DeclareMathOperator*{\argmin}{\arg \min}
-\DeclareMathOperator*{\argmax}{\arg \max}
-\newcommand{\closure}{\text{cl}}
-\newcommand{\convex}{\text{co}}
-\newcommand{\ie}{\text{i.e.}}
-\newcommand{\interior}{\text{int}}
 \newcommand{\O}{\varnothing}
+\newcommand{\Par}{\text{Pareto}}
+\newcommand{\plim}{\overset{p}{\longrightarrow}}
+\newcommand{\Poi}{\text{Poisson}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\rk}{\text{rk}}
+\newcommand{\rlim}{\overset{L^r}{\longrightarrow}}
+\newcommand{\sd}{\text{sd}}
 \newcommand{\sgn}{\text{sgn}}
-\newcommand{\indicator}{\mathbb{1}}
+\newcommand{\Unif}{\mathscr{U}}
+\newcommand{\Var}{\text{Var}}
+\newcommand{\Wei}{\text{Weibull}}
+\newcommand{\Z}{\mathbb{Z}}
+

@@ -21,10 +21,11 @@
           scale: 90
         },
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ["\\[","\\]"]],
         }
       });
-    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
+    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
 <meta name="description" content="4.1 General Equilibrium  Pure Exchange Economies  Initial Assumptions There are \(m\) consumers such that \(\mathscr{I} = \{1, \dots, m\}\). There are \(n\) goods such that \(\mathscr{L}= \{1,...">
 <meta property="og:description" content="4.1 General Equilibrium  Pure Exchange Economies  Initial Assumptions There are \(m\) consumers such that \(\mathscr{I} = \{1, \dots, m\}\). There are \(n\) goods such that \(\mathscr{L}= \{1,...">
@@ -214,13 +215,13 @@ Figure 4.1: Edgeworth Box
 <p><span id="cor:unlabeled-div-183" class="corollary"><strong>Corollary 4.1  (Walras's Law) </strong></span>Given weakly monotonic utility functions and <span class="math inline">\(p = (p_1, \dots, p_n)\)</span> such that <span class="math inline">\(p_\ell &gt; 0\)</span>. If any <span class="math inline">\((X^*, p)\)</span> in which maximization condition holds, <span class="math inline">\(\forall i \in \mathscr{I}\)</span>, and markets clear <span class="math inline">\(\forall \ell = 1, 2, \dots, n - 1\)</span>, then the market clearing condition holds for commodity <span class="math inline">\(n\)</span> as well.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-184" class="theorem"><strong>Theorem 4.3  (Fixed Point) </strong></span>For any continuous function <span class="math inline">\(f : \triangle^{n - 1} \to \triangle^{n - 1}\)</span>, there exists a point <span class="math inline">\(p^* = (p_1^*, p_2^*, \dots, p_n^*)\)</span> such that <span class="math inline">\(f(p^*) = p^*\)</span>, where:
+<p><span id="thm:unlabeled-div-184" class="theorem"><strong>Theorem 4.3  (Fixed Point) </strong></span>For any continuous function <span class="math inline">\(f : \triangle^{n - 1} \to \triangle^{n - 1}\)</span>, there exists a point <span class="math inline">\(p^* = (p_1^*, p_2^*, \dots, p_n^*)\)</span> such that <span class="math inline">\(f(p^*) = p^*\)</span>, where
 <span class="math display">\[
 \triangle^{n - 1} = \left\{ (p_1, p_2, \dots, p_n) \in \mathbb{R}^\mathscr{L}_+ : \sum_{\ell \in \mathscr{L}} p_\ell = 1 \right\}.
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-185" class="definition"><strong>Definition 4.9  (Shortage) </strong></span>We define <em>shortage</em> or <em>excess demand</em> as follows:
+<p><span id="def:unlabeled-div-185" class="definition"><strong>Definition 4.9  (Shortage) </strong></span>We define <em>shortage</em> or <em>excess demand</em> as
 <span class="math display">\[
 Z(p) = (z_1(p), z_2(p), \dots, z_n(p)) = \sum_{i \in \mathscr{I}} x^*_i (p) - \sum_{i \in \mathscr{I}} w_i.
 \]</span></p>

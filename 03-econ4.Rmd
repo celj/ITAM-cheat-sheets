@@ -2,7 +2,7 @@
 knit: (function(input, ...) {
     input <- "index.Rmd";
     thesis_formats <- "bs4";
-    
+
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
   })
@@ -150,14 +150,14 @@ Given weakly monotonic utility functions and $p = (p_1, \dots, p_n)$ such that $
 :::
 
 ::: {.theorem name="Fixed Point"}
-For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p_1^*, p_2^*, \dots, p_n^*)$ such that $f(p^*) = p^*$, where:
+For any continuous function $f : \triangle^{n - 1} \to \triangle^{n - 1}$, there exists a point $p^* = (p_1^*, p_2^*, \dots, p_n^*)$ such that $f(p^*) = p^*$, where
 $$
 \triangle^{n - 1} = \left\{ (p_1, p_2, \dots, p_n) \in \R^\L_+ : \sum_{\ell \in \L} p_\ell = 1 \right\}.
 $$
 :::
 
 ::: {.definition name="Shortage"}
-We define *shortage* or *excess demand* as follows:
+We define *shortage* or *excess demand* as
 $$
 Z(p) = (z_1(p), z_2(p), \dots, z_n(p)) = \sum_{i \in \mathscr{I}} x^*_i (p) - \sum_{i \in \mathscr{I}} w_i.
 $$

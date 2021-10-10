@@ -2,7 +2,7 @@
 knit: (function(input, ...) {
     input <- "index.Rmd";
     thesis_formats <- "bs4";
-    
+
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
   })
@@ -15,6 +15,6 @@ Just click [here](files/02-econ3.pdf) or on the image below.
 
 ::: {.row}
 :::::: {.col-sm-6 .thesis-cover}
-<a href="files/02-econ3.pdf"><img src="figures/02-econ3.png"/></a> 
+<a href="files/02-econ3.pdf"><img src="figures/02-econ3.png"/></a>
 ::::::
 :::

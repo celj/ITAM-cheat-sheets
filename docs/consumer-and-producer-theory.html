@@ -21,10 +21,11 @@
           scale: 90
         },
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ["\\[","\\]"]],
         }
       });
-    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
+    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
 <meta name="description" content="The definitions and theorems below can also be used for courses on: calculus, linear algebra, optimization, and real analysis.  1.1 Linear Algebra  Basic Notions of Linear Algebra  Vectors are...">
 <meta property="og:description" content="The definitions and theorems below can also be used for courses on: calculus, linear algebra, optimization, and real analysis.  1.1 Linear Algebra  Basic Notions of Linear Algebra  Vectors are...">
@@ -128,7 +129,7 @@
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-6" class="theorem"><strong>Theorem 1.1  </strong></span>Let <span class="math inline">\(E_{n\times n}\)</span> be an elementary matrix. Then:</p>
+<p><span id="thm:unlabeled-div-6" class="theorem"><strong>Theorem 1.1  </strong></span>Let <span class="math inline">\(E_{n\times n}\)</span> be an elementary matrix. Then</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(E\)</span> is invertible.</li>
@@ -256,7 +257,7 @@ N(A) = \left\{ x \in \mathbb{R}^n : Ax = 0 \right\}.
 <p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 1.13  (Dimension) </strong></span>The <em>dimension</em> of a subspace <span class="math inline">\(S\)</span> is the number of elements in any basis for <span class="math inline">\(S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-29" class="theorem"><strong>Theorem 1.6  (Fundamental Theorem of Linear Algebra I) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then,</p>
+<p><span id="thm:unlabeled-div-29" class="theorem"><strong>Theorem 1.6  (Fundamental Theorem of Linear Algebra I) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(\dim R(A^T) = \text{rk}A\)</span>,</li>
@@ -280,7 +281,7 @@ S^\perp = \left\{ y \in \mathbb{R}^m : y \cdot x = 0,\ \forall x \in S \right\}.
 <p><span id="lem:unlabeled-div-31" class="lemma"><strong>Lemma 1.2  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, <span class="math inline">\(S \cap S^\perp = \{0\}\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-32" class="theorem"><strong>Theorem 1.7  (Fundamental Theorem of Linear Algebra II) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then,</p>
+<p><span id="thm:unlabeled-div-32" class="theorem"><strong>Theorem 1.7  (Fundamental Theorem of Linear Algebra II) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(R(A) = N(A^T)^\perp\)</span>, and</li>
@@ -597,7 +598,7 @@ g'(a) = -\frac{D_1F(a,b)}{D_2F(a,b)}.
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-96" class="theorem"><strong>Theorem 1.32  (Implicit Function) </strong></span>Suppose <span class="math inline">\(F : \mathbb{R}^{n + m} \to \mathbb{R}^m\)</span> is differentiable in an open set <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathbb{R}^{n + m}\)</span> and suppose that the entries of <span class="math inline">\(J_F (x,y)\)</span> are continuous at each <span class="math inline">\((x,y) \in U\)</span>. Let <span class="math inline">\(A_{m\times n}\)</span> and <span class="math inline">\(B_{m\times m}\)</span> be defined by <span class="math inline">\(J_F (a, b)\)</span> as follows:
+<p><span id="thm:unlabeled-div-96" class="theorem"><strong>Theorem 1.32  (Implicit Function) </strong></span>Suppose <span class="math inline">\(F : \mathbb{R}^{n + m} \to \mathbb{R}^m\)</span> is differentiable in an open set <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathbb{R}^{n + m}\)</span> and suppose that the entries of <span class="math inline">\(J_F (x,y)\)</span> are continuous at each <span class="math inline">\((x,y) \in U\)</span>. Let <span class="math inline">\(A_{m\times n}\)</span> and <span class="math inline">\(B_{m\times m}\)</span> be defined by <span class="math inline">\(J_F (a, b)\)</span> as
 <span class="math display">\[
 A =
 \begin{bmatrix}
@@ -689,7 +690,7 @@ G_\varphi := \{ (x, y) \in X \times Y : y \in \varphi(x) \} .
 <p><span id="prp:unlabeled-div-111" class="proposition"><strong>Proposition 1.5  </strong></span><span class="math inline">\(\varphi\)</span> is <em>closed / open</em> if <span class="math inline">\(G_\varphi\)</span> is a closed / open subset of <span class="math inline">\(X \times Y\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-112" class="definition"><strong>Definition 1.51  (Inverses) </strong></span>Let <span class="math inline">\(U \subseteq Y\)</span>. The <em>strong and weak inverses</em> of <span class="math inline">\(U\)</span> under <span class="math inline">\(\varphi\)</span> are defined respectively as follows:
+<p><span id="def:unlabeled-div-112" class="definition"><strong>Definition 1.51  (Inverses) </strong></span>Let <span class="math inline">\(U \subseteq Y\)</span>. The <em>strong and weak inverses</em> of <span class="math inline">\(U\)</span> under <span class="math inline">\(\varphi\)</span> are defined respectively as
 <span class="math display">\[
 \varphi_s^{-1} (U) := \{x \in X : \varphi(x) \subseteq U\} \\
 \varphi_w^{-1} (U) := \{x \in X : \varphi(x) \cap U \neq \varnothing\}
@@ -772,9 +773,9 @@ G_\varphi := \{ (x, y) \in X \times Y : y \in \varphi(x) \} .
 <span class="math display">\[
 \max_{x \in \varphi(t)} f(x, t).
 \]</span>
-Define <span class="math inline">\(\displaystyle \mu (t) = \mathop{\mathrm{\arg \max}}_{x \in \varphi(t)} f(x, t)\)</span>. Suppose that <span class="math inline">\(\mu(t) \neq \varnothing\)</span> for every <span class="math inline">\(t\)</span>.</p>
-<p>We can define a function <span class="math inline">\(g : T \to \mathbb{R}\)</span> as follows: <span class="math inline">\(g(t) = f(x, t)\)</span> for some <span class="math inline">\(x \in \mu(t)\)</span>.</p>
-<p>If <span class="math inline">\(\varphi\)</span> is compact-valued, UHC and LHC and if <span class="math inline">\(f\)</span> is continuous, then:</p>
+Define <span class="math inline">\(\displaystyle \mu (t) = \mathop{\mathrm{\arg\!\max}}_{x \in \varphi(t)} f(x, t)\)</span>. Suppose that <span class="math inline">\(\mu(t) \neq \varnothing\)</span> for every <span class="math inline">\(t\)</span>.</p>
+<p>We can define a function <span class="math inline">\(g : T \to \mathbb{R}\)</span> as <span class="math inline">\(g(t) = f(x, t)\)</span> for some <span class="math inline">\(x \in \mu(t)\)</span>.</p>
+<p>If <span class="math inline">\(\varphi\)</span> is compact-valued, UHC and LHC and if <span class="math inline">\(f\)</span> is continuous, then</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(\mu : T \rightrightarrows X\)</span> is compact-valued and UHC, and</li>
@@ -925,7 +926,7 @@ for all <span class="math inline">\(y \in S\)</span>.</p>
 <h3>Maximization<a class="anchor" aria-label="anchor" href="#maximization"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-160" class="definition"><strong>Definition 1.63  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-160" class="definition"><strong>Definition 1.63  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as
 <span class="math display">\[
 b(S) := \left\{ p \in \mathbb{R}^n : \max_{x \in S}\ \text{is well-defined} \right\}.
 \]</span></p>
@@ -950,7 +951,7 @@ b(S) := \left\{ p \in \mathbb{R}^n : \max_{x \in S}\ \text{is well-defined} \rig
 <span class="math inline">\(\sigma_S(tp) = t\sigma_S(p)\)</span> for every <span class="math inline">\(p \in b(S)\)</span> and <span class="math inline">\(t \geq 0\)</span>. Namely, homogeneity of degree 1.</li>
 <li>If <span class="math inline">\(b(S)\)</span> is convex, then <span class="math inline">\(\sigma_S\)</span> is convex.</li>
 <li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, and <span class="math inline">\(p \in b(S)\)</span>. <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p\)</span> is a subgradient of <span class="math inline">\(\sigma_S\)</span> at <span class="math inline">\(p\)</span>.</li>
-<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b(S))\)</span> and <span class="math inline">\(\sigma_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then, <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \sigma_S (p)\)</span>. Also known as <strong>Hotelling’s Lemma</strong> in profit maximization.</li>
+<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b(S))\)</span> and <span class="math inline">\(\sigma_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \sigma_S (p)\)</span>. Also known as <strong>Hotelling’s Lemma</strong> in profit maximization.</li>
 </ul>
 </div>
 </div>
@@ -958,7 +959,7 @@ b(S) := \left\{ p \in \mathbb{R}^n : \max_{x \in S}\ \text{is well-defined} \rig
 <h3>Minimization<a class="anchor" aria-label="anchor" href="#minimization"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-165" class="definition"><strong>Definition 1.65  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as follows:
+<p><span id="def:unlabeled-div-165" class="definition"><strong>Definition 1.65  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as
 <span class="math display">\[
 b^-(S) := \left\{ p \in \mathbb{R}^n : \min_{x \in S}\ \text{is well-defined} \right\}.
 \]</span></p>
@@ -980,7 +981,7 @@ b^-(S) := \left\{ p \in \mathbb{R}^n : \min_{x \in S}\ \text{is well-defined} \r
 <span class="math inline">\(\tau_S(tp) = t\tau_S(p)\)</span> for every <span class="math inline">\(p \in b^-(S)\)</span> and <span class="math inline">\(t \geq 0\)</span>. Namely, homogeneity of degree 1.</li>
 <li>If <span class="math inline">\(b^-(S)\)</span> is convex, then <span class="math inline">\(\tau_S\)</span> is concave.</li>
 <li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, and <span class="math inline">\(p \in b^-(S)\)</span>. <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p\)</span> is a supergradient of <span class="math inline">\(\tau_S\)</span> at <span class="math inline">\(p\)</span>.</li>
-<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b^-(S))\)</span> and <span class="math inline">\(\tau_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then, <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \tau_S (p)\)</span>. Also known as <strong>Shephard’s Lemma</strong> in cost minimization.</li>
+<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b^-(S))\)</span> and <span class="math inline">\(\tau_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \tau_S (p)\)</span>. Also known as <strong>Shephard’s Lemma</strong> in cost minimization.</li>
 </ul>
 </div>
 </div>

@@ -2,7 +2,7 @@
 knit: (function(input, ...) {
     input <- "index.Rmd";
     thesis_formats <- "bs4";
-    
+
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
   })
@@ -63,7 +63,7 @@ There are three elementary row operations:
 :::
 
 ::: {.theorem}
-Let $E_{n\times n}$ be an elementary matrix. Then:
+Let $E_{n\times n}$ be an elementary matrix. Then
 
 1. $E$ is invertible.
 2. There exist a number $k$ of elementary matrices $E_1, \dots, E_k$ such that $E^{-1} = E_1 \cdots E_k$.
@@ -198,7 +198,7 @@ The _dimension_ of a subspace $S$ is the number of elements in any basis for $S$
 :::
 
 ::: {.theorem name="Fundamental Theorem of Linear Algebra I"}
-Let $A$ be $m\times n$. Then,
+Let $A$ be $m\times n$. Then
 
 1. $\dim R(A^T) = \rk A$,
 2. $\rk A = \rk A^T$, and
@@ -219,7 +219,7 @@ For any subspace $S$ of $\R^m$, $S \cap S^\perp = \{0\}$.
 :::
 
 ::: {.theorem name="Fundamental Theorem of Linear Algebra II"}
-Let $A$ be $m\times n$. Then,
+Let $A$ be $m\times n$. Then
 
 1. $R(A) = N(A^T)^\perp$, and
 2. $R(A)^\perp = N(A^T)$.
@@ -562,7 +562,7 @@ $$
 :::
 
 ::: {.theorem name="Implicit Function"}
-Suppose $F : \R^{n + m} \to \R^m$ is differentiable in an open set $U$ containing $(a, b) \in \R^{n + m}$ and suppose that the entries of $J_F (x,y)$ are continuous at each $(x,y) \in U$. Let $A_{m\times n}$ and $B_{m\times m}$ be defined by $J_F (a, b)$ as follows:
+Suppose $F : \R^{n + m} \to \R^m$ is differentiable in an open set $U$ containing $(a, b) \in \R^{n + m}$ and suppose that the entries of $J_F (x,y)$ are continuous at each $(x,y) \in U$. Let $A_{m\times n}$ and $B_{m\times m}$ be defined by $J_F (a, b)$ as
 $$
 A =
 \begin{bmatrix}
@@ -664,7 +664,7 @@ $\varphi$ is _closed / open_ if $G_\varphi$ is a closed / open subset of $X \tim
 :::
 
 ::: {.definition name="Inverses"}
-Let $U \subseteq Y$. The _strong and weak inverses_ of $U$ under $\varphi$ are defined respectively as follows:
+Let $U \subseteq Y$. The _strong and weak inverses_ of $U$ under $\varphi$ are defined respectively as
 $$
 \varphi_s^{-1} (U) := \{x \in X : \varphi(x) \subseteq U\} \\
 \varphi_w^{-1} (U) := \{x \in X : \varphi(x) \cap U \neq \O\}
@@ -759,11 +759,11 @@ Let $T$ and $X$ be Euclidean sets. Let $\varphi : T \rightrightarrows X$ and $f 
 $$
 \max_{x \in \varphi(t)} f(x, t).
 $$
-Define $\displaystyle \mu (t) = \argmax_{x \in \varphi(t)} f(x, t)$. Suppose that $\mu(t) \neq \O$ for every $t$. 
+Define $\displaystyle \mu (t) = \argmax_{x \in \varphi(t)} f(x, t)$. Suppose that $\mu(t) \neq \O$ for every $t$.
 
-We can define a function $g : T \to \R$ as follows: $g(t) = f(x, t)$ for some $x \in \mu(t)$.
+We can define a function $g : T \to \R$ as $g(t) = f(x, t)$ for some $x \in \mu(t)$.
 
-If $\varphi$ is compact-valued, UHC and LHC and if $f$ is continuous, then:
+If $\varphi$ is compact-valued, UHC and LHC and if $f$ is continuous, then
 
 1. $\mu : T \rightrightarrows X$ is compact-valued and UHC, and
 2. $g : T \to \R$ is continuous.
@@ -924,7 +924,7 @@ Suppose that $S \subseteq \R^n$ is open and convex, and $f : S \to \R$ is differ
 ### Maximization {-}
 
 ::: {.definition name="Barrier Cone"}
-For any non-empty $S \subseteq \R^n$, the _barrier cone_ of $S$ is defined as follows:
+For any non-empty $S \subseteq \R^n$, the _barrier cone_ of $S$ is defined as
 $$
 b(S) := \left\{ p \in \R^n : \max_{x \in S}\ \text{is well-defined} \right\}.
 $$
@@ -952,13 +952,13 @@ Let $S \subseteq \R^n$ be non-empty.
 * $\sigma_S(tp) = t\sigma_S(p)$ for every $p \in b(S)$ and $t \geq 0$. Namely,  homogeneity of degree 1.
 * If $b(S)$ is convex, then $\sigma_S$ is convex.
 * Suppose $S \subseteq \R^n$ is closed and convex, and $p \in b(S)$. $x_p$ solves $\displaystyle \max_{x \in S} p \cdot x$ if and only if $x_p$ is a subgradient of $\sigma_S$ at $p$.
-* Suppose $S \subseteq \R^n$ is closed and convex, $p \in \interior (b(S))$ and $\sigma_S$ is differentiable at $p$. Then, $x_p$ solves $\displaystyle \max_{x \in S} p \cdot x$ if and only if $x_p = \nabla \sigma_S (p)$. Also known as **Hotelling's Lemma** in profit maximization.
+* Suppose $S \subseteq \R^n$ is closed and convex, $p \in \interior (b(S))$ and $\sigma_S$ is differentiable at $p$. Then $x_p$ solves $\displaystyle \max_{x \in S} p \cdot x$ if and only if $x_p = \nabla \sigma_S (p)$. Also known as **Hotelling's Lemma** in profit maximization.
 :::
 
 ### Minimization {-}
 
 ::: {.definition name="Barrier Cone"}
-For any non-empty $S \subseteq \R^n$, the _barrier cone_ of $S$ is defined as follows:
+For any non-empty $S \subseteq \R^n$, the _barrier cone_ of $S$ is defined as
 $$
 b^-(S) := \left\{ p \in \R^n : \min_{x \in S}\ \text{is well-defined} \right\}.
 $$
@@ -982,7 +982,7 @@ Let $S \subseteq \R^n$ be non-empty.
 * $\tau_S(tp) = t\tau_S(p)$ for every $p \in b^-(S)$ and $t \geq 0$. Namely,  homogeneity of degree 1.
 * If $b^-(S)$ is convex, then $\tau_S$ is concave.
 * Suppose $S \subseteq \R^n$ is closed and convex, and $p \in b^-(S)$. $x_p$ solves $\displaystyle \min_{x \in S} p \cdot x$ if and only if $x_p$ is a supergradient of $\tau_S$ at $p$.
-* Suppose $S \subseteq \R^n$ is closed and convex, $p \in \interior (b^-(S))$ and $\tau_S$ is differentiable at $p$. Then, $x_p$ solves $\displaystyle \min_{x \in S} p \cdot x$ if and only if $x_p = \nabla \tau_S (p)$. Also known as **Shephard's Lemma** in cost minimization.
+* Suppose $S \subseteq \R^n$ is closed and convex, $p \in \interior (b^-(S))$ and $\tau_S$ is differentiable at $p$. Then $x_p$ solves $\displaystyle \min_{x \in S} p \cdot x$ if and only if $x_p = \nabla \tau_S (p)$. Also known as **Shephard's Lemma** in cost minimization.
 :::
 
 ## Nonlinear Programming

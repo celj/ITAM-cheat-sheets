@@ -21,14 +21,15 @@
           scale: 90
         },
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$','$$'], ["\\[","\\]"]],
         }
       });
-    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
+    </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
-<meta name="description" content="6.1 Descriptive Statistics   6.2 Finite Sample Distributions   6.3 Point Estimation   6.4 Interval Estimation   6.5 Parametric Hypothesis Testing   6.6 Normality Tests">
-<meta property="og:description" content="6.1 Descriptive Statistics   6.2 Finite Sample Distributions   6.3 Point Estimation   6.4 Interval Estimation   6.5 Parametric Hypothesis Testing   6.6 Normality Tests">
-<meta name="twitter:description" content="6.1 Descriptive Statistics   6.2 Finite Sample Distributions   6.3 Point Estimation   6.4 Interval Estimation   6.5 Parametric Hypothesis Testing   6.6 Normality Tests">
+<meta name="description" content="Definition 6.1 (Population) A population is a set of similar items or events which is of interest for some question or experiment.  Definition 6.2 (Sample) A sample is a set of individuals or...">
+<meta property="og:description" content="Definition 6.1 (Population) A population is a set of similar items or events which is of interest for some question or experiment.  Definition 6.2 (Sample) A sample is a set of individuals or...">
+<meta name="twitter:description" content="Definition 6.1 (Population) A population is a set of similar items or events which is of interest for some question or experiment.  Definition 6.2 (Sample) A sample is a set of individuals or...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -74,34 +75,198 @@
 <h1>
 <span class="header-section-number">6</span> Statistical Inference<a class="anchor" aria-label="anchor" href="#statistical-inference"><i class="fas fa-link"></i></a>
 </h1>
-<div id="descriptive-statistics" class="section level2" number="6.1">
+<div class="definition">
+<p><span id="def:unlabeled-div-265" class="definition"><strong>Definition 6.1  (Population) </strong></span>A <em>population</em> is a set of similar items or events which is of interest for some question or experiment.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-266" class="definition"><strong>Definition 6.2  (Sample) </strong></span>A <em>sample</em> is a set of individuals or objects collected or selected from a statistical population by a defined procedure.</p>
+</div>
+<div id="finite-sample-distributions" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">6.1</span> Descriptive Statistics<a class="anchor" aria-label="anchor" href="#descriptive-statistics"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Finite Sample Distributions<a class="anchor" aria-label="anchor" href="#finite-sample-distributions"><i class="fas fa-link"></i></a>
+</h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-267" class="definition"><strong>Definition 6.3  (Convergence in Distribution) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables is said to <em>converge in distribution</em> to a random variable <span class="math inline">\(X\)</span> if
+<span class="math display">\[
+\lim_{n\to\infty} F_{X_n}(x) = F_X(x)
+\]</span>
+for every <span class="math inline">\(x \in \mathbb{R}\)</span>.</p>
+<p>For random vectors <span class="math inline">\(\left\{ X_1, X_2, \dots \right\} \subset \mathbb{R}^k\)</span>, we say that this sequence <em>converges in distribution</em> to a random <span class="math inline">\(k\)</span>-vector <span class="math inline">\(X\)</span> if
+<span class="math display">\[
+\lim_{n\to\infty} P(X_n\in A) = P(X\in A)
+\]</span>
+for every <span class="math inline">\(A \subset \mathbb{R}^k\)</span> which is a continuity set of <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-268" class="definition"><strong>Definition 6.4  (Convergence in Probability) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables <em>converges in probability</em> towards the random variable <span class="math inline">\(X\)</span> if
+<span class="math display">\[
+\lim_{n\to\infty} P\left( \left\lvert X_n - X \right\rvert &gt; \varepsilon \right) = 0
+\]</span>
+for all <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-269" class="definition"><strong>Definition 6.5  (Convergence in Mean) </strong></span>Given a real number <span class="math inline">\(r \geq 1\)</span>, we say that the sequence <span class="math inline">\(X_n\)</span> <em>converges in the <span class="math inline">\(r\)</span>th mean</em> or <em>in the <span class="math inline">\(L^r\)</span> norm</em> towards the random variable <span class="math inline">\(X\)</span> if the <span class="math inline">\(r\)</span>th absolute moments of <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> exist, and
+<span class="math display">\[
+\lim_{n\to\infty} \mathbb{E}\left( \left\lvert X_n - X \right\rvert^r \right) = 0.
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-270" class="theorem"><strong>Theorem 6.1  (Law of Large Numbers) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be independent and identically distributed random variables with finite mean <span class="math inline">\(\mu\)</span>. Let <span class="math inline">\(\bar{X}_n\)</span> be the average of the first <span class="math inline">\(n\)</span> variables, then the <em>law of large numbers</em> establishes that:</p>
+<ol style="list-style-type: decimal">
+<li>
+<em>Weak</em>
+<span class="math display">\[
+\bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i \underset{n\to\infty}{\longrightarrow} \mu
+\]</span>
+</li>
+<li>
+<em>Weak</em>
+<span class="math display">\[
+P\left[ \left\lvert \bar{X}_n - \mu \right\rvert &gt; \varepsilon \right] \underset{n\to\infty}{\longrightarrow} 0, \quad \forall \varepsilon &gt; 0
+\]</span>
+</li>
+<li>
+<em>Weak</em>
+<span class="math display">\[
+P\left[ \left\lvert \bar{X}_n - \mu \right\rvert &lt; \varepsilon \right] \underset{n\to\infty}{\longrightarrow} 1, \quad \forall \varepsilon &gt; 0
+\]</span>
+</li>
+<li>
+<em>Strong</em>
+<span class="math display">\[
+P\left[ \left\{ \omega \in \Omega : \bar{X}_n(\omega) \underset{n\to\infty}{\longrightarrow} \mu \right\} \right] = 1
+\]</span>
+</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-271" class="theorem"><strong>Theorem 6.2  (Central Limit Theorem) </strong></span>Suppose <span class="math inline">\(\left\{X_1, \dots, X_n\right\}\)</span> is a sequence of independent and identically distributed random variables with <span class="math inline">\(\mathbb{E}[X_i] = \mu\)</span> and <span class="math inline">\(\text{Var}[X_i] = \sigma^2 &lt; \infty\)</span>. Then, as <span class="math inline">\(n\)</span> approaches infinity, the random variables <span class="math inline">\(\sqrt{n}\left( \bar{X}_n - \mu \right)\)</span> converge in distribution to a normal <span class="math inline">\(\mathscr{N}(0, \sigma^2)\)</span>.
+<span class="math display">\[
+\text{i.e.}\quad \sqrt{n}\left( \bar{X}_n - \mu \right) \overset{d}{\longrightarrow}\mathscr{N}(0, \sigma^2)
+\]</span></p>
+</div>
+<blockquote>
+<p>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be independent and identically distributed random variables drawn according to some distribution <span class="math inline">\(P_\theta\)</span> parametrized by <span class="math inline">\(\theta = (\theta_1, \dots, \theta_m) \in \Theta\)</span>, where <span class="math inline">\(\Theta\)</span> is the set of all possible parameters for the selected distribution. The goal is to find the best estimator <span class="math inline">\(\hat{\theta} \in \Theta\)</span> such that <span class="math inline">\(\hat{\theta} \approx \theta\)</span> since the real <span class="math inline">\(\theta\)</span> cannot be known exactly from a finite sample.</p>
+</blockquote>
+<div class="definition">
+<p><span id="def:unlabeled-div-272" class="definition"><strong>Definition 6.6  (Estimator) </strong></span>An <em>estimator</em> <span class="math inline">\(\hat{\theta}_j\)</span> from a parameter <span class="math inline">\(\theta_j\)</span> is a random variable <span class="math inline">\(\hat{\theta}_j(X_1, \dots, X_n)\)</span> that is symbolized as a function of the observed data.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-273" class="definition"><strong>Definition 6.7  (Estimate) </strong></span>An <em>estimate</em> <span class="math inline">\(\hat{\theta}_j(x_1, \dots, x_n)\)</span> is a realization of the estimator. It is a real value for the estimated parameter.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-274" class="definition"><strong>Definition 6.8  (Bias) </strong></span>The <em>bias</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
+<span class="math display">\[
+\text{Bias}(\hat{\theta}, \theta) := \mathbb{E}_\theta [\hat{\theta} - \theta].
+\]</span>
+We say that an estimator is <em>unbiased</em> if <span class="math inline">\(\text{Bias}_\theta [\hat{\theta}] = 0\)</span> or <span class="math inline">\(\mathbb{E}_\theta [\hat{\theta}] = \theta\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-275" class="definition"><strong>Definition 6.9  (Mean Squared Error) </strong></span>The <em>mean squared error</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
+<span class="math display">\[
+\text{MSE}_\theta[\hat{\theta}] := \mathbb{E}\left[ \left( \hat{\theta} - \theta \right)^2 \right] = \text{Var}_\theta[\hat{\theta}] + \text{Bias}^2 (\hat{\theta}, \theta)
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-276" class="definition"><strong>Definition 6.10  (Consistency) </strong></span>A sequence of estimators <span class="math inline">\(\hat{\theta}^{(n)}\)</span> of the parameter <span class="math inline">\(\theta\)</span> is called <em>consistent</em> if, for any <span class="math inline">\(\varepsilon &gt; 0\)</span>,
+<span class="math display">\[
+P_\theta \left[ \left\lvert \hat{\theta}^{(n)} - \theta \right\rvert &gt; \varepsilon \right] \underset{n\to\infty}{\longrightarrow} 0.
+\]</span></p>
+<blockquote>
+<p>An estimator is consistent only if, as the sample data increases, the estimator approaches the real parameter.</p>
+</blockquote>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-277" class="definition"><strong>Definition 6.11  (Relative Efficiency) </strong></span>The <em>relative efficiency</em> of two estimators is defined as
+<span class="math display">\[
+e\left(\hat{\theta}_1, \hat{\theta}_2\right) = \frac{\text{Var}\left[\hat{\theta}_2\right]}{\text{Var}\left[\hat{\theta}_1\right]}.
+\]</span>
+We say that <span class="math inline">\(\hat{\theta}\)</span> is preferable if <span class="math inline">\(\text{Var}\left[\hat{\theta}_1\right] &lt; \text{Var}\left[\hat{\theta}_2\right]\)</span>.</p>
+</div>
+</div>
+<div id="point-estimation" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Point Estimation<a class="anchor" aria-label="anchor" href="#point-estimation"><i class="fas fa-link"></i></a>
+</h2>
+<div class="definition">
+<p><span id="def:unlabeled-div-278" class="definition"><strong>Definition 6.12  (Likelihood Function) </strong></span>The <em>likelihood function</em> <span class="math inline">\(\mathscr{L}\)</span> is defined as
+<span class="math display">\[
+\mathscr{L}(\theta;\ x_1, \dots, x_n) = f(x_1, \dots, x_n;\ \theta).
+\]</span>
+Assuming <span class="math inline">\(x_i \perp x_j\)</span>, <span class="math inline">\(\forall i \neq j\)</span>,
+<span class="math display">\[
+\mathscr{L}(\theta;\ x_1, \dots, x_n) = \prod_{i=1}^n f(x_i;\ \theta).
+\]</span></p>
+<blockquote>
+<p>For practical purposes, we often use the <em>log-likelihood function</em> <span class="math inline">\(\ell(\theta;\ x_1, \dots, x_n) = \log\mathscr{L}(\theta;\ x_1, \dots, x_n)\)</span> since it is much easier to differentiate afterwards, and the maximum of <span class="math inline">\(\mathscr{L}\)</span> is preserved for all <span class="math inline">\(\theta_j\)</span>.</p>
+</blockquote>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-279" class="definition"><strong>Definition 6.13  (Maximum Likelihood Estimator) </strong></span>The <em>maximum likelihood estimator</em> <span class="math inline">\(\hat{\theta}\)</span> for <span class="math inline">\(\theta\)</span> is defined as
+<span class="math display">\[
+\hat{\theta} \in \left\{ \mathop{\mathrm{\arg\!\max}}_{\theta \in \Theta} \mathscr{L}(\theta;\ X_1, \dots, X_n) \right\}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-280" class="definition"><strong>Definition 6.14  (Score) </strong></span>The <em>score</em> is the gradient the natural logarithm of the likelihood function with respect to an <span class="math inline">\(m\)</span>-dimensional parameter vector <span class="math inline">\(\theta\)</span>.
+<span class="math display">\[
+s(\theta) := \frac{\partial \log \mathscr{L}(\theta)}{\partial\theta}.
+\]</span></p>
+<blockquote>
+<p>The score indicates the steepness of the log-likelihood function and thereby the sensitivity to infinitesimal changes to the parameter values.</p>
+</blockquote>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-281" class="definition"><strong>Definition 6.15  (Fisher Information) </strong></span>Let <span class="math inline">\(f(X;\ \theta)\)</span> be the probability density function or probability mass function for <span class="math inline">\(X\)</span> conditioned on the value of <span class="math inline">\(\theta\)</span>. We define the <em>Fisher information</em> as
+<span class="math display">\[
+\mathscr{I}(\theta) := \mathbb{E}\left[\left(\frac{\partial}{\partial\theta}\log f(X;\ \theta)\right)^2\right] = - \mathbb{E}\left[\frac{\partial^2}{\partial\theta^2}\log f(X;\ \theta)\right].
+\]</span></p>
+<blockquote>
+<p>The Fisher information is a way of measuring the amount of information that an observable random variable <span class="math inline">\(X\)</span> carries about an unknown parameter <span class="math inline">\(\theta\)</span> upon which the probability of <span class="math inline">\(X\)</span> depends.</p>
+</blockquote>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-282" class="definition"><strong>Definition 6.16  (Cramér–Rao Bound) </strong></span>Suppose <span class="math inline">\(\theta\)</span> is an unknown deterministic parameter which is to be estimated from <span class="math inline">\(n\)</span> independent observations of <span class="math inline">\(x\)</span>, each from a distribution according to some probability function <span class="math inline">\(f(X;\ \theta)\)</span>. The variance of any unbiased estimator <span class="math inline">\(\hat{\theta}\)</span> of <span class="math inline">\(\theta\)</span> is then bounded by the reciprocal of the Fisher information <span class="math inline">\(\mathscr{I}(\theta)\)</span>. Namely,
+<span class="math display">\[
+\text{Var}\left[\hat{\theta}\right] \geq \frac{1}{n\mathscr{I}(\theta)}.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-283" class="definition"><strong>Definition 6.17  (Efficiency) </strong></span>The <em>efficiency</em> of an unbiased estimator <span class="math inline">\(\hat{\theta}\)</span> of a parameter <span class="math inline">\(\theta\)</span> is defined as
+<span class="math display">\[
+e\left( \hat{\theta} \right) = \frac{1 / \mathscr{I}(\theta)}{\text{Var}\left[ \hat{\theta} \right]}
+\]</span>
+where <span class="math inline">\(\mathscr{I}(\theta)\)</span> is the Fisher information of the sample.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-284" class="proposition"><strong>Proposition 6.1  </strong></span><span class="math display">\[
+e\left( \hat{\theta} \right) \leq 1
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-285" class="remark"><em>Remark</em> (Maximum Likelihood Estimator Properties). </span><br></p>
+<ul>
+<li>Asymptotically unbiased. Namely, <span class="math inline">\(\displaystyle \lim_{n\to\infty} \text{Bias}\left( \hat{\theta}_n, \theta \right) = 0\)</span>.</li>
+<li>Asymptotically efficient. Namely, <span class="math inline">\(\displaystyle \lim_{n\to\infty} \text{Var}\left[ \hat{\theta} \right] = \frac{1}{n\mathscr{I}(\theta)}\)</span>.</li>
+<li>Consistency.</li>
+<li>
+<span class="math inline">\(\displaystyle \hat{\theta}_n \overset{d}{\longrightarrow}\mathscr{N}\left( \theta, \frac{1}{n\mathscr{I}(\theta)} \right)\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="interval-estimation" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Interval Estimation<a class="anchor" aria-label="anchor" href="#interval-estimation"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="finite-sample-distributions" class="section level2" number="6.2">
+<div id="parametric-hypothesis-testing" class="section level2" number="6.4">
 <h2>
-<span class="header-section-number">6.2</span> Finite Sample Distributions<a class="anchor" aria-label="anchor" href="#finite-sample-distributions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.4</span> Parametric Hypothesis Testing<a class="anchor" aria-label="anchor" href="#parametric-hypothesis-testing"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="point-estimation" class="section level2" number="6.3">
+<div id="normality-tests" class="section level2" number="6.5">
 <h2>
-<span class="header-section-number">6.3</span> Point Estimation<a class="anchor" aria-label="anchor" href="#point-estimation"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="interval-estimation" class="section level2" number="6.4">
-<h2>
-<span class="header-section-number">6.4</span> Interval Estimation<a class="anchor" aria-label="anchor" href="#interval-estimation"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="parametric-hypothesis-testing" class="section level2" number="6.5">
-<h2>
-<span class="header-section-number">6.5</span> Parametric Hypothesis Testing<a class="anchor" aria-label="anchor" href="#parametric-hypothesis-testing"><i class="fas fa-link"></i></a>
-</h2>
-</div>
-<div id="normality-tests" class="section level2" number="6.6">
-<h2>
-<span class="header-section-number">6.6</span> Normality Tests<a class="anchor" aria-label="anchor" href="#normality-tests"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.5</span> Normality Tests<a class="anchor" aria-label="anchor" href="#normality-tests"><i class="fas fa-link"></i></a>
 </h2>
 
 </div>
@@ -113,12 +278,11 @@
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#statistical-inference"><span class="header-section-number">6</span> Statistical Inference</a></li>
-<li><a class="nav-link" href="#descriptive-statistics"><span class="header-section-number">6.1</span> Descriptive Statistics</a></li>
-<li><a class="nav-link" href="#finite-sample-distributions"><span class="header-section-number">6.2</span> Finite Sample Distributions</a></li>
-<li><a class="nav-link" href="#point-estimation"><span class="header-section-number">6.3</span> Point Estimation</a></li>
-<li><a class="nav-link" href="#interval-estimation"><span class="header-section-number">6.4</span> Interval Estimation</a></li>
-<li><a class="nav-link" href="#parametric-hypothesis-testing"><span class="header-section-number">6.5</span> Parametric Hypothesis Testing</a></li>
-<li><a class="nav-link" href="#normality-tests"><span class="header-section-number">6.6</span> Normality Tests</a></li>
+<li><a class="nav-link" href="#finite-sample-distributions"><span class="header-section-number">6.1</span> Finite Sample Distributions</a></li>
+<li><a class="nav-link" href="#point-estimation"><span class="header-section-number">6.2</span> Point Estimation</a></li>
+<li><a class="nav-link" href="#interval-estimation"><span class="header-section-number">6.3</span> Interval Estimation</a></li>
+<li><a class="nav-link" href="#parametric-hypothesis-testing"><span class="header-section-number">6.4</span> Parametric Hypothesis Testing</a></li>
+<li><a class="nav-link" href="#normality-tests"><span class="header-section-number">6.5</span> Normality Tests</a></li>
 </ul>
 
       <div class="book-extra">

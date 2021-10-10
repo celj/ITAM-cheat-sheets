@@ -1,122 +1,105 @@
 `r if(knitr:::is_latex_output()) '\\startappendices'`
 
-`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
+`r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
 # Notation
 
-## Linear Algebra
+## Linear Algebra {-}
 
 |Expression|Description|
-|----------|-----------|
+|:--------:|-----------|
 |$\dim S$|Dimension of $S$.|
 |$N(A)$|Null space of $A$.|
 |$R(A)$|Range of $A$.|
 |$\rk A$|Rank of $A$.|
 |$I_n$|$n$-by-$n$ identity matrix.|
 
-## Real Analysis and Topology
+## Real Analysis and Topology {-}
 
 |Expression|Description|
-|----------|-----------|
+|:--------:|-----------|
 |$\interior(S)$|Interior of $S$.|
 |$\closure(S)$|Closure of $S$.|
 |$\partial S$|Boundary of $S$.|
 |$\varphi : X \rightrightarrows Y$|Correspondence $\varphi$ from $X$ to $Y$.|
 |$\convex S$|Convex hull of $S$.|
 
-## Statistics
+## Statistics {-}
 
 |Expression|Description|
-|----------|-----------|
+|:--------:|-----------|
 |$a \perp b$|The random variables $a$ and $b$ are independent.|
 |$a \perp b \mid c$|They are conditionally independent given $c$.|
 |$P(a)$|A probability distribution over a discrete variable.|
 |$p(a)$|A probability distribution over a continuous variable, or over a variable whose type has not been specified.|
 |$a \sim P$|Random variable $a$ has distribution $P$.|
-|$\E_{\mathrm{x}\sim P} [f(x)]$ or $\E[f(x)]$|Expectation of $f(x)$ with respect to $P(\mathrm{x})$.|
+|$\displaystyle\E_{\mathrm{x}\sim P} [f(x)]$ or $\E[f(x)]$|Expectation of $f(x)$ with respect to $P(\mathrm{x})$.|
 |$\Var(f(x))$|Variance of $f(x)$ under $P(\mathrm{x})$.|
 |$\Cov(f(x), g(x))$|Covariance of $f(x)$ and $g(x)$ under $P(\mathrm{x})$.|
 |$\Norm (\mathbf{x}; \mathbf{\mu}, \mathbf{\Sigma})$|Gaussian distribution over $\mathbf{x}$ with mean $\mathbf{\mu}$ and covariance $\mathbf{\Sigma}$.|
 |$\mu_n'$|$n$th (raw) moment of a distribution.|
 |$\mu_n$|$n$th central moment of a distribution.|
+|$X_n \dlim X$|$X_n$ converges in distribution to $X$.|
+|$X_n \plim X$|$X_n$ converges in probability to $X$.|
+|$X_n \rlim X$|$X_n$ converges in the $r$th mean to $X$.|
+|$X_n \mlim X$|$X_n$ converges in quadratic mean to $X$.|
 
 # Probability Distributions
 
 This section is still in development. All graphs are still in the testing stage.
 
 ## Discrete {-}
-
 ### Bernoulli {-}
-
-<div id="bernoulli"></div>
-
 ### Binomial {-}
-
-<div id="binomial"></div>
-
 ### Geometric {-}
-
-<div id="geometric"></div>
-
 ### Hypergeometric {-}
-
-<div id="hypergeometric"></div>
-
 ### Negative Binomial {-}
-
-<div id="negbin"></div>
-
 ### Poisson {-}
-
-<div id="poisson"></div>
-
 ### Uniform {-}
-
-<div id="uniformDiscrete"></div>
 
 ## Continuous {-}
-
 ### Beta {-}
-
-<div id="beta"></div>
-
 ### Cauchy {-}
-
-<div id="cauchy"></div>
-
 ### Chi Squared {-}
-
-<div id="chisq"></div>
-
+### Dirac {-}
 ### Exponential {-}
-
-<div id="exponential"></div>
-
 ### F {-}
-
-<div id="centralF"></div>
-
 ### Gamma {-}
-
-<div id="gamma"></div>
-
+### Laplace {-}
 ### Normal {-}
-
-<div id="normal"></div>
-
 ### Student T {-}
-
-<div id="studentt"></div>
-
 ### Uniform {-}
-
-<div id="uniform"></div>
-
 ### Weibull {-}
 
-<div id="weibull"></div>
+
 
 <!-- Discrete distributions -->
+<!--
+<div id="bernoulli"></div>
+<div id="binomial"></div>
+<div id="geometric"></div>
+<div id="hypergeometric"></div>
+<div id="negbin"></div>
+<div id="poisson"></div>
+<div id="uniformDiscrete"></div>
+-->
+
+<!-- Continuous distributions -->
+<!--
+<div id="beta"></div>
+<div id="cauchy"></div>
+<div id="chisq"></div>
+<div id="exponential"></div>
+<div id="centralF"></div>
+<div id="gamma"></div>
+<div id="normal"></div>
+<div id="studentt"></div>
+<div id="uniform"></div>
+<div id="weibull"></div>
+-->
+
+<!-- Discrete distributions -->
+<!--
 <script src="../figures/bernoulli.js"></script>
 <script src="../figures/binomial.js"></script>
 <script src="../figures/geometric.js"></script>
@@ -124,8 +107,10 @@ This section is still in development. All graphs are still in the testing stage.
 <script src="../figures/negbin.js"></script>
 <script src="../figures/poisson.js"></script>
 <script src="../figures/uniformDiscrete.js"></script>
+-->
 
 <!-- Continuous distributions -->
+<!--
 <script src="../figures/beta.js"></script>
 <script src="../figures/cauchy.js"></script>
 <script src="../figures/centralF.js"></script>
@@ -136,5 +121,6 @@ This section is still in development. All graphs are still in the testing stage.
 <script src="../figures/studentt.js"></script>
 <script src="../figures/uniform.js"></script>
 <script src="../figures/weibull.js"></script>
+-->
 
 # Estimators
