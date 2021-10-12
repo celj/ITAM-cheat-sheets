@@ -10,6 +10,10 @@ knit: (function(input, ...) {
 
 # Consumer and Producer Theory
 
+::: {.redbox}
+**This section is still in development.**
+:::
+
 The definitions and theorems below can also be used for courses on:
 
 1. calculus,

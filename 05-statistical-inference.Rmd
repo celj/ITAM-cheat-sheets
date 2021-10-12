@@ -10,6 +10,10 @@ knit: (function(input, ...) {
 
 # Statistical Inference
 
+::: {.redbox}
+**This section is still in development.**
+:::
+
 ::: {.definition name="Population"}
 A _population_ is a set of similar items or events which is of interest for some question or experiment.
 :::

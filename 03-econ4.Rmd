@@ -10,6 +10,10 @@ knit: (function(input, ...) {
 
 # Economics 4
 
+::: {.redbox}
+**This section is still in development.**
+:::
+
 ## General Equilibrium
 
 ### Pure Exchange Economies {-}

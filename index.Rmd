@@ -159,4 +159,3 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\Var}{\text{Var}}
 \newcommand{\Wei}{\text{Weibull}}
 \newcommand{\Z}{\mathbb{Z}}
-

@@ -46,7 +46,9 @@
 
 # Probability Distributions
 
-This section is still in development. All graphs are still in the testing stage.
+::: {.redbox}
+This section is still in development.
+:::
 
 ## Discrete {-}
 ### Bernoulli {-}
@@ -124,3 +126,7 @@ This section is still in development. All graphs are still in the testing stage.
 -->
 
 # Estimators
+
+::: {.redbox}
+This section is still in development.
+:::
