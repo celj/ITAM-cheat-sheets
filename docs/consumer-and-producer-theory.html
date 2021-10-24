@@ -104,7 +104,7 @@
 <p><span id="prp:unlabeled-div-2" class="proposition"><strong>Proposition 1.1  </strong></span>If <span class="math inline">\(b \neq 0\)</span>, there need not exist <span class="math inline">\(x\)</span> such that <span class="math inline">\(Ax = b\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  (Linear Combination) </strong></span><span class="math inline">\(y \in \mathbb{R}^m\)</span> is a <em>linear combination</em> of <span class="math inline">\(x_1, \dots, x_n \in \mathbb{R}^m\)</span> if there exists <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathbb{R}\)</span> such that <span class="math inline">\(\displaystyle y = \sum_{i = 1}^n \alpha_i x_i\)</span>.</p>
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  (Linear Combination) </strong></span><span class="math inline">\(y \in \mathscr{R}^m\)</span> is a <em>linear combination</em> of <span class="math inline">\(x_1, \dots, x_n \in \mathscr{R}^m\)</span> if there exists <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathscr{R}\)</span> such that <span class="math inline">\(\displaystyle y = \sum_{i = 1}^n \alpha_i x_i\)</span>.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.1  </strong></span>Consider three matrices <span class="math inline">\(A_{m\times n}\)</span>, <span class="math inline">\(B_{k\times m}\)</span> and <span class="math inline">\(C_{k\times n}\)</span> such that <span class="math inline">\(BA = C\)</span>.</p>
@@ -172,20 +172,20 @@
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 1.3  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m \times n\)</span>. Then <span class="math inline">\(\text{rk}A = m\)</span> if and only if, <span class="math inline">\(\forall b \in \mathbb{R}^m\)</span>, <span class="math inline">\(\exists x \in \mathbb{R}^n\)</span> such that <span class="math inline">\(Ax = b\)</span>. Namely, there is <strong>at least one solution</strong> to the system.</p>
+<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 1.3  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m \times n\)</span>. Then <span class="math inline">\(\text{rk}A = m\)</span> if and only if, <span class="math inline">\(\forall b \in \mathscr{R}^m\)</span>, <span class="math inline">\(\exists x \in \mathscr{R}^n\)</span> such that <span class="math inline">\(Ax = b\)</span>. Namely, there is <strong>at least one solution</strong> to the system.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-13" class="theorem"><strong>Theorem 1.4  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m \times n\)</span>. Then <span class="math inline">\(\text{rk}A = n\)</span> if and only if, <span class="math inline">\(\forall b \in \mathbb{R}^m\)</span>, if <span class="math inline">\(Ax = Ay = b\)</span>, then <span class="math inline">\(x = y\)</span>. Namely, there is <strong>at most one solution</strong> to the system.</p>
+<p><span id="thm:unlabeled-div-13" class="theorem"><strong>Theorem 1.4  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m \times n\)</span>. Then <span class="math inline">\(\text{rk}A = n\)</span> if and only if, <span class="math inline">\(\forall b \in \mathscr{R}^m\)</span>, if <span class="math inline">\(Ax = Ay = b\)</span>, then <span class="math inline">\(x = y\)</span>. Namely, there is <strong>at most one solution</strong> to the system.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-14" class="corollary"><strong>Corollary 1.2  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. For each <span class="math inline">\(b \in \mathbb{R}^m\)</span>, <span class="math inline">\(Ax = b\)</span> has a unique solution in <span class="math inline">\(\mathbb{R}^n\)</span> if and only if <span class="math inline">\(\text{rk}A = m = n\)</span>.</p>
+<p><span id="cor:unlabeled-div-14" class="corollary"><strong>Corollary 1.2  </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. For each <span class="math inline">\(b \in \mathscr{R}^m\)</span>, <span class="math inline">\(Ax = b\)</span> has a unique solution in <span class="math inline">\(\mathscr{R}^n\)</span> if and only if <span class="math inline">\(\text{rk}A = m = n\)</span>.</p>
 </div>
 </div>
 <div id="subspaces" class="section level3 unnumbered">
 <h3>Subspaces<a class="anchor" aria-label="anchor" href="#subspaces"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-15" class="definition"><strong>Definition 1.7  (Subspace) </strong></span>A non-empty set <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is a <em>subspace</em> of <span class="math inline">\(R^m\)</span> if <span class="math inline">\(\alpha x + \beta y \in S\)</span> whenever <span class="math inline">\(x, y \in S\)</span> and <span class="math inline">\(\alpha, \beta \in \mathbb{R}\)</span>.</p>
+<p><span id="def:unlabeled-div-15" class="definition"><strong>Definition 1.7  (Subspace) </strong></span>A non-empty set <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is a <em>subspace</em> of <span class="math inline">\(\mathscr{R}^m\)</span> if <span class="math inline">\(\alpha x + \beta y \in S\)</span> whenever <span class="math inline">\(x, y \in S\)</span> and <span class="math inline">\(\alpha, \beta \in \mathscr{R}\)</span>.</p>
 </div>
 <div class="proposition">
 <p><span id="prp:unlabeled-div-16" class="proposition"><strong>Proposition 1.2  </strong></span>The intersection of members of an arbitrary family of subspaces is a subspace. The union of subspaces need not be a subspace.</p>
@@ -193,13 +193,13 @@
 <div class="definition">
 <p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 1.8  (Range) </strong></span>The <em>range</em> of <span class="math inline">\(A_{m\times n}\)</span> is the set
 <span class="math display">\[
-R(A) = \left\{ b \in \mathbb{R}^m : \exists x \in \mathbb{R}^n,\ Ax = b \right\}.
+R(A) = \left\{ b \in \mathscr{R}^m : \exists x \in \mathscr{R}^n,\ Ax = b \right\}.
 \]</span></p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-18" class="definition"><strong>Definition 1.9  (Null Space) </strong></span>The <em>null space</em> of <span class="math inline">\(A_{m\times n}\)</span> is the set
 <span class="math display">\[
-N(A) = \left\{ x \in \mathbb{R}^n : Ax = 0 \right\}.
+N(A) = \left\{ x \in \mathscr{R}^n : Ax = 0 \right\}.
 \]</span></p>
 </div>
 <div class="proposition">
@@ -214,17 +214,17 @@ N(A) = \left\{ x \in \mathbb{R}^n : Ax = 0 \right\}.
 <li>
 <span class="math inline">\(R(BA) \subseteq R(B)\)</span>,</li>
 <li>
-<span class="math inline">\(R(A) = \mathbb{R}^m \iff \text{rk}A = m\)</span>, and</li>
+<span class="math inline">\(R(A) = \mathscr{R}^m \iff \text{rk}A = m\)</span>, and</li>
 <li>
 <span class="math inline">\(N(A) = \{0\} \iff \text{rk}A = n\)</span>.</li>
 </ol>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 1.10  (Linear Span) </strong></span>Vectors <span class="math inline">\(a_1, \dots, a_n \in S\)</span> <em>span</em> <span class="math inline">\(S\)</span> if, for every <span class="math inline">\(x \in S\)</span>, there exist <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathbb{R}\)</span> such that <span class="math inline">\(\displaystyle x = \sum_{i = 1}^n \alpha_i a_i\)</span>.</p>
+<p><span id="def:unlabeled-div-20" class="definition"><strong>Definition 1.10  (Linear Span) </strong></span>Vectors <span class="math inline">\(a_1, \dots, a_n \in S\)</span> <em>span</em> <span class="math inline">\(S\)</span> if, for every <span class="math inline">\(x \in S\)</span>, there exist <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathscr{R}\)</span> such that <span class="math inline">\(\displaystyle x = \sum_{i = 1}^n \alpha_i a_i\)</span>.</p>
 <p>Namely, each <span class="math inline">\(x\)</span> is a linear combination of <span class="math inline">\(a_1, \dots, a_n\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 1.11  (Linear Independence) </strong></span>Vectors <span class="math inline">\(a_1, \dots, a_n\)</span> in <span class="math inline">\(\mathbb{R}^m\)</span> are <em>linearly independent</em> if, for all <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathbb{R}\)</span>,
+<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 1.11  (Linear Independence) </strong></span>Vectors <span class="math inline">\(a_1, \dots, a_n\)</span> in <span class="math inline">\(\mathscr{R}^m\)</span> are <em>linearly independent</em> if, for all <span class="math inline">\(\alpha_1, \dots, \alpha_n \in \mathscr{R}\)</span>,
 <span class="math display">\[
 \sum_{i=1}^n \alpha_i a_i = 0 \implies \alpha_1 = \cdots = \alpha_n = 0.
 \]</span></p>
@@ -237,20 +237,20 @@ N(A) = \left\{ x \in \mathbb{R}^n : Ax = 0 \right\}.
 <ol style="list-style-type: decimal">
 <li>the non-zero rows of any matrix in RREF are linearly independent,</li>
 <li>all subsets of a linearly independent set are also linearly independent, and</li>
-<li>a set <span class="math inline">\(\{a_1, \dots, a_n\}\)</span> in <span class="math inline">\(\mathbb{R}^m\)</span> is linearly independent if and only if <span class="math inline">\(N(A_{m\times n}) = \{0_{n\times 1}\}\)</span>, where <span class="math inline">\(\displaystyle A = \left[ a_1 \mid \cdots \mid a_n \right]_{m\times n}\)</span> is formed by merging members of <span class="math inline">\(\{a_1, \dots, a_n\}\)</span> as columns.</li>
+<li>a set <span class="math inline">\(\{a_1, \dots, a_n\}\)</span> in <span class="math inline">\(\mathscr{R}^m\)</span> is linearly independent if and only if <span class="math inline">\(N(A_{m\times n}) = \{0_{n\times 1}\}\)</span>, where <span class="math inline">\(\displaystyle A = \left[ a_1 \mid \cdots \mid a_n \right]_{m\times n}\)</span> is formed by merging members of <span class="math inline">\(\{a_1, \dots, a_n\}\)</span> as columns.</li>
 </ol>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-23" class="lemma"><strong>Lemma 1.1  </strong></span><span class="math inline">\(\{a_1, \dots, a_n\} \subset \mathbb{R}^m\)</span> is linearly dependent if and only if, for some <span class="math inline">\(k \in \{2, \dots, n\}\)</span>, <span class="math inline">\(a_k\)</span> is a linear combination of <span class="math inline">\(a_1, \dots, a_{k-1}\)</span>.</p>
+<p><span id="lem:unlabeled-div-23" class="lemma"><strong>Lemma 1.1  </strong></span><span class="math inline">\(\{a_1, \dots, a_n\} \subset \mathscr{R}^m\)</span> is linearly dependent if and only if, for some <span class="math inline">\(k \in \{2, \dots, n\}\)</span>, <span class="math inline">\(a_k\)</span> is a linear combination of <span class="math inline">\(a_1, \dots, a_{k-1}\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-24" class="definition"><strong>Definition 1.12  (Basis) </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^m\)</span>. A set <span class="math inline">\(\{a_1, \dots, a_n\} \subseteq S\)</span> is a <em>basis</em> for <span class="math inline">\(S\)</span> if it spans <span class="math inline">\(S\)</span> and is linearly independent.</p>
+<p><span id="def:unlabeled-div-24" class="definition"><strong>Definition 1.12  (Basis) </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathscr{R}^m\)</span>. A set <span class="math inline">\(\{a_1, \dots, a_n\} \subseteq S\)</span> is a <em>basis</em> for <span class="math inline">\(S\)</span> if it spans <span class="math inline">\(S\)</span> and is linearly independent.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-25" class="theorem"><strong>Theorem 1.5  </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^m\)</span> with basis <span class="math inline">\(\{a_1, \dots, a_n\}\)</span>. If <span class="math inline">\(\{b_1, \dots, b_r\} \subset S\)</span> is linearly independent, then <span class="math inline">\(r \leq n\)</span>.</p>
+<p><span id="thm:unlabeled-div-25" class="theorem"><strong>Theorem 1.5  </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathscr{R}^m\)</span> with basis <span class="math inline">\(\{a_1, \dots, a_n\}\)</span>. If <span class="math inline">\(\{b_1, \dots, b_r\} \subset S\)</span> is linearly independent, then <span class="math inline">\(r \leq n\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-26" class="corollary"><strong>Corollary 1.3  </strong></span>Any <span class="math inline">\(m + 1\)</span> vectors in <span class="math inline">\(\mathbb{R}^m\)</span> are linearly dependent.</p>
+<p><span id="cor:unlabeled-div-26" class="corollary"><strong>Corollary 1.3  </strong></span>Any <span class="math inline">\(m + 1\)</span> vectors in <span class="math inline">\(\mathscr{R}^m\)</span> are linearly dependent.</p>
 </div>
 <div class="corollary">
 <p><span id="cor:unlabeled-div-27" class="corollary"><strong>Corollary 1.4  </strong></span>If <span class="math inline">\(\{a_1, \dots, a_n\}\)</span> and <span class="math inline">\(\{b_1, \dots, b_r\}\)</span> are two bases for <span class="math inline">\(S\)</span>, then <span class="math inline">\(n = r\)</span>.</p>
@@ -274,13 +274,13 @@ N(A) = \left\{ x \in \mathbb{R}^n : Ax = 0 \right\}.
 <h3>Orthogonality<a class="anchor" aria-label="anchor" href="#orthogonality"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 1.14  (Orthogonal Complement) </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^m\)</span>. The <em>orthogonal complement</em> of <span class="math inline">\(S\)</span> is the set
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 1.14  (Orthogonal Complement) </strong></span>Let <span class="math inline">\(S\)</span> be a subspace of <span class="math inline">\(\mathscr{R}^m\)</span>. The <em>orthogonal complement</em> of <span class="math inline">\(S\)</span> is the set
 <span class="math display">\[
-S^\perp = \left\{ y \in \mathbb{R}^m : y \cdot x = 0,\ \forall x \in S \right\}.
+S^\perp = \left\{ y \in \mathscr{R}^m : y \cdot x = 0,\ \forall x \in S \right\}.
 \]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-31" class="lemma"><strong>Lemma 1.2  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, <span class="math inline">\(S \cap S^\perp = \{0\}\)</span>.</p>
+<p><span id="lem:unlabeled-div-31" class="lemma"><strong>Lemma 1.2  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathscr{R}^m\)</span>, <span class="math inline">\(S \cap S^\perp = \{0\}\)</span>.</p>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-32" class="theorem"><strong>Theorem 1.7  (Fundamental Theorem of Linear Algebra II) </strong></span>Let <span class="math inline">\(A\)</span> be <span class="math inline">\(m\times n\)</span>. Then</p>
@@ -292,7 +292,7 @@ S^\perp = \left\{ y \in \mathbb{R}^m : y \cdot x = 0,\ \forall x \in S \right\}.
 </ol>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-33" class="corollary"><strong>Corollary 1.5  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, <span class="math inline">\((S^\perp)^\perp = S\)</span>.</p>
+<p><span id="cor:unlabeled-div-33" class="corollary"><strong>Corollary 1.5  </strong></span>For any subspace <span class="math inline">\(S\)</span> of <span class="math inline">\(\mathscr{R}^m\)</span>, <span class="math inline">\((S^\perp)^\perp = S\)</span>.</p>
 </div>
 </div>
 <div id="inverses" class="section level3 unnumbered">
@@ -326,7 +326,7 @@ S^\perp = \left\{ y \in \mathbb{R}^m : y \cdot x = 0,\ \forall x \in S \right\}.
 <h3>Basic Notions of Topology<a class="anchor" aria-label="anchor" href="#basic-notions-of-topology"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-40" class="definition"><strong>Definition 1.16  (Metric) </strong></span>Let <span class="math inline">\(X\)</span> be a set. A function <span class="math inline">\(d : X \times X \to \mathbb{R}\)</span> is a <em>metric</em> on <span class="math inline">\(X\)</span> if, for all <span class="math inline">\(x, y, z \in X\)</span>, the following conditions hold:</p>
+<p><span id="def:unlabeled-div-40" class="definition"><strong>Definition 1.16  (Metric) </strong></span>Let <span class="math inline">\(X\)</span> be a set. A function <span class="math inline">\(d : X \times X \to \mathscr{R}\)</span> is a <em>metric</em> on <span class="math inline">\(X\)</span> if, for all <span class="math inline">\(x, y, z \in X\)</span>, the following conditions hold:</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(d(x,y) \geq 0\)</span>,</li>
@@ -408,10 +408,10 @@ S \subseteq \text{cl}(S)
 <h3>Sequences<a class="anchor" aria-label="anchor" href="#sequences"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-56" class="definition"><strong>Definition 1.25  (Sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A <em>sequence</em> in <span class="math inline">\((X, d)\)</span> is a map <span class="math inline">\(f : \mathbb{N}\to X\)</span>.</p>
+<p><span id="def:unlabeled-div-56" class="definition"><strong>Definition 1.25  (Sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A <em>sequence</em> in <span class="math inline">\((X, d)\)</span> is a map <span class="math inline">\(f : \mathscr{N}\to X\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-57" class="definition"><strong>Definition 1.26  (Convergent Sequence) </strong></span>A sequence <span class="math inline">\(\{x_k\}\)</span> is said to be <em>convergent</em> if the following property holds: there exists some <span class="math inline">\(x \in X\)</span> such that, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists some <span class="math inline">\(l \in \mathbb{N}\)</span> such that, for every <span class="math inline">\(k &gt; l\)</span>, <span class="math inline">\(x_k \in B(x, \varepsilon)\)</span>. Such <span class="math inline">\(x\)</span> is called the limit of <span class="math inline">\(\{x_k\}\)</span>.</p>
+<p><span id="def:unlabeled-div-57" class="definition"><strong>Definition 1.26  (Convergent Sequence) </strong></span>A sequence <span class="math inline">\(\{x_k\}\)</span> is said to be <em>convergent</em> if the following property holds: there exists some <span class="math inline">\(x \in X\)</span> such that, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists some <span class="math inline">\(l \in \mathscr{N}\)</span> such that, for every <span class="math inline">\(k &gt; l\)</span>, <span class="math inline">\(x_k \in B(x, \varepsilon)\)</span>. Such <span class="math inline">\(x\)</span> is called the limit of <span class="math inline">\(\{x_k\}\)</span>.</p>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 1.13  </strong></span>If <span class="math inline">\(\lim x_k\)</span> exists, it is unique.</p>
@@ -432,7 +432,7 @@ S \subseteq \text{cl}(S)
 <p><span id="def:unlabeled-div-63" class="definition"><strong>Definition 1.28  (Bounded Sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A sequence <span class="math inline">\(\{x_k\}\)</span> in <span class="math inline">\(X\)</span> is <em>bounded</em> if it is contained in a ball with finite radius, i.e., if for some <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(y \in X\)</span>, <span class="math inline">\(x_k \in B(y, \varepsilon)\)</span> for every <span class="math inline">\(k\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 1.17  (Bolzano–Weierstrass) </strong></span>Every bounded sequence in <span class="math inline">\(\mathbb{R}^m\)</span> has a convergent subsequence.</p>
+<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 1.17  (Bolzano–Weierstrass) </strong></span>Every bounded sequence in <span class="math inline">\(\mathscr{R}^m\)</span> has a convergent subsequence.</p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-65" class="definition"><strong>Definition 1.29  (Cauchy Sequence) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A sequence <span class="math inline">\(\{x_k\}\)</span> in <span class="math inline">\(X\)</span> is a <em>Cauchy sequence</em> if, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists a positive integer <span class="math inline">\(k_\varepsilon\)</span> such that, whenever <span class="math inline">\(k, l &gt; k_\varepsilon\)</span>, <span class="math inline">\(d(x_k, x_l) &lt; \varepsilon\)</span>.</p>
@@ -462,7 +462,7 @@ S \subseteq \text{cl}(S)
 <p><span id="thm:unlabeled-div-73" class="theorem"><strong>Theorem 1.21  (Sequential Compactness) </strong></span><span class="math inline">\(S\)</span> is compact if and only if every sequence in <span class="math inline">\(S\)</span> has a subsequence that converges to a point in <span class="math inline">\(S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-74" class="theorem"><strong>Theorem 1.22  (Heine-Borel) </strong></span>A subset of <span class="math inline">\(\mathbb{R}^m\)</span> is compact if and only if it is closed and bounded.</p>
+<p><span id="thm:unlabeled-div-74" class="theorem"><strong>Theorem 1.22  (Heine-Borel) </strong></span>A subset of <span class="math inline">\(\mathscr{R}^m\)</span> is compact if and only if it is closed and bounded.</p>
 </div>
 </div>
 <div id="continuity" class="section level3 unnumbered">
@@ -495,25 +495,25 @@ S \subseteq \text{cl}(S)
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 1.38  (Upper Semicontinuous) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A function <span class="math inline">\(f : X \to \mathbb{R}\)</span> is <em>upper semicontinuous</em> if <span class="math inline">\(\{x \in X : f(x) \geq \alpha \}\)</span> is closed for every <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 1.38  (Upper Semicontinuous) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A function <span class="math inline">\(f : X \to \mathscr{R}\)</span> is <em>upper semicontinuous</em> if <span class="math inline">\(\{x \in X : f(x) \geq \alpha \}\)</span> is closed for every <span class="math inline">\(\alpha \in \mathscr{R}\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-82" class="definition"><strong>Definition 1.39  (Lower Semicontinuous) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A function <span class="math inline">\(f : X \to \mathbb{R}\)</span> is <em>lower semicontinuous</em> if <span class="math inline">\(\{x \in X : f(x) \leq \alpha \}\)</span> is closed for every <span class="math inline">\(\alpha \in \mathbb{R}\)</span>.</p>
+<p><span id="def:unlabeled-div-82" class="definition"><strong>Definition 1.39  (Lower Semicontinuous) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. A function <span class="math inline">\(f : X \to \mathscr{R}\)</span> is <em>lower semicontinuous</em> if <span class="math inline">\(\{x \in X : f(x) \leq \alpha \}\)</span> is closed for every <span class="math inline">\(\alpha \in \mathscr{R}\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 1.25  </strong></span><span class="math inline">\(f : X \to \mathbb{R}\)</span> is continuous if and only if <span class="math inline">\(f\)</span> is upper semicontinuous and lower semicontinuous.</p>
+<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 1.25  </strong></span><span class="math inline">\(f : X \to \mathscr{R}\)</span> is continuous if and only if <span class="math inline">\(f\)</span> is upper semicontinuous and lower semicontinuous.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-84" class="definition"><strong>Definition 1.40  (Maximizer / Minimizer) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space and <span class="math inline">\(S \subseteq X\)</span>. A function <span class="math inline">\(f : S \to \mathbb{R}\)</span> has a <em>maximizer</em> if for some <span class="math inline">\(x^* \in S\)</span>, <span class="math inline">\(f(x) \leq f(x^*)\)</span> for every <span class="math inline">\(x \in S\)</span>. Similarly, <span class="math inline">\(f\)</span> has a <em>minimizer</em> if for some <span class="math inline">\(x_* \in S\)</span>, <span class="math inline">\(f(x) \geq f(x_*)\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
+<p><span id="def:unlabeled-div-84" class="definition"><strong>Definition 1.40  (Maximizer / Minimizer) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space and <span class="math inline">\(S \subseteq X\)</span>. A function <span class="math inline">\(f : S \to \mathscr{R}\)</span> has a <em>maximizer</em> if for some <span class="math inline">\(x^* \in S\)</span>, <span class="math inline">\(f(x) \leq f(x^*)\)</span> for every <span class="math inline">\(x \in S\)</span>. Similarly, <span class="math inline">\(f\)</span> has a <em>minimizer</em> if for some <span class="math inline">\(x_* \in S\)</span>, <span class="math inline">\(f(x) \geq f(x_*)\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 1.26  (Weierstrass) </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathbb{R}\)</span> be continuous. Then <span class="math inline">\(f\)</span> has a maximizer and a minimizer.</p>
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 1.26  (Weierstrass) </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathscr{R}\)</span> be continuous. Then <span class="math inline">\(f\)</span> has a maximizer and a minimizer.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-86" class="theorem"><strong>Theorem 1.27  </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathbb{R}\)</span> be upper semicontinuous. Then <span class="math inline">\(f\)</span> has a maximizer.</p>
+<p><span id="thm:unlabeled-div-86" class="theorem"><strong>Theorem 1.27  </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathscr{R}\)</span> be upper semicontinuous. Then <span class="math inline">\(f\)</span> has a maximizer.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 1.28  </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathbb{R}\)</span> be lower semicontinuous. Then <span class="math inline">\(f\)</span> has a minimizer.</p>
+<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 1.28  </strong></span>Let <span class="math inline">\(S\)</span> be compact and <span class="math inline">\(f : S \to \mathscr{R}\)</span> be lower semicontinuous. Then <span class="math inline">\(f\)</span> has a minimizer.</p>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-88" class="theorem"><strong>Theorem 1.29  (Separation) </strong></span>Let <span class="math inline">\((X, d)\)</span> be a metric space. If <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> are disjoint and closed subsets of <span class="math inline">\(X\)</span>, then there exists disjoint and open sets <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> such that <span class="math inline">\(U \supset S\)</span> and <span class="math inline">\(V \supset T\)</span>.</p>
@@ -525,19 +525,19 @@ S \subseteq \text{cl}(S)
 <span class="header-section-number">1.3</span> Differentiable Functions<a class="anchor" aria-label="anchor" href="#differentiable-functions"><i class="fas fa-link"></i></a>
 </h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-89" class="definition"><strong>Definition 1.41  (Differentiability) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. Then <span class="math inline">\(f\)</span> is <em>differentiable at <span class="math inline">\(x\)</span></em> if
+<p><span id="def:unlabeled-div-89" class="definition"><strong>Definition 1.41  (Differentiability) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathscr{R}\)</span>. Then <span class="math inline">\(f\)</span> is <em>differentiable at <span class="math inline">\(x\)</span></em> if
 <span class="math display">\[
 \lim_{u \to 0} \frac{f(x + u) - f(x)}{u}
 \]</span>
 exists.</p>
-<p>Namely, <span class="math inline">\(f\)</span> is <em>differentiable at <span class="math inline">\(x\)</span></em> if there is some <span class="math inline">\(y \in \mathbb{R}\)</span> such that, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists some <span class="math inline">\(\delta &gt; 0\)</span> such that
+<p>Namely, <span class="math inline">\(f\)</span> is <em>differentiable at <span class="math inline">\(x\)</span></em> if there is some <span class="math inline">\(y \in \mathscr{R}\)</span> such that, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there exists some <span class="math inline">\(\delta &gt; 0\)</span> such that
 <span class="math display">\[
 \left\{ x + u \in B_\delta(x) \cap S : u \neq 0 \right\} \implies \left\lvert \frac{f(x + u) - f(x)}{u} - y \right\rvert &lt; \varepsilon
 \]</span>
 where <span class="math inline">\(y = f'(x)\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-90" class="definition"><strong>Definition 1.42  (Partial Derivative) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. The <em><span class="math inline">\(j\)</span>th partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is
+<p><span id="def:unlabeled-div-90" class="definition"><strong>Definition 1.42  (Partial Derivative) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathscr{R}\)</span>. The <em><span class="math inline">\(j\)</span>th partial derivative of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is
 <span class="math display">\[
 D_j f(x) := \lim_{u \to 0} \frac{f(x + ue_j) - f(x)}{u}
 \]</span>
@@ -552,11 +552,11 @@ D_1 f(x) \\
 \vdots \\
 D_n f(x)
 \end{bmatrix}
-\in \mathbb{R}^n.
+\in \mathscr{R}^n.
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-92" class="definition"><strong>Definition 1.44  (Jacobian) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}^m\)</span>. Suppose that <span class="math inline">\(D_j f_i(x)\)</span> exists for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, then the <em>Jacobian of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is the <span class="math inline">\(m\times n\)</span> matrix
+<p><span id="def:unlabeled-div-92" class="definition"><strong>Definition 1.44  (Jacobian) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathscr{R}^m\)</span>. Suppose that <span class="math inline">\(D_j f_i(x)\)</span> exists for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, then the <em>Jacobian of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span></em> is the <span class="math inline">\(m\times n\)</span> matrix
 <span class="math display">\[
 J_f(x) :=
 \begin{bmatrix}
@@ -573,7 +573,7 @@ D_1 f_m(x) &amp; \cdots &amp; D_n f_m(x)
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 1.45  (Differentiability) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>. Then <span class="math inline">\(f : S \to \mathbb{R}^m\)</span> is <em>differentiable at <span class="math inline">\(x \in S\)</span></em> if the following two conditions hold:</p>
+<p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 1.45  (Differentiability) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>. Then <span class="math inline">\(f : S \to \mathscr{R}^m\)</span> is <em>differentiable at <span class="math inline">\(x \in S\)</span></em> if the following two conditions hold:</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(D_j f_i (x)\)</span> exists for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>,</li>
@@ -591,16 +591,16 @@ D_1 f_m(x) &amp; \cdots &amp; D_n f_m(x)
 </blockquote>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-94" class="theorem"><strong>Theorem 1.30  </strong></span>Suppose <span class="math inline">\(S\subseteq\mathbb{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathbb{R}^m\)</span>. Suppose that, for each <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, <span class="math inline">\(D_j f_i(x)\)</span> exists and that <span class="math inline">\(x \mapsto D_j f_i(x)\)</span> is continuous on <span class="math inline">\(S\)</span>. Then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>.</p>
+<p><span id="thm:unlabeled-div-94" class="theorem"><strong>Theorem 1.30  </strong></span>Suppose <span class="math inline">\(S\subseteq\mathscr{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathscr{R}^m\)</span>. Suppose that, for each <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, <span class="math inline">\(D_j f_i(x)\)</span> exists and that <span class="math inline">\(x \mapsto D_j f_i(x)\)</span> is continuous on <span class="math inline">\(S\)</span>. Then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-95" class="theorem"><strong>Theorem 1.31  (Implicit Function) </strong></span>Let <span class="math inline">\(F : \mathbb{R}^2 \to \mathbb{R}\)</span>. Suppose that <span class="math inline">\(D_1F(x,y)\)</span> and <span class="math inline">\(D_2F(x,y)\)</span> exist and are continuous in an open <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathbb{R}^2\)</span>. Suppose that <span class="math inline">\(F(a, b) = 0\)</span> and that <span class="math inline">\(D_2F(a, b) \neq 0\)</span>. Then there exists <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(g : B_\varepsilon \to \mathbb{R}\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(F(x, g(x)) = 0\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span> and
+<p><span id="thm:unlabeled-div-95" class="theorem"><strong>Theorem 1.31  (Implicit Function) </strong></span>Let <span class="math inline">\(F : \mathscr{R}^2 \to \mathscr{R}\)</span>. Suppose that <span class="math inline">\(D_1F(x,y)\)</span> and <span class="math inline">\(D_2F(x,y)\)</span> exist and are continuous in an open <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathscr{R}^2\)</span>. Suppose that <span class="math inline">\(F(a, b) = 0\)</span> and that <span class="math inline">\(D_2F(a, b) \neq 0\)</span>. Then there exists <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(g : B_\varepsilon \to \mathscr{R}\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(F(x, g(x)) = 0\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span> and
 <span class="math display">\[
 g'(a) = -\frac{D_1F(a,b)}{D_2F(a,b)}.
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-96" class="theorem"><strong>Theorem 1.32  (Implicit Function) </strong></span>Suppose <span class="math inline">\(F : \mathbb{R}^{n + m} \to \mathbb{R}^m\)</span> is differentiable in an open set <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathbb{R}^{n + m}\)</span> and suppose that the entries of <span class="math inline">\(J_F (x,y)\)</span> are continuous at each <span class="math inline">\((x,y) \in U\)</span>. Let <span class="math inline">\(A_{m\times n}\)</span> and <span class="math inline">\(B_{m\times m}\)</span> be defined by <span class="math inline">\(J_F (a, b)\)</span> as
+<p><span id="thm:unlabeled-div-96" class="theorem"><strong>Theorem 1.32  (Implicit Function) </strong></span>Suppose <span class="math inline">\(F : \mathscr{R}^{n + m} \to \mathscr{R}^m\)</span> is differentiable in an open set <span class="math inline">\(U\)</span> containing <span class="math inline">\((a, b) \in \mathscr{R}^{n + m}\)</span> and suppose that the entries of <span class="math inline">\(J_F (x,y)\)</span> are continuous at each <span class="math inline">\((x,y) \in U\)</span>. Let <span class="math inline">\(A_{m\times n}\)</span> and <span class="math inline">\(B_{m\times m}\)</span> be defined by <span class="math inline">\(J_F (a, b)\)</span> as
 <span class="math display">\[
 A =
 \begin{bmatrix}
@@ -615,31 +615,31 @@ D_{n+1} F_1(a,b) &amp; \cdots &amp; D_{n+m} F_1(a,b) \\
 D_{n+1} F_m(a,b) &amp; \cdots &amp; D_{n+m} F_m(a,b)
 \end{bmatrix}_{m\times m}
 \]</span>
-and suppose that <span class="math inline">\(F(a,b) = 0\)</span> and <span class="math inline">\(B\)</span> is non-singular. Then there exists <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(g : B_\varepsilon (a) \to \mathbb{R}^m\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(F(x, g(x)) = 0\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span> and <span class="math inline">\(J_g (a) = -B^{-1}_{m\times m} A_{m\times n}\)</span>.</p>
+and suppose that <span class="math inline">\(F(a,b) = 0\)</span> and <span class="math inline">\(B\)</span> is non-singular. Then there exists <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(g : B_\varepsilon (a) \to \mathscr{R}^m\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(F(x, g(x)) = 0\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span> and <span class="math inline">\(J_g (a) = -B^{-1}_{m\times m} A_{m\times n}\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-97" class="theorem"><strong>Theorem 1.33  (Inverse Function) </strong></span>Suppose that <span class="math inline">\(f : \mathbb{R}^m \to \mathbb{R}^m\)</span> is differentiable in an open set <span class="math inline">\(U\)</span> containing <span class="math inline">\(b \in \mathbb{R}^m\)</span>. Suppose that the partials of <span class="math inline">\(f\)</span> are continuous on <span class="math inline">\(U\)</span>. Suppose that <span class="math inline">\(f(b) = a\)</span> and <span class="math inline">\(J_f(b)\)</span> is non-singular. Then there exists some <span class="math inline">\(\varepsilon &gt; 0\)</span> and some <span class="math inline">\(g : B_\varepsilon (a) \to \mathbb{R}^m\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(f(g(x)) = x\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span>, and <span class="math inline">\(g\)</span> is differentiable at <span class="math inline">\(a\)</span> with <span class="math inline">\(J_g (a) = J_f (b)^{-1}\)</span>.</p>
+<p><span id="thm:unlabeled-div-97" class="theorem"><strong>Theorem 1.33  (Inverse Function) </strong></span>Suppose that <span class="math inline">\(f : \mathscr{R}^m \to \mathscr{R}^m\)</span> is differentiable in an open set <span class="math inline">\(U\)</span> containing <span class="math inline">\(b \in \mathscr{R}^m\)</span>. Suppose that the partials of <span class="math inline">\(f\)</span> are continuous on <span class="math inline">\(U\)</span>. Suppose that <span class="math inline">\(f(b) = a\)</span> and <span class="math inline">\(J_f(b)\)</span> is non-singular. Then there exists some <span class="math inline">\(\varepsilon &gt; 0\)</span> and some <span class="math inline">\(g : B_\varepsilon (a) \to \mathscr{R}^m\)</span> such that <span class="math inline">\(g(a) = b\)</span>, <span class="math inline">\(f(g(x)) = x\)</span> for all <span class="math inline">\(x \in B_\varepsilon (a)\)</span>, and <span class="math inline">\(g\)</span> is differentiable at <span class="math inline">\(a\)</span> with <span class="math inline">\(J_g (a) = J_f (b)^{-1}\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-98" class="theorem"><strong>Theorem 1.34  (Weierstrass) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> be compact and let <span class="math inline">\(f : S \to \mathbb{R}\)</span> be continuous. Then there exists <span class="math inline">\(x'\)</span> and <span class="math inline">\(x''\)</span> in <span class="math inline">\(S\)</span> such that, for all <span class="math inline">\(x \in S\)</span>, <span class="math inline">\(f(x') \leq f(x) \leq f(x'')\)</span>.</p>
+<p><span id="thm:unlabeled-div-98" class="theorem"><strong>Theorem 1.34  (Weierstrass) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> be compact and let <span class="math inline">\(f : S \to \mathscr{R}\)</span> be continuous. Then there exists <span class="math inline">\(x'\)</span> and <span class="math inline">\(x''\)</span> in <span class="math inline">\(S\)</span> such that, for all <span class="math inline">\(x \in S\)</span>, <span class="math inline">\(f(x') \leq f(x) \leq f(x'')\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-99" class="theorem"><strong>Theorem 1.35  </strong></span>Suppose <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span> attains its maximum or minimum on an open set <span class="math inline">\(U\)</span> at some <span class="math inline">\(x \in U\)</span>. If <span class="math inline">\(D_i f(x)\)</span> exists, then <span class="math inline">\(D_i f(x) = 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-99" class="theorem"><strong>Theorem 1.35  </strong></span>Suppose <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span> attains its maximum or minimum on an open set <span class="math inline">\(U\)</span> at some <span class="math inline">\(x \in U\)</span>. If <span class="math inline">\(D_i f(x)\)</span> exists, then <span class="math inline">\(D_i f(x) = 0\)</span>.</p>
 </div>
 <div class="lemma">
-<p><span id="lem:unlabeled-div-100" class="lemma"><strong>Lemma 1.3  ("Rolle's) </strong></span>Suppose <span class="math inline">\(f : [a, b] \to \mathbb{R}\)</span> is continuous at each <span class="math inline">\(x \in [a, b]\)</span> and <span class="math inline">\(f\)</span> is differentiable at each <span class="math inline">\(x \in (a, b)\)</span>. Furthermore, suppose that <span class="math inline">\(f(a) = 0 = f(b)\)</span>. Then there exists some <span class="math inline">\(c \in (a, b)\)</span> such that <span class="math inline">\(f'(c) = 0\)</span>.</p>
+<p><span id="lem:unlabeled-div-100" class="lemma"><strong>Lemma 1.3  ("Rolle's) </strong></span>Suppose <span class="math inline">\(f : [a, b] \to \mathscr{R}\)</span> is continuous at each <span class="math inline">\(x \in [a, b]\)</span> and <span class="math inline">\(f\)</span> is differentiable at each <span class="math inline">\(x \in (a, b)\)</span>. Furthermore, suppose that <span class="math inline">\(f(a) = 0 = f(b)\)</span>. Then there exists some <span class="math inline">\(c \in (a, b)\)</span> such that <span class="math inline">\(f'(c) = 0\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-101" class="theorem"><strong>Theorem 1.36  (Mean Value) </strong></span>Suppose that <span class="math inline">\(f : [a, b] \to \mathbb{R}\)</span> is continuous at each <span class="math inline">\(x \in [a, b]\)</span> and that <span class="math inline">\(f\)</span> is differentiable at each <span class="math inline">\(x \in (a, b)\)</span>. Then there exists <span class="math inline">\(c \in (a, b)\)</span> such that
+<p><span id="thm:unlabeled-div-101" class="theorem"><strong>Theorem 1.36  (Mean Value) </strong></span>Suppose that <span class="math inline">\(f : [a, b] \to \mathscr{R}\)</span> is continuous at each <span class="math inline">\(x \in [a, b]\)</span> and that <span class="math inline">\(f\)</span> is differentiable at each <span class="math inline">\(x \in (a, b)\)</span>. Then there exists <span class="math inline">\(c \in (a, b)\)</span> such that
 <span class="math display">\[
 f'(c) = \frac{f(b) - f(a)}{b - a}.
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-102" class="theorem"><strong>Theorem 1.37  (Mean Value) </strong></span>Let <span class="math inline">\(U\)</span> be an open set in <span class="math inline">\(\mathbb{R}^n\)</span> containing <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Suppose that <span class="math inline">\((1 - t)a + tb \in U\)</span> whenever <span class="math inline">\(t \in [0, 1]\)</span>. Suppose that <span class="math inline">\(f : U \to \mathbb{R}\)</span> is differentiable at each <span class="math inline">\(x \in U\)</span>. Then there exists <span class="math inline">\(t' \in (0,1)\)</span> such that <span class="math inline">\(\nabla f(c') \cdot (b - a) = f(b) - f(a)\)</span> where <span class="math inline">\(c' = (1 - t')a + t'b\)</span>.</p>
+<p><span id="thm:unlabeled-div-102" class="theorem"><strong>Theorem 1.37  (Mean Value) </strong></span>Let <span class="math inline">\(U\)</span> be an open set in <span class="math inline">\(\mathscr{R}^n\)</span> containing <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. Suppose that <span class="math inline">\((1 - t)a + tb \in U\)</span> whenever <span class="math inline">\(t \in [0, 1]\)</span>. Suppose that <span class="math inline">\(f : U \to \mathscr{R}\)</span> is differentiable at each <span class="math inline">\(x \in U\)</span>. Then there exists <span class="math inline">\(t' \in (0,1)\)</span> such that <span class="math inline">\(\nabla f(c') \cdot (b - a) = f(b) - f(a)\)</span> where <span class="math inline">\(c' = (1 - t')a + t'b\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-103" class="definition"><strong>Definition 1.46  (Hessian Matrix) </strong></span>Let <span class="math inline">\(U\)</span> be open set in <span class="math inline">\(\mathbb{R}^n\)</span> and let <span class="math inline">\(f : U \to \mathbb{R}\)</span>. The <em>Hessian of <span class="math inline">\(f\)</span> at <span class="math inline">\(x \in U\)</span></em> is the matrix
+<p><span id="def:unlabeled-div-103" class="definition"><strong>Definition 1.46  (Hessian Matrix) </strong></span>Let <span class="math inline">\(U\)</span> be open set in <span class="math inline">\(\mathscr{R}^n\)</span> and let <span class="math inline">\(f : U \to \mathscr{R}\)</span>. The <em>Hessian of <span class="math inline">\(f\)</span> at <span class="math inline">\(x \in U\)</span></em> is the matrix
 <span class="math display">\[
 H_f (x) :=
 \begin{bmatrix}
@@ -650,20 +650,20 @@ D_1 D_n f(x) &amp; \cdots &amp; D_n D_n f(x)
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-104" class="theorem"><strong>Theorem 1.38  </strong></span>Suppose <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathbb{R}^n\)</span>, <span class="math inline">\(f : U \to \mathbb{R}^n\)</span> and <span class="math inline">\(x \mapsto D_i D_j f(x)\)</span> is continuous at each <span class="math inline">\(x \in U\)</span> for every <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Then <span class="math inline">\(H_f (x)\)</span> is symmetric for each <span class="math inline">\(x \in U\)</span>.</p>
+<p><span id="thm:unlabeled-div-104" class="theorem"><strong>Theorem 1.38  </strong></span>Suppose <span class="math inline">\(U\)</span> is open in <span class="math inline">\(\mathscr{R}^n\)</span>, <span class="math inline">\(f : U \to \mathscr{R}^n\)</span> and <span class="math inline">\(x \mapsto D_i D_j f(x)\)</span> is continuous at each <span class="math inline">\(x \in U\)</span> for every <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. Then <span class="math inline">\(H_f (x)\)</span> is symmetric for each <span class="math inline">\(x \in U\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-105" class="theorem"><strong>Theorem 1.39  </strong></span>Suppose <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is an open set containing <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> such that <span class="math inline">\(f : U \to \mathbb{R}\)</span>. Furthermore, suppose that <span class="math inline">\(U\)</span> contains <span class="math inline">\((1 - t) a + tb\)</span> for each <span class="math inline">\(t \in [0, 1]\)</span>. Suppose that both <span class="math inline">\(f\)</span> and <span class="math inline">\(\nabla f\)</span> are differentiable on <span class="math inline">\(U\)</span>. Then there is some <span class="math inline">\(t' \in (0, 1)\)</span> such that
+<p><span id="thm:unlabeled-div-105" class="theorem"><strong>Theorem 1.39  </strong></span>Suppose <span class="math inline">\(U \subseteq \mathscr{R}^n\)</span> is an open set containing <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> such that <span class="math inline">\(f : U \to \mathscr{R}\)</span>. Furthermore, suppose that <span class="math inline">\(U\)</span> contains <span class="math inline">\((1 - t) a + tb\)</span> for each <span class="math inline">\(t \in [0, 1]\)</span>. Suppose that both <span class="math inline">\(f\)</span> and <span class="math inline">\(\nabla f\)</span> are differentiable on <span class="math inline">\(U\)</span>. Then there is some <span class="math inline">\(t' \in (0, 1)\)</span> such that
 <span class="math display">\[
 f(b) = f(a) + \nabla f(a) \cdot (b - a) + \frac{1}{2} (b - a)^T H_f (c') (b - a)
 \]</span>
 where <span class="math inline">\(c' = (1 - t')a + t'b\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-106" class="definition"><strong>Definition 1.47  (Convex Function) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> be convex. A function <span class="math inline">\(f : S \to \mathbb{R}\)</span> is <em>convex</em> if, for all <span class="math inline">\(t \in [0,1]\)</span> and for all <span class="math inline">\(x, x' \in S\)</span>, we have <span class="math inline">\(f((1 - t)x + tx') \leq (1 - t) f(x) + tf(x')\)</span>. A function <span class="math inline">\(f : S \to \mathbb{R}\)</span> is <em>strictly convex</em> if, for all <span class="math inline">\(t \in (0,1)\)</span> and for all <span class="math inline">\(x, x' \in S\)</span> such that <span class="math inline">\(x \neq x'\)</span>, we have <span class="math inline">\(f((1 - t)x + tx') &lt; (1 - t) f(x) + tf(x')\)</span>.</p>
+<p><span id="def:unlabeled-div-106" class="definition"><strong>Definition 1.47  (Convex Function) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> be convex. A function <span class="math inline">\(f : S \to \mathscr{R}\)</span> is <em>convex</em> if, for all <span class="math inline">\(t \in [0,1]\)</span> and for all <span class="math inline">\(x, x' \in S\)</span>, we have <span class="math inline">\(f((1 - t)x + tx') \leq (1 - t) f(x) + tf(x')\)</span>. A function <span class="math inline">\(f : S \to \mathscr{R}\)</span> is <em>strictly convex</em> if, for all <span class="math inline">\(t \in (0,1)\)</span> and for all <span class="math inline">\(x, x' \in S\)</span> such that <span class="math inline">\(x \neq x'\)</span>, we have <span class="math inline">\(f((1 - t)x + tx') &lt; (1 - t) f(x) + tf(x')\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-107" class="theorem"><strong>Theorem 1.40  </strong></span>Suppose that <span class="math inline">\(U \subseteq \mathbb{R}^n\)</span> is open and convex and that <span class="math inline">\(f : U \to \mathbb{R}\)</span> is differentiable. Then</p>
+<p><span id="thm:unlabeled-div-107" class="theorem"><strong>Theorem 1.40  </strong></span>Suppose that <span class="math inline">\(U \subseteq \mathscr{R}^n\)</span> is open and convex and that <span class="math inline">\(f : U \to \mathscr{R}\)</span> is differentiable. Then</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(f\)</span> is convex if and only if <span class="math inline">\(f(x') \geq f(x) + \nabla f(x) \cdot (x' - x)\)</span> for each <span class="math inline">\(x, x' \in U\)</span>.</li>
@@ -771,18 +771,18 @@ G_\varphi := \{ (x, y) \in X \times Y : y \in \varphi(x) \} .
 <p><span id="unlabeled-div-130" class="remark"><em>Remark</em>. </span>A subset <span class="math inline">\(S\)</span> of a metric space is <em>compact</em> if and only if every sequence <span class="math inline">\(S\)</span> has a subsequence that converges to a point in <span class="math inline">\(S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-131" class="theorem"><strong>Theorem 1.47  (The Maximum) </strong></span>Let <span class="math inline">\(T\)</span> and <span class="math inline">\(X\)</span> be Euclidean sets. Let <span class="math inline">\(\varphi : T \rightrightarrows X\)</span> and <span class="math inline">\(f : X \times T \to \mathbb{R}\)</span>. For every <span class="math inline">\(t \in T\)</span>, consider the problem
+<p><span id="thm:unlabeled-div-131" class="theorem"><strong>Theorem 1.47  (The Maximum) </strong></span>Let <span class="math inline">\(T\)</span> and <span class="math inline">\(X\)</span> be Euclidean sets. Let <span class="math inline">\(\varphi : T \rightrightarrows X\)</span> and <span class="math inline">\(f : X \times T \to \mathscr{R}\)</span>. For every <span class="math inline">\(t \in T\)</span>, consider the problem
 <span class="math display">\[
 \max_{x \in \varphi(t)} f(x, t).
 \]</span>
 Define <span class="math inline">\(\displaystyle \mu (t) = \mathop{\mathrm{\arg\!\max}}_{x \in \varphi(t)} f(x, t)\)</span>. Suppose that <span class="math inline">\(\mu(t) \neq \varnothing\)</span> for every <span class="math inline">\(t\)</span>.</p>
-<p>We can define a function <span class="math inline">\(g : T \to \mathbb{R}\)</span> as <span class="math inline">\(g(t) = f(x, t)\)</span> for some <span class="math inline">\(x \in \mu(t)\)</span>.</p>
+<p>We can define a function <span class="math inline">\(g : T \to \mathscr{R}\)</span> as <span class="math inline">\(g(t) = f(x, t)\)</span> for some <span class="math inline">\(x \in \mu(t)\)</span>.</p>
 <p>If <span class="math inline">\(\varphi\)</span> is compact-valued, UHC and LHC and if <span class="math inline">\(f\)</span> is continuous, then</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(\mu : T \rightrightarrows X\)</span> is compact-valued and UHC, and</li>
 <li>
-<span class="math inline">\(g : T \to \mathbb{R}\)</span> is continuous.</li>
+<span class="math inline">\(g : T \to \mathscr{R}\)</span> is continuous.</li>
 </ol>
 </div>
 </div>
@@ -791,15 +791,15 @@ Define <span class="math inline">\(\displaystyle \mu (t) = \mathop{\mathrm{\arg\
 <span class="header-section-number">1.5</span> Convexity<a class="anchor" aria-label="anchor" href="#convexity"><i class="fas fa-link"></i></a>
 </h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-132" class="definition"><strong>Definition 1.55  (Convex Set) </strong></span>A non-empty set <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is <em>convex</em> if, for every <span class="math inline">\(x, x' \in S\)</span> and every <span class="math inline">\(t \in [0, 1]\)</span>, <span class="math inline">\(tx + (1 - t)x' \in S\)</span>.</p>
+<p><span id="def:unlabeled-div-132" class="definition"><strong>Definition 1.55  (Convex Set) </strong></span>A non-empty set <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is <em>convex</em> if, for every <span class="math inline">\(x, x' \in S\)</span> and every <span class="math inline">\(t \in [0, 1]\)</span>, <span class="math inline">\(tx + (1 - t)x' \in S\)</span>.</p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-133" class="definition"><strong>Definition 1.56  (Convex Combination) </strong></span>A <em>convex combination</em> of vectors <span class="math inline">\(x_1, \dots, x_n\)</span> is a vector of the form <span class="math inline">\(\displaystyle \sum_{i = 1}^n \alpha_i x_i\)</span> where <span class="math inline">\(\alpha_1, \dots, \alpha_n\)</span> are non-negative numbers which add up to 1.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-134" class="theorem"><strong>Theorem 1.48  </strong></span><span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is convex if and only if <span class="math inline">\(S = \tilde{S}\)</span> where
+<p><span id="thm:unlabeled-div-134" class="theorem"><strong>Theorem 1.48  </strong></span><span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is convex if and only if <span class="math inline">\(S = \tilde{S}\)</span> where
 <span class="math display">\[
-\tilde{S} := \left\{ \sum_{i = 1}^n \alpha_i x_i : n \in \mathbb{N},\ x_i \in S,\ \alpha_i \geq 0,\ \forall i,\ \sum_{i = 1}^n \alpha_i = 1 \right\};
+\tilde{S} := \left\{ \sum_{i = 1}^n \alpha_i x_i : n \in \mathscr{N},\ x_i \in S,\ \alpha_i \geq 0,\ \forall i,\ \sum_{i = 1}^n \alpha_i = 1 \right\};
 \]</span>
 i.e., if and only if it contains all convex combinations of its elements.</p>
 </div>
@@ -814,9 +814,9 @@ i.e., if and only if it contains all convex combinations of its elements.</p>
 </ul>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-136" class="definition"><strong>Definition 1.57  (Convex Hull) </strong></span>The <em>convex hull</em> of a set <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is the “smallest” convex superset of <span class="math inline">\(S\)</span>. Namely,
+<p><span id="def:unlabeled-div-136" class="definition"><strong>Definition 1.57  (Convex Hull) </strong></span>The <em>convex hull</em> of a set <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is the “smallest” convex superset of <span class="math inline">\(S\)</span>. Namely,
 <span class="math display">\[
-\text{co}S := \bigcap \left\{ G \subseteq \mathbb{R}^m : S \subseteq G \wedge G\ \text{is convex} \right\}.
+\text{co}S := \bigcap \left\{ G \subseteq \mathscr{R}^m : S \subseteq G \wedge G\ \text{is convex} \right\}.
 \]</span></p>
 </div>
 <div class="proposition">
@@ -831,19 +831,19 @@ i.e., if and only if it contains all convex combinations of its elements.</p>
 <p><span id="prp:unlabeled-div-139" class="proposition"><strong>Proposition 1.14  </strong></span><span class="math inline">\(S\)</span> is convex if and only if <span class="math inline">\(\text{co}S \subseteq S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-140" class="theorem"><strong>Theorem 1.50  (Carathéodory) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> be non-empty. If <span class="math inline">\(x \in \text{co}S\)</span>, then <span class="math inline">\(x\)</span> can be written as a convex combination of no more than <span class="math inline">\(m + 1\)</span> members of <span class="math inline">\(S\)</span>, i.e., there exists <span class="math inline">\(x_1, x_2, \dots, x_{m+1} \in S\)</span> and <span class="math inline">\(\alpha_1, \alpha_2, \dots, \alpha_{m+1} \geq 0\)</span> with <span class="math inline">\(\displaystyle \sum_{i = 1}^{m + 1} \alpha_i = 1\)</span> such that <span class="math inline">\(\displaystyle x = \sum_{i = 1}^{m + 1} \alpha_i x_i\)</span>.</p>
+<p><span id="thm:unlabeled-div-140" class="theorem"><strong>Theorem 1.50  (Carathéodory) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> be non-empty. If <span class="math inline">\(x \in \text{co}S\)</span>, then <span class="math inline">\(x\)</span> can be written as a convex combination of no more than <span class="math inline">\(m + 1\)</span> members of <span class="math inline">\(S\)</span>, i.e., there exists <span class="math inline">\(x_1, x_2, \dots, x_{m+1} \in S\)</span> and <span class="math inline">\(\alpha_1, \alpha_2, \dots, \alpha_{m+1} \geq 0\)</span> with <span class="math inline">\(\displaystyle \sum_{i = 1}^{m + 1} \alpha_i = 1\)</span> such that <span class="math inline">\(\displaystyle x = \sum_{i = 1}^{m + 1} \alpha_i x_i\)</span>.</p>
 </div>
 <div class="proposition">
 <p><span id="prp:unlabeled-div-141" class="proposition"><strong>Proposition 1.15  </strong></span><br></p>
 <ul>
 <li>
 <span class="math inline">\(\displaystyle \text{co}\left( \sum_{i = 1}^n S_i \right) = \sum_{i = 1}^n \text{co}S_i\)</span>.</li>
-<li>If <span class="math inline">\(A \subset \mathbb{R}^m\)</span> is open, then <span class="math inline">\(\text{co}A\)</span> is open.</li>
-<li>The convex hull of a closed set in <span class="math inline">\(\mathbb{R}^m\)</span> need not be closed. But if <span class="math inline">\(K \subset \mathbb{R}^m\)</span> is compact, then <span class="math inline">\(\text{co}K\)</span> is compact.</li>
+<li>If <span class="math inline">\(A \subset \mathscr{R}^m\)</span> is open, then <span class="math inline">\(\text{co}A\)</span> is open.</li>
+<li>The convex hull of a closed set in <span class="math inline">\(\mathscr{R}^m\)</span> need not be closed. But if <span class="math inline">\(K \subset \mathscr{R}^m\)</span> is compact, then <span class="math inline">\(\text{co}K\)</span> is compact.</li>
 </ul>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-142" class="theorem"><strong>Theorem 1.51  (Shapley-Folkman) </strong></span>Let <span class="math inline">\(S_i \subseteq \mathbb{R}^m\)</span> for every <span class="math inline">\(i = 1, \dots, n\)</span>, and let <span class="math inline">\(\displaystyle x \in \text{co}\sum_{i = 1}^n S_i\)</span>. Then there exists <span class="math inline">\(x_1, \dots, x_n\)</span> such that</p>
+<p><span id="thm:unlabeled-div-142" class="theorem"><strong>Theorem 1.51  (Shapley-Folkman) </strong></span>Let <span class="math inline">\(S_i \subseteq \mathscr{R}^m\)</span> for every <span class="math inline">\(i = 1, \dots, n\)</span>, and let <span class="math inline">\(\displaystyle x \in \text{co}\sum_{i = 1}^n S_i\)</span>. Then there exists <span class="math inline">\(x_1, \dots, x_n\)</span> such that</p>
 <ol style="list-style-type: decimal">
 <li>
 <span class="math inline">\(x_i \in \text{co}S_i\)</span> for every <span class="math inline">\(i\)</span>,</li>
@@ -854,70 +854,70 @@ i.e., if and only if it contains all convex combinations of its elements.</p>
 </ol>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-143" class="remark"><em>Remark</em>. </span>If <span class="math inline">\(x \in \mathbb{R}^m\)</span> can be written as <span class="math inline">\(\displaystyle x = \sum_{i = 1}^k \alpha_i x_i\)</span> where <span class="math inline">\(\alpha_1, \dots, \alpha_k \in \mathbb{R}_+\)</span>, <span class="math inline">\(x_1, \dots, x_k \in \mathbb{R}^m\)</span> and, if <span class="math inline">\(k &gt; m\)</span>, then there exist <span class="math inline">\(\beta_1, \dots, \beta_k \in \mathbb{R}_+\)</span> with <span class="math inline">\(\# \{i : \beta_i &gt; 0\} \leq m\)</span> such that <span class="math inline">\(\displaystyle x = \sum_{i = 1}^k \beta_i x_i\)</span>.</p>
+<p><span id="unlabeled-div-143" class="remark"><em>Remark</em>. </span>If <span class="math inline">\(x \in \mathscr{R}^m\)</span> can be written as <span class="math inline">\(\displaystyle x = \sum_{i = 1}^k \alpha_i x_i\)</span> where <span class="math inline">\(\alpha_1, \dots, \alpha_k \in \mathscr{R}_+\)</span>, <span class="math inline">\(x_1, \dots, x_k \in \mathscr{R}^m\)</span> and, if <span class="math inline">\(k &gt; m\)</span>, then there exist <span class="math inline">\(\beta_1, \dots, \beta_k \in \mathscr{R}_+\)</span> with <span class="math inline">\(\# \{i : \beta_i &gt; 0\} \leq m\)</span> such that <span class="math inline">\(\displaystyle x = \sum_{i = 1}^k \beta_i x_i\)</span>.</p>
 <blockquote>
 <p>Scalars <span class="math inline">\(\alpha_i\)</span> and <span class="math inline">\(\beta_i\)</span> do not need to add up to 1.</p>
 </blockquote>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-144" class="definition"><strong>Definition 1.58  (Hyperplane) </strong></span>Fix <span class="math inline">\(p \in \mathbb{R}^m\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>. The <em>hyperplane</em> formed by <span class="math inline">\(p\)</span> and <span class="math inline">\(\alpha\)</span> is
+<p><span id="def:unlabeled-div-144" class="definition"><strong>Definition 1.58  (Hyperplane) </strong></span>Fix <span class="math inline">\(p \in \mathscr{R}^m\)</span> and <span class="math inline">\(\alpha \in \mathscr{R}\)</span>. The <em>hyperplane</em> formed by <span class="math inline">\(p\)</span> and <span class="math inline">\(\alpha\)</span> is
 <span class="math display">\[
-H(p; \alpha) := \left\{ x \in \mathbb{R}^m : p \cdot x = \alpha \right\}
+H(p; \alpha) := \left\{ x \in \mathscr{R}^m : p \cdot x = \alpha \right\}
 \]</span>
 where <span class="math inline">\(p\)</span> is called the <em>normal vector</em> of <span class="math inline">\(H(p; \alpha)\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-145" class="theorem"><strong>Theorem 1.52  (Minkowski) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> be non-empty, convex and closed, and let <span class="math inline">\(\bar{x} \notin S\)</span>. There exists <span class="math inline">\(p \in \mathbb{R}^m \setminus \{0\}\)</span> and <span class="math inline">\(x_0 \in S\)</span> such that <span class="math inline">\(p \cdot \bar{x} &gt; p \cdot x_0 \geq p \cdot x\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
+<p><span id="thm:unlabeled-div-145" class="theorem"><strong>Theorem 1.52  (Minkowski) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> be non-empty, convex and closed, and let <span class="math inline">\(\bar{x} \notin S\)</span>. There exists <span class="math inline">\(p \in \mathscr{R}^m \setminus \{0\}\)</span> and <span class="math inline">\(x_0 \in S\)</span> such that <span class="math inline">\(p \cdot \bar{x} &gt; p \cdot x_0 \geq p \cdot x\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-146" class="theorem"><strong>Theorem 1.53  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is non-empty and convex, and that <span class="math inline">\(x_n\)</span> is a sequence in <span class="math inline">\(\mathbb{R}^m\setminus \text{cl}S\)</span>. If <span class="math inline">\(x_n \to \bar{x}\)</span>, then there exists <span class="math inline">\(p \in \mathbb{R}^m \setminus \{0\}\)</span> such that, for every <span class="math inline">\(x \in S\)</span>, <span class="math inline">\(p \cdot x \leq p \cdot \bar{x}\)</span>.</p>
+<p><span id="thm:unlabeled-div-146" class="theorem"><strong>Theorem 1.53  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is non-empty and convex, and that <span class="math inline">\(x_n\)</span> is a sequence in <span class="math inline">\(\mathscr{R}^m\setminus \text{cl}S\)</span>. If <span class="math inline">\(x_n \to \bar{x}\)</span>, then there exists <span class="math inline">\(p \in \mathscr{R}^m \setminus \{0\}\)</span> such that, for every <span class="math inline">\(x \in S\)</span>, <span class="math inline">\(p \cdot x \leq p \cdot \bar{x}\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-147" class="theorem"><strong>Theorem 1.54  (Supporting Hyperplane) </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is non-empty and convex. If <span class="math inline">\(\bar{x} \in \partial S\)</span>, then there exists <span class="math inline">\(p \in \mathbb{R}^m \setminus \{0\}\)</span> such that <span class="math inline">\(p \cdot \bar{x} \geq p \cdot x\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
+<p><span id="thm:unlabeled-div-147" class="theorem"><strong>Theorem 1.54  (Supporting Hyperplane) </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is non-empty and convex. If <span class="math inline">\(\bar{x} \in \partial S\)</span>, then there exists <span class="math inline">\(p \in \mathscr{R}^m \setminus \{0\}\)</span> such that <span class="math inline">\(p \cdot \bar{x} \geq p \cdot x\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-148" class="theorem"><strong>Theorem 1.55  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^m\)</span> is a non-empty and convex set, and let <span class="math inline">\(\bar{x} \notin S\)</span>. Then there exists <span class="math inline">\(p \in \mathbb{R}^m \setminus \{0\}\)</span> such that <span class="math inline">\(p \cdot x \leq p \cdot \bar{x}\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
+<p><span id="thm:unlabeled-div-148" class="theorem"><strong>Theorem 1.55  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^m\)</span> is a non-empty and convex set, and let <span class="math inline">\(\bar{x} \notin S\)</span>. Then there exists <span class="math inline">\(p \in \mathscr{R}^m \setminus \{0\}\)</span> such that <span class="math inline">\(p \cdot x \leq p \cdot \bar{x}\)</span> for every <span class="math inline">\(x \in S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-149" class="theorem"><strong>Theorem 1.56  (Separating Hyperplane) </strong></span>Let <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> be disjoint and convex subsets of <span class="math inline">\(\mathbb{R}^m\)</span>. There exists <span class="math inline">\(p \in \mathbb{R}^m \setminus \{0\}\)</span> such that <span class="math inline">\(p \cdot s \leq p \cdot t\)</span> for every <span class="math inline">\((s, t) \in S \times T\)</span>.</p>
+<p><span id="thm:unlabeled-div-149" class="theorem"><strong>Theorem 1.56  (Separating Hyperplane) </strong></span>Let <span class="math inline">\(S\)</span> and <span class="math inline">\(T\)</span> be disjoint and convex subsets of <span class="math inline">\(\mathscr{R}^m\)</span>. There exists <span class="math inline">\(p \in \mathscr{R}^m \setminus \{0\}\)</span> such that <span class="math inline">\(p \cdot s \leq p \cdot t\)</span> for every <span class="math inline">\((s, t) \in S \times T\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-150" class="definition"><strong>Definition 1.59  (Convex Function) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> be convex. A function <span class="math inline">\(f : S \to \mathbb{R}\)</span> is <em>convex</em> if <span class="math inline">\(f(tx + (1 - t)y) \leq tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in [0, 1]\)</span>. Similarly, <span class="math inline">\(f\)</span> is said to be <em>strictly convex</em> if <span class="math inline">\(f(tx + (1 - t)y) &lt; tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in (0, 1)\)</span>.</p>
+<p><span id="def:unlabeled-div-150" class="definition"><strong>Definition 1.59  (Convex Function) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> be convex. A function <span class="math inline">\(f : S \to \mathscr{R}\)</span> is <em>convex</em> if <span class="math inline">\(f(tx + (1 - t)y) \leq tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in [0, 1]\)</span>. Similarly, <span class="math inline">\(f\)</span> is said to be <em>strictly convex</em> if <span class="math inline">\(f(tx + (1 - t)y) &lt; tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in (0, 1)\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-151" class="definition"><strong>Definition 1.60  (Concave Function) </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> be convex. A function <span class="math inline">\(f : S \to \mathbb{R}\)</span> is <em>concave</em> if <span class="math inline">\(f(tx + (1 - t)y) \geq tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in [0, 1]\)</span>. Similarly, <span class="math inline">\(f\)</span> is said to be <em>strictly concave</em> if <span class="math inline">\(f(tx + (1 - t)y) &gt; tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in (0, 1)\)</span>.</p>
+<p><span id="def:unlabeled-div-151" class="definition"><strong>Definition 1.60  (Concave Function) </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> be convex. A function <span class="math inline">\(f : S \to \mathscr{R}\)</span> is <em>concave</em> if <span class="math inline">\(f(tx + (1 - t)y) \geq tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in [0, 1]\)</span>. Similarly, <span class="math inline">\(f\)</span> is said to be <em>strictly concave</em> if <span class="math inline">\(f(tx + (1 - t)y) &gt; tf(x) + (1 - t)f(y)\)</span>, <span class="math inline">\(\forall x, y \in S\)</span>, <span class="math inline">\(t \in (0, 1)\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-152" class="definition"><strong>Definition 1.61  (Subgradient) </strong></span>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. A vector <span class="math inline">\(p \in \mathbb{R}^n\)</span> is a <em>subgradient</em> for <span class="math inline">\(f\)</span> at <span class="math inline">\(x \in S\)</span> if
+<p><span id="def:unlabeled-div-152" class="definition"><strong>Definition 1.61  (Subgradient) </strong></span>Suppose <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathscr{R}\)</span>. A vector <span class="math inline">\(p \in \mathscr{R}^n\)</span> is a <em>subgradient</em> for <span class="math inline">\(f\)</span> at <span class="math inline">\(x \in S\)</span> if
 <span class="math display">\[
 f(y) \geq f(x) + p \cdot (x - y),
 \]</span>
 for all <span class="math inline">\(y \in S\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-153" class="definition"><strong>Definition 1.62  (Supergradient) </strong></span>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. A vector <span class="math inline">\(p \in \mathbb{R}^n\)</span> is a <em>supergradient</em> for <span class="math inline">\(f\)</span> at <span class="math inline">\(x \in S\)</span> if
+<p><span id="def:unlabeled-div-153" class="definition"><strong>Definition 1.62  (Supergradient) </strong></span>Suppose <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathscr{R}\)</span>. A vector <span class="math inline">\(p \in \mathscr{R}^n\)</span> is a <em>supergradient</em> for <span class="math inline">\(f\)</span> at <span class="math inline">\(x \in S\)</span> if
 <span class="math display">\[
 f(y) \leq f(x) + p \cdot (x - y),
 \]</span>
 for all <span class="math inline">\(y \in S\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-154" class="theorem"><strong>Theorem 1.57  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. If <span class="math inline">\(f\)</span> has a subgradient at every <span class="math inline">\(x \in S\)</span>, then <span class="math inline">\(f\)</span> is convex.</p>
+<p><span id="thm:unlabeled-div-154" class="theorem"><strong>Theorem 1.57  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathscr{R}\)</span>. If <span class="math inline">\(f\)</span> has a subgradient at every <span class="math inline">\(x \in S\)</span>, then <span class="math inline">\(f\)</span> is convex.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-155" class="theorem"><strong>Theorem 1.58  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex, <span class="math inline">\(f : S \to \mathbb{R}\)</span> is convex, and <span class="math inline">\(x \in \text{int}(S)\)</span>. Then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x\)</span>.</p>
+<p><span id="thm:unlabeled-div-155" class="theorem"><strong>Theorem 1.58  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex, <span class="math inline">\(f : S \to \mathscr{R}\)</span> is convex, and <span class="math inline">\(x \in \text{int}(S)\)</span>. Then <span class="math inline">\(f\)</span> is continuous at <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-156" class="theorem"><strong>Theorem 1.59  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex, <span class="math inline">\(f : S \to \mathbb{R}\)</span> is convex, and <span class="math inline">\(x \in \text{int}(S)\)</span>. Then <span class="math inline">\(f\)</span> has a subgradient at <span class="math inline">\(x\)</span>.</p>
+<p><span id="thm:unlabeled-div-156" class="theorem"><strong>Theorem 1.59  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex, <span class="math inline">\(f : S \to \mathscr{R}\)</span> is convex, and <span class="math inline">\(x \in \text{int}(S)\)</span>. Then <span class="math inline">\(f\)</span> has a subgradient at <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-157" class="theorem"><strong>Theorem 1.60  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex, <span class="math inline">\(f : S \to \mathbb{R}\)</span> is convex, <span class="math inline">\(x \in \text{int}(S)\)</span>, and <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>. Then <span class="math inline">\(\nabla f(x)\)</span> is the unique subgradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span>.</p>
+<p><span id="thm:unlabeled-div-157" class="theorem"><strong>Theorem 1.60  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex, <span class="math inline">\(f : S \to \mathscr{R}\)</span> is convex, <span class="math inline">\(x \in \text{int}(S)\)</span>, and <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>. Then <span class="math inline">\(\nabla f(x)\)</span> is the unique subgradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-158" class="theorem"><strong>Theorem 1.61  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathbb{R}\)</span>. If <span class="math inline">\(p_1\)</span> is a subgradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_1\)</span> and <span class="math inline">\(p_2\)</span> is a subgradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_2\)</span>, then <span class="math inline">\((p_1 - p_2) \cdot (x_1 - x_2) \geq 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-158" class="theorem"><strong>Theorem 1.61  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is convex and <span class="math inline">\(f : S \to \mathscr{R}\)</span>. If <span class="math inline">\(p_1\)</span> is a subgradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_1\)</span> and <span class="math inline">\(p_2\)</span> is a subgradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_2\)</span>, then <span class="math inline">\((p_1 - p_2) \cdot (x_1 - x_2) \geq 0\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-159" class="theorem"><strong>Theorem 1.62  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is open and convex, and <span class="math inline">\(f : S \to \mathbb{R}\)</span> is differentiable and convex. Then <span class="math inline">\(\left(\nabla f(x_1) - \nabla f(x_2)\right) \cdot (x_1 - x_2) \geq 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-159" class="theorem"><strong>Theorem 1.62  </strong></span>Suppose that <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is open and convex, and <span class="math inline">\(f : S \to \mathscr{R}\)</span> is differentiable and convex. Then <span class="math inline">\(\left(\nabla f(x_1) - \nabla f(x_2)\right) \cdot (x_1 - x_2) \geq 0\)</span>.</p>
 </div>
 </div>
 <div id="support-functions" class="section level2" number="1.6">
@@ -928,32 +928,32 @@ for all <span class="math inline">\(y \in S\)</span>.</p>
 <h3>Maximization<a class="anchor" aria-label="anchor" href="#maximization"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-160" class="definition"><strong>Definition 1.63  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as
+<p><span id="def:unlabeled-div-160" class="definition"><strong>Definition 1.63  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as
 <span class="math display">\[
-b(S) := \left\{ p \in \mathbb{R}^n : \max_{x \in S}\ \text{is well-defined} \right\}.
+b(S) := \left\{ p \in \mathscr{R}^n : \max_{x \in S}\ \text{is well-defined} \right\}.
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-161" class="definition"><strong>Definition 1.64  (Support Function) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>support function</em> of <span class="math inline">\(S\)</span> is a function <span class="math inline">\(\sigma_S : b(S) \to \mathbb{R}\)</span> such that
+<p><span id="def:unlabeled-div-161" class="definition"><strong>Definition 1.64  (Support Function) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>, the <em>support function</em> of <span class="math inline">\(S\)</span> is a function <span class="math inline">\(\sigma_S : b(S) \to \mathscr{R}\)</span> such that
 <span class="math display">\[
 \sigma_S (p) := \max_{x \in S} p \cdot x.
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-162" class="remark"><em>Remark</em> (Cone). </span>If <span class="math inline">\(p \in b(S)\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}_+\)</span>, then <span class="math inline">\(\lambda p \in b(S)\)</span> as well. Hence <span class="math inline">\(b(S)\)</span> is a <em>cone</em> and, in particular, <span class="math inline">\(0 \in b(S)\)</span>.</p>
+<p><span id="unlabeled-div-162" class="remark"><em>Remark</em> (Cone). </span>If <span class="math inline">\(p \in b(S)\)</span> and <span class="math inline">\(\lambda \in \mathscr{R}_+\)</span>, then <span class="math inline">\(\lambda p \in b(S)\)</span> as well. Hence <span class="math inline">\(b(S)\)</span> is a <em>cone</em> and, in particular, <span class="math inline">\(0 \in b(S)\)</span>.</p>
 </div>
 <div class="proposition">
 <p><span id="prp:unlabeled-div-163" class="proposition"><strong>Proposition 1.16  </strong></span><span class="math inline">\(b(S)\)</span> need not be convex even if <span class="math inline">\(S\)</span> is.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-164" class="theorem"><strong>Theorem 1.63  </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> be non-empty.</p>
+<p><span id="thm:unlabeled-div-164" class="theorem"><strong>Theorem 1.63  </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> be non-empty.</p>
 <ul>
 <li>If <span class="math inline">\(x_1\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p_1 \cdot x\)</span> and <span class="math inline">\(x_2\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p_2 \cdot x\)</span>, then <span class="math inline">\((x_1 - x_2)\cdot(p_1 - p_2) \geq 0\)</span>. This is known as monotonicity of solutions.</li>
 <li>
 <span class="math inline">\(\sigma_S(tp) = t\sigma_S(p)\)</span> for every <span class="math inline">\(p \in b(S)\)</span> and <span class="math inline">\(t \geq 0\)</span>. Namely, homogeneity of degree 1.</li>
 <li>If <span class="math inline">\(b(S)\)</span> is convex, then <span class="math inline">\(\sigma_S\)</span> is convex.</li>
-<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, and <span class="math inline">\(p \in b(S)\)</span>. <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p\)</span> is a subgradient of <span class="math inline">\(\sigma_S\)</span> at <span class="math inline">\(p\)</span>.</li>
-<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b(S))\)</span> and <span class="math inline">\(\sigma_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \sigma_S (p)\)</span>. Also known as <strong>Hotelling’s Lemma</strong> in profit maximization.</li>
+<li>Suppose <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is closed and convex, and <span class="math inline">\(p \in b(S)\)</span>. <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p\)</span> is a subgradient of <span class="math inline">\(\sigma_S\)</span> at <span class="math inline">\(p\)</span>.</li>
+<li>Suppose <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b(S))\)</span> and <span class="math inline">\(\sigma_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \max_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \sigma_S (p)\)</span>. Also known as <strong>Hotelling’s Lemma</strong> in profit maximization.</li>
 </ul>
 </div>
 </div>
@@ -961,29 +961,29 @@ b(S) := \left\{ p \in \mathbb{R}^n : \max_{x \in S}\ \text{is well-defined} \rig
 <h3>Minimization<a class="anchor" aria-label="anchor" href="#minimization"><i class="fas fa-link"></i></a>
 </h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-165" class="definition"><strong>Definition 1.65  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as
+<p><span id="def:unlabeled-div-165" class="definition"><strong>Definition 1.65  (Barrier Cone) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>, the <em>barrier cone</em> of <span class="math inline">\(S\)</span> is defined as
 <span class="math display">\[
-b^-(S) := \left\{ p \in \mathbb{R}^n : \min_{x \in S}\ \text{is well-defined} \right\}.
+b^-(S) := \left\{ p \in \mathscr{R}^n : \min_{x \in S}\ \text{is well-defined} \right\}.
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-166" class="definition"><strong>Definition 1.66  (Support Function) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, the <em>support function</em> of <span class="math inline">\(S\)</span> is a function <span class="math inline">\(\tau_S : b^-(S) \to \mathbb{R}\)</span> such that
+<p><span id="def:unlabeled-div-166" class="definition"><strong>Definition 1.66  (Support Function) </strong></span>For any non-empty <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span>, the <em>support function</em> of <span class="math inline">\(S\)</span> is a function <span class="math inline">\(\tau_S : b^-(S) \to \mathscr{R}\)</span> such that
 <span class="math display">\[
 \tau_S (p) := \min_{x \in S} p \cdot x.
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-167" class="remark"><em>Remark</em> (Cone). </span>Note that <span class="math inline">\(b^-(S) = -b(S) = \left\{ p \in \mathbb{R}^n : -p \in b(S) \right\}\)</span>. Furthermore, <span class="math inline">\(\tau_S (p) = -\sigma_S (-p)\)</span>.</p>
+<p><span id="unlabeled-div-167" class="remark"><em>Remark</em> (Cone). </span>Note that <span class="math inline">\(b^-(S) = -b(S) = \left\{ p \in \mathscr{R}^n : -p \in b(S) \right\}\)</span>. Furthermore, <span class="math inline">\(\tau_S (p) = -\sigma_S (-p)\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-168" class="theorem"><strong>Theorem 1.64  </strong></span>Let <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> be non-empty.</p>
+<p><span id="thm:unlabeled-div-168" class="theorem"><strong>Theorem 1.64  </strong></span>Let <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> be non-empty.</p>
 <ul>
 <li>If <span class="math inline">\(x_1\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p_1 \cdot x\)</span> and <span class="math inline">\(x_2\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p_2 \cdot x\)</span>, then <span class="math inline">\((x_1 - x_2)\cdot(p_1 - p_2) \leq 0\)</span>. This is known as monotonicity of solutions.</li>
 <li>
 <span class="math inline">\(\tau_S(tp) = t\tau_S(p)\)</span> for every <span class="math inline">\(p \in b^-(S)\)</span> and <span class="math inline">\(t \geq 0\)</span>. Namely, homogeneity of degree 1.</li>
 <li>If <span class="math inline">\(b^-(S)\)</span> is convex, then <span class="math inline">\(\tau_S\)</span> is concave.</li>
-<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, and <span class="math inline">\(p \in b^-(S)\)</span>. <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p\)</span> is a supergradient of <span class="math inline">\(\tau_S\)</span> at <span class="math inline">\(p\)</span>.</li>
-<li>Suppose <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b^-(S))\)</span> and <span class="math inline">\(\tau_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \tau_S (p)\)</span>. Also known as <strong>Shephard’s Lemma</strong> in cost minimization.</li>
+<li>Suppose <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is closed and convex, and <span class="math inline">\(p \in b^-(S)\)</span>. <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p\)</span> is a supergradient of <span class="math inline">\(\tau_S\)</span> at <span class="math inline">\(p\)</span>.</li>
+<li>Suppose <span class="math inline">\(S \subseteq \mathscr{R}^n\)</span> is closed and convex, <span class="math inline">\(p \in \text{int}(b^-(S))\)</span> and <span class="math inline">\(\tau_S\)</span> is differentiable at <span class="math inline">\(p\)</span>. Then <span class="math inline">\(x_p\)</span> solves <span class="math inline">\(\displaystyle \min_{x \in S} p \cdot x\)</span> if and only if <span class="math inline">\(x_p = \nabla \tau_S (p)\)</span>. Also known as <strong>Shephard’s Lemma</strong> in cost minimization.</li>
 </ul>
 </div>
 </div>

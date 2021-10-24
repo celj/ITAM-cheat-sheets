@@ -122,7 +122,7 @@ Let $A$ be $m\times n$. For each $b \in \R^m$, $Ax = b$ has a unique solution in
 ### Subspaces {-}
 
 ::: {.definition name="Subspace"}
-A non-empty set $S \subseteq \R^m$ is a _subspace_ of $R^m$ if $\alpha x + \beta y \in S$ whenever $x, y \in S$ and $\alpha, \beta \in \R$.
+A non-empty set $S \subseteq \R^m$ is a _subspace_ of $\R^m$ if $\alpha x + \beta y \in S$ whenever $x, y \in S$ and $\alpha, \beta \in \R$.
 :::
 
 ::: {.proposition}

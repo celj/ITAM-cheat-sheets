@@ -117,7 +117,7 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\Beta}{\text{Beta}}
 \newcommand{\Bias}{\text{Bias}}
 \newcommand{\Bin}{\text{Bin}}
-\newcommand{\C}{\mathbb{C}}
+\newcommand{\C}{\mathscr{C}}
 \newcommand{\Cau}{\text{Cauchy}}
 \newcommand{\closure}{\text{cl}}
 \newcommand{\convex}{\text{co}}
@@ -131,7 +131,6 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\F}{\mathscr{F}}
 \newcommand{\Geo}{\text{Geo}}
 \newcommand{\Hyp}{\text{Hyp}}
-\newcommand{\I}{\mathbb{I}}
 \newcommand{\ie}{\text{i.e.}}
 \newcommand{\indicator}{\mathbb{1}}
 \newcommand{\interior}{\text{int}}
@@ -142,15 +141,15 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\MRT}{\text{MRT}}
 \newcommand{\MRTS}{\text{MRTS}}
 \newcommand{\MSE}{\text{MSE}}
-\newcommand{\N}{\mathbb{N}}
+\newcommand{\N}{\mathscr{N}}
 \newcommand{\NB}{\text{NB}}
 \newcommand{\Norm}{\mathscr{N}}
 \newcommand{\O}{\varnothing}
 \newcommand{\Par}{\text{Pareto}}
 \newcommand{\plim}{\overset{p}{\longrightarrow}}
 \newcommand{\Poi}{\text{Poisson}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathscr{Q}}
+\newcommand{\R}{\mathscr{R}}
 \newcommand{\rk}{\text{rk}}
 \newcommand{\rlim}{\overset{L^r}{\longrightarrow}}
 \newcommand{\sd}{\text{sd}}

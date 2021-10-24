@@ -14,6 +14,8 @@ knit: (function(input, ...) {
 **This section is still in development.**
 :::
 
+If you wish to contribute to this section, feel free to email me at [carloselezamaj@gmail.com](mailto:carloselezamaj@gmail.com?subject=ITAM cheat sheets: Economics 4).
+
 ## General Equilibrium
 
 ### Pure Exchange Economies {-}

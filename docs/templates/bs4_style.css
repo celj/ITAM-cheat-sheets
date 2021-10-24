@@ -17,11 +17,6 @@
   --nord15: #b48ead;
 }
 
-:root {
-  --nord3: #4c566a;
-  --nord0: #2e3440;
-}
-
 a {
   color: var(--nord3);
 }

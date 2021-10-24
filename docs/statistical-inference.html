@@ -92,12 +92,12 @@
 <span class="math display">\[
 \lim_{n\to\infty} F_{X_n}(x) = F_X(x)
 \]</span>
-for every <span class="math inline">\(x \in \mathbb{R}\)</span>.</p>
-<p>For random vectors <span class="math inline">\(\left\{ X_1, X_2, \dots \right\} \subset \mathbb{R}^k\)</span>, we say that this sequence <em>converges in distribution</em> to a random <span class="math inline">\(k\)</span>-vector <span class="math inline">\(X\)</span> if
+for every <span class="math inline">\(x \in \mathscr{R}\)</span>.</p>
+<p>For random vectors <span class="math inline">\(\left\{ X_1, X_2, \dots \right\} \subset \mathscr{R}^k\)</span>, we say that this sequence <em>converges in distribution</em> to a random <span class="math inline">\(k\)</span>-vector <span class="math inline">\(X\)</span> if
 <span class="math display">\[
 \lim_{n\to\infty} P(X_n\in A) = P(X\in A)
 \]</span>
-for every <span class="math inline">\(A \subset \mathbb{R}^k\)</span> which is a continuity set of <span class="math inline">\(X\)</span>.</p>
+for every <span class="math inline">\(A \subset \mathscr{R}^k\)</span> which is a continuity set of <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-268" class="definition"><strong>Definition 6.4  (Convergence in Probability) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables <em>converges in probability</em> towards the random variable <span class="math inline">\(X\)</span> if
@@ -109,7 +109,7 @@ for all <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-269" class="definition"><strong>Definition 6.5  (Convergence in Mean) </strong></span>Given a real number <span class="math inline">\(r \geq 1\)</span>, we say that the sequence <span class="math inline">\(X_n\)</span> <em>converges in the <span class="math inline">\(r\)</span>th mean</em> or <em>in the <span class="math inline">\(L^r\)</span> norm</em> towards the random variable <span class="math inline">\(X\)</span> if the <span class="math inline">\(r\)</span>th absolute moments of <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> exist, and
 <span class="math display">\[
-\lim_{n\to\infty} \mathbb{E}\left( \left\lvert X_n - X \right\rvert^r \right) = 0.
+\lim_{n\to\infty} E\left( \left\lvert X_n - X \right\rvert^r \right) = 0.
 \]</span></p>
 </div>
 <div class="theorem">
@@ -142,7 +142,7 @@ P\left[ \left\{ \omega \in \Omega : \bar{X}_n(\omega) \underset{n\to\infty}{\lon
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-271" class="theorem"><strong>Theorem 6.2  (Central Limit Theorem) </strong></span>Suppose <span class="math inline">\(\left\{X_1, \dots, X_n\right\}\)</span> is a sequence of independent and identically distributed random variables with <span class="math inline">\(\mathbb{E}[X_i] = \mu\)</span> and <span class="math inline">\(\text{Var}[X_i] = \sigma^2 &lt; \infty\)</span>. Then, as <span class="math inline">\(n\)</span> approaches infinity, the random variables <span class="math inline">\(\sqrt{n}\left( \bar{X}_n - \mu \right)\)</span> converge in distribution to a normal <span class="math inline">\(\mathscr{N}(0, \sigma^2)\)</span>.
+<p><span id="thm:unlabeled-div-271" class="theorem"><strong>Theorem 6.2  (Central Limit Theorem) </strong></span>Suppose <span class="math inline">\(\left\{X_1, \dots, X_n\right\}\)</span> is a sequence of independent and identically distributed random variables with <span class="math inline">\(E[X_i] = \mu\)</span> and <span class="math inline">\(\text{Var}[X_i] = \sigma^2 &lt; \infty\)</span>. Then, as <span class="math inline">\(n\)</span> approaches infinity, the random variables <span class="math inline">\(\sqrt{n}\left( \bar{X}_n - \mu \right)\)</span> converge in distribution to a normal <span class="math inline">\(\mathscr{N}(0, \sigma^2)\)</span>.
 <span class="math display">\[
 \text{i.e.}\quad \sqrt{n}\left( \bar{X}_n - \mu \right) \overset{d}{\longrightarrow}\mathscr{N}(0, \sigma^2)
 \]</span></p>
@@ -159,14 +159,14 @@ P\left[ \left\{ \omega \in \Omega : \bar{X}_n(\omega) \underset{n\to\infty}{\lon
 <div class="definition">
 <p><span id="def:unlabeled-div-274" class="definition"><strong>Definition 6.8  (Bias) </strong></span>The <em>bias</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
 <span class="math display">\[
-\text{Bias}(\hat{\theta}, \theta) := \mathbb{E}_\theta [\hat{\theta} - \theta].
+\text{Bias}(\hat{\theta}, \theta) := E_\theta [\hat{\theta} - \theta].
 \]</span>
-We say that an estimator is <em>unbiased</em> if <span class="math inline">\(\text{Bias}_\theta [\hat{\theta}] = 0\)</span> or <span class="math inline">\(\mathbb{E}_\theta [\hat{\theta}] = \theta\)</span>.</p>
+We say that an estimator is <em>unbiased</em> if <span class="math inline">\(\text{Bias}_\theta [\hat{\theta}] = 0\)</span> or <span class="math inline">\(E_\theta [\hat{\theta}] = \theta\)</span>.</p>
 </div>
 <div class="definition">
 <p><span id="def:unlabeled-div-275" class="definition"><strong>Definition 6.9  (Mean Squared Error) </strong></span>The <em>mean squared error</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
 <span class="math display">\[
-\text{MSE}_\theta[\hat{\theta}] := \mathbb{E}\left[ \left( \hat{\theta} - \theta \right)^2 \right] = \text{Var}_\theta[\hat{\theta}] + \text{Bias}^2 (\hat{\theta}, \theta)
+\text{MSE}_\theta[\hat{\theta}] := E\left[ \left( \hat{\theta} - \theta \right)^2 \right] = \text{Var}_\theta[\hat{\theta}] + \text{Bias}^2 (\hat{\theta}, \theta)
 \]</span></p>
 </div>
 <div class="definition">
@@ -221,7 +221,7 @@ s(\theta) := \frac{\partial \log \mathscr{L}(\theta)}{\partial\theta}.
 <div class="definition">
 <p><span id="def:unlabeled-div-281" class="definition"><strong>Definition 6.15  (Fisher Information) </strong></span>Let <span class="math inline">\(f(X;\ \theta)\)</span> be the probability density function or probability mass function for <span class="math inline">\(X\)</span> conditioned on the value of <span class="math inline">\(\theta\)</span>. We define the <em>Fisher information</em> as
 <span class="math display">\[
-\mathscr{I}(\theta) := \mathbb{E}\left[\left(\frac{\partial}{\partial\theta}\log f(X;\ \theta)\right)^2\right] = - \mathbb{E}\left[\frac{\partial^2}{\partial\theta^2}\log f(X;\ \theta)\right].
+\mathscr{I}(\theta) := E\left[\left(\frac{\partial}{\partial\theta}\log f(X;\ \theta)\right)^2\right] = - E\left[\frac{\partial^2}{\partial\theta^2}\log f(X;\ \theta)\right].
 \]</span></p>
 <blockquote>
 <p>The Fisher information is a way of measuring the amount of information that an observable random variable <span class="math inline">\(X\)</span> carries about an unknown parameter <span class="math inline">\(\theta\)</span> upon which the probability of <span class="math inline">\(X\)</span> depends.</p>

@@ -243,7 +243,7 @@ $$
 ::: {.definition name="Expected Value"}
 Let $X$ be a random variable. The _expected value_ is defined as
 $$
-\E[X] :=
+E[X] :=
 \begin{cases}
 \displaystyle \sum_{x_k \in \mathscr{W}(X)} x_k \cdot f_X(x_k), & \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty x \cdot f_X(x)dx,  & \text{continuous}
@@ -254,13 +254,13 @@ $$
 ::: {.remark name="Expected Value Properties"}
 <br/>
 
-* $\E[X] \leq \E[Y]$ if $\forall \omega : X(\omega) \leq Y(\omega)$,
-* $\displaystyle \E\left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i=0}^n a_i \E\left[ X_i \right]$,
-* $\displaystyle \E[X] = \sum_{j=1}^\infty P[X \geq j]$ if $\mathscr{W}(X) \subseteq \N_0$,
-* $\displaystyle \E\left[ \sum_{i=0}^\infty X_i \right] \neq \sum_{i=0}^\infty \E\left[ X_i \right]$,
-* $\E[\E[X]] = \E[X]$,
-* $\E[XY]^2 \leq E[X^2]E[Y^2]$, and
-* $\displaystyle \E\left[ \prod_{i=0}^n X_i \right] = \prod_{i=0}^n \E[X_i]$ for independent $X_1, \dots, X_n$.
+* $E[X] \leq E[Y]$ if $\forall \omega : X(\omega) \leq Y(\omega)$,
+* $\displaystyle E\left[ \sum_{i=0}^n a_i X_i \right] = \sum_{i=0}^n a_i E\left[ X_i \right]$,
+* $\displaystyle E[X] = \sum_{j=1}^\infty P[X \geq j]$ if $\mathscr{W}(X) \subseteq \N_0$,
+* $\displaystyle E\left[ \sum_{i=0}^\infty X_i \right] \neq \sum_{i=0}^\infty E\left[ X_i \right]$,
+* $E[E[X]] = E[X]$,
+* $E[XY]^2 \leq E[X^2]E[Y^2]$, and
+* $\displaystyle E\left[ \prod_{i=0}^n X_i \right] = \prod_{i=0}^n E[X_i]$ for independent $X_1, \dots, X_n$.
 :::
 
 > The expected value is a linear operator.
@@ -268,18 +268,18 @@ $$
 ::: {.definition name="Raw Moment / Central Moment"}
 Let $n \in \N$. The _$n$th (raw) moment_ is defined as
 $$
-\mu_n' = \E\left[X^n\right].
+\mu_n' = E\left[X^n\right].
 $$
 The _$n$th central moment_ is defined as
 $$
-\mu_n = \E\left[\left( X - \E[X] \right)^n \right].
+\mu_n = E\left[\left( X - E[X] \right)^n \right].
 $$
 :::
 
 ::: {.definition name="Expected Value of Functions"}
 Let $X$ be a random variable and $Y = g(X)$ with $g : \R \to \R$, then
 $$
-\E[Y] :=
+E[Y] :=
 \begin{cases}
 \displaystyle \sum_{x_k \in \mathscr{W}(X)} g(x_k) \cdot f_X(x_k), & \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty g(x) \cdot f_X(x)dx,  & \text{continuous}
@@ -290,30 +290,30 @@ $$
 ::: {.definition name="Moment-Generating Function"}
 Let $X$ be a random variable. The _moment-generating function_ of $X$ is defined as
 $$
-M_X(t) := \E \left[ e^{tX} \right].
+M_X(t) := E \left[ e^{tX} \right].
 $$
 :::
 
 ::: {.definition name="Characteristic Function"}
 Let $X$ be a random variable. The _characteristic function_ of $X$ is defined as
 $$
-\varphi_X(t) := \E \left[ e^{itX} \right]
+\varphi_X(t) := E \left[ e^{itX} \right]
 $$
 where $i = \sqrt{-1} \in \C$.
 :::
 
 ::: {.definition name="Variance"}
-Let $X$ be a random variable with $\E[X^2] < \infty$. The _variance_ of $X$ is defined as
+Let $X$ be a random variable with $E[X^2] < \infty$. The _variance_ of $X$ is defined as
 $$
-\Var[X] := \E\left[ (X - \E[X])^2 \right].
+\Var[X] := E\left[ (X - E[X])^2 \right].
 $$
 :::
 
 ::: {.remark name="Variance Properties"}
 <br/>
 
-* $0 \leq \Var[X] \leq \E[X^2]$,
-* $\Var[X] = \E[X^2] - \E^2[X]$,
+* $0 \leq \Var[X] \leq E[X^2]$,
+* $\Var[X] = E[X^2] - E^2[X]$,
 * $\Var[aX + b] = a^2\Var[X]$,
 * $\Var[X] = \Cov(X,X)$,
 * $\displaystyle \Var \left[ \sum_{i=1}^n a_i X_i \right] = \sum_{i = 1}^n a_i^2 \Var[X_i] + 2 \sum_{1 \leq i < j \leq n} a_i a_j \Cov(X_i, X_j)$, and
@@ -321,7 +321,7 @@ $$
 :::
 
 ::: {.definition name="Standard Deviation"}
-Let $X$ be a random variable with $\E[X^2] < \infty$. The _standard deviation_ of $X$ is defined as
+Let $X$ be a random variable with $E[X^2] < \infty$. The _standard deviation_ of $X$ is defined as
 $$
 \sigma(X) = \sd(X) := \sqrt{\Var[X]}.
 $$
@@ -331,8 +331,8 @@ $$
 Let $X$ and $Y$ be random variables with finite expected value. The _covariance_ of $X$ and $Y$ is defined as
 $$
 \begin{align*}
-\Cov(X, Y) :&=\ \E\left[ (X - \E[X]) (Y - \E[Y]) \right] \\
-            &=\ \E[XY] - \E[X]\E[Y]
+\Cov(X, Y) :&=\ E\left[ (X - E[X]) (Y - E[Y]) \right] \\
+            &=\ E[XY] - E[X]E[Y]
 \end{align*}
 $$
 :::
@@ -392,7 +392,7 @@ $$
 ::: {.theorem name="Markov's Inequality"}
 Let $X$ be a random variable and $g : \mathscr{W}(X) \to [0, \infty)$ be an increasing function, then, for all $c$ with $g(c) > 0$, we have
 $$
-P[X \geq c] \leq \frac{\E[g(X)]}{g(x)}.
+P[X \geq c] \leq \frac{E[g(X)]}{g(x)}.
 $$
 
 > For practical uses usually $g(x) = x$.
@@ -401,19 +401,19 @@ $$
 ::: {.theorem name="Chebyshev's Inequality"}
 Let $X$ be a random variable with $\Var[X] < \infty$, then, if $k > 0$,
 $$
-P\left[ \lvert X - \E[X] \rvert \geq k \right] \leq \frac{\Var[X]}{k^2}.
+P\left[ \lvert X - E[X] \rvert \geq k \right] \leq \frac{\Var[X]}{k^2}.
 $$
 
 |         |Lower Bound|  |Upper Bound|
 |:--------|:---------:|--|:---------:|
-|$k$ units|$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert < k \right] \geq 1 - \frac{\Var[X]}{k^2}$| |$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert \geq k \right] \leq \frac{\Var[X]}{k^2}$|
-|$r$ standard deviations|$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert < r\  \sd(X) \right] \geq 1 - \frac{1}{r^2}$| |$\displaystyle P\left[ \left\lvert X - \E[X] \right\rvert \geq r\ \sd(X) \right] \leq \frac{1}{r^2}$|
+|$k$ units|$\displaystyle P\left[ \left\lvert X - E[X] \right\rvert < k \right] \geq 1 - \frac{\Var[X]}{k^2}$| |$\displaystyle P\left[ \left\lvert X - E[X] \right\rvert \geq k \right] \leq \frac{\Var[X]}{k^2}$|
+|$r$ standard deviations|$\displaystyle P\left[ \left\lvert X - E[X] \right\rvert < r\  \sd(X) \right] \geq 1 - \frac{1}{r^2}$| |$\displaystyle P\left[ \left\lvert X - E[X] \right\rvert \geq r\ \sd(X) \right] \leq \frac{1}{r^2}$|
 :::
 
 ::: {.theorem name="Jensen's Inequality"}
 If $X$ is a random variable and $\varphi$ is a convex function, then
 $$
-\varphi\left(\E[X]\right) \leq \E\left[\varphi(X)\right].
+\varphi\left(E[X]\right) \leq E\left[\varphi(X)\right].
 $$
 :::
 
@@ -505,7 +505,7 @@ $$
 ::: {.definition name="Joint Expected Value"}
 The _joint expected value_ of a random variable $Y = g(X_1, \dots, X_n) = g(X)$ is defined as
 $$
-\E[Y] =
+E[Y] =
 \begin{cases}
 \displaystyle \sum_{t_1} \cdots \sum_{t_n} g(t) f_X(t), & \text{discrete} \\
 \displaystyle \int_{-\infty}^{\infty} \cdots \int_{-\infty}^{\infty} g(t)f_X(t)dt, & \text{continuous}
@@ -517,7 +517,7 @@ where $t = (t_1, \dots, t_n)$, and in the discrete case $t_k \in \mathscr{W}(X_k
 ::: {.definition name="Conditional Expected Value"}
 The _conditional expected value_ of random variables $X$ and $Y$ is defined as
 $$
-\E[X\mid Y] :=
+E[X\mid Y] :=
 \begin{cases}
 \displaystyle \sum_{x \in \R} x \cdot f_{X\mid Y}(x\mid y), & \text{discrete} \\
 \displaystyle \int_{-\infty}^\infty x \cdot f_{X\mid Y}(x\mid y)dx,  & \text{continuous}
@@ -528,9 +528,9 @@ $$
 ::: {.remark}
 <br/>
 
-* $\E[X] = \E[\E[X\mid Y]]$,
-* $\E[X\mid Y] = \E[X]$ if $X$ and $Y$ are independent, and
-* $\Var[X] = \E\left[\Var[X \mid Y]\right] + \Var\left[\E[X \mid Y]\right]$.
+* $E[X] = E[E[X\mid Y]]$,
+* $E[X\mid Y] = E[X]$ if $X$ and $Y$ are independent, and
+* $\Var[X] = E\left[\Var[X \mid Y]\right] + \Var\left[E[X \mid Y]\right]$.
 :::
 
 ::: {.definition}
@@ -581,12 +581,12 @@ $$
 I &=\ \int_a^b g(x)dx \\
   &=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
   &=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\Unif}(x) dx \\
-  &=\ (b - a) \cdot \E[g(\Unif)]
+  &=\ (b - a) \cdot E[g(\Unif)]
 \end{align*}
 $$
-where $\Unif(a,b)$ is uniformly distributed. Then, by the **Law of Large Numbers**, we know that we can approximate $\E[g(\Unif)]$ by randomly sampling $u_1, u_2, \dots$ from $\Unif(a,b)$.
+where $\Unif(a,b)$ is uniformly distributed. Then, by the **Law of Large Numbers**, we know that we can approximate $E[g(\Unif)]$ by randomly sampling $u_1, u_2, \dots$ from $\Unif(a,b)$.
 $$
-\frac{b - a}{n} \sum_{i=1}^n g(u_i) \underset{n\to\infty}{\longrightarrow} (b - a) \cdot \E[g(\Unif)].
+\frac{b - a}{n} \sum_{i=1}^n g(u_i) \underset{n\to\infty}{\longrightarrow} (b - a) \cdot E[g(\Unif)].
 $$
 :::
 
