@@ -69,8 +69,8 @@ h1 a[title] {
   text-align: center;
 }
 .thesis-cover img {
-  width: 95%;
-  box-shadow: 0 0.5rem 1rem var(--nord0);
+  width: 100%;
+  box-shadow: 0 0 0 0.3rem var(--nord3);
 }
 
 .byline {
