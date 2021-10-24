@@ -28,7 +28,7 @@ a {
 
 .sidebar-book a,
 .sidebar-chapter a {
-  color: darkgray;
+  color: var(--nord0);
 }
 
 .sidebar-book:hover a,
