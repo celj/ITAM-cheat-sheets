@@ -1,10 +1,29 @@
 :root {
-  --theme-color1: #4c566a;
-  --theme-color2: #2e3440;
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+}
+
+:root {
+  --nord3: #4c566a;
+  --nord0: #2e3440;
 }
 
 a {
-  color: var(--theme-color1);
+  color: var(--nord3);
 }
 
 .sidebar-book a,
@@ -14,17 +33,16 @@ a {
 
 .sidebar-book:hover a,
 .sidebar-chapter:hover a {
-  color: var(--theme-color1);
+  color: var(--nord3);
 }
 
 h1 a[title] {
-  color: var(--theme-color2);
+  color: var(--nord0);
 }
 
 .container-fluid > .row {
   margin-top: 1.8em;
 }
-
 
 .sidebar-book,
 .sidebar-chapter {
@@ -43,18 +61,16 @@ h1 a[title] {
   margin-bottom: 1em;
 }
 
-
 .bg-primary {
-  background-color: var(--theme-color2) !important;
+  background-color: var(--nord0) !important;
 }
-
 
 .thesis-cover p {
   text-align: center;
 }
 .thesis-cover img {
   width: 95%;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  box-shadow: 0 0.5rem 1rem var(--nord0);
 }
 
 .byline {
@@ -65,9 +81,9 @@ h1 a[title] {
   text-align: center;
   padding: 0.01em;
   position: relative;
-  background: #bf616a;
+  background: var(--nord11);
   margin-top: 25px;
   margin-bottom: 25px;
-  color: #f8f9fb;
+  color: var(--nord6);
   border-radius: 5px;
 }
