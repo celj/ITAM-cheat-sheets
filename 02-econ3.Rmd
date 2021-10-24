@@ -11,10 +11,10 @@ knit: (function(input, ...) {
 # Economics 3
 
 You can find this cheat sheet as a `pdf` file in Spanish.
-Just click [here](files/02-econ3.pdf) or on the image below.
+Just click [here](files/02-econ3.pdf) or on the icon below.
 
 ::: {.row}
 :::::: {.col-sm-6 .thesis-cover}
-<a href="files/02-econ3.pdf"><img src="figures/02-econ3.png"/></a>
+<a href="files/02-econ3.pdf"><img src="figures/02-econ3.png" style="width:20%; box-shadow:none;"/></a>
 ::::::
 :::

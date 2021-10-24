@@ -84,7 +84,7 @@ output:
     includes:
       in_header: "header.html"
     theme:
-      bg: "#f8f9fb"
+      bg: "#eceff4"
       fg: "#4c566a"
       primary: "#a3be8c"
       secondary: "#2e3440"

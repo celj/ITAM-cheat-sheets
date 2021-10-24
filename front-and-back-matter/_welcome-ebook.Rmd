@@ -12,6 +12,6 @@ Last update: `r format(Sys.time(), "%A, %d %B %Y")`
 ::::::
 
 :::::: {.col-sm-6 .thesis-cover}
-<a href="https://www.itam.mx/"><img src="templates/cover.png" style="background-color:#2e3440;"/></a>
+<a href="https://www.itam.mx/"><img src="templates/cover.png" style="background-color:var(--nord0);"/></a>
 ::::::
 :::
