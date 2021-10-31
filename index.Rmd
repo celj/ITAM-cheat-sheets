@@ -148,6 +148,7 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\Par}{\text{Pareto}}
 \newcommand{\plim}{\overset{p}{\longrightarrow}}
 \newcommand{\Poi}{\text{Poisson}}
+\newcommand{\pos}{\text{pos}}
 \newcommand{\Q}{\mathscr{Q}}
 \newcommand{\R}{\mathscr{R}}
 \newcommand{\rk}{\text{rk}}

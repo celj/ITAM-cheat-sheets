@@ -992,7 +992,294 @@ b^-(S) := \left\{ p \in \mathscr{R}^n : \min_{x \in S}\ \text{is well-defined} \
 <h2>
 <span class="header-section-number">1.7</span> Nonlinear Programming<a class="anchor" aria-label="anchor" href="#nonlinear-programming"><i class="fas fa-link"></i></a>
 </h2>
+<div id="minimization-problems" class="section level3 unnumbered">
+<h3>Minimization Problems<a class="anchor" aria-label="anchor" href="#minimization-problems"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-169" class="definition"><strong>Definition 1.67  (Nonlinear Programming Problem) </strong></span>Let <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span>, <span class="math inline">\(g_1 : \mathscr{R}^n \to \mathscr{R}\)</span>, . . . , <span class="math inline">\(g_m : \mathscr{R}^n \to \mathscr{R}\)</span> be differentiable functions. The <em>NLP problem</em> is</p>
+<p><span class="math display">\[
+\begin{align}
+\min_{x \in \mathscr{R}^n} \quad &amp; f(x) \\
+\text{subject to} \quad &amp; g_1(x) \geq 0, \\
+                        &amp; \quad \vdots \\
+                        &amp; g_m(x) \geq 0.
+\end{align}
+\]</span></p>
+</div>
+<div id="kuhn-tucker-necessity-conditions" class="section level4 unnumbered">
+<h4>
+<strong>Kuhn-Tucker Necessity Conditions</strong><a class="anchor" aria-label="anchor" href="#kuhn-tucker-necessity-conditions"><i class="fas fa-link"></i></a>
+</h4>
+<div class="definition">
+<p><span id="def:unlabeled-div-170" class="definition"><strong>Definition 1.68  (Kuhn-Tucker Pair for NLP) </strong></span>A pair <span class="math inline">\(\left(\bar{x}, \bar{\lambda}\right) \in \mathscr{R}^{n + m}\)</span> is a <em>Kuhn-Tucker pair for NLP</em> if</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(g_i\left(\bar{x}\right) \geq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>,</li>
+<li>
+<span class="math inline">\(\bar{\lambda}_i \geq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>,</li>
+<li>
+<span class="math inline">\(\displaystyle \nabla f\left(\bar{x}\right) = \sum_{i = 1}^m \nabla g_i\left(\bar{x}\right)\bar{\lambda}_i\)</span>, and</li>
+<li>
+<span class="math inline">\(\bar{\lambda}_i g_i\left(\bar{x}\right) = 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>.</li>
+</ol>
+<p>We will say that <span class="math inline">\(\bar{x}\)</span> satisfies the Kuhn-Tucker conditions for NLP if there exists some <span class="math inline">\(\bar{\lambda}\)</span> such that <span class="math inline">\(\left( \bar{x}, \bar{\lambda} \right)\)</span> is a Kuhn-Tucker pair for NLP.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-171" class="definition"><strong>Definition 1.69  (Active Constraints) </strong></span>For any <span class="math inline">\(x \in \mathscr{R}^n\)</span>, let <span class="math inline">\(I(x) = \left\{ i = 1, \dots, m : g_i(x) = 0 \right\}\)</span>. Hence <span class="math inline">\(I(x)\)</span> is the set of <em>active constraints</em> at <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-172" class="lemma"><strong>Lemma 1.4  </strong></span>Suppose that <span class="math inline">\(\left( \bar{x}, \bar{\lambda} \right)\)</span> is a Kuhn-Tucker pair for NLP. If <span class="math inline">\(I\left(\bar{x}\right) = \varnothing\)</span>, then <span class="math inline">\(\nabla f\left(\bar{x}\right) = 0\)</span>. If <span class="math inline">\(I\left(\bar{x}\right) \neq \varnothing\)</span>, then <span class="math inline">\(\displaystyle \nabla f\left(\bar{x}\right) = \sum_{i = 1}^m \nabla g_i\left(\bar{x}\right)\bar{\lambda}_i\)</span>.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-173" class="lemma"><strong>Lemma 1.5  </strong></span>Suppose that</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(g_i\left(\bar{x}\right) \geq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>, and</li>
+<li>
+<span class="math inline">\(\left\{ \bar{\mu}_i \right\}_{i \in I\left(\bar{x}\right)}\)</span> is a collection of non-negative numbers satisfying <span class="math inline">\(\displaystyle \nabla f\left(\bar{x}\right) = \sum_{i \in I\left(\bar{x}\right)} \nabla g_i\left(\bar{x}\right)\bar{\mu}_i\)</span>.</li>
+</ol>
+<p>If <span class="math inline">\(\bar{\lambda}_i = \bar{\mu}_i\)</span> for all <span class="math inline">\(i \in I\left(\bar{x}\right)\)</span> and <span class="math inline">\(\bar{\lambda}_i = 0\)</span> for all <span class="math inline">\(i \notin I\left(\bar{x}\right)\)</span>, then <span class="math inline">\(\left( \bar{x}, \bar{\lambda} \right)\)</span> is a Kuhn-Tucker pair for NLP.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-174" class="definition"><strong>Definition 1.70  (Linear Programming Problem) </strong></span>For <span class="math inline">\(a_1, \dots, a_m, c \in \mathscr{R}^n\)</span> and <span class="math inline">\(b_1, \dots, b_m \in \mathscr{R}\)</span>, consider the following <em>LP problem</em>:</p>
+<p><span class="math display">\[
+\begin{align}
+\min_{x \in \mathscr{R}^n} \quad &amp; c \cdot x \\
+\text{subject to} \quad &amp; a_1 \cdot x \geq b_1, \\
+                        &amp; \qquad \vdots \\
+                        &amp; a_m \cdot x \geq b_m.
+\end{align}
+\]</span>
+LP is a special case of NLP where <span class="math inline">\(f(x) = c \cdot x\)</span> and <span class="math inline">\(g_i(x) = a_i \cdot x - b_i\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-175" class="definition"><strong>Definition 1.71  (Kuhn-Tucker Pair for LP) </strong></span>A pair <span class="math inline">\(\left(\bar{x}, \bar{\lambda}\right) \in \mathscr{R}^{n + m}\)</span> is a <em>Kuhn-Tucker pair for LP</em> if</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(a_i \cdot \bar{x} \geq b_i\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>,</li>
+<li>
+<span class="math inline">\(\bar{\lambda}_i \geq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>,</li>
+<li>
+<span class="math inline">\(\displaystyle c = \sum_{i = 1}^m a_i\bar{\lambda}_i\)</span>, and</li>
+<li>
+<span class="math inline">\(\bar{\lambda}_i \left( a_i \cdot \bar{x} - b_i \right) = 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-176" class="theorem"><strong>Theorem 1.65  </strong></span>Suppose that <span class="math inline">\(A = \left[ a_1 \mid \cdots \mid a_m \right]\)</span> and <span class="math inline">\(a_i \in \mathscr{R}^n\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>. Then the set</p>
+<p><span class="math display">\[
+\text{pos}A := \left\{ Au : u \in \mathscr{R}^m_+ \right\}
+\]</span></p>
+<p>is a non-empty, closed and convex cone.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-177" class="theorem"><strong>Theorem 1.66  </strong></span>If <span class="math inline">\(\bar{x}\)</span> solves the LP problem, then there exists some <span class="math inline">\(\bar{\lambda}\)</span> such that <span class="math inline">\(\left(\bar{x}, \bar{\lambda}\right) \in \mathscr{R}^{n + m}\)</span> is a Kuhn-Tucker pair for LP.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-178" class="definition"><strong>Definition 1.72  (General Constraint Qualification) </strong></span>A solution <span class="math inline">\(\bar{x}\)</span> to the NLP problem satisfies the <em>general constraint qualification (GCQ) condition</em> if it solves the following LP problem:</p>
+<p><span class="math display">\[
+\begin{align}
+\min_{x \in \mathscr{R}^n} \quad &amp; \nabla f\left(\bar{x}\right) \cdot x \\
+\text{subject to} \quad &amp; g_i\left(\bar{x}\right) + \nabla g_i\left(\bar{x}\right) \cdot \left(x - \bar{x}\right) \geq 0,\ \forall i = 1, \dots, m.
+\end{align}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-179" class="theorem"><strong>Theorem 1.67  </strong></span>If <span class="math inline">\(\bar{x}\)</span> solves the NLP problem and satisfies the GCQ condition, then it satisfies the KT conditions for NLP.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-180" class="definition"><strong>Definition 1.73  (Cottle Constraint Qualification) </strong></span>A solution <span class="math inline">\(\bar{x}\)</span> to the NLP problem satisfies the <em>Cottle constraint qualification (CCQ) condition</em> if there exists some <span class="math inline">\(z \in \mathscr{R}^n\)</span> such that <span class="math inline">\(\nabla g_i \left(\bar{x}\right) \cdot z &gt; 0\)</span> for all <span class="math inline">\(i \in I\left(\bar{x}\right)\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-181" class="theorem"><strong>Theorem 1.68  </strong></span>Suppose <span class="math inline">\(\bar{x}\)</span> solves the NLP problem. If <span class="math inline">\(\bar{x}\)</span> satisfies the CCQ condition, then it satisfies the GCQ condition.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-182" class="definition"><strong>Definition 1.74  (Linear Independence Constraint Qualification) </strong></span>A solution <span class="math inline">\(\bar{x}\)</span> to the NLP problem satisfies the <em>linear independence constraint qualification (LICQ) condition</em> is the collection <span class="math inline">\(\left\{ \nabla g_i \left(\bar{x}\right) \right\}_{i \in I\left(\bar{x}\right)}\)</span> is linearly independent.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-183" class="theorem"><strong>Theorem 1.69  </strong></span>Suppose <span class="math inline">\(\bar{x}\)</span> solves the NLP problem. If <span class="math inline">\(\bar{x}\)</span> satisfies the LICQ condition, then it satisfies the CCQ condition.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-184" class="corollary"><strong>Corollary 1.7  </strong></span>Suppose <span class="math inline">\(\bar{x}\)</span> solves the NLP problem. If <span class="math inline">\(\bar{x}\)</span> satisfies the LICQ condition, then it satisfies the KT conditions for NLP.</p>
+</div>
+</div>
+<div id="kuhn-tucker-sufficiency-conditions" class="section level4 unnumbered">
+<h4>
+<strong>Kuhn-Tucker Sufficiency Conditions</strong><a class="anchor" aria-label="anchor" href="#kuhn-tucker-sufficiency-conditions"><i class="fas fa-link"></i></a>
+</h4>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-185" class="theorem"><strong>Theorem 1.70  </strong></span>Let <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span> be differentiable. Then</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(f\)</span> is convex if and only if <span class="math inline">\(f(y) - f(x) \geq \nabla f(x) \cdot (y - x)\)</span>, and</li>
+<li>
+<span class="math inline">\(f\)</span> is concave if and only if <span class="math inline">\(f(y) - f(x) \leq \nabla f(x) \cdot (y - x)\)</span>,</li>
+</ol>
+<p>for every <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-186" class="theorem"><strong>Theorem 1.71  </strong></span>Suppose <span class="math inline">\(\bar{x} \in \mathscr{R}^n\)</span> satisfies the KT conditions for NLP. If <span class="math inline">\(f\)</span> is convex and each <span class="math inline">\(g_i\)</span> is concave, then <span class="math inline">\(\bar{x}\)</span> solves the NLP problem.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-187" class="definition"><strong>Definition 1.75  (Quasi-convex / Quasi-concave) </strong></span>A function <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span> is <em>quasi-convex / quasi-concave</em> if the lower-contour set <span class="math inline">\(\left\{ x \in \mathscr{R}^n : f(x) \leq \alpha \right\}\)</span> / the upper-contour set <span class="math inline">\(\left\{ x \in \mathscr{R}^n : f(x) \geq \alpha \right\}\)</span> is convex for every <span class="math inline">\(\alpha \in \mathscr{R}\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-188" class="theorem"><strong>Theorem 1.72  </strong></span>Let <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span> be differentiable. Then</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(f\)</span> is quasi-concave if and only if <span class="math inline">\(f(y) - f(x) \geq 0 \implies \nabla f(x) \cdot (y - x) \geq 0\)</span>, and</li>
+<li>
+<span class="math inline">\(f\)</span> is quasi-convex if and only if <span class="math inline">\(f(y) - f(x) \leq 0 \implies \nabla f(x) \cdot (y - x) \leq 0\)</span>,</li>
+</ol>
+<p>for every <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-189" class="definition"><strong>Definition 1.76  (Pseudo-convex / Pseudo-concave) </strong></span>A differentiable function <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span> is <em>pseudo-convex</em> if, for every <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, <span class="math inline">\(\nabla f(x) \cdot (y - x) \geq 0\)</span> implies <span class="math inline">\(f(y) - f(x) \geq 0\)</span>. A differentiable function <span class="math inline">\(f : \mathscr{R}^n \to \mathscr{R}\)</span> is <em>pseudo-concave</em> if, for every <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, <span class="math inline">\(\nabla f(x) \cdot (y - x) \leq 0\)</span> implies <span class="math inline">\(f(y) - f(x) \leq 0\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-190" class="theorem"><strong>Theorem 1.73  </strong></span>Suppose <span class="math inline">\(\left(\bar{x}, \bar{\lambda}\right)\)</span> is a KT pair for NLP. If <span class="math inline">\(f\)</span> is pseudo-convex and every <span class="math inline">\(g_i\)</span> is quasi-concave, then <span class="math inline">\(x\)</span> solves the NLP problem.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-191" class="theorem"><strong>Theorem 1.74  </strong></span>Suppose <span class="math inline">\(\bar{x}\)</span> solves the NLP. If each <span class="math inline">\(g_i\)</span> is concave and if there exists <span class="math inline">\(x^*\)</span> such that <span class="math inline">\(g_i(x^*) &gt; 0\)</span> for all <span class="math inline">\(i\)</span>, then <span class="math inline">\(\bar{x}\)</span> satisfies the CCQ condition.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-192" class="remark"><em>Remark</em>. </span>For a NLP problem with concave constraints, the existence of an <span class="math inline">\(x^*\)</span> such that <span class="math inline">\(g_i(x^*) &gt; 0\)</span> for all <span class="math inline">\(i\)</span> is called the <em>Slater constraint qualification</em> condition.</p>
+</div>
+</div>
+<div id="comparative-statics" class="section level4 unnumbered">
+<h4>
+<strong>Comparative Statics</strong><a class="anchor" aria-label="anchor" href="#comparative-statics"><i class="fas fa-link"></i></a>
+</h4>
+<p>Consider the problem <span class="math inline">\(\displaystyle \min_{x \in \mathscr{R}^n} F(x, \alpha)\)</span> subject to <span class="math inline">\(G_i (x, \alpha) \geq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>, where <span class="math inline">\(\alpha \in \mathscr{R}^p\)</span> and all functions are differentiable. Call this problem <span class="math inline">\(P_\alpha\)</span>. Let <span class="math inline">\(v(\alpha)\)</span> be the value of <span class="math inline">\(P_\alpha\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-193" class="definition"><strong>Definition 1.77  (Regular Solution) </strong></span>A vector <span class="math inline">\(\bar{x} \in \mathscr{R}^n\)</span> is a <em>regular solution to <span class="math inline">\(P_\bar{\alpha}\)</span></em> if there exist <span class="math inline">\(\varepsilon &gt; 0\)</span> and <span class="math inline">\(\hat{x} : B_\varepsilon (\bar{\alpha}) \to \mathscr{R}^n\)</span> such that</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(\bar{x}\)</span> satisfies the KT conditions,</li>
+<li>
+<span class="math inline">\(\hat{x} (\alpha)\)</span> solves the problem <span class="math inline">\(P_\alpha\)</span> for every <span class="math inline">\(\alpha \in B_\varepsilon (\bar{\alpha})\)</span> and <span class="math inline">\(\hat{x}(\bar{\alpha}) = \bar{x}\)</span>,</li>
+<li>
+<span class="math inline">\(I(\hat{x}(\alpha)) = I(\bar{x})\)</span> for all <span class="math inline">\(\alpha \in B_\varepsilon (\bar{\alpha})\)</span>, and</li>
+<li>
+<span class="math inline">\(\hat{x}\)</span> is differentiable at <span class="math inline">\(\bar{\alpha}\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-194" class="theorem"><strong>Theorem 1.75  </strong></span>Suppose that <span class="math inline">\(\bar{x}\)</span> is a regular solution to <span class="math inline">\(P_\bar{\alpha}\)</span> with associated multiplier vector <span class="math inline">\(\bar{\lambda}\)</span>. Then</p>
+<p><span class="math display">\[
+\nabla v (\bar{\alpha}) = \nabla_\alpha F (\bar{x}, \bar{\alpha}) - \sum_{i = 1}^m \bar{\lambda}_i \nabla_\alpha G_i (\bar{x}, \bar{\alpha}).
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-195" class="remark"><em>Remark</em>. </span>Suppose that <span class="math inline">\(\bar{x}\)</span> is a regular solution to <span class="math inline">\(P_\bar{\alpha}\)</span> with associated multiplier vector <span class="math inline">\(\bar{\lambda}\)</span>. If <span class="math inline">\(m = 0\)</span>, then <span class="math inline">\(\nabla v(\bar{\alpha}) = \nabla_\alpha F(\bar{x}, \bar{\alpha})\)</span>. If <span class="math inline">\(p = m\)</span>, <span class="math inline">\(G_i (x, \alpha) = g_i(x) - \alpha_i\)</span>, and <span class="math inline">\(F(x, \alpha) = f(x)\)</span>, then <span class="math inline">\(\nabla v(\bar{\alpha}) = \bar{\lambda}\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="maximization-problems" class="section level3 unnumbered">
+<h3>Maximization Problems<a class="anchor" aria-label="anchor" href="#maximization-problems"><i class="fas fa-link"></i></a>
+</h3>
+<p>Consider the problem <span class="math inline">\(\max f(x)\)</span> subject to <span class="math inline">\(g_i (x) \leq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span> where all function are differentiable. Let <span class="math inline">\(I(x) = \left\{ i : g_i(x) = 0 \right\}\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-196" class="theorem"><strong>Theorem 1.76  </strong></span>If <span class="math inline">\(\bar{x}\)</span> solves the maximization problem above and <span class="math inline">\(\displaystyle \left\{\nabla g_i (\bar{x})\right\}_{i \in I(\bar{x})}\)</span> is a linearly independent set, then there exists <span class="math inline">\(\bar{\lambda} \in \mathscr{R}^m_+\)</span> such that <span class="math inline">\(\displaystyle \nabla f(\bar{x}) = \sum_{i=1}^m \bar{\lambda}_i \nabla g_i (\bar{x})\)</span> and <span class="math inline">\(\bar{\lambda}_i g_i (\bar{x}) = 0\)</span> for all <span class="math inline">\(i\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-197" class="theorem"><strong>Theorem 1.77  </strong></span>Suppose that</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(g_i(\bar{x}) \leq 0\)</span> for all <span class="math inline">\(i = 1, \dots, m\)</span>,</li>
+<li>there exists a set <span class="math inline">\(\displaystyle \left\{\bar{\lambda}_i\right\}_{i \in I(\bar{x})}\)</span> of positive numbers such that <span class="math inline">\(\displaystyle \nabla f(\bar{x}) = \sum_{i\in I(\bar{x})} \bar{\lambda}_i \nabla g_i (\bar{x})\)</span>,</li>
+<li>
+<span class="math inline">\(f\)</span> is pseudo-concave, and</li>
+<li>each <span class="math inline">\(g_i\)</span> is quasi-convex.</li>
+</ol>
+<p>Then <span class="math inline">\(\bar{x}\)</span> solves the maximization problem above.</p>
+</div>
+</div>
+<div id="consumer-theory" class="section level3 unnumbered">
+<h3>Consumer Theory<a class="anchor" aria-label="anchor" href="#consumer-theory"><i class="fas fa-link"></i></a>
+</h3>
+<div id="utility-maximization" class="section level4 unnumbered">
+<h4>
+<strong>Utility Maximization</strong><a class="anchor" aria-label="anchor" href="#utility-maximization"><i class="fas fa-link"></i></a>
+</h4>
+<p>Consider the following utility maximization problem</p>
+<p><span class="math display">\[
+\begin{align}
+\max_{x \in \mathscr{R}^n} \quad &amp; u(x) \\
+\text{subject to} \quad &amp; p \cdot x \leq y, \\
+                        &amp; x \geq 0.
+\end{align}
+\]</span></p>
+<p>The KT conditions are</p>
+<p><span class="math display">\[
+\begin{array}{ccc}
+\nabla u(x) \leq \lambda p &amp; x \geq 0 &amp; \left[ \nabla u(x) - \lambda p \right] \cdot x = 0 \\
+p \cdot x \leq y &amp; \lambda \geq 0 &amp; \left( p \cdot x - y \right) \lambda = 0
+\end{array}
+\]</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-198" class="remark"><em>Remark</em>. </span><span class="math inline">\(\lambda\)</span> is interpreted as the <em>marginal utility of income</em>. Call the solutions <span class="math inline">\(x(p,y)\)</span> the <em>demand functions</em> and <span class="math inline">\(v(p,y) := u(x(p,y))\)</span> the <em>indirect utility function</em>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-199" class="remark"><em>Remark</em> (Indirect Utility Function Properties). </span><br></p>
+<ol style="list-style-type: decimal">
+<li>Zero degree homogeneity.</li>
+<li>
+<span class="math inline">\(v\)</span> is non-decreasing in <span class="math inline">\(y\)</span>, and non-increasing in <span class="math inline">\(p\)</span>.</li>
+<li>
+<span class="math inline">\(v\)</span> is quasi-convex in <span class="math inline">\((p,y)\)</span>.</li>
+</ol>
+</div>
+</div>
+<div id="expenditure-minimization" class="section level4 unnumbered">
+<h4>
+<strong>Expenditure Minimization</strong><a class="anchor" aria-label="anchor" href="#expenditure-minimization"><i class="fas fa-link"></i></a>
+</h4>
+<p>Consider the following expenditure minization problem</p>
+<p><span class="math display">\[
+\begin{align}
+\min_{x \in \mathscr{R}^n} \quad &amp; p \cdot x \\
+\text{subject to} \quad &amp; u(x) \geq \bar{u}, \\
+                        &amp; x \geq 0.
+\end{align}
+\]</span></p>
+<div class="remark">
+<p><span id="unlabeled-div-200" class="remark"><em>Remark</em>. </span>Let <span class="math inline">\(h(p, \bar{u})\)</span> be the solution and <span class="math inline">\(e(p,\bar{u}) := p \cdot h(p, \bar{u})\)</span>. The <em>expenditure function</em> <span class="math inline">\(e\)</span> is mathematically identical to the cost function.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-201" class="remark"><em>Remark</em> (Expenditure Function Properties). </span><br></p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(e(\cdot, \bar{u})\)</span> is 1-homogeneous.</li>
+<li>
+<span class="math inline">\(e(\cdot, \bar{u})\)</span> is non-decreasing.</li>
+<li>
+<span class="math inline">\(e(\cdot, \bar{u})\)</span> is concave.</li>
+<li>By Shephard’s Lemma, <span class="math inline">\(\displaystyle \frac{\partial e}{\partial p_i} = h_i (p, \bar{u})\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-202" class="theorem"><strong>Theorem 1.78  (Roy's Identity) </strong></span><span class="math display">\[
+x_i(p,y) = -\frac{\displaystyle \frac{\partial v}{\partial p_i}}{\displaystyle \frac{\partial v}{\partial y}}.
+\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-203" class="remark"><em>Remark</em> (Relationships between utility maximization and expenditure minimization). </span><br></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(h(p,v(p,y)) = x(p,y)\)</span></li>
+<li><span class="math inline">\(x(p,e(p,\bar{u})) = h(p,\bar{u})\)</span></li>
+<li><span class="math inline">\(e(p,v(p,y)) = y\)</span></li>
+<li><span class="math inline">\(v(p,e(p,\bar{u})) = \bar{u}\)</span></li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-204" class="theorem"><strong>Theorem 1.79  (Slutsky) </strong></span><span class="math display">\[
+\frac{\partial x_i}{\partial p_j} (p,y) = \frac{\partial h_i}{\partial p_j} (p,v(p,y)) - x_j \frac{\partial x_i}{\partial y} (p,y),\ \forall i \neq j.
+\]</span></p>
+</div>
 
+</div>
+</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -1028,7 +1315,13 @@ b^-(S) := \left\{ p \in \mathscr{R}^n : \min_{x \in S}\ \text{is well-defined} \
 <li><a class="nav-link" href="#minimization">Minimization</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#nonlinear-programming"><span class="header-section-number">1.7</span> Nonlinear Programming</a></li>
+<li>
+<a class="nav-link" href="#nonlinear-programming"><span class="header-section-number">1.7</span> Nonlinear Programming</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#minimization-problems">Minimization Problems</a></li>
+<li><a class="nav-link" href="#maximization-problems">Maximization Problems</a></li>
+<li><a class="nav-link" href="#consumer-theory">Consumer Theory</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">

@@ -991,29 +991,288 @@ Let $S \subseteq \R^n$ be non-empty.
 
 ## Nonlinear Programming
 
+### Minimization Problems {-}
 
+::: {.definition name="Nonlinear Programming Problem"}
+Let $f : \R^n \to \R$, $g_1 : \R^n \to \R$, . . . , $g_m : \R^n \to \R$ be differentiable functions. The *NLP problem* is
 
+$$
+\begin{align}
+\min_{x \in \R^n} \quad & f(x) \\
+\text{subject to} \quad & g_1(x) \geq 0, \\
+                        & \quad \vdots \\
+                        & g_m(x) \geq 0.
+\end{align}
+$$
+:::
 
+#### **Kuhn-Tucker Necessity Conditions** {-}
 
+::: {.definition name="Kuhn-Tucker Pair for NLP"}
+A pair $\left(\bar{x}, \bar{\lambda}\right) \in \R^{n + m}$ is a *Kuhn-Tucker pair for NLP* if
 
+1. $g_i\left(\bar{x}\right) \geq 0$ for all $i = 1, \dots, m$,
+2. $\bar{\lambda}_i \geq 0$ for all $i = 1, \dots, m$,
+3. $\displaystyle \nabla f\left(\bar{x}\right) = \sum_{i = 1}^m \nabla g_i\left(\bar{x}\right)\bar{\lambda}_i$, and
+4. $\bar{\lambda}_i g_i\left(\bar{x}\right) = 0$ for all $i = 1, \dots, m$.
 
+We will say that $\bar{x}$ satisfies the Kuhn-Tucker conditions for NLP if there exists some $\bar{\lambda}$ such that $\left( \bar{x}, \bar{\lambda} \right)$ is a Kuhn-Tucker pair for NLP.
+:::
 
+::: {.definition name="Active Constraints"}
+For any $x \in \R^n$, let $I(x) = \left\{ i = 1, \dots, m : g_i(x) = 0 \right\}$. Hence $I(x)$ is the set of *active constraints* at $x$.
+:::
 
+::: {.lemma}
+Suppose that $\left( \bar{x}, \bar{\lambda} \right)$ is a Kuhn-Tucker pair for NLP. If $I\left(\bar{x}\right) = \O$, then $\nabla f\left(\bar{x}\right) = 0$. If $I\left(\bar{x}\right) \neq \O$, then $\displaystyle \nabla f\left(\bar{x}\right) = \sum_{i = 1}^m \nabla g_i\left(\bar{x}\right)\bar{\lambda}_i$.
+:::
 
+::: {.lemma}
+Suppose that
 
+1. $g_i\left(\bar{x}\right) \geq 0$ for all $i = 1, \dots, m$, and
+2. $\left\{ \bar{\mu}_i \right\}_{i \in I\left(\bar{x}\right)}$ is a collection of non-negative numbers satisfying $\displaystyle \nabla f\left(\bar{x}\right) = \sum_{i \in I\left(\bar{x}\right)} \nabla g_i\left(\bar{x}\right)\bar{\mu}_i$.
 
+If $\bar{\lambda}_i = \bar{\mu}_i$ for all $i \in I\left(\bar{x}\right)$ and $\bar{\lambda}_i = 0$ for all $i \notin I\left(\bar{x}\right)$, then $\left( \bar{x}, \bar{\lambda} \right)$ is a Kuhn-Tucker pair for NLP.
+:::
 
+::: {.definition name="Linear Programming Problem"}
+For $a_1, \dots, a_m, c \in \R^n$ and $b_1, \dots, b_m \in \R$, consider the following *LP problem*:
 
+$$
+\begin{align}
+\min_{x \in \R^n} \quad & c \cdot x \\
+\text{subject to} \quad & a_1 \cdot x \geq b_1, \\
+                        & \qquad \vdots \\
+                        & a_m \cdot x \geq b_m.
+\end{align}
+$$
+LP is a special case of NLP where $f(x) = c \cdot x$ and $g_i(x) = a_i \cdot x - b_i$.
+:::
 
+::: {.definition name="Kuhn-Tucker Pair for LP"}
+A pair $\left(\bar{x}, \bar{\lambda}\right) \in \R^{n + m}$ is a *Kuhn-Tucker pair for LP* if
 
+1. $a_i \cdot \bar{x} \geq b_i$ for all $i = 1, \dots, m$,
+2. $\bar{\lambda}_i \geq 0$ for all $i = 1, \dots, m$,
+3. $\displaystyle c = \sum_{i = 1}^m a_i\bar{\lambda}_i$, and
+4. $\bar{\lambda}_i \left( a_i \cdot \bar{x} - b_i \right) = 0$ for all $i = 1, \dots, m$.
+:::
 
+::: {.theorem}
+Suppose that $A = \left[ a_1 \mid \cdots \mid a_m \right]$ and $a_i \in \R^n$ for all $i = 1, \dots, m$. Then the set
 
+$$
+\pos A := \left\{ Au : u \in \R^m_+ \right\}
+$$
 
+is a non-empty, closed and convex cone.
+:::
 
+::: {.theorem}
+If $\bar{x}$ solves the LP problem, then there exists some $\bar{\lambda}$ such that $\left(\bar{x}, \bar{\lambda}\right) \in \R^{n + m}$ is a Kuhn-Tucker pair for LP.
+:::
 
+::: {.definition name="General Constraint Qualification"}
+A solution $\bar{x}$ to the NLP problem satisfies the *general constraint qualification (GCQ) condition* if it solves the following LP problem:
 
+$$
+\begin{align}
+\min_{x \in \R^n} \quad & \nabla f\left(\bar{x}\right) \cdot x \\
+\text{subject to} \quad & g_i\left(\bar{x}\right) + \nabla g_i\left(\bar{x}\right) \cdot \left(x - \bar{x}\right) \geq 0,\ \forall i = 1, \dots, m.
+\end{align}
+$$
+:::
 
+::: {.theorem}
+If $\bar{x}$ solves the NLP problem and satisfies the GCQ condition, then it satisfies the KT conditions for NLP.
+:::
 
+::: {.definition name="Cottle Constraint Qualification"}
+A solution $\bar{x}$ to the NLP problem satisfies the *Cottle constraint qualification (CCQ) condition* if there exists some $z \in \R^n$ such that $\nabla g_i \left(\bar{x}\right) \cdot z > 0$ for all $i \in I\left(\bar{x}\right)$.
+:::
 
+::: {.theorem}
+Suppose $\bar{x}$ solves the NLP problem. If $\bar{x}$ satisfies the CCQ condition, then it satisfies the GCQ condition.
+:::
 
+::: {.definition name="Linear Independence Constraint Qualification"}
+A solution $\bar{x}$ to the NLP problem satisfies the *linear independence constraint qualification (LICQ) condition* is the collection $\left\{ \nabla g_i \left(\bar{x}\right) \right\}_{i \in I\left(\bar{x}\right)}$ is linearly independent.
+:::
 
+::: {.theorem}
+Suppose $\bar{x}$ solves the NLP problem. If $\bar{x}$ satisfies the LICQ condition, then it satisfies the CCQ condition.
+:::
+
+::: {.corollary}
+Suppose $\bar{x}$ solves the NLP problem. If $\bar{x}$ satisfies the LICQ condition, then it satisfies the KT conditions for NLP.
+:::
+
+#### **Kuhn-Tucker Sufficiency Conditions** {-}
+
+::: {.theorem}
+Let $f : \R^n \to \R$ be differentiable. Then 
+
+1. $f$ is convex if and only if $f(y) - f(x) \geq \nabla f(x) \cdot (y - x)$, and
+2. $f$ is concave if and only if $f(y) - f(x) \leq \nabla f(x) \cdot (y - x)$,
+
+for every $x$ and $y$.
+:::
+
+::: {.theorem}
+Suppose $\bar{x} \in \R^n$ satisfies the KT conditions for NLP. If $f$ is convex and each $g_i$ is concave, then $\bar{x}$ solves the NLP problem.
+:::
+
+::: {.definition name="Quasi-convex / Quasi-concave"}
+A function $f : \R^n \to \R$ is *quasi-convex / quasi-concave* if the lower-contour set $\left\{ x \in \R^n : f(x) \leq \alpha \right\}$ / the upper-contour set $\left\{ x \in \R^n : f(x) \geq \alpha \right\}$ is convex for every $\alpha \in \R$.
+:::
+
+::: {.theorem}
+Let $f : \R^n \to \R$ be differentiable. Then 
+
+1. $f$ is quasi-concave if and only if $f(y) - f(x) \geq 0 \implies \nabla f(x) \cdot (y - x) \geq 0$, and
+2. $f$ is quasi-convex if and only if $f(y) - f(x) \leq 0 \implies \nabla f(x) \cdot (y - x) \leq 0$,
+
+for every $x$ and $y$.
+:::
+
+::: {.definition name="Pseudo-convex / Pseudo-concave"}
+A differentiable function $f : \R^n \to \R$ is *pseudo-convex* if, for every $x$ and $y$, $\nabla f(x) \cdot (y - x) \geq 0$ implies $f(y) - f(x) \geq 0$. A differentiable function $f : \R^n \to \R$ is *pseudo-concave* if, for every $x$ and $y$, $\nabla f(x) \cdot (y - x) \leq 0$ implies $f(y) - f(x) \leq 0$.
+:::
+
+::: {.theorem}
+Suppose $\left(\bar{x}, \bar{\lambda}\right)$ is a KT pair for NLP. If $f$ is pseudo-convex and every $g_i$ is quasi-concave, then $x$ solves the NLP problem.
+:::
+
+::: {.theorem}
+Suppose $\bar{x}$ solves the NLP. If each $g_i$ is concave and if there exists $x^*$ such that $g_i(x^*) > 0$ for all $i$, then $\bar{x}$ satisfies the CCQ condition.
+:::
+
+::: {.remark}
+For a NLP problem with concave constraints, the existence of an $x^*$ such that $g_i(x^*) > 0$ for all $i$ is called the *Slater constraint qualification* condition.
+:::
+
+#### **Comparative Statics** {-}
+
+Consider the problem $\displaystyle \min_{x \in \R^n} F(x, \alpha)$ subject to $G_i (x, \alpha) \geq 0$ for all $i = 1, \dots, m$, where $\alpha \in \R^p$ and all functions are differentiable. Call this problem $P_\alpha$. Let $v(\alpha)$ be the value of $P_\alpha$.
+
+::: {.definition name="Regular Solution"}
+A vector $\bar{x} \in \R^n$ is a *regular solution to $P_\bar{\alpha}$* if there exist $\varepsilon > 0$ and $\hat{x} : B_\varepsilon (\bar{\alpha}) \to \R^n$ such that
+
+1. $\bar{x}$ satisfies the KT conditions,
+2. $\hat{x} (\alpha)$ solves the problem $P_\alpha$ for every $\alpha \in B_\varepsilon (\bar{\alpha})$ and $\hat{x}(\bar{\alpha}) = \bar{x}$,
+3. $I(\hat{x}(\alpha)) = I(\bar{x})$ for all $\alpha \in B_\varepsilon (\bar{\alpha})$, and
+4. $\hat{x}$ is differentiable at $\bar{\alpha}$.
+:::
+
+::: {.theorem}
+Suppose that $\bar{x}$ is a regular solution to $P_\bar{\alpha}$ with associated multiplier vector $\bar{\lambda}$. Then
+
+$$
+\nabla v (\bar{\alpha}) = \nabla_\alpha F (\bar{x}, \bar{\alpha}) - \sum_{i = 1}^m \bar{\lambda}_i \nabla_\alpha G_i (\bar{x}, \bar{\alpha}).
+$$
+:::
+
+::: {.remark}
+Suppose that $\bar{x}$ is a regular solution to $P_\bar{\alpha}$ with associated multiplier vector $\bar{\lambda}$. If $m = 0$, then $\nabla v(\bar{\alpha}) = \nabla_\alpha F(\bar{x}, \bar{\alpha})$. If $p = m$, $G_i (x, \alpha) = g_i(x) - \alpha_i$, and $F(x, \alpha) = f(x)$, then $\nabla v(\bar{\alpha}) = \bar{\lambda}$.
+:::
+
+### Maximization Problems {-}
+
+Consider the problem $\max f(x)$ subject to $g_i (x) \leq 0$ for all $i = 1, \dots, m$ where all function are differentiable. Let $I(x) = \left\{ i : g_i(x) = 0 \right\}$.
+
+::: {.theorem}
+If $\bar{x}$ solves the maximization problem above and $\displaystyle \left\{\nabla g_i (\bar{x})\right\}_{i \in I(\bar{x})}$ is a linearly independent set, then there exists $\bar{\lambda} \in \R^m_+$ such that $\displaystyle \nabla f(\bar{x}) = \sum_{i=1}^m \bar{\lambda}_i \nabla g_i (\bar{x})$ and $\bar{\lambda}_i g_i (\bar{x}) = 0$ for all $i$.
+:::
+
+::: {.theorem}
+Suppose that
+
+1. $g_i(\bar{x}) \leq 0$ for all $i = 1, \dots, m$,
+2. there exists a set $\displaystyle \left\{\bar{\lambda}_i\right\}_{i \in I(\bar{x})}$ of positive numbers such that $\displaystyle \nabla f(\bar{x}) = \sum_{i\in I(\bar{x})} \bar{\lambda}_i \nabla g_i (\bar{x})$,
+3. $f$ is pseudo-concave, and
+4. each $g_i$ is quasi-convex.
+
+Then $\bar{x}$ solves the maximization problem above.
+:::
+
+### Consumer Theory {-}
+
+#### **Utility Maximization** {-}
+
+Consider the following utility maximization problem
+
+$$
+\begin{align}
+\max_{x \in \R^n} \quad & u(x) \\
+\text{subject to} \quad & p \cdot x \leq y, \\
+                        & x \geq 0.
+\end{align}
+$$
+
+The KT conditions are
+
+$$
+\begin{array}{ccc}
+\nabla u(x) \leq \lambda p & x \geq 0 & \left[ \nabla u(x) - \lambda p \right] \cdot x = 0 \\
+p \cdot x \leq y & \lambda \geq 0 & \left( p \cdot x - y \right) \lambda = 0
+\end{array}
+$$
+
+::: {.remark}
+$\lambda$ is interpreted as the *marginal utility of income*. Call the solutions $x(p,y)$ the *demand functions* and $v(p,y) := u(x(p,y))$ the *indirect utility function*.
+:::
+
+::: {.remark name="Indirect Utility Function Properties"}
+<br/>
+
+1. Zero degree homogeneity.
+2. $v$ is non-decreasing in $y$, and non-increasing in $p$.
+3. $v$ is quasi-convex in $(p,y)$.
+:::
+
+#### **Expenditure Minimization** {-}
+
+Consider the following expenditure minization problem
+
+$$
+\begin{align}
+\min_{x \in \R^n} \quad & p \cdot x \\
+\text{subject to} \quad & u(x) \geq \bar{u}, \\
+                        & x \geq 0.
+\end{align}
+$$
+
+::: {.remark}
+Let $h(p, \bar{u})$ be the solution and $e(p,\bar{u}) := p \cdot h(p, \bar{u})$. The *expenditure function* $e$ is mathematically identical to the cost function.
+:::
+
+::: {.remark name="Expenditure Function Properties"}
+<br/>
+
+1. $e(\cdot, \bar{u})$ is 1-homogeneous.
+2. $e(\cdot, \bar{u})$ is non-decreasing.
+3. $e(\cdot, \bar{u})$ is concave.
+4. By Shephard's Lemma, $\displaystyle \frac{\partial e}{\partial p_i} = h_i (p, \bar{u})$.
+:::
+
+::: {.theorem name="Roy's Identity"}
+$$
+x_i(p,y) = -\frac{\displaystyle \frac{\partial v}{\partial p_i}}{\displaystyle \frac{\partial v}{\partial y}}.
+$$
+:::
+
+::: {.remark name="Relationships between utility maximization and expenditure minimization"}
+<br/>
+
+1. $h(p,v(p,y)) = x(p,y)$
+2. $x(p,e(p,\bar{u})) = h(p,\bar{u})$
+3. $e(p,v(p,y)) = y$
+4. $v(p,e(p,\bar{u})) = \bar{u}$
+:::
+
+::: {.theorem name="Slutsky"}
+$$
+\frac{\partial x_i}{\partial p_j} (p,y) = \frac{\partial h_i}{\partial p_j} (p,v(p,y)) - x_j \frac{\partial x_i}{\partial y} (p,y),\ \forall i \neq j.
+$$
+:::
