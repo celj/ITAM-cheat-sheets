@@ -32,7 +32,7 @@ a {
 }
 
 h1 a[title] {
-  color: var(--nord0);
+  color: var(--nord7);
 }
 
 .container-fluid > .row {
@@ -44,6 +44,11 @@ h1 a[title] {
   position: relative;
   overflow-y: visible;
   max-height: none;
+}
+
+#toc a.active {
+  color: var(--nord6);
+  background-color: var(--nord7);
 }
 
 #main-nav,
@@ -72,13 +77,9 @@ h1 a[title] {
   margin-top: 2em;
 }
 
-.redbox {
+.rmdcaution {
   text-align: center;
-  padding: 0.01em;
-  position: relative;
-  background: var(--nord11);
-  margin-top: 25px;
-  margin-bottom: 25px;
-  color: var(--nord6);
-  border-radius: 5px;
+  border-radius: 2px;
+  /* background: var(--nord11);
+  color: var(--nord6); */
 }

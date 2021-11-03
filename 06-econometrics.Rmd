@@ -10,7 +10,7 @@ knit: (function(input, ...) {
 
 # Fundamentals of Econometrics
 
-::: {.redbox}
+::: {.rmdcaution}
 **This section is still in development.**
 :::
 

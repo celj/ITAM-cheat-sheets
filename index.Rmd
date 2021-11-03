@@ -87,11 +87,10 @@ output:
       bg: "#eceff4"
       fg: "#4c566a"
       primary: "#a3be8c"
-      secondary: "#2e3440"
-      success: "#2e3440"
-      info: "#2e3440"
-      warning: "#2e3440"
-      danger: "#2e3440"
+      success: "#88c0d0"
+      info: "#b48ead"
+      warning: "#ebcb8b"
+      danger: "#bf616a"
     repo: https://github.com/celj/itam-cheat-sheets
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
 link-citations: true

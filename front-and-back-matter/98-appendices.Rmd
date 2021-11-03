@@ -54,11 +54,11 @@
 
 # Probability Distributions
 
-::: {.redbox}
-This section is still in development
+::: {.rmdcaution}
+**This section is still in development**
 :::
 
-## Discrete {-}
+## Discrete
 ### Bernoulli {-}
 ### Binomial {-}
 ### Geometric {-}
@@ -67,7 +67,7 @@ This section is still in development
 ### Poisson {-}
 ### Uniform {-}
 
-## Continuous {-}
+## Continuous
 ### Beta {-}
 ### Cauchy {-}
 ### Chi Squared {-}
@@ -135,6 +135,6 @@ This section is still in development
 
 # Estimators
 
-::: {.redbox}
-This section is still in development
+::: {.rmdcaution}
+**This section is still in development**
 :::

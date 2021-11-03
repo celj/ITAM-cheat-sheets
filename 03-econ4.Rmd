@@ -10,7 +10,7 @@ knit: (function(input, ...) {
 
 # Economics 4
 
-::: {.redbox}
+::: {.rmdcaution}
 **This section is still in development.**
 :::
 
@@ -18,9 +18,9 @@ If you wish to contribute to this section, feel free to email me at [carloseleza
 
 ## General Equilibrium
 
-### Pure Exchange Economies {-}
+### Pure Exchange Economies
 
-#### Initial Assumptions {-}
+#### Initial Assumptions
 
 * There are $m$ consumers such that $\mathscr{I} = \{1, \dots, m\}$.
 * There are $n$ goods such that $\L = \{1, \dots, n\}$.
@@ -83,7 +83,7 @@ library(tidyverse)
 knitr::include_graphics("figures/edgeworth-box.svg")
 ```
 
-#### General Case {-}
+#### General Case
 
 $$
 \begin{align*}
@@ -104,9 +104,9 @@ $$
 $$
 :::
 
-### Competitive Equilibrium {-}
+### Competitive Equilibrium
 
-#### Initial Assumptions {-}
+#### Initial Assumptions
 
 * There is a market for each good.
 * Every agent can access the market without any cost.
@@ -196,9 +196,9 @@ Given an economy $\displaystyle \mathscr{E} = \langle \mathscr{I}, (u_i, w_i)_{i
 2. $(p, (x_1, x_2, \dots, x_m))$ is a competitive equilibrium of the economy $\mathscr{E}$.
 :::
 
-### Production {-}
+### Production
 
-#### Initial Assumptions {-}
+#### Initial Assumptions
 
 * There are $k$ firms such that $\mathscr{J} = \{1, \dots, k\}$.
 * The production of the firm $j$ for good $l$ is described by the function $f_{j,l}$ such that $f_j(z_{\ell,l}) = f_j(z_{1,l}, \dots, z_{n,l})$. Namely, the firm $j$ uses $z_\ell$ units of commodities $\ell \in \L$ to produce commodity $l$.
@@ -240,7 +240,7 @@ Let $((X^*, Z^*), p)$ be a competitive equilibrium. Then $((X^*, Z^*), cp)$ is a
 
 > With production, Edgeworth box diagrams are no longer helpful.
 
-#### General Case {-}
+#### General Case
 
 $$
 \begin{align*}
