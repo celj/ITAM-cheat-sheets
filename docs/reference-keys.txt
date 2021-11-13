@@ -338,8 +338,3 @@ statistical-foundations-of-econometric-modelling
 estimation-theory
 asymptotic-theory
 inference-for-linear-regression
-notation
-probability-distributions
-discrete
-continuous
-estimators

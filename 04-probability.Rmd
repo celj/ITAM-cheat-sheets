@@ -10,7 +10,9 @@ knit: (function(input, ...) {
 
 # Probability
 
+::: {.rmdnote}
 For a basic course in probability (such as [EST-11101](http://estadistica.itam.mx/sites/default/files/u450/probabilidad.pdf)), you may want to skip some notes on Measure Theory.
+:::
 
 ## Basics and Combinatorics
 

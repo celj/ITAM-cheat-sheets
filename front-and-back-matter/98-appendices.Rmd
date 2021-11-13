@@ -2,7 +2,7 @@
 
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'`
 
-# Notation
+# Notation {-}
 
 |Expression|Description|
 |:--------:|-----------|
@@ -52,13 +52,13 @@
 |$X_n \rlim X$|$X_n$ converges in the $r$th mean to $X$|
 |$X_n \mlim X$|$X_n$ converges in quadratic mean to $X$|
 
-# Probability Distributions
+# Probability Distributions {-}
 
 ::: {.rmdcaution}
 **This section is still in development**
 :::
 
-## Discrete
+## Discrete {-}
 ### Bernoulli {-}
 ### Binomial {-}
 ### Geometric {-}
@@ -67,7 +67,7 @@
 ### Poisson {-}
 ### Uniform {-}
 
-## Continuous
+## Continuous {-}
 ### Beta {-}
 ### Cauchy {-}
 ### Chi Squared {-}
@@ -133,7 +133,7 @@
 <script src="/figures/weibulljs"></script>
 -->
 
-# Estimators
+# Estimators {-}
 
 ::: {.rmdcaution}
 **This section is still in development**

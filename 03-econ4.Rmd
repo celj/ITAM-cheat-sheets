@@ -10,10 +10,6 @@ knit: (function(input, ...) {
 
 # Economics 4
 
-::: {.rmdcaution}
-**This section is still in development.**
-:::
-
 If you wish to contribute to this section, feel free to email me at [carloselezamaj@gmail.com](mailto:carloselezamaj@gmail.com?subject=ITAM cheat sheets: Economics 4).
 
 ## General Equilibrium
@@ -298,4 +294,12 @@ We define the *production possibility set* as the set of all non-negative output
 
 ## Monopoly and Monopsony
 
+::: {.rmdcaution}
+**This section is still in development.**
+:::
+
 ## Game Theory
+
+::: {.rmdcaution}
+**This section is still in development.**
+:::

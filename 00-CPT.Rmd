@@ -14,12 +14,14 @@ knit: (function(input, ...) {
 **This section is still in development.**
 :::
 
+::: {.rmdnote}
 The definitions and theorems below can also be used for courses on:
 
-1. calculus,
-2. linear algebra,
-3. optimization, and
-4. real analysis.
+1. **calculus**,
+2. **linear algebra**,
+3. **optimization**, and
+4. **real analysis**.
+:::
 
 ## Linear Algebra
 
