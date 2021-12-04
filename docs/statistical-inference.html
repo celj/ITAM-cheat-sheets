@@ -81,17 +81,17 @@
 <p><strong>This section is still in development.</strong></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-301" class="definition"><strong>Definition 6.1  (Population) </strong></span>A <em>population</em> is a set of similar items or events which is of interest for some question or experiment.</p>
+<p><span id="def:unlabeled-div-323" class="definition"><strong>Definition 6.1  (Population) </strong></span>A <em>population</em> is a set of similar items or events which is of interest for some question or experiment.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-302" class="definition"><strong>Definition 6.2  (Sample) </strong></span>A <em>sample</em> is a set of individuals or objects collected or selected from a statistical population by a defined procedure.</p>
+<p><span id="def:unlabeled-div-324" class="definition"><strong>Definition 6.2  (Sample) </strong></span>A <em>sample</em> is a set of individuals or objects collected or selected from a statistical population by a defined procedure.</p>
 </div>
 <div id="finite-sample-distributions" class="section level2" number="6.1">
 <h2>
 <span class="header-section-number">6.1</span> Finite Sample Distributions<a class="anchor" aria-label="anchor" href="#finite-sample-distributions"><i class="fas fa-link"></i></a>
 </h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-303" class="definition"><strong>Definition 6.3  (Convergence in Distribution) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables is said to <em>converge in distribution</em> to a random variable <span class="math inline">\(X\)</span> if
+<p><span id="def:unlabeled-div-325" class="definition"><strong>Definition 6.3  (Convergence in Distribution) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables is said to <em>converge in distribution</em> to a random variable <span class="math inline">\(X\)</span> if
 <span class="math display">\[
 \lim_{n\to\infty} F_{X_n}(x) = F_X(x)
 \]</span>
@@ -103,20 +103,20 @@ for every <span class="math inline">\(x \in \mathscr{R}\)</span>.</p>
 for every <span class="math inline">\(A \subset \mathscr{R}^k\)</span> which is a continuity set of <span class="math inline">\(X\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-304" class="definition"><strong>Definition 6.4  (Convergence in Probability) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables <em>converges in probability</em> towards the random variable <span class="math inline">\(X\)</span> if
+<p><span id="def:unlabeled-div-326" class="definition"><strong>Definition 6.4  (Convergence in Probability) </strong></span>A sequence <span class="math inline">\(\displaystyle X_n\)</span> of random variables <em>converges in probability</em> towards the random variable <span class="math inline">\(X\)</span> if
 <span class="math display">\[
 \lim_{n\to\infty} P\left( \left\lvert X_n - X \right\rvert &gt; \varepsilon \right) = 0
 \]</span>
 for all <span class="math inline">\(\varepsilon &gt; 0\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-305" class="definition"><strong>Definition 6.5  (Convergence in Mean) </strong></span>Given a real number <span class="math inline">\(r \geq 1\)</span>, we say that the sequence <span class="math inline">\(X_n\)</span> <em>converges in the <span class="math inline">\(r\)</span>th mean</em> or <em>in the <span class="math inline">\(L^r\)</span> norm</em> towards the random variable <span class="math inline">\(X\)</span> if the <span class="math inline">\(r\)</span>th absolute moments of <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> exist, and
+<p><span id="def:unlabeled-div-327" class="definition"><strong>Definition 6.5  (Convergence in Mean) </strong></span>Given a real number <span class="math inline">\(r \geq 1\)</span>, we say that the sequence <span class="math inline">\(X_n\)</span> <em>converges in the <span class="math inline">\(r\)</span>th mean</em> or <em>in the <span class="math inline">\(L^r\)</span> norm</em> towards the random variable <span class="math inline">\(X\)</span> if the <span class="math inline">\(r\)</span>th absolute moments of <span class="math inline">\(X_n\)</span> and <span class="math inline">\(X\)</span> exist, and
 <span class="math display">\[
 \lim_{n\to\infty} E\left( \left\lvert X_n - X \right\rvert^r \right) = 0.
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-306" class="theorem"><strong>Theorem 6.1  (Law of Large Numbers) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be independent and identically distributed random variables with finite mean <span class="math inline">\(\mu\)</span>. Let <span class="math inline">\(\bar{X}_n\)</span> be the average of the first <span class="math inline">\(n\)</span> variables, then the <em>law of large numbers</em> establishes that:</p>
+<p><span id="thm:unlabeled-div-328" class="theorem"><strong>Theorem 6.1  (Law of Large Numbers) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be independent and identically distributed random variables with finite mean <span class="math inline">\(\mu\)</span>. Let <span class="math inline">\(\bar{X}_n\)</span> be the average of the first <span class="math inline">\(n\)</span> variables, then the <em>law of large numbers</em> establishes that:</p>
 <ol style="list-style-type: decimal">
 <li>
 <em>Weak</em>
@@ -145,7 +145,7 @@ P\left[ \left\{ \omega \in \Omega : \bar{X}_n(\omega) \underset{n\to\infty}{\lon
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-307" class="theorem"><strong>Theorem 6.2  (Central Limit Theorem) </strong></span>Suppose <span class="math inline">\(\left\{X_1, \dots, X_n\right\}\)</span> is a sequence of independent and identically distributed random variables with <span class="math inline">\(E[X_i] = \mu\)</span> and <span class="math inline">\(\text{Var}[X_i] = \sigma^2 &lt; \infty\)</span>. Then, as <span class="math inline">\(n\)</span> approaches infinity, the random variables <span class="math inline">\(\sqrt{n}\left( \bar{X}_n - \mu \right)\)</span> converge in distribution to a normal <span class="math inline">\(\mathscr{N}(0, \sigma^2)\)</span>.
+<p><span id="thm:unlabeled-div-329" class="theorem"><strong>Theorem 6.2  (Central Limit Theorem) </strong></span>Suppose <span class="math inline">\(\left\{X_1, \dots, X_n\right\}\)</span> is a sequence of independent and identically distributed random variables with <span class="math inline">\(E[X_i] = \mu\)</span> and <span class="math inline">\(\text{Var}[X_i] = \sigma^2 &lt; \infty\)</span>. Then, as <span class="math inline">\(n\)</span> approaches infinity, the random variables <span class="math inline">\(\sqrt{n}\left( \bar{X}_n - \mu \right)\)</span> converge in distribution to a normal <span class="math inline">\(\mathscr{N}(0, \sigma^2)\)</span>.
 <span class="math display">\[
 \text{i.e.}\quad \sqrt{n}\left( \bar{X}_n - \mu \right) \overset{d}{\longrightarrow}\mathscr{N}(0, \sigma^2)
 \]</span></p>
@@ -154,26 +154,26 @@ P\left[ \left\{ \omega \in \Omega : \bar{X}_n(\omega) \underset{n\to\infty}{\lon
 <p>Let <span class="math inline">\(X_1, \dots, X_n\)</span> be independent and identically distributed random variables drawn according to some distribution <span class="math inline">\(P_\theta\)</span> parametrized by <span class="math inline">\(\theta = (\theta_1, \dots, \theta_m) \in \Theta\)</span>, where <span class="math inline">\(\Theta\)</span> is the set of all possible parameters for the selected distribution. The goal is to find the best estimator <span class="math inline">\(\hat{\theta} \in \Theta\)</span> such that <span class="math inline">\(\hat{\theta} \approx \theta\)</span> since the real <span class="math inline">\(\theta\)</span> cannot be known exactly from a finite sample.</p>
 </blockquote>
 <div class="definition">
-<p><span id="def:unlabeled-div-308" class="definition"><strong>Definition 6.6  (Estimator) </strong></span>An <em>estimator</em> <span class="math inline">\(\hat{\theta}_j\)</span> from a parameter <span class="math inline">\(\theta_j\)</span> is a random variable <span class="math inline">\(\hat{\theta}_j(X_1, \dots, X_n)\)</span> that is symbolized as a function of the observed data.</p>
+<p><span id="def:unlabeled-div-330" class="definition"><strong>Definition 6.6  (Estimator) </strong></span>An <em>estimator</em> <span class="math inline">\(\hat{\theta}_j\)</span> from a parameter <span class="math inline">\(\theta_j\)</span> is a random variable <span class="math inline">\(\hat{\theta}_j(X_1, \dots, X_n)\)</span> that is symbolized as a function of the observed data.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-309" class="definition"><strong>Definition 6.7  (Estimate) </strong></span>An <em>estimate</em> <span class="math inline">\(\hat{\theta}_j(x_1, \dots, x_n)\)</span> is a realization of the estimator. It is a real value for the estimated parameter.</p>
+<p><span id="def:unlabeled-div-331" class="definition"><strong>Definition 6.7  (Estimate) </strong></span>An <em>estimate</em> <span class="math inline">\(\hat{\theta}_j(x_1, \dots, x_n)\)</span> is a realization of the estimator. It is a real value for the estimated parameter.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-310" class="definition"><strong>Definition 6.8  (Bias) </strong></span>The <em>bias</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
+<p><span id="def:unlabeled-div-332" class="definition"><strong>Definition 6.8  (Bias) </strong></span>The <em>bias</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
 <span class="math display">\[
 \text{Bias}(\hat{\theta}, \theta) := E_\theta [\hat{\theta} - \theta].
 \]</span>
 We say that an estimator is <em>unbiased</em> if <span class="math inline">\(\text{Bias}_\theta [\hat{\theta}] = 0\)</span> or <span class="math inline">\(E_\theta [\hat{\theta}] = \theta\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-311" class="definition"><strong>Definition 6.9  (Mean Squared Error) </strong></span>The <em>mean squared error</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
+<p><span id="def:unlabeled-div-333" class="definition"><strong>Definition 6.9  (Mean Squared Error) </strong></span>The <em>mean squared error</em> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is defined as
 <span class="math display">\[
 \text{MSE}_\theta[\hat{\theta}] := E\left[ \left( \hat{\theta} - \theta \right)^2 \right] = \text{Var}_\theta[\hat{\theta}] + \text{Bias}^2 (\hat{\theta}, \theta)
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-312" class="definition"><strong>Definition 6.10  (Consistency) </strong></span>A sequence of estimators <span class="math inline">\(\hat{\theta}^{(n)}\)</span> of the parameter <span class="math inline">\(\theta\)</span> is called <em>consistent</em> if, for any <span class="math inline">\(\varepsilon &gt; 0\)</span>,
+<p><span id="def:unlabeled-div-334" class="definition"><strong>Definition 6.10  (Consistency) </strong></span>A sequence of estimators <span class="math inline">\(\hat{\theta}^{(n)}\)</span> of the parameter <span class="math inline">\(\theta\)</span> is called <em>consistent</em> if, for any <span class="math inline">\(\varepsilon &gt; 0\)</span>,
 <span class="math display">\[
 P_\theta \left[ \left\lvert \hat{\theta}^{(n)} - \theta \right\rvert &gt; \varepsilon \right] \underset{n\to\infty}{\longrightarrow} 0.
 \]</span></p>
@@ -182,7 +182,7 @@ P_\theta \left[ \left\lvert \hat{\theta}^{(n)} - \theta \right\rvert &gt; \varep
 </blockquote>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-313" class="definition"><strong>Definition 6.11  (Relative Efficiency) </strong></span>The <em>relative efficiency</em> of two estimators is defined as
+<p><span id="def:unlabeled-div-335" class="definition"><strong>Definition 6.11  (Relative Efficiency) </strong></span>The <em>relative efficiency</em> of two estimators is defined as
 <span class="math display">\[
 e\left(\hat{\theta}_1, \hat{\theta}_2\right) = \frac{\text{Var}\left[\hat{\theta}_2\right]}{\text{Var}\left[\hat{\theta}_1\right]}.
 \]</span>
@@ -194,7 +194,7 @@ We say that <span class="math inline">\(\hat{\theta}\)</span> is preferable if <
 <span class="header-section-number">6.2</span> Point Estimation<a class="anchor" aria-label="anchor" href="#point-estimation"><i class="fas fa-link"></i></a>
 </h2>
 <div class="definition">
-<p><span id="def:unlabeled-div-314" class="definition"><strong>Definition 6.12  (Likelihood Function) </strong></span>The <em>likelihood function</em> <span class="math inline">\(\mathscr{L}\)</span> is defined as
+<p><span id="def:unlabeled-div-336" class="definition"><strong>Definition 6.12  (Likelihood Function) </strong></span>The <em>likelihood function</em> <span class="math inline">\(\mathscr{L}\)</span> is defined as
 <span class="math display">\[
 \mathscr{L}(\theta;\ x_1, \dots, x_n) = f(x_1, \dots, x_n;\ \theta).
 \]</span>
@@ -207,13 +207,13 @@ Assuming <span class="math inline">\(x_i \perp x_j\)</span>, <span class="math i
 </blockquote>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-315" class="definition"><strong>Definition 6.13  (Maximum Likelihood Estimator) </strong></span>The <em>maximum likelihood estimator</em> <span class="math inline">\(\hat{\theta}\)</span> for <span class="math inline">\(\theta\)</span> is defined as
+<p><span id="def:unlabeled-div-337" class="definition"><strong>Definition 6.13  (Maximum Likelihood Estimator) </strong></span>The <em>maximum likelihood estimator</em> <span class="math inline">\(\hat{\theta}\)</span> for <span class="math inline">\(\theta\)</span> is defined as
 <span class="math display">\[
 \hat{\theta} \in \left\{ \mathop{\mathrm{\arg\!\max}}_{\theta \in \Theta} \mathscr{L}(\theta;\ X_1, \dots, X_n) \right\}
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-316" class="definition"><strong>Definition 6.14  (Score) </strong></span>The <em>score</em> is the gradient the natural logarithm of the likelihood function with respect to an <span class="math inline">\(m\)</span>-dimensional parameter vector <span class="math inline">\(\theta\)</span>.
+<p><span id="def:unlabeled-div-338" class="definition"><strong>Definition 6.14  (Score) </strong></span>The <em>score</em> is the gradient the natural logarithm of the likelihood function with respect to an <span class="math inline">\(m\)</span>-dimensional parameter vector <span class="math inline">\(\theta\)</span>.
 <span class="math display">\[
 s(\theta) := \frac{\partial \log \mathscr{L}(\theta)}{\partial\theta}.
 \]</span></p>
@@ -222,7 +222,7 @@ s(\theta) := \frac{\partial \log \mathscr{L}(\theta)}{\partial\theta}.
 </blockquote>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-317" class="definition"><strong>Definition 6.15  (Fisher Information) </strong></span>Let <span class="math inline">\(f(X;\ \theta)\)</span> be the probability density function or probability mass function for <span class="math inline">\(X\)</span> conditioned on the value of <span class="math inline">\(\theta\)</span>. We define the <em>Fisher information</em> as
+<p><span id="def:unlabeled-div-339" class="definition"><strong>Definition 6.15  (Fisher Information) </strong></span>Let <span class="math inline">\(f(X;\ \theta)\)</span> be the probability density function or probability mass function for <span class="math inline">\(X\)</span> conditioned on the value of <span class="math inline">\(\theta\)</span>. We define the <em>Fisher information</em> as
 <span class="math display">\[
 \mathscr{I}(\theta) := E\left[\left(\frac{\partial}{\partial\theta}\log f(X;\ \theta)\right)^2\right] = - E\left[\frac{\partial^2}{\partial\theta^2}\log f(X;\ \theta)\right].
 \]</span></p>
@@ -231,25 +231,25 @@ s(\theta) := \frac{\partial \log \mathscr{L}(\theta)}{\partial\theta}.
 </blockquote>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-318" class="definition"><strong>Definition 6.16  (Cramér–Rao Bound) </strong></span>Suppose <span class="math inline">\(\theta\)</span> is an unknown deterministic parameter which is to be estimated from <span class="math inline">\(n\)</span> independent observations of <span class="math inline">\(x\)</span>, each from a distribution according to some probability function <span class="math inline">\(f(X;\ \theta)\)</span>. The variance of any unbiased estimator <span class="math inline">\(\hat{\theta}\)</span> of <span class="math inline">\(\theta\)</span> is then bounded by the reciprocal of the Fisher information <span class="math inline">\(\mathscr{I}(\theta)\)</span>. Namely,
+<p><span id="def:unlabeled-div-340" class="definition"><strong>Definition 6.16  (Cramér–Rao Bound) </strong></span>Suppose <span class="math inline">\(\theta\)</span> is an unknown deterministic parameter which is to be estimated from <span class="math inline">\(n\)</span> independent observations of <span class="math inline">\(x\)</span>, each from a distribution according to some probability function <span class="math inline">\(f(X;\ \theta)\)</span>. The variance of any unbiased estimator <span class="math inline">\(\hat{\theta}\)</span> of <span class="math inline">\(\theta\)</span> is then bounded by the reciprocal of the Fisher information <span class="math inline">\(\mathscr{I}(\theta)\)</span>. Namely,
 <span class="math display">\[
 \text{Var}\left[\hat{\theta}\right] \geq \frac{1}{n\mathscr{I}(\theta)}.
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-319" class="definition"><strong>Definition 6.17  (Efficiency) </strong></span>The <em>efficiency</em> of an unbiased estimator <span class="math inline">\(\hat{\theta}\)</span> of a parameter <span class="math inline">\(\theta\)</span> is defined as
+<p><span id="def:unlabeled-div-341" class="definition"><strong>Definition 6.17  (Efficiency) </strong></span>The <em>efficiency</em> of an unbiased estimator <span class="math inline">\(\hat{\theta}\)</span> of a parameter <span class="math inline">\(\theta\)</span> is defined as
 <span class="math display">\[
 e\left( \hat{\theta} \right) = \frac{1 / \mathscr{I}(\theta)}{\text{Var}\left[ \hat{\theta} \right]}
 \]</span>
 where <span class="math inline">\(\mathscr{I}(\theta)\)</span> is the Fisher information of the sample.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-320" class="proposition"><strong>Proposition 6.1  </strong></span><span class="math display">\[
+<p><span id="prp:unlabeled-div-342" class="proposition"><strong>Proposition 6.1  </strong></span><span class="math display">\[
 e\left( \hat{\theta} \right) \leq 1
 \]</span></p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-321" class="remark"><em>Remark</em> (Maximum Likelihood Estimator Properties). </span><br></p>
+<p><span id="unlabeled-div-343" class="remark"><em>Remark</em> (Maximum Likelihood Estimator Properties). </span><br></p>
 <ul>
 <li>Asymptotically unbiased. Namely, <span class="math inline">\(\displaystyle \lim_{n\to\infty} \text{Bias}\left( \hat{\theta}_n, \theta \right) = 0\)</span>.</li>
 <li>Asymptotically efficient. Namely, <span class="math inline">\(\displaystyle \lim_{n\to\infty} \text{Var}\left[ \hat{\theta} \right] = \frac{1}{n\mathscr{I}(\theta)}\)</span>.</li>

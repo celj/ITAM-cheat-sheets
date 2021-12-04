@@ -398,6 +398,7 @@ P[X \geq c] \leq \frac{E[g(X)]}{g(x)}.
 $$
 
 > For practical uses usually $g(x) = x$.
+
 :::
 
 ::: {.theorem name="Chebyshev's Inequality"}
@@ -666,37 +667,3 @@ $$
 ::: {.theorem}
 Let $X$ and $Y$ be random variables. $\lvert\rho_{X,Y}\rvert = 1$ if and only if there exist $\alpha, \beta \in \R$ such that $Y = \alpha + \beta X$.
 :::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

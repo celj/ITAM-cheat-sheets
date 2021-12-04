@@ -602,11 +602,11 @@ D_1 f_m(x) &amp; \cdots &amp; D_n f_m(x)
 </li>
 </ol>
 <blockquote>
-<p>The second condition holds if and only if, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there is some <span class="math inline">\(\delta &gt; 0\)</span> such that, whenever <span class="math inline">\(x + u \in B_\delta(x) \cap S\)</span> and <span class="math inline">\(u \neq 0_{n\times 1}\)</span>, we have
-<span class="math display">\[
+<p>The second condition holds if and only if, for every <span class="math inline">\(\varepsilon &gt; 0\)</span>, there is some <span class="math inline">\(\delta &gt; 0\)</span> such that, whenever <span class="math inline">\(x + u \in B_\delta(x) \cap S\)</span> and <span class="math inline">\(u \neq 0_{n\times 1}\)</span>, we have</p>
+</blockquote>
+<p><span class="math display">\[
 \frac{\lVert f(x + u) - f(x) - J_f(x)u \rVert}{\lVert u \rVert} &lt; \varepsilon.
 \]</span></p>
-</blockquote>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-94" class="theorem"><strong>Theorem 1.30  </strong></span>Suppose <span class="math inline">\(S\subseteq\mathscr{R}^n\)</span>, <span class="math inline">\(x \in S\)</span> and <span class="math inline">\(f : S \to \mathscr{R}^m\)</span>. Suppose that, for each <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, <span class="math inline">\(D_j f_i(x)\)</span> exists and that <span class="math inline">\(x \mapsto D_j f_i(x)\)</span> is continuous on <span class="math inline">\(S\)</span>. Then <span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span>.</p>
@@ -1300,8 +1300,180 @@ x_i(p,y) = -\frac{\displaystyle \frac{\partial v}{\partial p_i}}{\displaystyle \
 \frac{\partial x_i}{\partial p_j} (p,y) = \frac{\partial h_i}{\partial p_j} (p,v(p,y)) - x_j \frac{\partial x_i}{\partial y} (p,y),\ \forall i \neq j.
 \]</span></p>
 </div>
-
 </div>
+</div>
+</div>
+<div id="preferences-and-utility-representation" class="section level2" number="1.8">
+<h2>
+<span class="header-section-number">1.8</span> Preferences and Utility Representation<a class="anchor" aria-label="anchor" href="#preferences-and-utility-representation"><i class="fas fa-link"></i></a>
+</h2>
+<div id="binary-relations" class="section level3" number="1.8.1">
+<h3>
+<span class="header-section-number">1.8.1</span> Binary Relations<a class="anchor" aria-label="anchor" href="#binary-relations"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-205" class="definition"><strong>Definition 1.78  (Binary Relation) </strong></span>Let <span class="math inline">\(X\)</span> be a set and <span class="math inline">\(X^2 = \left\{(x, y) : x, y \in X\right\}\)</span>. A <em>binary relation</em> on <span class="math inline">\(X\)</span> is any subset of <span class="math inline">\(X^2\)</span>. We will typically denote binary relations by <span class="math inline">\(P\)</span>, <span class="math inline">\(R\)</span>, <span class="math inline">\(I\)</span> or <span class="math inline">\(\succ\)</span>, <span class="math inline">\(\succsim\)</span>, <span class="math inline">\(\sim\)</span>.</p>
+<blockquote>
+<p>Let <span class="math inline">\(P\)</span> be a binary relation. Instead of <span class="math inline">\((x, y) \in P\)</span>, we write <span class="math inline">\(xPy\)</span>. Similarly, instead of <span class="math inline">\((x, y) \notin P\)</span>, we write <span class="math inline">\(x {\not\negmedspace P}y\)</span>.</p>
+</blockquote>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-206" class="definition"><strong>Definition 1.79  (Strict Preference) </strong></span>Let <span class="math inline">\(P\)</span> be a binary relation. Suppose we would like <span class="math inline">\(xPy\)</span> to mean <span class="math inline">\(x\)</span> is <em>strictly better</em> that <span class="math inline">\(y\)</span>. Here are some properties which we might like to impose on <span class="math inline">\(P\)</span>.</p>
+<ul>
+<li>
+<em>Irreflexivity</em>: <span class="math inline">\(xPx\)</span> for no <span class="math inline">\(x \in X\)</span>.</li>
+<li>
+<em>Asymmetry</em>: for any <span class="math inline">\(x, y \in X\)</span>, if <span class="math inline">\(xPy\)</span>, then <span class="math inline">\(y {\not\negmedspace P}x\)</span>.</li>
+<li>
+<em>Acyclicity</em>: for every <span class="math inline">\(n\)</span> and for every <span class="math inline">\(x_1, \dots, x_n \in X\)</span>, if <span class="math inline">\(x_i P x_{i+1}\)</span> for every <span class="math inline">\(i &lt; n\)</span>, then <span class="math inline">\(x_n {\not\negmedspace P}x_1\)</span>.</li>
+<li>
+<em>Transitivity</em>: if <span class="math inline">\(xPy\)</span> and <span class="math inline">\(yPz\)</span>, then <span class="math inline">\(xPz\)</span>.</li>
+<li>
+<em>Negative transitivity</em>: if <span class="math inline">\(xPy\)</span> and <span class="math inline">\(z \in X\)</span>, then either <span class="math inline">\(xPz\)</span> or <span class="math inline">\(zPy\)</span>.</li>
+<li>
+<em>Connectedness</em>: if <span class="math inline">\(x \neq y\)</span>, then either <span class="math inline">\(xPy\)</span> or <span class="math inline">\(yPx\)</span>.</li>
+</ul>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-207" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>
+<span class="math inline">\(P\)</span> is a (strict) <em>linear order</em> if it is connected, asymmetric and negatively transitive.</li>
+<li>
+<span class="math inline">\(P\)</span> is a (strict) <em>weak order</em> if it is asymmetric and negatively transitive.</li>
+<li>
+<span class="math inline">\(P\)</span> is a (strict) <em>partial order</em> if it is irreflexive and transitive.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-208" class="definition"><strong>Definition 1.80  (Weak Preference) </strong></span>Let <span class="math inline">\(R\)</span> be a binary relation. Suppose we would like <span class="math inline">\(xRy\)</span> to mean <span class="math inline">\(x\)</span> is <em>at least as good as</em> <span class="math inline">\(y\)</span>. Here are some properties which we might like to impose on <span class="math inline">\(R\)</span>.</p>
+<ul>
+<li>
+<em>Reflexivity</em>: <span class="math inline">\(xRx\)</span> for all <span class="math inline">\(x \in X\)</span>.</li>
+<li>
+<em>Completeness</em>: for all <span class="math inline">\(x, y \in X\)</span>, <span class="math inline">\(xRy\)</span> or <span class="math inline">\(yRx\)</span>.</li>
+<li>
+<em>Transitivity</em>: if <span class="math inline">\(xRy\)</span> and <span class="math inline">\(yRz\)</span>, then <span class="math inline">\(xRz\)</span>.</li>
+<li>
+<em>Antisymmetry</em>: if <span class="math inline">\(xRy\)</span> and <span class="math inline">\(yRx\)</span>, then <span class="math inline">\(x = y\)</span>.</li>
+</ul>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-209" class="remark"><em>Remark</em>. </span><br></p>
+<ul>
+<li>
+<span class="math inline">\(P\)</span> is a (weak) <em>linear order</em> if it is antisymmetric, complete and transitive.</li>
+<li>
+<span class="math inline">\(P\)</span> is a (weak) <em>weak order</em> if it is complete and transitive.</li>
+<li>
+<span class="math inline">\(P\)</span> is a (weak) <em>partial order</em> if it is reflexive and transitive.</li>
+</ul>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-210" class="definition"><strong>Definition 1.81  (Indifference) </strong></span>Let <span class="math inline">\(I\)</span> be a binary relation. Suppose we would like <span class="math inline">\(xIy\)</span> to mean that <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are <em>equally good</em>. Here are some properties which we might like to impose on <span class="math inline">\(I\)</span>.</p>
+<ul>
+<li>
+<em>Reflexivity</em>: <span class="math inline">\(xIx\)</span> for all <span class="math inline">\(x \in X\)</span>.</li>
+<li>
+<em>Symmetry</em>: if <span class="math inline">\(xIy\)</span>, then <span class="math inline">\(yIx\)</span>.</li>
+<li>
+<em>Transitivity</em>: if <span class="math inline">\(xIy\)</span> and <span class="math inline">\(yIz\)</span>, then <span class="math inline">\(xIz\)</span>.</li>
+</ul>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-211" class="remark"><em>Remark</em>. </span>Call <span class="math inline">\(I\)</span> an <em>equivalence</em> class if it is reflexive, symmetric and transitive.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-212" class="proposition"><strong>Proposition 1.17  </strong></span>Suppose that <span class="math inline">\(P\)</span> is a (strict) weak order and that binary relations <span class="math inline">\(R\)</span> and <span class="math inline">\(I\)</span> are defined, using <span class="math inline">\(P\)</span>, as follows</p>
+<p><span class="math display">\[
+\begin{align}
+xRy &amp;&amp; \iff &amp;&amp; y {\not\negmedspace P}x \\
+xIy &amp;&amp; \iff &amp;&amp; x {\not\negmedspace P}y &amp;&amp; \land &amp;&amp; y {\not\negmedspace P}x
+\end{align}
+\]</span></p>
+<p>Then <span class="math inline">\(R\)</span> is a (weak) weak order and <span class="math inline">\(I\)</span> is an equivalence class. If, in particular, <span class="math inline">\(P\)</span> is a (strict) linear order, then <span class="math inline">\(R\)</span> is a (weak) linear order.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-213" class="proposition"><strong>Proposition 1.18  </strong></span>Suppose that <span class="math inline">\(R\)</span> is a (weak) weak order and that binary relations <span class="math inline">\(P\)</span> and <span class="math inline">\(I\)</span> are defined, using <span class="math inline">\(R\)</span>, as follows</p>
+<p><span class="math display">\[
+\begin{align}
+xPy &amp;&amp; \iff &amp;&amp; xRy &amp;&amp; \land &amp;&amp; y {\not\negmedspace R}x \\
+xIy &amp;&amp; \iff &amp;&amp; xRy &amp;&amp; \land &amp;&amp; yRx
+\end{align}
+\]</span></p>
+<p>Then <span class="math inline">\(P\)</span> is a (strict) weak order and <span class="math inline">\(I\)</span> is an equivalence class. If, in particular, <span class="math inline">\(R\)</span> is a (weak) linear order, then <span class="math inline">\(P\)</span> is a (strict) linear order.</p>
+</div>
+</div>
+<div id="maximization-1" class="section level3" number="1.8.2">
+<h3>
+<span class="header-section-number">1.8.2</span> Maximization<a class="anchor" aria-label="anchor" href="#maximization-1"><i class="fas fa-link"></i></a>
+</h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-214" class="definition"><strong>Definition 1.82  (Menu) </strong></span>Let <span class="math inline">\(2^X = \left\{ A \subseteq X : A \neq \varnothing\right\}\)</span>. Any member of <span class="math inline">\(2^X\)</span> is a <em>menu</em>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-215" class="remark"><em>Remark</em>. </span>For any binary relation <span class="math inline">\(T\)</span> and any menu <span class="math inline">\(A\)</span>, let
+<span class="math display">\[
+\begin{align}
+m(A,T) &amp;= \left\{ x \in A : yTx,\ \text{for no}\ y \in A \right\}, \\
+M(A,T) &amp;= \left\{ x \in A : xTy,\ \forall y \in A \right\}.
+\end{align}
+\]</span>
+In general, these sets may be empty and they need not to coincide.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-216" class="proposition"><strong>Proposition 1.19  </strong></span>Suppose <span class="math inline">\(X\)</span> is finite. <span class="math inline">\(P\)</span> is acyclic if and only if <span class="math inline">\(m(A,P) \neq \varnothing\)</span> for all <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-217" class="proposition"><strong>Proposition 1.20  </strong></span>Suppose <span class="math inline">\(R\)</span> is a (weak) weak order and define <span class="math inline">\(P\)</span> using <span class="math inline">\(R\)</span> as follows:
+<span class="math display">\[
+xPy \iff xRy \land y {\not\negmedspace R}x.
+\]</span>
+Then <span class="math inline">\(m(A,P) = M(A,P)\)</span> for all <span class="math inline">\(A\)</span>. If <span class="math inline">\(R\)</span> is a (weak) linear order, then <span class="math inline">\(M(A,R)\)</span> is a singleton.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-218" class="theorem"><strong>Theorem 1.80  </strong></span>Let <span class="math inline">\(P\)</span> be a binary relation on a countable set <span class="math inline">\(X\)</span>. <span class="math inline">\(P\)</span> admits a utility representation if and only if <span class="math inline">\(P\)</span> is a weak order.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-219" class="remark"><em>Remark</em>. </span>In general, there exist weak orders (even linear orders) which do not have utility representations.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-220" class="theorem"><strong>Theorem 1.81  </strong></span>Let <span class="math inline">\(P\)</span> be a linear order on an arbitrary set <span class="math inline">\(X\)</span>. <span class="math inline">\(P\)</span> admits a utility representation if and only if <span class="math inline">\(X\)</span> contains a countable <span class="math inline">\(P\)</span>-dense subset.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-221" class="theorem"><strong>Theorem 1.82  </strong></span>A binary relation <span class="math inline">\(P\)</span> on an arbitrary set <span class="math inline">\(X\)</span> admits a utility representation if and only if <span class="math inline">\(P\)</span> is a weak order on <span class="math inline">\(X\)</span> and <span class="math inline">\(X^*\)</span> contains a countable <span class="math inline">\(P^*\)</span>-dense subset.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-222" class="lemma"><strong>Lemma 1.6  </strong></span>Given <span class="math inline">\(P\)</span>, say that the pair <span class="math inline">\((a,b)\)</span> is a gap if <span class="math inline">\(aPb\)</span> but there exits no <span class="math inline">\(c\)</span> such that <span class="math inline">\(aPc\)</span> and <span class="math inline">\(cPb\)</span>. Let <span class="math inline">\(G_1 = \left\{ a : (a,b) \right.\)</span> is a gap for some <span class="math inline">\(\left. b \right\}\)</span>, <span class="math inline">\(G_2 = \left\{ b : (a,b) \right.\)</span> is a gap for some <span class="math inline">\(\left. a \right\}\)</span> and <span class="math inline">\(G = G_1 \cup G_2\)</span>.</p>
+<p>Suppose <span class="math inline">\(P\)</span> is a linear order on an arbitrary set <span class="math inline">\(X\)</span>. <span class="math inline">\(G\)</span> is countable if one of the following two conditions holds:</p>
+<ol style="list-style-type: decimal">
+<li>
+<span class="math inline">\(X\)</span> contains a countable <span class="math inline">\(P\)</span>-dense subset.</li>
+<li>
+<span class="math inline">\(P\)</span> admits a utility representation.</li>
+</ol>
+</div>
+</div>
+<div id="a-topological-approach" class="section level3" number="1.8.3">
+<h3>
+<span class="header-section-number">1.8.3</span> A Topological Approach<a class="anchor" aria-label="anchor" href="#a-topological-approach"><i class="fas fa-link"></i></a>
+</h3>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-223" class="corollary"><strong>Corollary 1.8  </strong></span>Let <span class="math inline">\(R\)</span> be a complete and transitive binary relation (i.e., a weak order) on <span class="math inline">\(X \subseteq \mathscr{R}^n\)</span>. Define, as usual, <span class="math inline">\(xPy\)</span> if and only if <span class="math inline">\(xRy\)</span> and <span class="math inline">\(y {\not\negmedspace R}x\)</span>. Recall that such <span class="math inline">\(P\)</span> is asymmetric and negatively transitive. Endow <span class="math inline">\(X\)</span> with the Euclidean metric. We say that <span class="math inline">\(R\)</span> admits a continuous utility representation if there exists a continuous function <span class="math inline">\(u : X \to \mathscr{R}\)</span> such that <span class="math inline">\(xRy\)</span> if and only if <span class="math inline">\(u(x) \geq u(y)\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-224" class="theorem"><strong>Theorem 1.83  </strong></span>Let <span class="math inline">\(X \subseteq \mathscr{R}^n\)</span> be convex and <span class="math inline">\(R\)</span> be a binary relation on <span class="math inline">\(X\)</span>. <span class="math inline">\(R\)</span> is a continuous weak order if and only if it admits a continuous utility representation.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-225" class="proposition"><strong>Proposition 1.21  </strong></span>Let <span class="math inline">\(e = (1, \dots, 1) \in \mathscr{R}^n\)</span>. If <span class="math inline">\(R\)</span> is a strictly monotone weak order and <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are scalars, then
+<span class="math display">\[
+\alpha \geq \beta \iff (\alpha e) R (\beta e).
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-226" class="theorem"><strong>Theorem 1.84  </strong></span>Suppose <span class="math inline">\(R\)</span> is a strictly monotone and continuous weak order on <span class="math inline">\(X = \mathscr{R}^n\)</span>. Then <span class="math inline">\(R\)</span> admits a continuous utility representation.</p>
+</div>
+
 </div>
 </div>
 </div>
@@ -1343,6 +1515,13 @@ x_i(p,y) = -\frac{\displaystyle \frac{\partial v}{\partial p_i}}{\displaystyle \
 <li><a class="nav-link" href="#minimization-problems"><span class="header-section-number">1.7.1</span> Minimization Problems</a></li>
 <li><a class="nav-link" href="#maximization-problems"><span class="header-section-number">1.7.2</span> Maximization Problems</a></li>
 <li><a class="nav-link" href="#consumer-theory"><span class="header-section-number">1.7.3</span> Consumer Theory</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#preferences-and-utility-representation"><span class="header-section-number">1.8</span> Preferences and Utility Representation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#binary-relations"><span class="header-section-number">1.8.1</span> Binary Relations</a></li>
+<li><a class="nav-link" href="#maximization-1"><span class="header-section-number">1.8.2</span> Maximization</a></li>
+<li><a class="nav-link" href="#a-topological-approach"><span class="header-section-number">1.8.3</span> A Topological Approach</a></li>
 </ul>
 </li>
 </ul>

@@ -1,11 +1,11 @@
 ---
 knit: (function(input, ...) {
-    input <- "index.Rmd";
-    thesis_formats <- "bs4";
+input <- "index.Rmd";
+thesis_formats <- "bs4";
 
     source("scripts_and_filters/knit-functions.R");
     knit_thesis(input, thesis_formats, ...)
-  })
+})
 ---
 
 # Consumer and Producer Theory
@@ -551,9 +551,11 @@ $$
 $$
 
 > The second condition holds if and only if, for every $\varepsilon > 0$, there is some $\delta > 0$ such that, whenever $x + u \in B_\delta(x) \cap S$ and $u \neq 0_{n\times 1}$, we have
+
 $$
 \frac{\lVert f(x + u) - f(x) - J_f(x)u \rVert}{\lVert u \rVert} < \varepsilon.
 $$
+
 :::
 
 ::: {.theorem}
@@ -847,6 +849,7 @@ Let $S_i \subseteq \R^m$ for every $i = 1, \dots, n$, and let $\displaystyle x \
 If $x \in \R^m$ can be written as $\displaystyle x = \sum_{i = 1}^k \alpha_i x_i$ where $\alpha_1, \dots, \alpha_k \in \R_+$, $x_1, \dots, x_k \in \R^m$ and, if $k > m$, then there exist $\beta_1, \dots, \beta_k \in \R_+$ with $\# \{i : \beta_i > 0\} \leq m$ such that $\displaystyle x = \sum_{i = 1}^k \beta_i x_i$.
 
 > Scalars $\alpha_i$ and $\beta_i$ do not need to add up to 1.
+
 :::
 
 ::: {.definition name="Hyperplane"}
@@ -1002,8 +1005,8 @@ $$
 \begin{align}
 \min_{x \in \R^n} \quad & f(x) \\
 \text{subject to} \quad & g_1(x) \geq 0, \\
-                        & \quad \vdots \\
-                        & g_m(x) \geq 0.
+& \quad \vdots \\
+& g_m(x) \geq 0.
 \end{align}
 $$
 :::
@@ -1045,8 +1048,8 @@ $$
 \begin{align}
 \min_{x \in \R^n} \quad & c \cdot x \\
 \text{subject to} \quad & a_1 \cdot x \geq b_1, \\
-                        & \qquad \vdots \\
-                        & a_m \cdot x \geq b_m.
+& \qquad \vdots \\
+& a_m \cdot x \geq b_m.
 \end{align}
 $$
 LP is a special case of NLP where $f(x) = c \cdot x$ and $g_i(x) = a_i \cdot x - b_i$.
@@ -1113,7 +1116,7 @@ Suppose $\bar{x}$ solves the NLP problem. If $\bar{x}$ satisfies the LICQ condit
 #### Kuhn-Tucker Sufficiency Conditions
 
 ::: {.theorem}
-Let $f : \R^n \to \R$ be differentiable. Then 
+Let $f : \R^n \to \R$ be differentiable. Then
 
 1. $f$ is convex if and only if $f(y) - f(x) \geq \nabla f(x) \cdot (y - x)$, and
 2. $f$ is concave if and only if $f(y) - f(x) \leq \nabla f(x) \cdot (y - x)$,
@@ -1130,7 +1133,7 @@ A function $f : \R^n \to \R$ is *quasi-convex / quasi-concave* if the lower-cont
 :::
 
 ::: {.theorem}
-Let $f : \R^n \to \R$ be differentiable. Then 
+Let $f : \R^n \to \R$ be differentiable. Then
 
 1. $f$ is quasi-concave if and only if $f(y) - f(x) \geq 0 \implies \nabla f(x) \cdot (y - x) \geq 0$, and
 2. $f$ is quasi-convex if and only if $f(y) - f(x) \leq 0 \implies \nabla f(x) \cdot (y - x) \leq 0$,
@@ -1208,7 +1211,7 @@ $$
 \begin{align}
 \max_{x \in \R^n} \quad & u(x) \\
 \text{subject to} \quad & p \cdot x \leq y, \\
-                        & x \geq 0.
+& x \geq 0.
 \end{align}
 $$
 
@@ -1241,7 +1244,7 @@ $$
 \begin{align}
 \min_{x \in \R^n} \quad & p \cdot x \\
 \text{subject to} \quad & u(x) \geq \bar{u}, \\
-                        & x \geq 0.
+& x \geq 0.
 \end{align}
 $$
 
@@ -1277,4 +1280,164 @@ $$
 $$
 \frac{\partial x_i}{\partial p_j} (p,y) = \frac{\partial h_i}{\partial p_j} (p,v(p,y)) - x_j \frac{\partial x_i}{\partial y} (p,y),\ \forall i \neq j.
 $$
+:::
+
+## Preferences and Utility Representation
+
+### Binary Relations
+
+::: {.definition name="Binary Relation"}
+Let $X$ be a set and $X^2 = \left\{(x, y) : x, y \in X\right\}$. A *binary relation* on $X$ is any subset of $X^2$. We will typically denote binary relations by $P$, $R$, $I$ or $\succ$, $\succsim$, $\sim$.
+
+> Let $P$ be a binary relation. Instead of $(x, y) \in P$, we write $xPy$. Similarly, instead of $(x, y) \notin P$, we write $x \notP y$.
+
+:::
+
+::: {.definition name="Strict Preference"}
+Let $P$ be a binary relation. Suppose we would like $xPy$ to mean $x$ is *strictly better* that $y$. Here are some properties which we might like to impose on $P$.
+
+* *Irreflexivity*: $xPx$ for no $x \in X$.
+* *Asymmetry*: for any $x, y \in X$, if $xPy$, then $y \notP x$.
+* *Acyclicity*: for every $n$ and for every $x_1, \dots, x_n \in X$, if $x_i P x_{i+1}$ for every $i < n$, then $x_n \notP x_1$.
+* *Transitivity*: if $xPy$ and $yPz$, then $xPz$.
+* *Negative transitivity*: if $xPy$ and $z \in X$, then either $xPz$ or $zPy$.
+* *Connectedness*: if $x \neq y$, then either $xPy$ or $yPx$.
+:::
+
+::: {.remark}
+<br/>
+
+* $P$ is a (strict) *linear order* if it is connected, asymmetric and negatively transitive.
+* $P$ is a (strict) *weak order* if it is asymmetric and negatively transitive.
+* $P$ is a (strict) *partial order* if it is irreflexive and transitive.
+:::
+
+::: {.definition name="Weak Preference"}
+Let $R$ be a binary relation. Suppose we would like $xRy$ to mean $x$ is *at least as good as* $y$. Here are some properties which we might like to impose on $R$.
+
+* *Reflexivity*: $xRx$ for all $x \in X$.
+* *Completeness*: for all $x, y \in X$, $xRy$ or $yRx$.
+* *Transitivity*: if $xRy$ and $yRz$, then $xRz$.
+* *Antisymmetry*: if $xRy$ and $yRx$, then $x = y$.
+:::
+
+::: {.remark}
+<br/>
+
+* $P$ is a (weak) *linear order* if it is antisymmetric, complete and transitive.
+* $P$ is a (weak) *weak order* if it is complete and transitive.
+* $P$ is a (weak) *partial order* if it is reflexive and transitive.
+:::
+
+::: {.definition name="Indifference"}
+Let $I$ be a binary relation. Suppose we would like $xIy$ to mean that $x$ and $y$ are *equally good*. Here are some properties which we might like to impose on $I$.
+
+* *Reflexivity*: $xIx$ for all $x \in X$.
+* *Symmetry*: if $xIy$, then $yIx$.
+* *Transitivity*: if $xIy$ and $yIz$, then $xIz$.
+:::
+
+::: {.remark}
+Call $I$ an *equivalence* class if it is reflexive, symmetric and transitive.
+:::
+
+::: {.proposition}
+Suppose that $P$ is a (strict) weak order and that binary relations $R$ and $I$ are defined, using $P$, as follows
+
+$$
+\begin{align}
+xRy && \iff && y \notP x \\
+xIy && \iff && x \notP y && \land && y \notP x
+\end{align}
+$$
+
+Then $R$ is a (weak) weak order and $I$ is an equivalence class. If, in particular, $P$ is a (strict) linear order, then $R$ is a (weak) linear order.
+:::
+
+::: {.proposition}
+Suppose that $R$ is a (weak) weak order and that binary relations $P$ and $I$ are defined, using $R$, as follows
+
+$$
+\begin{align}
+xPy && \iff && xRy && \land && y \notR x \\
+xIy && \iff && xRy && \land && yRx
+\end{align}
+$$
+
+Then $P$ is a (strict) weak order and $I$ is an equivalence class. If, in particular, $R$ is a (weak) linear order, then $P$ is a (strict) linear order.
+:::
+
+### Maximization
+
+::: {.definition name="Menu"}
+Let $2^X = \left\{ A \subseteq X : A \neq \O \right\}$. Any member of $2^X$ is a *menu*.
+:::
+
+::: {.remark}
+For any binary relation $T$ and any menu $A$, let
+$$
+\begin{align}
+m(A,T) &= \left\{ x \in A : yTx,\ \text{for no}\ y \in A \right\}, \\
+M(A,T) &= \left\{ x \in A : xTy,\ \forall y \in A \right\}.
+\end{align}
+$$
+In general, these sets may be empty and they need not to coincide.
+:::
+
+::: {.proposition}
+Suppose $X$ is finite. $P$ is acyclic if and only if $m(A,P) \neq \O$ for all $A$.
+:::
+
+::: {.proposition}
+Suppose $R$ is a (weak) weak order and define $P$ using $R$ as follows:
+$$
+xPy \iff xRy \land y \notR x.
+$$
+Then $m(A,P) = M(A,P)$ for all $A$. If $R$ is a (weak) linear order, then $M(A,R)$ is a singleton.
+:::
+
+::: {.theorem}
+Let $P$ be a binary relation on a countable set $X$. $P$ admits a utility representation if and only if $P$ is a weak order.
+:::
+
+::: {.remark}
+In general, there exist weak orders (even linear orders) which do not have utility representations.
+:::
+
+::: {.theorem}
+Let $P$ be a linear order on an arbitrary set $X$. $P$ admits a utility representation if and only if $X$ contains a countable $P$-dense subset.
+:::
+
+::: {.theorem}
+A binary relation $P$ on an arbitrary set $X$ admits a utility representation if and only if $P$ is a weak order on $X$ and $X^*$ contains a countable $P^*$-dense subset.
+:::
+
+::: {.lemma}
+Given $P$, say that the pair $(a,b)$ is a gap if $aPb$ but there exits no $c$ such that $aPc$ and $cPb$. Let $G_1 = \left\{ a : (a,b) \right.$ is a gap for some $\left. b \right\}$, $G_2 = \left\{ b : (a,b) \right.$ is a gap for some $\left. a \right\}$ and $G = G_1 \cup G_2$.
+
+Suppose $P$ is a linear order on an arbitrary set $X$. $G$ is countable if one of the following two conditions holds:
+
+1. $X$ contains a countable $P$-dense subset.
+2. $P$ admits a utility representation.
+:::
+
+### A Topological Approach
+
+::: {.corollary}
+Let $R$ be a complete and transitive binary relation (i.e., a weak order) on $X \subseteq \R^n$. Define, as usual, $xPy$ if and only if $xRy$ and $y \notR x$. Recall that such $P$ is asymmetric and negatively transitive. Endow $X$ with the Euclidean metric. We say that $R$ admits a continuous utility representation if there exists a continuous function $u : X \to \R$ such that $xRy$ if and only if $u(x) \geq u(y)$.
+:::
+
+::: {.theorem}
+Let $X \subseteq \R^n$ be convex and $R$ be a binary relation on $X$. $R$ is a continuous weak order if and only if it admits a continuous utility representation.
+:::
+
+::: {.proposition}
+Let $e = (1, \dots, 1) \in \R^n$. If $R$ is a strictly monotone weak order and $\alpha$ and $\beta$ are scalars, then
+$$
+\alpha \geq \beta \iff (\alpha e) R (\beta e).
+$$
+:::
+
+::: {.theorem}
+Suppose $R$ is a strictly monotone and continuous weak order on $X = \R^n$. Then $R$ admits a continuous utility representation.
 :::

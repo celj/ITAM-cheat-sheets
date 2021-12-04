@@ -143,6 +143,9 @@ source('scripts_and_filters/wrap_lines.R')
 \newcommand{\N}{\mathscr{N}}
 \newcommand{\NB}{\text{NB}}
 \newcommand{\Norm}{\mathscr{N}}
+\newcommand{\notI}{{\not\negmedspace I}}
+\newcommand{\notP}{{\not\negmedspace P}}
+\newcommand{\notR}{{\not\negmedspace R}}
 \newcommand{\O}{\varnothing}
 \newcommand{\Par}{\text{Pareto}}
 \newcommand{\plim}{\overset{p}{\longrightarrow}}

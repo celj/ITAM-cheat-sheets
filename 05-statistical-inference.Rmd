@@ -113,6 +113,7 @@ P_\theta \left[ \left\lvert \hat{\theta}^{(n)} - \theta \right\rvert > \varepsil
 $$
 
 > An estimator is consistent only if, as the sample data increases, the estimator approaches the real parameter.
+
 :::
 
 ::: {.definition name="Relative Efficiency"}
@@ -153,6 +154,7 @@ s(\theta) := \frac{\partial \log \L(\theta)}{\partial\theta}.
 $$
 
 > The score indicates the steepness of the log-likelihood function and thereby the sensitivity to infinitesimal changes to the parameter values.
+
 :::
 
 ::: {.definition name="Fisher Information"}
@@ -162,6 +164,7 @@ $$
 $$
 
 > The Fisher information is a way of measuring the amount of information that an observable random variable $X$ carries about an unknown parameter $\theta$ upon which the probability of $X$ depends.
+
 :::
 
 ::: {.definition name="Cramér–Rao Bound"}
@@ -199,23 +202,3 @@ $$
 ## Parametric Hypothesis Testing
 
 ## Normality Tests
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
