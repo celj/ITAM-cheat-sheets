@@ -28,6 +28,7 @@
           disabled: true
       }
       });
+
     </script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML"></script><!-- Popper --><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="templates/bs4_style.css">
 <link rel="stylesheet" href="templates/corrections.css">
 <meta name="description" content="For a basic course in probability (such as EST-11101), you may want to skip some notes on Measure Theory.  5.1 Basics and Combinatorics  Definition 5.1 (Sample Space) The sample space \(\Omega...">
@@ -430,7 +431,7 @@ where <span class="math inline">\(i = \sqrt{-1} \in \mathscr{C}\)</span>.</p>
 <span class="math display">\[
 \begin{align*}
 \text{Cov}(X, Y) :&amp;=\ E\left[ (X - E[X]) (Y - E[Y]) \right] \\
-            &amp;=\ E[XY] - E[X]E[Y]
+&amp;=\ E[XY] - E[X]E[Y]
 \end{align*}
 \]</span></p>
 </div>
@@ -593,8 +594,8 @@ F_{X_i}(x_i) := \lim_{x_{j\neq i} \to \infty} F_X(x_1, \dots, x_n).
 <span class="math display">\[
 \begin{align*}
 f_{X\mid Y} (x \mid y) :&amp;=\ P[X = x \mid Y = y] \\
-                        &amp;=\ \frac{P[X = x, Y = y]}{P[Y = y]} \\
-                        &amp;=\ \frac{\text{Joint PDF}}{\text{Marginal PDF}}
+&amp;=\ \frac{P[X = x, Y = y]}{P[Y = y]} \\
+&amp;=\ \frac{\text{Joint PDF}}{\text{Marginal PDF}}
 \end{align*}
 \]</span></p>
 </div>
@@ -661,7 +662,7 @@ where <span class="math inline">\(A_C = \{ x = (x_1, \dots, x_n) \in \mathscr{R}
 <span class="math display">\[
 \begin{align}
 F_Y(y) &amp;=\ \int_{-\infty}^{g^{-1}(y)} f_X(x)dx \\
-       &amp;=\ F_X(g^{-1}(y)) \\
+&amp;=\ F_X(g^{-1}(y)) \\
 f_Y(y) &amp;=\ f_X\left( g^{-1}(y) \right) \frac{\partial}{\partial y} g^{-1}(y)
 \end{align}
 \]</span>
@@ -669,7 +670,7 @@ When <span class="math inline">\(g(\cdot)\)</span> is a strictly decreasing func
 <span class="math display">\[
 \begin{align}
 F_Y(y) &amp;=\ \int_{g^{-1}(y)}^{\infty} f_X(x)dx \\
-       &amp;=\ 1 - F_X(g^{-1}(y)) \\
+&amp;=\ 1 - F_X(g^{-1}(y)) \\
 f_Y(y) &amp;= - f_X\left( g^{-1}(y) \right) \frac{\partial}{\partial y} g^{-1}(y)
 \end{align}
 \]</span>
@@ -690,9 +691,9 @@ f_X(x) = f_Y(g(x)) \left\lvert\det \left( \frac{\partial g(x)}{\partial x} \righ
 <span class="math display">\[
 \begin{align*}
 I &amp;=\ \int_a^b g(x)dx \\
-  &amp;=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
-  &amp;=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\mathscr{U}}(x) dx \\
-  &amp;=\ (b - a) \cdot E[g(\mathscr{U})]
+&amp;=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
+&amp;=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\mathscr{U}}(x) dx \\
+&amp;=\ (b - a) \cdot E[g(\mathscr{U})]
 \end{align*}
 \]</span>
 where <span class="math inline">\(\mathscr{U}(a,b)\)</span> is uniformly distributed. Then, by the <strong>Law of Large Numbers</strong>, we know that we can approximate <span class="math inline">\(E[g(\mathscr{U})]\)</span> by randomly sampling <span class="math inline">\(u_1, u_2, \dots\)</span> from <span class="math inline">\(\mathscr{U}(a,b)\)</span>.
@@ -722,10 +723,10 @@ f_Z(z) =
 <span class="math display">\[
 \begin{align}
 F_Z(z) &amp;=\ P[XY \leq z] \\
-       &amp;=\ P\left[ X \geq \frac{z}{Y}, Y &lt; 0 \right] \\
-       &amp;+\ P\left[ X \leq \frac{z}{Y}, Y &gt; 0 \right] \\
-       &amp;=\ \int_{-\infty}^0 \left[ \int_{\frac{z}{y}}^\infty f_X(x)dx \right] f_Y(y)dy \\
-       &amp;+\ \int_0^\infty \left[ \int_{-\infty}^{\frac{z}{y}} f_X(x)dx \right] f_Y(y)dy
+&amp;=\ P\left[ X \geq \frac{z}{Y}, Y &lt; 0 \right] \\
+&amp;+\ P\left[ X \leq \frac{z}{Y}, Y &gt; 0 \right] \\
+&amp;=\ \int_{-\infty}^0 \left[ \int_{\frac{z}{y}}^\infty f_X(x)dx \right] f_Y(y)dy \\
+&amp;+\ \int_0^\infty \left[ \int_{-\infty}^{\frac{z}{y}} f_X(x)dx \right] f_Y(y)dy
 \end{align}
 \]</span>
 where the PDF is
@@ -738,10 +739,10 @@ f_Z(z) = \frac{dF_Z}{dz}(z) = \int_{-\infty}^\infty f_Y(y)f_X\left(\frac{z}{y}\r
 <span class="math display">\[
 \begin{align}
 F_Z(z) &amp;=\ P\left[\frac{X}{Y} \leq z\right] \\
-       &amp;=\ P\left[ X \geq zY, Y &lt; 0 \right] \\
-       &amp;+\ P\left[ X \leq zY, Y &gt; 0 \right] \\
-       &amp;=\ \int_{-\infty}^0 \left[ \int_{yz}^\infty f_X(x)dx \right] f_Y(y)dy \\
-       &amp;+\ \int_0^\infty \left[ \int_{-\infty}^{yz} f_X(x)dx \right] f_Y(y)dy
+&amp;=\ P\left[ X \geq zY, Y &lt; 0 \right] \\
+&amp;+\ P\left[ X \leq zY, Y &gt; 0 \right] \\
+&amp;=\ \int_{-\infty}^0 \left[ \int_{yz}^\infty f_X(x)dx \right] f_Y(y)dy \\
+&amp;+\ \int_0^\infty \left[ \int_{-\infty}^{yz} f_X(x)dx \right] f_Y(y)dy
 \end{align}
 \]</span>
 where the PDF is

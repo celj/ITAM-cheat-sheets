@@ -334,7 +334,7 @@ Let $X$ and $Y$ be random variables with finite expected value. The _covariance_
 $$
 \begin{align*}
 \Cov(X, Y) :&=\ E\left[ (X - E[X]) (Y - E[Y]) \right] \\
-            &=\ E[XY] - E[X]E[Y]
+&=\ E[XY] - E[X]E[Y]
 \end{align*}
 $$
 :::
@@ -347,7 +347,7 @@ $$
 * $\Cov(aX,bY) = ab\Cov(X,Y)$,
 * $\Cov(X + a, Y + b) = \Cov(X,Y)$, and
 * $\Cov(aX_1 + bX_2, cY_1 + dY_2)$
-  $= ac\Cov(X_1,Y_1) + ad\Cov(X_1,Y_2) + bc\Cov(X_2,Y_1) + bd\Cov(X_2,Y_2)$.
+$= ac\Cov(X_1,Y_1) + ad\Cov(X_1,Y_2) + bc\Cov(X_2,Y_1) + bd\Cov(X_2,Y_2)$.
 :::
 
 ::: {.definition name="Correlation"}
@@ -477,8 +477,8 @@ The _conditional distribution_ $f_{X \mid Y} : \R \to [0,1]$ is defined as
 $$
 \begin{align*}
 f_{X\mid Y} (x \mid y) :&=\ P[X = x \mid Y = y] \\
-                        &=\ \frac{P[X = x, Y = y]}{P[Y = y]} \\
-                        &=\ \frac{\text{Joint PDF}}{\text{Marginal PDF}}
+&=\ \frac{P[X = x, Y = y]}{P[Y = y]} \\
+&=\ \frac{\text{Joint PDF}}{\text{Marginal PDF}}
 \end{align*}
 $$
 :::
@@ -549,7 +549,7 @@ When $g(\cdot)$ is a strictly increasing function, then
 $$
 \begin{align}
 F_Y(y) &=\ \int_{-\infty}^{g^{-1}(y)} f_X(x)dx \\
-       &=\ F_X(g^{-1}(y)) \\
+&=\ F_X(g^{-1}(y)) \\
 f_Y(y) &=\ f_X\left( g^{-1}(y) \right) \frac{\partial}{\partial y} g^{-1}(y)
 \end{align}
 $$
@@ -557,7 +557,7 @@ When $g(\cdot)$ is a strictly decreasing function, then
 $$
 \begin{align}
 F_Y(y) &=\ \int_{g^{-1}(y)}^{\infty} f_X(x)dx \\
-       &=\ 1 - F_X(g^{-1}(y)) \\
+&=\ 1 - F_X(g^{-1}(y)) \\
 f_Y(y) &= - f_X\left( g^{-1}(y) \right) \frac{\partial}{\partial y} g^{-1}(y)
 \end{align}
 $$
@@ -582,9 +582,9 @@ Let $\displaystyle I = \int_a^b g(x)dx$ be the integral of a function that is ha
 $$
 \begin{align*}
 I &=\ \int_a^b g(x)dx \\
-  &=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
-  &=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\Unif}(x) dx \\
-  &=\ (b - a) \cdot E[g(\Unif)]
+&=\ (b - a) \int_a^b g(x) \frac{1}{b - a} dx \\
+&=\ (b - a) \int_{-\infty}^{\infty} g(x) f_{\Unif}(x) dx \\
+&=\ (b - a) \cdot E[g(\Unif)]
 \end{align*}
 $$
 where $\Unif(a,b)$ is uniformly distributed. Then, by the **Law of Large Numbers**, we know that we can approximate $E[g(\Unif)]$ by randomly sampling $u_1, u_2, \dots$ from $\Unif(a,b)$.
@@ -615,10 +615,10 @@ Let $X$ and $Y$ be independent random variables. To evaluate the PDF and the CDF
 $$
 \begin{align}
 F_Z(z) &=\ P[XY \leq z] \\
-       &=\ P\left[ X \geq \frac{z}{Y}, Y < 0 \right] \\
-       &+\ P\left[ X \leq \frac{z}{Y}, Y > 0 \right] \\
-       &=\ \int_{-\infty}^0 \left[ \int_{\frac{z}{y}}^\infty f_X(x)dx \right] f_Y(y)dy \\
-       &+\ \int_0^\infty \left[ \int_{-\infty}^{\frac{z}{y}} f_X(x)dx \right] f_Y(y)dy
+&=\ P\left[ X \geq \frac{z}{Y}, Y < 0 \right] \\
+&+\ P\left[ X \leq \frac{z}{Y}, Y > 0 \right] \\
+&=\ \int_{-\infty}^0 \left[ \int_{\frac{z}{y}}^\infty f_X(x)dx \right] f_Y(y)dy \\
+&+\ \int_0^\infty \left[ \int_{-\infty}^{\frac{z}{y}} f_X(x)dx \right] f_Y(y)dy
 \end{align}
 $$
 where the PDF  is
@@ -632,10 +632,10 @@ Let $X$ and $Y$ be independent random variables. To evaluate the PDF and the CDF
 $$
 \begin{align}
 F_Z(z) &=\ P\left[\frac{X}{Y} \leq z\right] \\
-       &=\ P\left[ X \geq zY, Y < 0 \right] \\
-       &+\ P\left[ X \leq zY, Y > 0 \right] \\
-       &=\ \int_{-\infty}^0 \left[ \int_{yz}^\infty f_X(x)dx \right] f_Y(y)dy \\
-       &+\ \int_0^\infty \left[ \int_{-\infty}^{yz} f_X(x)dx \right] f_Y(y)dy
+&=\ P\left[ X \geq zY, Y < 0 \right] \\
+&+\ P\left[ X \leq zY, Y > 0 \right] \\
+&=\ \int_{-\infty}^0 \left[ \int_{yz}^\infty f_X(x)dx \right] f_Y(y)dy \\
+&+\ \int_0^\infty \left[ \int_{-\infty}^{yz} f_X(x)dx \right] f_Y(y)dy
 \end{align}
 $$
 where the PDF  is
