@@ -84,13 +84,11 @@ output:
     includes:
       in_header: "header.html"
     theme:
-      bg: "#eceff4"
-      fg: "#4c566a"
-      primary: "#a3be8c"
-      success: "#88c0d0"
-      info: "#b48ead"
-      warning: "#ebcb8b"
-      danger: "#bf616a"
+      bg: "#f1f1f1"
+      fg: "#111111"
+      primary: "#1111ff"
+      success: "#55ff55"
+      danger: "#ff1111"
     repo: https://github.com/celj/itam-cheat-sheets
     pandoc_args: "--lua-filter=scripts_and_filters/colour_and_highlight.lua"
 link-citations: true

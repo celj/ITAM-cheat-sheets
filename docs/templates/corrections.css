@@ -1,5 +1,5 @@
 .correction {
-  background-color: #ffffff; /* #FFFFFF if corrections should not be highlighted */
+  background-color: #f1f1f1; /* #FFFFFF if corrections should not be highlighted */
   border-radius: 4px;
   padding-right: 4px;
   padding-left: 4px;

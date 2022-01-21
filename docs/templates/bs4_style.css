@@ -1,38 +1,27 @@
 :root {
-  --nord0: #2e3440;
-  --nord1: #3b4252;
-  --nord2: #434c5e;
-  --nord3: #4c566a;
-  --nord4: #d8dee9;
-  --nord5: #e5e9f0;
-  --nord6: #eceff4;
-  --nord7: #8fbcbb;
-  --nord8: #88c0d0;
-  --nord9: #81a1c1;
-  --nord10: #5e81ac;
-  --nord11: #bf616a;
-  --nord12: #d08770;
-  --nord13: #ebcb8b;
-  --nord14: #a3be8c;
-  --nord15: #b48ead;
+  --white: #f1f1f1;
+  --black: #111111;
+  --green: #55ff55;
+  --blue: #1111ff;
+  --red: #ff1111;
 }
 
 a {
-  color: var(--nord3);
+  color: var(--black);
 }
 
 .sidebar-book a,
 .sidebar-chapter a {
-  color: var(--nord0);
+  color: var(--black);
 }
 
 .sidebar-book:hover a,
 .sidebar-chapter:hover a {
-  color: var(--nord3);
+  color: var(--black);
 }
 
 h1 a[title] {
-  color: var(--nord7);
+  color: var(--blue);
 }
 
 .container-fluid > .row {
@@ -47,8 +36,8 @@ h1 a[title] {
 }
 
 #toc a.active {
-  color: var(--nord6);
-  background-color: var(--nord7);
+  color: var(--black);
+  background-color: var(--green);
 }
 
 #main-nav,
@@ -62,7 +51,7 @@ h1 a[title] {
 }
 
 .bg-primary {
-  background-color: var(--nord0) !important;
+  background-color: var(--black) !important;
 }
 
 .thesis-cover p {
@@ -70,7 +59,7 @@ h1 a[title] {
 }
 .thesis-cover img {
   width: 100%;
-  box-shadow: 0 0 0 0.3rem var(--nord0);
+  box-shadow: 0 0 0 0.3rem var(--black);
 }
 
 .byline {
@@ -80,6 +69,6 @@ h1 a[title] {
 .rmdcaution {
   text-align: center;
   /* border-radius: 2px;
-  background: var(--nord11);
-  color: var(--nord6); */
+  background: var(--red);
+  color: var(--white); */
 }
